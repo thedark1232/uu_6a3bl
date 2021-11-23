@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления кривого времени"
+local Ha3BaHue_o6HoBJIeHu9l = "обновление матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -26,6 +26,8 @@ local co6blTu9l_redStone = {}
 local uHTepBaJI_3agepJku_3anucu_JIoroB = 5
 local zanucblBaTb_JIoru = true
 local tape_drive
+local coo6llleHue_oT_redstone = false
+local teKcT_coo6llleHu9l = ""
 local nick_gJI9l_npuBeTcTBu9l = "гость"
 local configuration = {}
 local ycnelllHoE_BblnoJIHeHue_koMaHdbl, coo6llleHue_olllu6ku
@@ -189,6 +191,15 @@ table.insert(redStone_functions, {"написать в чат инфо собы�
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g .. ta6JIuca_cTopoH[cTopoHa_curHaJIa])
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g .. tostring(cTopoHa_go_u3MeHeHu9l))
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поступившая сила: " .. g .. tostring(cTopoHa_nocJIe_u3MeHeu9l))
+end})
+table.insert(redStone_functions, {"матрица", function(agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)
+	if cTopoHa_nocJIe_u3MeHeu9l > 1 then
+		coo6llleHue_oT_redstone = true
+		teKcT_coo6llleHu9l = "требуется включение матрицы!")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ТРЕБУЕТСЯ ВКЛЮЧЕНИЕ МАТРИЦЫ!")
+	else
+		coo6llleHue_oT_redstone = false
+	end
 end})
 function oJugaHue_BBoga_koMaHgbl(BpeM9l_oJugaHu9l, Huk_Bbl3BaBlllero_koMaHgy, He_npeo6pa3oBblBaTb_TekcT)
 	local cJIylllaTeJIb_co6blTu9l
@@ -3101,6 +3112,7 @@ do
 	else
 		co6blTu9l_redStone = configuration[27]
 	end
+
 	--записывать логи с детекторов
 	if zanucblBaTb_JIoru then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. g .. "ВКЛ")
@@ -3368,6 +3380,9 @@ do
 						Ta6JIuca_coo6llleHuu[i] = nil
 					end
 				end)
+			end
+			if coo6llleHue_oT_redstone then
+				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. teKcT_coo6llleHu9l, red)
 			end
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		end

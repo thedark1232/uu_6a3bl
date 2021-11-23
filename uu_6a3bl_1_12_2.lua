@@ -1529,7 +1529,14 @@ do
 		local TuMMeuTbl_online = {}
 		local He_TuMMeuTbl_online = {}
 		for Ha3BaHue_qpauJIa, _ in pairs(Ta6JIuca_npoBepku_online) do
-			 local cTaTyc = filesLibrary.write_file("/home/" .. Ha3BaHue_qpauJIa .. ".online", "не определено")
+			local cTaTyc
+			if computer.addUser(Ha3BaHue_qpauJIa) then
+				cTaTyc = "online"
+				computer.removeUser(Ha3BaHue_qpauJIa)
+			else
+				cTaTyc = filesLibrary.write_file("/home/" .. Ha3BaHue_qpauJIa .. ".online", "не определено")
+			end
+			 
 			 table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_qpauJIa, cTaTyc})
 		end
 		for _, Huk in ipairs(Ta6JIuca_nyTeu_JIoroB) do

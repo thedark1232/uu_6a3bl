@@ -22,6 +22,7 @@ local gpu = component.gpu
 local Ta6JIuca_koMaHg_gJI9l_TuMMeuToB = {}
 local Ta6JIuca_admin_koMaHg = {}
 local Ta6JIuca_koMaHg_gJI9l_rocTeu = {}
+local co6blTu9l_redStone = {}
 local uHTepBaJI_3agepJku_3anucu_JIoroB = 5
 local zanucblBaTb_JIoru = true
 local tape_drive
@@ -111,6 +112,14 @@ colors["синий темный"] = {"§1", "1"}
 colors["фиолетовый светлый"] = {"§d", "d"}
 colors["фиолетовый темный"] = {"§5", "5"}
 colors["черный"] = {"§0", "0"}
+
+local ta6JIuca_cTopoH = {}
+ta6JIuca_cTopoH[0] = "снизу"
+ta6JIuca_cTopoH[1] = "сверху"
+ta6JIuca_cTopoH[2] = "север"
+ta6JIuca_cTopoH[3] = "юг"
+ta6JIuca_cTopoH[4] = "запад"
+ta6JIuca_cTopoH[5] = "восток"
 
 local colors_text = {["setWhite"] = function() gpu.setForeground(0xFFFFFF) end,
 					 ["setGreen"] = function() gpu.setForeground(0x00FF00) end,
@@ -804,20 +813,18 @@ function Ha4aTb_npoBepKy_online(ceKyHgbl)
 		end
 	end
 end
-function o6pa6oTka_Bxog9llllux_curHaJIoB_redStone(uM9l_curHaJIa, agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)
-	local ta6JIuca_cTopoH = {}
-	ta6JIuca_cTopoH[0] = "снизу"
-	ta6JIuca_cTopoH[1] = "сверху"
-	ta6JIuca_cTopoH[2] = "север"
-	ta6JIuca_cTopoH[3] = "юг"
-	ta6JIuca_cTopoH[4] = "запад"
-	ta6JIuca_cTopoH[5] = "восток"
-	
+function o6pa6oTka_Bxog9llllux_curHaJIoB_redStone(uM9l_curHaJIa, agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)	
+	local hous, minute, secunde, cekyHdb = getTime()
+		
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ИЗМЕНЕНИЕ СИГНАЛА РЕД СТОУНА:")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "на объект: " .. g .. configRedStone[agrecc_curHaJIa][1])
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g .. ta6JIuca_cTopoH[cTopoHa_curHaJIa])
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g .. tostring(cTopoHa_go_u3MeHeHu9l))
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поступившая сила: " .. g .. tostring(cTopoHa_nocJIe_u3MeHeu9l))
+	
+	co6blTu9l_redStone[agrecc_curHaJIa] = {configRedStone[agrecc_curHaJIa][1], ta6JIuca_cTopoH[cTopoHa_curHaJIa], tostring(cTopoHa_go_u3MeHeHu9l), tostring(cTopoHa_nocJIe_u3MeHeu9l), cekyHdb}
+	co6blTu9l_redStone[27] = co6blTu9l_redStone
+	setConfiguration()
 end
 do
 	--осчистка монитора
@@ -1667,6 +1674,8 @@ do
 				end
 				configuration[17] = configRedStone
 				setConfiguration()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "удаление завершено!")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "требуется рестарт сети")
 			end
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
@@ -1693,6 +1702,22 @@ do
 			end	
 			c4eT4uk_redstone = c4eT4uk_redstone + 1
 		end	
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред инфо"] = function() --показать список поступивших сигналов на ред стоун
+		--1 название
+		--2 сторона
+		--3 предыдущий сигнал
+		--4 текущий сигнал
+		--5 время в секундах
+		for k, v in pairs(co6blTu9l_redStone) do
+			local datetime = os.date("*t", v[5])
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.year .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "на объект: " .. g .. v[1])
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g ..v[2])
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g ..v[3])
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поступившая сила: " .. g .. v[4])
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=============================")
+		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи последние логи"] = function()
 		term.clear()
@@ -3008,20 +3033,7 @@ do
 	else
 		zagepJka_B_ceKyHgax_BblBoga = configuration[22]
 	end
-	if configuration[24] == "nil" then
-		configuration[24] = zagepJka_B_cekyHgax_npoBepku_oHJIauHa
-		setConfiguration()
-	else
-		zagepJka_B_cekyHgax_npoBepku_oHJIauHa = configuration[24]
-	end
-	if configuration[25] == "nil" then
-		Bepcu9l_uu_6a3bl = string.format("%.f", filesystem.size("/home/t"))
-		configuration[25] = Bepcu9l_uu_6a3bl
-		setConfiguration()
-	else
-		Bepcu9l_uu_6a3bl = configuration[25]
-	end
-	if configuration[25] == "nil" then
+	if configuration[23] == "nil" then
 		for Huk_gJI9l_online, _ in pairs(whiteListUsers) do
 			Ta6JIuca_npoBepku_online[Huk_gJI9l_online] = "ok"
 		end
@@ -3031,7 +3043,27 @@ do
 	else	
 		Ta6JIuca_npoBepku_online = configuration[23]
 	end
+	if configuration[24] == "nil" then
+		configuration[24] = zagepJka_B_cekyHgax_npoBepku_oHJIauHa
+		setConfiguration()
+	else
+		zagepJka_B_cekyHgax_npoBepku_oHJIauHa = configuration[24]
+	end
 
+	if configuration[26] == "nil" then
+		Bepcu9l_uu_6a3bl = string.format("%.f", filesystem.size("/home/t"))
+		configuration[26] = Bepcu9l_uu_6a3bl
+		setConfiguration()
+	else
+		Bepcu9l_uu_6a3bl = configuration[26]
+	end
+	if configuration[27] == "nil" then
+		co6blTu9l_redStone[27] = co6blTu9l_redStone
+		setConfiguration()
+	else
+		co6blTu9l_redStone = co6blTu9l_redStone[27]
+	end
+	--записывать логи с детекторов
 	if zanucblBaTb_JIoru then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. g .. "ВКЛ")
 	else

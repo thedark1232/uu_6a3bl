@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "какая то хуйня со временем"
+local Ha3BaHue_o6HoBJIeHu9l = "ебаные баги времени"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1526,12 +1526,18 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " статус онлайна"] = function()
+		term.clear()
 		local c4e4uk_online = 1
 		local Ta6JIuca_nyTeu_JIoroB = {}
 		local TuMMeuTbl_online = {}
 		local He_TuMMeuTbl_online = {}
 		for Ha3BaHue_qpauJIa, _ in pairs(Ta6JIuca_npoBepku_online) do
 			local cTaTyc
+			print("уаделине игрока: " .. Ha3BaHue_qpauJIa)
+			print(computer.removeUser(Ha3BaHue_qpauJIa))
+			print("добавление игрока: " .. Ha3BaHue_qpauJIa)
+			print(computer.addUser(Ha3BaHue_qpauJIa))
+			
 			computer.removeUser(Ha3BaHue_qpauJIa)
 			if computer.addUser(Ha3BaHue_qpauJIa) then
 				cTaTyc = "online"
@@ -1539,7 +1545,7 @@ do
 			else
 				cTaTyc = filesLibrary.write_file("/home/" .. Ha3BaHue_qpauJIa .. ".online", "не определено")
 			end
-			 
+			 print("присвоение статуса игроку: " .. cTaTyc)
 			 table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_qpauJIa, cTaTyc})
 		end
 		for _, Huk in ipairs(Ta6JIuca_nyTeu_JIoroB) do
@@ -1554,7 +1560,7 @@ do
 			if v[2] == "не определено" then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
 			elseif v[2] == "online" then
-				local datetime = os.date("%c",(v[2])
+				local datetime = os.date("*t", v[2])
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime)
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
@@ -1568,7 +1574,7 @@ do
 				if v[2] == "не определено" then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
 				elseif v[2] == "online" then
-					local datetime = os.date("%c",(v[2])
+					local datetime = os.date("*t", v[2])
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime)
 				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))

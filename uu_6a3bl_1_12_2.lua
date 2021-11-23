@@ -2831,6 +2831,14 @@ do
 		configuration[23] = Ta6JIuca_npoBepku_online
 		setConfiguration()
 	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"] == function() --показывает какие игроки есть в таблице(только их ники)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список игроков:")
+		local c4eT4uk_urpokoB_B_Ta6JIuce = 1
+		for k, _ in pairs(Ta6JIuca_npoBepku_online)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. c4eT4uk_urpokoB_B_Ta6JIuce .. ": " .. k)
+			c4eT4uk_urpokoB_B_Ta6JIuce = c4eT4uk_urpokoB_B_Ta6JIuce + 1
+		end
+	end
 	--установка конфигураций
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка файлов конфигураций")
 	if tape_drive ~= nil then

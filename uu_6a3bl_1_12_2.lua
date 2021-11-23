@@ -3041,7 +3041,7 @@ do
 		raid_gocTyneH = false
 	end
 	--версия системы через объем файла
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "версия ии базы: " .. filesystem.size("/home/t"))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "версия ии базы: " .. g .. string.format("%.f", filesystem.size("/home/t")))
 	--проверки завершены
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "СТАРТОВЫЕ ПРОВЕРКИ ПРОЙДЕНЫ!")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "старт главного цикла")

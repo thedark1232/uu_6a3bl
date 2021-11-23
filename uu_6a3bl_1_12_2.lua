@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "работа с ред стоуном"
+local Ha3BaHue_o6HoBJIeHu9l = "удаление отст ред стоуна"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1667,6 +1667,13 @@ do
 				end
 				configuration[17] = configRedStone
 				setConfiguration()
+			end
+			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = function()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
+				configRedStone[k] = nil
+				configuration[17] = configRedStone
+				setConfiguration()
+				Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = nil
 			end
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " переименовать"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "какое будет название?")

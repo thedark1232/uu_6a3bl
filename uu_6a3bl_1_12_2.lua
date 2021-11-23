@@ -1541,12 +1541,24 @@ do
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН ТИММЕЙТОВ:")
 		for _, v in ipairs(TuMMeuTbl_online) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. tostring(v[2]))
+			if v[2] == "не определено" then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+			end
+			c4e4uk_online = c4e4uk_online + 1
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
-		c4e4uk_online = 1
-		for _, v in ipairs(He_TuMMeuTbl_online) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. tostring(v[2]))
+		if #He_TuMMeuTbl_online > 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
+			c4e4uk_online = 1
+			for _, v in ipairs(He_TuMMeuTbl_online) do
+				if v[2] == "не определено" then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+				end
+				c4e4uk_online = c4e4uk_online + 1
+			end
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи цвета"] = function()

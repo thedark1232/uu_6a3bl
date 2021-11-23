@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ебаные даты"
+local Ha3BaHue_o6HoBJIeHu9l = "ебаная дота 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -935,9 +935,9 @@ do
 				end
 				local cTaTyc_ygaJIeHu9l = filesystem.remove(nyTb_k_uu_6a3bl)
 				if cTaTyc_ygaJIeHu9l then
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой версии: " .. g .. "успешоно")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой версии: " .. g .. "успешно")
 				else
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой верии: " .. r .. "ошибка")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой версии: " .. r .. "ошибка")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверь путь для удаления: " .. r .. nyTb_k_uu_6a3bl)
 				end
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "копирование временных файлов в: " .. nyTb_k_uu_6a3bl)
@@ -2831,7 +2831,7 @@ do
 		configuration[23] = Ta6JIuca_npoBepku_online
 		setConfiguration()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"] == function() --показывает какие игроки есть в таблице(только их ники)
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"] = function() --показывает какие игроки есть в таблице(только их ники)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список игроков:")
 		local c4eT4uk_urpokoB_B_Ta6JIuce = 1
 		for k, _ in pairs(Ta6JIuca_npoBepku_online)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправление файла конфигов"
+local Ha3BaHue_o6HoBJIeHu9l = "удаление игроков для проверки"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1556,7 +1556,7 @@ do
 				table.insert(He_TuMMeuTbl_online, {Huk[1], Huk[2]})
 			end
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ОНЛАЙН ТИММЕЙТОВ:")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ОНЛАЙН ТИММЕЙТОВ:")
 		for _, v in ipairs(TuMMeuTbl_online) do
 			if v[2] == "не определено" then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
@@ -1572,7 +1572,7 @@ do
 			c4e4uk_online = c4e4uk_online + 1
 		end
 		if #He_TuMMeuTbl_online > 0 or #ta6JIuca_He_TuMMeuToB_B_ceTu > 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
 			c4e4uk_online = 1
 			for _, v in ipairs(He_TuMMeuTbl_online) do
 				if v[2] == "не определено" then
@@ -2829,6 +2829,26 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. g .. coo6llleHue .. c .. " добавлен")
 		configuration[23] = Ta6JIuca_npoBepku_online
 		setConfiguration()
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удали игрока для проверки онлайна"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник игрока:")
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l, true)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		if Ta6JIuca_npoBepku_online[coo6llleHue] == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "данного игрока нет в списках")
+			return
+		else
+			if whiteListUsers[coo6llleHue] ~= nil or admin == coo6llleHue then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "невозможно удалить тиммейтов из списка")
+				return
+			else
+				Ta6JIuca_npoBepku_online[coo6llleHue] = nil
+				configuration[23] = Ta6JIuca_npoBepku_online
+				setConfiguration()
+				filesystem.remove("/home/" .. coo6llleHue .. ".online")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. g .. coo6llleHue .. c .. " удален")
+			end
+		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"] = function() --показывает какие игроки есть в таблице(только их ники)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список игроков:")

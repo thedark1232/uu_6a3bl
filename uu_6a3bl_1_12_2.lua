@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления времени"
+local Ha3BaHue_o6HoBJIeHu9l = "какая то хуйня со временем"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1543,7 +1543,7 @@ do
 			 table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_qpauJIa, cTaTyc})
 		end
 		for _, Huk in ipairs(Ta6JIuca_nyTeu_JIoroB) do
-			if whiteListUsers[Huk[1]] ~= nil then
+			if whiteListUsers[Huk[1]] ~= nil or admin == Huk[1] then
 				table.insert(TuMMeuTbl_online, {Huk[1], Huk[2]})
 			else
 				table.insert(He_TuMMeuTbl_online, {Huk[1], Huk[2]})
@@ -1554,7 +1554,7 @@ do
 			if v[2] == "не определено" then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
 			elseif v[2] == "online" then
-				local datetime = os.date("%c",tonumber(v[2]))
+				local datetime = os.date("%c",(v[2])
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime)
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
@@ -1568,7 +1568,7 @@ do
 				if v[2] == "не определено" then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
 				elseif v[2] == "online" then
-					local datetime = os.date("%c",tonumber(v[2]))
+					local datetime = os.date("%c",(v[2])
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime)
 				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))

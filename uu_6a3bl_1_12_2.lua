@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "удаление отст ред стоуна"
+local Ha3BaHue_o6HoBJIeHu9l = "критические баги"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1703,7 +1703,7 @@ do
 			c4eT4uk_redstone = c4eT4uk_redstone + 1
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред инфо"] = function() --показать список поступивших сигналов на ред стоун
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред события"] = function() --показать список поступивших сигналов на ред стоун
 		--1 название
 		--2 сторона
 		--3 предыдущий сигнал
@@ -1711,7 +1711,7 @@ do
 		--5 время в секундах
 		for k, v in pairs(co6blTu9l_redStone) do
 			local datetime = os.date("*t", v[5])
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.year .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.year .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "на объект: " .. g .. v[1])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g ..v[2])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g ..v[3])

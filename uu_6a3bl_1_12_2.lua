@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "сортировка онлайна"
+local Ha3BaHue_o6HoBJIeHu9l = "тест добавления проверки онлайна"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2820,13 +2820,15 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "данный игрок уже есть в списках")
 			return
 		end
+		computer.removeUser(coo6llleHue)
 		if computer.addUser(coo6llleHue) then
 			local hous, minute, secunde, cekyHdbl_gJI9l_JIoroB = getTime()
 			filesLibrary.addValue("/home/" .. coo6llleHue .. ".online", tostring(cekyHdbl_gJI9l_JIoroB))
 			computer.removeUser(coo6llleHue)
-		else
-			filesLibrary.addValue("/home/" .. coo6llleHue .. ".online", "не определено")
 		end
+		Ta6JIuca_npoBepku_online[coo6llleHue]
+		configuration[23] = Ta6JIuca_npoBepku_online
+		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. g .. coo6llleHue .. c .. " добавлен")
 		configuration[23] = Ta6JIuca_npoBepku_online
 		setConfiguration()

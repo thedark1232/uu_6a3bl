@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "критические баги"
+local Ha3BaHue_o6HoBJIeHu9l = "обновления конфигов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1719,6 +1719,13 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=============================")
 		end
 	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " очистить ред события"] = function()
+		co6blTu9l_redStone = {}
+		co6blTu9l_redStone[27] = co6blTu9l_redStone
+		setConfiguration()
+	end	
+			
+	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи последние логи"] = function()
 		term.clear()
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end

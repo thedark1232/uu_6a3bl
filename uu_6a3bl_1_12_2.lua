@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "добавление функций ред стоун"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления ред багов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1647,7 +1647,7 @@ do
 		for k, v in pairs(configRedStone) do
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " вкл"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
-				configRedStone[k] = {v[1], "true"}
+				configRedStone[k] = {v[1], "true", v[3]}
 				for i = 0, 5 do
 					component.invoke(k, "setOutput", i, 15)
 				end
@@ -1656,7 +1656,7 @@ do
 			end
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " выкл"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
-				configRedStone[k] = {v[1], "false"}
+				configRedStone[k] = {v[1], "false", v[3]}
 				for i = 0, 5 do
 					component.invoke(k, "setOutput", i, 0)
 				end
@@ -1665,7 +1665,7 @@ do
 			end
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " импульс"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
-				configRedStone[k] = {v[1], "false"}
+				configRedStone[k] = {v[1], "false", v[3]}
 				for i = 0, 5 do
 					component.invoke(k, "setOutput", i, 0)
 				end
@@ -1692,10 +1692,26 @@ do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "какое будет название?")
 				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_BBog9llllero_coo6llleHue)
 				if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-				configRedStone[k] = {coo6llleHue, configRedStone[k][2]}
+				configRedStone[k] = {coo6llleHue, configRedStone[k][2],  configRedStone[k][3]}
 				configuration[17] = configRedStone
 				setConfiguration()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успешно! Требуется рестарт сети")
+			end
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " назначить функцию"] = function()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "доступные функции:")
+				for k, v in ipairs(redStone_functions) do
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1])
+				end
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ввод цифры функции")
+				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_BBog9llllero_coo6llleHue)
+				if not BBog_koppekTeH or tonumber(coo6llleHue) then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+				if tonumber(coo6llleHue) < 0 or tonumber(coo6llleHue) > #redStone_functions then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ввод некорректный")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "выход из функции")
+					return
+				end
+				configRedStone[k] = {configRedStone[k][1], configRedStone[k][2],  redStone_functions[tonumber(coo6llleHue)]}
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "назначена функция: " ..  redStone_functions[tonumber(coo6llleHue)][1])
 			end
 			if v[2] == "false" then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. c4eT4uk_redstone .. ": " .. v[1] .. ": " .. r .. "ВЫКЛ")
@@ -1734,7 +1750,10 @@ do
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред тест"] = function()
 		term.clear()
 		for k, v in pairs(co6blTu9l_redStone) do
-			print(k,v)
+			print(v)
+			for key, val in pairs(v) do
+				print(key,val)
+			end
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи последние логи"] = function()

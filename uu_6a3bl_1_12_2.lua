@@ -1,3 +1,4 @@
+local Ha3BaHue_o6HoBJIeHu9l = "тест онлайна"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -795,6 +796,7 @@ function BblBog_akTuBHocTu_urpokoB_Ha_MoHuTop(BblBoguTb)
 end
 function Ha4aTb_npoBepKy_online(ceKyHgbl)
 	for k, _ in pairs(Ta6JIuca_npoBepku_online) do
+		computer.removeUser(k)
 		if computer.addUser(k) then
 			filesLibrary.creat_file("/home/" .. k .. ".online", ceKyHgbl)
 			computer.removeUser(k)
@@ -1530,6 +1532,7 @@ do
 		local He_TuMMeuTbl_online = {}
 		for Ha3BaHue_qpauJIa, _ in pairs(Ta6JIuca_npoBepku_online) do
 			local cTaTyc
+			computer.removeUser(Ha3BaHue_qpauJIa)
 			if computer.addUser(Ha3BaHue_qpauJIa) then
 				cTaTyc = "online"
 				computer.removeUser(Ha3BaHue_qpauJIa)
@@ -3060,6 +3063,7 @@ do
 	end
 	--версия системы через объем файла
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "версия ии базы: " .. g .. Bepcu9l_uu_6a3bl)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название обновления: " .. g .. Ha3BaHue_o6HoBJIeHu9l)
 	--проверки завершены
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "СТАРТОВЫЕ ПРОВЕРКИ ПРОЙДЕНЫ!")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "старт главного цикла")

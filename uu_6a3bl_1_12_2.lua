@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновление матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "исправление мелких ошибок"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -195,7 +195,7 @@ end})
 table.insert(redStone_functions, {"матрица", function(agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)
 	if cTopoHa_nocJIe_u3MeHeu9l > 1 then
 		coo6llleHue_oT_redstone = true
-		teKcT_coo6llleHu9l = "требуется включение матрицы!")
+		teKcT_coo6llleHu9l = "требуется включение матрицы!"
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ТРЕБУЕТСЯ ВКЛЮЧЕНИЕ МАТРИЦЫ!")
 	else
 		coo6llleHue_oT_redstone = false
@@ -1752,6 +1752,9 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ответная функция: " .. g .. v[6])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=============================")
 		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl ..  " удалить сообщения матрицы"] = function()
+		coo6llleHue_oT_redstone = false
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " очистить ред события"] = function()
 		co6blTu9l_redStone = {}

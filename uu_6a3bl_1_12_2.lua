@@ -34,6 +34,7 @@ local nyTb_k_qpauJIy_config_ceHcopoB = "/home/ceHcopConfig"
 local nyTb_k_qpauJIy_config_typpeJIeu = "/home/energyturretConfig"
 local nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa = "/home/transposerConfig"
 local nyTb_k_qpauJIy_config_redstone = "/home/tedstoneCofig"
+local BepCu9l_cucTeMbl = 0
 local nytb_raid = "/raid/"
 local nytb_k_JIoraM = "/home/" --если есть рейд, то путь изменяется автоматически
 local cTaTyc_BblnoJIHeHu9l, ta6JIuca_redstone, KoJlu4ecTBo_redstone
@@ -3039,7 +3040,8 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "RAID: " .. r .. "не доступен")
 		raid_gocTyneH = false
 	end
-	
+	--версия системы через объем файла
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "версия ии базы: " .. filesystem.size("/home/t"))
 	--проверки завершены
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "СТАРТОВЫЕ ПРОВЕРКИ ПРОЙДЕНЫ!")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "старт главного цикла")

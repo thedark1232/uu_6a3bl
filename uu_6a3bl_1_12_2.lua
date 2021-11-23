@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделываение ред стоун функций"
+local Ha3BaHue_o6HoBJIeHu9l = "ред стоун обновление"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1682,11 +1682,12 @@ do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "требуется рестарт сети")
 			end
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = function()
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 				configRedStone[k] = nil
 				configuration[17] = configRedStone
 				setConfiguration()
 				Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = nil
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "удаление завершено")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "требуется рестарт сети")
 			end
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " переименовать"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "какое будет название?")
@@ -1704,7 +1705,7 @@ do
 				end
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ввод цифры функции")
 				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_BBog9llllero_coo6llleHue)
-				if not BBog_koppekTeH or tonumber(coo6llleHue) then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+				if not BBog_koppekTeH or tonumber(coo6llleHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 				if tonumber(coo6llleHue) < 0 or tonumber(coo6llleHue) > #redStone_functions then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ввод некорректный")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "выход из функции")

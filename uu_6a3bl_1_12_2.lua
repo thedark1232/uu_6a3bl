@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления ред багов"
+local Ha3BaHue_o6HoBJIeHu9l = "переделываение ред стоун функций"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -825,8 +825,8 @@ function Ha4aTb_npoBepKy_online(ceKyHgbl)
 end
 function o6pa6oTka_Bxog9llllux_curHaJIoB_redStone(uM9l_curHaJIa, agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)	
 	local hous, minute, secunde, cekyHdb = getTime()
-	configRedStone[agrecc_curHaJIa][3][2](tonumber(agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l))
-	co6blTu9l_redStone[agrecc_curHaJIa] = {configRedStone[agrecc_curHaJIa][1], ta6JIuca_cTopoH[cTopoHa_curHaJIa], tostring(cTopoHa_go_u3MeHeHu9l), tostring(cTopoHa_nocJIe_u3MeHeu9l), cekyHdb, configRedStone[agrecc_curHaJIa][3][1]}
+	redStone_functions[configRedStone[agrecc_curHaJIa][3]][2](agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)
+	co6blTu9l_redStone[agrecc_curHaJIa] = {configRedStone[agrecc_curHaJIa][1], ta6JIuca_cTopoH[cTopoHa_curHaJIa], tostring(cTopoHa_go_u3MeHeHu9l), tostring(cTopoHa_nocJIe_u3MeHeu9l), cekyHdb, redStone_functions[configRedStone[agrecc_curHaJIa][3]][1]}
 	configuration[27] = co6blTu9l_redStone
 	setConfiguration()
 end
@@ -1710,7 +1710,7 @@ do
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "выход из функции")
 					return
 				end
-				configRedStone[k] = {configRedStone[k][1], configRedStone[k][2],  redStone_functions[tonumber(coo6llleHue)]}
+				configRedStone[k] = {configRedStone[k][1], configRedStone[k][2], tonumber(coo6llleHue)}
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "назначена функция: " ..  redStone_functions[tonumber(coo6llleHue)][1])
 			end
 			if v[2] == "false" then
@@ -3150,7 +3150,7 @@ do
 		if cTaTyc_BblnoJIHeHu9l then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание конфигураций блоков редстоуна:")
 			for HoMep_redstone, agreca_redstone in ipairs(ta6JIuca_redstone) do
-				configRedStone[agreca_redstone] = {"редстоун" .. tostring(agreca_redstone:sub(1, 3)), "false", redStone_functions[1]}
+				configRedStone[agreca_redstone] = {"редстоун" .. tostring(agreca_redstone:sub(1, 3)), "false", 1}
 			end
 			configuration[17] = configRedStone
 			setConfiguration()

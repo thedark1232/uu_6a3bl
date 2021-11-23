@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги таблицы времени"
+local Ha3BaHue_o6HoBJIeHu9l = "сортировка онлайна"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1531,22 +1531,24 @@ do
 		local Ta6JIuca_nyTeu_JIoroB = {}
 		local TuMMeuTbl_online = {}
 		local He_TuMMeuTbl_online = {}
+		local ta6JIuca_TuMMeuToB_B_ceTu = {}
+		local ta6JIuca_He_TuMMeuToB_B_ceTu = {}
 		for Ha3BaHue_qpauJIa, _ in pairs(Ta6JIuca_npoBepku_online) do
-			local cTaTyc
-			print("уаделине игрока: " .. Ha3BaHue_qpauJIa)
-			print(computer.removeUser(Ha3BaHue_qpauJIa))
-			print("добавление игрока: " .. Ha3BaHue_qpauJIa)
-			print(computer.addUser(Ha3BaHue_qpauJIa))
-			
+			local cTaTyc	
 			computer.removeUser(Ha3BaHue_qpauJIa)
 			if computer.addUser(Ha3BaHue_qpauJIa) then
 				cTaTyc = "online"
 				computer.removeUser(Ha3BaHue_qpauJIa)
+				if whiteListUsers[Ha3BaHue_qpauJIa] ~= nil or Ha3BaHue_qpauJIa == admin then
+					table.insert(ta6JIuca_TuMMeuToB_B_ceTu, {Ha3BaHue_qpauJIa, "ONLINE"})
+				else	
+					table.insert(ta6JIuca_He_TuMMeuToB_B_ceTu,  {Ha3BaHue_qpauJIa, "ONLINE"})
+				end
 			else
 				cTaTyc = filesLibrary.write_file("/home/" .. Ha3BaHue_qpauJIa .. ".online", "не определено")
+				table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_qpauJIa, cTaTyc})
 			end
-			 print("присвоение статуса игроку: " .. cTaTyc)
-			 table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_qpauJIa, cTaTyc})
+			 
 		end
 		for _, Huk in ipairs(Ta6JIuca_nyTeu_JIoroB) do
 			if whiteListUsers[Huk[1]] ~= nil or admin == Huk[1] then
@@ -1559,26 +1561,32 @@ do
 		for _, v in ipairs(TuMMeuTbl_online) do
 			if v[2] == "не определено" then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
-			elseif v[2] == "online" then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
 			else
 				local datetime = os.date("*t", v[2])
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.day .. " " .. datetime.hour .. ":" .. "datetime.min .. ":" .. datetime.sec)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.day .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec)
 			end
 			c4e4uk_online = c4e4uk_online + 1
 		end
-		if #He_TuMMeuTbl_online > 0 then
+		c4e4uk_online = 1
+		for _, v in ipairs(ta6JIuca_TuMMeuToB_B_ceTu) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+			c4e4uk_online = c4e4uk_online + 1
+		end
+		if #He_TuMMeuTbl_online > 0 or #ta6JIuca_He_TuMMeuToB_B_ceTu > 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
 			c4e4uk_online = 1
 			for _, v in ipairs(He_TuMMeuTbl_online) do
 				if v[2] == "не определено" then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
-				elseif v[2] == "online" then
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
 				else
 					local datetime = os.date("*t", v[2])
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.day .. " " .. datetime.hour .. ":" .. "datetime.min .. ":" .. datetime.sec)
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.day .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec)
 				end
+				c4e4uk_online = c4e4uk_online + 1
+			end
+			c4e4uk_online = 1
+			for _, v in ipairs(ta6JIuca_TuMMeuToB_B_ceTu) do
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
 				c4e4uk_online = c4e4uk_online + 1
 			end
 		end

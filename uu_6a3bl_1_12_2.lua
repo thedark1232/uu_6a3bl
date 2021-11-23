@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ебаные баги времени"
+local Ha3BaHue_o6HoBJIeHu9l = "исправление ошибок секунд"
 component = require("component")
 local computer = require("computer")
 local term = require("term")

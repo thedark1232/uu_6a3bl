@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ред тест"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления ошибок реда"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1721,7 +1721,7 @@ do
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " очистить ред события"] = function()
 		co6blTu9l_redStone = {}
-		co6blTu9l_redStone[27] = co6blTu9l_redStone
+		configuration[27] = co6blTu9l_redStone
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очистка завершена")
 	end
@@ -3070,10 +3070,10 @@ do
 		Bepcu9l_uu_6a3bl = configuration[26]
 	end
 	if configuration[27] == "nil" then
-		co6blTu9l_redStone[27] = co6blTu9l_redStone
+		configuration[27] = co6blTu9l_redStone
 		setConfiguration()
 	else
-		co6blTu9l_redStone = co6blTu9l_redStone[27]
+		co6blTu9l_redStone = configuration[27]
 	end
 	--записывать логи с детекторов
 	if zanucblBaTb_JIoru then

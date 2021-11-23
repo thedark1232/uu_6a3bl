@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ебаная дота 2"
+local Ha3BaHue_o6HoBJIeHu9l = "исправление файла конфигов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1526,7 +1526,6 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " статус онлайна"] = function()
-		term.clear()
 		local c4e4uk_online = 1
 		local Ta6JIuca_nyTeu_JIoroB = {}
 		local TuMMeuTbl_online = {}
@@ -2834,7 +2833,7 @@ do
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"] = function() --показывает какие игроки есть в таблице(только их ники)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список игроков:")
 		local c4eT4uk_urpokoB_B_Ta6JIuce = 1
-		for k, _ in pairs(Ta6JIuca_npoBepku_online)
+		for k, _ in pairs(Ta6JIuca_npoBepku_online) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. c4eT4uk_urpokoB_B_Ta6JIuce .. ": " .. k)
 			c4eT4uk_urpokoB_B_Ta6JIuce = c4eT4uk_urpokoB_B_Ta6JIuce + 1
 		end
@@ -2980,13 +2979,17 @@ do
 	else
 		Bepcu9l_uu_6a3bl = configuration[25]
 	end
-	--добавление в таблицу онлайна игроков
-	for Huk_gJI9l_online, _ in pairs(whiteListUsers) do
-		Ta6JIuca_npoBepku_online[Huk_gJI9l_online] = "ok"
+	if configuration[25] == "nil" then
+		for Huk_gJI9l_online, _ in pairs(whiteListUsers) do
+			Ta6JIuca_npoBepku_online[Huk_gJI9l_online] = "ok"
+		end
+		Ta6JIuca_npoBepku_online[admin] = "ok"
+		configuration[23] = Ta6JIuca_npoBepku_online
+		setConfiguration()
+	else	
+		Ta6JIuca_npoBepku_online = configuration[23]
 	end
-	Ta6JIuca_npoBepku_online[admin] = "ok"
-	configuration[23] = Ta6JIuca_npoBepku_online
-	setConfiguration()
+
 	if zanucblBaTb_JIoru then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. g .. "ВКЛ")
 	else

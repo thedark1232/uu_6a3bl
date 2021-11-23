@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправление ошибок секунд"
+local Ha3BaHue_o6HoBJIeHu9l = "баги таблицы времени"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1560,10 +1560,10 @@ do
 			if v[2] == "не определено" then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
 			elseif v[2] == "online" then
-				local datetime = os.date("*t", v[2])
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime)
-			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+			else
+				local datetime = os.date("*t", v[2])
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.day .. " " .. datetime.hour .. ":" .. "datetime.min .. ":" .. datetime.sec)
 			end
 			c4e4uk_online = c4e4uk_online + 1
 		end
@@ -1574,10 +1574,10 @@ do
 				if v[2] == "не определено" then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
 				elseif v[2] == "online" then
-					local datetime = os.date("*t", v[2])
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime)
-				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+				else
+					local datetime = os.date("*t", v[2])
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.day .. " " .. datetime.hour .. ":" .. "datetime.min .. ":" .. datetime.sec)
 				end
 				c4e4uk_online = c4e4uk_online + 1
 			end

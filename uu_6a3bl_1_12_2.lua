@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест онлайна"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления времени"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1553,6 +1553,9 @@ do
 		for _, v in ipairs(TuMMeuTbl_online) do
 			if v[2] == "не определено" then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+			elseif v[2] == "online" then
+				local datetime = os.date("%c",tonumber(v[2]))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime)
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
 			end
@@ -1564,6 +1567,9 @@ do
 			for _, v in ipairs(He_TuMMeuTbl_online) do
 				if v[2] == "не определено" then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+				elseif v[2] == "online" then
+					local datetime = os.date("%c",tonumber(v[2]))
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime)
 				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
 				end

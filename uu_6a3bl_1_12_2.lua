@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест добавления проверки онлайна"
+local Ha3BaHue_o6HoBJIeHu9l = "ошибки отображения онлайна"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1557,7 +1557,7 @@ do
 				table.insert(He_TuMMeuTbl_online, {Huk[1], Huk[2]})
 			end
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН ТИММЕЙТОВ:")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ОНЛАЙН ТИММЕЙТОВ:")
 		for _, v in ipairs(TuMMeuTbl_online) do
 			if v[2] == "не определено" then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
@@ -1573,7 +1573,7 @@ do
 			c4e4uk_online = c4e4uk_online + 1
 		end
 		if #He_TuMMeuTbl_online > 0 or #ta6JIuca_He_TuMMeuToB_B_ceTu > 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
 			c4e4uk_online = 1
 			for _, v in ipairs(He_TuMMeuTbl_online) do
 				if v[2] == "не определено" then
@@ -1585,7 +1585,7 @@ do
 				c4e4uk_online = c4e4uk_online + 1
 			end
 			c4e4uk_online = 1
-			for _, v in ipairs(ta6JIuca_TuMMeuToB_B_ceTu) do
+			for _, v in ipairs(ta6JIuca_He_TuMMeuToB_B_ceTu) do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
 				c4e4uk_online = c4e4uk_online + 1
 			end
@@ -2826,7 +2826,7 @@ do
 			filesLibrary.addValue("/home/" .. coo6llleHue .. ".online", tostring(cekyHdbl_gJI9l_JIoroB))
 			computer.removeUser(coo6llleHue)
 		end
-		Ta6JIuca_npoBepku_online[coo6llleHue]
+		Ta6JIuca_npoBepku_online[coo6llleHue] = "ok"
 		configuration[23] = Ta6JIuca_npoBepku_online
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. g .. coo6llleHue .. c .. " добавлен")

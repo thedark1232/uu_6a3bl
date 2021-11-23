@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления багов"
+local Ha3BaHue_o6HoBJIeHu9l = "ред тест"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1724,7 +1724,13 @@ do
 		co6blTu9l_redStone[27] = co6blTu9l_redStone
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очистка завершена")
-	end	
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред тест"] = function()
+		term.clear()
+		for k, v in pairs(co6blTu9l_redStone) do
+			print(k,v)
+		end
+	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи последние логи"] = function()
 		term.clear()
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end

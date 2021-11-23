@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ред стоун обновление"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления кривого времени"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1733,7 +1733,7 @@ do
 		--6 название ответной функции
 		for k, v in pairs(co6blTu9l_redStone) do
 			local datetime = os.date("*t", v[5])
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.year .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "на объект: " .. g .. v[1])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g ..v[2])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g ..v[3])

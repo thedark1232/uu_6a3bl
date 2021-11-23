@@ -933,7 +933,7 @@ do
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой верии: " .. r .. "ошибка")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверь путь для удаления: " .. r .. nyTb_k_uu_6a3bl)
 				end
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "копирование временных файлов в " .. nyTb_k_uu_6a3bl)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "копирование временных файлов в: " .. nyTb_k_uu_6a3bl)
 				filesystem.copy(nyTb_k_uu_6a3bl .. "1232", nyTb_k_uu_6a3bl)
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление временных файлов")
 				filesystem.remove(nyTb_k_uu_6a3bl .. "1232")
@@ -1542,12 +1542,12 @@ do
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН ТИММЕЙТОВ:")
 		for _, v in ipairs(TuMMeuTbl_online) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. v[2])
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
 		c4e4uk_online = 1
 		for _, v in ipairs(He_TuMMeuTbl_online) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. v[2])
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи цвета"] = function()

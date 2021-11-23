@@ -1530,13 +1530,13 @@ do
 		local He_TuMMeuTbl_online = {}
 		for Ha3BaHue_qpauJIa, _ in pairs(Ta6JIuca_npoBepku_online) do
 			 local cTaTyc = filesLibrary.write_file("/home/" .. Ha3BaHue_qpauJIa .. ".online", "не определено")
-			 table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_cJlegyI0IIIeu_nanKu, cTaTyc})
+			 table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_qpauJIa, cTaTyc})
 		end
 		for _, Huk in ipairs(Ta6JIuca_nyTeu_JIoroB) do
 			if whiteListUsers[Huk[1]] ~= nil then
-				table.insert(TuMMeuTbl_online, {[Huk[1], Huk[2]})
+				table.insert(TuMMeuTbl_online, {Huk[1], Huk[2]})
 			else
-				table.insert(He_TuMMeuTbl_online, {[Huk[1], Huk[2]})
+				table.insert(He_TuMMeuTbl_online, {Huk[1], Huk[2]})
 			end
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН ТИММЕЙТОВ:")

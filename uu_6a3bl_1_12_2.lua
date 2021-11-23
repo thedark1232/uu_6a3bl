@@ -3221,8 +3221,10 @@ do
 			BblBog_akTuBHocTu_urpokoB_Ha_MoHuTop(true)
 		end
 		if cekyHdbl_gJI9l_JIoroB > Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало плановых обновлений базы данных")
 			Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa = cekyHdbl_gJI9l_JIoroB + zagepJka_B_cekyHgax_npoBepku_oHJIauHa
 			Ha4aTb_npoBepKy_online(cekyHdbl_gJI9l_JIoroB)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успешно")
 		end
 	end
 end

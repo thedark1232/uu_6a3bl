@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления ошибок реда"
+local Ha3BaHue_o6HoBJIeHu9l = "добавление функций ред стоун"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -95,6 +95,7 @@ local zagepJka_ygaJieHu9l_coo6llleHuu = 5
 local gucTaHcu9l_pagapa = 199
 local Ta6JIuca_gucTaHcuu_pagapa = {}
 local cBeT_gJI9l_o4koB = {}
+local redStone_functions = {}
 local colors = {} --таблица цветов(в алфавитном порядке) -- § --
 colors["белый"] = {"§f", "f"}
 colors["водяной светлый"] = {"§b", "b"}
@@ -180,6 +181,15 @@ function getTime() --определение системного времени
   return os.date("%H", lastmod), os.date("%M", lastmod), os.date("%S", lastmod), os.time(os.date("*t", lastmod))
 end
 --вовращает false или frue + команду
+table.insert(redStone_functions, {"пустая функция", function() end})
+table.insert(redStone_functions, {"тестовая функция", function(cuJIa_curHaJIa) Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполнение тестовой функции") end})
+table.insert(redStone_functions, {"написать в чат инфо события", function(agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ИЗМЕНЕНИЕ СИГНАЛА РЕД СТОУНА:")
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "на объект: " .. g .. configRedStone[agrecc_curHaJIa][1])
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g .. ta6JIuca_cTopoH[cTopoHa_curHaJIa])
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g .. tostring(cTopoHa_go_u3MeHeHu9l))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поступившая сила: " .. g .. tostring(cTopoHa_nocJIe_u3MeHeu9l))
+end})
 function oJugaHue_BBoga_koMaHgbl(BpeM9l_oJugaHu9l, Huk_Bbl3BaBlllero_koMaHgy, He_npeo6pa3oBblBaTb_TekcT)
 	local cJIylllaTeJIb_co6blTu9l
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
@@ -815,15 +825,9 @@ function Ha4aTb_npoBepKy_online(ceKyHgbl)
 end
 function o6pa6oTka_Bxog9llllux_curHaJIoB_redStone(uM9l_curHaJIa, agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)	
 	local hous, minute, secunde, cekyHdb = getTime()
-		
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ИЗМЕНЕНИЕ СИГНАЛА РЕД СТОУНА:")
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "на объект: " .. g .. configRedStone[agrecc_curHaJIa][1])
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g .. ta6JIuca_cTopoH[cTopoHa_curHaJIa])
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g .. tostring(cTopoHa_go_u3MeHeHu9l))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поступившая сила: " .. g .. tostring(cTopoHa_nocJIe_u3MeHeu9l))
-	
-	co6blTu9l_redStone[agrecc_curHaJIa] = {configRedStone[agrecc_curHaJIa][1], ta6JIuca_cTopoH[cTopoHa_curHaJIa], tostring(cTopoHa_go_u3MeHeHu9l), tostring(cTopoHa_nocJIe_u3MeHeu9l), cekyHdb}
-	co6blTu9l_redStone[27] = co6blTu9l_redStone
+	configRedStone[agrecc_curHaJIa][3][2](tonumber(agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l))
+	co6blTu9l_redStone[agrecc_curHaJIa] = {configRedStone[agrecc_curHaJIa][1], ta6JIuca_cTopoH[cTopoHa_curHaJIa], tostring(cTopoHa_go_u3MeHeHu9l), tostring(cTopoHa_nocJIe_u3MeHeu9l), cekyHdb, configRedStone[agrecc_curHaJIa][3][1]}
+	configuration[27] = co6blTu9l_redStone
 	setConfiguration()
 end
 do
@@ -1709,6 +1713,7 @@ do
 		--3 предыдущий сигнал
 		--4 текущий сигнал
 		--5 время в секундах
+		--6 название ответной функции
 		for k, v in pairs(co6blTu9l_redStone) do
 			local datetime = os.date("*t", v[5])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.year .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec)
@@ -1716,6 +1721,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g ..v[2])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g ..v[3])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поступившая сила: " .. g .. v[4])
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ответная функция: " .. g .. v[6])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=============================")
 		end
 	end
@@ -3125,7 +3131,7 @@ do
 		if cTaTyc_BblnoJIHeHu9l then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание конфигураций блоков редстоуна:")
 			for HoMep_redstone, agreca_redstone in ipairs(ta6JIuca_redstone) do
-				configRedStone[agreca_redstone] = {"редстоун" .. tostring(agreca_redstone:sub(1, 3)), "false"}
+				configRedStone[agreca_redstone] = {"редстоун" .. tostring(agreca_redstone:sub(1, 3)), "false", redStone_functions[1]}
 			end
 			configuration[17] = configRedStone
 			setConfiguration()

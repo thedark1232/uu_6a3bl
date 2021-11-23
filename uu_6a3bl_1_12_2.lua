@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "удаление игроков для проверки"
+local Ha3BaHue_o6HoBJIeHu9l = "работа с ред стоуном"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -318,6 +318,7 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	event.ignore("chat_message", chat_message)
 	event.ignore("glasses_chat_message", chat_message)
 	event.ignore("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
+	event.ignore("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
@@ -803,7 +804,21 @@ function Ha4aTb_npoBepKy_online(ceKyHgbl)
 		end
 	end
 end
-
+function o6pa6oTka_Bxog9llllux_curHaJIoB_redStone(uM9l_curHaJIa, agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)
+	local ta6JIuca_cTopoH = {}
+	ta6JIuca_cTopoH[0] = "снизу"
+	ta6JIuca_cTopoH[1] = "сверху"
+	ta6JIuca_cTopoH[2] = "север"
+	ta6JIuca_cTopoH[3] = "юг"
+	ta6JIuca_cTopoH[4] = "запад"
+	ta6JIuca_cTopoH[5] = "восток"
+	
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ИЗМЕНЕНИЕ СИГНАЛА РЕД СТОУНА:")
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "на объект: " .. g .. configRedStone[agrecc_curHaJIa][1])
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сторона поступления: " .. g .. ta6JIuca_cTopoH[cTopoHa_curHaJIa])
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предыдущая сила: " .. g .. tostring(cTopoHa_go_u3MeHeHu9l))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поступившая сила: " .. g .. tostring(cTopoHa_nocJIe_u3MeHeu9l))
+end
 do
 	--осчистка монитора
 	term.clear()
@@ -3043,6 +3058,7 @@ do
 	--подключить слушатели событий
 	event.listen("modem_message", modem_message)
 	event.listen("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
+	event.listen("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 		event.listen("glasses_chat_message", chat_message)
 	else

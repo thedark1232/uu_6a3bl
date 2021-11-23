@@ -16,6 +16,7 @@ local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local c = "§6" --оранжевый
 local r = "§c" --красный
 local g = "§a" --зеленый
+local Bepcu9l_uu_6a3bl = "0"
 local gpu = component.gpu
 local Ta6JIuca_koMaHg_gJI9l_TuMMeuToB = {}
 local Ta6JIuca_admin_koMaHg = {}
@@ -34,7 +35,6 @@ local nyTb_k_qpauJIy_config_ceHcopoB = "/home/ceHcopConfig"
 local nyTb_k_qpauJIy_config_typpeJIeu = "/home/energyturretConfig"
 local nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa = "/home/transposerConfig"
 local nyTb_k_qpauJIy_config_redstone = "/home/tedstoneCofig"
-local BepCu9l_cucTeMbl = 0
 local nytb_raid = "/raid/"
 local nytb_k_JIoraM = "/home/" --если есть рейд, то путь изменяется автоматически
 local cTaTyc_BblnoJIHeHu9l, ta6JIuca_redstone, KoJlu4ecTBo_redstone
@@ -916,7 +916,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "игрок не найден в списках тиммейтов")
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обновить ии базы"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"] = function()
 		if component.isAvailable("internet") then
 			term.clear()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "подготовка:")
@@ -926,6 +926,11 @@ do
 			local status_wget, Ha3BaHue_olllu6ku = wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/uu_6a3bl_1_12_2.lua", nyTb_k_uu_6a3bl .. "1232")
 			if status_wget then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "загрузка обновлений: " .. g .. "успешно")
+				if Bepcu9l_uu_6a3bl == string.format("%.f", filesystem.size("/home/t1232")) then
+					filesystem.remove(nyTb_k_uu_6a3bl .. "1232")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "отмена обновлений, версии совпадают")
+					return
+				end
 				local cTaTyc_ygaJIeHu9l = filesystem.remove(nyTb_k_uu_6a3bl)
 				if cTaTyc_ygaJIeHu9l then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой версии: " .. g .. "успешоно")
@@ -2930,6 +2935,13 @@ do
 	else
 		zagepJka_B_cekyHgax_npoBepku_oHJIauHa = configuration[24]
 	end
+	if configuration[25] == "nil" then
+		Bepcu9l_uu_6a3bl = string.format("%.f", filesystem.size("/home/t"))
+		configuration[25] = Bepcu9l_uu_6a3bl
+		setConfiguration()
+	else
+		Bepcu9l_uu_6a3bl = configuration[25]
+	end
 	--добавление в таблицу онлайна игроков
 	for Huk_gJI9l_online, _ in pairs(whiteListUsers) do
 		Ta6JIuca_npoBepku_online[Huk_gJI9l_online] = "ok"
@@ -3041,7 +3053,7 @@ do
 		raid_gocTyneH = false
 	end
 	--версия системы через объем файла
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "версия ии базы: " .. g .. string.format("%.f", filesystem.size("/home/t")))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "версия ии базы: " .. g .. Bepcu9l_uu_6a3bl)
 	--проверки завершены
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "СТАРТОВЫЕ ПРОВЕРКИ ПРОЙДЕНЫ!")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "старт главного цикла")

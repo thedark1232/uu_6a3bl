@@ -1533,20 +1533,20 @@ do
 			 table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_cJlegyI0IIIeu_nanKu, cTaTyc})
 		end
 		for _, Huk in ipairs(Ta6JIuca_nyTeu_JIoroB) do
-			if whiteListUsers[Huk_urpoka] ~= nil then
-				table.insert(TuMMeuTbl_online, {Huk_urpoka, Huk[2]})
+			if whiteListUsers[Huk[1]] ~= nil then
+				table.insert(TuMMeuTbl_online, {[Huk[1], Huk[2]})
 			else
-				table.insert(He_TuMMeuTbl_online, {Huk_urpoka, Huk[2]})
+				table.insert(He_TuMMeuTbl_online, {[Huk[1], Huk[2]})
 			end
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН ТИММЕЙТОВ:")
 		for _, v in ipairs(TuMMeuTbl_online) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. v[2])
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. tostring(v[2]))
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
 		c4e4uk_online = 1
 		for _, v in ipairs(He_TuMMeuTbl_online) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. v[2])
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. tostring(v[2]))
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи цвета"] = function()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправление мелких ошибок"
+local Ha3BaHue_o6HoBJIeHu9l = "исправление кривых дат и времени"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1599,7 +1599,7 @@ do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
 			else
 				local datetime = os.date("*t", v[2])
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.year .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
 			end
 			c4e4uk_online = c4e4uk_online + 1
 		end
@@ -1616,7 +1616,7 @@ do
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
 				else
 					local datetime = os.date("*t", v[2])
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. datetime.day .. "/" .. datetime.month .. "/" .. datetime.year .. " " .. datetime.hour .. ":" .. datetime.min .. ":" .. datetime.sec)
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
 				end
 				c4e4uk_online = c4e4uk_online + 1
 			end

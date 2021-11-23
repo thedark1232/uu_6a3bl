@@ -915,6 +915,35 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "игрок не найден в списках тиммейтов")
 		end
 	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обновить ии базы"] = function()
+		if component.isAvailable("internet") then
+			term.clear()
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "подготовка:")
+			local nyTb_k_uu_6a3bl = "/home/t"
+			local wget_function, olllu6ka = loadfile("/bin/wget.lua")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "загрузка обновлений...")
+			local status_wget, Ha3BaHue_olllu6ku = wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/uu_6a3bl_1_12_2.lua", nyTb_k_uu_6a3bl .. "1232")
+			if status_wget then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "загрузка обновлений: " .. g .. "успешно")
+				local cTaTyc_ygaJIeHu9l = filesystem.remove(nyTb_k_uu_6a3bl)
+				if cTaTyc_ygaJIeHu9l then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой версии: " .. g .. "успешоно")
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой верии: " .. r .. "ошибка")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверь путь для удаления: " .. r .. nyTb_k_uu_6a3bl)
+				end
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "копирование временных файлов в " .. nyTb_k_uu_6a3bl)
+				filesystem.copy(nyTb_k_uu_6a3bl .. "1232", nyTb_k_uu_6a3bl)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление временных файлов")
+				filesystem.remove(nyTb_k_uu_6a3bl .. "1232")
+				Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " рестарт сети"]()
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка: " .. tostring(Ha3BaHue_olllu6ku))
+			end
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "вставь интернет карту в комп")
+		end	
+	end	
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переустанови тап драйв"] = function()
 		if component.isAvailable("internet") then
 			tape_drive = getLibrary("tape_loader")

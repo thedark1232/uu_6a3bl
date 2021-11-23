@@ -796,7 +796,7 @@ end
 function Ha4aTb_npoBepKy_online(ceKyHgbl)
 	for k, _ in pairs(Ta6JIuca_npoBepku_online) do
 		if computer.addUser(k) then
-			filesLibrary.addValue("/home/" .. k, ceKyHgbl)
+			filesLibrary.creat_file("/home/" .. k .. ".online", ceKyHgbl)
 			computer.removeUser(k)
 		end
 	end
@@ -1528,21 +1528,15 @@ do
 		local Ta6JIuca_nyTeu_JIoroB = {}
 		local TuMMeuTbl_online = {}
 		local He_TuMMeuTbl_online = {}
-		for Ha3BaHue_cJlegyI0IIIeu_nanKu in filesystem.list("/home") do
-			if Ha3BaHue_cJlegyI0IIIeu_nanKu:match(".online") ~= nil then
-				table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_cJlegyI0IIIeu_nanKu, filesLibrary.write_file("/home/" .. Ha3BaHue_cJlegyI0IIIeu_nanKu, "не определено")})
-			end
+		for Ha3BaHue_qpauJIa, _ in pairs(Ta6JIuca_npoBepku_online) do
+			 local cTaTyc = filesLibrary.write_file("/home/" .. Ha3BaHue_qpauJIa .. ".online", "не определено")
+			 table.insert(Ta6JIuca_nyTeu_JIoroB, {Ha3BaHue_cJlegyI0IIIeu_nanKu, cTaTyc})
 		end
 		for _, Huk in ipairs(Ta6JIuca_nyTeu_JIoroB) do
-			local Huk_urpoka = string.match(Huk[1], "(.+)%.")
-			if Huk_urpoka ~= nil then
-				if whiteListUsers[Huk_urpoka] ~= nil then
-					table.insert(TuMMeuTbl_online, {Huk_urpoka, Huk[2]})
-				else
-					table.insert(He_TuMMeuTbl_online, {Huk_urpoka, Huk[2]})
-				end
+			if whiteListUsers[Huk_urpoka] ~= nil then
+				table.insert(TuMMeuTbl_online, {Huk_urpoka, Huk[2]})
 			else
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не удалось преобразовать ник: " .. Huk[1])
+				table.insert(He_TuMMeuTbl_online, {Huk_urpoka, Huk[2]})
 			end
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОНЛАЙН ТИММЕЙТОВ:")
@@ -2923,12 +2917,6 @@ do
 	else
 		zagepJka_B_ceKyHgax_BblBoga = configuration[22]
 	end
-	if configuration[23] == "nil" then
-		configuration[23] = Ta6JIuca_npoBepku_online
-		setConfiguration()
-	else
-		Ta6JIuca_npoBepku_online = configuration[23]
-	end
 	if configuration[24] == "nil" then
 		configuration[24] = zagepJka_B_cekyHgax_npoBepku_oHJIauHa
 		setConfiguration()
@@ -2946,6 +2934,7 @@ do
 	for Huk_gJI9l_online, _ in pairs(whiteListUsers) do
 		Ta6JIuca_npoBepku_online[Huk_gJI9l_online] = "ok"
 	end
+	Ta6JIuca_npoBepku_online[admin] = "ok"
 	configuration[23] = Ta6JIuca_npoBepku_online
 	setConfiguration()
 	if zanucblBaTb_JIoru then
@@ -2957,8 +2946,6 @@ do
 	for k, v in pairs(configuration[4]) do
 		adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[k] = v
 	end
-	
-	
 	--проверка детекторов, сенсоров, туррелей
 	agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku = nouck_maccuBa_koMnoHeHToB(false, "os_entdetector", nyTb_k_qpauJIy_config_geTecTopa)
 	agreca_ceHcopoB_Tpe6yl0lllux_o6pa6oTku = nouck_maccuBa_koMnoHeHToB(false, "openperipheral_sensor", nyTb_k_qpauJIy_config_ceHcopoB)

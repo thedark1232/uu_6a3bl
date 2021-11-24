@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправление кривых дат и времени"
+local Ha3BaHue_o6HoBJIeHu9l = "ошибки онлайна игроков"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -816,11 +816,6 @@ function BblBog_akTuBHocTu_urpokoB_Ha_MoHuTop(BblBoguTb)
 			x = HanuCaTb_6oJIblllou_TekcT(x, y, text_table, "setGreen")
 			y = y + 4
 		end
-		_, _, _, BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop = getTime()
-		BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop = BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop + zagepJka_B_ceKyHgax_BblBoga
-		d, h, m, s = Bbl4ucJIeHue_BpeMeHu(BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание следующего обновления в:")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. string.format("%02d", h) .. ":" .. string.format("%02d", m) .. ":" ..string.format("%02d", s))
 	else
 		term.clear()
 	end
@@ -3391,6 +3386,10 @@ do
 		end
 		if BblBog_JIoroB_urpokoB_Ha_MoHuTop and cekyHdbl_gJI9l_JIoroB > BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop then
 			BblBog_akTuBHocTu_urpokoB_Ha_MoHuTop(true)
+			BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop = cekyHdbl_gJI9l_JIoroB + zagepJka_B_ceKyHgax_BblBoga
+			local d, h, m, s = Bbl4ucJIeHue_BpeMeHu(BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание следующего обновления в:")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. string.format("%02d", h) .. ":" .. string.format("%02d", m) .. ":" ..string.format("%02d", s))
 		end
 		if cekyHdbl_gJI9l_JIoroB > Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало плановых обновлений базы данных")

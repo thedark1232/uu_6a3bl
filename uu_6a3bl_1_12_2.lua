@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ошибки онлайна игроков"
+local Ha3BaHue_o6HoBJIeHu9l = "ебаная матрица"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -193,10 +193,11 @@ table.insert(redStone_functions, {"написать в чат инфо собы�
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поступившая сила: " .. g .. tostring(cTopoHa_nocJIe_u3MeHeu9l))
 end})
 table.insert(redStone_functions, {"матрица", function(agrecc_curHaJIa, cTopoHa_curHaJIa, cTopoHa_go_u3MeHeHu9l, cTopoHa_nocJIe_u3MeHeu9l)
-	if cTopoHa_nocJIe_u3MeHeu9l > 1 then
+	if cTopoHa_nocJIe_u3MeHeu9l > 14 then
 		coo6llleHue_oT_redstone = true
 		teKcT_coo6llleHu9l = "требуется включение матрицы!"
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ТРЕБУЕТСЯ ВКЛЮЧЕНИЕ МАТРИЦЫ!")
+		--component.invoke(agrecc_curHaJIa, "setInput", 
 	else
 		coo6llleHue_oT_redstone = false
 	end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "смена логики"
+local Ha3BaHue_o6HoBJIeHu9l = "проверка"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1708,7 +1708,6 @@ do
 									--print("перемещение предмета")
 									component.invoke(agrec, "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
 									table.insert(Ta6JIuca_nbegecTaJIoB, agrec)
-									Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "пьедестал найден: " .. a .. " из " .. 11)
 									npegMeT_nepeMellleH = true
 								end
 							end
@@ -1716,6 +1715,10 @@ do
 					end
 				end
 			end
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адреса найденых пьедесталов:")
+		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. string.sub(v, 1, 3))
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()

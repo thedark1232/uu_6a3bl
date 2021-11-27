@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настрока пьедесталов"
+local Ha3BaHue_o6HoBJIeHu9l = "исправление багов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1563,6 +1563,7 @@ do
 		local Ta6JIuca_coo6llleHuu_aJIucbl = {}
 		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса центрального транспозера:")
 		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса транспозера с сундуками")
+		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса ме интерфейса")
 		local uTepacu9l_noucka_agpecoB = 2
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ подачи ресурсов к матрице")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через мэ интерфейс?")
@@ -1614,7 +1615,7 @@ do
 			agrec_me_interface_gJI9l_MaTpucbl = Ta6JIuca_nbegecTaJIoB[#Ta6JIuca_nbegecTaJIoB]
 			table.remove(Ta6JIuca_nbegecTaJIoB)
 			local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
-			if #Bce_uTeMbl_B_ceTu = 0 then
+			if #Bce_uTeMbl_B_ceTu == 0 then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итемы в мэ не найдены")
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
 				return

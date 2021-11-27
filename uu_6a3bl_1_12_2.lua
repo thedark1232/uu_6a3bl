@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "компонент инвок"
+local Ha3BaHue_o6HoBJIeHu9l = "ну с богом"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -858,7 +858,24 @@ function o6pa6oTka_Bxog9llllux_curHaJIoB_redStone(uM9l_curHaJIa, agrecc_curHaJIa
 	configuration[27] = co6blTu9l_redStone
 	setConfiguration()
 end
-
+function HauTu_uHBeHTapb(agpec) --найти сундук по заданой стороне, у которого больше 1 слота (через транспозер)
+	for k, v in ipairs(ta6JIuca_cTopoH) do
+		local result = component.invoke(agpec, "getInventorySize", k)
+		if result > 1 and result ~= 9 then
+			return k, result
+		end
+	end
+	return -1
+end
+function HauTu_nbegecTaJI(agpec)
+	for k, v in ipairs(ta6JIuca_cTopoH) do
+		local result = component.invoke(agpec, "getInventorySize", k)
+		if result == 1 then
+			return k, result
+		end
+	end
+	return -1
+end
 do
 	--осчистка монитора
 	term.clear()
@@ -1620,6 +1637,18 @@ do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
 				return
 			else
+				local HoMep_uTema = 0
+				for k, v in ipairs(Bce_uTeMbl_B_ceTu) do
+					if v.size > 6 then
+						HoMep_uTema = k
+						break
+					end
+				end
+				if HoMep_uTema = 0 then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подходящего итема в мэ не найдено")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+					return
+				end
 				for j = 1, 6 do
 					local re3yJIbTaT, olllu6ka = pcall(function()
 						component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
@@ -1629,13 +1658,32 @@ do
 					if re3yJIbTaT then
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успех")
 					else
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. olllu6ka)
+						--Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. olllu6ka)
 					end
 				end
-			end
-		else
-		
+			end		
 		end
+		--проверка итема в сундуке
+		local cTopoHa_cyHgyka, pa3Mep_uHBeHTap9l = HauTu_uHBeHTapb(Ta6JIuca_nbegecTaJIoB[2])
+		if cTopoHa_cyHgyka == -1 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "стартовый сундук не найден")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+			return
+		end
+		local HoMep_cJIoTa_cyHgyKa = 0
+		local Ta6JIuca_uTema = {}
+		for cJIoT_B_CyHgyke = 1, pa3Mep_uHBeHTap9l do
+			local Ta6JIuca_uTema = component.invoke(Ta6JIuca_nbegecTaJIoB[2], "getStackInSlot", cTopoHa_cyHgyka, cJIoT_B_CyHgyke)
+			if Ta6JIuca_uTema ~= nil then
+				HoMep_cJIoTa_cyHgyKa = cJIoT_B_CyHgyke
+			end
+		end
+		if HoMep_cJIoTa_cyHgyKa == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итем для настройке не найден")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+			return
+		end
+		component.invoke(Ta6JIuca_nbegecTaJIoB[2], "transferItem", cTopoHa_cyHgyka, HauTu_nbegecTaJI(Ta6JIuca_nbegecTaJIoB[2]), 1, HoMep_cJIoTa_cyHgyKa, 1)
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then

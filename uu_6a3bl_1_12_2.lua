@@ -309,10 +309,6 @@ function zarpy3ka_koMnoHeHToB()
 	return Bce_koMnoHeHTbl_npucyTcTByl0T
 end
 function getLibrary(name)
-	local Ta6JIuca_nporpaMM_He_Tpe6yl0lllux_nepe3arpy3ku = {}
-	Ta6JIuca_nporpaMM_He_Tpe6yl0lllux_nepe3arpy3ku["tape_loader"] = "ok"
-	Ta6JIuca_nporpaMM_He_Tpe6yl0lllux_nepe3arpy3ku["myComponentsLibrary"] = "ok"
-	
     package.loaded[name] = nil
 	local arg1, arg2
 	local library_name = "return require(\"" ..name.. "\")"
@@ -322,12 +318,24 @@ function getLibrary(name)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. name .. " ...загружено")
 		return arg2
 	else
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "при поиске библиотеки: " ..name .. " произошла ошибка")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(arg2))
-		if Ta6JIuca_nporpaMM_He_Tpe6yl0lllux_nepe3arpy3ku[name] == nil then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "выполняю рестарт сети")
+		if component.isAvailable("internet") then
+			local wget_function, olllu6ka = loadfile("/bin/wget.lua")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "скачивание библиотеки: " .. name)
+			local status_wget, Ha3BaHue_olllu6ku = wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/" .. name .. ".lua", "/lib/" .. name .. ".lua")
+			if status_wget then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "успешно")
+				getLibrary(name)
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка: " .. tostring(Ha3BaHue_olllu6ku))
+			end
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "требуется загрузка библиотеки: " .. name)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "вставь интернет карту в комп")
+			local file = io.open("/home/.shrc", "w")
+			file:write(" ")
+			file:close()
 			computer.shutdown(true)
-		end
+		end	
 	end
 end
 function getConfiguration()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги определения сторон"
+local Ha3BaHue_o6HoBJIeHu9l = "путешествие предмета по пьедесталам"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -876,6 +876,7 @@ function HauTu_nbegecTaJI(agpec)
 	end
 	return -1
 end
+
 do
 	--осчистка монитора
 	term.clear()
@@ -1649,16 +1650,14 @@ do
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
 					return
 				end
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещение предмета в сундук")
 				for j = 1, 6 do
 					local re3yJIbTaT, olllu6ka = pcall(function()
 						component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
 					end)
-					
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат по стороне: " .. ta6JIuca_cTopoH_gJI9l_me[j])
 					if re3yJIbTaT then
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат по стороне: " .. ta6JIuca_cTopoH_gJI9l_me[j])
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успех")
-					else
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. olllu6ka)
 					end
 				end
 			end		
@@ -1684,6 +1683,22 @@ do
 			return
 		end
 		component.invoke(Ta6JIuca_nbegecTaJIoB[2], "transferItem", cTopoHa_cyHgyka, HauTu_nbegecTaJI(Ta6JIuca_nbegecTaJIoB[2]), 1, HoMep_cJIoTa_cyHgyKa, 1)
+		for a = 1, 11 do
+			for HoMep_nbegecTaJIa = 3, #agreca_Bcex_TraHcno3epoB do
+				if agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa] ~= Ta6JIuca_nbegecTaJIoB[1] and  agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa] ~= Ta6JIuca_nbegecTaJIoB[2] then
+					for cTopoHa_c_npegMeToM = 0, 5 do
+						if component.invoke(agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], "getStackInSlot", cTopoHa_c_npegMeToM, 1) then
+							for cTopoHa_6e3_npegMeTa = 0, 5 do
+								if cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
+									component.invoke(agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
+									os.sleep(1)
+								end
+							end
+						end
+					end
+				end
+			end
+		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "еще исправления"
+local Ha3BaHue_o6HoBJIeHu9l = "смена логики"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1698,16 +1698,18 @@ do
 					end
 				end
 				if not agpec_HaugeH then
+					local npegMeT_nepeMellleH = false
 					--print("поиск предмета по всем сторонам")
 					for cTopoHa_c_npegMeToM = 0, 5 do
-						if component.invoke(agrec, "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil then
+						if component.invoke(agrec, "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil and not npegMeT_nepeMellleH then
 							--print("предмет найден на стороне: " .. ta6JIuca_cTopoH[cTopoHa_c_npegMeToM])
 							for cTopoHa_6e3_npegMeTa = 0, 5 do
-								if cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agrec, "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
+								if not npegMeT_nepeMellleH and cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agrec, "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
 									--print("перемещение предмета")
 									component.invoke(agrec, "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
 									table.insert(Ta6JIuca_nbegecTaJIoB, agrec)
-									Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. a .. ": перемещаю предмет между пьедесталами")
+									Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "пьедестал найден: " .. a .. " из " .. 11)
+									npegMeT_nepeMellleH = true
 								end
 							end
 						end

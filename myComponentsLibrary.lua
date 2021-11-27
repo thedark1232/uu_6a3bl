@@ -53,12 +53,6 @@ function myComponentsLibrary.cpaBHuTb_gBe_Ta6Jlucbl(Ta6Jluca_agpecoB, Ta6Jluca_u
 end
 --возвращает обновленную таблицу компонентов
 function myComponentsLibrary.co3gaTb_u_coxpaHuTb_uHqpy_koMnoHeHTa(adress, Ha3BaHue_koMnoHeHTa, x, y, z, Ha3BaHue_u_nyTb_k_qpauJIy_configa)
-	print("adress" .. adress)
-	print("Ha3BaHue_koMnoHeHTa " .. Ha3BaHue_koMnoHeHTa)
-	print("x " .. x)
-	print("y " .. y)
-	print("z " .. z)
-	
 	adress = tostring(adress)
 	Ha3BaHue_koMnoHeHTa = tostring(Ha3BaHue_koMnoHeHTa)
 	x = tostring(x)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "компонент инвок"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1622,7 +1622,7 @@ do
 			else
 				for j = 1, 6 do
 					local re3yJIbTaT, olllu6ka = pcall(function()
-						Ta6JIuca_koMnoHeHToB["me_interface"].exportItem({id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
+						component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
 					end)
 					
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат по стороне: " .. ta6JIuca_cTopoH_gJI9l_me[j])

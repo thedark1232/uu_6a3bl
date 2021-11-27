@@ -1692,6 +1692,7 @@ do
 								if cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
 									component.invoke(agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
 									os.sleep(1)
+									Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещаю предмет между пьедесталами")
 								end
 							end
 						end

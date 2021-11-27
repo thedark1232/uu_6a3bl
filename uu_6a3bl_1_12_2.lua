@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправление багов"
+local Ha3BaHue_o6HoBJIeHu9l = "баги матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1621,9 +1621,16 @@ do
 				return
 			else
 				for j = 1, 6 do
-					pcall(function()
+					local re3yJIbTaT, olllu6ka = pcall(function()
 						me_interface.exportItem({id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
 					end)
+					
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат по стороне: " .. ta6JIuca_cTopoH_gJI9l_me[j])
+					if re3yJIbTaT then
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успех")
+					else
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "fail")
+					end
 				end
 			end
 		else

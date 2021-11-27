@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "библиотеки"
+local Ha3BaHue_o6HoBJIeHu9l = "настрока пьедесталов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -14,6 +14,8 @@ local baza_Bblxog = "база выход" --нужно, чтобы не запи
 local not_exit = true
 local Ta6JIuca_koMnoHeHToB = {}
 local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
+local Ta6JIuca_nbegecTaJIoB = {}
+local me_interface_gJI9l_MaTpucbl = false
 local c = "§6" --оранжевый
 local r = "§c" --красный
 local g = "§a" --зеленый
@@ -26,6 +28,7 @@ local co6blTu9l_redStone = {}
 local uHTepBaJI_3agepJku_3anucu_JIoroB = 5
 local zanucblBaTb_JIoru = true
 local tape_drive
+local agrec_me_interface_gJI9l_MaTpucbl = ""
 local coo6llleHue_oT_redstone = false
 local teKcT_coo6llleHu9l = ""
 local nick_gJI9l_npuBeTcTBu9l = "гость"
@@ -123,6 +126,14 @@ ta6JIuca_cTopoH[2] = "север"
 ta6JIuca_cTopoH[3] = "юг"
 ta6JIuca_cTopoH[4] = "запад"
 ta6JIuca_cTopoH[5] = "восток"
+
+local ta6JIuca_cTopoH_gJI9l_me = {}
+table.insert(ta6JIuca_cTopoH_gJI9l_me, "DOWN")
+table.insert(ta6JIuca_cTopoH_gJI9l_me, "UP")
+table.insert(ta6JIuca_cTopoH_gJI9l_me, "NORTH")
+table.insert(ta6JIuca_cTopoH_gJI9l_me, "SOUTH")
+table.insert(ta6JIuca_cTopoH_gJI9l_me, "WEST")
+table.insert(ta6JIuca_cTopoH_gJI9l_me, "EAST")
 
 local colors_text = {["setWhite"] = function() gpu.setForeground(0xFFFFFF) end,
 					 ["setGreen"] = function() gpu.setForeground(0x00FF00) end,
@@ -253,22 +264,18 @@ function zarpy3ka_koMnoHeHToB()
 		Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] = "glasses"
 		Bce_koMnoHeHTbl_npucyTcTByl0T = false	
 	end
-
-	--детектор игроков
 	if component.isAvailable("os_entdetector") then
 		Ta6JIuca_koMnoHeHToB["os_entdetector"] = component.os_entdetector
 	else
 		Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_entdetector"] = "os_entdetector"
 		Bce_koMnoHeHTbl_npucyTcTByl0T = false
 	end
-	--стриммер
 	if component.isAvailable("tape_drive") then
 		Ta6JIuca_koMnoHeHToB["tape_drive"] = component.tape_drive
 	else
 		Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["tape_drive"] = "tape_drive"
 		Bce_koMnoHeHTbl_npucyTcTByl0T = false
-	end
-	
+	end	
 	if component.isAvailable("self_destruct") then
 		Ta6JIuca_koMnoHeHToB["self_destruct"] = component.self_destruct
 	else
@@ -280,8 +287,7 @@ function zarpy3ka_koMnoHeHToB()
 	else
 		Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] = "modem"
 		Bce_koMnoHeHTbl_npucyTcTByl0T = false
-	end
-	
+	end	
 	if component.isAvailable("openperipheral_bridge") then
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"] = component.openperipheral_bridge
 	else
@@ -306,6 +312,13 @@ function zarpy3ka_koMnoHeHToB()
 		Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] = "radar"
 		Bce_koMnoHeHTbl_npucyTcTByl0T = false
 	end
+	if component.isAvailable("tileinfusionstone") then
+		Ta6JIuca_koMnoHeHToB["tileinfusionstone"] = component.tileinfusionstone
+	else
+		Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["tileinfusionstone"] = "tileinfusionstone"
+		Bce_koMnoHeHTbl_npucyTcTByl0T = false
+	end
+	
 	return Bce_koMnoHeHTbl_npucyTcTByl0T
 end
 function getLibrary(name)
@@ -845,6 +858,7 @@ function o6pa6oTka_Bxog9llllux_curHaJIoB_redStone(uM9l_curHaJIa, agrecc_curHaJIa
 	configuration[27] = co6blTu9l_redStone
 	setConfiguration()
 end
+
 do
 	--осчистка монитора
 	term.clear()
@@ -898,6 +912,9 @@ do
 		deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl()
 		filesLibrary.creat_file("/home/shutdown_mod", "false")
 		not_exit = false
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " поблагодари kayatik"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "спасибо Kayatik за хорошо проделанную воспитательную работу:)")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник")
@@ -1008,7 +1025,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "тап драйв переустановлен")
 			Ta6JIuca_admin_koMaHg["база какое время задержки тап драйв"]()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю рестарт для обновлений")
-			not_exit = false
+			computer.shutdown(true)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("§6требуется интернет карта")
 		end
@@ -1264,7 +1281,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB['os_energyturret'] == nil")
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить настройки сенсоров"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали настройки сенсоров"] = function()
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 		ceHcopbl_BKJI = false
@@ -1277,7 +1294,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(olllu6ka_ygaJIeHu9l))
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить настройки детекторов"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали настройки детекторов"] = function()
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 		detectorbl_BKJI = false
@@ -1290,7 +1307,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(olllu6ka_ygaJIeHu9l))
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить настройки туррелей"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали настройки туррелей"] = function()
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 		typpeJIu_gocTynHbl = false
@@ -1536,6 +1553,82 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "RAID не допуступен")
 		end
 	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить пьедесталы"] = function()
+		local BBog_koppekTeH, coo6llleHue
+		local TaJIuca_me_interface = {}
+		local agreca_Bcex_TraHcno3epoB = component.list("transposer")
+		local agreca_Bcex_me_interface = component.list("me_interface")
+		local koJIu4ecTBo_agrecoB = 0
+		local Ta6JIuca_agpecoB_no_HoMepaM = {}
+		local Ta6JIuca_coo6llleHuu_aJIucbl = {}
+		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса центрального транспозера:")
+		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса транспозера с сундуками")
+		local uTepacu9l_noucka_agpecoB = 2
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ подачи ресурсов к матрице")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через мэ интерфейс?")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
+		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		if coo6llleHue == "да" then
+			me_interface_gJI9l_MaTpucbl = true
+			uTepacu9l_noucka_agpecoB = uTepacu9l_noucka_agpecoB + 1
+		elseif coo6llleHue == "нет" then
+			me_interface_gJI9l_MaTpucbl = false
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+			return
+		end
+	
+		for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
+			table.insert(Ta6JIuca_agpecoB_no_HoMepaM, agrec)
+		end
+		if me_interface_gJI9l_MaTpucbl then
+			for agrec_me_interface, _ in pairs(agreca_Bcex_me_interface) do
+				table.insert(Ta6JIuca_agpecoB_no_HoMepaM, agrec_me_interface)
+			end
+		end
+		if #Ta6JIuca_agpecoB_no_HoMepaM == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "транспозеры не найдены")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+			return	
+		end
+		for i = 1, uTepacu9l_noucka_agpecoB do
+			for HoMep, agrec_transoser in ipairs(Ta6JIuca_agpecoB_no_HoMepaM) do
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. HoMep .. ": " .. g .. string.sub(agrec_transoser, 1, 3))
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. Ta6JIuca_coo6llleHuu_aJIucbl[i])
+			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			coo6llleHue = tonumber(coo6llleHue)
+			if coo6llleHue == nil or coo6llleHue <= 0 or coo6llleHue > #Ta6JIuca_agpecoB_no_HoMepaM then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введен неверный номер")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+				return
+			end
+			table.insert(Ta6JIuca_nbegecTaJIoB, Ta6JIuca_agpecoB_no_HoMepaM[coo6llleHue])
+			table.remove(Ta6JIuca_agpecoB_no_HoMepaM, coo6llleHue)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес записан!")
+		end
+		if me_interface_gJI9l_MaTpucbl then
+			agrec_me_interface_gJI9l_MaTpucbl = Ta6JIuca_nbegecTaJIoB[#Ta6JIuca_nbegecTaJIoB]
+			table.remove(Ta6JIuca_nbegecTaJIoB)
+			local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
+			if #Bce_uTeMbl_B_ceTu = 0 then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итемы в мэ не найдены")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+				return
+			else
+				for j = 1, 6 do
+					pcall(function()
+						me_interface.exportItem({id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
+					end)
+				end
+			end
+		else
+		
+		end
+	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
 			if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("zdraBcTByu_JIopg_The_Dark.dfpwm") end
@@ -1778,7 +1871,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=============================")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl ..  " удалить сообщения матрицы"] = function()
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удалить сообщения матрицы"] = function()
 		coo6llleHue_oT_redstone = false
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " очистить ред события"] = function()
@@ -3140,7 +3233,24 @@ do
 	else
 		co6blTu9l_redStone = configuration[27]
 	end
-
+	if configuration[28] == "nil" then
+		configuration[28] = Ta6JIuca_nbegecTaJIoB
+		setConfiguration()
+	else
+		Ta6JIuca_nbegecTaJIoB = configuration[28]
+	end
+	if configuration[29] == "nil" then
+		configuration[29] = me_interface_gJI9l_MaTpucbl
+		setConfiguration()
+	else
+		me_interface_gJI9l_MaTpucbl = configuration[29]
+	end
+	if configuration[30] == "nil" then
+		configuration[30] = agrec_me_interface_gJI9l_MaTpucbl
+		setConfiguration()
+	else
+		agrec_me_interface_gJI9l_MaTpucbl = configuration[30]
+	end
 	--записывать логи с детекторов
 	if zanucblBaTb_JIoru then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. g .. "ВКЛ")
@@ -3254,6 +3364,8 @@ do
 	term.clear()
 	TekcT_nocJIe_x = HanuCaTb_6oJIblllou_TekcT(10, 1, {"М", "А", "Л", "Ы", "Ш", "К", "А", "пробел", "пробел", "А", "Л", "И", "С", "А", "двоеточие"}, "setPurple")
 	HanuCaTb_6oJIblllou_TekcT(TekcT_nocJIe_x + 1, 1, {"А", "К", "Т", "И", "В", "Н", "А"}, "setGreen")
+	--добавление админа в вайт лист
+	whiteListUsers[admin] = "ok"
 --ГЛАВНЫЙ ЦИКЛ
 	while not_exit do
 		os.sleep(zagepJka)

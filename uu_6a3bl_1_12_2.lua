@@ -1700,14 +1700,15 @@ do
 								if cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agrec, "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
 									--print("перемещение предмета")
 									component.invoke(agrec, "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
-									os.sleep(1)
-									Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещаю предмет между пьедесталами")
+									table.insert(Ta6JIuca_nbegecTaJIoB, agrec)
+									Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. a .. ": перемещаю предмет между пьедесталами")
 								end
 							end
 						end
 					end
 				end
 			end
+			agreca_Bcex_TraHcno3epoB[#Ta6JIuca_nbegecTaJIoB] = nil
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "логирование перемещения"
+local Ha3BaHue_o6HoBJIeHu9l = "баги перемещения"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1685,21 +1685,21 @@ do
 		component.invoke(Ta6JIuca_nbegecTaJIoB[2], "transferItem", cTopoHa_cyHgyka, HauTu_nbegecTaJI(Ta6JIuca_nbegecTaJIoB[2]), 1, HoMep_cJIoTa_cyHgyKa, 1)
 		
 		for a = 1, 11 do
-			for HoMep_nbegecTaJIa = 3, #agreca_Bcex_TraHcno3epoB do
+			for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
 				term.clear()
 				print("энтер для старта")
 				io.read()
-				print("проверка транспозера с адресом " .. string.sub( agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], 1, 3))
+				print("проверка транспозера с адресом " .. string.sub(agrec, 1, 3))
 				io.read()
-				if agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa] ~= Ta6JIuca_nbegecTaJIoB[1] and agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa] ~= Ta6JIuca_nbegecTaJIoB[2] then
+				ifagrec ~= Ta6JIuca_nbegecTaJIoB[1] and agrec ~= Ta6JIuca_nbegecTaJIoB[2] then
 					print("поиск предмета по всем сторонам")
 					for cTopoHa_c_npegMeToM = 0, 5 do
-						if component.invoke(agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil then
+						if component.invoke(agrec, "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil then
 							print("предмет найден на стороне: " .. ta6JIuca_cTopoH[cTopoHa_c_npegMeToM])
 							for cTopoHa_6e3_npegMeTa = 0, 5 do
-								if cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
+								if cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agrec, "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
 									print("перемещение предмета")
-									component.invoke(agreca_Bcex_TraHcno3epoB[HoMep_nbegecTaJIa], "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
+									component.invoke(agrec, "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
 									os.sleep(1)
 									Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещаю предмет между пьедесталами")
 								end

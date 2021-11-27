@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ну с богом"
+local Ha3BaHue_o6HoBJIeHu9l = "баги определения сторон"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -861,7 +861,7 @@ end
 function HauTu_uHBeHTapb(agpec) --найти сундук по заданой стороне, у которого больше 1 слота (через транспозер)
 	for k, v in ipairs(ta6JIuca_cTopoH) do
 		local result = component.invoke(agpec, "getInventorySize", k)
-		if result > 1 and result ~= 9 then
+		if result ~= nil and result > 1 and result ~= 9 then
 			return k, result
 		end
 	end
@@ -870,7 +870,7 @@ end
 function HauTu_nbegecTaJI(agpec)
 	for k, v in ipairs(ta6JIuca_cTopoH) do
 		local result = component.invoke(agpec, "getInventorySize", k)
-		if result == 1 then
+		if result ~= nil and result == 1 then
 			return k, result
 		end
 	end
@@ -1644,7 +1644,7 @@ do
 						break
 					end
 				end
-				if HoMep_uTema = 0 then
+				if HoMep_uTema == 0 then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подходящего итема в мэ не найдено")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
 					return

@@ -1622,14 +1622,14 @@ do
 			else
 				for j = 1, 6 do
 					local re3yJIbTaT, olllu6ka = pcall(function()
-						me_interface.exportItem({id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
+						Ta6JIuca_koMnoHeHToB["me_interface"].exportItem({id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
 					end)
 					
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат по стороне: " .. ta6JIuca_cTopoH_gJI9l_me[j])
 					if re3yJIbTaT then
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успех")
 					else
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "fail")
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. olllu6ka)
 					end
 				end
 			end

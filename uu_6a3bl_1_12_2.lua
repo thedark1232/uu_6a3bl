@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги перемещения"
+local Ha3BaHue_o6HoBJIeHu9l = "вроде робит"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1686,19 +1686,19 @@ do
 		
 		for a = 1, 11 do
 			for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
-				term.clear()
-				print("энтер для старта")
-				io.read()
-				print("проверка транспозера с адресом " .. string.sub(agrec, 1, 3))
-				io.read()
-				ifagrec ~= Ta6JIuca_nbegecTaJIoB[1] and agrec ~= Ta6JIuca_nbegecTaJIoB[2] then
-					print("поиск предмета по всем сторонам")
+				--print("энтер для старта")
+				--io.read()
+				--term.clear()
+				--print("проверка транспозера с адресом " .. string.sub(agrec, 1, 3))
+				--io.read()
+				if agrec ~= Ta6JIuca_nbegecTaJIoB[1] and agrec ~= Ta6JIuca_nbegecTaJIoB[2] then
+					--print("поиск предмета по всем сторонам")
 					for cTopoHa_c_npegMeToM = 0, 5 do
 						if component.invoke(agrec, "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil then
-							print("предмет найден на стороне: " .. ta6JIuca_cTopoH[cTopoHa_c_npegMeToM])
+							--print("предмет найден на стороне: " .. ta6JIuca_cTopoH[cTopoHa_c_npegMeToM])
 							for cTopoHa_6e3_npegMeTa = 0, 5 do
 								if cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agrec, "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
-									print("перемещение предмета")
+									--print("перемещение предмета")
 									component.invoke(agrec, "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
 									os.sleep(1)
 									Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещаю предмет между пьедесталами")

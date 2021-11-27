@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления"
+local Ha3BaHue_o6HoBJIeHu9l = "еще исправления"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1691,7 +1691,13 @@ do
 				--term.clear()
 				--print("проверка транспозера с адресом " .. string.sub(agrec, 1, 3))
 				--io.read()
-				if agrec ~= Ta6JIuca_nbegecTaJIoB[1] and agrec ~= Ta6JIuca_nbegecTaJIoB[2] then
+				local agpec_HaugeH = false
+				for _, agpec_gJI9l_cpaBHeHu9l in ipairs(Ta6JIuca_nbegecTaJIoB) do
+					if agpec_gJI9l_cpaBHeHu9l == agrec then
+						agpec_HaugeH = true
+					end
+				end
+				if not agpec_HaugeH then
 					--print("поиск предмета по всем сторонам")
 					for cTopoHa_c_npegMeToM = 0, 5 do
 						if component.invoke(agrec, "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil then
@@ -1708,7 +1714,6 @@ do
 					end
 				end
 			end
-			agreca_Bcex_TraHcno3epoB[#Ta6JIuca_nbegecTaJIoB] = nil
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()

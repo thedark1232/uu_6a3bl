@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "все компоненты"
+local Ha3BaHue_o6HoBJIeHu9l = "хуй"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1037,7 +1037,9 @@ do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ПРОЩАЙ!:(")
 				component.self_destruct.start(0.1)
 		else
-			Ta6JIuca_koMnoHeHToB["chat_box"].say("§6нет необходимого компонента")
+			filesystem.remove("/home/t")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ПРОЩАЙ!:(")
+			computer.shutdown()
 		end
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " начало теста"] = function()
@@ -1562,6 +1564,7 @@ do
 		local Bce_KoMnoHeHTbl = {}
 		local re3yJIbTaT_noucka = component.list()
 		local c4eT4uk_no3ucuu = 1
+		local o6lllee_koJIu4ecTBo = 0
 		for _, uM9l_koMnoHeHTa in pairs(re3yJIbTaT_noucka) do
 			if Bce_KoMnoHeHTbl[uM9l_koMnoHeHTa] == nil then
 				Bce_KoMnoHeHTbl[uM9l_koMnoHeHTa] = 1
@@ -1572,7 +1575,9 @@ do
 		for k, v in pairs(Bce_KoMnoHeHTbl) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. c4eT4uk_no3ucuu .. ": " .. k .. " = " .. tostring(v))
 			c4eT4uk_no3ucuu = c4eT4uk_no3ucuu + 1
+			o6lllee_koJIu4ecTBo = o6lllee_koJIu4ecTBo + v
 		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общее кол-во: " .. tostring(o6lllee_koJIu4ecTBo))
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " статус онлайна"] = function()
 		local c4e4uk_online = 1

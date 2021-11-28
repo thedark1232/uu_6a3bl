@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "дебаг таблицы"
+local Ha3BaHue_o6HoBJIeHu9l = "дебаг таблицы2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1585,7 +1585,7 @@ do
 		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса ме интерфейса")
 		local uTepacu9l_noucka_agpecoB = 2
 		setmetatable(Ta6JIuca_nbegecTaJIoB, {__newindex = function(t, k, v) 
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "Ta6JIuca_nbegecTaJIoB[" .. tostring(k) .. "] = " .. tostring(v)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "Ta6JIuca_nbegecTaJIoB[" .. tostring(k) .. "] = " .. tostring(v))
 		end})
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ подачи ресурсов к матрице")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через мэ интерфейс?")
@@ -1632,13 +1632,11 @@ do
 			table.insert(Ta6JIuca_nbegecTaJIoB, Ta6JIuca_agpecoB_no_HoMepaM[coo6llleHue])
 			table.remove(Ta6JIuca_agpecoB_no_HoMepaM, coo6llleHue)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес записан!")
-			
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===========================")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адреса найденых пьедесталов")
 			for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. string.sub(v, 1, 3))
-			end
-			
-			
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. k .. ": " .. string.sub(v, 1, 3))
+			end	
 		end
 		if me_interface_gJI9l_MaTpucbl then
 			agrec_me_interface_gJI9l_MaTpucbl = Ta6JIuca_nbegecTaJIoB[#Ta6JIuca_nbegecTaJIoB]

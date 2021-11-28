@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест таблицы"
+local Ha3BaHue_o6HoBJIeHu9l = "дебаг таблицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1572,6 +1572,7 @@ do
 		end
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить пьедесталы"] = function()
+		Ta6JIuca_nbegecTaJIoB = {}
 		local BBog_koppekTeH, coo6llleHue
 		local TaJIuca_me_interface = {}
 		local agreca_Bcex_TraHcno3epoB = component.list("transposer")
@@ -1583,6 +1584,9 @@ do
 		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса транспозера с сундуками")
 		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса ме интерфейса")
 		local uTepacu9l_noucka_agpecoB = 2
+		setmetatable(Ta6JIuca_nbegecTaJIoB, {__newindex = function(t, k, v) 
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "Ta6JIuca_nbegecTaJIoB[" .. tostring(k) .. "] = " .. tostring(v)
+		end})
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ подачи ресурсов к матрице")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через мэ интерфейс?")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")

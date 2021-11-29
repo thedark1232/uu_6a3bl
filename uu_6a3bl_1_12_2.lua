@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "дебаг таблицы2"
+local Ha3BaHue_o6HoBJIeHu9l = "обновление поиска транспозеров"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -126,6 +126,14 @@ ta6JIuca_cTopoH[2] = "север"
 ta6JIuca_cTopoH[3] = "юг"
 ta6JIuca_cTopoH[4] = "запад"
 ta6JIuca_cTopoH[5] = "восток"
+
+local o6paTHa9l_Ta6JIuca_cTopoH = {}
+o6paTHa9l_Ta6JIuca_cTopoH["снизу"] = 0
+o6paTHa9l_Ta6JIuca_cTopoH["сверху"] = 1
+o6paTHa9l_Ta6JIuca_cTopoH["север"] = 2
+o6paTHa9l_Ta6JIuca_cTopoH["юг"] = 3
+o6paTHa9l_Ta6JIuca_cTopoH["запад"] = 4
+o6paTHa9l_Ta6JIuca_cTopoH["восток"] = 5
 
 local ta6JIuca_cTopoH_gJI9l_me = {}
 table.insert(ta6JIuca_cTopoH_gJI9l_me, "DOWN")
@@ -876,6 +884,35 @@ function HauTu_nbegecTaJI(agpec)
 	end
 	return -1
 end
+function py4Hou_BBog_agreca(text, ta6JIuca_agrecoB)
+	--вид таблицы адресов должен быть ipairs
+	for nop9lgkoBblu_HoMep, agrec in ipairs(ta6JIuca_agrecoB) do
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. nop9lgkoBblu_HoMep .. ": " .. g .. string.sub(agrec, 1, 3))
+	end
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. text)
+	BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+	if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return false end
+	coo6llleHue = tonumber(coo6llleHue)
+	if coo6llleHue == nil or coo6llleHue <= 0 or coo6llleHue > #ta6JIuca_agrecoB then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введен неверный номер")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+		return false
+	end
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес записан!")
+	return true, ta6JIuca_agrecoB[coo6llleHue], coo6llleHue
+end
+function oJugaHue_BBoga_cuqpPbl(oT, go)
+	::noBTop_BBoga_HoMepa::
+	BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+	if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return false end
+	coo6llleHue = tonumber(coo6llleHue)
+	if coo6llleHue == nil or coo6llleHue < oT or coo6llleHue > go then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введен неверный номер")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "повтори попытку")
+		goto noBTop_BBoga_HoMepa
+	end
+	return true, coo6llleHue
+end
 
 do
 	--осчистка монитора
@@ -1571,22 +1608,28 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "RAID не допуступен")
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить пьедесталы"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить"] = function()
 		Ta6JIuca_nbegecTaJIoB = {}
 		local BBog_koppekTeH, coo6llleHue
-		local TaJIuca_me_interface = {}
+		local re3yJIbTaT_noJIe4eHu9l_agreca
+		local re3yJIbTaT_BBoga
+		local HaugeHblu_agpec
+		local cTopoHa_npueMHuk, cTopoHa_Bblga4u
+		
+		--создание таблицы всех транспозеров
 		local agreca_Bcex_TraHcno3epoB = component.list("transposer")
+		local agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l = {}
+		for adrs, _ in pairs(agreca_Bcex_TraHcno3epoB) do
+			table.insert(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, adrs)
+		end
+		--создание таблицы всех мэ интерфейсов
 		local agreca_Bcex_me_interface = component.list("me_interface")
-		local koJIu4ecTBo_agrecoB = 0
-		local Ta6JIuca_agpecoB_no_HoMepaM = {}
-		local Ta6JIuca_coo6llleHuu_aJIucbl = {}
-		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса центрального транспозера:")
-		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса транспозера с сундуками")
-		table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса ме интерфейса")
-		local uTepacu9l_noucka_agpecoB = 2
-		setmetatable(Ta6JIuca_nbegecTaJIoB, {__newindex = function(t, k, v) 
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "Ta6JIuca_nbegecTaJIoB[" .. tostring(k) .. "] = " .. tostring(v))
-		end})
+		local agreca_Bcex_me_interface_oTcopTupoBaHHa9l = {}
+		for adrs, _ in pairs(agreca_Bcex_me_interface) do
+			table.insert(agreca_Bcex_me_interface_oTcopTupoBaHHa9l, adrs)
+		end
+
+		--определение автокрафта через мэ интерфейс
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ подачи ресурсов к матрице")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через мэ интерфейс?")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
@@ -1594,7 +1637,8 @@ do
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		if coo6llleHue == "да" then
 			me_interface_gJI9l_MaTpucbl = true
-			uTepacu9l_noucka_agpecoB = uTepacu9l_noucka_agpecoB + 1
+			re3yJIbTaT_noJIe4eHu9l_agreca, agrec_me_interface_gJI9l_MaTpucbl = py4Hou_BBog_agreca("выбор адреса мэ интерфейс:", agreca_Bcex_me_interface_oTcopTupoBaHHa9l)
+			if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
 		elseif coo6llleHue == "нет" then
 			me_interface_gJI9l_MaTpucbl = false
 		else
@@ -1602,134 +1646,192 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
 			return
 		end
-	
-		for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
-			table.insert(Ta6JIuca_agpecoB_no_HoMepaM, agrec)
-		end
-		if me_interface_gJI9l_MaTpucbl then
-			for agrec_me_interface, _ in pairs(agreca_Bcex_me_interface) do
-				table.insert(Ta6JIuca_agpecoB_no_HoMepaM, agrec_me_interface)
-			end
-		end
-		if #Ta6JIuca_agpecoB_no_HoMepaM == 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "транспозеры не найдены")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-			return	
-		end
-		for i = 1, uTepacu9l_noucka_agpecoB do
-			for HoMep, agrec_transoser in ipairs(Ta6JIuca_agpecoB_no_HoMepaM) do
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. HoMep .. ": " .. g .. string.sub(agrec_transoser, 1, 3))
-			end
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. Ta6JIuca_coo6llleHuu_aJIucbl[i])
-			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
-			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-			coo6llleHue = tonumber(coo6llleHue)
-			if coo6llleHue == nil or coo6llleHue <= 0 or coo6llleHue > #Ta6JIuca_agpecoB_no_HoMepaM then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введен неверный номер")
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-				return
-			end
-			table.insert(Ta6JIuca_nbegecTaJIoB, Ta6JIuca_agpecoB_no_HoMepaM[coo6llleHue])
-			table.remove(Ta6JIuca_agpecoB_no_HoMepaM, coo6llleHue)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес записан!")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===========================")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адреса найденых пьедесталов")
-			for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. k .. ": " .. string.sub(v, 1, 3))
-			end	
-		end
-		if me_interface_gJI9l_MaTpucbl then
-			agrec_me_interface_gJI9l_MaTpucbl = Ta6JIuca_nbegecTaJIoB[#Ta6JIuca_nbegecTaJIoB]
-			table.remove(Ta6JIuca_nbegecTaJIoB)
-			local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
-			if #Bce_uTeMbl_B_ceTu == 0 then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итемы в мэ не найдены")
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-				return
-			else
-				local HoMep_uTema = 0
-				for k, v in ipairs(Bce_uTeMbl_B_ceTu) do
-					if v.size > 6 then
-						HoMep_uTema = k
-						break
-					end
-				end
-				if HoMep_uTema == 0 then
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подходящего итема в мэ не найдено")
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-					return
-				end
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещение предмета в сундук")
-				for j = 1, 6 do
-					local re3yJIbTaT, olllu6ka = pcall(function()
-						component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
-					end)
-					if re3yJIbTaT then
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат по стороне: " .. ta6JIuca_cTopoH_gJI9l_me[j])
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успех")
-					end
-				end
-			end		
-		end
-		--проверка итема в сундуке
-		local cTopoHa_cyHgyka, pa3Mep_uHBeHTap9l = HauTu_uHBeHTapb(Ta6JIuca_nbegecTaJIoB[2])
-		if cTopoHa_cyHgyka == -1 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "стартовый сундук не найден")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-			return
-		end
-		local HoMep_cJIoTa_cyHgyKa = 0
-		local Ta6JIuca_uTema = {}
-		for cJIoT_B_CyHgyke = 1, pa3Mep_uHBeHTap9l do
-			local Ta6JIuca_uTema = component.invoke(Ta6JIuca_nbegecTaJIoB[2], "getStackInSlot", cTopoHa_cyHgyka, cJIoT_B_CyHgyke)
-			if Ta6JIuca_uTema ~= nil then
-				HoMep_cJIoTa_cyHgyKa = cJIoT_B_CyHgyke
-			end
-		end
-		if HoMep_cJIoTa_cyHgyKa == 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итем для настройке не найден")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-			return
-		end
-		component.invoke(Ta6JIuca_nbegecTaJIoB[2], "transferItem", cTopoHa_cyHgyka, HauTu_nbegecTaJI(Ta6JIuca_nbegecTaJIoB[2]), 1, HoMep_cJIoTa_cyHgyKa, 1)
 		
-		for a = 1, 11 do
-			for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
-				--print("энтер для старта")
-				--io.read()
-				--term.clear()
-				--print("проверка транспозера с адресом " .. string.sub(agrec, 1, 3))
-				--io.read()
-				local agpec_HaugeH = false
-				for _, agpec_gJI9l_cpaBHeHu9l in ipairs(Ta6JIuca_nbegecTaJIoB) do
-					if agpec_gJI9l_cpaBHeHu9l == agrec then
-						agpec_HaugeH = true
-					end
-				end
-				if not agpec_HaugeH then
-					local npegMeT_nepeMellleH = false
-					--print("поиск предмета по всем сторонам")
-					for cTopoHa_c_npegMeToM = 0, 5 do
-						if component.invoke(agrec, "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil and not npegMeT_nepeMellleH then
-							--print("предмет найден на стороне: " .. ta6JIuca_cTopoH[cTopoHa_c_npegMeToM])
-							for cTopoHa_6e3_npegMeTa = 0, 5 do
-								if not npegMeT_nepeMellleH and cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agrec, "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
-									--print("перемещение предмета")
-									component.invoke(agrec, "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
-									table.insert(Ta6JIuca_nbegecTaJIoB, agrec)
-									npegMeT_nepeMellleH = true
-								end
-							end
-						end
-					end
-				end
+		--определение центрального транспозера
+		cTopoHa_npueMHuk = o6paTHa9l_Ta6JIuca_cTopoH["снизу"]
+		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["сверху"]
+		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса центрального транспозера:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
+		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
+		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u)
+		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
+		
+		--определение транспозера рядом с центральным, для обратной подачи предметов в мэ сеть(должен находится южнее от центрального)
+		cTopoHa_npueMHuk = o6paTHa9l_Ta6JIuca_cTopoH["север"]
+		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["юг"]
+		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса южного тарнспозера от центрального:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
+		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
+		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u)
+		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
+		
+		--определение транспозера рядом с центральным, для подачи предметов на пьедесталы(должен находится серверее от центрального)
+		cTopoHa_npueMHuk = o6paTHa9l_Ta6JIuca_cTopoH["юг"]
+		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["север"]
+		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса северного тарнспозера от центрального:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
+		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
+		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u)
+		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
+		
+		--определение остальных пьедесталов
+		for i = 1, 12 do
+			cTopoHa_npueMHuk = o6paTHa9l_Ta6JIuca_cTopoH["юг"]
+			cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["север"]
+			re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса следующего тарнспозера:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
+			if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
+			for j = 0, 5 do
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. j .. ": " .. g .. ta6JIuca_cTopoH[j])
 			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор стороны приёмника?")
+			re3yJIbTaT_BBoga, cTopoHa_npueMHuk = oJugaHue_BBoga_cuqpPbl(0, 5)
+			if not re3yJIbTaT_BBoga then return end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор стороны подачи предмета?")
+			re3yJIbTaT_BBoga, cTopoHa_Bblga4u = oJugaHue_BBoga_cuqpPbl(0, 5)
+			if not re3yJIbTaT_BBoga then return end
+
+			table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u)
+			table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адреса найденых пьедесталов")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "результат настройки транспозеров")
 		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. string.sub(v, 1, 3))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. string.sub(v[1], 1, 3))
 		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить пьедесталы"] = function()
+		-- Ta6JIuca_nbegecTaJIoB = {}
+		-- local BBog_koppekTeH, coo6llleHue
+		-- local agreca_Bcex_TraHcno3epoB = component.list("transposer")
+		-- local agreca_Bcex_me_interface = component.list("me_interface")
+		-- local koJIu4ecTBo_agrecoB = 0
+		-- local Ta6JIuca_agpecoB_no_HoMepaM = {}
+		-- local Ta6JIuca_coo6llleHuu_aJIucbl = {}
+		-- table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса центрального транспозера:")
+		-- table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса ме интерфейса")
+		-- local uTepacu9l_noucka_agpecoB = 1
+		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ подачи ресурсов к матрице")
+		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через мэ интерфейс?")
+		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
+		-- BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+		-- if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		-- if coo6llleHue == "да" then
+			-- me_interface_gJI9l_MaTpucbl = true
+			-- uTepacu9l_noucka_agpecoB = uTepacu9l_noucka_agpecoB + 1
+		-- elseif coo6llleHue == "нет" then
+			-- me_interface_gJI9l_MaTpucbl = false
+		-- else
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода")
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+			-- return
+		-- end
+	
+		-- for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
+			-- table.insert(Ta6JIuca_agpecoB_no_HoMepaM, agrec)
+		-- end
+		-- if me_interface_gJI9l_MaTpucbl then
+			-- for agrec_me_interface, _ in pairs(agreca_Bcex_me_interface) do
+				-- table.insert(Ta6JIuca_agpecoB_no_HoMepaM, agrec_me_interface)
+			-- end
+		-- end
+		-- if #Ta6JIuca_agpecoB_no_HoMepaM == 0 then
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "транспозеры не найдены")
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+			-- return	
+		-- end
+		-- for i = 1, uTepacu9l_noucka_agpecoB do
+			
+		-- end
+		-- if me_interface_gJI9l_MaTpucbl then
+			-- agrec_me_interface_gJI9l_MaTpucbl = Ta6JIuca_nbegecTaJIoB[#Ta6JIuca_nbegecTaJIoB]
+			-- table.remove(Ta6JIuca_nbegecTaJIoB)
+			-- local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
+			-- if #Bce_uTeMbl_B_ceTu == 0 then
+				-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итемы в мэ не найдены")
+				-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+				-- return
+			-- else
+				-- local HoMep_uTema = 0
+				-- for k, v in ipairs(Bce_uTeMbl_B_ceTu) do
+					-- if v.size > 6 then
+						-- HoMep_uTema = k
+						-- break
+					-- end
+				-- end
+				-- if HoMep_uTema == 0 then
+					-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подходящего итема в мэ не найдено")
+					-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+					-- return
+				-- end
+				-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещение предмета в сундук")
+				-- for j = 1, 6 do
+					-- local re3yJIbTaT, olllu6ka = pcall(function()
+						-- component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
+					-- end)
+					-- if re3yJIbTaT then
+						-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат по стороне: " .. ta6JIuca_cTopoH_gJI9l_me[j])
+						-- Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успех")
+					-- end
+				-- end
+			-- end		
+		-- end
+		-- --проверка итема в сундуке
+		-- local cTopoHa_cyHgyka, pa3Mep_uHBeHTap9l = HauTu_uHBeHTapb(Ta6JIuca_nbegecTaJIoB[2])
+		-- if cTopoHa_cyHgyka == -1 then
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "стартовый сундук не найден")
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+			-- return
+		-- end
+		-- local HoMep_cJIoTa_cyHgyKa = 0
+		-- local Ta6JIuca_uTema = {}
+		-- for cJIoT_B_CyHgyke = 1, pa3Mep_uHBeHTap9l do
+			-- local Ta6JIuca_uTema = component.invoke(Ta6JIuca_nbegecTaJIoB[2], "getStackInSlot", cTopoHa_cyHgyka, cJIoT_B_CyHgyke)
+			-- if Ta6JIuca_uTema ~= nil then
+				-- HoMep_cJIoTa_cyHgyKa = cJIoT_B_CyHgyke
+			-- end
+		-- end
+		-- if HoMep_cJIoTa_cyHgyKa == 0 then
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итем для настройке не найден")
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
+			-- return
+		-- end
+		-- local cTopoHa_nbegecTaJIa = HauTu_nbegecTaJI(Ta6JIuca_nbegecTaJIoB[2])
+		-- table.insert(Ta6JIuca_nbegecTaJIoB_co_cTopoHamu, {Ta6JIuca_nbegecTaJIoB[2], {Ta6JIuca_nbegecTaJIoB[2], cTopoHa_cyHgyka, cTopoHa_nbegecTaJIa})
+		-- component.invoke(Ta6JIuca_nbegecTaJIoB[2], "transferItem", cTopoHa_cyHgyka, cTopoHa_nbegecTaJIa, 1, HoMep_cJIoTa_cyHgyKa, 1)
 		
+		-- for a = 1, 11 do
+			-- for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
+				-- --print("энтер для старта")
+				-- --io.read()
+				-- --term.clear()
+				-- --print("проверка транспозера с адресом " .. string.sub(agrec, 1, 3))
+				-- --io.read()
+				-- local agpec_HaugeH = false
+				-- for _, agpec_gJI9l_cpaBHeHu9l in ipairs(Ta6JIuca_nbegecTaJIoB) do
+					-- if agpec_gJI9l_cpaBHeHu9l == agrec then
+						-- agpec_HaugeH = true
+					-- end
+				-- end
+				-- if not agpec_HaugeH then
+					-- local npegMeT_nepeMellleH = false
+					-- --print("поиск предмета по всем сторонам")
+					-- for cTopoHa_c_npegMeToM = 2, 5 do
+						-- if component.invoke(agrec, "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil and not npegMeT_nepeMellleH then
+							-- --print("предмет найден на стороне: " .. ta6JIuca_cTopoH[cTopoHa_c_npegMeToM])
+							-- for cTopoHa_6e3_npegMeTa = 2, 5 do
+								-- if not npegMeT_nepeMellleH and cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agrec, "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
+									-- --print("перемещение предмета")
+									-- component.invoke(agrec, "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
+									-- table.insert(Ta6JIuca_nbegecTaJIoB, agrec)
+										-- table.insert(Ta6JIuca_nbegecTaJIoB_co_cTopoHamu, {agrec, cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa})
+									-- npegMeT_nepeMellleH = true
+								-- end
+							-- end
+						-- end
+					-- end
+				-- end
+			-- end
+		-- end
+		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адреса найденых пьедесталов")
+		-- for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v, 1, 3))
+		-- end	
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then

@@ -1652,7 +1652,7 @@ do
 		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["сверху"]
 		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса центрального транспозера:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
 		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
-		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u)
+		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
 		
 		--определение транспозера рядом с центральным, для обратной подачи предметов в мэ сеть(должен находится южнее от центрального)
@@ -1660,7 +1660,7 @@ do
 		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["юг"]
 		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса южного тарнспозера от центрального:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
 		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
-		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u)
+		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
 		
 		--определение транспозера рядом с центральным, для подачи предметов на пьедесталы(должен находится серверее от центрального)
@@ -1668,7 +1668,7 @@ do
 		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["север"]
 		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса северного тарнспозера от центрального:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
 		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
-		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u)
+		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
 		
 		--определение остальных пьедесталов
@@ -1687,7 +1687,7 @@ do
 			re3yJIbTaT_BBoga, cTopoHa_Bblga4u = oJugaHue_BBoga_cuqpPbl(0, 5)
 			if not re3yJIbTaT_BBoga then return end
 
-			table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u)
+			table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 			table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "результат настройки транспозеров")

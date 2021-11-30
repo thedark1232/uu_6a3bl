@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта19"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта20"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1059,7 +1059,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 						print("адрес: " .. string.sub(transposer, 1, 3))
 						print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на пьедестал")
 						print("вытянуть из слота под номером: " .. tostring(1) .. " " .. zHa4eHue[2].label)
-						component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, cTopoHa_Bblga4u, 1, 1, 1)
+						component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, o6paTHa9l_Ta6JIuca_cTopoH["сверху"], 1, 1, 1)
 						io.read()
 						break
 					end

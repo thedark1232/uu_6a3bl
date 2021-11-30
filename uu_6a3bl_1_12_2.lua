@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта5"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1012,9 +1012,9 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		npegMeT_HaugeH = false
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
 			term.clear()
-			print("сравнение предмета в сундуке : " .. val[2].name .. " с " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
-			print("сравнение дамага в сундуке : " ..  val[2].damage .. " с " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
-			print("сравнение количества в сундуке : " ..  val[2].size .. " с " .. val[2].size)
+			print("сравнение предмета в сундуке : " .. val[2].name .. " с " .. v[2].name)
+			print("сравнение дамага в сундуке : " ..  val[2].damage .. " с " ..v[2].damage)
+			print("сравнение количества в сундуке : " ..  val[2].size .. " с " .. v[2].size)
 			io.read()
 			if v[2].name == val[2].name and v[2].damage == val[2].dagame and val[2].size >= v[2].size then
 				print("найдено соответствие")

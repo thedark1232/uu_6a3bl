@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта3"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -972,7 +972,8 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. recept.Ha3BaHue)
 	local Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe = {}
 	local Bcero_cJIoToB_B_cyHgyke = component.invoke(transposer, "getInventorySize", cTopoHa_Bblga4u)
-	term.clear(); io.write("всего слотов в сундуке = "); print(Bcero_cJIoToB_B_cyHgyke); io.read()
+	term.clear(); io.write("всего слотов в сундуке = "); print(Bcero_cJIoToB_B_cyHgyke)
+	--io.read()
 	for i = 1, Bcero_cJIoToB_B_cyHgyke do
 		local cJIegyl0llluu_uTem = component.invoke(transposer, "getStackInSlot", cTopoHa_Bblga4u, i)
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
@@ -982,17 +983,24 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	for k, v in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
 		print(k, v[1], v[2])
 	end
-	io.read()
+	--io.read()
+	local Heo6xoguMble_uTeMbl = {}
 	
 	--поиск центрального передмета в сундуке
 	for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
 		term.clear()
-		print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
-		print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
+		--print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
+		--print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
 		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and val[2].damage == recept.cTapToBblu_npegMeT_no_ceHTpy.damage then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "центральный предмет найден")
+			val[2].size = val[2].size - 1
+			print("количество предметов оставшихся в " .. val[1] .. " слоте")
+			print(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key][2].size)
+			io.read()
+			table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
+			if val[2].size == 0 then Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key] = nil end
+			pe3yJIbTaT = true
+			break
 		end
-		io.read()
 	end
 	
 	-- --поиск предметов рецепта	

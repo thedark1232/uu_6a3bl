@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "нужно проверить транспозеры"
+local Ha3BaHue_o6HoBJIeHu9l = "матрица инфо"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1632,8 +1632,8 @@ do
 		end
 
 		--определение автокрафта через мэ интерфейс
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ подачи ресурсов к матрице")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через мэ интерфейс?")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ заказа крафтов:")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через команды в чат?")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
 		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -1692,9 +1692,10 @@ do
 			table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 			table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
 		end
+		
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "результат настройки транспозеров")
 		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v2] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v3] .. c .. ")")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
 		end
 		configuration[28] = Ta6JIuca_nbegecTaJIoB
 		configuration[29] = me_interface_gJI9l_MaTpucbl
@@ -1872,6 +1873,19 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end	
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
+		if me_interface_gJI9l_MaTpucbl then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ командами в чат")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ через мэ терминал")
+		end
+	
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат настройки транспозеров:")
+		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
+		end
+	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи все компоненты"] = function() --просмотреть все подключенные компоненты
 		local Bce_KoMnoHeHTbl = {}
 		local re3yJIbTaT_noucka = component.list()

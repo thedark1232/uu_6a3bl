@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "матрица крафт3"
+local Ha3BaHue_o6HoBJIeHu9l = "дебаг матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -931,17 +931,19 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 	local cTopoHa_npueMHuk
 	local cTopoHa_Bblga4u	
 	local transposer
+	local limit = 200
 	for i = #Ta6JIuca_nbegecTaJIoB, 2, -1 do
 		transposer = Ta6JIuca_nbegecTaJIoB[i][1]
 		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[i][2]
 		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[i][3]
-		--print(transposer)
-		--print("перемещение сверху  => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
-		repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
-		--io.read()
-		--print("перемещение " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. " => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
-		repeat until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk) == false
-		--io.read()
+		print(transposer)
+		print("перемещение сверху  => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+		repeat limit = limit - 1; if limit <= 0 then return end until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
+		io.read()
+		print("перемещение " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. " => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+		limit = 200
+		repeat limit = limit - 1; if limit <= 0 then return end until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk) == false
+		io.read()
 	end
 	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
 	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
@@ -1964,6 +1966,7 @@ do
 		Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB] = {Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB][1], cTopoHa1, cTopoHa2}
 		configuration[28] = Ta6JIuca_nbegecTaJIoB
 		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перенастройка завершена")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
 		local nepBblu_cJIoT = 1

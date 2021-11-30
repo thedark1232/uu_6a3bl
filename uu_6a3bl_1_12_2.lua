@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта20"
+local Ha3BaHue_o6HoBJIeHu9l = "матрица крафт"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1039,42 +1039,43 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	if Ha4aJIbHblu_npegMeT_HaugeH and ocTaJIbHble_npegMeTbl_HaugeHbl then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
 		--перемещение центрального итема
-		term.clear(); print("перемещение итема из слота " .. Heo6xoguMble_uTeMbl[1][1])
+		--term.clear(); print("перемещение итема из слота " .. Heo6xoguMble_uTeMbl[1][1])
 		component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, Heo6xoguMble_uTeMbl[1][1], 1)
 		table.remove(Heo6xoguMble_uTeMbl, 1)
-		io.read()
+		--io.read()
 		
 		for HoMep_uTeMa, zHa4eHue in ipairs(Heo6xoguMble_uTeMbl) do
 			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
-				term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()
+				--term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()
 				if k > 2 then
-					io.write("пьедестал номер " .. k .. " совпадает с номером по рецепту " .. recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1] .. " "); print(k == recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1]); io.read()
+					--io.write("пьедестал номер " .. k .. " совпадает с номером по рецепту " .. recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1] .. " "); print(k == recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1]); io.read()
 					local transposer = cBoucTBo_nbegecTaJIa[1]
 					local cTopoHa_npueMHuk = cBoucTBo_nbegecTaJIa[2]
 					local cTopoHa_Bblga4u = cBoucTBo_nbegecTaJIa[3]
 					local HoMep_cJIoTa_itema
 					if k == recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1] then
-						term.clear()
-						print("переместить предмет через транспозер")
-						print("адрес: " .. string.sub(transposer, 1, 3))
-						print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на пьедестал")
-						print("вытянуть из слота под номером: " .. tostring(1) .. " " .. zHa4eHue[2].label)
-						component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, o6paTHa9l_Ta6JIuca_cTopoH["сверху"], 1, 1, 1)
-						io.read()
+						-- term.clear()
+						-- print("переместить предмет через транспозер")
+						-- print("адрес: " .. string.sub(transposer, 1, 3))
+						-- print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на пьедестал")
+						-- print("вытянуть из слота под номером: " .. tostring(1) .. " " .. zHa4eHue[2].label)
+						component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, o6paTHa9l_Ta6JIuca_cTopoH["сверху"], 1, 1, 1)
+						--io.read()
 						break
 					end
 					if k == 3 then HoMep_cJIoTa_itema = zHa4eHue[1] else HoMep_cJIoTa_itema = 1 end
-					term.clear()
-					print("переместить предмет через транспозер")
-					print("адрес: " .. string.sub(transposer, 1, 3))
-					print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u])
-					print("вытянуть из слота под номером: " .. tostring(HoMep_cJIoTa_itema) .. " " .. zHa4eHue[2].label)
-					io.read()
+					-- term.clear()
+					-- print("переместить предмет через транспозер")
+					-- print("адрес: " .. string.sub(transposer, 1, 3))
+					-- print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u])
+					-- print("вытянуть из слота под номером: " .. tostring(HoMep_cJIoTa_itema) .. " " .. zHa4eHue[2].label)
+					-- io.read()
 					component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, cTopoHa_Bblga4u, 1, HoMep_cJIoTa_itema, 1)
 				end
 			end
 		end
-		
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " рецепт выложен на матрице")
+		return true
 	else
 		if Ha4aJIbHblu_npegMeT_HaugeH == false then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "предмет для центрального пьедестала:")
@@ -1912,6 +1913,17 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end		
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица крафт"] = function()
+		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
+			return
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепты в наличии:")
+		for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
+		local re3yJIbTaT_BBoga, cuqppa_gJl9l_ygaJIeHu9l = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
+		if not re3yJIbTaT_BBoga then return end
 		BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[1])
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
@@ -2020,6 +2032,22 @@ do
 		for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
 		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить рецепт"] = function()
+		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
+			return
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепты в наличии:")
+		for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
+		local re3yJIbTaT_BBoga, cuqppa_gJl9l_ygaJIeHu9l = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
+		if not re3yJIbTaT_BBoga then return end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепт: " .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_gJl9l_ygaJIeHu9l].Ha3BaHue .. " удален!")
+		table.remove(Ta6JIuca_recenToB_Ha_MaTpuce, cuqppa_gJl9l_ygaJIeHu9l)
+		setMathixRecepts()
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"] = function() --просмотреть все подключенные компоненты
 		y6paTb_npegMeTbl_c_nbegecTaJIoB(true)

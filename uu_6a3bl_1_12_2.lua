@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "совместимость версий"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления багов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -962,7 +962,7 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 				return
 			end
 			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk)
-		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or or re3yJIbTaT_nepeMellleHu9l == nil
+		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or re3yJIbTaT_nepeMellleHu9l == nil
 		--io.read()
 	end
 	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
@@ -1033,7 +1033,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	end
 	
 	local He_HaugeHHble_items = {}
-	local He_HaugeHHble_item = {}
+	--local He_HaugeHHble_item = {}
 	local npegMeT_HaugeH = false
 	--поиск предметов рецепта	
 	for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
@@ -1051,13 +1051,13 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 				npegMeT_HaugeH = true
 				val[2].size = val[2].size - 1
 				if val[2].size == 0 then table.remove(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, key) end
-				He_HaugeHHble_item = nil
+				--He_HaugeHHble_item = nil
 				break
 			end
-			He_HaugeHHble_item = val[2]
+			--He_HaugeHHble_item = v[2]
 		end
 		if not npegMeT_HaugeH then
-			table.insert(He_HaugeHHble_items, He_HaugeHHble_item)
+			table.insert(He_HaugeHHble_items, v[2])
 			ocTaJIbHble_npegMeTbl_HaugeHbl = false
 		end
 	end
@@ -1104,12 +1104,13 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " рецепт выложен на матрице")
 		return true
 	else
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "отсутствуют предметы")
 		if Ha4aJIbHblu_npegMeT_HaugeH == false then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "предмет для центрального пьедестала:")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. recept.cTapToBblu_npegMeT_no_ceHTpy.label .. " не найден!")
 		end
 		if ocTaJIbHble_npegMeTbl_HaugeHbl == false then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "остальные предметы для крафта:")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "предметы для крафта:")
 			for k, v in ipairs(He_HaugeHHble_items) do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. k .. ": " .. v.label .. " не найден!")
 			end

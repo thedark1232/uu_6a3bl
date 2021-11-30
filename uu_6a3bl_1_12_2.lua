@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления багов2"
+local Ha3BaHue_o6HoBJIeHu9l = "полный кринж"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1020,13 +1020,12 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		--term.clear()
 		--print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
 		--print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
-		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and tonumber(val[2].damage) == tonumber(recept.cTapToBblu_npegMeT_no_ceHTpy.damage) then
+		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and tonumber(val[2].damage) == tonumber(recept.cTapToBblu_npegMeT_no_ceHTpy.damage) and val[2].size > 0 then
 			val[2].size = val[2].size - 1
 			--print("количество предметов оставшихся в " .. val[1] .. " слоте")
 			--print(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key][2].size)
 			--io.read()
 			table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
-			if val[2].size == 0 then Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key] = nil end
 			Ha4aJIbHblu_npegMeT_HaugeH = true
 			break
 		end
@@ -1038,15 +1037,15 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
 		npegMeT_HaugeH = false
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-			term.clear()
-			print("всего итемов в сундуке для проверки" .. #Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe)
-			io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
-			io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
-			io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
-			io.read()
+			--term.clear()
+			--print("всего итемов в сундуке для проверки: " .. #Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe)
+			--io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
+			--io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
+			--io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
+			--io.read()
 			if v[2].name == val[2].name and tonumber(v[2].damage) == tonumber(val[2].damage) and tonumber(val[2].size) >= tonumber(v[2].size) then
-				print("найдено соответствие")
-				io.read()
+				--print("найдено соответствие")
+				--io.read()
 				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
 				npegMeT_HaugeH = true
 				val[2].size = val[2].size - 1

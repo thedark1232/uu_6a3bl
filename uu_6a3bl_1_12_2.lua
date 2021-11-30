@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "проверки перемещения дебаг"
+local Ha3BaHue_o6HoBJIeHu9l = "совместимость версий"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -949,7 +949,7 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 				return
 			end
 			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
-		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
+		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or re3yJIbTaT_nepeMellleHu9l == nil
 		--io.read()
 		--print("перемещение " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. " => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
 		limit = 200
@@ -962,7 +962,7 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 				return
 			end
 			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk)
-		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
+		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or or re3yJIbTaT_nepeMellleHu9l == nil
 		--io.read()
 	end
 	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
@@ -971,14 +971,14 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 	local re3yJIbTaT_nepeMellleHu9l
 	repeat
 		re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
-	until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
+	until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or re3yJIbTaT_nepeMellleHu9l == nil
 	if nepeMecTuTb_B_cyHgyk_Bblga4u then
 		transposer = Ta6JIuca_nbegecTaJIoB[2][1]
 		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][3]
 		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[2][2]
 		repeat 
 			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk)
-		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
+		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or re3yJIbTaT_nepeMellleHu9l == nil
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перемещение завершено")
 	end
 end

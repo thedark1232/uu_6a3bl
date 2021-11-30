@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта1"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -955,6 +955,7 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 	end
 end
 function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
+	
 	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 	-- ["Ha3BaHue"] = coo6llleHue,
 	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
@@ -975,12 +976,22 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		local cJIegyl0llluu_uTem = component.invoke(transposer, "getStackInSlot", cTopoHa_Bblga4u, i)
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
 	end
+	term.clear()
+	print("найденные предметы в сундуке")
+	for k, v in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
+		print(k, v[1], v[2])
+	end
+	io.read()
 	
 	--поиск центрального передмета в сундуке
 	for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
+		term.clear()
+		print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
+		print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
 		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and val[2].damage == recept.cTapToBblu_npegMeT_no_ceHTpy.damage then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "центральный предмет найден")
 		end
+		io.read()
 	end
 	
 	-- --поиск предметов рецепта	
@@ -1834,14 +1845,9 @@ do
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
 		local nepBblu_cJIoT = 1
-		--setMathixRecepts()
-		--Ta6JIuca_recenToB_Ha_MaTpuce
-		--me_interface_gJI9l_MaTpucbl
-		--agrec_me_interface_gJI9l_MaTpucbl
-		--Ta6JIuca_nbegecTaJIoB
 		--local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
 		--component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
-		--component.invoke(Ta6JIuca_nbegecTaJIoB[2], "getStackInSlot", cTopoHa_cyHgyka, cJIoT_B_CyHgyke)
+
 		
 		--проверка центрального пьедестала
 		local npegMeT_no_ceHTpy = component.invoke(Ta6JIuca_nbegecTaJIoB[1][1], "getStackInSlot", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], nepBblu_cJIoT)

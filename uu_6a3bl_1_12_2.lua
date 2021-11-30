@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта11"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1022,9 +1022,11 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
 				npegMeT_HaugeH = true
 				val[2].size = val[2].size - 1
-				if val[2].size == 0 then Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key] = nil end
+				if val[2].size == 0 then table.remove(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, key) end
+				He_HaugeHHble_item = nil
+				break
 			end
-			He_HaugeHHble_item = v[2]
+			He_HaugeHHble_item = val[2]
 		end
 		if not npegMeT_HaugeH then
 			table.insert(He_HaugeHHble_items, He_HaugeHHble_item)

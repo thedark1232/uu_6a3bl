@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновление поиска транспозеров"
+local Ha3BaHue_o6HoBJIeHu9l = "нужно проверить транспозеры"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1610,6 +1610,8 @@ do
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить"] = function()
 		Ta6JIuca_nbegecTaJIoB = {}
+		agrec_me_interface_gJI9l_MaTpucbl = ""
+		me_interface_gJI9l_MaTpucbl = false
 		local BBog_koppekTeH, coo6llleHue
 		local re3yJIbTaT_noJIe4eHu9l_agreca
 		local re3yJIbTaT_BBoga
@@ -1650,7 +1652,7 @@ do
 		--определение центрального транспозера
 		cTopoHa_npueMHuk = o6paTHa9l_Ta6JIuca_cTopoH["снизу"]
 		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["сверху"]
-		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса центрального транспозера:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
+		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса " .. g .. "центрального" .. c .. " транспозера:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
 		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
 		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
@@ -1658,7 +1660,7 @@ do
 		--определение транспозера рядом с центральным, для обратной подачи предметов в мэ сеть(должен находится южнее от центрального)
 		cTopoHa_npueMHuk = o6paTHa9l_Ta6JIuca_cTopoH["север"]
 		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["юг"]
-		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса южного тарнспозера от центрального:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
+		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса " .. g .. "южного" .. c .. " тарнспозера от центрального:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
 		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
 		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
@@ -1666,7 +1668,7 @@ do
 		--определение транспозера рядом с центральным, для подачи предметов на пьедесталы(должен находится серверее от центрального)
 		cTopoHa_npueMHuk = o6paTHa9l_Ta6JIuca_cTopoH["юг"]
 		cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["север"]
-		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса северного тарнспозера от центрального:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
+		re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса " .. g .. "северного" .. c .. " тарнспозера от центрального:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
 		if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
 		table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		table.remove(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, HoMep_B_Ta6JIuce)
@@ -1675,7 +1677,7 @@ do
 		for i = 1, 12 do
 			cTopoHa_npueMHuk = o6paTHa9l_Ta6JIuca_cTopoH["юг"]
 			cTopoHa_Bblga4u = o6paTHa9l_Ta6JIuca_cTopoH["север"]
-			re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса следующего тарнспозера:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
+			re3yJIbTaT_noJIe4eHu9l_agreca, HaugeHblu_agpec, HoMep_B_Ta6JIuce = py4Hou_BBog_agreca("выбор адреса " .. g .. "следующего" .. c .. " тарнспозера:", agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
 			if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
 			for j = 0, 5 do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. j .. ": " .. g .. ta6JIuca_cTopoH[j])
@@ -1692,9 +1694,14 @@ do
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "результат настройки транспозеров")
 		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. string.sub(v[1], 1, 3))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v2] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v3] .. c .. ")")
 		end
+		configuration[28] = Ta6JIuca_nbegecTaJIoB
+		configuration[29] = me_interface_gJI9l_MaTpucbl
+		configuration[30] = agrec_me_interface_gJI9l_MaTpucbl
+		setConfiguration()
 	end
+	
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить пьедесталы"] = function()
 		-- Ta6JIuca_nbegecTaJIoB = {}
 		-- local BBog_koppekTeH, coo6llleHue

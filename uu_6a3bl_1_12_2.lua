@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления багов"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления багов2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1033,28 +1033,28 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	end
 	
 	local He_HaugeHHble_items = {}
-	--local He_HaugeHHble_item = {}
 	local npegMeT_HaugeH = false
 	--поиск предметов рецепта	
 	for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
 		npegMeT_HaugeH = false
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-			--term.clear()
-			--io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
-			--io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
-			--io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
-			--io.read()
+			term.clear()
+			print("всего итемов в сундуке для проверки" .. #Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe)
+			io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
+			io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
+			io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
+			io.read()
 			if v[2].name == val[2].name and tonumber(v[2].damage) == tonumber(val[2].damage) and tonumber(val[2].size) >= tonumber(v[2].size) then
-				--print("найдено соответствие")
-				--io.read()
+				print("найдено соответствие")
+				io.read()
 				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
 				npegMeT_HaugeH = true
 				val[2].size = val[2].size - 1
-				if val[2].size == 0 then table.remove(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, key) end
-				--He_HaugeHHble_item = nil
+				if val[2].size == 0 then
+					table.remove(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, key)
+				end
 				break
 			end
-			--He_HaugeHHble_item = v[2]
 		end
 		if not npegMeT_HaugeH then
 			table.insert(He_HaugeHHble_items, v[2])

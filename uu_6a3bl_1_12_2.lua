@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта16"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта17"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8,6 +8,7 @@ local unicode = require("unicode")
 local term = require("term")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
+event.shouldInterrupt = function() return false end
 local admin = "The_Dark1232"
 local test_mod = false
 local baza_Bblxog = "база выход" --нужно, чтобы не записывало в логи выход из программы, как будто это ошибка
@@ -1040,13 +1041,14 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		--перемещение центрального итема
 		term.clear(); print("перемещение итема из слота " .. Heo6xoguMble_uTeMbl[1][1])
 		component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, Heo6xoguMble_uTeMbl[1][1], 1)
+		table.remove(Heo6xoguMble_uTeMbl, 1)
 		io.read()
 		
 		for _, zHa4eHue in ipairs(Heo6xoguMble_uTeMbl) do
 			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
 				term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()
 				if k > 2 then
-					io.write("номер пьедестала совпадает с номером по рецепту "); print(k == recept.Ta6JIuca_npegMeToB[1]); io.read()
+					io.write("пьедестал номер " .. k .. " совпадает с номером по рецепту " .. recept.Ta6JIuca_npegMeToB[1]); print(k == recept.Ta6JIuca_npegMeToB[1]); io.read()
 					local transposer = cBoucTBo_nbegecTaJIa[1]
 					local cTopoHa_npueMHuk = cBoucTBo_nbegecTaJIa[2]
 					local cTopoHa_Bblga4u = cBoucTBo_nbegecTaJIa[3]
@@ -1056,7 +1058,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 						print("переместить предмет через транспозер")
 						print("адрес: " .. string.sub(transposer, 1, 3))
 						print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на пьедестал")
-						print("вытянуть из слота под номером: " .. tostring(1) .. zHa4eHue[2].label)
+						print("вытянуть из слота под номером: " .. tostring(1) .. " " .. zHa4eHue[2].label)
 						component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, cTopoHa_Bblga4u, 1, 1, 1)
 						io.read()
 						break
@@ -1066,7 +1068,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 					print("переместить предмет через транспозер")
 					print("адрес: " .. string.sub(transposer, 1, 3))
 					print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u])
-					print("вытянуть из слота под номером: " .. tostring(HoMep_cJIoTa_itema) .. zHa4eHue[2].label)
+					print("вытянуть из слота под номером: " .. tostring(HoMep_cJIoTa_itema) .. " " .. zHa4eHue[2].label)
 					io.read()
 					component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, cTopoHa_Bblga4u, 1, HoMep_cJIoTa_itema, 1)
 				end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "дебаг чистки2"
+local Ha3BaHue_o6HoBJIeHu9l = "дебаг чистки3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -931,8 +931,8 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB()
 	local cTopoHa_Bblga4u	
 	for i = #Ta6JIuca_nbegecTaJIoB, 2, -1 do
 		transposer = Ta6JIuca_nbegecTaJIoB[i][1]
-		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[i][3]
-		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[i][2]
+		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[i][2]
+		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[i][3]
 		--print(transposer)
 		--print("перемещение сверху  => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
 		repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
@@ -942,8 +942,8 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB()
 		--io.read()
 	end
 	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
-	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][3]
-	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][2]
+	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
+	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
 	repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
 	transposer = Ta6JIuca_nbegecTaJIoB[2][1]
 	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][3]

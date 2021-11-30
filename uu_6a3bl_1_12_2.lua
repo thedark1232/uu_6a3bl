@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта10"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -981,9 +981,9 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	end
 	--term.clear()
 	--print("найденные предметы в сундуке")
-	for k, v in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-		print(k, v[1], v[2])
-	end
+	-- for k, v in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
+		-- print(k, v[1], v[2])
+	-- end
 	--io.read()
 	
 	--поиск центрального передмета в сундуке
@@ -1011,14 +1011,14 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
 		npegMeT_HaugeH = false
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-			--term.clear()
-			--io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
-			--io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
-			--io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
-			--io.read()
+			term.clear()
+			io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
+			io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
+			io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
+			io.read()
 			if v[2].name == val[2].name and tonumber(v[2].damage) == tonumber(val[2].damage) and tonumber(val[2].size) >= tonumber(v[2].size) then
-				--print("найдено соответствие")
-				--io.read()
+				print("найдено соответствие")
+				io.read()
 				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
 				npegMeT_HaugeH = true
 				val[2].size = val[2].size - 1

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "матрица инфо"
+local Ha3BaHue_o6HoBJIeHu9l = "тест матрица запись рецепта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -42,6 +42,7 @@ local nyTb_k_qpauJIy_config_ceHcopoB = "/home/ceHcopConfig"
 local nyTb_k_qpauJIy_config_typpeJIeu = "/home/energyturretConfig"
 local nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa = "/home/transposerConfig"
 local nyTb_k_qpauJIy_config_redstone = "/home/tedstoneCofig"
+local nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce = "/home/matricaRecept"
 local nytb_raid = "/raid/"
 local nytb_k_JIoraM = "/home/" --если есть рейд, то путь изменяется автоматически
 local cTaTyc_BblnoJIHeHu9l, ta6JIuca_redstone, KoJlu4ecTBo_redstone
@@ -101,6 +102,7 @@ local gucTaHcu9l_pagapa = 199
 local Ta6JIuca_gucTaHcuu_pagapa = {}
 local cBeT_gJI9l_o4koB = {}
 local redStone_functions = {}
+local Ta6JIuca_recenToB_Ha_MaTpuce = {}
 local colors = {} --таблица цветов(в алфавитном порядке) -- § --
 colors["белый"] = {"§f", "f"}
 colors["водяной светлый"] = {"§b", "b"}
@@ -371,6 +373,16 @@ function getConfiguration()
 end
 function setConfiguration()
 	filesLibrary.creat_file("/home/configuration", serialization.serialize(configuration))
+end
+function getMathixRecepts()
+	if filesLibrary.write_file(nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce, "nil") == "nil" then
+		filesLibrary.creat_file(nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce, serialization.serialize(Ta6JIuca_recenToB_Ha_MaTpuce))
+	else
+		Ta6JIuca_recenToB_Ha_MaTpuce = serialization.unserialize(filesLibrary.write_file(nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce, {}))
+	end
+end
+function setMathixRecepts()
+	filesLibrary.creat_file(nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce, serialization.serialize(Ta6JIuca_recenToB_Ha_MaTpuce))
 end
 function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на рестарт, выход и отключение компа
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then Ta6JIuca_koMnoHeHToB["glasses"].removeAll() end
@@ -1701,146 +1713,7 @@ do
 		configuration[29] = me_interface_gJI9l_MaTpucbl
 		configuration[30] = agrec_me_interface_gJI9l_MaTpucbl
 		setConfiguration()
-	end
-	
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить пьедесталы"] = function()
-		-- Ta6JIuca_nbegecTaJIoB = {}
-		-- local BBog_koppekTeH, coo6llleHue
-		-- local agreca_Bcex_TraHcno3epoB = component.list("transposer")
-		-- local agreca_Bcex_me_interface = component.list("me_interface")
-		-- local koJIu4ecTBo_agrecoB = 0
-		-- local Ta6JIuca_agpecoB_no_HoMepaM = {}
-		-- local Ta6JIuca_coo6llleHuu_aJIucbl = {}
-		-- table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса центрального транспозера:")
-		-- table.insert(Ta6JIuca_coo6llleHuu_aJIucbl, "ввод цифры адреса ме интерфейса")
-		-- local uTepacu9l_noucka_agpecoB = 1
-		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ подачи ресурсов к матрице")
-		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "через мэ интерфейс?")
-		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
-		-- BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
-		-- if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-		-- if coo6llleHue == "да" then
-			-- me_interface_gJI9l_MaTpucbl = true
-			-- uTepacu9l_noucka_agpecoB = uTepacu9l_noucka_agpecoB + 1
-		-- elseif coo6llleHue == "нет" then
-			-- me_interface_gJI9l_MaTpucbl = false
-		-- else
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода")
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-			-- return
-		-- end
-	
-		-- for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
-			-- table.insert(Ta6JIuca_agpecoB_no_HoMepaM, agrec)
-		-- end
-		-- if me_interface_gJI9l_MaTpucbl then
-			-- for agrec_me_interface, _ in pairs(agreca_Bcex_me_interface) do
-				-- table.insert(Ta6JIuca_agpecoB_no_HoMepaM, agrec_me_interface)
-			-- end
-		-- end
-		-- if #Ta6JIuca_agpecoB_no_HoMepaM == 0 then
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "транспозеры не найдены")
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-			-- return	
-		-- end
-		-- for i = 1, uTepacu9l_noucka_agpecoB do
-			
-		-- end
-		-- if me_interface_gJI9l_MaTpucbl then
-			-- agrec_me_interface_gJI9l_MaTpucbl = Ta6JIuca_nbegecTaJIoB[#Ta6JIuca_nbegecTaJIoB]
-			-- table.remove(Ta6JIuca_nbegecTaJIoB)
-			-- local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
-			-- if #Bce_uTeMbl_B_ceTu == 0 then
-				-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итемы в мэ не найдены")
-				-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-				-- return
-			-- else
-				-- local HoMep_uTema = 0
-				-- for k, v in ipairs(Bce_uTeMbl_B_ceTu) do
-					-- if v.size > 6 then
-						-- HoMep_uTema = k
-						-- break
-					-- end
-				-- end
-				-- if HoMep_uTema == 0 then
-					-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подходящего итема в мэ не найдено")
-					-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-					-- return
-				-- end
-				-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещение предмета в сундук")
-				-- for j = 1, 6 do
-					-- local re3yJIbTaT, olllu6ka = pcall(function()
-						-- component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
-					-- end)
-					-- if re3yJIbTaT then
-						-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат по стороне: " .. ta6JIuca_cTopoH_gJI9l_me[j])
-						-- Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успех")
-					-- end
-				-- end
-			-- end		
-		-- end
-		-- --проверка итема в сундуке
-		-- local cTopoHa_cyHgyka, pa3Mep_uHBeHTap9l = HauTu_uHBeHTapb(Ta6JIuca_nbegecTaJIoB[2])
-		-- if cTopoHa_cyHgyka == -1 then
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "стартовый сундук не найден")
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-			-- return
-		-- end
-		-- local HoMep_cJIoTa_cyHgyKa = 0
-		-- local Ta6JIuca_uTema = {}
-		-- for cJIoT_B_CyHgyke = 1, pa3Mep_uHBeHTap9l do
-			-- local Ta6JIuca_uTema = component.invoke(Ta6JIuca_nbegecTaJIoB[2], "getStackInSlot", cTopoHa_cyHgyka, cJIoT_B_CyHgyke)
-			-- if Ta6JIuca_uTema ~= nil then
-				-- HoMep_cJIoTa_cyHgyKa = cJIoT_B_CyHgyke
-			-- end
-		-- end
-		-- if HoMep_cJIoTa_cyHgyKa == 0 then
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "итем для настройке не найден")
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
-			-- return
-		-- end
-		-- local cTopoHa_nbegecTaJIa = HauTu_nbegecTaJI(Ta6JIuca_nbegecTaJIoB[2])
-		-- table.insert(Ta6JIuca_nbegecTaJIoB_co_cTopoHamu, {Ta6JIuca_nbegecTaJIoB[2], {Ta6JIuca_nbegecTaJIoB[2], cTopoHa_cyHgyka, cTopoHa_nbegecTaJIa})
-		-- component.invoke(Ta6JIuca_nbegecTaJIoB[2], "transferItem", cTopoHa_cyHgyka, cTopoHa_nbegecTaJIa, 1, HoMep_cJIoTa_cyHgyKa, 1)
-		
-		-- for a = 1, 11 do
-			-- for agrec, _ in pairs(agreca_Bcex_TraHcno3epoB) do
-				-- --print("энтер для старта")
-				-- --io.read()
-				-- --term.clear()
-				-- --print("проверка транспозера с адресом " .. string.sub(agrec, 1, 3))
-				-- --io.read()
-				-- local agpec_HaugeH = false
-				-- for _, agpec_gJI9l_cpaBHeHu9l in ipairs(Ta6JIuca_nbegecTaJIoB) do
-					-- if agpec_gJI9l_cpaBHeHu9l == agrec then
-						-- agpec_HaugeH = true
-					-- end
-				-- end
-				-- if not agpec_HaugeH then
-					-- local npegMeT_nepeMellleH = false
-					-- --print("поиск предмета по всем сторонам")
-					-- for cTopoHa_c_npegMeToM = 2, 5 do
-						-- if component.invoke(agrec, "getStackInSlot", cTopoHa_c_npegMeToM, 1) ~= nil and not npegMeT_nepeMellleH then
-							-- --print("предмет найден на стороне: " .. ta6JIuca_cTopoH[cTopoHa_c_npegMeToM])
-							-- for cTopoHa_6e3_npegMeTa = 2, 5 do
-								-- if not npegMeT_nepeMellleH and cTopoHa_c_npegMeToM ~= cTopoHa_6e3_npegMeTa and component.invoke(agrec, "getInventorySize", cTopoHa_6e3_npegMeTa) == 1 then
-									-- --print("перемещение предмета")
-									-- component.invoke(agrec, "transferItem", cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa, 1, 1, 1)
-									-- table.insert(Ta6JIuca_nbegecTaJIoB, agrec)
-										-- table.insert(Ta6JIuca_nbegecTaJIoB_co_cTopoHamu, {agrec, cTopoHa_c_npegMeToM, cTopoHa_6e3_npegMeTa})
-									-- npegMeT_nepeMellleH = true
-								-- end
-							-- end
-						-- end
-					-- end
-				-- end
-			-- end
-		-- end
-		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адреса найденых пьедесталов")
-		-- for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v, 1, 3))
-		-- end	
-	end
+	end	
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
 			if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("zdraBcTByu_JIopg_The_Dark.dfpwm") end
@@ -1884,6 +1757,82 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат настройки транспозеров:")
 		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
+		local nepBblu_cJIoT = 1
+		--setMathixRecepts()
+		--Ta6JIuca_recenToB_Ha_MaTpuce
+		--me_interface_gJI9l_MaTpucbl
+		--agrec_me_interface_gJI9l_MaTpucbl
+		--Ta6JIuca_nbegecTaJIoB
+		--local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
+		--component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
+		--component.invoke(Ta6JIuca_nbegecTaJIoB[2], "getStackInSlot", cTopoHa_cyHgyka, cJIoT_B_CyHgyke)
+		
+		--проверка центрального пьедестала
+		local npegMeT_no_ceHTpy = component.invoke(Ta6JIuca_nbegecTaJIoB[1][1], "getStackInSlot", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], nepBblu_cJIoT)
+		if npegMeT_no_ceHTpy == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта прервана")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "положи предмет на центральный пьедестал")
+			return
+		end
+		
+		--проверка на наличие предметов на остальных пьедесталах
+		local Ta6JIuca_npegMeToB = {}
+		for cJIegyl0llluu_nbegecTaJI = 4, 15 do
+			local cJIegyl0llluu_npegMeT = component.invoke(Ta6JIuca_nbegecTaJIoB[cJIegyl0llluu_nbegecTaJI][1], "getStackInSlot", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], nepBblu_cJIoT)
+			if cJIegyl0llluu_npegMeT ~= nil then
+				table.insert(Ta6JIuca_npegMeToB, {cJIegyl0llluu_nbegecTaJI, cJIegyl0llluu_npegMeT})
+			end
+		end
+		if #Ta6JIuca_npegMeToB == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта прервана")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "на пьедесталах отсутствуют предметы")
+			return
+		end
+		
+		--ввод названия рецепта
+		local gy6JIukaT = false
+		local HoMep_gy6JIukaTa_B_Ta6JIuce = -1
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи название рецепта")
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		for HoMep_pecenTa, nouck_no in pairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
+			if coo6llleHue == nouck_no.Ha3BaHue then
+				gy6JIukaT = true
+				HoMep_gy6JIukaTa_B_Ta6JIuce = HoMep_pecenTa
+			end
+		end
+		
+		--действия, есть есть дубликат названия рецепта
+		if gy6JIukaT then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "рецепт с таким названием уже есть")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует перезаписать рецепт?")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
+			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
+			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			if coo6llleHue == "да" then
+				table.remove(Ta6JIuca_recenToB_Ha_MaTpuce, HoMep_gy6JIukaTa_B_Ta6JIuce)
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта отменена!")
+			end
+		end
+		
+		--запись рецепта в таблицу
+		table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
+			["Ha3BaHue"] = coo6llleHue,
+			["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy
+			["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB
+		})
+		setMathixRecepts()
+		
+		--вывод данных о записи в чат
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "результат записи:")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "название рецепта:" .. c .. "] = " .. g .. coo6llleHue)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "центальный пьедестал" .. c .. "] = " .. g .. npegMeT_no_ceHTpy.label
+		for k, v in ipairs(Ta6JIuca_npegMeToB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ":[пьедестал" .. v[1] .. "] = " .. g .. v[2].label)
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи все компоненты"] = function() --просмотреть все подключенные компоненты
@@ -2149,8 +2098,6 @@ do
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " создать новую зону"] = function() --новая зон
 		local nick_BBog9llllero_coo6llleHue = nick_gJI9l_npuBeTcTBu9l
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ожидание ввода: название зоны, х1, у1, z1, x2, y2, z2")
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
-		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		coo6llleHue = string.gsub(coo6llleHue, " ", "")
 		local Ha3BaHue_3oHbl, nepBblu_x, nepBblu_y, nepBblu_z, BTopou_x, BTopou_y, BTopou_z = string.match(unicode.lower(coo6llleHue), "(.+)%,(.+)%,(.+)%,(.+)%,(.+)%,(.+)%,(.+)")
 		print(coo6llleHue)
@@ -3444,7 +3391,6 @@ do
 	else
 		zagepJka_B_cekyHgax_npoBepku_oHJIauHa = configuration[24]
 	end
-
 	if configuration[26] == "nil" then
 		Bepcu9l_uu_6a3bl = string.format("%.f", filesystem.size("/home/t"))
 		configuration[26] = Bepcu9l_uu_6a3bl
@@ -3476,6 +3422,8 @@ do
 	else
 		agrec_me_interface_gJI9l_MaTpucbl = configuration[30]
 	end
+	--получение таблицы рецетов матрицы
+	getMathixRecepts()
 	--записывать логи с детекторов
 	if zanucblBaTb_JIoru then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. g .. "ВКЛ")

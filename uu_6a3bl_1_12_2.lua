@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "полный кринж"
+local Ha3BaHue_o6HoBJIeHu9l = "баги"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2025,7 +2025,7 @@ do
 		local gy6JIukaT = false
 		local HoMep_gy6JIukaTa_B_Ta6JIuce = -1
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи название рецепта")
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		for HoMep_pecenTa, nouck_no in pairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
 			if coo6llleHue == nouck_no.Ha3BaHue then
@@ -2039,7 +2039,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "рецепт с таким названием уже есть")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует перезаписать рецепт?")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
-			BBog_koppekTeH, coo6llleHuee = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
+			BBog_koppekTeH, coo6llleHuee = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			if coo6llleHuee == "да" then
 				table.remove(Ta6JIuca_recenToB_Ha_MaTpuce, HoMep_gy6JIukaTa_B_Ta6JIuce)
@@ -2070,7 +2070,7 @@ do
 		--уборка предметов с пьедесталов в сундук выдачи
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует ли убрать предметы с пьедесталов?")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
-		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
+		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		if coo6llleHue == "да" then
 			y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
@@ -2265,7 +2265,7 @@ do
 			end
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " переименовать"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "какое будет название?")
-				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_BBog9llllero_coo6llleHue)
+				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
 				if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 				configRedStone[k] = {coo6llleHue, configRedStone[k][2],  configRedStone[k][3]}
 				configuration[17] = configRedStone
@@ -2278,7 +2278,7 @@ do
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1])
 				end
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ввод цифры функции")
-				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_BBog9llllero_coo6llleHue)
+				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
 				if not BBog_koppekTeH or tonumber(coo6llleHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 				if tonumber(coo6llleHue) < 0 or tonumber(coo6llleHue) > #redStone_functions then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ввод некорректный")
@@ -2395,7 +2395,7 @@ do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. k .. ": " .. c .. v[7])
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру зоны")
-			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_BBog9llllero_coo6llleHue)
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
 			if not BBog_koppekTeH or tonumber(coo6llleHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			if tonumber(coo6llleHue) < 0 or tonumber(coo6llleHue) > #zoHbl_JIoroB then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			table.remove(zoHbl_JIoroB, tonumber(coo6llleHue))
@@ -2414,13 +2414,13 @@ do
 			for k, v in ipairs(zoHbl_JIoroB) do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. k .. ": " .. c .. v[7])
 			end
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "цифра зоны для сены?")
-			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_BBog9llllero_coo6llleHue)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "цифра зоны для смены?")
+			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
 			if not BBog_koppekTeH or tonumber(coo6llleHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			if tonumber(coo6llleHue) < 0 or tonumber(coo6llleHue) > #zoHbl_JIoroB then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			local cuqppa_zoHbl_gJI9l_CMeHbl = tonumber(coo6llleHue)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "цифра позиции зоны?")
-			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_BBog9llllero_coo6llleHue)
+			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
 			if not BBog_koppekTeH or tonumber(coo6llleHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			if tonumber(coo6llleHue) < 0 or tonumber(coo6llleHue) > #zoHbl_JIoroB then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			local cuqppa_no3ucuu_3oHbl = tonumber(coo6llleHue)

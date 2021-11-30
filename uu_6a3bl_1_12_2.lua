@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "матрица крафт2"
+local Ha3BaHue_o6HoBJIeHu9l = "матрица крафт3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -916,7 +916,7 @@ function py4Hou_BBog_agreca(text, ta6JIuca_agrecoB)
 end
 function oJugaHue_BBoga_cuqpPbl(oT, go)
 	::noBTop_BBoga_HoMepa::
-	BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+	BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
 	if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return false end
 	coo6llleHue = tonumber(coo6llleHue)
 	if coo6llleHue == nil or coo6llleHue < oT or coo6llleHue > go then
@@ -1913,18 +1913,20 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end		
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица крафт"] = function()
-		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
-			return
+		if not me_interface_gJI9l_MaTpucbl then
+			if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
+				return
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепты в наличии:")
+			for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
+			local re3yJIbTaT_BBoga, cuqppa_pecenTa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
+			if not re3yJIbTaT_BBoga then return end
+			BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_pecenTa])
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепты в наличии:")
-		for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
-		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
-		local re3yJIbTaT_BBoga, cuqppa_pecenTa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
-		if not re3yJIbTaT_BBoga then return end
-		BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_pecenTa])
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
@@ -1938,6 +1940,30 @@ do
 		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
 		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат настройки транспозеров:")
+		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор адреса")
+		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
+		if not re3yJIbTaT_BBoga then return end
+		local HoMep_B_Ta6JIuce_nbegecTaJIoB = cuqppa
+		for j = 0, 5 do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. j .. ": " .. g .. ta6JIuca_cTopoH[j])
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор стороны подачи предмета")
+		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
+		if not re3yJIbTaT_BBoga then return end
+		local cTopoHa1 = cuqppa
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор стороны выдачи предмета")
+		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
+		if not re3yJIbTaT_BBoga then return end
+		local cTopoHa2 = cuqppa
+		Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB] = {Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB][1], cTopoHa1, cTopoHa2}
+		configuration[28] = Ta6JIuca_nbegecTaJIoB
+		setConfiguration()
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
 		local nepBblu_cJIoT = 1

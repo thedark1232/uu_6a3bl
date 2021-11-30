@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта6"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -970,7 +970,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	y6paTb_npegMeTbl_c_nbegecTaJIoB(false)
 	
 	--сбор информации о предметах в центральном сундуке
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. recept.Ha3BaHue)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. g .. recept.Ha3BaHue)
 	local Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe = {}
 	local Bcero_cJIoToB_B_cyHgyke = component.invoke(transposer, "getInventorySize", cTopoHa_Bblga4u)
 	--term.clear(); io.write("всего слотов в сундуке = "); print(Bcero_cJIoToB_B_cyHgyke)
@@ -1015,15 +1015,16 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 			print("сравнение предмета в сундуке : " .. val[2].name .. " с " .. v[2].name)
 			print("сравнение дамага в сундуке : " ..  val[2].damage .. " с " ..v[2].damage)
 			print("сравнение количества в сундуке : " ..  val[2].size .. " с " .. v[2].size)
-			io.read()
+			--io.read()
 			if v[2].name == val[2].name and v[2].damage == val[2].dagame and val[2].size >= v[2].size then
 				print("найдено соответствие")
+				io.read()
 				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
 				npegMeT_HaugeH = true
 				val[2].size = val[2].size - 1
 				if val[2].size == 0 then Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key] = nil end
-				He_HaugeHHble_item = v[2]
 			end
+			He_HaugeHHble_item = v[2]
 		end
 		if not npegMeT_HaugeH then
 			print("предмет не найден")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "дебаг чистки3"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -925,10 +925,11 @@ function oJugaHue_BBoga_cuqpPbl(oT, go)
 	end
 	return true, coo6llleHue
 end
-function y6paTb_npegMeTbl_c_nbegecTaJIoB()
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "чистка пьедесталов начата")
+function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --если false, то предметы задержаться в центральном сундуке
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещаю предметы с пьедесталов")
 	local cTopoHa_npueMHuk
 	local cTopoHa_Bblga4u	
+	local transposer
 	for i = #Ta6JIuca_nbegecTaJIoB, 2, -1 do
 		transposer = Ta6JIuca_nbegecTaJIoB[i][1]
 		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[i][2]
@@ -945,11 +946,54 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB()
 	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
 	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
 	repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
-	transposer = Ta6JIuca_nbegecTaJIoB[2][1]
-	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][3]
-	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[2][2]
-	repeat until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk) == false
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "чистка пьедесталов окончена")
+	if nepeMecTuTb_B_cyHgyk_Bblga4u then
+		transposer = Ta6JIuca_nbegecTaJIoB[2][1]
+		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][3]
+		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[2][2]
+		repeat until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk) == false
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перемещение завершено")
+	end
+end
+function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
+	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
+	-- ["Ha3BaHue"] = coo6llleHue,
+	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
+	-- ["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB
+	local transposer = Ta6JIuca_nbegecTaJIoB[1][1]
+	local cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
+	local cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
+	local pe3yJIbTaT
+	
+	--убрать предметы с пьедесталов в центральный сундук
+	y6paTb_npegMeTbl_c_nbegecTaJIoB(false)
+	
+	--сбор информации о предметах в центральном сундуке
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. recept.Ha3BaHue)
+	local Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe = {}
+	local Bcero_cJIoToB_B_cyHgyke = component.invoke(transposer, "getInventorySize", cTopoHa_Bblga4u)
+	for i = 1, Bcero_cJIoToB_B_cyHgyke do
+		local cJIegyl0llluu_uTem = component.invoke(transposer, "getStackInSlot", cTopoHa_Bblga4u, i)
+		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
+	end
+	
+	--поиск центрального передмета в сундуке
+	for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
+		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and val[2].damage == recept.cTapToBblu_npegMeT_no_ceHTpy.damage then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "центральный предмет найден")
+		end
+	end
+	
+	-- --поиск предметов рецепта	
+	-- for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
+		-- for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
+			-- if v[2].name == val[2].name then
+				-- ceHTpaJIbHblu_uTem_HaugeH = true
+			-- end
+		-- end
+	-- end
+	
+	--поиск остальных итемов
+	
 end
 
 do
@@ -1771,7 +1815,10 @@ do
 		configuration[18] = admin
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
-	end	
+	end		
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица крафт"] = function()
+		BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[1])
+	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
 		if me_interface_gJI9l_MaTpucbl then
@@ -1868,7 +1915,7 @@ do
 		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		if coo6llleHue == "да" then
-			y6paTb_npegMeTbl_c_nbegecTaJIoB()
+			y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
 		end	
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "обработка рецепта завершена!")
 	end
@@ -1883,7 +1930,7 @@ do
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"] = function() --просмотреть все подключенные компоненты
-		y6paTb_npegMeTbl_c_nbegecTaJIoB()
+		y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи все компоненты"] = function() --просмотреть все подключенные компоненты
 		local Bce_KoMnoHeHTbl = {}

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта14"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта15"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1047,21 +1047,28 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 				term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()
 				if k > 2 then
 					io.write("номер пьедестала совпадает с номером по рецепту "); print(k == recept.Ta6JIuca_npegMeToB[1]); io.read()
-					if k == recept.Ta6JIuca_npegMeToB[1] then
-						break
-					end
 					local transposer = cBoucTBo_nbegecTaJIa[1]
 					local cTopoHa_npueMHuk = cBoucTBo_nbegecTaJIa[2]
 					local cTopoHa_Bblga4u = cBoucTBo_nbegecTaJIa[3]
 					local HoMep_cJIoTa_itema
+					if k == recept.Ta6JIuca_npegMeToB[1] then
+						term.clear()
+						print("переместить предмет через транспозер")
+						print("адрес: " .. string.sub(transposer, 1, 3))
+						print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на пьедестал")
+						print("вытянуть из слота под номером: " .. tostring(HoMep_cJIoTa_itema))
+						component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, cTopoHa_Bblga4u, 1, 1, 1)
+						io.read()
+						break
+					end
 					if k == 3 then HoMep_cJIoTa_itema = zHa4eHue[1] else HoMep_cJIoTa_itema = 1 end
 					term.clear()
 					print("переместить предмет через транспозер")
 					print("адрес: " .. string.sub(transposer, 1, 3))
-					print("с " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. "а на " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+					print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u])
 					print("вытянуть из слота под номером: " .. tostring(HoMep_cJIoTa_itema))
 					io.read()
-					component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, HoMep_cJIoTa_itema, 1)
+					component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, cTopoHa_Bblga4u, 1, HoMep_cJIoTa_itema, 1)
 				end
 			end
 		end

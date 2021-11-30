@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "дебаг матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "проверки перемещения"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -932,28 +932,43 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 	local cTopoHa_Bblga4u	
 	local transposer
 	local limit = 200
+	local re3yJIbTaT_nepeMellleHu9l
 	for i = #Ta6JIuca_nbegecTaJIoB, 2, -1 do
 		transposer = Ta6JIuca_nbegecTaJIoB[i][1]
 		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[i][2]
 		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[i][3]
-		print(transposer)
-		print("перемещение сверху  => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
-		repeat limit = limit - 1; if limit <= 0 then return end until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
-		io.read()
-		print("перемещение " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. " => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+		--print(transposer)
+		--print("перемещение сверху  => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+		
+		repeat 
+			limit = limit - 1
+			if limit <= 0 then return end
+			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
+		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
+		--io.read()
+		--print("перемещение " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. " => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
 		limit = 200
-		repeat limit = limit - 1; if limit <= 0 then return end until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk) == false
-		io.read()
+		repeat
+			limit = limit - 1
+			if limit <= 0 then return end
+			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk)
+		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
+		--io.read()
 	end
 	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
 	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
 	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
-	repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
+	local re3yJIbTaT_nepeMellleHu9l
+	repeat
+		re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
+	until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
 	if nepeMecTuTb_B_cyHgyk_Bblga4u then
 		transposer = Ta6JIuca_nbegecTaJIoB[2][1]
 		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][3]
 		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[2][2]
-		repeat until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk) == false
+		repeat 
+			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk)
+		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перемещение завершено")
 	end
 end

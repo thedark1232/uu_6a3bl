@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта4"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -963,7 +963,8 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	local transposer = Ta6JIuca_nbegecTaJIoB[1][1]
 	local cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][3]
 	local cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][2]
-	local pe3yJIbTaT
+	local Ha4aJIbHblu_npegMeT_HaugeH = false
+	local ocTaJIbHble_npegMeTbl_HaugeHbl = true
 	
 	--убрать предметы с пьедесталов в центральный сундук
 	y6paTb_npegMeTbl_c_nbegecTaJIoB(false)
@@ -972,48 +973,84 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. recept.Ha3BaHue)
 	local Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe = {}
 	local Bcero_cJIoToB_B_cyHgyke = component.invoke(transposer, "getInventorySize", cTopoHa_Bblga4u)
-	term.clear(); io.write("всего слотов в сундуке = "); print(Bcero_cJIoToB_B_cyHgyke)
+	--term.clear(); io.write("всего слотов в сундуке = "); print(Bcero_cJIoToB_B_cyHgyke)
 	--io.read()
 	for i = 1, Bcero_cJIoToB_B_cyHgyke do
 		local cJIegyl0llluu_uTem = component.invoke(transposer, "getStackInSlot", cTopoHa_Bblga4u, i)
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
 	end
-	term.clear()
-	print("найденные предметы в сундуке")
+	--term.clear()
+	--print("найденные предметы в сундуке")
 	for k, v in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
 		print(k, v[1], v[2])
 	end
 	--io.read()
-	local Heo6xoguMble_uTeMbl = {}
 	
 	--поиск центрального передмета в сундуке
+	local Heo6xoguMble_uTeMbl = {}
 	for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-		term.clear()
+		--term.clear()
 		--print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
 		--print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
 		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and val[2].damage == recept.cTapToBblu_npegMeT_no_ceHTpy.damage then
 			val[2].size = val[2].size - 1
-			print("количество предметов оставшихся в " .. val[1] .. " слоте")
-			print(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key][2].size)
-			io.read()
+			--print("количество предметов оставшихся в " .. val[1] .. " слоте")
+			--print(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key][2].size)
+			--io.read()
 			table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
 			if val[2].size == 0 then Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key] = nil end
-			pe3yJIbTaT = true
+			Ha4aJIbHblu_npegMeT_HaugeH = true
 			break
 		end
 	end
 	
-	-- --поиск предметов рецепта	
-	-- for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
-		-- for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-			-- if v[2].name == val[2].name then
-				-- ceHTpaJIbHblu_uTem_HaugeH = true
-			-- end
-		-- end
-	-- end
+	local He_HaugeHHble_items = {}
+	local He_HaugeHHble_item = {}
+	local npegMeT_HaugeH = false
+	--поиск предметов рецепта	
+	for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
+		npegMeT_HaugeH = false
+		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
+			term.clear()
+			print("сравнение предмета в сундуке : " .. val[2].name .. " с " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
+			print("сравнение дамага в сундуке : " ..  val[2].damage .. " с " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
+			print("сравнение количества в сундуке : " ..  val[2].size .. " с " .. val[2].size)
+			io.read()
+			if v[2].name == val[2].name and v[2].damage == val[2].dagame and val[2].size >= v[2].size then
+				print("найдено соответствие")
+				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
+				npegMeT_HaugeH = true
+				val[2].size = val[2].size - 1
+				if val[2].size == 0 then Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key] = nil end
+				He_HaugeHHble_item = v[2]
+			end
+		end
+		if not npegMeT_HaugeH then
+			print("предмет не найден")
+			print("запись в таблицу не найденых предметов")
+			table.insert(He_HaugeHHble_items, He_HaugeHHble_item)
+			ocTaJIbHble_npegMeTbl_HaugeHbl = false
+		end
+	end
 	
-	--поиск остальных итемов
-	
+	--окончательный результат
+	if Ha4aJIbHblu_npegMeT_HaugeH and ocTaJIbHble_npegMeTbl_HaugeHbl then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
+	else
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "для рецепта: " .. recept.Ha3BaHue)
+		if Ha4aJIbHblu_npegMeT_HaugeH == false then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "предмет для центрального пьедестала:")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. recept.cTapToBblu_npegMeT_no_ceHTpy.label .. " не найден!")
+		end
+		if ocTaJIbHble_npegMeTbl_HaugeHbl == false then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "остальные предметы для крафта:")
+			for k, v in ipairs(He_HaugeHHble_items) do
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. k .. ": " .. v.label .. " не найден!")
+			end
+			table.insert(He_HaugeHHble_items, 1, recept.cTapToBblu_npegMeT_no_ceHTpy)
+		end
+		return false, He_HaugeHHble_items
+	end	
 end
 
 do

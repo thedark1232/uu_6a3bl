@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "матрица крафт"
+local Ha3BaHue_o6HoBJIeHu9l = "матрица крафт2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1922,9 +1922,9 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
-		local re3yJIbTaT_BBoga, cuqppa_gJl9l_ygaJIeHu9l = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
+		local re3yJIbTaT_BBoga, cuqppa_pecenTa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
 		if not re3yJIbTaT_BBoga then return end
-		BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[1])
+		BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_pecenTa])
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")

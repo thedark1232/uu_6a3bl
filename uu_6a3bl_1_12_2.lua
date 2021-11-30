@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта18"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта19"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1048,7 +1048,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
 				term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()
 				if k > 2 then
-					io.write("пьедестал номер " .. k .. " совпадает с номером по рецепту " .. recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1]); print(k == recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1]); io.read()
+					io.write("пьедестал номер " .. k .. " совпадает с номером по рецепту " .. recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1] .. " "); print(k == recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1]); io.read()
 					local transposer = cBoucTBo_nbegecTaJIa[1]
 					local cTopoHa_npueMHuk = cBoucTBo_nbegecTaJIa[2]
 					local cTopoHa_Bblga4u = cBoucTBo_nbegecTaJIa[3]

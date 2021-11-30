@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта2"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -961,8 +961,8 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
 	-- ["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB
 	local transposer = Ta6JIuca_nbegecTaJIoB[1][1]
-	local cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
-	local cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
+	local cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][3]
+	local cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][2]
 	local pe3yJIbTaT
 	
 	--убрать предметы с пьедесталов в центральный сундук
@@ -972,6 +972,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. recept.Ha3BaHue)
 	local Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe = {}
 	local Bcero_cJIoToB_B_cyHgyke = component.invoke(transposer, "getInventorySize", cTopoHa_Bblga4u)
+	term.clear(); io.write("всего слотов в сундуке = "); print(Bcero_cJIoToB_B_cyHgyke); io.read()
 	for i = 1, Bcero_cJIoToB_B_cyHgyke do
 		local cJIegyl0llluu_uTem = component.invoke(transposer, "getStackInSlot", cTopoHa_Bblga4u, i)
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end

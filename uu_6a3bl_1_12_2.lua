@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта13"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1044,9 +1044,9 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		
 		for _, zHa4eHue in ipairs(Heo6xoguMble_uTeMbl) do
 			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
-				term.clear(); io.write("если номер пьедестала больше 2"); print(k > 2); io.read()
+				term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()
 				if k > 2 then
-					io.write("номер пьедестала совпадает с номером по рецепту"); print(k == recept.Ta6JIuca_npegMeToB[1]); io.read()
+					io.write("номер пьедестала совпадает с номером по рецепту "); print(k == recept.Ta6JIuca_npegMeToB[1]); io.read()
 					if k == recept.Ta6JIuca_npegMeToB[1] then
 						break
 					end
@@ -1054,7 +1054,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 					local cTopoHa_npueMHuk = cBoucTBo_nbegecTaJIa[2]
 					local cTopoHa_Bblga4u = cBoucTBo_nbegecTaJIa[3]
 					local HoMep_cJIoTa_itema
-					if k == 3 then HoMep_cJIoTa_itema = Heo6xoguMble_uTeMbl[1][1] else HoMep_cJIoTa_itema = 1 end
+					if k == 3 then HoMep_cJIoTa_itema = zHa4eHue[1] else HoMep_cJIoTa_itema = 1 end
 					term.clear()
 					print("переместить предмет через транспозер")
 					print("адрес: " .. string.sub(transposer, 1, 3))
@@ -1964,14 +1964,16 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "рецепт с таким названием уже есть")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует перезаписать рецепт?")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
-			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
+			BBog_koppekTeH, coo6llleHuee = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-			if coo6llleHue == "да" then
+			if coo6llleHuee == "да" then
 				table.remove(Ta6JIuca_recenToB_Ha_MaTpuce, HoMep_gy6JIukaTa_B_Ta6JIuce)
+				coo6llleHuee = nil
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта отменена!")
+				coo6llleHuee = nil
 				return
-			end
+			end	
 		end
 		
 		--запись рецепта в таблицу

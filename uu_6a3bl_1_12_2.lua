@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта8"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -992,7 +992,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		--term.clear()
 		--print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
 		--print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
-		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and val[2].damage == recept.cTapToBblu_npegMeT_no_ceHTpy.damage then
+		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and tonumber(val[2].damage) == tonumber(recept.cTapToBblu_npegMeT_no_ceHTpy.damage) then
 			val[2].size = val[2].size - 1
 			--print("количество предметов оставшихся в " .. val[1] .. " слоте")
 			--print(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key][2].size)
@@ -1012,11 +1012,11 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		npegMeT_HaugeH = false
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
 			term.clear()
-			io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name); print( v[2].name == val[2].name)
-			io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage); print(v[2].damage == val[2].dagame)
-			io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size); print(val[2].size >= v[2].size)
+			io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
+			io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].dagame))
+			io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
 			io.read()
-			if v[2].name == val[2].name and v[2].damage == val[2].dagame and val[2].size >= v[2].size then
+			if v[2].name == val[2].name and tonumber(v[2].damage) == tonumber(val[2].dagame) and tonumber(val[2].size) >= tonumber(v[2].size) then
 				print("найдено соответствие")
 				io.read()
 				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})

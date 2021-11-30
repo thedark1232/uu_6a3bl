@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "проверки перемещения"
+local Ha3BaHue_o6HoBJIeHu9l = "проверки перемещения дебаг"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -942,7 +942,12 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 		
 		repeat 
 			limit = limit - 1
-			if limit <= 0 then return end
+			if limit <= 0 then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка в перемещении:")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "проблемый адрес:" .. tostring(transposer))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "направление: свеху => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+				return
+			end
 			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
 		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
 		--io.read()
@@ -950,7 +955,12 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 		limit = 200
 		repeat
 			limit = limit - 1
-			if limit <= 0 then return end
+			if limit <= 0 then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка в перемещении:")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "проблемый адрес:" .. tostring(transposer))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "направление: " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. " => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+				return
+			end
 			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk)
 		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0
 		--io.read()

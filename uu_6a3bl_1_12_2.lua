@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест матрица запись рецепта"
+local Ha3BaHue_o6HoBJIeHu9l = "чистка пьедесталов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -925,6 +925,27 @@ function oJugaHue_BBoga_cuqpPbl(oT, go)
 	end
 	return true, coo6llleHue
 end
+function y6paTb_npegMeTbl_c_nbegecTaJIoB()
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "чистко пьедесталов начата")
+	local cTopoHa_npueMHuk
+	local cTopoHa_Bblga4u	
+	for i = #Ta6JIuca_nbegecTaJIoB, 2 do
+		transposer = Ta6JIuca_nbegecTaJIoB[i][1]
+		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[i][2]
+		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[i][3]
+		repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
+		repeat until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk)
+	end
+	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
+	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
+	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
+	repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
+	transposer = Ta6JIuca_nbegecTaJIoB[2][1]
+	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][2]
+	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[2][3]
+	repeat until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "чистка пьедесталов окончена")
+end
 
 do
 	--осчистка монитора
@@ -1816,24 +1837,50 @@ do
 				table.remove(Ta6JIuca_recenToB_Ha_MaTpuce, HoMep_gy6JIukaTa_B_Ta6JIuce)
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта отменена!")
+				return
 			end
 		end
 		
 		--запись рецепта в таблицу
 		table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 			["Ha3BaHue"] = coo6llleHue,
-			["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy
+			["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
 			["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB
 		})
 		setMathixRecepts()
 		
 		--вывод данных о записи в чат
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "результат записи:")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "название рецепта:" .. c .. "] = " .. g .. coo6llleHue)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "центальный пьедестал" .. c .. "] = " .. g .. npegMeT_no_ceHTpy.label
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "название рецепта" .. c .. "] = " .. g .. coo6llleHue)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "центальный пьедестал" .. c .. "] = " .. g .. npegMeT_no_ceHTpy.label)
 		for k, v in ipairs(Ta6JIuca_npegMeToB) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ":[пьедестал" .. v[1] .. "] = " .. g .. v[2].label)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ":[" .. g .. "пьедестал " .. v[1] .. c .. "] = " .. g .. v[2].label)
 		end
+		
+		--уборка предметов с пьедесталов в сундук выдачи
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует ли убрать предметы с пьедесталов?")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
+		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_BBog9llllero_coo6llleHue)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		if coo6llleHue == "да" then
+			y6paTb_npegMeTbl_c_nbegecTaJIoB()
+		end	
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "обработка рецепта завершена!")
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица рецепты инфо"] = function() --просмотреть все подключенные компоненты
+		if #Ta6JIuca_recenToB_Ha_MaTpuce = 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
+			return
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепты в наличии:")
+		for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"] = function() --просмотреть все подключенные компоненты
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
+		y6paTb_npegMeTbl_c_nbegecTaJIoB()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "звершено")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи все компоненты"] = function() --просмотреть все подключенные компоненты
 		local Bce_KoMnoHeHTbl = {}

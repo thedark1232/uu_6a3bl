@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта12"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1011,14 +1011,14 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
 		npegMeT_HaugeH = false
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-			term.clear()
-			io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
-			io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
-			io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
-			io.read()
+			--term.clear()
+			--io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
+			--io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
+			--io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
+			--io.read()
 			if v[2].name == val[2].name and tonumber(v[2].damage) == tonumber(val[2].damage) and tonumber(val[2].size) >= tonumber(v[2].size) then
-				print("найдено соответствие")
-				io.read()
+				--print("найдено соответствие")
+				--io.read()
 				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
 				npegMeT_HaugeH = true
 				val[2].size = val[2].size - 1
@@ -1037,6 +1037,35 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	--окончательный результат
 	if Ha4aJIbHblu_npegMeT_HaugeH and ocTaJIbHble_npegMeTbl_HaugeHbl then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
+		--перемещение центрального итема
+		term.clear(); print("перемещение итема из слота " .. Heo6xoguMble_uTeMbl[1][1])
+		component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, Heo6xoguMble_uTeMbl[1][1], 1)
+		io.read()
+		
+		for _, zHa4eHue in ipairs(Heo6xoguMble_uTeMbl) do
+			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
+				term.clear(); io.write("если номер пьедестала больше 2"); print(k > 2); io.read()
+				if k > 2 then
+					io.write("номер пьедестала совпадает с номером по рецепту"); print(k == recept.Ta6JIuca_npegMeToB[1]); io.read()
+					if k == recept.Ta6JIuca_npegMeToB[1] then
+						break
+					end
+					local transposer = cBoucTBo_nbegecTaJIa[1]
+					local cTopoHa_npueMHuk = cBoucTBo_nbegecTaJIa[2]
+					local cTopoHa_Bblga4u = cBoucTBo_nbegecTaJIa[3]
+					local HoMep_cJIoTa_itema
+					if k == 3 then HoMep_cJIoTa_itema = Heo6xoguMble_uTeMbl[1][1] else HoMep_cJIoTa_itema = 1 end
+					term.clear()
+					print("переместить предмет через транспозер")
+					print("адрес: " .. string.sub(transposer, 1, 3))
+					print("с " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. "а на " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+					print("вытянуть из слота под номером: " .. tostring(HoMep_cJIoTa_itema))
+					io.read()
+					component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, HoMep_cJIoTa_itema, 1)
+				end
+			end
+		end
+		
 	else
 		if Ha4aJIbHblu_npegMeT_HaugeH == false then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "предмет для центрального пьедестала:")
@@ -1050,7 +1079,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 			table.insert(He_HaugeHHble_items, 1, recept.cTapToBblu_npegMeT_no_ceHTpy)
 		end
 		return false, He_HaugeHHble_items
-	end	
+	end
 end
 
 do

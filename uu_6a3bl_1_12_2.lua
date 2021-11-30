@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "дебаг чистки"
+local Ha3BaHue_o6HoBJIeHu9l = "дебаг чистки2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -929,25 +929,25 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB()
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "чистка пьедесталов начата")
 	local cTopoHa_npueMHuk
 	local cTopoHa_Bblga4u	
-	for i = #Ta6JIuca_nbegecTaJIoB, 2 do
+	for i = #Ta6JIuca_nbegecTaJIoB, 2, -1 do
 		transposer = Ta6JIuca_nbegecTaJIoB[i][1]
-		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[i][2]
-		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[i][3]
-		print(transposer)
-		print("перемещение сверху  => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[i][3]
+		cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[i][2]
+		--print(transposer)
+		--print("перемещение сверху  => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
 		repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
-		io.read()
-		print("перемещение " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. " => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
+		--io.read()
+		--print("перемещение " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u] .. " => " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk])
 		repeat until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk) == false
-		io.read()
+		--io.read()
 	end
 	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
-	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
-	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
+	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][3]
+	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][2]
 	repeat until component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk) == false
 	transposer = Ta6JIuca_nbegecTaJIoB[2][1]
-	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][2]
-	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[2][3]
+	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][3]
+	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[2][2]
 	repeat until component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk) == false
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "чистка пьедесталов окончена")
 end
@@ -1091,7 +1091,7 @@ do
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление старой версии: " .. r .. "ошибка")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверь путь для удаления: " .. r .. nyTb_k_uu_6a3bl)
 				end
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "копирование временных файлов в: " .. nyTb_k_uu_6a3bl)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "копирование временных файлов в: " .. g .. nyTb_k_uu_6a3bl)
 				filesystem.copy(nyTb_k_uu_6a3bl .. "1232", nyTb_k_uu_6a3bl)
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление временных файлов")
 				filesystem.remove(nyTb_k_uu_6a3bl .. "1232")

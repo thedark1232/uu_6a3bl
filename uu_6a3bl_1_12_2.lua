@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта7"
+local Ha3BaHue_o6HoBJIeHu9l = "тест рецепта8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1012,10 +1012,10 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		npegMeT_HaugeH = false
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
 			term.clear()
-			print("сравнение предмета в сундуке : " .. val[2].name .. " с " .. v[2].name)
-			print("сравнение дамага в сундуке : " ..  val[2].damage .. " с " ..v[2].damage)
-			print("сравнение количества в сундуке : " ..  val[2].size .. " с " .. v[2].size)
-			--io.read()
+			io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name); print( v[2].name == val[2].name)
+			io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage); print(v[2].damage == val[2].dagame)
+			io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size); print(val[2].size >= v[2].size)
+			io.read()
 			if v[2].name == val[2].name and v[2].damage == val[2].dagame and val[2].size >= v[2].size then
 				print("найдено соответствие")
 				io.read()
@@ -1038,7 +1038,6 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	if Ha4aJIbHblu_npegMeT_HaugeH and ocTaJIbHble_npegMeTbl_HaugeHbl then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
 	else
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "для рецепта: " .. recept.Ha3BaHue)
 		if Ha4aJIbHblu_npegMeT_HaugeH == false then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "предмет для центрального пьедестала:")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. recept.cTapToBblu_npegMeT_no_ceHTpy.label .. " не найден!")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги чата3"
+local Ha3BaHue_o6HoBJIeHu9l = "баги чата4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -250,7 +250,7 @@ function zarpy3ka_koMnoHeHToB()
 	--компонент чат бокса
 	if not bez_chat_box then
 		if component.isAvailable("chat_box") then
-			Ta6JIuca_koMnoHeHToB["chat_box"] = component.chat_box
+			Ta6JIuca_koMnoHeHToB["chat_box"] = {}
 			Ta6JIuca_koMnoHeHToB["chat_box"].say = function(text)
 				local Ta6JIuca_cuMBoJIoB = {}
 				local KoHec_cTpoku = unicode.len(text)
@@ -283,6 +283,9 @@ function zarpy3ka_koMnoHeHToB()
 				print("результирующая строка: " .. table.concat(Ta6JIuca_cuMBoJIoB))
 				io.read()
 				component.chat_box.say(table.concat(Ta6JIuca_cuMBoJIoB))
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].setName = function(text)
+				component.chat_box.setName(text)
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. "ИИ базы")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("§6включение сети")

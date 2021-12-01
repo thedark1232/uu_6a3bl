@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "запуск потока"
+local Ha3BaHue_o6HoBJIeHu9l = "баги потока"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2113,6 +2113,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
 		if me_interface_gJI9l_MaTpucbl then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ командами в чат")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3))
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ через мэ терминал")
 		end
@@ -4114,7 +4115,6 @@ do
 				koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 			end
 			if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 and MaTpuca_cBo6ogHa then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "очередь крафтов на матрице больше 0")
 				MaTpuca_cBo6ogHa = false
 				configuration[32] = MaTpuca_cBo6ogHa
 				setConfiguration()

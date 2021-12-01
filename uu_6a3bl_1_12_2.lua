@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "работа с очередьми2"
+local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -18,11 +18,14 @@ local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local Ta6JIuca_nbegecTaJIoB = {}
 local o4epegb_kpaqpToB_Ha_MaTpuce = {}
 local me_interface_gJI9l_MaTpucbl = false
+local MaTpuca_cBo6ogHa = true
+local coo6llleHue_OT_MaTpucbl
 local c = "§6" --оранжевый
 local r = "§c" --красный
 local g = "§a" --зеленый
 local Bepcu9l_uu_6a3bl = "0"
 local gpu = component.gpu
+local cocTo9lHue_noToka_MaTpucbl = ""
 local Ta6JIuca_koMaHg_gJI9l_TuMMeuToB = {}
 local Ta6JIuca_admin_koMaHg = {}
 local Ta6JIuca_koMaHg_gJI9l_rocTeu = {}
@@ -1004,8 +1007,7 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перемещение завершено")
 	end
 end
-function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
-	
+function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)	
 	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 	-- ["Ha3BaHue"] = coo6llleHue,
 	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
@@ -1140,6 +1142,15 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 		return false, He_HaugeHHble_items
 	end
 end
+function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "вход в поток")
+	for i = 1, 10000 do
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нахождение в потоке " .. tostring(i))
+		os.sleep(10)
+	end
+	
+end
+
 
 do
 	--осчистка монитора
@@ -2029,7 +2040,22 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
 		--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очередь инфо"] = function()
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица состояние"] = function() --состояние свободна или заняа
+		if MaTpuca_cBo6ogHa then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. g .. "свободна")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. r .. "занята")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица состояние переключить"] = function() --переключить состояние матрицы на свободную, если занята и наоборот
+		MaTpuca_cBo6ogHa = not MaTpuca_cBo6ogHa
+		if MaTpuca_cBo6ogHa then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. g .. "свободна")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. r .. "занята")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очередь"] = function()
 		if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
 			return
@@ -3782,6 +3808,12 @@ do
 	else
 		o4epegb_kpaqpToB_Ha_MaTpuce = configuration[31]
 	end
+	if configuration[32] == "nil" then
+		configuration[32] = MaTpuca_cBo6ogHa
+		setConfiguration()
+	else
+		MaTpuca_cBo6ogHa = configuration[32]
+	end
 	--получение таблицы рецетов матрицы
 	getMathixRecepts()
 	--записывать логи с детекторов
@@ -4056,6 +4088,15 @@ do
 			end
 			if coo6llleHue_oT_redstone then
 				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. teKcT_coo6llleHu9l, red)
+				koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
+			end
+			if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 and MaTpuca_cBo6ogHa then
+				MaTpuca_cBo6ogHa = false
+				cocTo9lHue_noToka_MaTpucbl = myThread.create(kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke)
+				if coo6llleHue_OT_MaTpucbl ~= nil then
+					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. coo6llleHue_OT_MaTpucbl, red)
+					koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
+				end
 			end
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		end

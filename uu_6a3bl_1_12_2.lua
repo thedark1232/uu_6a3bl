@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "изменение дизайнаh"
+local Ha3BaHue_o6HoBJIeHu9l = "прикол"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2114,7 +2114,35 @@ do
 		configuration[18] = admin
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
-	end		
+	end	
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " треугольник"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи нечетное число не больше 20")
+		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, math.huge)
+		if not re3yJIbTaT_BBoga then return end
+		if cuqppa > 50 or cuqppa < 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "где-то ты меня наебываешь, хуярок")
+		end
+		if cuqppa == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ахахах, вот ты пидор")
+		end
+		local re3yJIbTaT_geJIeHu9l = cuqppa / 2
+		if re3yJIbTaT_geJIeHu9l / 2 == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "пошел нахуй! азаза")
+		end
+		local ta6JIuca_cuMBoJIoB = {}
+		local cuMBoJI = "*"
+		for i = 1, math.floor(re3yJIbTaT_geJIeHu9l) do
+			table.insert(ta6JIuca_cuMBoJIoB, cuMBoJI)
+			cuMBoJI = cuMBoJI .. "*"
+		end
+		table.insert(ta6JIuca_cuMBoJIoB, cuMBoJI)
+		for _, k in ipairs(ta6JIuca_cuMBoJIoB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k)
+		end
+		for i = #ta6JIuca_cuMBoJIoB, 1, -1 do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. ta6JIuca_cuMBoJIoB[i])
+		end
+	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица крафт"] = function()
 		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")

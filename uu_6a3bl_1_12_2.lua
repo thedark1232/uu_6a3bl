@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "замена адресов3"
+local Ha3BaHue_o6HoBJIeHu9l = "замена адресов4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -229,6 +229,7 @@ table.insert(redStone_functions, {"матрица", function(agrecc_curHaJIa, cT
 	end
 end})
 function oJugaHue_BBoga_koMaHgbl(BpeM9l_oJugaHu9l, Huk_Bbl3BaBlllero_koMaHgy, He_npeo6pa3oBblBaTb_TekcT)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "для выхода введи: " .. g .. " выход")
 	local cJIylllaTeJIb_co6blTu9l
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 		cJIylllaTeJIb_co6blTu9l = "glasses_chat_message"
@@ -244,7 +245,7 @@ function oJugaHue_BBoga_koMaHgbl(BpeM9l_oJugaHu9l, Huk_Bbl3BaBlllero_koMaHgy, He
 		end
 	end
 	if ucTo4Huk_coo6llleHuu == "glasses_chat_message" then msg = command end
-	if msg == nil or  msg == Ha3BaHue_6a3bl .. " выход" then return false end
+	if msg == nil or  msg == "выход" then return false end
 	if He_npeo6pa3oBblBaTb_TekcT == nil or He_npeo6pa3oBblBaTb_TekcT == false then msg = unicode.lower(msg) end
 	--print("успеншая передача сообщения")
 	return true, msg
@@ -2162,7 +2163,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
 		if me_interface_gJI9l_MaTpucbl then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ командами в чат")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес мэ интерфейса: ".. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес мэ интерфейса: ".. g .. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3))
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ через мэ терминал")
 		end

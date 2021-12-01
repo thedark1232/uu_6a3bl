@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "изменение дизайна"
+local Ha3BaHue_o6HoBJIeHu9l = "изменение дизайнаh"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4208,7 +4208,7 @@ do
 			end
 			if coo6llleHue_OT_MaTpucbl ~= nil and #coo6llleHue_OT_MaTpucbl > 0 then
 				for _, v in ipairs(coo6llleHue_OT_MaTpucbl) do
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. v, red)
+					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. tostring(v), red)
 					koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 				end
 			end

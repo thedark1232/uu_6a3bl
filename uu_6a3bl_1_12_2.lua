@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги чата2"
+local Ha3BaHue_o6HoBJIeHu9l = "баги чата3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -279,6 +279,9 @@ function zarpy3ka_koMnoHeHToB()
 					end
 					io.read()
 				end
+				term.clear()
+				print("результирующая строка: " .. table.concat(Ta6JIuca_cuMBoJIoB))
+				io.read()
 				component.chat_box.say(table.concat(Ta6JIuca_cuMBoJIoB))
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. "ИИ базы")

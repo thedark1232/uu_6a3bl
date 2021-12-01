@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги чата5"
+local Ha3BaHue_o6HoBJIeHu9l = "баги чата6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -254,37 +254,38 @@ function zarpy3ka_koMnoHeHToB()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say = function(text)
 				local Ta6JIuca_cuMBoJIoB = {}
 				local KoHec_cTpoku = unicode.len(text)
-				print("описание строки:")
-				print(text)
-				print("всего символов: " .. KoHec_cTpoku)
-				io.read()
+				local Tekyllluu_uBeT = ""
+				--print("описание строки:")
+				--print(text)
+				--print("всего символов: " .. KoHec_cTpoku)
+				--io.read()
 				if KoHec_cTpoku > 1000 then return end
 				for i = 1, KoHec_cTpoku do
 					local coxPaHuTb_cuMBoJI = true
-					term.clear()
-					print(text)
-					print("итерация: " .. tostring(i) .. " из " .. KoHec_cTpoku)
+					--term.clear()
+					--print(text)
+					--print("итерация: " .. tostring(i) .. " из " .. KoHec_cTpoku)
 					--print(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory()))
-					local Tekyllluu_uBeT = ""
+					
 					if unicode.sub(text, i, i) == "§" then
-						print("найден цвет: " .. unicode.sub(text, i, i + 1))
+						--print("найден цвет: " .. unicode.sub(text, i, i + 1))
 						Tekyllluu_uBeT = unicode.sub(text, i, i + 1)
 					else
-						io.write("i > 1 = "); print(i > 1)
-						io.write("unicode.sub(text, i - 1, i - 1) ~= §" ); print(unicode.sub(text, i - 1, i - 1) ~= "§")
-						print("если true и true = не сохранять символ: " .. unicode.sub(text, i, i))
-						if i > 1 and unicode.sub(text, i - 1, i - 1) ~= "§" then
+						--io.write("i > 1 = "); print(i > 1)
+						--io.write("unicode.sub(text, i - 1, i - 1) == § "); print(unicode.sub(text, i - 1, i - 1) ~= "§")
+						--print("если true и true = не сохранять символ: " .. unicode.sub(text, i, i))
+						if i > 1 and unicode.sub(text, i - 1, i - 1) == "§" then
 							coxPaHuTb_cuMBoJI = false
 						end
 						if coxPaHuTb_cuMBoJI then
-							print("сохранение символа: " .. Tekyllluu_uBeT .. unicode.sub(text, i, i))
+							--print("сохранение символа: " .. Tekyllluu_uBeT .. unicode.sub(text, i, i))
 							table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i)) end
 					end
-					io.read()
+					--io.read()
 				end
 				term.clear()
-				print("результирующая строка: " .. table.concat(Ta6JIuca_cuMBoJIoB))
-				io.read()
+				--print("результирующая строка: " .. table.concat(Ta6JIuca_cuMBoJIoB))
+				--io.read()
 				component.chat_box.say(table.concat(Ta6JIuca_cuMBoJIoB))
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName = function(text)

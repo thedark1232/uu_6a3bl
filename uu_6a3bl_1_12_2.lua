@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "лол10"
+local Ha3BaHue_o6HoBJIeHu9l = "лол11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1169,8 +1169,10 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			local Ta6JIuca_acnekToB = {}
 			local Ta6JIuca_acnekToB_copTupoBka = {}
 			repeat
+				Bce_acnekTbl_BblcoCaHbl = true
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
 				--print("получение аспектов")
+				Ta6JIuca_acnekToB_copTupoBka = {}
 				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
 					table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa})
 				end
@@ -1178,15 +1180,20 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				--print("сортировка аспектов")
 				coo6llleHue_OT_MaTpucbl = {}
 				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
+					if tonumber(v[1]) <= 0 then
+						Bce_acnekTbl_BblcoCaHbl = true
+					else
+						Bce_acnekTbl_BblcoCaHbl = false
+					end
 					local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
-					io.write("добавление в таблицу: ")
-					print(concatuHacu9l)
+					--io.write("добавление в таблицу: ")
+					--print(concatuHacu9l)
 					table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
 				end
-				for k, v in ipairs(coo6llleHue_OT_MaTpucbl) do
-					print(k,v)
-				end
-				io.read()
+				--for k, v in ipairs(coo6llleHue_OT_MaTpucbl) do
+					--print(k,v)
+				--end
+				--io.read()
 				
 				--print("вывод сообщения на очки")
 				os.sleep(0)

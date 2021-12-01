@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "работа с очередьми"
+local Ha3BaHue_o6HoBJIeHu9l = "работа с очередьми2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2030,7 +2030,7 @@ do
 		--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очередь инфо"] = function()
-		if #o4epegb_kpaqpToB_Ha_MaTpuce = 0 then
+		if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
 			return
 		end
@@ -2039,7 +2039,7 @@ do
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить всю очередь"] = function()
-		if #o4epegb_kpaqpToB_Ha_MaTpuce = 0 then
+		if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
 			return
 		end
@@ -2048,7 +2048,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь удалена")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить из очереди"] = function()
-		if #o4epegb_kpaqpToB_Ha_MaTpuce = 0 then
+		if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
 			return
 		end

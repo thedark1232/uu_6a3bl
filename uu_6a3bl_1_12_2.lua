@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока3"
+local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -422,6 +422,7 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 	end
+	myThread.killAll()
 	computer.addUser(admin)
 end
 function zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, nepegaBaEMoe_3Ha4eHue)
@@ -1144,11 +1145,6 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 end
 function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "вход в поток")
-	for i = 1, 10000 do
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нахождение в потоке " .. tostring(i))
-		os.sleep(10)
-	end
-	
 end
 
 
@@ -4093,12 +4089,14 @@ do
 				koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 			end
 			if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 and MaTpuca_cBo6ogHa then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "очередь крафтов на матрице больше 0")
 				MaTpuca_cBo6ogHa = false
+				setConfiguration()
 				cocTo9lHue_noToka_MaTpucbl = myThread.create(kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke)
-				if coo6llleHue_OT_MaTpucbl ~= nil then
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. coo6llleHue_OT_MaTpucbl, red)
-					koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
-				end
+			end
+			if coo6llleHue_OT_MaTpucbl ~= nil then
+				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. coo6llleHue_OT_MaTpucbl, red)
+				koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 			end
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		end
@@ -4122,7 +4120,6 @@ if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
 	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 end
-myThread.killAll()
 computer.addUser(admin)
 typpeJIu_reJum_orH9l(false)
 term.clear()

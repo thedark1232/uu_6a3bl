@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока4"
+local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2032,6 +2032,7 @@ do
 		local koJIu4ecTBo_uTeMoB = cuqppa_BBoga
 		if not re3yJIbTaT_BBoga then return end
 		table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB})
+		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
 		--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
@@ -2066,6 +2067,7 @@ do
 			return
 		end
 		o4epegb_kpaqpToB_Ha_MaTpuce = {}
+		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь удалена")
 	end
@@ -2081,6 +2083,7 @@ do
 		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #o4epegb_kpaqpToB_Ha_MaTpuce)
 		if not re3yJIbTaT_BBoga then return end
 		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, cuqppa)
+		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "удалено!")
 	end
@@ -4091,6 +4094,7 @@ do
 			if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 and MaTpuca_cBo6ogHa then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "очередь крафтов на матрице больше 0")
 				MaTpuca_cBo6ogHa = false
+				configuration[32] = MaTpuca_cBo6ogHa
 				setConfiguration()
 				cocTo9lHue_noToka_MaTpucbl = myThread.create(kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke)
 			end

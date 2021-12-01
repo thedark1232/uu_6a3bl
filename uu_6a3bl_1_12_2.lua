@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока5"
+local Ha3BaHue_o6HoBJIeHu9l = "запуск потока"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1144,7 +1144,30 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	end
 end
 function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "вход в поток")
+	local recept = o4epegb_kpaqpToB_Ha_MaTpuce[1][1]
+	local koJIu4ecTBo = o4epegb_kpaqpToB_Ha_MaTpuce[1][2]
+	local Bcero_ckpaqp4eHo = 0
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
+	for i = 1, koJIu4ecTBo do
+		local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
+		if not pe3yJIbTaT_BblcTaBJIeHu9l then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
+			break
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
+		computer.beep(1000, 0.1); computer.beep(1000, 0.1)
+		coo6llleHue_OT_MaTpucbl = "тыкни палкой по матрице"
+		os.sleep(10)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
+		Bcero_ckpaqp4eHo = i
+		if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
+	end
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
+	table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
+	coo6llleHue_OT_MaTpucbl = nil
+	MaTpuca_cBo6ogHa = true
+	configuration[32] = MaTpuca_cBo6ogHa
+	setConfiguration()
 end
 
 
@@ -2035,7 +2058,6 @@ do
 		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
-		--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица состояние"] = function() --состояние свободна или заняа
 		if MaTpuca_cBo6ogHa then

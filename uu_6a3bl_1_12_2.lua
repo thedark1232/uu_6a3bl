@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "адрес интерфейса"
+local Ha3BaHue_o6HoBJIeHu9l = "поиск ошибок"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1144,30 +1144,38 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	end
 end
 function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
-	local recept = o4epegb_kpaqpToB_Ha_MaTpuce[1][1]
-	local koJIu4ecTBo = o4epegb_kpaqpToB_Ha_MaTpuce[1][2]
-	local Bcero_ckpaqp4eHo = 0
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
-	for i = 1, koJIu4ecTBo do
-		local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
-		if not pe3yJIbTaT_BblcTaBJIeHu9l then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
-			break
+	local re3yJIbTaT, olllu6ka = pcall(function()
+		local recept = o4epegb_kpaqpToB_Ha_MaTpuce[1][1]
+		local koJIu4ecTBo = o4epegb_kpaqpToB_Ha_MaTpuce[1][2]
+		local Bcero_ckpaqp4eHo = 0
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
+		for i = 1, koJIu4ecTBo do
+			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
+			if not pe3yJIbTaT_BblcTaBJIeHu9l then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
+				break
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
+			computer.beep(1000, 0.1); computer.beep(1000, 0.1)
+			coo6llleHue_OT_MaTpucbl = "тыкни палкой по матрице"
+			os.sleep(10)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
+			Bcero_ckpaqp4eHo = i
+			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
-		computer.beep(1000, 0.1); computer.beep(1000, 0.1)
-		coo6llleHue_OT_MaTpucbl = "тыкни палкой по матрице"
-		os.sleep(10)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
-		Bcero_ckpaqp4eHo = i
-		if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
+		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
+		coo6llleHue_OT_MaTpucbl = nil
+		MaTpuca_cBo6ogHa = true
+		configuration[32] = MaTpuca_cBo6ogHa
+		setConfiguration()
+	end}
+	if not re3yJIbTaT then 
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "произошла ошибка крафта")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "матрица заблокирована")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "описание ошибки:")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. olllu6ka)
 	end
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
-	table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
-	coo6llleHue_OT_MaTpucbl = nil
-	MaTpuca_cBo6ogHa = true
-	configuration[32] = MaTpuca_cBo6ogHa
-	setConfiguration()
 end
 
 
@@ -2009,7 +2017,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не требует перенастройки мэ интерфейса")
 			return
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий адрес: " .. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий адрес: " .. g .. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3))
 		local Bce_agpeca_uHTepqpecoB = component.list("me_interface")
 		local Bce_agpeca_uHTepqpecoB_oTcopTopoBaHo = {}
 		for k, v in pairs(Bce_agpeca_uHTepqpecoB) do
@@ -2140,7 +2148,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
 		if me_interface_gJI9l_MaTpucbl then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ командами в чат")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(с .. "адрес мэ интерфейса: ".. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3))
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ через мэ терминал")
 		end
@@ -2149,6 +2157,11 @@ do
 		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
 		end
+		if MaTpuca_cBo6ogHa then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. g .. "свободна")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. r .. "занята")
+		end	
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
 		local nepBblu_cJIoT = 1

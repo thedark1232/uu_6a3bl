@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги чата6"
+local Ha3BaHue_o6HoBJIeHu9l = "исследования крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -255,42 +255,23 @@ function zarpy3ka_koMnoHeHToB()
 				local Ta6JIuca_cuMBoJIoB = {}
 				local KoHec_cTpoku = unicode.len(text)
 				local Tekyllluu_uBeT = ""
-				--print("описание строки:")
-				--print(text)
-				--print("всего символов: " .. KoHec_cTpoku)
-				--io.read()
-				if KoHec_cTpoku > 1000 then return end
+				if KoHec_cTpoku > 1000 then 
+				component.chat_box.say(r .. "строка привышает 1000 символов")
+				return end
 				for i = 1, KoHec_cTpoku do
 					local coxPaHuTb_cuMBoJI = true
-					--term.clear()
-					--print(text)
-					--print("итерация: " .. tostring(i) .. " из " .. KoHec_cTpoku)
-					--print(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory()))
-					
 					if unicode.sub(text, i, i) == "§" then
-						--print("найден цвет: " .. unicode.sub(text, i, i + 1))
 						Tekyllluu_uBeT = unicode.sub(text, i, i + 1)
 					else
-						--io.write("i > 1 = "); print(i > 1)
-						--io.write("unicode.sub(text, i - 1, i - 1) == § "); print(unicode.sub(text, i - 1, i - 1) ~= "§")
-						--print("если true и true = не сохранять символ: " .. unicode.sub(text, i, i))
 						if i > 1 and unicode.sub(text, i - 1, i - 1) == "§" then
 							coxPaHuTb_cuMBoJI = false
 						end
-						if coxPaHuTb_cuMBoJI then
-							--print("сохранение символа: " .. Tekyllluu_uBeT .. unicode.sub(text, i, i))
-							table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i)) end
+						if coxPaHuTb_cuMBoJI then table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i)) end
 					end
-					--io.read()
 				end
-				term.clear()
-				--print("результирующая строка: " .. table.concat(Ta6JIuca_cuMBoJIoB))
-				--io.read()
 				component.chat_box.say(table.concat(Ta6JIuca_cuMBoJIoB))
 			end
-			Ta6JIuca_koMnoHeHToB["chat_box"].setName = function(text)
-				component.chat_box.setName(text)
-			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].setName = function(text) component.chat_box.setName(text) end
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. "ИИ базы")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("§6включение сети")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка компонентов")
@@ -2000,29 +1981,27 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end		
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица крафт"] = function()
-		if not me_interface_gJI9l_MaTpucbl then
-			if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
-				return
-			end
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепты в наличии:")
-			for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
-			end
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
-			local re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
-			if not re3yJIbTaT_BBoga then return end
-			local HoMep_pecenTa = cuqppa_BBoga
-			local orpaHu4eHue_Ha_KoJIu4ecTBo = 10000
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ограничение на количество: " .. r .. orpaHu4eHue_Ha_KoJIu4ecTBo .. c .. " шт")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сколько " .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_pecenTa].Ha3BaHue .. c .. " нужно скрафтить?")
-			re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, orpaHu4eHue_Ha_KoJIu4ecTBo)
-			local koJIu4ecTBo_uTeMoB = cuqppa_BBoga
-			if not re3yJIbTaT_BBoga then return end
-			table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB})
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
-			--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
+		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
+			return
 		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепты в наличии:")
+		for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
+		local re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
+		if not re3yJIbTaT_BBoga then return end
+		local HoMep_pecenTa = cuqppa_BBoga
+		local orpaHu4eHue_Ha_KoJIu4ecTBo = 10000
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ограничение на количество: " .. r .. orpaHu4eHue_Ha_KoJIu4ecTBo .. c .. " шт")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сколько " .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_pecenTa].Ha3BaHue .. c .. " нужно скрафтить?")
+		re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, orpaHu4eHue_Ha_KoJIu4ecTBo)
+		local koJIu4ecTBo_uTeMoB = cuqppa_BBoga
+		if not re3yJIbTaT_BBoga then return end
+		table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB})
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
+		--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очередь инфо"] = function()
 		for k, v in ipairs(o4epegb_kpaqpToB_Ha_MaTpuce) do

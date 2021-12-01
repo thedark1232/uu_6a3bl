@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обшки2"
+local Ha3BaHue_o6HoBJIeHu9l = "изменение дизайна"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1158,30 +1158,32 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 			computer.beep(1000, 0.1); computer.beep(1000, 0.1)
-			coo6llleHue_OT_MaTpucbl = "тыкни палкой по матрице"
+			coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
 			local Ta6JIuca_acnekToB = {}
 			repeat
 				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 			until #Ta6JIuca_acnekToB > 0
-			coo6llleHue_OT_MaTpucbl = ""
+			coo6llleHue_OT_MaTpucbl = {""}
 			local Bce_acnekTbl_BblcoCaHbl = false
 			local Ta6JIuca_acnekToB = {}
 			local Ta6JIuca_acnekToB_copTupoBka = {}
 			repeat
+				coo6llleHue_OT_MaTpucbl = {""}
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
-				print("получение аспектов")
+				--print("получение аспектов")
 				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
 					table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa})
 				end
-				os.sleep(0)
 				table.sort(Ta6JIuca_acnekToB_copTupoBka, mySort)
-				print("сортировка аспектов")
+				--print("сортировка аспектов")
 				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
-					coo6llleHue_OT_MaTpucbl = coo6llleHue_OT_MaTpucbl .. v[2] .. " = " .. tostring(v[1]) .. "; "
+					table.insert(coo6llleHue_OT_MaTpucbl, {v[2] .. " = " .. tostring(v[1])})
 				end
-				print("вывод сообщения на очки")
+				--print("вывод сообщения на очки")
+				os.sleep(0)
 			until Bce_acnekTbl_BblcoCaHbl
+			coo6llleHue_OT_MaTpucbl = {""}
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
 			Bcero_ckpaqp4eHo = i
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
@@ -1199,6 +1201,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		setConfiguration()
 	end)
 	if not re3yJIbTaT then 
+		coo6llleHue_OT_MaTpucbl = nil
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "произошла ошибка крафта")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "матрица заблокирована")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "описание ошибки:")
@@ -4203,9 +4206,11 @@ do
 				setConfiguration()
 				cocTo9lHue_noToka_MaTpucbl = myThread.create(kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke)
 			end
-			if coo6llleHue_OT_MaTpucbl ~= nil then
-				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. coo6llleHue_OT_MaTpucbl, red)
-				koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
+			if coo6llleHue_OT_MaTpucbl ~= nil and #coo6llleHue_OT_MaTpucbl > 0 then
+				for _, v in ipairs(coo6llleHue_OT_MaTpucbl) do
+					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. v, red)
+					koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
+				end
 			end
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		end

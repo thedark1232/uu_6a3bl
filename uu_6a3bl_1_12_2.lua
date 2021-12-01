@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги чата"
+local Ha3BaHue_o6HoBJIeHu9l = "баги чата2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -263,6 +263,7 @@ function zarpy3ka_koMnoHeHToB()
 					local coxPaHuTb_cuMBoJI = true
 					term.clear()
 					print(text)
+					print("итерация: " .. tostring(i) .. " из " .. KoHec_cTpoku)
 					--print(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory()))
 					local Tekyllluu_uBeT = ""
 					if unicode.sub(text, i, i) == "§" then
@@ -272,9 +273,10 @@ function zarpy3ka_koMnoHeHToB()
 						if i > 1 and unicode.sub(text, i - 1, i - 1) ~= "§" then
 							coxPaHuTb_cuMBoJI = false
 						end
-						if coxPaHuTb_cuMBoJI then table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i)) end
+						if coxPaHuTb_cuMBoJI then
+							print("сохранение символа: " .. Tekyllluu_uBeT .. unicode.sub(text, i, i))
+							table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i)) end
 					end
-					print("символ сохранен: " .. Ta6JIuca_cuMBoJIoB[#Ta6JIuca_cuMBoJIoB])
 					io.read()
 				end
 				component.chat_box.say(table.concat(Ta6JIuca_cuMBoJIoB))

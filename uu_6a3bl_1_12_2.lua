@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока"
+local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3814,6 +3814,8 @@ do
 	else
 		MaTpuca_cBo6ogHa = configuration[32]
 	end
+	--активировать многопоточный режим
+	myThread.init()
 	--получение таблицы рецетов матрицы
 	getMathixRecepts()
 	--записывать логи с детекторов

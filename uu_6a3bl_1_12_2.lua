@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "лол5"
+local Ha3BaHue_o6HoBJIeHu9l = "лол7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1164,12 +1164,12 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 			until #Ta6JIuca_acnekToB > 0
-			coo6llleHue_OT_MaTpucbl = {""}
+			coo6llleHue_OT_MaTpucbl = {}
 			local Bce_acnekTbl_BblcoCaHbl = false
 			local Ta6JIuca_acnekToB = {}
 			local Ta6JIuca_acnekToB_copTupoBka = {}
 			repeat
-				coo6llleHue_OT_MaTpucbl = {""}
+				coo6llleHue_OT_MaTpucbl = {}
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
 				--print("получение аспектов")
 				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
@@ -1190,7 +1190,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				--print("вывод сообщения на очки")
 				os.sleep(0)
 			until Bce_acnekTbl_BblcoCaHbl
-			coo6llleHue_OT_MaTpucbl = {""}
+			coo6llleHue_OT_MaTpucbl = {}
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
 			Bcero_ckpaqp4eHo = i
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end

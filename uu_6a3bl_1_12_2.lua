@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги чата4"
+local Ha3BaHue_o6HoBJIeHu9l = "баги чата5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -269,7 +269,10 @@ function zarpy3ka_koMnoHeHToB()
 					if unicode.sub(text, i, i) == "§" then
 						print("найден цвет: " .. unicode.sub(text, i, i + 1))
 						Tekyllluu_uBeT = unicode.sub(text, i, i + 1)
-					else                      
+					else
+						io.write("i > 1 = "); print(i > 1)
+						io.write("unicode.sub(text, i - 1, i - 1) ~= §" ); print(unicode.sub(text, i - 1, i - 1) ~= "§")
+						print("если true и true = не сохранять символ: " .. unicode.sub(text, i, i))
 						if i > 1 and unicode.sub(text, i - 1, i - 1) ~= "§" then
 							coxPaHuTb_cuMBoJI = false
 						end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "поиск ошибок"
+local Ha3BaHue_o6HoBJIeHu9l = "замена адресов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1169,7 +1169,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		MaTpuca_cBo6ogHa = true
 		configuration[32] = MaTpuca_cBo6ogHa
 		setConfiguration()
-	end}
+	end)
 	if not re3yJIbTaT then 
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "произошла ошибка крафта")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "матрица заблокирована")
@@ -1995,6 +1995,20 @@ do
 		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
 		if not re3yJIbTaT_BBoga then return end
 		local HoMep_B_Ta6JIuce_nbegecTaJIoB = cuqppa
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=================================")
+		local agreca_Bcex_TraHcno3epoB = component.list("transposer")
+		local agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l = {}
+		for adrs, _ in pairs(agreca_Bcex_TraHcno3epoB) do
+			table.insert(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, adrs)
+		end
+		for k, v in ipairs(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v, 1, 3))
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбери адрес для замены")
+		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
+		if not re3yJIbTaT_BBoga then return end
+		local agrec_gJI9l_3aMeHbl = agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l[cuqppa]
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=================================")
 		for j = 0, 5 do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. j .. ": " .. g .. ta6JIuca_cTopoH[j])
 		end
@@ -2148,7 +2162,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
 		if me_interface_gJI9l_MaTpucbl then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ командами в чат")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(с .. "адрес мэ интерфейса: ".. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес мэ интерфейса: ".. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3))
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ через мэ терминал")
 		end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исследования крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "работа с очередьми"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1948,6 +1948,31 @@ do
 		configuration[30] = agrec_me_interface_gJI9l_MaTpucbl
 		setConfiguration()
 	end	
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат настройки транспозеров:")
+		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор адреса")
+		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
+		if not re3yJIbTaT_BBoga then return end
+		local HoMep_B_Ta6JIuce_nbegecTaJIoB = cuqppa
+		for j = 0, 5 do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. j .. ": " .. g .. ta6JIuca_cTopoH[j])
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор стороны подачи предмета")
+		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
+		if not re3yJIbTaT_BBoga then return end
+		local cTopoHa1 = cuqppa
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор стороны выдачи предмета")
+		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
+		if not re3yJIbTaT_BBoga then return end
+		local cTopoHa2 = cuqppa
+		Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB] = {Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB][1], cTopoHa1, cTopoHa2}
+		configuration[28] = Ta6JIuca_nbegecTaJIoB
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перенастройка завершена")
+	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
 			if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("zdraBcTByu_JIopg_The_Dark.dfpwm") end
@@ -1995,18 +2020,47 @@ do
 		local HoMep_pecenTa = cuqppa_BBoga
 		local orpaHu4eHue_Ha_KoJIu4ecTBo = 10000
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ограничение на количество: " .. r .. orpaHu4eHue_Ha_KoJIu4ecTBo .. c .. " шт")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сколько " .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_pecenTa].Ha3BaHue .. c .. " нужно скрафтить?")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сколько " .. Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa].Ha3BaHue .. c .. " нужно скрафтить?")
 		re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, orpaHu4eHue_Ha_KoJIu4ecTBo)
 		local koJIu4ecTBo_uTeMoB = cuqppa_BBoga
 		if not re3yJIbTaT_BBoga then return end
 		table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB})
+		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
 		--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очередь инфо"] = function()
-		for k, v in ipairs(o4epegb_kpaqpToB_Ha_MaTpuce) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1].Ha3BaHue .. c .. "(" .. g .. v[2] .. c .. "шт. )")
+		if #o4epegb_kpaqpToB_Ha_MaTpuce = 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
+			return
 		end
+		for k, v in ipairs(o4epegb_kpaqpToB_Ha_MaTpuce) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1].Ha3BaHue .. c .. "(" .. g .. v[2] .. c .. " шт.)")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить всю очередь"] = function()
+		if #o4epegb_kpaqpToB_Ha_MaTpuce = 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
+			return
+		end
+		o4epegb_kpaqpToB_Ha_MaTpuce = {}
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь удалена")
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить из очереди"] = function()
+		if #o4epegb_kpaqpToB_Ha_MaTpuce = 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
+			return
+		end
+		for k, v in ipairs(o4epegb_kpaqpToB_Ha_MaTpuce) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1].Ha3BaHue .. c .. "(" .. g .. v[2] .. c .. " шт.)")
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "под каким номером удалить?")
+		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #o4epegb_kpaqpToB_Ha_MaTpuce)
+		if not re3yJIbTaT_BBoga then return end
+		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, cuqppa)
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "удалено!")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
@@ -2020,31 +2074,6 @@ do
 		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
 		end
-	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"] = function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат настройки транспозеров:")
-		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
-		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор адреса")
-		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
-		if not re3yJIbTaT_BBoga then return end
-		local HoMep_B_Ta6JIuce_nbegecTaJIoB = cuqppa
-		for j = 0, 5 do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. j .. ": " .. g .. ta6JIuca_cTopoH[j])
-		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор стороны подачи предмета")
-		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
-		if not re3yJIbTaT_BBoga then return end
-		local cTopoHa1 = cuqppa
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор стороны выдачи предмета")
-		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
-		if not re3yJIbTaT_BBoga then return end
-		local cTopoHa2 = cuqppa
-		Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB] = {Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB][1], cTopoHa1, cTopoHa2}
-		configuration[28] = Ta6JIuca_nbegecTaJIoB
-		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перенастройка завершена")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
 		local nepBblu_cJIoT = 1

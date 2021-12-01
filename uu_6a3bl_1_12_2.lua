@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание очередей"
+local Ha3BaHue_o6HoBJIeHu9l = "создание очередей и проверка обновлений"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1248,6 +1248,24 @@ do
 			local status_wget, Ha3BaHue_olllu6ku = wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/uu_6a3bl_1_12_2.lua", nyTb_k_uu_6a3bl .. "1232")
 			if status_wget then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "загрузка обновлений: " .. g .. "успешно")
+				local a = io.open(nyTb_k_uu_6a3bl .. "1232")
+				local b = a:read()
+				a:close()
+				local Ha3BaHue_HoBou_Bepcuu = string.match(b, '%"(.+)%"')
+				if Ha3BaHue_HoBou_Bepcuu == nil then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "название новой версии не распознано!")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "операция прервана")
+					return
+				end
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "старая версия: " .. Ha3BaHue_o6HoBJIeHu9l)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новая версия: " .. Ha3BaHue_HoBou_Bepcuu)
+				if Ha3BaHue_HoBou_Bepcuu == Ha3BaHue_o6HoBJIeHu9l then
+					filesystem.remove(nyTb_k_uu_6a3bl .. "1232")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "обнаружено совпадение версий")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "обновление прервано")
+					return
+				end
+				--Ha3BaHue_o6HoBJIeHu9l
 				if Bepcu9l_uu_6a3bl == string.format("%.f", filesystem.size("/home/t1232")) then
 					filesystem.remove(nyTb_k_uu_6a3bl .. "1232")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "отмена обновлений, версии совпадают")

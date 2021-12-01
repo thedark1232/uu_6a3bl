@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "лол"
+local Ha3BaHue_o6HoBJIeHu9l = "лол2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2117,9 +2117,10 @@ do
 	end	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " треугольник"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи нечетное число не больше 20")
-		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, math.huge)
+		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(-10000,10000)
 		if not re3yJIbTaT_BBoga then return end
-		if cuqppa > 50 or cuqppa < 0 then
+		cuqppa = tonumber(cuqppa)
+		if cuqppa > 50 and cuqppa < 3 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "где-то ты меня наебываешь, хуярок")
 			return
 		end
@@ -2128,8 +2129,8 @@ do
 			return
 		end
 		local re3yJIbTaT_geJIeHu9l = cuqppa / 2
-		if re3yJIbTaT_geJIeHu9l == 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "пошел нахуй! азаза")
+		if tonumber(re3yJIbTaT_geJIeHu9l) == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "пошел нахуй! кусок дерьма")
 			return
 		end
 		local ta6JIuca_cuMBoJIoB = {}

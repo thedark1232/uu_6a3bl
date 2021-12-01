@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "лол4"
+local Ha3BaHue_o6HoBJIeHu9l = "лол5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1180,6 +1180,11 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
 					table.insert(coo6llleHue_OT_MaTpucbl, {v[2] .. " = " .. tostring(v[1])})
 				end
+				for k, v in ipairs(coo6llleHue_OT_MaTpucbl) do
+					print(k,v)
+				end
+				io.read()
+				
 				--print("вывод сообщения на очки")
 				os.sleep(0)
 			until Bce_acnekTbl_BblcoCaHbl
@@ -2119,21 +2124,14 @@ do
 		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(-10000,10000)
 		if not re3yJIbTaT_BBoga then return end
 		cuqppa = tonumber(cuqppa)
-		--io.write("cuqppa "); print(cuqppa)
-		--io.write("cuqppa > 100 and cuqppa < 3 "); print(cuqppa > 100 and cuqppa < 3)
-		--io.read()
-		if cuqppa > 100 and cuqppa < 3 then
+		if cuqppa > 100 or cuqppa < 3 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "где-то ты меня наебываешь, хуярок")
 			return
 		end
-		--io.write("cuqppa == 0 "); print(cuqppa == 0)
-		--io.read()
 		if cuqppa == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ахахах, вот ты пидор")
 			return
 		end
-		--io.write(tostring(re3yJIbTaT_geJIeHu9l)  .. " == 0 "); print(tonumber(re3yJIbTaT_geJIeHu9l) == 0)
-		--io.read()
 		if cuqppa % 2 == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "пошел нахуй! кусок дерьма")
 			return

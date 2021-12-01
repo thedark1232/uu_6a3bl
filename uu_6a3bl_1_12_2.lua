@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "визуал оформление2"
+local Ha3BaHue_o6HoBJIeHu9l = "обшики сортировки"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1173,7 +1173,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
 					table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa})
 				end
-				table.sort(Ta6JIuca_acnekToB_copTupoBka)
+				table.sort(Ta6JIuca_acnekToB_copTupoBka, mySort)
 				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
 					coo6llleHue_OT_MaTpucbl = coo6llleHue_OT_MaTpucbl .. v[2] .. " = " .. tostring(v[1]) .. "; "
 				end

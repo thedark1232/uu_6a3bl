@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "улучшения цвета чата"
+local Ha3BaHue_o6HoBJIeHu9l = "баги чата"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -253,15 +253,29 @@ function zarpy3ka_koMnoHeHToB()
 			Ta6JIuca_koMnoHeHToB["chat_box"] = component.chat_box
 			Ta6JIuca_koMnoHeHToB["chat_box"].say = function(text)
 				local Ta6JIuca_cuMBoJIoB = {}
-				for i = 1, unicode.len(text) do
+				local KoHec_cTpoku = unicode.len(text)
+				print("описание строки:")
+				print(text)
+				print("всего символов: " .. KoHec_cTpoku)
+				io.read()
+				if KoHec_cTpoku > 1000 then return end
+				for i = 1, KoHec_cTpoku do
+					local coxPaHuTb_cuMBoJI = true
+					term.clear()
+					print(text)
+					--print(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory()))
 					local Tekyllluu_uBeT = ""
 					if unicode.sub(text, i, i) == "§" then
+						print("найден цвет: " .. unicode.sub(text, i, i + 1))
 						Tekyllluu_uBeT = unicode.sub(text, i, i + 1)
-					elseif unicode.sub(text, i - 1, i - 1) ~= "§" then
-						if unicode.sub(text, i, i) ~= "§" then
-							table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i))
+					else                      
+						if i > 1 and unicode.sub(text, i - 1, i - 1) ~= "§" then
+							coxPaHuTb_cuMBoJI = false
 						end
+						if coxPaHuTb_cuMBoJI then table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i)) end
 					end
+					print("символ сохранен: " .. Ta6JIuca_cuMBoJIoB[#Ta6JIuca_cuMBoJIoB])
+					io.read()
 				end
 				component.chat_box.say(table.concat(Ta6JIuca_cuMBoJIoB))
 			end

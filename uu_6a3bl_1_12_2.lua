@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "прикол2"
+local Ha3BaHue_o6HoBJIeHu9l = "лол"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2121,13 +2121,16 @@ do
 		if not re3yJIbTaT_BBoga then return end
 		if cuqppa > 50 or cuqppa < 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "где-то ты меня наебываешь, хуярок")
+			return
 		end
 		if cuqppa == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ахахах, вот ты пидор")
+			return
 		end
 		local re3yJIbTaT_geJIeHu9l = cuqppa / 2
-		if re3yJIbTaT_geJIeHu9l / 2 == 0 then
+		if re3yJIbTaT_geJIeHu9l == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "пошел нахуй! азаза")
+			return
 		end
 		local ta6JIuca_cuMBoJIoB = {}
 		local cuMBoJI = "*"
@@ -2136,7 +2139,6 @@ do
 			cuMBoJI = cuMBoJI .. "*"
 		end
 		table.insert(ta6JIuca_cuMBoJIoB, cuMBoJI)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. ta6JIuca_cuMBoJIoB[#ta6JIuca_cuMBoJIoB])
 		for _, k in ipairs(ta6JIuca_cuMBoJIoB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k)
 		end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обшики сортировки"
+local Ha3BaHue_o6HoBJIeHu9l = "обшки2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1161,7 +1161,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			coo6llleHue_OT_MaTpucbl = "тыкни палкой по матрице"
 			local Ta6JIuca_acnekToB = {}
 			repeat
-				os.sleep(0)
+				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 			until #Ta6JIuca_acnekToB > 0
 			coo6llleHue_OT_MaTpucbl = ""
@@ -1170,13 +1170,17 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			local Ta6JIuca_acnekToB_copTupoBka = {}
 			repeat
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
+				print("получение аспектов")
 				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
 					table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa})
 				end
+				os.sleep(0)
 				table.sort(Ta6JIuca_acnekToB_copTupoBka, mySort)
+				print("сортировка аспектов")
 				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
 					coo6llleHue_OT_MaTpucbl = coo6llleHue_OT_MaTpucbl .. v[2] .. " = " .. tostring(v[1]) .. "; "
 				end
+				print("вывод сообщения на очки")
 			until Bce_acnekTbl_BblcoCaHbl
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
 			Bcero_ckpaqp4eHo = i

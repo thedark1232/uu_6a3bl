@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновление рецептов"
+local Ha3BaHue_o6HoBJIeHu9l = "визуал оформление"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1159,11 +1159,29 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 			computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 			coo6llleHue_OT_MaTpucbl = "тыкни палкой по матрице"
-			os.sleep(10)
-			
+			repeat os.sleep(0) until #Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects() > 0
+			coo6llleHue_OT_MaTpucbl = ""
+			local Bce_acnekTbl_BblcoCaHbl = false
+			local Ta6JIuca_acnekToB = {}
+			local Ta6JIuca_acnekToB_copTupoBka = {}
+			repeat
+				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
+				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
+					table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa}
+				end
+				table.sort(Ta6JIuca_acnekToB_copTupoBka)
+				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
+					coo6llleHue_OT_MaTpucbl = coo6llleHue_OT_MaTpucbl .. v[2] .. " = " .. tostring(v[1]) .. "; "
+				end
+			until Bce_acnekTbl_BblcoCaHbl
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
 			Bcero_ckpaqp4eHo = i
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
+		end
+		if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 then
+			y6paTb_npegMeTbl_c_nbegecTaJIoB(false)
+		else
+			y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
 		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
@@ -2241,7 +2259,7 @@ do
 		table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 			["Ha3BaHue"] = coo6llleHue,
 			["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
-			["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB
+			["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
 			["okoH4aTeJIbHblu_npegMeT"] = "не определено"
 		})
 		setMathixRecepts()

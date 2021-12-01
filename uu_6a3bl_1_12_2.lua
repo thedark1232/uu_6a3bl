@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "замена адресов4"
+local Ha3BaHue_o6HoBJIeHu9l = "обновление рецептов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1160,6 +1160,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 			coo6llleHue_OT_MaTpucbl = "тыкни палкой по матрице"
 			os.sleep(10)
+			
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
 			Bcero_ckpaqp4eHo = i
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
@@ -2100,7 +2101,7 @@ do
 		local HoMep_pecenTa = cuqppa_BBoga
 		local orpaHu4eHue_Ha_KoJIu4ecTBo = 10000
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ограничение на количество: " .. r .. orpaHu4eHue_Ha_KoJIu4ecTBo .. c .. " шт")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сколько " .. Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa].Ha3BaHue .. c .. " нужно скрафтить?")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сколько (" .. g .. Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa].Ha3BaHue .. c .. ") нужно скрафтить?")
 		re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, orpaHu4eHue_Ha_KoJIu4ecTBo)
 		local koJIu4ecTBo_uTeMoB = cuqppa_BBoga
 		if not re3yJIbTaT_BBoga then return end
@@ -2241,6 +2242,7 @@ do
 			["Ha3BaHue"] = coo6llleHue,
 			["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
 			["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB
+			["okoH4aTeJIbHblu_npegMeT"] = "не определено"
 		})
 		setMathixRecepts()
 		

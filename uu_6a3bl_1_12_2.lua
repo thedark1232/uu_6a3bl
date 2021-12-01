@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги"
+local Ha3BaHue_o6HoBJIeHu9l = "создание очередей"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6,6 +6,7 @@ local event = require("event")
 local filesystem = require("filesystem")
 local unicode = require("unicode")
 local term = require("term")
+local thread = require("thread")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
 event.shouldInterrupt = function() return false end
@@ -16,6 +17,7 @@ local not_exit = true
 local Ta6JIuca_koMnoHeHToB = {}
 local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local Ta6JIuca_nbegecTaJIoB = {}
+local o4epegb_kpaqpToB_Ha_MaTpuce = {}
 local me_interface_gJI9l_MaTpucbl = false
 local c = "§6" --оранжевый
 local r = "§c" --красный
@@ -1950,9 +1952,23 @@ do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
-			local re3yJIbTaT_BBoga, cuqppa_pecenTa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
+			local re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
 			if not re3yJIbTaT_BBoga then return end
-			BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_pecenTa])
+			local HoMep_pecenTa = cuqppa_BBoga
+			local orpaHu4eHue_Ha_KoJIu4ecTBo = 10000
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ограничение на количество: " .. r .. orpaHu4eHue_Ha_KoJIu4ecTBo .. c .. " шт")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сколько " .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_pecenTa].Ha3BaHue .. c .. " нужно скрафтить?")
+			re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, orpaHu4eHue_Ha_KoJIu4ecTBo)
+			local koJIu4ecTBo_uTeMoB = cuqppa_BBoga
+			if not re3yJIbTaT_BBoga then return end
+			table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
+			--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очередь инфо"] = function()
+		for k, v in ipairs(o4epegb_kpaqpToB_Ha_MaTpuce) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1].Ha3BaHue .. c .. "(" .. g .. v[2] .. c .. "шт. )"
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
@@ -3692,6 +3708,13 @@ do
 		setConfiguration()
 	else
 		agrec_me_interface_gJI9l_MaTpucbl = configuration[30]
+	end
+	--o4epegb_kpaqpToB_Ha_MaTpuce
+	if configuration[31] == "nil" then
+		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
+		setConfiguration()
+	else
+		o4epegb_kpaqpToB_Ha_MaTpuce = configuration[31]
 	end
 	--получение таблицы рецетов матрицы
 	getMathixRecepts()

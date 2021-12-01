@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока2"
+local Ha3BaHue_o6HoBJIeHu9l = "тестирование потока3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4122,6 +4122,7 @@ if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
 	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 end
+myThread.killAll()
 computer.addUser(admin)
 typpeJIu_reJum_orH9l(false)
 term.clear()

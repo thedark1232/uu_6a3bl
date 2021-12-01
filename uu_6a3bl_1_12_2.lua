@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание очередей и проверка обновлений"
+local Ha3BaHue_o6HoBJIeHu9l = "создание потоков"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6,7 +6,7 @@ local event = require("event")
 local filesystem = require("filesystem")
 local unicode = require("unicode")
 local term = require("term")
-local thread = require("thread")
+local myThread = require("myThread")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
 event.shouldInterrupt = function() return false end
@@ -1979,14 +1979,14 @@ do
 			re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, orpaHu4eHue_Ha_KoJIu4ecTBo)
 			local koJIu4ecTBo_uTeMoB = cuqppa_BBoga
 			if not re3yJIbTaT_BBoga then return end
-			table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB)
+			table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB})
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
 			--BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa])
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очередь инфо"] = function()
 		for k, v in ipairs(o4epegb_kpaqpToB_Ha_MaTpuce) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1].Ha3BaHue .. c .. "(" .. g .. v[2] .. c .. "шт. )"
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1].Ha3BaHue .. c .. "(" .. g .. v[2] .. c .. "шт. )")
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()

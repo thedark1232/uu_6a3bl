@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги потока"
+local Ha3BaHue_o6HoBJIeHu9l = "адрес интерфейса"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2002,6 +2002,33 @@ do
 		configuration[28] = Ta6JIuca_nbegecTaJIoB
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перенастройка завершена")
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"] = function() --сменить адрес мэ интерфейса
+		if not me_interface_gJI9l_MaTpucbl then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "способ крафта на матрице")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не требует перенастройки мэ интерфейса")
+			return
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий адрес: " .. string.sub(agrec_me_interface_gJI9l_MaTpucbl, 1, 3)
+		local Bce_agpeca_uHTepqpecoB = component.list("me_interface")
+		local Bce_agpeca_uHTepqpecoB_oTcopTopoBaHo = {}
+		for k, v in pairs(Bce_agpeca_uHTepqpecoB) do
+			table.insert(Bce_agpeca_uHTepqpecoB_oTcopTopoBaHo, k)
+		end
+		if #Bce_agpeca_uHTepqpecoB_oTcopTopoBaHo <= 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ме интерфейсов не найдено")
+			return
+		end
+		for k, v in ipairs(Bce_agpeca_uHTepqpecoB_oTcopTopoBaHo) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v, 1, 3))
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбери номер адреса:")
+		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Bce_agpeca_uHTepqpecoB_oTcopTopoBaHo)
+		if not re3yJIbTaT_BBoga then return end
+		agrec_me_interface_gJI9l_MaTpucbl = Bce_agpeca_uHTepqpecoB_oTcopTopoBaHo[tonumber(cuqppa)]
+		configuration[30] = agrec_me_interface_gJI9l_MaTpucbl
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый адрес успешно присвоен")
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then

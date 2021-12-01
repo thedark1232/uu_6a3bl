@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "прикол"
+local Ha3BaHue_o6HoBJIeHu9l = "прикол2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2136,10 +2136,11 @@ do
 			cuMBoJI = cuMBoJI .. "*"
 		end
 		table.insert(ta6JIuca_cuMBoJIoB, cuMBoJI)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. ta6JIuca_cuMBoJIoB[#ta6JIuca_cuMBoJIoB])
 		for _, k in ipairs(ta6JIuca_cuMBoJIoB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k)
 		end
-		for i = #ta6JIuca_cuMBoJIoB, 1, -1 do
+		for i = #ta6JIuca_cuMBoJIoB - 1, 1, -1 do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. ta6JIuca_cuMBoJIoB[i])
 		end
 	end

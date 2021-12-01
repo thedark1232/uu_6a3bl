@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "визуал оформление"
+local Ha3BaHue_o6HoBJIeHu9l = "визуал оформление2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1159,7 +1159,11 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 			computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 			coo6llleHue_OT_MaTpucbl = "тыкни палкой по матрице"
-			repeat os.sleep(0) until #Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects() > 0
+			local Ta6JIuca_acnekToB = {}
+			repeat
+				os.sleep(0)
+				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
+			until #Ta6JIuca_acnekToB > 0
 			coo6llleHue_OT_MaTpucbl = ""
 			local Bce_acnekTbl_BblcoCaHbl = false
 			local Ta6JIuca_acnekToB = {}
@@ -1167,7 +1171,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			repeat
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
 				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
-					table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa}
+					table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa})
 				end
 				table.sort(Ta6JIuca_acnekToB_copTupoBka)
 				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do

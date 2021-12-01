@@ -6,7 +6,6 @@ local event = require("event")
 local filesystem = require("filesystem")
 local unicode = require("unicode")
 local term = require("term")
-local myThread = require("myThread")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
 event.shouldInterrupt = function() return false end
@@ -255,11 +254,11 @@ function zarpy3ka_koMnoHeHToB()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say = function(text)
 				local Ta6JIuca_cuMBoJIoB = {}
 				for i = 1, unicode.len(text) do
-					local Tekyllluu_uBeT = §6
-					if unicode.sub(text, i, i) == § then
+					local Tekyllluu_uBeT = ""
+					if unicode.sub(text, i, i) == "§" then
 						Tekyllluu_uBeT = unicode.sub(text, i, i + 1)
-					elseif unicode.sub(text, i - 1, i - 1) ~= § then
-						if unicode.sub(text, i, i) ~= § then
+					elseif unicode.sub(text, i - 1, i - 1) ~= "§" then
+						if unicode.sub(text, i, i) ~= "§" then
 							table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i))
 						end
 					end
@@ -1151,6 +1150,7 @@ do
 	JIor_viewer_detectors = getLibrary("JIor_viewer_detectors")
 	raidLibrary = getLibrary("raidLibrary")
 	alphabet = getLibrary("alphabet")
+	myThread = getLibrary("myThread")
 	--получить файл конфигов проги
 	getConfiguration()
 	--приветствие базы на мониторе

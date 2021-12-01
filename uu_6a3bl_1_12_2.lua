@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "замена адресов"
+local Ha3BaHue_o6HoBJIeHu9l = "замена адресов2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1991,7 +1991,7 @@ do
 		for k, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v[1], 1, 3) .. c .. " (" .. g .. ta6JIuca_cTopoH[v[2]] .. c .. "=>" .. g .. ta6JIuca_cTopoH[v[3]] .. c .. ")")
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор адреса")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбор старого адреса")
 		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
 		if not re3yJIbTaT_BBoga then return end
 		local HoMep_B_Ta6JIuce_nbegecTaJIoB = cuqppa
@@ -2020,7 +2020,7 @@ do
 		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
 		if not re3yJIbTaT_BBoga then return end
 		local cTopoHa2 = cuqppa
-		Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB] = {Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB][1], cTopoHa1, cTopoHa2}
+		Ta6JIuca_nbegecTaJIoB[HoMep_B_Ta6JIuce_nbegecTaJIoB] = {agrec_gJI9l_3aMeHbl, cTopoHa1, cTopoHa2}
 		configuration[28] = Ta6JIuca_nbegecTaJIoB
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перенастройка завершена")

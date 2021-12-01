@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "лол2"
+local Ha3BaHue_o6HoBJIeHu9l = "лол3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1209,7 +1209,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 	end
 end
 
-
 do
 	--осчистка монитора
 	term.clear()
@@ -2116,19 +2115,26 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " треугольник"] = function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи нечетное число не больше 20")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи нечетное число не больше 100")
 		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(-10000,10000)
 		if not re3yJIbTaT_BBoga then return end
 		cuqppa = tonumber(cuqppa)
-		if cuqppa > 50 and cuqppa < 3 then
+		io.write("cuqppa "); print(cuqppa)
+		io.write("cuqppa > 100 and cuqppa < 3 "); print(cuqppa > 100 and cuqppa < 3)
+		io.read()
+		if cuqppa > 100 and cuqppa < 3 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "где-то ты меня наебываешь, хуярок")
 			return
 		end
+		io.write("cuqppa == 0 "); print(cuqppa == 0)
+		io.read()
 		if cuqppa == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ахахах, вот ты пидор")
 			return
 		end
 		local re3yJIbTaT_geJIeHu9l = cuqppa / 2
+		io.write(tostring(re3yJIbTaT_geJIeHu9l)  .. " == 0 "); print(tonumber(re3yJIbTaT_geJIeHu9l) == 0)
+		io.read()
 		if tonumber(re3yJIbTaT_geJIeHu9l) == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "пошел нахуй! кусок дерьма")
 			return

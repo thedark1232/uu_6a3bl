@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "замена адресов2"
+local Ha3BaHue_o6HoBJIeHu9l = "замена адресов3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2005,7 +2005,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. string.sub(v, 1, 3))
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выбери адрес для замены")
-		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_nbegecTaJIoB)
+		re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l)
 		if not re3yJIbTaT_BBoga then return end
 		local agrec_gJI9l_3aMeHbl = agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l[cuqppa]
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=================================")

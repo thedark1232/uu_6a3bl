@@ -1181,7 +1181,9 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					table.insert(coo6llleHue_OT_MaTpucbl, {v[2] .. " = " .. tostring(v[1])})
 				end
 				for k, v in ipairs(coo6llleHue_OT_MaTpucbl) do
-					print(k,v)
+					for key, val in ipairs(coo6llleHue_OT_MaTpucbl) do
+						print(key, val)
+					end
 				end
 				io.read()
 				

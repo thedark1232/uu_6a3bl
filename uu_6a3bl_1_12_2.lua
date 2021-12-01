@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание потоков"
+local Ha3BaHue_o6HoBJIeHu9l = "улучшения цвета чата"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -252,6 +252,20 @@ function zarpy3ka_koMnoHeHToB()
 	if not bez_chat_box then
 		if component.isAvailable("chat_box") then
 			Ta6JIuca_koMnoHeHToB["chat_box"] = component.chat_box
+			Ta6JIuca_koMnoHeHToB["chat_box"].say = function(text)
+				local Ta6JIuca_cuMBoJIoB = {}
+				for i = 1, unicode.len(text) do
+					local Tekyllluu_uBeT = §6
+					if unicode.sub(text, i, i) == § then
+						Tekyllluu_uBeT = unicode.sub(text, i, i + 1)
+					elseif unicode.sub(text, i - 1, i - 1) ~= § then
+						if unicode.sub(text, i, i) ~= § then
+							table.insert(Ta6JIuca_cuMBoJIoB, Tekyllluu_uBeT .. unicode.sub(text, i, i))
+						end
+					end
+				end
+				component.chat_box.say(table.concat(Ta6JIuca_cuMBoJIoB))
+			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. "ИИ базы")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("§6включение сети")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка компонентов")
@@ -1257,8 +1271,8 @@ do
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "операция прервана")
 					return
 				end
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "старая версия: " .. Ha3BaHue_o6HoBJIeHu9l)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новая версия: " .. Ha3BaHue_HoBou_Bepcuu)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "старая версия: " ..  g .. Ha3BaHue_o6HoBJIeHu9l)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "новая версия: " .. g .. Ha3BaHue_HoBou_Bepcuu)
 				if Ha3BaHue_HoBou_Bepcuu == Ha3BaHue_o6HoBJIeHu9l then
 					filesystem.remove(nyTb_k_uu_6a3bl .. "1232")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "обнаружено совпадение версий")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "лол7"
+local Ha3BaHue_o6HoBJIeHu9l = "лол8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1164,12 +1164,12 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 			until #Ta6JIuca_acnekToB > 0
-			coo6llleHue_OT_MaTpucbl = {}
+			coo6llleHue_OT_MaTpucbl = nil
 			local Bce_acnekTbl_BblcoCaHbl = false
 			local Ta6JIuca_acnekToB = {}
 			local Ta6JIuca_acnekToB_copTupoBka = {}
 			repeat
-				coo6llleHue_OT_MaTpucbl = {}
+				coo6llleHue_OT_MaTpucbl = nil
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
 				--print("получение аспектов")
 				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
@@ -1178,12 +1178,11 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				table.sort(Ta6JIuca_acnekToB_copTupoBka, mySort)
 				--print("сортировка аспектов")
 				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
-					table.insert(coo6llleHue_OT_MaTpucbl, {v[2] .. " = " .. tostring(v[1])})
+					local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
+					table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
 				end
 				for k, v in ipairs(coo6llleHue_OT_MaTpucbl) do
-					for key, val in ipairs(coo6llleHue_OT_MaTpucbl) do
-						print(key, val)
-					end
+					print(k,v)
 				end
 				io.read()
 				

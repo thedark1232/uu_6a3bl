@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершающий код исправления"
+local Ha3BaHue_o6HoBJIeHu9l = "завершающий код исправления2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1207,14 +1207,15 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
 					kpaqpT_3aBepllleH = true
 					if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
-						Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce] = recept
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
+						Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
 						setMathixRecepts()
 					end
 				end
 			until kpaqpT_3aBepllleH
 			
 			--действия перед следующим крафтом
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. g .. " ЗАВЕРШЕН!")
 			Bcero_ckpaqp4eHo = i
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
 		end
@@ -2385,7 +2386,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "номер в таблице: " .. g .. tostring(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].HoMeP_B_Ta6JIuce))
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===================")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предметы для крафта:")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c.. "[" .. g .. "по центру:" .. c .. "] = " .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].cTapToBblu_npegMeT_no_ceHTpy.label)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c.. "[" .. g .. "по центру:" .. c .. "] = " .. g .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].cTapToBblu_npegMeT_no_ceHTpy.label)
 		for k, v in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].Ta6JIuca_npegMeToB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ":[" .. g .. "пьедестал " .. v[1] .. c .. "] = " .. g .. v[2].label)
 		end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "лол11"
+local Ha3BaHue_o6HoBJIeHu9l = "завершающий код для матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1149,13 +1149,19 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local recept = o4epegb_kpaqpToB_Ha_MaTpuce[1][1]
 		local koJIu4ecTBo = o4epegb_kpaqpToB_Ha_MaTpuce[1][2]
 		local Bcero_ckpaqp4eHo = 0
+		
+		--начло цикла крафта на матрице
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
 		for i = 1, koJIu4ecTBo do
+		
+			--выставить предметы на матрице
 			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 			if not pe3yJIbTaT_BblcTaBJIeHu9l then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
 				break
 			end
+			
+			--цикл ожидания старта матрицы
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 			computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 			coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
@@ -1164,6 +1170,8 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 			until #Ta6JIuca_acnekToB > 0
+			
+			--цикл слежки за всасыванием аспектов в матрицу
 			coo6llleHue_OT_MaTpucbl = nil
 			local Bce_acnekTbl_BblcoCaHbl = false
 			local Ta6JIuca_acnekToB = {}
@@ -1171,13 +1179,11 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			repeat
 				Bce_acnekTbl_BblcoCaHbl = true
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
-				--print("получение аспектов")
 				Ta6JIuca_acnekToB_copTupoBka = {}
 				for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
 					table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa})
 				end
 				table.sort(Ta6JIuca_acnekToB_copTupoBka, mySort)
-				--print("сортировка аспектов")
 				coo6llleHue_OT_MaTpucbl = {}
 				for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
 					if tonumber(v[1]) <= 0 then
@@ -1186,28 +1192,41 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						Bce_acnekTbl_BblcoCaHbl = false
 					end
 					local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
-					--io.write("добавление в таблицу: ")
-					--print(concatuHacu9l)
 					table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
 				end
-				--for k, v in ipairs(coo6llleHue_OT_MaTpucbl) do
-					--print(k,v)
-				--end
-				--io.read()
-				
-				--print("вывод сообщения на очки")
 				os.sleep(0)
 			until Bce_acnekTbl_BblcoCaHbl
-			coo6llleHue_OT_MaTpucbl = nil
+			
+			--цекл слежки за предметами, которые всасывает матрица
+			coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
+			local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
+			local kpaqpT_3aBepllleH = false
+			repeat
+				os.sleep(0)
+				local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
+				if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
+					kpaqpT_3aBepllleH = true
+					if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
+						Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce] = recept
+						setMathixRecepts()
+					end
+				end
+			until kpaqpT_3aBepllleH
+			
+			--действия перед следующим крафтом
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема: " .. recept.Ha3BaHue .. g .. "завершен!")
 			Bcero_ckpaqp4eHo = i
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
 		end
+		
+		--способ уборки всех предметов после крафта
 		if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 then
-			y6paTb_npegMeTbl_c_nbegecTaJIoB(false)
+			y6paTb_npegMeTbl_c_nbegecTaJIoB(false) --переместить в сундук выдачи?
 		else
-			y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
+			y6paTb_npegMeTbl_c_nbegecTaJIoB(true) --переместить в сундук выдачи?
 		end
+		
+		--окончательные действия после крафта
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
 		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
 		coo6llleHue_OT_MaTpucbl = nil
@@ -2318,7 +2337,9 @@ do
 			["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
 			["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
 			["okoH4aTeJIbHblu_npegMeT"] = "не определено"
+			["HoMeP_B_Ta6JIuce"] = "-1"
 		})
+		Ta6JIuca_recenToB_Ha_MaTpuce[#Ta6JIuca_recenToB_Ha_MaTpuce].HoMeP_B_Ta6JIuce = #Ta6JIuca_recenToB_Ha_MaTpuce
 		setMathixRecepts()
 		
 		--вывод данных о записи в чат
@@ -2339,7 +2360,7 @@ do
 		end	
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "обработка рецепта завершена!")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица рецепты инфо"] = function() --просмотреть все подключенные компоненты
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица рецепты инфо"] = function() --вывод списка всех рецептов
 		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
 			return
@@ -2348,6 +2369,34 @@ do
 		for k, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
 		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица рецепт инфо"] = function() --подробности об определенном рецепте
+		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
+			return
+		end
+		
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи цифру рецепта")
+		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, #Ta6JIuca_recenToB_Ha_MaTpuce)
+		if not re3yJIbTaT_BBoga then return end
+		--вывод подробной инфы
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===================")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название: " .. g .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].Ha3BaHue)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "номер в таблице: " .. g .. tostring(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].HoMeP_B_Ta6JIuce))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===================")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "предметы для крафта:")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c.. "[" .. g .. "по центру:" .. c .. "] = " .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].cTapToBblu_npegMeT_no_ceHTpy.label)
+		for k, v in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].Ta6JIuca_npegMeToB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ":[" .. g .. "пьедестал " .. v[1] .. c .. "] = " .. g .. v[2].label)
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===================")
+		if type(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].okoH4aTeJIbHblu_npegMeT) == "string" then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "результат:" .. c .. "] = " .. r .. "не определено"
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "для определения требуется крафт предмета")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "результат:" .. c .. "] = " .. g .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].okoH4aTeJIbHblu_npegMeT.label)
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===================")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить рецепт"] = function()
 		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then

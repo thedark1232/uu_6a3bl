@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершающий код для матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "завершающий код исправления"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2336,7 +2336,7 @@ do
 			["Ha3BaHue"] = coo6llleHue,
 			["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
 			["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
-			["okoH4aTeJIbHblu_npegMeT"] = "не определено"
+			["okoH4aTeJIbHblu_npegMeT"] = "не определено",
 			["HoMeP_B_Ta6JIuce"] = "-1"
 		})
 		Ta6JIuca_recenToB_Ha_MaTpuce[#Ta6JIuca_recenToB_Ha_MaTpuce].HoMeP_B_Ta6JIuce = #Ta6JIuca_recenToB_Ha_MaTpuce
@@ -2391,7 +2391,7 @@ do
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===================")
 		if type(Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].okoH4aTeJIbHblu_npegMeT) == "string" then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "результат:" .. c .. "] = " .. r .. "не определено"
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "результат:" .. c .. "] = " .. r .. "не определено")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "для определения требуется крафт предмета")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "результат:" .. c .. "] = " .. g .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa].okoH4aTeJIbHblu_npegMeT.label)
@@ -2412,6 +2412,9 @@ do
 		if not re3yJIbTaT_BBoga then return end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "рецепт: " .. Ta6JIuca_recenToB_Ha_MaTpuce[cuqppa_gJl9l_ygaJIeHu9l].Ha3BaHue .. " удален!")
 		table.remove(Ta6JIuca_recenToB_Ha_MaTpuce, cuqppa_gJl9l_ygaJIeHu9l)
+		for i = cuqppa_gJl9l_ygaJIeHu9l, #Ta6JIuca_recenToB_Ha_MaTpuce do
+			Ta6JIuca_recenToB_Ha_MaTpuce[i].HoMeP_B_Ta6JIuce = Ta6JIuca_recenToB_Ha_MaTpuce[i].HoMeP_B_Ta6JIuce - 1
+		end
 		setMathixRecepts()
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"] = function() --просмотреть все подключенные компоненты

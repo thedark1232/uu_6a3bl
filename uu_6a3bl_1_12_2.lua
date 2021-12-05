@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "онлайн фикс"
+local Ha3BaHue_o6HoBJIeHu9l = "онлайн фикс2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2667,7 +2667,6 @@ do
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи активность игроков"] = function() --таблица через чат бокс игроков + количество времени
-		term.clear()
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "провожу вычисление времени...")
 		local Ha3BaHue_qpauJIoB = JIor_viewer_detectors.HauTu_Bce_qpauJIbl_JIoroB(nytb_k_JIoraM)

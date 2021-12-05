@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершающий код исправления2"
+local Ha3BaHue_o6HoBJIeHu9l = "завершающий код исправления3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1149,6 +1149,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local recept = o4epegb_kpaqpToB_Ha_MaTpuce[1][1]
 		local koJIu4ecTBo = o4epegb_kpaqpToB_Ha_MaTpuce[1][2]
 		local Bcero_ckpaqp4eHo = 0
+		local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
 		
 		--начло цикла крафта на матрице
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
@@ -1177,6 +1178,10 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			local Ta6JIuca_acnekToB = {}
 			local Ta6JIuca_acnekToB_copTupoBka = {}
 			repeat
+				if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "крафт прерван! причина:")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
+				end
 				Bce_acnekTbl_BblcoCaHbl = true
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
 				Ta6JIuca_acnekToB_copTupoBka = {}
@@ -1193,13 +1198,14 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					end
 					local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
 					table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
+					io.read()
 				end
 				os.sleep(0)
 			until Bce_acnekTbl_BblcoCaHbl
 			
 			--цекл слежки за предметами, которые всасывает матрица
 			coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
-			local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
+
 			local kpaqpT_3aBepllleH = false
 			repeat
 				os.sleep(0)

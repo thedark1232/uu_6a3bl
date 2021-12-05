@@ -1,10 +1,10 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги"
+local Ha3BaHue_o6HoBJIeHu9l = "онлайн фикс"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
 local event = require("event")
 local filesystem = require("filesystem")
-local unicode = require("unicode")-+
+local unicode = require("unicode")
 
 local term = require("term")
 local serialization = require("serialization") --serialization.serialize unserialize
@@ -3793,7 +3793,7 @@ do
 		configuration[21] = BblBog_JIoroB_urpokoB_Ha_MoHuTop
 		setConfiguration()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " добавь игрока для проверки онлайна"] = function()
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " добавь игрока в онлайн"] = function() --проверять онлайн игрока "статус онлайна"
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник игрока:")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -3812,7 +3812,7 @@ do
 		configuration[23] = Ta6JIuca_npoBepku_online
 		setConfiguration()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удали игрока для проверки онлайна"] = function()
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удали из онлайна"] = function() --удалить игрока из проверки онлайна
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник игрока:")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end

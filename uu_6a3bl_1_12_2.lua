@@ -1,10 +1,11 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершающий код исправления3"
+local Ha3BaHue_o6HoBJIeHu9l = "баги"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
 local event = require("event")
 local filesystem = require("filesystem")
-local unicode = require("unicode")
+local unicode = require("unicode")-+
+
 local term = require("term")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
@@ -1198,7 +1199,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					end
 					local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
 					table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
-					io.read()
 				end
 				os.sleep(0)
 			until Bce_acnekTbl_BblcoCaHbl
@@ -2688,8 +2688,9 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общее время: " .. g ..  all_day .. "д " .. all_hour .. "ч " .. all_min .. "м " .. string.format("%.f", all_sec) .. "с")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " создать новую зону"] = function() --новая зон
-		local nick_BBog9llllero_coo6llleHue = nick_gJI9l_npuBeTcTBu9l
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ожидание ввода: название зоны, х1, у1, z1, x2, y2, z2")
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		coo6llleHue = string.gsub(coo6llleHue, " ", "")
 		local Ha3BaHue_3oHbl, nepBblu_x, nepBblu_y, nepBblu_z, BTopou_x, BTopou_y, BTopou_z = string.match(unicode.lower(coo6llleHue), "(.+)%,(.+)%,(.+)%,(.+)%,(.+)%,(.+)%,(.+)")
 		print(coo6llleHue)

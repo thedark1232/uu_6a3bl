@@ -1,10 +1,11 @@
-local Ha3BaHue_o6HoBJIeHu9l = "большая буква"
+local Ha3BaHue_o6HoBJIeHu9l = "обновления команд"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
 local event = require("event")
 local filesystem = require("filesystem")
 local unicode = require("unicode")
+local koMaHgbl = true
 
 local term = require("term")
 local serialization = require("serialization") --serialization.serialize unserialize
@@ -24,6 +25,8 @@ local coo6llleHue_OT_MaTpucbl
 local c = "§6" --оранжевый
 local r = "§c" --красный
 local g = "§a" --зеленый
+local p = "§5" --фиолетовый тёмный
+local gr = "§7" -- серый светлый
 local Bepcu9l_uu_6a3bl = "0"
 local gpu = component.gpu
 local cocTo9lHue_noToka_MaTpucbl = ""
@@ -944,7 +947,7 @@ function py4Hou_BBog_agreca(text, ta6JIuca_agrecoB)
 end
 function oJugaHue_BBoga_cuqpPbl(oT, go)
 	::noBTop_BBoga_HoMepa::
-	BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
+	BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(15, nick_gJI9l_npuBeTcTBu9l)
 	if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return false end
 	coo6llleHue = tonumber(coo6llleHue)
 	if coo6llleHue == nil or coo6llleHue < oT or coo6llleHue > go then
@@ -1540,7 +1543,7 @@ do
 	local nepBa9l_6ykba = unicode.sub(Ha3BaHue_6a3bl, 1, 1)
 	local ocTaJIbHoe = unicode.sub(Ha3BaHue_6a3bl, 2, unicode.len(Ha3BaHue_6a3bl))
 	local nepBa9l_6ykba = unicode.upper(nepBa9l_6ykba)
-	Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. nepBa9l_6ykba .. ocTaJIbHoe)
+	Ta6JIuca_koMnoHeHToB["chat_box"].setName(p .. nepBa9l_6ykba .. ocTaJIbHoe .. gr)
 	--метатаблицы
 	setmetatable(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB, {__index = function() return function() end end})
 	setmetatable(Ta6JIuca_admin_koMaHg, {__index = function() return function() end end})
@@ -2406,7 +2409,11 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end	
 	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " команды"] = function()
-		koMaHgbl_uu_6a3bl()
+		if koMaHgbl then
+			koMaHgbl = not koMaHgbl
+			koMaHgbl_uu_6a3bl() 
+			koMaHgbl = not koMaHgbl
+		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " треугольник"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи нечетное число не больше 100")

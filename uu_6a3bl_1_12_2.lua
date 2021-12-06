@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обнова команд"
+local Ha3BaHue_o6HoBJIeHu9l = "большая буква"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1537,7 +1537,10 @@ do
 		Ha3BaHue_6a3bl = configuration[11]
 	end
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "присвоение названия базе: " .. g .. Ha3BaHue_6a3bl)
-	Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. Ha3BaHue_6a3bl)
+	local nepBa9l_6ykba = unicode.sub(Ha3BaHue_6a3bl, 1, 1)
+	local ocTaJIbHoe = unicode.sub(Ha3BaHue_6a3bl, 2, unicode.len(Ha3BaHue_6a3bl))
+	local nepBa9l_6ykba = unicode.upper(nepBa9l_6ykba)
+	Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. nepBa9l_6ykba .. ocTaJIbHoe)
 	--метатаблицы
 	setmetatable(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB, {__index = function() return function() end end})
 	setmetatable(Ta6JIuca_admin_koMaHg, {__index = function() return function() end end})

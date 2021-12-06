@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "онлайн фикс2"
+local Ha3BaHue_o6HoBJIeHu9l = "обнова команд"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2402,6 +2402,9 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end	
+	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " команды"] = function()
+		koMaHgbl_uu_6a3bl()
+	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " треугольник"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи нечетное число не больше 100")
 		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(-10000,10000)

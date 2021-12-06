@@ -1249,6 +1249,253 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. olllu6ka)
 	end
 end
+function koMaHgbl_uu_6a3bl()
+	local Ta6JIuca_pa3geJIoB = {}
+	local t = {}
+	local Ha3BaHu9l_pa3geJIoB = {}
+	
+	local ynpaBJIeHue_npo4ee = 1; t[ynpaBJIeHue_npo4ee] = ynpaBJIeHue_npo4ee; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_npo4ee] = "прочие команды"
+	local ynpaBJIeHue_tap_drive = 2; t[ynpaBJIeHue_tap_drive] = ynpaBJIeHue_tap_drive; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_tap_drive] = "тап драйв"
+	local ynpaBJIeHue_open_glasses = 3; t[ynpaBJIeHue_open_glasses] = ynpaBJIeHue_open_glasses; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_open_glasses] = "опен глассес очки"
+	local ynpaBJIeHue_zone = 4; t[ynpaBJIeHue_zone] = ynpaBJIeHue_zone; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_zone] = "зоны для детекторов"
+	local ynpaBJIeHue_modem = 5; t[ynpaBJIeHue_modem] = ynpaBJIeHue_modem; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_modem] = "модем"
+	local ynpaBJIeHue_tunnel = 6; t[ynpaBJIeHue_tunnel] = ynpaBJIeHue_tunnel; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_tunnel] = "туннель"
+	local ynpaBJIeHue_TyppeJIu = 7; t[ynpaBJIeHue_TyppeJIu] = ynpaBJIeHue_TyppeJIu; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_TyppeJIu] = "турели"
+	local ynpaBJIeHue_ceHcopbl = 8; t[ynpaBJIeHue_ceHcopbl] = ynpaBJIeHue_ceHcopbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_ceHcopbl] = "сенсоры"
+	local ynpaBJIeHue_geTekTopbl = 9; t[ynpaBJIeHue_geTekTopbl] = ynpaBJIeHue_geTekTopbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_geTekTopbl] = "детекторы"
+	local ynpaBJIeHue_HaHuTbl = 10; t[ynpaBJIeHue_HaHuTbl] = ynpaBJIeHue_HaHuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_HaHuTbl] = "наниты"
+	local ynpaBJIeHue_MaTpuca = 11; t[ynpaBJIeHue_MaTpuca] = ynpaBJIeHue_MaTpuca; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_MaTpuca] = "автоматрица"
+	local ynpaBJIeHue_MO_teleport = 12; t[ynpaBJIeHue_MO_teleport] = ynpaBJIeHue_MO_teleport; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_MO_teleport] = "телепортер"
+	local ynpaBJIeHue_redStone = 13; t[ynpaBJIeHue_redStone] = ynpaBJIeHue_redStone; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_redStone] = "редстоун"
+	local ynpaBJIeHue_BupTyaJI_4aT = 14; t[ynpaBJIeHue_BupTyaJI_4aT] = ynpaBJIeHue_BupTyaJI_4aT; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_BupTyaJI_4aT] = "виртуальный чат"
+	local ynpaBJIeHue_TuMMeuTbl = 15; t[ynpaBJIeHue_TuMMeuTbl] = ynpaBJIeHue_TuMMeuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl] = "тиммейты"
+	local ynpaBJIeHue_JIoru_urpokoB = 16; t[ynpaBJIeHue_JIoru_urpokoB] = ynpaBJIeHue_JIoru_urpokoB; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB] = "логи игроков"
+	local ynpaBJIeHue_aJIucou = 17; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
+
+	for i = 1, #t do
+		table.insert(Ta6JIuca_pa3geJIoB, {})
+	end	
+	
+	--управления алисой
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "выход (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "обнови ии базы (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "пока (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "отключить сеть (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "выключить сеть (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "установи время задержки циклов (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "покажи время задержки циклов (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "переименовать базу (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "сменить админа (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "покажи все компоненты (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "рестарт сети (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "покажи озу (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "скрой озу (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "покажи мои команды (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "очистить монитор (тиммейт)")
+	
+	--модем
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "установи новый порт модема (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "установи сообщение пробуждения (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "покажи сообщение пробуждения (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "посмотреть открытые порты модема (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "статус модема (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "послать сообщение (тиммейт)")
+	
+	--тиммейты
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl], "запись нового тиммейта (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl], "удалить тиммейта (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl], "статус онлайна (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl], "покажи тиммейтов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl], "на ком очки (тиммейт)")
+	
+	--тап драйв
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tap_drive], "переустанови тап драйв (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tap_drive], "какое время задержки тап драйв (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tap_drive], "установи время задержки тап драйв (админ)")
+	
+	--open glasses
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_open_glasses], "очистить все виджеты (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_open_glasses], "привязать новые очки (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_open_glasses], "сменить ключ моста (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_open_glasses], "просмотр привязанных игроков (админ)")
+	
+	--турели ос
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "ттл (админ)") --коррекция турелей на 1 градус влево
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "ттп (админ)") --коррекция турелей на 1 градус вправо
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "найти новые туррели (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "настроить туррели (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "удали настройки туррелей (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "статус защиты периметра (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "разрешить тиммейтам использование туррелей (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "запретить тиммейтам использование туррелей (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "огонь (админ)") --выстрелить 1 раз из всех турелей
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "туррели авторежим (тиммейт)") 
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "тт (тиммейт)") --огонь на поражение по игроку
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "тур офф (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "тур он (тиммейт)")
+	
+	--сенсоры
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_ceHcopbl], "найти новые сенсоры (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_ceHcopbl], "настроить сенсоры (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_ceHcopbl], "удали настройки сенсоров (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_ceHcopbl], "статус защиты периметра (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_ceHcopbl], "дебаг сенсора (админ)") --выявление ошибки, после рестарта не показывает игроков	
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_ceHcopbl], "сенсор удалить игрока (тиммейт)") --выявление ошибки, после рестарта не показывает игроков	
+	
+	--детекторы опен секурити
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "сменить имя детектора (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "найти новые детекторы (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "настроить детекторы (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "удали настройки детекторов (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "статус защиты периметра (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "покажи интервал задержки логов (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "установи интервал задержки логов (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "запись логов вкл (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "запись логов выкл (тиммейт)")
+	
+	--туннель (связанная карта)
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tunnel], "отправлять лог в туннель (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tunnel], "не отправлять лог в туннель (админ)")
+
+	--наниты
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "с1 (админ)") --назначить быструю конфиграцию нанитов 1
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "мои хп (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "мой голод (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "перезаписать ключ нанитам (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "заряд нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "максимум эффектов нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "мои активные эффекты нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "состояние эффекта нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "переключить эффект нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "сканирование всех эффектов нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "моя таблица эффектов нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "отключить последний проверяемый эффект нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "н1 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "о1 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "копировать конфиг нанитов (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "отключить все эффекты нанитов (тиммейт)")
+	
+	--виртуальный чат (через виртуальную клавиатуру)
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_BupTyaJI_4aT], "смещение сообщения по х (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_BupTyaJI_4aT], "задержка удаления сообщений (админ)")
+
+	--редстоун контроллеры
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред сброс настроек (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред инфо (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред события (тиммейт)") --показать список поступивших сигналов на ред стоун
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред события очистить (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред тест (тиммейт)")
+	
+	--логи игроков
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "установи задержку вывода активных игроков на монитор (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "установи задержку записи в файл (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "статус рейд (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "перенеси логи в рейд (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "статус онлайна (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "запись логов вкл (тиммейт)") --логи с детекторов
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "запись логов выкл (тиммейт)") --логи с детекторов
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "покажи последние логи (тиммейт)") 
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "покажи активность игроков (тиммейт)") 
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "покажи таблицу онлайна (тиммейт)") 
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "добавь игрока в онлайн (тиммейт)") 
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "удали из онлайна (тиммейт)") 
+	
+	--матрица
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица настроить (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица перенастроить пьедестал (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица перенастроить интерфейс (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица крафт (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица состояние (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица состояние переключить (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица очередь (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица удалить всю очередь (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица удалить из очереди (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица инфо (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица запись рецепта (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица рецепты инфо (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица рецепт инфо (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица удалить рецепт (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "матрица очистить пьедесталы (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MaTpuca], "удалить сообщения матрицы (тиммейт)")
+	
+	--зоны
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_zone], "создать новую зону (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_zone], "покажи все зоны (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_zone], "удали все зоны (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_zone], "удалить зону (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_zone], "сменить приоритет зоны (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_zone], "показать зоны (тиммейт)")
+	
+	--меттер овердрайв телепорт
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 1 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 2 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 3 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 4 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 5 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 6 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 7 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 8 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 9 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 10 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 11 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 12 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 13 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 14 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 15 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 16 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 17 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 18 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 19 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп сет 20 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 1 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 2 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 3 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 4 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 5 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 6 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 7 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 8 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 9 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 10 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 11 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 12 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 13 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 14 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 15 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 16 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 17 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 18 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 19 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп 20 (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп (тиммейт)") --на игрока
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп инфо (тиммейт)")
+	
+	--прочее
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "поблагодари kayatik (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "начало теста (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "привет (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "иди нахуй (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "треугольник (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "покажи цвета (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "расскажи стишок (тиммейт)")
+	
+	
+	--отобразить все разделы в чате
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ВСЕ РАЗДЕЛЫ:")
+	for k, v in ipairs(Ha3BaHu9l_pa3geJIoB) do
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v)
+	end
+	
+	--выбор интересующего раздела
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи цифру раздела?")
+	local re3yJIbTaT_BBoga, cuqppa_BBoga = oJugaHue_BBoga_cuqpPbl(1, #Ha3BaHu9l_pa3geJIoB)
+	if not re3yJIbTaT_BBoga then return end
+	
+	--отобразить интересующий раздел в чате
+	for k, v in ipairs(Ta6JIuca_pa3geJIoB[cuqppa_BBoga]) do
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v)
+	end
+end
 
 do
 	--осчистка монитора
@@ -1520,13 +1767,13 @@ do
 			end
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттл"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттл"] = function() --коррекция турелей на 1 градус влево
 		noBopoT = noBopoT + 1
 		configuration[13] = noBopoT
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "коррекция туррелей назначена на: " .. noBopoT .. " градусов по горизонт")
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"] = function() --коррекция турелей на 1 градус вправо
 		noBopoT = noBopoT - 1
 		configuration[13] = noBopoT
 		setConfiguration()
@@ -1918,7 +2165,7 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "задержка переназначена на: " .. tostring(coo6llleHue))
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи задержку проверки онлайна"] = function() --задержка записи в файл последнего онлайна для игроков и тиммейтов
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи задержку записи в файл"] = function() --задержка записи в файл последнего онлайна для игроков и тиммейтов
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущая задержка = " .. g .. tostring(zagepJka_B_cekyHgax_npoBepku_oHJIauHa))
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ввод цифры задержки:")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
@@ -2123,7 +2370,7 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый адрес успешно присвоен")
 	end
-	Ta6JIuca_koMaHg_gJI9l_rocTeu["база привет"] = function()
+	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
 			if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("zdraBcTByu_JIopg_The_Dark.dfpwm") end
 		elseif whiteListUsers[nick_gJI9l_npuBeTcTBu9l] ~= nil then
@@ -2134,11 +2381,11 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "Здравствуй " .. nick_gJI9l_npuBeTcTBu9l)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "Как сам?")		
 	end	
-	Ta6JIuca_koMaHg_gJI9l_rocTeu["база иди нахуй"] = function()
+	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " иди нахуй"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "дата и время мата в чате сохранены")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "модерация будет оповещена")
 	end
-	Ta6JIuca_koMaHg_gJI9l_rocTeu["база сменить админа"] = function()
+	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " сменить админа"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. 'ввод пароля через монитор компа?')
 		--nick_gJI9l_npuBeTcTBu9l
 		local coo6llleHue = io.read()
@@ -2640,7 +2887,7 @@ do
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удалить сообщения матрицы"] = function()
 		coo6llleHue_oT_redstone = false
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " очистить ред события"] = function()
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред события очистить"] = function()
 		co6blTu9l_redStone = {}
 		configuration[27] = co6blTu9l_redStone
 		setConfiguration()

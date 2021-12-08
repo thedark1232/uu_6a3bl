@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука9"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1486,6 +1486,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "покажи цвета (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "расскажи стишок (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "что в сундуке (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "стереть адрес сундука (тиммейт)")
 	
 	
 	--отобразить все разделы в чате
@@ -2457,7 +2458,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "проверка адреса")
 			for agrec_u3_Ta6JIucbl, _ in pairs(Bce_aJIMa3Hble_cyHgyku) do
 				if string.sub(agrec_u3_Ta6JIucbl, 1, 3) == coo6llleHue then			
-					agrec_cyHgyka = coo6llleHue
+					agrec_cyHgyka = agrec_u3_Ta6JIucbl
 					configuration[25] = agrec_cyHgyka
 					setConfiguration()
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес найден и сохранен!")
@@ -2467,6 +2468,12 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес введен неверно!")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запусти функцию заного")
 		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " стереть адрес сундука"] = function() --адрес сундука для проверки итемов "алиса что в сундуке"
+		agrec_cyHgyka = nil
+		configuration[25] = "nil"
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес сундука стерт!")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " треугольник"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи нечетное число не больше 100")

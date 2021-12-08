@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука6"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2428,7 +2428,12 @@ do
 				
 		else
 			local Bce_aJIMa3Hble_cyHgyku = component.list("diamond")
-			if #Bce_aJIMa3Hble_cyHgyku <= 0 then
+			local a = 0
+			for _, _ in pairs(Bce_aJIMa3Hble_cyHgyku) do
+				a = a + 1
+			end
+			
+			if a <= 0 then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "для начала работы")
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подключи алмазный сундук")
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "к адаптеру")

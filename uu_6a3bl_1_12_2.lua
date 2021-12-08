@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновления команд"
+local Ha3BaHue_o6HoBJIeHu9l = "поиск в сундуке"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -22,6 +22,7 @@ local o4epegb_kpaqpToB_Ha_MaTpuce = {}
 local me_interface_gJI9l_MaTpucbl = false
 local MaTpuca_cBo6ogHa = true
 local coo6llleHue_OT_MaTpucbl
+local agrec_cyHgyka
 local c = "§6" --оранжевый
 local r = "§c" --красный
 local g = "§a" --зеленый
@@ -377,10 +378,12 @@ function getLibrary(name)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "скачивание библиотеки: " .. name)
 			local status_wget, Ha3BaHue_olllu6ku = wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/" .. name .. ".lua", "/lib/" .. name .. ".lua")
 			if status_wget then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "успешно")
 				getLibrary(name)
 			else
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка: " .. tostring(Ha3BaHue_olllu6ku))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка при скачивании библиотеки: " .. name)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(Ha3BaHue_olllu6ku))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "выход из программы")
+				os.exit()
 			end
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "требуется загрузка библиотеки: " .. name)
@@ -1481,6 +1484,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "треугольник (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "покажи цвета (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "расскажи стишок (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "что в сундуке (тиммейт)")
 	
 	
 	--отобразить все разделы в чате
@@ -2413,6 +2417,35 @@ do
 			koMaHgbl = not koMaHgbl
 			koMaHgbl_uu_6a3bl() 
 			koMaHgbl = not koMaHgbl
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
+		agrec_cyHgyka = configuration[25]
+		if agrec_cyHgyka then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "вывод всех найденых итемов:")
+		else
+			local Bce_aJIMa3Hble_cyHgyku = component.list("diamond")
+			if #Bce_aJIMa3Hble_cyHgyku <= 0 then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "для начала работы")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подключи алмазный сундук")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "к адаптеру")
+				return
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес алмазного сундука не найден")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введи 3 буквы адреса")
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(15, nick_gJI9l_npuBeTcTBu9l)
+			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "проверка адреса")
+			for agrec_u3_Ta6JIucbl, _ in pairs(Bce_aJIMa3Hble_cyHgyku) do
+				if string.sub(agrec_u3_Ta6JIucbl, 1, 3) == coo6llleHue then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес найден и сохранен!")
+					configuration[25] = agrec_cyHgyka
+					setConfiguration()
+					return
+				end
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес введен неверно!")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запусти функцию заного")
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " треугольник"] = function()

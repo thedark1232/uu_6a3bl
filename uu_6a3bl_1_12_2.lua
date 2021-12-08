@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "поиск в сундуке"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2421,7 +2421,9 @@ do
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
-		if agrec_cyHgyka then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес сундука:")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. tostring(agrec_cyHgyka))
+		if agrec_cyHgyka ~= "nil" or agrec_cyHgyka ~= nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "вывод всех найденых итемов:")
 		else
 			local Bce_aJIMa3Hble_cyHgyku = component.list("diamond")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука4"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -404,7 +404,7 @@ function getConfiguration()
 	if configuration[4] == nil then configuration[4] = {} end --пароли-ключи нанитов для тимы
 	if configuration[5] == nil then configuration[5] = {} end --таблицы эффектов игроков
 	if configuration[6] == nil then configuration[6] = {} end --быстрые клавиши для нанитов
-	if configuration[25] == "nil" then configuration[25] == nil end
+	if configuration[25] == "nil" then configuration[25] = nil end
 end
 function setConfiguration()
 	filesLibrary.creat_file("/home/configuration", serialization.serialize(configuration))
@@ -4162,10 +4162,10 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто")
 	elseif configuration[7] == true then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. (c .. "ОЗУ:" .. g .. " показ")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. g .. " показ")
 		noka3aTb_O3Y = configuration[7]
 	else
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c ..(c .. "ОЗУ:" .. r .. " скрыто")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто")
 		noka3aTb_O3Y = configuration[7]
 	end
 	if configuration[9] == "nil" then --конфиг таблицы вайт листа

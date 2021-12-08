@@ -282,7 +282,7 @@ function zarpy3ka_koMnoHeHToB()
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName = function(text) component.chat_box.setName(text) end
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. "ИИ базы")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say("§6включение сети")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ВКЛЮЧЕНИЕ СЕТИ:")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка компонентов")
 		else
 			Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["chat_box"] = "chat_box"
@@ -1781,13 +1781,13 @@ do
 		noBopoT = noBopoT + 1
 		configuration[13] = noBopoT
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "коррекция туррелей назначена на: " .. noBopoT .. " градусов по горизонт")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"] = function() --коррекция турелей на 1 градус вправо
 		noBopoT = noBopoT - 1
 		configuration[13] = noBopoT
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "коррекция туррелей назначена на: " .. noBopoT .. " градусов по горизонт")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи сообщение пробуждения"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] ~= nil then
@@ -4135,7 +4135,6 @@ do
 		end
 	end
 	--установка конфигураций
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка файлов конфигураций")
 	if tape_drive ~= nil then
 		if configuration[1] ~= "nil" then
 			tape_drive.setBpeM9l_3agepJku(configuration[1])
@@ -4159,21 +4158,19 @@ do
 		noka3aTb_O3Y = false
 		configuration[7] = false
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ скрыто")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто")
 	elseif configuration[7] == true then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "показать ОЗУ = " .. g .. "true")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. (c .. "ОЗУ:" .. g .. " показ")
 		noka3aTb_O3Y = configuration[7]
 	else
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ скрыто")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c ..(c .. "ОЗУ:" .. r .. " скрыто")
 		noka3aTb_O3Y = configuration[7]
 	end
 	if configuration[9] == "nil" then --конфиг таблицы вайт листа
 		configuration[9] = whiteListUsers
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись тиммейтов в конфиг")
 	else
 		whiteListUsers = configuration[9] 
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "чтение тиммейтов из конфига")
 	end
 	if configuration[8] == "nil" then --доступ тиммейтам к туррелям
 		TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu = false
@@ -4198,18 +4195,17 @@ do
 	if configuration[12] == "nil" then
 		configuration[12] = zoHbl_JIoroB
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "зоны логов не назначены")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "зоны логов:" .. r .. " не назначены")
 	else
 		zoHbl_JIoroB = configuration[12]
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "зоны логов загружены")
 	end
 	if configuration[13] == "nil" then
 		configuration[13] = noBopoT
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей назначена на: " .. noBopoT .. " градусов по горизонт")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов")
 	else
 		noBopoT = configuration[13]
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей назначена на: " .. noBopoT .. " градусов по горизонт")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов")
 	end
 	if configuration[14] == "nil" then
 		configuration[14] = oTnpaBJl9lTb_JIor_c_geTekTopoB
@@ -4387,7 +4383,11 @@ do
 	else
 		configRedStone = configuration[17]
 		if cTaTyc_BblnoJIHeHu9l then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "настройка конфигураций блоков редстоуна:")
+			if #ta6JIuca_redstone <= 0 then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "редстоун контроллеры:" .. r .. " отсутствуют")
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "редстоун контроллеры:")
+			end
 			for k, v in ipairs(ta6JIuca_redstone) do
 				if configRedStone[v] == nil then
 					configRedStone[v] = {"редстоун" .. tostring(v:sub(1, 3)), "false"}

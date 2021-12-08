@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука7"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2425,7 +2425,18 @@ do
 		if agrec_cyHgyka == "nil" then agrec_cyHgyka = nil end
 		if agrec_cyHgyka ~= nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "вывод всех найденых итемов:")
-				
+			for i = 1, 108 do
+				local result = component.invoke(agrec_cyHgyka, "getStackInSlot", i)
+				if result ~= nil then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===============================")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "слот сундука: " .. tostring(i))
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "label: " .. g .. result.display_name)
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id: " .. g .. result.id)
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "damage: " .. g .. result.dmg)
+				end
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===============================")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "фукнция завершена")
 		else
 			local Bce_aJIMa3Hble_cyHgyku = component.list("diamond")
 			local a = 0
@@ -2445,10 +2456,11 @@ do
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "проверка адреса")
 			for agrec_u3_Ta6JIucbl, _ in pairs(Bce_aJIMa3Hble_cyHgyku) do
-				if string.sub(agrec_u3_Ta6JIucbl, 1, 3) == coo6llleHue then
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес найден и сохранен!")
+				if string.sub(agrec_u3_Ta6JIucbl, 1, 3) == coo6llleHue then			
+					agrec_cyHgyka = coo6llleHue
 					configuration[25] = agrec_cyHgyka
 					setConfiguration()
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес найден и сохранен!")
 					return
 				end
 			end

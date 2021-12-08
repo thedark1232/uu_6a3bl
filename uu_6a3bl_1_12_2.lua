@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука2"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -404,6 +404,7 @@ function getConfiguration()
 	if configuration[4] == nil then configuration[4] = {} end --пароли-ключи нанитов для тимы
 	if configuration[5] == nil then configuration[5] = {} end --таблицы эффектов игроков
 	if configuration[6] == nil then configuration[6] = {} end --быстрые клавиши для нанитов
+	if configuration[25] == "nil" then configuration[25] == nil end
 end
 function setConfiguration()
 	filesLibrary.creat_file("/home/configuration", serialization.serialize(configuration))
@@ -2423,8 +2424,9 @@ do
 		agrec_cyHgyka = configuration[25]
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес сундука:")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. tostring(agrec_cyHgyka))
-		if agrec_cyHgyka ~= "nil" or agrec_cyHgyka ~= nil then
+		if agrec_cyHgyka ~= nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "вывод всех найденых итемов:")
+				
 		else
 			local Bce_aJIMa3Hble_cyHgyku = component.list("diamond")
 			if #Bce_aJIMa3Hble_cyHgyku <= 0 then

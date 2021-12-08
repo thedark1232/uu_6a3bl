@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")

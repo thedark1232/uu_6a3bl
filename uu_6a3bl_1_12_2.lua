@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления сундука10"
+local Ha3BaHue_o6HoBJIeHu9l = "обнова под хайтеч"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -382,8 +382,6 @@ function getLibrary(name)
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка при скачивании библиотеки: " .. name)
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(Ha3BaHue_olllu6ku))
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "выход из программы")
-				os.exit()
 			end
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "требуется загрузка библиотеки: " .. name)
@@ -2430,7 +2428,7 @@ do
 				local result = component.invoke(agrec_cyHgyka, "getStackInSlot", i)
 				if result ~= nil then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===============================")
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "слот сундука: " .. tostring(i))
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "слот сундука: " .. g .. tostring(i))
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "label: " .. g .. result.display_name)
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id: " .. g .. result.id)
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "damage: " .. g .. result.dmg)
@@ -3080,7 +3078,7 @@ do
 		if #zoHbl_JIoroB > 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список зон:")
 			for k, v in ipairs(zoHbl_JIoroB) do
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. k .. ": " .. c .. v[7])
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. k .. ": " .. c .. v[7] .. c .. "(" .. g .. v[1] .. "," .. v[2] .. "," .. v[3] .. "," .. v[4] .. "," .. v[5] .. "," v[6] .. c .. ")")
 			end
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица зон пуста")

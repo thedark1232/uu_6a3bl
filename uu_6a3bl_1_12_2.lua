@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 7"
+local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2592,7 +2592,7 @@ do
 			if not re3yJIbTaT_BBoga then return end
 			
 			--переложить деньги из казика эмы за шмотки в мэ
-			local limit_onepacuu = 1000
+			local limit_onepacuu = 100
 			local Bcero_BblgaHo_geHer = 0
 			local HoMep_cJIoTa = 1
 			local Bce_cJIoTbl_im = component.invoke(agpec_casino_im, "getAllStacks")				
@@ -2615,10 +2615,9 @@ do
 			end
 			
 			--переложить деньги из казика эмы за эмы в мэ
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списание со счета им: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
+			--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списание со счета им: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
 			if cyMMa_gJI9l_cH9lTu9l > 0 then
-				limit_onepacuu = 1000
-				Bcero_BblgaHo_geHer = 0
+				limit_onepacuu = 100
 				HoMep_cJIoTa = 1
 				local npoBepo4Ha9l_cuqppa = cyMMa_gJI9l_cH9lTu9l
 				local Bce_cJIoTbl_mm = component.invoke(agpec_casino_mm, "getAllStacks")				
@@ -2632,7 +2631,7 @@ do
 							HoMep_cJIoTa = HoMep_cJIoTa + 1
 							if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
 						until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or cyMMa_gJI9l_cH9lTu9l <= 0
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
+						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 						limit_onepacuu = 100
 						Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
 						cyMMa_gJI9l_cH9lTu9l = cyMMa_gJI9l_cH9lTu9l - ygaJIocb_cH9lTb_geHer
@@ -2642,6 +2641,7 @@ do
 			end
 			
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списанино со счетов казика: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "забери деньги из мэ сети")
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()

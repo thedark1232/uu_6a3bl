@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 8"
+local Ha3BaHue_o6HoBJIeHu9l = "логи списаний"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2579,12 +2579,19 @@ do
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино снять деньги"] = function()
 		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"]() then
+			local Huk_urpoka = nick_gJI9l_npuBeTcTBu9l
+			
 			--расчет, сколько можно снять
 			local koJIu4ecTBO_koTopoe_MogHo_cH9lTb = 0
 			if Balance_casino_mm > re3epBHblu_6aJIaHc then koJIu4ecTBO_koTopoe_MogHo_cH9lTb = Balance_casino_mm - re3epBHblu_6aJIaHc end
 			koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb + Balance_casino_im
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "резервный баланс: " .. g .. re3epBHblu_6aJIaHc .. "$")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "со счета можно снять: " .. g .. tostring(koJIu4ecTBO_koTopoe_MogHo_cH9lTb) .. "$")
+			if koJIu4ecTBO_koTopoe_MogHo_cH9lTb <= 0 then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "баланс у казино слишком мал:(")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "зови народ в казино")
+				return
+			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи количесто?")
 			
 			--ввод необходимой суммы
@@ -2639,9 +2646,15 @@ do
 					end
 				end
 			end
-			
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списанино со счетов казика: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "забери деньги из мэ сети")
+		
+			--запись опирации в лог
+			if filesLibrary.write_file("/home/" .. Huk_urpoka .. ".cas", "nil") == "nil" then
+				filesLibrary.creat_file("/home/" .. Huk_urpoka .. ".cas", cekyHdbl_gJI9l_JIoroB .. "," .. Bcero_BblgaHo_geHer)
+			else
+				filesLibrary.addValue("/home/" .. Huk_urpoka .. ".cas", cekyHdbl_gJI9l_JIoroB .. "," .. Bcero_BblgaHo_geHer)
+			end
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()

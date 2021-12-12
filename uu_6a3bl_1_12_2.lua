@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино2"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,8 @@ local baza_Bblxog = "база выход" --нужно, чтобы не запи
 local not_exit = true
 local agpec_casino_mm --адрес алмазного сундука казино эмы за эмы
 local agpec_casino_im --адрес алмазного сундука казино эмы за шмотки
+local Balance_casino_mm = 0
+local Balance_casino_im = 0
 local Ta6JIuca_koMnoHeHToB = {}
 local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local Ta6JIuca_nbegecTaJIoB = {}
@@ -1478,13 +1480,13 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп инфо (тиммейт)")
 	
 	--управление казино дюрекса
-	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес мм (админ)") --алмазный сундук эмы за эмы
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес им (админ)") --алмазный сундук эмы за шмотки
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино статистика (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
 	
 	--прочее
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "поблагодари kayatik (админ)")
@@ -2480,6 +2482,8 @@ do
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"] = function()
+		local id = "customnpcs:npcMoney"
+		local dmg = 0
 		local mm_HaugeH
 		local im_HaugeH
 		mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
@@ -2488,6 +2492,21 @@ do
 		if not im_HaugeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "алмазный сундук им не найден") end
 		if not mm_HaugeH and not im_HaugeH then return end
 		
+		--проверка баланса мм
+		if mm_HaugeH then
+			local Tekyllluu_6aJIaHc_mm = 0
+			local Bce_cJIoTbl_mm = component.invoke(agpec_casino_mm, "getAllStacks")
+			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
+				local nogpoBHO = cTaTbl.all()
+				if nogpoBHO.id == id and nogpoBHO.dmg == dmg then
+					Tekyllluu_6aJIaHc_mm = Tekyllluu_6aJIaHc_mm + nogpoBHO.qty
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "в слоте: " .. cJIoT .. "онаружен посторонний предмет")
+				end
+			end
+		end
+		
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Tekyllluu_6aJIaHc_mm))
 		
 		
 	end

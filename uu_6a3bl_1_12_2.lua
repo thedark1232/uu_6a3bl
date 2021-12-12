@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 4"
+local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2606,12 +2606,12 @@ do
 						if limit_onepacuu <= 0 then break end
 						HoMep_cJIoTa = HoMep_cJIoTa + 1
 						if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
-					until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or Bcero_BblgaHo_geHer == cyMMa_gJI9l_cH9lTu9l
-					limit_onepacuu = 1000
+					until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or cyMMa_gJI9l_cH9lTu9l <= 0
+					limit_onepacuu = 100
 					--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 					Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
 					cyMMa_gJI9l_cH9lTu9l = cyMMa_gJI9l_cH9lTu9l - ygaJIocb_cH9lTb_geHer
-					if Bcero_BblgaHo_geHer == cyMMa_gJI9l_cH9lTu9l then break end
+					if cyMMa_gJI9l_cH9lTu9l <= 0 then break end
 				end
 			end
 			
@@ -2621,11 +2621,11 @@ do
 				limit_onepacuu = 1000
 				Bcero_BblgaHo_geHer = 0
 				HoMep_cJIoTa = 1
+				local npoBepo4Ha9l_cuqppa = cyMMa_gJI9l_cH9lTu9l
 				local Bce_cJIoTbl_mm = component.invoke(agpec_casino_mm, "getAllStacks")				
 				for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
 					local nogpo6HO = cTaTbl.all()
 					if nogpo6HO.id == id_money and nogpo6HO.dmg == dmg_money then
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 						local ygaJIocb_cH9lTb_geHer
 						repeat
 							ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_mm, "pushItem", "DOWN", cJIoT, cyMMa_gJI9l_cH9lTu9l, HoMep_cJIoTa)
@@ -2633,11 +2633,12 @@ do
 							if limit_onepacuu <= 0 then break end
 							HoMep_cJIoTa = HoMep_cJIoTa + 1
 							if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
-						until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or Bcero_BblgaHo_geHer == cyMMa_gJI9l_cH9lTu9l
-						limit_onepacuu = 1000
+						until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or cyMMa_gJI9l_cH9lTu9l <= 0
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
+						limit_onepacuu = 100
 						Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
 						cyMMa_gJI9l_cH9lTu9l = cyMMa_gJI9l_cH9lTu9l - ygaJIocb_cH9lTb_geHer
-						if Bcero_BblgaHo_geHer == cyMMa_gJI9l_cH9lTu9l then break end
+						if cyMMa_gJI9l_cH9lTu9l <= 0 then break end
 					end
 				end
 			end

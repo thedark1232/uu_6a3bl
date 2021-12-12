@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино9"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1484,7 +1484,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес им (админ)") --алмазный сундук эмы за шмотки
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино статистика (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино адреса (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино снять деньги (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
 	
@@ -2560,6 +2560,15 @@ do
 		--запись в конфиг файл результата баланса шмотки за эмы
 		configuration[36] = Balance_casino_im
 		setConfiguration()
+	end
+	--казино снять деньги
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино снять деньги"] == function()
+		local re3epBHblu_6aJIaHc = 1
+		Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"]()
+		local koJIu4ecTBO_koTopoe_MogHo_cH9lTb = 0
+		if Balance_casino_mm > re3epBHblu_6aJIaHc then koJIu4ecTBO_koTopoe_MogHo_cH9lTb = Balance_casino_mm - re3epBHblu_6aJIaHc end
+		koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb + Balance_casino_im
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "со счета можно снять: " .. g .. tostring(koJIu4ecTBO_koTopoe_MogHo_cH9lTb) .. "$")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]

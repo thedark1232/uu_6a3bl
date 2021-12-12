@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланк казино"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2427,6 +2427,7 @@ do
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино записать адрес мм"] = function() --эмы за эмы
 		local result = HauTu_agpec_komnoHeHTa(true, "diamond")
 		if result ~= nil then
+			agpec_casino_mm = result
 			configuration[33] = agpec_casino_mm
 			setConfiguration()
 		end
@@ -2434,6 +2435,7 @@ do
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино записать адрес им"] = function() -- шмотки за эмы
 		local result = HauTu_agpec_komnoHeHTa(true, "diamond")
 		if result ~= nil then
+			result = agpec_casino_im
 			configuration[34] = agpec_casino_im
 			setConfiguration()
 		end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "снятие с баланса исправление 3"
+local Ha3BaHue_o6HoBJIeHu9l = "снятие с баланса исправление 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2503,7 +2503,6 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "шмотки за эмы: " .. g .. agpec_casino_im)
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"] = function()
-		local limit_onepacuu = 1000
 		local mm_HaugeH
 		local im_HaugeH
 		mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
@@ -2593,6 +2592,7 @@ do
 			if not re3yJIbTaT_BBoga then return end
 			
 			--переложить деньги в мэ сеть
+			local limit_onepacuu = 1000
 			local Bcero_BblgaHo_geHer = 0
 			local HoMep_cJIoTa = 1
 			local Bce_cJIoTbl_im = component.invoke(agpec_casino_im, "getAllStacks")				

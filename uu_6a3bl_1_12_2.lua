@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 6"
+local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2603,7 +2603,6 @@ do
 					repeat
 						ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_im, "pushItem", "DOWN", cJIoT, cyMMa_gJI9l_cH9lTu9l, HoMep_cJIoTa)
 						limit_onepacuu = limit_onepacuu - 1
-						if limit_onepacuu <= 0 then break end
 						HoMep_cJIoTa = HoMep_cJIoTa + 1
 						if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
 					until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or cyMMa_gJI9l_cH9lTu9l <= 0
@@ -2630,7 +2629,6 @@ do
 						repeat
 							ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_mm, "pushItem", "DOWN", cJIoT, cyMMa_gJI9l_cH9lTu9l, HoMep_cJIoTa)
 							limit_onepacuu = limit_onepacuu - 1
-							if limit_onepacuu <= 0 then break end
 							HoMep_cJIoTa = HoMep_cJIoTa + 1
 							if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
 						until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or cyMMa_gJI9l_cH9lTu9l <= 0

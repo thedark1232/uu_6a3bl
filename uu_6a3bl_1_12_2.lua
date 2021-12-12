@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "логи списаний4"
+local Ha3BaHue_o6HoBJIeHu9l = "логи списаний5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1488,7 +1488,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес мм (админ)") --алмазный сундук эмы за эмы
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес им (админ)") --алмазный сундук эмы за шмотки
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино изменить лимит (админ)") --минимальное кол-во денег в казно эмы за эмы
-	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино статистика (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино статус (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино адреса (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино снять деньги (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино логи списаний (тиммейт)")
@@ -2511,7 +2511,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "эмы за эмы: " .. g .. agpec_casino_mm)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "шмотки за эмы: " .. g .. agpec_casino_im)
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"] = function()
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статус"] = function()
 		local mm_HaugeH
 		local im_HaugeH
 		mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
@@ -2673,7 +2673,9 @@ do
 		local c4eTa_TuMMeuToB = BepHyTb_TaJIucy_qpauJIoB("/home/", ".cas")
 		if #c4eTa_TuMMeuToB == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "счета тиммейтов не найдены")
+			return
 		end
+		local o6lllee_no_cnucaHu9lM = 0
 		for k, c4eT_TuMmeuTa in ipairs(c4eTa_TuMMeuToB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "========================================")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "просмотр счета: " .. g .. string.sub(c4eT_TuMmeuTa, 1, #c4eT_TuMmeuTa - 4))
@@ -2681,9 +2683,13 @@ do
 			Ta6JIuca_c4eTa = serialization.unserialize(Ta6JIuca_c4eTa)
 			for key, val in ipairs(Ta6JIuca_c4eTa) do
 				local datetime = os.date("*t", val[1])
+				o6lllee_no_cnucaHu9lM = o6lllee_no_cnucaHu9lM + tonumber(val[2])
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(key) .. ": " .. g .. "+" .. val[2] .. "$ " .. c .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
 			end
 		end
+		
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общий по списаниям: " .. tostring(o6lllee_no_cnucaHu9lM))
+		
 	end	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]

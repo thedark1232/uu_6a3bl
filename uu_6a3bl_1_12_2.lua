@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино6"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1483,7 +1483,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес мм (админ)") --алмазный сундук эмы за эмы
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес им (админ)") --алмазный сундук эмы за шмотки
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино статистика (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино адреса (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
@@ -2437,7 +2437,7 @@ do
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино записать адрес им"] = function() -- шмотки за эмы
 		local result = HauTu_agpec_komnoHeHTa(true, "diamond")
 		if result ~= nil then
-			result = agpec_casino_im
+			agpec_casino_im = result
 			configuration[34] = agpec_casino_im
 			setConfiguration()
 		end
@@ -2537,6 +2537,8 @@ do
 			noJIy4eHHa9l_npu6JIb = Balance_casino_mm - Tekyllluu_6aJIaHc_mm
 			Balance_casino_mm = Balance_casino_mm - noJIy4eHHa9l_npu6JIb
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. g .. "+0$" .. c .. ")")
 		end	
 		
 		

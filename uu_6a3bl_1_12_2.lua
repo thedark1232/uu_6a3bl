@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино4"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2487,7 +2487,7 @@ do
 		local mm_HaugeH
 		local im_HaugeH
 		mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
-		im_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
+		im_HaugeH, catch = pcall(function() component.invoke(agpec_casino_im, "getInventorySize") end)
 		if not mm_HaugeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "алмазный сундук мм не найден") end
 		if not im_HaugeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "алмазный сундук им не найден") end
 		if not mm_HaugeH and not im_HaugeH then return end
@@ -2510,7 +2510,7 @@ do
 		local Tekyllluu_6aJIaHc_im = 0
 		if im_HaugeH then	
 			local Bce_cJIoTbl_im = component.invoke(agpec_casino_im, "getAllStacks")
-			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
+			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_im) do
 				local nogpoBHO = cTaTbl.all()
 				if nogpoBHO.id == id and nogpoBHO.dmg == dmg then
 					Tekyllluu_6aJIaHc_im = Tekyllluu_6aJIaHc_im + nogpoBHO.qty

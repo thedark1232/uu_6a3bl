@@ -1491,8 +1491,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино статистика (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино адреса (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино снять деньги (тиммейт)")
-	
-	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино логи списаний (тиммейт)")
 	
 	--прочее
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "поблагодари kayatik (админ)")
@@ -1555,6 +1554,16 @@ function HauTu_agpec_komnoHeHTa(bool_admin, Ha3BaHue_KomnoHeHTa)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес введен неверно!")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запусти функцию заного")
 end
+function BepHyTb_TaJIucy_qpauJIoB(nyTb_k_JIoraM, paclllupeHue) --ищет все файлы в определенной папке с определенным расширением: /home/.xyu
+	local Ta6JIuca_nyTeu_JIoroB = {}
+	for Ha3BaHue_cJlegyI0IIIeu_nanKu in filesystem.list(nyTb_k_JIoraM) do
+		if Ha3BaHue_cJlegyI0IIIeu_nanKu:match(paclllupeHue) ~= nil then
+			table.insert(Ta6JIuca_nyTeu_JIoroB, Ha3BaHue_cJlegyI0IIIeu_nanKu)
+		end
+	end
+	return Ta6JIuca_nyTeu_JIoroB
+end
+
 
 do
 	--осчистка монитора
@@ -2650,13 +2659,26 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "забери деньги из мэ сети")
 		
 			--запись опирации в лог
-			if filesLibrary.write_file("/home/" .. Huk_urpoka .. ".cas", "nil") == "nil" then
-				filesLibrary.creat_file("/home/" .. Huk_urpoka .. ".cas", cekyHdbl_gJI9l_JIoroB .. "," .. Bcero_BblgaHo_geHer)
-			else
-				filesLibrary.addValue("/home/" .. Huk_urpoka .. ".cas", cekyHdbl_gJI9l_JIoroB .. "," .. Bcero_BblgaHo_geHer)
-			end
+			local JIoru_u3_qpauJIa = serialization.unserialize(filesLibrary.write_file("/home/" .. Huk_urpoka .. ".cas", "nil"))
+			if JIoru_u3_qpauJIa == "nil" then JIoru_u3_qpauJIa = {} end
+			table.insert(JIoru_u3_qpauJIa, {cekyHdbl_gJI9l_JIoroB, Bcero_BblgaHo_geHer})
+			filesLibrary.creat_file("/home/" .. Huk_urpoka .. ".cas", serialization.serialize(JIoru_u3_qpauJIa))
 		end
 	end
+	
+	
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино логи списаний"] = function()
+		local c4eTa_TuMMeuToB = BepHyTb_TaJIucy_qpauJIoB("/home/", ".cas")
+		if #c4eTa_TuMMeuToB = 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "счета тиммейтов не найдены")
+		end
+		for k, c4eT_TuMmeuTa in ipairs(c4eTa_TuMMeuToB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "просмотр счета: " .. g .. c4eT_TuMmeuTa)
+			
+		end
+	end
+	
+	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
 		if agrec_cyHgyka == "nil" then agrec_cyHgyka = nil end

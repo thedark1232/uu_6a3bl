@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "снятие с баланса исправление 1"
+local Ha3BaHue_o6HoBJIeHu9l = "снятие с баланса исправление 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2503,6 +2503,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "шмотки за эмы: " .. g .. agpec_casino_im)
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"] = function()
+		local limit_onepacuu = 1000
 		local mm_HaugeH
 		local im_HaugeH
 		mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
@@ -2598,7 +2599,12 @@ do
 			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_im) do
 				local nogpo6HO = cTaTbl.all()
 				if nogpo6HO.id == id_money and nogpo6HO.dmg == dmg_money then
-					local ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_im, "pushItem", "DOWN", HoMep_cJIoTa, koJIu4ecTBO_koTopoe_MogHo_cH9lTb)
+					local ygaJIocb_cH9lTb_geHer
+					repeat
+						ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_im, "pushItem", "DOWN", cJIoT, koJIu4ecTBO_koTopoe_MogHo_cH9lTb, HoMep_cJIoTa)
+						limit_onepacuu = limit_onepacuu - 1
+						if limit_onepacuu <= 0 then break end
+					until ygaJIocb_cH9lTb_geHer > 0
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 					Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
 					koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb - ygaJIocb_cH9lTb_geHer

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино8"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2548,11 +2548,11 @@ do
 		if Tekyllluu_6aJIaHc_im > Balance_casino_im then
 			noJIy4eHHa9l_npu6JIb = Tekyllluu_6aJIaHc_im - Balance_casino_im
 			Balance_casino_im = Balance_casino_im + noJIy4eHHa9l_npu6JIb
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
 		elseif Tekyllluu_6aJIaHc_im < Balance_casino_im then
 			noJIy4eHHa9l_npu6JIb = Balance_casino_im - Tekyllluu_6aJIaHc_im
 			Balance_casino_im = Balance_casino_im - noJIy4eHHa9l_npu6JIb
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+0$" .. c .. ")")
 		end	

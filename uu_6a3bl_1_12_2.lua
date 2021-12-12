@@ -2681,7 +2681,7 @@ do
 			Ta6JIuca_c4eTa = serialization.unserialize(Ta6JIuca_c4eTa)
 			for key, val in ipairs(Ta6JIuca_c4eTa) do
 				local datetime = os.date("*t", val[1])
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(key) .. ": " .. g .. "+" .. val[1] .. "$ " .. c .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(key) .. ": " .. g .. "+" .. val[2] .. "$ " .. c .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
 			end
 		end
 	end	

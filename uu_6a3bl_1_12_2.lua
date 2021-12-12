@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "логи списаний2"
+local Ha3BaHue_o6HoBJIeHu9l = "логи списаний3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2659,8 +2659,12 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "забери деньги из мэ сети")
 		
 			--запись опирации в лог
-			local JIoru_u3_qpauJIa = serialization.unserialize(filesLibrary.write_file("/home/" .. Huk_urpoka .. ".cas", "nil"))
-			if JIoru_u3_qpauJIa == "nil" then JIoru_u3_qpauJIa = {} end
+			local JIoru_u3_qpauJIa = filesLibrary.write_file("/home/" .. Huk_urpoka .. ".cas", "nil")
+			if JIoru_u3_qpauJIa == "nil" then
+				JIoru_u3_qpauJIa = {}
+			else	
+				JIoru_u3_qpauJIa = serialization.unserialize(JIoru_u3_qpauJIa)
+			end
 			table.insert(JIoru_u3_qpauJIa, {cekyHdbl_gJI9l_JIoroB, Bcero_BblgaHo_geHer})
 			filesLibrary.creat_file("/home/" .. Huk_urpoka .. ".cas", serialization.serialize(JIoru_u3_qpauJIa))
 		end
@@ -2669,7 +2673,7 @@ do
 	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино логи списаний"] = function()
 		local c4eTa_TuMMeuToB = BepHyTb_TaJIucy_qpauJIoB("/home/", ".cas")
-		if #c4eTa_TuMMeuToB = 0 then
+		if #c4eTa_TuMMeuToB == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "счета тиммейтов не найдены")
 		end
 		for k, c4eT_TuMmeuTa in ipairs(c4eTa_TuMMeuToB) do

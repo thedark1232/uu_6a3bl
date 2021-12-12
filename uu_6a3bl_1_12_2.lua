@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино11"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")

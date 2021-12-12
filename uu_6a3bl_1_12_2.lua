@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "снятие с баланса исправление 4"
+local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2591,7 +2591,7 @@ do
 			local re3yJIbTaT_BBoga, cyMMa_gJI9l_cH9lTu9l = oJugaHue_BBoga_cuqpPbl(1, koJIu4ecTBO_koTopoe_MogHo_cH9lTb)
 			if not re3yJIbTaT_BBoga then return end
 			
-			--переложить деньги в мэ сеть
+			--переложить деньги из казика эмы за шмотки в мэ
 			local limit_onepacuu = 1000
 			local Bcero_BblgaHo_geHer = 0
 			local HoMep_cJIoTa = 1
@@ -2601,20 +2601,46 @@ do
 				if nogpo6HO.id == id_money and nogpo6HO.dmg == dmg_money then
 					local ygaJIocb_cH9lTb_geHer
 					repeat
-						ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_im, "pushItem", "DOWN", cJIoT, koJIu4ecTBO_koTopoe_MogHo_cH9lTb, HoMep_cJIoTa)
+						ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_im, "pushItem", "DOWN", cJIoT, cyMMa_gJI9l_cH9lTu9l, HoMep_cJIoTa)
 						limit_onepacuu = limit_onepacuu - 1
 						if limit_onepacuu <= 0 then break end
+						HoMep_cJIoTa = HoMep_cJIoTa + 1
+						if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
 					until ygaJIocb_cH9lTb_geHer > 0
+					limit_onepacuu = 1000
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 					Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
-					koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb - ygaJIocb_cH9lTb_geHer
-					HoMep_cJIoTa = HoMep_cJIoTa + 1
-					if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
+					cyMMa_gJI9l_cH9lTu9l = cyMMa_gJI9l_cH9lTu9l - ygaJIocb_cH9lTb_geHer
 				end
 			end
 			
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выдано денег: " .. g .. tostring(Bcero_BblgaHo_geHer))
+			--переложить деньги из казика эмы за эмы в мэ
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списание со счета им: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
+			if Bcero_BblgaHo_geHer < cyMMa_gJI9l_cH9lTu9l then
+				limit_onepacuu = 1000
+				Bcero_BblgaHo_geHer = 0
+				HoMep_cJIoTa = 1
+				local Bce_cJIoTbl_mm = component.invoke(agpec_casino_mm, "getAllStacks")				
+				for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
+					local nogpo6HO = cTaTbl.all()
+					if nogpo6HO.id == id_money and nogpo6HO.dmg == dmg_money then
+						local ygaJIocb_cH9lTb_geHer
+						repeat
+							ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_mm, "pushItem", "DOWN", cJIoT, cyMMa_gJI9l_cH9lTu9l, HoMep_cJIoTa)
+							limit_onepacuu = limit_onepacuu - 1
+							if limit_onepacuu <= 0 then break end
+							HoMep_cJIoTa = HoMep_cJIoTa + 1
+							if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
+						until ygaJIocb_cH9lTb_geHer > 0
+						limit_onepacuu = 1000
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
+						Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
+						cyMMa_gJI9l_cH9lTu9l = cyMMa_gJI9l_cH9lTu9l - ygaJIocb_cH9lTb_geHer
+					end
+				end
+			end
 			
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списанино со счетов казика: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()

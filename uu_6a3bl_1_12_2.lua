@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино5"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2480,6 +2480,10 @@ do
 			koMaHgbl_uu_6a3bl() 
 			koMaHgbl = not koMaHgbl
 		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино адреса"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "эмы за эмы: " .. g .. agpec_casino_mm)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "шмотки за эмы: " .. g .. agpec_casino_im)
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"] = function()
 		local id = "customnpcs:npcMoney"

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино3"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2492,21 +2492,48 @@ do
 		if not im_HaugeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "алмазный сундук им не найден") end
 		if not mm_HaugeH and not im_HaugeH then return end
 		
-		--проверка баланса мм
-		if mm_HaugeH then
-			local Tekyllluu_6aJIaHc_mm = 0
+		--проверка сундука мм
+		local Tekyllluu_6aJIaHc_mm = 0
+		if mm_HaugeH then	
 			local Bce_cJIoTbl_mm = component.invoke(agpec_casino_mm, "getAllStacks")
 			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
 				local nogpoBHO = cTaTbl.all()
 				if nogpoBHO.id == id and nogpoBHO.dmg == dmg then
 					Tekyllluu_6aJIaHc_mm = Tekyllluu_6aJIaHc_mm + nogpoBHO.qty
 				else
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "в слоте: " .. cJIoT .. "онаружен посторонний предмет")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "в слоте мм: " .. cJIoT .. " посторонний предмет")
 				end
 			end
 		end
 		
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Tekyllluu_6aJIaHc_mm))
+		--проверка сундука им
+		local Tekyllluu_6aJIaHc_im = 0
+		if im_HaugeH then	
+			local Bce_cJIoTbl_im = component.invoke(agpec_casino_im, "getAllStacks")
+			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
+				local nogpoBHO = cTaTbl.all()
+				if nogpoBHO.id == id and nogpoBHO.dmg == dmg then
+					Tekyllluu_6aJIaHc_im = Tekyllluu_6aJIaHc_im + nogpoBHO.qty
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "в слоте им: " .. cJIoT .. " посторонний предмет")
+				end
+			end
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "==============================")
+		
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Tekyllluu_6aJIaHc_mm) .. c .. "$")
+		
+		--сравнение текущего баланса с балансом логов
+		local noJIy4eHHa9l_npu6JIb = 0
+		if Tekyllluu_6aJIaHc_mm > Balance_casino_mm then
+			noJIy4eHHa9l_npu6JIb = Tekyllluu_6aJIaHc_mm - Balance_casino_mm
+			Balance_casino_mm = Balance_casino_mm + noJIy4eHHa9l_npu6JIb
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. g .. "+" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+		elseif Tekyllluu_6aJIaHc_mm > Balance_casino_mm then
+			noJIy4eHHa9l_npu6JIb = Balance_casino_mm - Tekyllluu_6aJIaHc_mm
+			Balance_casino_mm = Balance_casino_mm - noJIy4eHHa9l_npu6JIb
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+		end	
 		
 		
 	end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "снятие с баланса"
+local Ha3BaHue_o6HoBJIeHu9l = "снятие с баланса исправление 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2597,13 +2597,13 @@ do
 			local Bce_cJIoTbl_im = component.invoke(agpec_casino_im, "getAllStacks")				
 			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_im) do
 				local nogpo6HO = cTaTbl.all()
-				if nogpo6HO.id == id and nogpo6HO.dmg == dmg then
+				if nogpo6HO.id == id_money and nogpo6HO.dmg == dmg_money then
 					local ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_im, "pushItem", "DOWN", HoMep_cJIoTa, koJIu4ecTBO_koTopoe_MogHo_cH9lTb)
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 					Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
 					koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb - ygaJIocb_cH9lTb_geHer
 					HoMep_cJIoTa = HoMep_cJIoTa + 1
-					if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 then
+					if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
 				end
 			end
 			

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино10"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -18,6 +18,7 @@ local agpec_casino_mm --адрес алмазного сундука казин�
 local agpec_casino_im --адрес алмазного сундука казино эмы за шмотки
 local Balance_casino_mm = 0
 local Balance_casino_im = 0
+local local re3epBHblu_6aJIaHc = 500
 local Ta6JIuca_koMnoHeHToB = {}
 local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local Ta6JIuca_nbegecTaJIoB = {}
@@ -1482,10 +1483,11 @@ function koMaHgbl_uu_6a3bl()
 	--управление казино дюрекса
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес мм (админ)") --алмазный сундук эмы за эмы
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес им (админ)") --алмазный сундук эмы за шмотки
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино изменить лимит (админ)") --минимальное кол-во денег в казно эмы за эмы
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино статистика (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино адреса (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино снять деньги (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
+	
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "")
 	
 	--прочее
@@ -2442,6 +2444,17 @@ do
 			setConfiguration()
 		end
 	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино изменить лимит"] = function() --эмы за эмы минимальное количество эмов в казино
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "резервный баланс: " .. g .. re3epBHblu_6aJIaHc .. "$")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ограничение ввода: 1 - 5000")
+		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, 5000)
+		if not re3yJIbTaT_BBoga then return end
+		cuqppa = tonumber(cuqppa)
+		re3epBHblu_6aJIaHc = cuqppa
+		configuration[37] = re3epBHblu_6aJIaHc
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "лимит успешно изменен")
+	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
 			if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("zdraBcTByu_JIopg_The_Dark.dfpwm") end
@@ -2560,15 +2573,16 @@ do
 		--запись в конфиг файл результата баланса шмотки за эмы
 		configuration[36] = Balance_casino_im
 		setConfiguration()
+		return true
 	end
-	--казино снять деньги
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино снять деньги"] == function()
-		local re3epBHblu_6aJIaHc = 1
-		Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"]()
-		local koJIu4ecTBO_koTopoe_MogHo_cH9lTb = 0
-		if Balance_casino_mm > re3epBHblu_6aJIaHc then koJIu4ecTBO_koTopoe_MogHo_cH9lTb = Balance_casino_mm - re3epBHblu_6aJIaHc end
-		koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb + Balance_casino_im
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "со счета можно снять: " .. g .. tostring(koJIu4ecTBO_koTopoe_MogHo_cH9lTb) .. "$")
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино снять деньги"] = function()
+		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"]() then
+			local koJIu4ecTBO_koTopoe_MogHo_cH9lTb = 0
+			if Balance_casino_mm > re3epBHblu_6aJIaHc then koJIu4ecTBO_koTopoe_MogHo_cH9lTb = Balance_casino_mm - re3epBHblu_6aJIaHc end
+			koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb + Balance_casino_im
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "резервный баланс: " .. g .. re3epBHblu_6aJIaHc .. "$")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "со счета можно снять: " .. g .. tostring(koJIu4ecTBO_koTopoe_MogHo_cH9lTb) .. "$")
+		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
@@ -4515,6 +4529,12 @@ do
 		setConfiguration()
 	else
 		Balance_casino_im = configuration[36]
+	end
+	if configuration[37] == "nil" then
+		configuration[37] = re3epBHblu_6aJIaHc
+		setConfiguration()
+	else
+		re3epBHblu_6aJIaHc = configuration[37]
 	end
 	--активировать многопоточный режим
 	myThread.init()

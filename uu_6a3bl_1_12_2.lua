@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино12"
+local Ha3BaHue_o6HoBJIeHu9l = "снятие с баланса"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -18,7 +18,9 @@ local agpec_casino_mm --адрес алмазного сундука казин�
 local agpec_casino_im --адрес алмазного сундука казино эмы за шмотки
 local Balance_casino_mm = 0
 local Balance_casino_im = 0
-local local re3epBHblu_6aJIaHc = 500
+local re3epBHblu_6aJIaHc = 500
+local id_money = "customnpcs:npcMoney"
+local dmg_money = 0
 local Ta6JIuca_koMnoHeHToB = {}
 local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local Ta6JIuca_nbegecTaJIoB = {}
@@ -403,6 +405,8 @@ function getConfiguration()
 	else
 		configuration = serialization.unserialize(filesLibrary.write_file("/home/configuration", "nil"))
 	end
+	if configuration[2] == nil or configuration[2] == "nil" then configuration[2] = 10 end
+	if configuration[3] == nil or configuration[3] == "nil" then configuration[3] = "1232" end
 	if configuration[4] == nil then configuration[4] = {} end --пароли-ключи нанитов для тимы
 	if configuration[5] == nil then configuration[5] = {} end --таблицы эффектов игроков
 	if configuration[6] == nil then configuration[6] = {} end --быстрые клавиши для нанитов
@@ -2499,8 +2503,6 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "шмотки за эмы: " .. g .. agpec_casino_im)
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"] = function()
-		local id = "customnpcs:npcMoney"
-		local dmg = 0
 		local mm_HaugeH
 		local im_HaugeH
 		mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
@@ -2515,7 +2517,7 @@ do
 			local Bce_cJIoTbl_mm = component.invoke(agpec_casino_mm, "getAllStacks")
 			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
 				local nogpoBHO = cTaTbl.all()
-				if nogpoBHO.id == id and nogpoBHO.dmg == dmg then
+				if nogpoBHO.id == id_money and nogpoBHO.dmg == dmg_money then
 					Tekyllluu_6aJIaHc_mm = Tekyllluu_6aJIaHc_mm + nogpoBHO.qty
 				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "в слоте мм: " .. cJIoT .. " посторонний предмет")
@@ -2529,7 +2531,7 @@ do
 			local Bce_cJIoTbl_im = component.invoke(agpec_casino_im, "getAllStacks")
 			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_im) do
 				local nogpoBHO = cTaTbl.all()
-				if nogpoBHO.id == id and nogpoBHO.dmg == dmg then
+				if nogpoBHO.id == id_money and nogpoBHO.dmg == dmg_money then
 					Tekyllluu_6aJIaHc_im = Tekyllluu_6aJIaHc_im + nogpoBHO.qty
 				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "в слоте им: " .. cJIoT .. " посторонний предмет")
@@ -2567,7 +2569,7 @@ do
 			Balance_casino_im = Balance_casino_im - noJIy4eHHa9l_npu6JIb
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
 		else
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+0$" .. c .. ")")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+0$" .. c .. ")")
 		end	
 		
 		--запись в конфиг файл результата баланса шмотки за эмы
@@ -2577,11 +2579,36 @@ do
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино снять деньги"] = function()
 		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"]() then
+			--расчет, сколько можно снять
 			local koJIu4ecTBO_koTopoe_MogHo_cH9lTb = 0
 			if Balance_casino_mm > re3epBHblu_6aJIaHc then koJIu4ecTBO_koTopoe_MogHo_cH9lTb = Balance_casino_mm - re3epBHblu_6aJIaHc end
 			koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb + Balance_casino_im
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "резервный баланс: " .. g .. re3epBHblu_6aJIaHc .. "$")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "со счета можно снять: " .. g .. tostring(koJIu4ecTBO_koTopoe_MogHo_cH9lTb) .. "$")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи количесто?")
+			
+			--ввод необходимой суммы
+			local re3yJIbTaT_BBoga, cyMMa_gJI9l_cH9lTu9l = oJugaHue_BBoga_cuqpPbl(1, koJIu4ecTBO_koTopoe_MogHo_cH9lTb)
+			if not re3yJIbTaT_BBoga then return end
+			
+			--переложить деньги в мэ сеть
+			local Bcero_BblgaHo_geHer = 0
+			local HoMep_cJIoTa = 1
+			local Bce_cJIoTbl_im = component.invoke(agpec_casino_im, "getAllStacks")				
+			for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_im) do
+				local nogpo6HO = cTaTbl.all()
+				if nogpo6HO.id == id and nogpo6HO.dmg == dmg then
+					local ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_im, "pushItem", "DOWN", HoMep_cJIoTa, koJIu4ecTBO_koTopoe_MogHo_cH9lTb)
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
+					Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
+					koJIu4ecTBO_koTopoe_MogHo_cH9lTb = koJIu4ecTBO_koTopoe_MogHo_cH9lTb - ygaJIocb_cH9lTb_geHer
+					HoMep_cJIoTa = HoMep_cJIoTa + 1
+					if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 then
+				end
+			end
+			
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выдано денег: " .. g .. tostring(Bcero_BblgaHo_geHer))
+			
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()

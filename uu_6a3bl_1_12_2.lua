@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "логи списаний3"
+local Ha3BaHue_o6HoBJIeHu9l = "логи списаний4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2669,20 +2669,22 @@ do
 			filesLibrary.creat_file("/home/" .. Huk_urpoka .. ".cas", serialization.serialize(JIoru_u3_qpauJIa))
 		end
 	end
-	
-	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино логи списаний"] = function()
 		local c4eTa_TuMMeuToB = BepHyTb_TaJIucy_qpauJIoB("/home/", ".cas")
 		if #c4eTa_TuMMeuToB == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "счета тиммейтов не найдены")
 		end
 		for k, c4eT_TuMmeuTa in ipairs(c4eTa_TuMMeuToB) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "просмотр счета: " .. g .. c4eT_TuMmeuTa)
-			
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "========================================")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "просмотр счета: " .. g .. string.sub(c4eT_TuMmeuTa, 1, #c4eT_TuMmeuTa - 4))
+			local Ta6JIuca_c4eTa = filesLibrary.write_file("/home/" .. c4eT_TuMmeuTa)
+			Ta6JIuca_c4eTa = serialization.unserialize(Ta6JIuca_c4eTa)
+			for key, val in ipairs(Ta6JIuca_c4eTa) do
+				local datetime = os.date("*t", val[1])
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(key) .. ": " .. g .. "+" .. val[1] .. "$ " .. c .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+			end
 		end
-	end
-	
-	
+	end	
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
 		if agrec_cyHgyka == "nil" then agrec_cyHgyka = nil end

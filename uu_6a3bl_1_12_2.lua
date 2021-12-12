@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обнова под хайтеч"
+local Ha3BaHue_o6HoBJIeHu9l = "баланк казино"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6,7 +6,6 @@ local event = require("event")
 local filesystem = require("filesystem")
 local unicode = require("unicode")
 local koMaHgbl = true
-
 local term = require("term")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
@@ -15,6 +14,8 @@ local admin = "The_Dark1232"
 local test_mod = false
 local baza_Bblxog = "база выход" --нужно, чтобы не записывало в логи выход из программы, как будто это ошибка
 local not_exit = true
+local agpec_casino_mm --адрес алмазного сундука казино эмы за эмы
+local agpec_casino_im --адрес алмазного сундука казино эмы за шмотки
 local Ta6JIuca_koMnoHeHToB = {}
 local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local Ta6JIuca_nbegecTaJIoB = {}
@@ -1275,7 +1276,8 @@ function koMaHgbl_uu_6a3bl()
 	local ynpaBJIeHue_BupTyaJI_4aT = 14; t[ynpaBJIeHue_BupTyaJI_4aT] = ynpaBJIeHue_BupTyaJI_4aT; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_BupTyaJI_4aT] = "виртуальный чат"
 	local ynpaBJIeHue_TuMMeuTbl = 15; t[ynpaBJIeHue_TuMMeuTbl] = ynpaBJIeHue_TuMMeuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl] = "тиммейты"
 	local ynpaBJIeHue_JIoru_urpokoB = 16; t[ynpaBJIeHue_JIoru_urpokoB] = ynpaBJIeHue_JIoru_urpokoB; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB] = "логи игроков"
-	local ynpaBJIeHue_aJIucou = 17; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
+	local casino = 17; t[casino] = casino; Ha3BaHu9l_pa3geJIoB[casino] = "управление казино"
+	local ynpaBJIeHue_aJIucou = 18; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
 
 	for i = 1, #t do
 		table.insert(Ta6JIuca_pa3geJIoB, {})
@@ -1475,6 +1477,15 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп (тиммейт)") --на игрока
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_MO_teleport], "тп инфо (тиммейт)")
 	
+	--управление казино дюрекса
+	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
+	table.insert(Ta6JIuca_pa3geJIoB[casino], " ")
+	
 	--прочее
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "поблагодари kayatik (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "начало теста (админ)")
@@ -1502,6 +1513,39 @@ function koMaHgbl_uu_6a3bl()
 	for k, v in ipairs(Ta6JIuca_pa3geJIoB[cuqppa_BBoga]) do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v)
 	end
+end
+function HauTu_agpec_komnoHeHTa(bool_admin, Ha3BaHue_KomnoHeHTa)	
+	local BBog_koppekTeH, coo6llleHue
+	local Bce_KoMnoHeHTbl = component.list(Ha3BaHue_KomnoHeHTa)
+	local a = 0
+	for _, _ in pairs(Bce_KoMnoHeHTbl) do
+		a = a + 1
+	end
+			
+	if a <= 0 then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент не обнаружен:")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. Ha3BaHue_KomnoHeHTa)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись прервана")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "возврат из функции")
+		return
+	end
+	
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введи 3 буквы адреса")
+	if bool_admin then
+		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(15, admin)
+	else
+		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(15, nick_gJI9l_npuBeTcTBu9l)
+	end
+	if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "проверка адреса")
+	for agrec_u3_Ta6JIucbl, _ in pairs(Bce_KoMnoHeHTbl) do
+		if string.sub(agrec_u3_Ta6JIucbl, 1, 3) == coo6llleHue then			
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес найден и сохранен!")
+			return agrec_u3_Ta6JIucbl
+		end
+	end
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес введен неверно!")
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запусти функцию заного")
 end
 
 do
@@ -2380,6 +2424,20 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый адрес успешно присвоен")
 	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино записать адрес мм"] = function() --эмы за эмы
+		local result = HauTu_agpec_komnoHeHTa(true, "diamond")
+		if result ~= nil then
+			configuration[33] = agpec_casino_mm
+			setConfiguration()
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино записать адрес им"] = function() -- шмотки за эмы
+		local result = HauTu_agpec_komnoHeHTa(true, "diamond")
+		if result ~= nil then
+			configuration[34] = agpec_casino_im
+			setConfiguration()
+		end
+	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
 			if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("zdraBcTByu_JIopg_The_Dark.dfpwm") end
@@ -2418,6 +2476,18 @@ do
 			koMaHgbl_uu_6a3bl() 
 			koMaHgbl = not koMaHgbl
 		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"] = function()
+		local mm_HaugeH
+		local im_HaugeH
+		mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
+		im_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
+		if not mm_HaugeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "алмазный сундук мм не найден") end
+		if not im_HaugeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "алмазный сундук им не найден") end
+		if not mm_HaugeH and not im_HaugeH then return end
+		
+		
+		
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
@@ -3078,7 +3148,7 @@ do
 		if #zoHbl_JIoroB > 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список зон:")
 			for k, v in ipairs(zoHbl_JIoroB) do
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. k .. ": " .. c .. v[7] .. c .. "(" .. g .. v[1] .. "," .. v[2] .. "," .. v[3] .. "," .. v[4] .. "," .. v[5] .. "," v[6] .. c .. ")")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. k .. ": " .. c .. v[7] .. c .. "(" .. g .. v[1] .. "," .. v[2] .. "," .. v[3] .. "," .. v[4] .. "," .. v[5] .. "," .. v[6] .. c .. ")")
 			end
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица зон пуста")
@@ -4340,6 +4410,18 @@ do
 		setConfiguration()
 	else
 		MaTpuca_cBo6ogHa = configuration[32]
+	end
+	if configuration[33] == "nil" then
+		configuration[33] = agpec_casino_mm
+		setConfiguration()
+	else
+		agpec_casino_mm = configuration[33]
+	end
+	if configuration[34] == "nil" then
+		configuration[34] = agpec_casino_im
+		setConfiguration()
+	else
+		agpec_casino_im = configuration[34]
 	end
 	--активировать многопоточный режим
 	myThread.init()

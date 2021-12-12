@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баланс казино7"
+local Ha3BaHue_o6HoBJIeHu9l = "баланс казино8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2524,16 +2524,14 @@ do
 			end
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "==============================")
-		
-		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Tekyllluu_6aJIaHc_mm) .. c .. "$")
-		
-		--сравнение текущего баланса с балансом логов
+			
+		--сравнение текущего баланса с балансом логов эмы за эмы 
 		local noJIy4eHHa9l_npu6JIb = 0
 		if Tekyllluu_6aJIaHc_mm > Balance_casino_mm then
 			noJIy4eHHa9l_npu6JIb = Tekyllluu_6aJIaHc_mm - Balance_casino_mm
 			Balance_casino_mm = Balance_casino_mm + noJIy4eHHa9l_npu6JIb
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. g .. "+" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
-		elseif Tekyllluu_6aJIaHc_mm > Balance_casino_mm then
+		elseif Tekyllluu_6aJIaHc_mm < Balance_casino_mm then
 			noJIy4eHHa9l_npu6JIb = Balance_casino_mm - Tekyllluu_6aJIaHc_mm
 			Balance_casino_mm = Balance_casino_mm - noJIy4eHHa9l_npu6JIb
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
@@ -2541,7 +2539,27 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. g .. "+0$" .. c .. ")")
 		end	
 		
+		--запись в конфиг файл результата баланса эмы за эмы
+		configuration[35] = Balance_casino_mm
+		setConfiguration()
 		
+		--сравнение текущего баланса с балансом логов шмотки за эмы 
+		noJIy4eHHa9l_npu6JIb = 0
+		if Tekyllluu_6aJIaHc_im > Balance_casino_im then
+			noJIy4eHHa9l_npu6JIb = Tekyllluu_6aJIaHc_im - Balance_casino_im
+			Balance_casino_im = Balance_casino_im + noJIy4eHHa9l_npu6JIb
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+		elseif Tekyllluu_6aJIaHc_im < Balance_casino_im then
+			noJIy4eHHa9l_npu6JIb = Balance_casino_im - Tekyllluu_6aJIaHc_im
+			Balance_casino_im = Balance_casino_im - noJIy4eHHa9l_npu6JIb
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+0$" .. c .. ")")
+		end	
+		
+		--запись в конфиг файл результата баланса шмотки за эмы
+		configuration[36] = Balance_casino_im
+		setConfiguration()
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
@@ -4476,6 +4494,18 @@ do
 		setConfiguration()
 	else
 		agpec_casino_im = configuration[34]
+	end	
+	if configuration[35] == "nil" then
+		configuration[35] = Balance_casino_mm
+		setConfiguration()
+	else
+		Balance_casino_mm = configuration[35]
+	end	
+	if configuration[36] == "nil" then
+		configuration[36] = Balance_casino_im
+		setConfiguration()
+	else
+		Balance_casino_im = configuration[36]
 	end
 	--активировать многопоточный режим
 	myThread.init()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "логи списаний5"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1284,7 +1284,8 @@ function koMaHgbl_uu_6a3bl()
 	local ynpaBJIeHue_TuMMeuTbl = 15; t[ynpaBJIeHue_TuMMeuTbl] = ynpaBJIeHue_TuMMeuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl] = "тиммейты"
 	local ynpaBJIeHue_JIoru_urpokoB = 16; t[ynpaBJIeHue_JIoru_urpokoB] = ynpaBJIeHue_JIoru_urpokoB; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB] = "логи игроков"
 	local casino = 17; t[casino] = casino; Ha3BaHu9l_pa3geJIoB[casino] = "управление казино"
-	local ynpaBJIeHue_aJIucou = 18; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
+	local magazin = 18; t[magazin] = magazin; Ha3BaHu9l_pa3geJIoB[magazin] = "управление казино"
+	local ynpaBJIeHue_aJIucou = 19; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
 
 	for i = 1, #t do
 		table.insert(Ta6JIuca_pa3geJIoB, {})
@@ -1398,7 +1399,13 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред инфо (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред события (тиммейт)") --показать список поступивших сигналов на ред стоун
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред события очистить (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "ред тест (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) вкл (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) выкл (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) импульс (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) удалить (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) переименовать (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) назначить функцию (тиммейт)")
+	
 	
 	--логи игроков
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "установи задержку вывода активных игроков на монитор (админ)")
@@ -1492,6 +1499,19 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино адреса (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино снять деньги (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино логи списаний (тиммейт)")
+	
+	--управление магазином дюрекса
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
 	
 	--прочее
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "поблагодари kayatik (админ)")
@@ -3163,8 +3183,6 @@ do
 				end
 				configuration[17] = configRedStone
 				setConfiguration()
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "удаление завершено!")
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "требуется рестарт сети")
 			end
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = function()
 				configRedStone[k] = nil

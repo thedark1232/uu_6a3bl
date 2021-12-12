@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 2"
+local Ha3BaHue_o6HoBJIeHu9l = "завершение снятия имправления 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2606,7 +2606,7 @@ do
 						if limit_onepacuu <= 0 then break end
 						HoMep_cJIoTa = HoMep_cJIoTa + 1
 						if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
-					until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0
+					until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or Bcero_BblgaHo_geHer == cyMMa_gJI9l_cH9lTu9l
 					limit_onepacuu = 1000
 					--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 					Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
@@ -2625,6 +2625,7 @@ do
 				for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
 					local nogpo6HO = cTaTbl.all()
 					if nogpo6HO.id == id_money and nogpo6HO.dmg == dmg_money then
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 						local ygaJIocb_cH9lTb_geHer
 						repeat
 							ygaJIocb_cH9lTb_geHer = component.invoke(agpec_casino_mm, "pushItem", "DOWN", cJIoT, cyMMa_gJI9l_cH9lTu9l, HoMep_cJIoTa)
@@ -2632,9 +2633,8 @@ do
 							if limit_onepacuu <= 0 then break end
 							HoMep_cJIoTa = HoMep_cJIoTa + 1
 							if HoMep_cJIoTa > 8 then HoMep_cJIoTa = 1 end
-						until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0
+						until ygaJIocb_cH9lTb_geHer > 0 or limit_onepacuu <= 0 or Bcero_BblgaHo_geHer == cyMMa_gJI9l_cH9lTu9l
 						limit_onepacuu = 1000
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "забираю из слота: " .. g .. tostring(cJIoT) .. ": " .. tostring(ygaJIocb_cH9lTb_geHer))
 						Bcero_BblgaHo_geHer = Bcero_BblgaHo_geHer + ygaJIocb_cH9lTb_geHer
 						cyMMa_gJI9l_cH9lTu9l = cyMMa_gJI9l_cH9lTu9l - ygaJIocb_cH9lTb_geHer
 						if Bcero_BblgaHo_geHer == cyMMa_gJI9l_cH9lTu9l then break end

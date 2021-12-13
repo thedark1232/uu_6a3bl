@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек4"
+local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4344,7 +4344,8 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание ввода: " .. gr .. "[" .. g .. "номер порта" .. gr .. "]" .. c .. "," .. gr .. " [" .. g .. "сообщение для отправки" .. gr .. "]")
 			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(20, nick_gJI9l_npuBeTcTBu9l, true)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-			local nopT_mogema, koMaHga_gJI9l_oTnpaBku = string.match(unicode.lower(coo6llleHue), "(.+)%,(.+)")
+			--local nopT_mogema, koMaHga_gJI9l_oTnpaBku = string.match(unicode.lower(coo6llleHue), "(.+)%,(.+)")
+			local nopT_mogema, koMaHga_gJI9l_oTnpaBku = string.match(coo6llleHue, "(.+)%,(.+)")
 			if tonumber(nopT_mogema) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "порт модема указан неверно"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			if koMaHga_gJI9l_oTnpaBku == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "сообщение для модема указано неверно"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			koMaHga_gJI9l_oTnpaBku = string.gsub(koMaHga_gJI9l_oTnpaBku, " ", "", 1)

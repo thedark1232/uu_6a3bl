@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек5"
+local Ha3BaHue_o6HoBJIeHu9l = "обновы команд"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1495,23 +1495,25 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес мм (админ)") --алмазный сундук эмы за эмы
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино записать адрес им (админ)") --алмазный сундук эмы за шмотки
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино изменить лимит (админ)") --минимальное кол-во денег в казно эмы за эмы
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино выключить (админ)") --минимальное кол-во денег в казно эмы за эмы
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино выход (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино рестарт (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино обновись (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино версия по (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино юзеры (админ)") --модем
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино статус (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино адреса (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино снять деньги (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[casino], "казино логи списаний (тиммейт)")
 	
 	--управление магазином дюрекса
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[magazin], " (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], "магаз выход (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], "магаз рестарт (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], "магаз обновись (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], "магаз версия по (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], "магаз юзеры (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], "магаз удалить счет (админ)") --модем
+	table.insert(Ta6JIuca_pa3geJIoB[magazin], "магаз счета (тиммейт)") --модем
 	
 	--прочее
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "поблагодари kayatik (админ)")
@@ -2711,6 +2713,107 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общий по списаниям: " .. tostring(o6lllee_no_cnucaHu9lM))
 		
 	end	
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино выключить"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(16, "алиса выключить")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино выход"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(16, "алиса выход")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино рестарт"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(16, "алиса рестарт")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино обновись"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(16, "алиса обновись")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино версия по"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(16, "алиса версия по")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино юзеры"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(16, "алиса юзеры")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз выключить"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса выключить")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз выход"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса выход")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз рестарт"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса рестарт")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз обновись"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса обновись")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз версия по"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса версия по")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз юзеры"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса юзеры")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " магаз счета"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса счета")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз удалить счет"] = function()
+		if component.isAvailable("modem") then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи число")
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, admin)
+			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса удалить счет " .. coo6llleHue)
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
 		if agrec_cyHgyka == "nil" then agrec_cyHgyka = nil end

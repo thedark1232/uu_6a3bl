@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тихий рестарт2"
+local Ha3BaHue_o6HoBJIeHu9l = "тихий рестарт3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -290,7 +290,7 @@ function zarpy3ka_koMnoHeHToB()
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName = function(text) component.chat_box.setName(text) end
 			Ta6JIuca_koMnoHeHToB["chat_box"].setName(c .. "ИИ базы")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ВКЛЮЧЕНИЕ СЕТИ:")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка компонентов")
+			--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка компонентов")
 		else
 			Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["chat_box"] = "chat_box"
 			Bce_koMnoHeHTbl_npucyTcTByl0T = false

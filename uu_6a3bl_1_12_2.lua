@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек2"
+local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1875,7 +1875,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент модема отсутствует")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ожидание ввода")
-			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin)
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin, true)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			configuration[3] = tostring(coo6llleHue)
 			setConfiguration()

@@ -1,16 +1,16 @@
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 7"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 9"
 local component = require("component")
 local filesystem = require("filesystem")
 local modem = component.modem
 local secret_name = "алиса"
 local computer = require("computer")
 
---local oTnpaBuTeJIb = "магаз"
-local oTnpaBuTeJIb = "казино"
+local oTnpaBuTeJIb = "магаз"
+--local oTnpaBuTeJIb = "казино"
 
---modem.open(15) --магаз дюрекса
-modem.open(16) --казино
+modem.open(15) --магаз дюрекса
+--modem.open(16) --казино
 
 modem.setWakeMessage("алиса 1232")
 
@@ -54,8 +54,16 @@ alice[secret_name .. " версия обновлений"] = function() --маг
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "версия: " .. Ha3BaHue_o6HoBJIeHu9l)
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 end
+alice[secret_name .. " юзеры"] = function() --магаз, казино (возвращает таблицу кто в userAdd компа)
+	local users = table.pack(computer.users())
+	if #users == 0 then o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "комп не запривачен!"); return end
+	for k, v in ipairs(users) do
+		o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, tostring(k) ..  ": " .. v)
+	end
+end
 alice[secret_name .. " ошибка"] = function(text) --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("сборщик ошибок", text)
 end
+
 
 return alice

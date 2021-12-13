@@ -20,7 +20,7 @@
 
 
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 21"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 24"
 local component = require("component")
 local filesystem = require("filesystem")
 local filesLibrary = require("filesLibrary")
@@ -56,6 +56,10 @@ local function BepHyTb_Ta6JIucy_c4eToB()
 		end
 	end
 	return Ta6JIuca_nyTeu_JIoroB
+end
+local function ygaJIuTb_c4eT(c4eT)
+	filesystem.remove(nyTb_k_JIoram .. c4eT)
+	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "удалено!")
 end
 
 o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("версия библиотеки", Ha3BaHue_o6HoBJIeHu9l)
@@ -110,15 +114,14 @@ alice[secret_name .. " юзеры"] = function() --магаз, казино (в�
 end
 alice[secret_name .. " счета"] = function() --магаз (просмотр, у кого сколько бабок в магазе)
 	local Ta6JIuca_c4eToB = BepHyTb_Ta6JIucy_c4eToB()
-	for k, c4eT in ipairs(Ta6JIuca_c4eToB) do
-		
+	for k, c4eT in ipairs(Ta6JIuca_c4eToB) do	
 		local result = filesLibrary.write_file(nyTb_k_JIoram .. c4eT, "nil")
 		if result ~= "nil" then
 			result = serialization.unserialize(result)
-			print(string.gsub(c4eT, 1, #c4eT - 4))
-			print(result.balance)
-			os.sleep(10)
-			--o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "счет: " .. string.gsub(c4eT, 1, #c4eT - 4) .. ": " .. tostring(result.balance))
+			alice[secret_name .. " удалить счет " .. c4eT] = function()
+				ygaJIuTb_c4eT(c4eT)
+			end
+			o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "счет: " .. string.sub(c4eT, 1, #c4eT - 4) .. ": " .. tostring(result.balance) .. "$")
 		end
 	end
 end

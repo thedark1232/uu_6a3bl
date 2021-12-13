@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек"
+local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -679,7 +679,7 @@ function chat_message(event_name, _, nick, msg, msg2, modem_message)
 	end
 end
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сообщение от " .. coo6llleHue_oT_mogema)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "получено сообщение: " .. g .. coo6llleHue_oT_mogema)
 	--print(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
 	coo6llleHue_TuHHeJI9l = serialization.unserialize(coo6llleHue_oT_mogema)
 	--for k,v in pairs(coo6llleHue_TuHHeJI9l) do
@@ -4341,14 +4341,14 @@ do
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сообщение"] = function() --к сообщению добавляется секретное слово
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание ввода: [номер порта], [сообщение для отправки]")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание ввода: " .. gr .. "[" .. g .. "номер порта" .. gr .. "]" .. c .. "," .. gr .. " [" .. g .. "сообщение для отправки" .. gr .. "]")
 			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(20, nick_gJI9l_npuBeTcTBu9l)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			local nopT_mogema, koMaHga_gJI9l_oTnpaBku = string.match(unicode.lower(coo6llleHue), "(.+)%,(.+)")
 			if tonumber(nopT_mogema) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "порт модема указан неверно"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			if koMaHga_gJI9l_oTnpaBku == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "сообщение для модема указано неверно"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			koMaHga_gJI9l_oTnpaBku = string.gsub(koMaHga_gJI9l_oTnpaBku, " ", "", 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "отправка сообщения на порт " .. tostring(nopT_mogema) .. ": " .. tostring(koMaHga_gJI9l_oTnpaBku))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "отправка сообщения на порт " .. g .. tostring(nopT_mogema) .. c .. ": " .. g .. tostring(koMaHga_gJI9l_oTnpaBku))
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(nopT_mogema), "алиса " .. tostring(koMaHga_gJI9l_oTnpaBku))
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "модем недоступен")

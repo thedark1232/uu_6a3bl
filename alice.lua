@@ -1,5 +1,5 @@
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 4"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 5"
 local component = require("component")
 local filesystem = require("filesystem")
 local modem = component.modem
@@ -35,9 +35,13 @@ alice[secret_name .. " рестарт"] = function()
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("выполняю рестарт")
 	computer.shutdown(true)
 end
+alice[secret_name .. " магаз обновы"] = function()
+	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("казино", "выполняю загрузку")
+	o6HoBJIeHu9l()
+end
 
 --СООБЩЕНИЯ ДЛЯ КАЗИНО
-alice[secret_name .. " казино выкл"] = function()
+alice[secret_name .. " казино выключить"] = function()
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("казино", "выполняю отключение казино")
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 	computer.shutdown()
@@ -61,7 +65,7 @@ alice[secret_name .. " казино обновы"] = function()
 end
 alice[secret_name .. " версия обновлений"] = function()
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("казино", "версия: " .. Ha3BaHue_o6HoBJIeHu9l)
-	o6HoBJIeHu9l()
+	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 end
 alice[secret_name .. " ошибка"] = function(text)
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("сборщик ошибок", text)

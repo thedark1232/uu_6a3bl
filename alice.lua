@@ -1,5 +1,5 @@
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 5"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 6"
 local component = require("component")
 local filesystem = require("filesystem")
 local modem = component.modem

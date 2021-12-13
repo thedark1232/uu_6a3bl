@@ -20,7 +20,7 @@
 
 
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 14"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 15"
 local component = require("component")
 local filesystem = require("filesystem")
 local modem = component.modem
@@ -29,11 +29,11 @@ local admin = "The_Dark1232"
 local computer = require("computer")
 local serialization = require("serialization") --serialization.serialize unserialize
 
---local oTnpaBuTeJIb = "магаз"
-local oTnpaBuTeJIb = "казино"
+local oTnpaBuTeJIb = "магаз"
+--local oTnpaBuTeJIb = "казино"
 
---modem.open(15) --магаз дюрекса
-modem.open(16) --казино
+modem.open(15) --магаз дюрекса
+--modem.open(16) --казино
 
 modem.setWakeMessage("алиса 1232")
 
@@ -58,6 +58,7 @@ alice[secret_name .. " выключить"] = function() --магаз, кази�
 	for k, v in ipairs(users) do
 		if v ~= admin then computer.removeUser(v) end
 	end
+	computer.addUser("The_Dark1232")
 	computer.shutdown()
 end
 alice[secret_name .. " выход"] = function() --магаз, казино
@@ -79,6 +80,7 @@ alice[secret_name .. " рестарт"] = function() --магаз, казино
 	for k, v in ipairs(users) do
 		if v ~= admin then computer.removeUser(v) end
 	end
+	computer.addUser("The_Dark1232")
 	computer.shutdown(true)
 end
 alice[secret_name .. " обновись"] = function() --магаз, казино

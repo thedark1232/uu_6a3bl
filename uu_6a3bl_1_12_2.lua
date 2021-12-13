@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тихий рестарт3"
+local Ha3BaHue_o6HoBJIeHu9l = "тихий рестарт4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1634,7 +1634,7 @@ do
 	local nepBa9l_6ykba = unicode.sub(Ha3BaHue_6a3bl, 1, 1)
 	local ocTaJIbHoe = unicode.sub(Ha3BaHue_6a3bl, 2, unicode.len(Ha3BaHue_6a3bl))
 	local nepBa9l_6ykba = unicode.upper(nepBa9l_6ykba)
-	if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].setName(p .. nepBa9l_6ykba .. ocTaJIbHoe .. gr) end
+	Ta6JIuca_koMnoHeHToB["chat_box"].setName(p .. nepBa9l_6ykba .. ocTaJIbHoe .. gr)
 	--метатаблицы
 	setmetatable(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB, {__index = function() return function() end end})
 	setmetatable(Ta6JIuca_admin_koMaHg, {__index = function() return function() end end})

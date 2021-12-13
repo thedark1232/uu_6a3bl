@@ -83,7 +83,7 @@ alice[secret_name .. " рестарт"] = function() --магаз, казино
 	end
 	computer.shutdown(true)
 end
-alice[secret_name .. " обновы"] = function() --магаз, казино
+alice[secret_name .. " обновись"] = function() --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "выполняю загрузку")
 	o6HoBJIeHu9l()
 end

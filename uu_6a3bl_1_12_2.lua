@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тихий рестарт"
+local Ha3BaHue_o6HoBJIeHu9l = "тихий рестарт2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -377,7 +377,7 @@ function getLibrary(name)
 	local func = load(library_name)
 	arg1, arg2 = pcall(func)
 	if arg1 then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. name .. " ...загружено")
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. name .. " ...загружено")
 		return arg2
 	else
 		if component.isAvailable("internet") then
@@ -1294,6 +1294,7 @@ function koMaHgbl_uu_6a3bl()
 	
 	--управления алисой
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "выход (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "показать отсутствующие компоненты (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "тихий рестарт (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "обнови ии базы (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "пока (админ)")
@@ -1593,10 +1594,6 @@ do
 	term.clear()
 	--проверка доступности компонентов
 	zarpy3ka_koMnoHeHToB()
-	for k, v in pairs(Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB) do
-		it not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "отсутствует компонент: " .. tostring(k)) end
-	end
-	if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "==============================") end
 	--загрузка библиотеки
 	tape_drive = getLibrary("tape_loader")	
 	filesLibrary = getLibrary("filesLibrary")
@@ -1607,6 +1604,12 @@ do
 	myThread = getLibrary("myThread")
 	--получить файл конфигов проги
 	getConfiguration()
+	if configuration[38] == "nil" then
+		configuration[38] = Tuxuu_pecTapT
+		setConfiguration()
+	else
+		Tuxuu_pecTapT = configuration[38]
+	end
 	--приветствие базы на мониторе
 	local TekcT_nocJIe_x = HanuCaTb_6oJIblllou_TekcT(10, 1, {"М", "А", "Л", "Ы", "Ш", "К", "А", "пробел", "пробел", "А", "Л", "И", "С", "А", "двоеточие"}, "setPurple")
 	HanuCaTb_6oJIblllou_TekcT(TekcT_nocJIe_x + 1, 1, {"З", "А", "Г", "Р", "У", "З", "К", "А"}, "setYellow")
@@ -2490,6 +2493,11 @@ do
 		configuration[37] = re3epBHblu_6aJIaHc
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "лимит успешно изменен")
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"] = function()
+		for k, v in pairs(Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "отсутствует компонент: " .. tostring(k))
+		end
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"] = function() --включает и выключает тихий рестарт
 		Tuxuu_pecTapT = not Tuxuu_pecTapT
@@ -4775,12 +4783,6 @@ do
 		setConfiguration()
 	else
 		re3epBHblu_6aJIaHc = configuration[37]
-	end
-	if configuration[38] == "nil" then
-		configuration[38] = Tuxuu_pecTapT
-		setConfiguration()
-	else
-		Tuxuu_pecTapT = configuration[38]
 	end
 	
 	--активировать многопоточный режим

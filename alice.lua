@@ -29,11 +29,11 @@ local admin = "The_Dark1232"
 local computer = require("computer")
 local serialization = require("serialization") --serialization.serialize unserialize
 
-local oTnpaBuTeJIb = "магаз"
---local oTnpaBuTeJIb = "казино"
+--local oTnpaBuTeJIb = "магаз"
+local oTnpaBuTeJIb = "казино"
 
-modem.open(15) --магаз дюрекса
---modem.open(16) --казино
+--modem.open(15) --магаз дюрекса
+modem.open(16) --казино
 
 modem.setWakeMessage("алиса 1232")
 

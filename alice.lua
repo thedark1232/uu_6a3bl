@@ -17,8 +17,8 @@ local function o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(Ha3BaHue_ycTpoucTBa, te
 end
 local function o6HoBJIeHu9l()
 	local wget_function, olllu6ka = loadfile("/bin/wget.lua")
-	filesystem.remove("/home/alice.lua")
-	wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/uu_6a3bl_1_12_2.lua", "/lib/alice.lua")
+	filesystem.remove("/lib/alice.lua")
+	wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/alice.lua", "/lib/alice.lua")
 	computer.shutdown(true)
 end
 

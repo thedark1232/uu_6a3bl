@@ -125,6 +125,9 @@ alice["SixNineAct"] = true
 alice[secret_name .. " SixNineAct"] = function() alice["SixNineAct"] = not alice["SixNineAct"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
 alice["vitalik21"] = true
 alice[secret_name .. " vitalik21"] = function() alice["vitalik21"] = not alice["vitalik21"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+alice["Void_Dragon"] = false
+alice[secret_name .. " Void_Dragon"] = function() alice["Void_Dragon"] = not alice["Void_Dragon"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+
 
 alice[secret_name .. " ошибка"] = function(text) --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("сборщик ошибок", text)

@@ -20,13 +20,14 @@
 
 
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 11"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 12"
 local component = require("component")
 local filesystem = require("filesystem")
 local modem = component.modem
 local secret_name = "алиса"
 local admin = "The_Dark1232"
 local computer = require("computer")
+local serialization = require("serialization") --serialization.serialize unserialize
 
 local oTnpaBuTeJIb = "магаз"
 --local oTnpaBuTeJIb = "казино"
@@ -54,7 +55,6 @@ alice[secret_name .. " выключить"] = function() --магаз, кази�
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "выполняю отключение")
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 	local users = table.pack(computer.users())
-	if #users == 0 then o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "комп не запривачен!"); return end
 	for k, v in ipairs(users) do
 		if v ~= admin then computer.removeUser(v) end
 	end
@@ -65,11 +65,10 @@ alice[secret_name .. " выход"] = function() --магаз, казино
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 	local file_creat = io.open(".shrc", "w")
 	file_creat:close()
-	local users = table.pack(computer.users())
-	if #users == 0 then o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "комп не запривачен!"); return end
-	for k, v in ipairs(users) do
-		if v ~= admin then computer.removeUser(v) end
-	end
+	--local users = table.pack(computer.users())
+	--for k, v in ipairs(users) do
+		--if v ~= admin then computer.removeUser(v) end
+	--end
 	computer.addUser("The_Dark1232")
 	computer.shutdown(true)
 end
@@ -77,7 +76,6 @@ alice[secret_name .. " рестарт"] = function() --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "выполняю рестарт")
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 	local users = table.pack(computer.users())
-	if #users == 0 then o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "комп не запривачен!"); return end
 	for k, v in ipairs(users) do
 		if v ~= admin then computer.removeUser(v) end
 	end

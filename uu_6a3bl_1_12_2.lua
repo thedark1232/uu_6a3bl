@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "библиотека алисы"
+local Ha3BaHue_o6HoBJIeHu9l = "библиотека алисы2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1314,7 +1314,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "покажи сообщение пробуждения (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "посмотреть открытые порты модема (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "статус модема (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "послать сообщение (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "сообщение (тиммейт)")
 	
 	--тиммейты
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl], "запись нового тиммейта (админ)")
@@ -4339,7 +4339,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " послать сообщение"] = function()
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сообщение"] = function() --к сообщению добавляется секретное слово
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание ввода: [номер порта], [сообщение для отправки]")
 			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(20, nick_gJI9l_npuBeTcTBu9l)
@@ -4349,7 +4349,7 @@ do
 			if koMaHga_gJI9l_oTnpaBku == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "сообщение для модема указано неверно"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			koMaHga_gJI9l_oTnpaBku = string.gsub(koMaHga_gJI9l_oTnpaBku, " ", "", 1)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "отправка сообщения на порт " .. tostring(nopT_mogema) .. ": " .. tostring(koMaHga_gJI9l_oTnpaBku))
-			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(nopT_mogema), tostring(koMaHga_gJI9l_oTnpaBku))
+			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(nopT_mogema), "алиса " .. tostring(koMaHga_gJI9l_oTnpaBku))
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "модем недоступен")
 		end

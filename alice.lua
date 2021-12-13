@@ -1,9 +1,31 @@
+--обязательно загрузи библиотеку filesLibrary
+--сама прога должна называться: t
+--безопастный режим для проги: w (ищи в папке казино)
+
+--код для слияния с алисой в главный цикл проги
+--local component = require("component")
+--local modem = component.modem
+
+-- function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
+	-- if alice[coo6llleHue_oT_mogema] then
+		-- local cTaTyc, err = pcall(alice[coo6llleHue_oT_mogema])
+		-- if not cTaTyc then alice["алиса ошибка"](err) end
+	-- end
+-- end
+-- local file_creat = io.open(".shrc", "w")
+-- file_creat:write("w")
+-- file_creat:close()
+-- event.listen("modem_message", modem_message)
+-- computer.addUser("The_Dark1232")
+
+
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 9"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 10"
 local component = require("component")
 local filesystem = require("filesystem")
 local modem = component.modem
 local secret_name = "алиса"
+local admin = "The_Dark1232"
 local computer = require("computer")
 
 local oTnpaBuTeJIb = "магаз"
@@ -31,6 +53,11 @@ o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("версия библиотеки", H
 alice[secret_name .. " выключить"] = function() --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "выполняю отключение")
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
+	local users = table.pack(computer.users())
+	if #users == 0 then o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "комп не запривачен!"); return end
+	for k, v in ipairs(users) do
+		if v ~= admin then computer.removeUser(v) end
+	end
 	computer.shutdown()
 end
 alice[secret_name .. " выход"] = function() --магаз, казино
@@ -38,12 +65,22 @@ alice[secret_name .. " выход"] = function() --магаз, казино
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 	local file_creat = io.open(".shrc", "w")
 	file_creat:close()
+	local users = table.pack(computer.users())
+	if #users == 0 then o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "комп не запривачен!"); return end
+	for k, v in ipairs(users) do
+		if v ~= admin then computer.removeUser(v) end
+	end
 	computer.addUser("The_Dark1232")
 	computer.shutdown(true)
 end
 alice[secret_name .. " рестарт"] = function() --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "выполняю рестарт")
 	computer.beep(1000, 0.1); computer.beep(1000, 0.1)
+	local users = table.pack(computer.users())
+	if #users == 0 then o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "комп не запривачен!"); return end
+	for k, v in ipairs(users) do
+		if v ~= admin then computer.removeUser(v) end
+	end
 	computer.shutdown(true)
 end
 alice[secret_name .. " обновы"] = function() --магаз, казино
@@ -61,6 +98,25 @@ alice[secret_name .. " юзеры"] = function() --магаз, казино (в�
 		o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, tostring(k) ..  ": " .. v)
 	end
 end
+alice[secret_name .. " счета"] = function() --магаз (просмотр, у кого сколько бабок в магазе)
+	
+end
+
+--бан лист игроков (не смогут выполнять действия через гланый цикл)
+--реализация
+--if not alice[user] then
+	--действия
+--end
+
+--true означает в бане
+alice["titanpsih"] = false
+alice[secret_name .. " titanpsih"] = function() alice["titanpsih"] = not alice["titanpsih"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+alice["Durex77"] = false
+alice[secret_name .. " Durex77"] = function() alice["Durex77"] = not alice["Durex77"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+alice["The_Dark1232"] = false
+alice[secret_name .. " The_Dark1232"] = function() alice["The_Dark1232"] = not alice["The_Dark1232"]; o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "статус обновлен") end
+
+
 alice[secret_name .. " ошибка"] = function(text) --магаз, казино
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("сборщик ошибок", text)
 end

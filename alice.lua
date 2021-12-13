@@ -20,15 +20,16 @@
 
 
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 16"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 18"
 local component = require("component")
 local filesystem = require("filesystem")
+local filesLibrary = require("filesLibrary")
 local modem = component.modem
 local secret_name = "алиса"
 local admin = "The_Dark1232"
 local computer = require("computer")
 local serialization = require("serialization") --serialization.serialize unserialize
-
+local nyTb_k_JIoram = "/home/durex/USERS/data/"
 local oTnpaBuTeJIb = "магаз"
 --local oTnpaBuTeJIb = "казино"
 
@@ -46,6 +47,15 @@ local function o6HoBJIeHu9l()
 	filesystem.remove("/lib/alice.lua")
 	wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/alice.lua", "/lib/alice.lua")
 	computer.shutdown(true)
+end
+local function BepHyTb_Ta6JIucy_c4eToB()
+	local Ta6JIuca_nyTeu_JIoroB = {}
+	for Ha3BaHue_cJlegyI0IIIeu_nanKu in filesystem.list(nyTb_k_JIoram) do
+		if Ha3BaHue_cJlegyI0IIIeu_nanKu:match(".row") ~= nil then
+			table.insert(Ta6JIuca_nyTeu_JIoroB, Ha3BaHue_cJlegyI0IIIeu_nanKu)
+		end
+	end
+	return Ta6JIuca_nyTeu_JIoroB
 end
 
 o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("версия библиотеки", Ha3BaHue_o6HoBJIeHu9l)
@@ -99,7 +109,15 @@ alice[secret_name .. " юзеры"] = function() --магаз, казино (в�
 	end
 end
 alice[secret_name .. " счета"] = function() --магаз (просмотр, у кого сколько бабок в магазе)
-	
+	local Ta6JIuca_c4eToB = BepHyTb_Ta6JIucy_c4eToB()
+	for k, c4eT in ipairs(Ta6JIuca_c4eToB) do
+		
+		local result = filesLibrary.write_file(nyTb_k_JIoram .. Huk_urpoka .. c4eT, "nil")
+		if result ~= "nil" then
+			result = serialization.unserialize(nyTb_k_JIoram)
+			o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "счет: " .. string.gsub(c4eT, 1, #c4eT - 4) .. ": " .. tostring(result.balance))
+		end
+	end
 end
 
 --бан лист игроков (не смогут выполнять действия через гланый цикл)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновы команд2"
+local Ha3BaHue_o6HoBJIeHu9l = "баги"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2608,7 +2608,7 @@ do
 		return true
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино снять деньги"] = function()
-		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статистика"]() then
+		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статус"]() then
 			local Huk_urpoka = nick_gJI9l_npuBeTcTBu9l
 			
 			--расчет, сколько можно снять

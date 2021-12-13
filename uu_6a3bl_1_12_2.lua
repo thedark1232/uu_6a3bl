@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тихий рестарт4"
+local Ha3BaHue_o6HoBJIeHu9l = "мелкие исправления"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5092,8 +5092,10 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало плановых обновлений базы данных")
 			Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa = cekyHdbl_gJI9l_JIoroB + zagepJka_B_cekyHgax_npoBepku_oHJIauHa
 			Ha4aTb_npoBepKy_online(cekyHdbl_gJI9l_JIoroB)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "успешно")
+			local datetime = os.date("*t", Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание следующих обновлений в: " .. g .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
 		end
+		
 	end
 end
 if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then

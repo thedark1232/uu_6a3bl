@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги"
+local Ha3BaHue_o6HoBJIeHu9l = "тихий рестарт"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -21,6 +21,7 @@ local Balance_casino_im = 0
 local re3epBHblu_6aJIaHc = 500
 local id_money = "customnpcs:npcMoney"
 local dmg_money = 0
+local Tuxuu_pecTapT = false
 local Ta6JIuca_koMnoHeHToB = {}
 local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local Ta6JIuca_nbegecTaJIoB = {}
@@ -1293,6 +1294,7 @@ function koMaHgbl_uu_6a3bl()
 	
 	--управления алисой
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "выход (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "тихий рестарт (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "обнови ии базы (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "пока (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "отключить сеть (админ)")
@@ -1592,9 +1594,9 @@ do
 	--проверка доступности компонентов
 	zarpy3ka_koMnoHeHToB()
 	for k, v in pairs(Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB) do
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "отсутствует компонент: " .. tostring(k))
+		it not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "отсутствует компонент: " .. tostring(k)) end
 	end
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "==============================")
+	if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "==============================") end
 	--загрузка библиотеки
 	tape_drive = getLibrary("tape_loader")	
 	filesLibrary = getLibrary("filesLibrary")
@@ -1625,11 +1627,11 @@ do
 	else
 		Ha3BaHue_6a3bl = configuration[11]
 	end
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "присвоение названия базе: " .. g .. Ha3BaHue_6a3bl)
+	if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "присвоение названия базе: " .. g .. Ha3BaHue_6a3bl) end
 	local nepBa9l_6ykba = unicode.sub(Ha3BaHue_6a3bl, 1, 1)
 	local ocTaJIbHoe = unicode.sub(Ha3BaHue_6a3bl, 2, unicode.len(Ha3BaHue_6a3bl))
 	local nepBa9l_6ykba = unicode.upper(nepBa9l_6ykba)
-	Ta6JIuca_koMnoHeHToB["chat_box"].setName(p .. nepBa9l_6ykba .. ocTaJIbHoe .. gr)
+	if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].setName(p .. nepBa9l_6ykba .. ocTaJIbHoe .. gr) end
 	--метатаблицы
 	setmetatable(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB, {__index = function() return function() end end})
 	setmetatable(Ta6JIuca_admin_koMaHg, {__index = function() return function() end end})
@@ -2488,6 +2490,16 @@ do
 		configuration[37] = re3epBHblu_6aJIaHc
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "лимит успешно изменен")
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"] = function() --включает и выключает тихий рестарт
+		Tuxuu_pecTapT = not Tuxuu_pecTapT
+		if Tuxuu_pecTapT then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тихий рестарт: " .. g .. "активирован")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тихий рестарт: " .. r .. "не активирован")
+		end
+		configuration[38] = Tuxuu_pecTapT
+		setConfiguration()
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
@@ -4555,31 +4567,31 @@ do
 		if configuration[1] ~= "nil" then
 			tape_drive.setBpeM9l_3agepJku(configuration[1])
 		else
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "tap drive = " .. r .. "время задержки = ?")
+			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "tap drive = " .. r .. "время задержки = ?") end
 		end
 	end
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
 		if configuration[2] ~= "nil" then
 			Ta6JIuca_koMnoHeHToB["modem"].open(tonumber(configuration[2]))
 		else
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "modem = " .. r .. "порт модема = ?")
+			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "modem = " .. r .. "порт модема = ?") end
 		end
 		if configuration[3] ~= "nil" then
 			Ta6JIuca_koMnoHeHToB["modem"].setWakeMessage(tostring(configuration[3]))
 		else
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "modem = " .. r .. "пробуждение = ?")
+			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "modem = " .. r .. "пробуждение = ?") end
 		end
 	end
 	if configuration[7] == "nil" then --показ ОЗУ в очках
 		noka3aTb_O3Y = false
 		configuration[7] = false
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто") end
 	elseif configuration[7] == true then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. g .. " показ")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. g .. " показ") end
 		noka3aTb_O3Y = configuration[7]
 	else
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто") end
 		noka3aTb_O3Y = configuration[7]
 	end
 	if configuration[9] == "nil" then --конфиг таблицы вайт листа
@@ -4590,46 +4602,46 @@ do
 	end
 	if configuration[8] == "nil" then --доступ тиммейтам к туррелям
 		TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu = false
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "доступ туррелей тиммейтам: " .. r .. "NO")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "доступ туррелей тиммейтам: " .. r .. "NO") end
 		configuration[8] = false
 		setConfiguration()
 	elseif configuration[8] == true then
 		TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu = true
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "доступ туррелей тиммейтам: " .. g .. "YES")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "доступ туррелей тиммейтам: " .. g .. "YES") end
 	else
 		TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu = false
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "доступ туррелей тиммейтам: " .. r .. "NO")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "доступ туррелей тиммейтам: " .. r .. "NO") end
 	end
 	if configuration[10] == "nil" then --задержка выполнения шагов главного цикла
 		configuration[10] = zagepJka
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка циклов: " .. g .. zagepJka)
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка циклов: " .. g .. zagepJka) end
 	else
 		zagepJka = configuration[10]
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка циклов: " .. g .. zagepJka)
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка циклов: " .. g .. zagepJka) end
 	end
 	if configuration[12] == "nil" then
 		configuration[12] = zoHbl_JIoroB
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "зоны логов:" .. r .. " не назначены")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "зоны логов:" .. r .. " не назначены") end
 	else
 		zoHbl_JIoroB = configuration[12]
 	end
 	if configuration[13] == "nil" then
 		configuration[13] = noBopoT
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов") end
 	else
 		noBopoT = configuration[13]
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов") end
 	end
 	if configuration[14] == "nil" then
 		configuration[14] = oTnpaBJl9lTb_JIor_c_geTekTopoB
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "отправлять логи на туннель" .. g .. " ВКЛ")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "отправлять логи на туннель" .. g .. " ВКЛ") end
 	else
 		oTnpaBJl9lTb_JIor_c_geTekTopoB = configuration[14]
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "отправлять логи на туннель" .. r .. " ВЫКЛ")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "отправлять логи на туннель" .. r .. " ВЫКЛ") end
 	end
 	if configuration[15] == "nil" then
 		configuration[15] = koopguHaTa_coo6llleHu9l_no_x
@@ -4661,7 +4673,7 @@ do
 	else
 		uHTepBaJI_3agepJku_3anucu_JIoroB = configuration[20]
 	end
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "Интервал задержки записи логов: " .. g .. tostring(uHTepBaJI_3agepJku_3anucu_JIoroB))
+	if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "Интервал задержки записи логов: " .. g .. tostring(uHTepBaJI_3agepJku_3anucu_JIoroB)) end
 	if configuration[21] == "nil" then
 		configuration[21] = BblBog_JIoroB_urpokoB_Ha_MoHuTop
 		setConfiguration()
@@ -4764,15 +4776,22 @@ do
 	else
 		re3epBHblu_6aJIaHc = configuration[37]
 	end
+	if configuration[38] == "nil" then
+		configuration[38] = Tuxuu_pecTapT
+		setConfiguration()
+	else
+		Tuxuu_pecTapT = configuration[38]
+	end
+	
 	--активировать многопоточный режим
 	myThread.init()
 	--получение таблицы рецетов матрицы
 	getMathixRecepts()
 	--записывать логи с детекторов
 	if zanucblBaTb_JIoru then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. g .. "ВКЛ")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. g .. "ВКЛ") end
 	else
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. r .. "ВЫКЛ")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. r .. "ВЫКЛ") end
 	end
 	--получение ключей-паролей игроков нанитов
 	for k, v in pairs(configuration[4]) do
@@ -4809,14 +4828,14 @@ do
 		event.listen("chat_message", chat_message)
 	end
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "порт модема для сообщений: " .. g .. "600")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "порт модема для сообщений: " .. g .. "600") end
 		Ta6JIuca_koMnoHeHToB["modem"].open(600)
 	end
 	--конфигурация редстоуна
 	cTaTyc_BblnoJIHeHu9l, ta6JIuca_redstone, KoJlu4ecTBo_redstone = myComponentsLibrary.BepHyTb_Ta6JIucy_adrecoB_Bcex_componentoB("redstone")
 	if configuration[17] == "nil" then		
 		if cTaTyc_BblnoJIHeHu9l then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание конфигураций блоков редстоуна:")
+			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание конфигураций блоков редстоуна:") end
 			for HoMep_redstone, agreca_redstone in ipairs(ta6JIuca_redstone) do
 				configRedStone[agreca_redstone] = {"редстоун" .. tostring(agreca_redstone:sub(1, 3)), "false", 1}
 			end
@@ -4824,15 +4843,15 @@ do
 			setConfiguration()
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред инфо"]()
 		else
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "количество найденых редстоун блоков: " .. r .. "0")
+			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "количество найденых редстоун блоков: " .. r .. "0") end
 		end
 	else
 		configRedStone = configuration[17]
 		if cTaTyc_BblnoJIHeHu9l then
 			if #ta6JIuca_redstone <= 0 then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "редстоун контроллеры:" .. r .. " отсутствуют")
+				if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "редстоун контроллеры:" .. r .. " отсутствуют") end
 			else
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "редстоун контроллеры:")
+				if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "редстоун контроллеры:") end
 			end
 			for k, v in ipairs(ta6JIuca_redstone) do
 				if configRedStone[v] == nil then
@@ -4855,7 +4874,7 @@ do
 			setConfiguration()
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред инфо"]()
 		else
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "количество найденых редстоун блоков: " .. r .. "0")
+			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "количество найденых редстоун блоков: " .. r .. "0") end
 		end
 	end
 	--добавить команды в админскую таблицу
@@ -4868,16 +4887,16 @@ do
 	--подключение raid
 	raid_agrec = raidLibrary.getRAID_agpec()
 	if raid_agrec ~= "nil" then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "RAID: " .. g .. "доступен")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "RAID: " .. g .. "доступен") end
 		 raidLibrary.mount(raid_agrec, nytb_raid)
 		 nytb_k_JIoraM = nytb_raid
 		 raid_gocTyneH = true
 	else
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "RAID: " .. r .. "не доступен")
+		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "RAID: " .. r .. "не доступен") end
 		raid_gocTyneH = false
 	end
 	--версия системы через объем файла
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "версия ии базы: " .. g .. Bepcu9l_uu_6a3bl)
+	if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "версия ии базы: " .. g .. Bepcu9l_uu_6a3bl) end
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название обновления: " .. g .. Ha3BaHue_o6HoBJIeHu9l)
 	--проверки завершены
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "СТАРТОВЫЕ ПРОВЕРКИ ПРОЙДЕНЫ!")

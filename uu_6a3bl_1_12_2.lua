@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "баги модема"
+local Ha3BaHue_o6HoBJIeHu9l = "библиотека алисы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -679,7 +679,7 @@ function chat_message(event_name, _, nick, msg, msg2, modem_message)
 	end
 end
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "принято сообщение: " .. coo6llleHue_oT_mogema)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "сообщение от " .. coo6llleHue_oT_mogema)
 	--print(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
 	coo6llleHue_TuHHeJI9l = serialization.unserialize(coo6llleHue_oT_mogema)
 	--for k,v in pairs(coo6llleHue_TuHHeJI9l) do

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек3"
+local Ha3BaHue_o6HoBJIeHu9l = "обновы библиотек4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1875,7 +1875,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент модема отсутствует")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ожидание ввода")
-			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin, true)
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			configuration[3] = tostring(coo6llleHue)
 			setConfiguration()
@@ -4342,7 +4342,7 @@ do
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сообщение"] = function() --к сообщению добавляется секретное слово
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание ввода: " .. gr .. "[" .. g .. "номер порта" .. gr .. "]" .. c .. "," .. gr .. " [" .. g .. "сообщение для отправки" .. gr .. "]")
-			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(20, nick_gJI9l_npuBeTcTBu9l)
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(20, nick_gJI9l_npuBeTcTBu9l, true)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			local nopT_mogema, koMaHga_gJI9l_oTnpaBku = string.match(unicode.lower(coo6llleHue), "(.+)%,(.+)")
 			if tonumber(nopT_mogema) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "порт модема указан неверно"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end

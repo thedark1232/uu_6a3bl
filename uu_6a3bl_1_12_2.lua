@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления2"
+local Ha3BaHue_o6HoBJIeHu9l = "баги модема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -679,12 +679,12 @@ function chat_message(event_name, _, nick, msg, msg2, modem_message)
 	end
 end
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "принято сообщение: " .. coo6llleHue_oT_mogema)
-	print(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "принято сообщение: " .. coo6llleHue_oT_mogema)
+	--print(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
 	coo6llleHue_TuHHeJI9l = serialization.unserialize(coo6llleHue_oT_mogema)
-	for k,v in pairs(coo6llleHue_TuHHeJI9l) do
-		print(k, v)
-	end
+	--for k,v in pairs(coo6llleHue_TuHHeJI9l) do
+		--print(k, v)
+	--end
 end
 function co3gaHue_HoBou_3oHbl(start_x, start_y, start_z, end_x, end_y, end_z, zone_name)
 	start_x = tonumber(start_x); start_y = tonumber(start_y); start_z = tonumber(start_z)
@@ -4347,6 +4347,7 @@ do
 			local nopT_mogema, koMaHga_gJI9l_oTnpaBku = string.match(unicode.lower(coo6llleHue), "(.+)%,(.+)")
 			if tonumber(nopT_mogema) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "порт модема указан неверно"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			if koMaHga_gJI9l_oTnpaBku == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "сообщение для модема указано неверно"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			koMaHga_gJI9l_oTnpaBku = string.gsub(koMaHga_gJI9l_oTnpaBku, " ", "", 1)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "отправка сообщения на порт " .. tostring(nopT_mogema) .. ": " .. tostring(koMaHga_gJI9l_oTnpaBku))
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(nopT_mogema), tostring(koMaHga_gJI9l_oTnpaBku))
 		else
@@ -4912,7 +4913,7 @@ do
 					end
 					computer.removeUser(moder)
 				end
-				if #coo6llleHue_TuHHeJI9l > 0 and coo6llleHue_TuHHeJI9l[1] == "лог детекторов" then
+				if coo6llleHue_TuHHeJI9l and #coo6llleHue_TuHHeJI9l > 0 and coo6llleHue_TuHHeJI9l[1] == "лог детекторов" then
 					for i = 2, #coo6llleHue_TuHHeJI9l do
 						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, coo6llleHue_TuHHeJI9l[i])
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10

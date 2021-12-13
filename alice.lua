@@ -1,5 +1,5 @@
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 3"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 2"
 local component = require("component")
 local filesystem = require("filesystem")
 local modem = component.modem
@@ -57,6 +57,10 @@ alice[secret_name .. " казино рестарт"] = function()
 end
 alice[secret_name .. " казино обновления"] = function()
 	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("казино", "выполняю загрузку")
+	o6HoBJIeHu9l()
+end
+alice[secret_name .. " версия обновлений"] = function()
+	o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku("казино", "версия: " .. Ha3BaHue_o6HoBJIeHu9l)
 	o6HoBJIeHu9l()
 end
 alice[secret_name .. " ошибка"] = function(text)

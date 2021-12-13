@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновы команд"
+local Ha3BaHue_o6HoBJIeHu9l = "обновы команд2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1284,7 +1284,7 @@ function koMaHgbl_uu_6a3bl()
 	local ynpaBJIeHue_TuMMeuTbl = 15; t[ynpaBJIeHue_TuMMeuTbl] = ynpaBJIeHue_TuMMeuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl] = "тиммейты"
 	local ynpaBJIeHue_JIoru_urpokoB = 16; t[ynpaBJIeHue_JIoru_urpokoB] = ynpaBJIeHue_JIoru_urpokoB; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB] = "логи игроков"
 	local casino = 17; t[casino] = casino; Ha3BaHu9l_pa3geJIoB[casino] = "управление казино"
-	local magazin = 18; t[magazin] = magazin; Ha3BaHu9l_pa3geJIoB[magazin] = "управление казино"
+	local magazin = 18; t[magazin] = magazin; Ha3BaHu9l_pa3geJIoB[magazin] = "управление магазином"
 	local ynpaBJIeHue_aJIucou = 19; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
 
 	for i = 1, #t do
@@ -1405,7 +1405,6 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) удалить (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) переименовать (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_redStone], "(название) назначить функцию (тиммейт)")
-	
 	
 	--логи игроков
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "установи задержку вывода активных игроков на монитор (админ)")

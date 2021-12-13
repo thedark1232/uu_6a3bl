@@ -20,7 +20,7 @@
 
 
 local alice = {}
-local Ha3BaHue_o6HoBJIeHu9l = "алиса 20"
+local Ha3BaHue_o6HoBJIeHu9l = "алиса 21"
 local component = require("component")
 local filesystem = require("filesystem")
 local filesLibrary = require("filesLibrary")
@@ -115,7 +115,10 @@ alice[secret_name .. " счета"] = function() --магаз (просмотр,
 		local result = filesLibrary.write_file(nyTb_k_JIoram .. c4eT, "nil")
 		if result ~= "nil" then
 			result = serialization.unserialize(result)
-			o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "счет: " .. string.gsub(c4eT, 1, #c4eT - 4) .. ": " .. tostring(result.balance))
+			print(string.gsub(c4eT, 1, #c4eT - 4))
+			print(result.balance)
+			os.sleep(10)
+			--o6paTHoe_coo6llleHue_c_3agepJKou_oTnpaBku(oTnpaBuTeJIb, "счет: " .. string.gsub(c4eT, 1, #c4eT - 4) .. ": " .. tostring(result.balance))
 		end
 	end
 end

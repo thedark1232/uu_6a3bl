@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления3"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -179,11 +179,7 @@ local colors_background = {["setWhite"] = function() gpu.setBackground(0xFFFFFF)
 					 
 local Ta6JIuca_npoBepku_online = {}
 	
-local whiteListUsers = {["user1"] = "ok",
-						["user2"] = "ok",
-						["EveryMe"] = "ok",
-						["Methamphetamine"] = "ok"
-						}
+local whiteListUsers = {}
 						
 local Ta6JIuca_mogeroB_gJI9l_o4koB = {
 						["EveryMe"] = "ok",
@@ -5090,7 +5086,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. string.format("%02d", h) .. ":" .. string.format("%02d", m) .. ":" ..string.format("%02d", s))
 		end
 		if cekyHdbl_gJI9l_JIoroB > Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa then
-			it not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало плановых обновлений базы данных") end
+			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало плановых обновлений базы данных") end
 			Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa = cekyHdbl_gJI9l_JIoroB + zagepJka_B_cekyHgax_npoBepku_oHJIauHa
 			Ha4aTb_npoBepKy_online(cekyHdbl_gJI9l_JIoroB)
 			local datetime = os.date("*t", Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa)

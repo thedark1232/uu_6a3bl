@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "мелкие исправления"
+local Ha3BaHue_o6HoBJIeHu9l = "исправления3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -382,10 +382,10 @@ function getLibrary(name)
 	else
 		if component.isAvailable("internet") then
 			local wget_function, olllu6ka = loadfile("/bin/wget.lua")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "скачивание библиотеки: " .. name)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "скачивание библиотеки: " .. g .. name)
 			local status_wget, Ha3BaHue_olllu6ku = wget_function("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/" .. name .. ".lua", "/lib/" .. name .. ".lua")
 			if status_wget then
-				getLibrary(name)
+				return require(name)
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка при скачивании библиотеки: " .. name)
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(Ha3BaHue_olllu6ku))
@@ -910,7 +910,7 @@ function Ha4aTb_npoBepKy_online(ceKyHgbl)
 		computer.removeUser(k)
 		if computer.addUser(k) then
 			filesLibrary.creat_file("/home/" .. k .. ".online", ceKyHgbl)
-			computer.removeUser(k)
+			if k ~= admin then computer.removeUser(k) end
 		end
 	end
 end
@@ -1590,6 +1590,7 @@ end
 
 
 do
+	computer.addUser(admin)
 	--осчистка монитора
 	term.clear()
 	--проверка доступности компонентов
@@ -2729,7 +2730,7 @@ do
 			end
 		end
 		
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общий по списаниям: " .. tostring(o6lllee_no_cnucaHu9lM))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общий по списаниям: " .. g .. tostring(o6lllee_no_cnucaHu9lM) .. "$")
 		
 	end	
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино выключить"] = function()
@@ -3190,7 +3191,7 @@ do
 			computer.removeUser(Ha3BaHue_qpauJIa)
 			if computer.addUser(Ha3BaHue_qpauJIa) then
 				cTaTyc = "online"
-				computer.removeUser(Ha3BaHue_qpauJIa)
+				if Ha3BaHue_qpauJIa ~= admin then computer.removeUser(Ha3BaHue_qpauJIa) end
 				if whiteListUsers[Ha3BaHue_qpauJIa] ~= nil or Ha3BaHue_qpauJIa == admin then
 					table.insert(ta6JIuca_TuMMeuToB_B_ceTu, {Ha3BaHue_qpauJIa, "ONLINE"})
 				else	
@@ -5089,11 +5090,11 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. string.format("%02d", h) .. ":" .. string.format("%02d", m) .. ":" ..string.format("%02d", s))
 		end
 		if cekyHdbl_gJI9l_JIoroB > Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало плановых обновлений базы данных")
+			it not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало плановых обновлений базы данных") end
 			Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa = cekyHdbl_gJI9l_JIoroB + zagepJka_B_cekyHgax_npoBepku_oHJIauHa
 			Ha4aTb_npoBepKy_online(cekyHdbl_gJI9l_JIoroB)
 			local datetime = os.date("*t", Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание следующих обновлений в: " .. g .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание следующих обновлений в: " .. g .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec)) end
 		end
 		
 	end

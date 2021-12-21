@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "один сенсор7"
+local Ha3BaHue_o6HoBJIeHu9l = "один сенсор8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -728,7 +728,7 @@ function co3gaHue_HoBou_3oHbl(start_x, start_y, start_z, end_x, end_y, end_z, zo
 end
 function npoBepka_HaxoJgeHu9l_B_3oHe(x, y, z)
 	for _, zona in ipairs(zoHbl_JIoroB) do
-		if x > tonumber(zona[1]) and x < tonumber(zona[4]) and y > tonumber(zona[2]) and y < tonumber(zona[5]) and z > tonumber(zona[3]) and z < tonumber(zona[6]) then return zona[7] end
+		if tonumber(x) > tonumber(zona[1]) and tonumber(x) < tonumber(zona[4]) and tonumber(y) > tonumber(zona[2]) and tonumber(y) < tonumber(zona[5]) and tonumber(z) > tonumber(zona[3]) and tonumber(z) < tonumber(zona[6]) then return zona[7] end
 	end
 	return ""
 end
@@ -5206,6 +5206,7 @@ do
 						if urpoKu_gJI9l_oTo6paJeHu9l[Huk] then
 							local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
 							local online = "OFFLINE"
+							computer.removeUser(HuK)
 							if computer.addUser(Huk) then
 								online = "ONLINE"
 								computer.removeUser(HuK)

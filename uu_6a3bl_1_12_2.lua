@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "один сенсор3"
+local Ha3BaHue_o6HoBJIeHu9l = "один сенсор4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -14,6 +14,7 @@ local one_ceHcop_BKJI = false
 local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
+local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
 local test_mod = false
@@ -442,6 +443,8 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	end
 	myThread.killAll()
 	computer.addUser(admin)
+	configuration[42] = urpoKu_gJI9l_oTo6paJeHu9l
+	setConfiguration()
 end
 function zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, nepegaBaEMoe_3Ha4eHue)
 	if baza_Bblxog ~= msg then
@@ -1278,18 +1281,19 @@ function koMaHgbl_uu_6a3bl()
 	local ynpaBJIeHue_tunnel = 6; t[ynpaBJIeHue_tunnel] = ynpaBJIeHue_tunnel; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_tunnel] = "туннель"
 	local ynpaBJIeHue_TyppeJIu = 7; t[ynpaBJIeHue_TyppeJIu] = ynpaBJIeHue_TyppeJIu; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_TyppeJIu] = "турели"
 	local ynpaBJIeHue_ceHcopbl = 8; t[ynpaBJIeHue_ceHcopbl] = ynpaBJIeHue_ceHcopbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_ceHcopbl] = "сенсоры"
-	local ynpaBJIeHue_geTekTopbl = 9; t[ynpaBJIeHue_geTekTopbl] = ynpaBJIeHue_geTekTopbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_geTekTopbl] = "детекторы"
-	local ynpaBJIeHue_HaHuTbl = 10; t[ynpaBJIeHue_HaHuTbl] = ynpaBJIeHue_HaHuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_HaHuTbl] = "наниты"
-	local ynpaBJIeHue_MaTpuca = 11; t[ynpaBJIeHue_MaTpuca] = ynpaBJIeHue_MaTpuca; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_MaTpuca] = "автоматрица"
-	local ynpaBJIeHue_MO_teleport = 12; t[ynpaBJIeHue_MO_teleport] = ynpaBJIeHue_MO_teleport; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_MO_teleport] = "телепортер"
-	local ynpaBJIeHue_redStone = 13; t[ynpaBJIeHue_redStone] = ynpaBJIeHue_redStone; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_redStone] = "редстоун"
-	local ynpaBJIeHue_BupTyaJI_4aT = 14; t[ynpaBJIeHue_BupTyaJI_4aT] = ynpaBJIeHue_BupTyaJI_4aT; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_BupTyaJI_4aT] = "виртуальный чат"
-	local ynpaBJIeHue_TuMMeuTbl = 15; t[ynpaBJIeHue_TuMMeuTbl] = ynpaBJIeHue_TuMMeuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl] = "тиммейты"
-	local ynpaBJIeHue_JIoru_urpokoB = 16; t[ynpaBJIeHue_JIoru_urpokoB] = ynpaBJIeHue_JIoru_urpokoB; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB] = "логи игроков"
-	local casino = 17; t[casino] = casino; Ha3BaHu9l_pa3geJIoB[casino] = "управление казино"
-	local magazin = 18; t[magazin] = magazin; Ha3BaHu9l_pa3geJIoB[magazin] = "управление магазином"
-	local ynpaBJIeHue_aJIucou = 19; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
-	local one_ceHcop_KoMaHgbl = 19; t[one_ceHcop_KoMaHgbl] = one_ceHcop_KoMaHgbl; Ha3BaHu9l_pa3geJIoB[one_ceHcop_KoMaHgbl] = "команды одного сенсора"
+	local one_ceHcop_KoMaHgbl = 9; t[one_ceHcop_KoMaHgbl] = one_ceHcop_KoMaHgbl; Ha3BaHu9l_pa3geJIoB[one_ceHcop_KoMaHgbl] = "команды одного сенсора"
+	local ynpaBJIeHue_geTekTopbl = 10; t[ynpaBJIeHue_geTekTopbl] = ynpaBJIeHue_geTekTopbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_geTekTopbl] = "детекторы"
+	local ynpaBJIeHue_HaHuTbl = 11; t[ynpaBJIeHue_HaHuTbl] = ynpaBJIeHue_HaHuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_HaHuTbl] = "наниты"
+	local ynpaBJIeHue_MaTpuca = 12; t[ynpaBJIeHue_MaTpuca] = ynpaBJIeHue_MaTpuca; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_MaTpuca] = "автоматрица"
+	local ynpaBJIeHue_MO_teleport = 13; t[ynpaBJIeHue_MO_teleport] = ynpaBJIeHue_MO_teleport; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_MO_teleport] = "телепортер"
+	local ynpaBJIeHue_redStone = 14; t[ynpaBJIeHue_redStone] = ynpaBJIeHue_redStone; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_redStone] = "редстоун"
+	local ynpaBJIeHue_BupTyaJI_4aT = 15; t[ynpaBJIeHue_BupTyaJI_4aT] = ynpaBJIeHue_BupTyaJI_4aT; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_BupTyaJI_4aT] = "виртуальный чат"
+	local ynpaBJIeHue_TuMMeuTbl = 16; t[ynpaBJIeHue_TuMMeuTbl] = ynpaBJIeHue_TuMMeuTbl; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_TuMMeuTbl] = "тиммейты"
+	local ynpaBJIeHue_JIoru_urpokoB = 17; t[ynpaBJIeHue_JIoru_urpokoB] = ynpaBJIeHue_JIoru_urpokoB; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB] = "логи игроков"
+	local casino = 18; t[casino] = casino; Ha3BaHu9l_pa3geJIoB[casino] = "управление казино"
+	local magazin = 19; t[magazin] = magazin; Ha3BaHu9l_pa3geJIoB[magazin] = "управление магазином"
+	local ynpaBJIeHue_aJIucou = 20; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
+
 
 	for i = 1, #t do
 		table.insert(Ta6JIuca_pa3geJIoB, {})
@@ -1537,10 +1541,12 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция у (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция з (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор статус переключить (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор статус (админ)")
-	
-	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], " (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], " (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор статус (админ)")	
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор список игроков (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор отобразить игрока (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор скрыть игрока (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор отобразить всех (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор скрыть всех (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], " (тиммейт)")
 	
 	
@@ -2912,6 +2918,54 @@ do
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
 		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор список игроков"] = function()
+		local koJIu4ecTBo_urpokoB_B_cnucke = 0
+		local c4eT4uk_HuKoB = 1
+		for Huk, _ in pairs(one_ceHcop_HoBble_urpoku) do
+			koJIu4ecTBo_urpokoB_B_cnucke = koJIu4ecTBo_urpokoB_B_cnucke + 1
+		end
+		if koJIu4ecTBo_urpokoB_B_cnucke > 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список игроков:")
+			for Huk, _ in pairs(one_ceHcop_HoBble_urpoku) do
+				
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4eT4uk_HuKoB) .. ": " .. g .. Huk)
+			end
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица пуста")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор отобразить игрока"] = function()
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		if urpoKu_gJI9l_oTo6paJeHu9l[coo6llleHue] == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "игрок не найден в списках")
+		else
+			urpoKu_gJI9l_oTo6paJeHu9l[coo6llleHue] = true
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "команды выполнена")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор скрыть игрока"] = function()
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		if urpoKu_gJI9l_oTo6paJeHu9l[coo6llleHue] == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "игрок не найден в списках")
+		else
+			urpoKu_gJI9l_oTo6paJeHu9l[coo6llleHue] = false
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "команды выполнена")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор отобразить всех"] = function()
+		for Huk, _ in pairs(urpoKu_gJI9l_oTo6paJeHu9l) do
+			urpoKu_gJI9l_oTo6paJeHu9l[Huk] = true
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "команды выполнена")
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор скрыть всех"] = function()
+		for Huk, _ in pairs(urpoKu_gJI9l_oTo6paJeHu9l) do
+			urpoKu_gJI9l_oTo6paJeHu9l[Huk] = false
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "команды выполнена")
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
@@ -4888,7 +4942,12 @@ do
 	else
 		one_ceHcop_z = configuration[41]
 	end
-	
+	if configuration[42] == "nil" then
+		configuration[42] = urpoKu_gJI9l_oTo6paJeHu9l
+		setConfiguration()
+	else
+		urpoKu_gJI9l_oTo6paJeHu9l = configuration[42]
+	end
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
 	end
@@ -5141,8 +5200,13 @@ do
 				end
 				if one_ceHcop_BKJI == true then
 					for Huk, koopgbl in pairs(one_ceHcop_HoBble_urpoku) do
-						pcall(function() Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z) end)
-						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
+						if urpoKu_gJI9l_oTo6paJeHu9l[Huk] == nil then
+							urpoKu_gJI9l_oTo6paJeHu9l[Huk] = false
+						end
+						if urpoKu_gJI9l_oTo6paJeHu9l[Huk] then
+							pcall(function() Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z) end)
+							cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
+						end
 					end
 				end
 				for moder, _ in pairs(Ta6JIuca_mogeroB_gJI9l_o4koB) do

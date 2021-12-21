@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "один сенсор"
+local Ha3BaHue_o6HoBJIeHu9l = "один сенсор2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5078,7 +5078,8 @@ do
 				end
 				if one_ceHcop_BKJI then
 					for Huk, koopgbl in pairs(one_ceHcop_HoBble_urpoku) do
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.sencor_x .. " y: " .. koopgbl.sencor_y .. " z: " .. koopgbl.sencor_z)
+						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z)
+						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 				end
 				for moder, _ in pairs(Ta6JIuca_mogeroB_gJI9l_o4koB) do

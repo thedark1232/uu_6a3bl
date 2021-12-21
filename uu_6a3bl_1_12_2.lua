@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "привет хуярки"
+local Ha3BaHue_o6HoBJIeHu9l = "привет хуярки трололо"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2554,6 +2554,11 @@ do
 			configuration[38] = one_ceHcop_BKJI
 			setConfiguration()
 			if one_ceHcop_BKJI then oguH_ceHcop = component.openperipheral_sensor end
+			if one_ceHcop_BKJI then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "статус переключен на: " .. g .. "ВКЛ")
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "статус переключен на: " .. r .. "ВЫКЛ")
+			end
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "сенсор не найден")
 		end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "че за баг ебаный2"
+local Ha3BaHue_o6HoBJIeHu9l = "привет хуярки"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5204,7 +5204,6 @@ do
 							urpoKu_gJI9l_oTo6paJeHu9l[Huk] = false
 						end
 						if urpoKu_gJI9l_oTo6paJeHu9l[Huk] then
-							local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
 							local online = "OFFLINE"
 							--term.clear()
 							--io.write("перед добавлением игрока Huk ->"); print(Huk)
@@ -5214,7 +5213,10 @@ do
 								online = "ONLINE"
 								computer.removeUser(Huk)
 							end
-							pcall(function() Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z .. " " .. zoHa .. " " .. online) end)
+							pcall(function()
+								local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
+								Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z .. " " .. zoHa .. " " .. online)
+							end)
 							cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 						end
 					end

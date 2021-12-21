@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "один сенсор4"
+local Ha3BaHue_o6HoBJIeHu9l = "один сенсор7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2936,7 +2936,7 @@ do
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор отобразить игрока"] = function()
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		if urpoKu_gJI9l_oTo6paJeHu9l[coo6llleHue] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "игрок не найден в списках")
@@ -2946,7 +2946,7 @@ do
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор скрыть игрока"] = function()
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		if urpoKu_gJI9l_oTo6paJeHu9l[coo6llleHue] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "игрок не найден в списках")
@@ -5204,7 +5204,13 @@ do
 							urpoKu_gJI9l_oTo6paJeHu9l[Huk] = false
 						end
 						if urpoKu_gJI9l_oTo6paJeHu9l[Huk] then
-							pcall(function() Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z) end)
+							local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
+							local online = "OFFLINE"
+							if computer.addUser(Huk) then
+								online = "ONLINE"
+								computer.removeUser(HuK)
+							end
+							pcall(function() Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z .. " " .. zoHa .. " " .. online) end)
 							cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 						end
 					end

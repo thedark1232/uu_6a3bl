@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "один сенсор2"
+local Ha3BaHue_o6HoBJIeHu9l = "один сенсор3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1289,6 +1289,7 @@ function koMaHgbl_uu_6a3bl()
 	local casino = 17; t[casino] = casino; Ha3BaHu9l_pa3geJIoB[casino] = "управление казино"
 	local magazin = 18; t[magazin] = magazin; Ha3BaHu9l_pa3geJIoB[magazin] = "управление магазином"
 	local ynpaBJIeHue_aJIucou = 19; t[ynpaBJIeHue_aJIucou] = ynpaBJIeHue_aJIucou; Ha3BaHu9l_pa3geJIoB[ynpaBJIeHue_aJIucou] = "управление " .. Ha3BaHue_6a3bl
+	local one_ceHcop_KoMaHgbl = 19; t[one_ceHcop_KoMaHgbl] = one_ceHcop_KoMaHgbl; Ha3BaHu9l_pa3geJIoB[one_ceHcop_KoMaHgbl] = "команды одного сенсора"
 
 	for i = 1, #t do
 		table.insert(Ta6JIuca_pa3geJIoB, {})
@@ -1529,6 +1530,19 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "расскажи стишок (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "что в сундуке (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "стереть адрес сундука (тиммейт)")
+	
+	--управлением одним сенсором
+	
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция х (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция у (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция з (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор статус переключить (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор статус (админ)")
+	
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], " (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], " (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], " (тиммейт)")
+	
 	
 	
 	--отобразить все разделы в чате
@@ -2544,6 +2558,36 @@ do
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "статус сенсора: " .. r .. "ВЫКЛ")
 		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор коррекция х"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи координату")
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		coo6llleHue = tonumber(coo6llleHue)
+		if coo6llleHue == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		one_ceHcop_x = coo6llleHue
+		configuration[39] = one_ceHcop_x
+		setConfiguration()
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор коррекция у"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи координату")
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		coo6llleHue = tonumber(coo6llleHue)
+		if coo6llleHue == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		one_ceHcop_y = coo6llleHue
+		configuration[40] = one_ceHcop_y
+		setConfiguration()
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор коррекция з"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи координату")
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		coo6llleHue = tonumber(coo6llleHue)
+		if coo6llleHue == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+		one_ceHcop_z = coo6llleHue
+		configuration[41] = one_ceHcop_z
+		setConfiguration()
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
@@ -4826,6 +4870,25 @@ do
 	else
 		one_ceHcop_BKJI = configuration[38]
 	end
+	if configuration[39] == "nil" then
+		configuration[39] = one_ceHcop_x
+		setConfiguration()
+	else
+		one_ceHcop_x = configuration[39]
+	end
+	if configuration[40] == "nil" then
+		configuration[40] = one_ceHcop_y
+		setConfiguration()
+	else
+		one_ceHcop_y = configuration[40]
+	end
+	if configuration[41] == "nil" then
+		configuration[41] = one_ceHcop_z
+		setConfiguration()
+	else
+		one_ceHcop_z = configuration[41]
+	end
+	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
 	end
@@ -5036,7 +5099,7 @@ do
 				end	
 			end)
 		end
-		if one_ceHcop_BKJI then pcall(HauTu_HoBblx_urpokoB) end
+		if one_ceHcop_BKJI == true then pcall(HauTu_HoBblx_urpokoB) end
 		if noka3aTb_O3Y then koJIu4ecTBo_O3Y = "     ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%" else koJIu4ecTBo_O3Y = "" end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then o6bekT_TekcTa_BpeMeHu.setText(hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))) end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then
@@ -5076,9 +5139,9 @@ do
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 				end
-				if one_ceHcop_BKJI then
+				if one_ceHcop_BKJI == true then
 					for Huk, koopgbl in pairs(one_ceHcop_HoBble_urpoku) do
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z)
+						pcall(function() Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z) end)
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 				end

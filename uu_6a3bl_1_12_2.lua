@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "один сенсор8"
+local Ha3BaHue_o6HoBJIeHu9l = "че за баг ебаный"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5206,7 +5206,10 @@ do
 						if urpoKu_gJI9l_oTo6paJeHu9l[Huk] then
 							local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
 							local online = "OFFLINE"
-							computer.removeUser(HuK)
+							term.clear()
+							io.write("перед добавлением игрока Huk ->"); print(Huk)
+							io.read()
+							if Huk then computer.removeUser(HuK) end
 							if computer.addUser(Huk) then
 								online = "ONLINE"
 								computer.removeUser(HuK)

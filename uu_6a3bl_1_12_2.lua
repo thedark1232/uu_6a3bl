@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправления4"
+local Ha3BaHue_o6HoBJIeHu9l = "один сенсор"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10,6 +10,11 @@ local term = require("term")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
 event.shouldInterrupt = function() return false end
+local one_ceHcop_BKJI = false
+local one_ceHcop_x = 0
+local one_ceHcop_y = 0
+local one_ceHcop_z = 0
+local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
 local test_mod = false
 local baza_Bblxog = "база выход" --нужно, чтобы не записывало в логи выход из программы, как будто это ошибка
@@ -22,6 +27,7 @@ local re3epBHblu_6aJIaHc = 500
 local id_money = "customnpcs:npcMoney"
 local dmg_money = 0
 local Tuxuu_pecTapT = false
+local oguH_ceHcop
 local Ta6JIuca_koMnoHeHToB = {}
 local Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB = {}
 local Ta6JIuca_nbegecTaJIoB = {}
@@ -1583,7 +1589,23 @@ function BepHyTb_TaJIucy_qpauJIoB(nyTb_k_JIoraM, paclllupeHue) --ищет все
 	end
 	return Ta6JIuca_nyTeu_JIoroB
 end
-
+function HauTu_HoBblx_urpokoB()
+	--for k, v in pairs(ta6JIuca_ceHcopoB) do
+	local HaugeHHble_urpoku = oguH_ceHcop.getPlayers()
+	for _ , urpok in pairs(HaugeHHble_urpoku) do
+		local cTaTyc_urpoka = oguH_ceHcop.getPlayerByName(urpok.name)
+		one_ceHcop_HoBble_urpoku[urpok.name] = {["status"] = cTaTyc_urpoka, ["sencor_x"] = one_ceHcop_x, ["sencor_y"] = one_ceHcop_y, ["sencor_z"] = one_ceHcop_z}
+	end
+	for Bce_uMeHa_urpokoB, CTaTycbl_urpokoB in pairs(one_ceHcop_HoBble_urpoku) do
+		local no3ucu9l_urpoka = CTaTycbl_urpokoB["status"].all().position
+		one_ceHcop_HoBble_urpoku[Bce_uMeHa_urpokoB].player_x = tostring(math.floor(no3ucu9l_urpoka.x + CTaTycbl_urpokoB["sencor_x"]))
+		one_ceHcop_HoBble_urpoku[Bce_uMeHa_urpokoB].player_y = tostring(math.floor(no3ucu9l_urpoka.y + CTaTycbl_urpokoB["sencor_y"]))
+		one_ceHcop_HoBble_urpoku[Bce_uMeHa_urpokoB].player_z = tostring(math.floor(no3ucu9l_urpoka.z + CTaTycbl_urpokoB["sencor_z"]))
+		if whiteListUsers[Bce_uMeHa_urpokoB] == nil or admin ~= Bce_uMeHa_urpokoB then
+			--filesLibrary.addValue(nytb_k_JIoraM .. Bce_uMeHa_urpokoB, cekyHdbl_gJI9l_JIoroB .. "," .. rJIo6aJIbHa9l_Ta6JIuca_urpokoB[Bce_uMeHa_urpokoB].player_x .. "," .. rJIo6aJIbHa9l_Ta6JIuca_urpokoB[Bce_uMeHa_urpokoB].player_y .. "," .. 	rJIo6aJIbHa9l_Ta6JIuca_urpokoB[Bce_uMeHa_urpokoB].player_z)
+		end
+	end	
+end
 
 do
 	computer.addUser(admin)
@@ -2505,6 +2527,23 @@ do
 		end
 		configuration[38] = Tuxuu_pecTapT
 		setConfiguration()
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор статус переключить"] = function()
+		if component.isAvailable("openperipheral_sensor") then
+			one_ceHcop_BKJI = not one_ceHcop_BKJI
+			configuration[38] = one_ceHcop_BKJI
+			setConfiguration()
+			if one_ceHcop_BKJI then oguH_ceHcop = component.openperipheral_sensor end
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "сенсор не найден")
+		end
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор статус"] = function()
+		if one_ceHcop_BKJI then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "статус сенсора: " .. g .. "ВКЛ")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "статус сенсора: " .. r .. "ВЫКЛ")
+		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
@@ -4781,6 +4820,15 @@ do
 	else
 		re3epBHblu_6aJIaHc = configuration[37]
 	end
+	if configuration[38] == "nil" then
+		configuration[38] = one_ceHcop_BKJI
+		setConfiguration()
+	else
+		one_ceHcop_BKJI = configuration[38]
+	end
+	if one_ceHcop_BKJI then
+		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
+	end
 	
 	--активировать многопоточный режим
 	myThread.init()
@@ -4988,6 +5036,7 @@ do
 				end	
 			end)
 		end
+		if one_ceHcop_BKJI then pcall(HauTu_HoBblx_urpokoB) end
 		if noka3aTb_O3Y then koJIu4ecTBo_O3Y = "     ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%" else koJIu4ecTBo_O3Y = "" end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then o6bekT_TekcTa_BpeMeHu.setText(hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))) end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then
@@ -5025,6 +5074,11 @@ do
 					if cTaTyc_urpoka["player_x"] ~= nil then
 						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
+					end
+				end
+				if one_ceHcop_BKJI then
+					for Huk, koopgbl in pairs(one_ceHcop_HoBble_urpoku) do
+						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.sencor_x .. " y: " .. koopgbl.sencor_y .. " z: " .. koopgbl.sencor_z)
 					end
 				end
 				for moder, _ in pairs(Ta6JIuca_mogeroB_gJI9l_o4koB) do

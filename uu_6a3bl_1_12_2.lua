@@ -17,6 +17,8 @@ local one_ceHcop_z = 0
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
+local TecT_oTkJIuka = false
+local npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = false
 local test_mod = false
 local baza_Bblxog = "база выход" --нужно, чтобы не записывало в логи выход из программы, как будто это ошибка
 local not_exit = true
@@ -186,7 +188,9 @@ local colors_background = {["setWhite"] = function() gpu.setBackground(0xFFFFFF)
 					 
 local Ta6JIuca_npoBepku_online = {}
 	
-local whiteListUsers = {}
+local whiteListUsers = {
+	["The_Dark1232"] = "ok"
+						}
 						
 local Ta6JIuca_mogeroB_gJI9l_o4koB = {
 						["EveryMe"] = "ok",
@@ -616,8 +620,32 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 	end
 end
 function chat_message(event_name, _, nick, msg, msg2, modem_message)
+	nick_gJI9l_npuBeTcTBu9l = nick
 	if msg2 ~= nil then msg = msg2 end
 	msg = unicode.lower(msg)
+	if TecT_oTkJIuka then --тестировать отклик на сообщения
+		if npoBepka_o6coJIl0THo_Bcex_coo6llleHuu then --тестировать обсолютно все сообщения
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник написавшего команду: " .. g .. nick)			
+			if whiteListUsers[nick] ~= nil then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок из вайт листа: " .. g .. "ДА")
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок из вайт листа: " .. r .. "НЕТ")
+			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда: " .. g .. msg)
+			npoBepka_gocTyna_k_KoMaHge(nick)
+		else
+			if string.match(msg, Ha3BaHue_6a3bl) ~= nil then --тестировать только те сообщения, где фигурирует название ии базы		
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник написавшего команду: " .. g .. nick)
+				if whiteListUsers[nick] ~= nil then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок из вайт листа: " .. g .. "ДА")
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок из вайт листа: " .. r .. "НЕТ")
+				end
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда: " .. g .. msg)
+				npoBepka_gocTyna_k_KoMaHge(nick)
+			end
+		end
+	end
 	if test_mod then
 		::again6::
 		if nick == admin then
@@ -639,7 +667,7 @@ function chat_message(event_name, _, nick, msg, msg2, modem_message)
 					end
 				end
 			elseif msg == "база тест туррели" then
-				if KoorguHaTbl_ceJIu_TeppeJIu["The_Dark1232"] ~= nil then
+				if KoorguHaTbl_ceJIu_TeppeJIu[admin] ~= nil then
 					for k,v in ta6JIuca_TyppeJIeu do
 						pcall(component.invoke, k, setArmed, true)
 						pcall(component.invoke, k, powerOn)
@@ -670,17 +698,37 @@ function chat_message(event_name, _, nick, msg, msg2, modem_message)
 			goto again6
 		end
 	else
-		nick_gJI9l_npuBeTcTBu9l = nick
 	--	print("ник пользователя:" .. nick_gJI9l_npuBeTcTBu9l)
-		if nick == admin then
+		if nick == admin and Ta6JIuca_admin_koMaHg[msg] ~= nil then
 			ycnelllHoE_BblnoJIHeHue_koMaHdbl, coo6llleHue_olllu6ku = pcall(Ta6JIuca_admin_koMaHg[msg])
 			if not ycnelllHoE_BblnoJIHeHue_koMaHdbl then zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, coo6llleHue_olllu6ku) end
-		elseif whiteListUsers[nick] ~= nil then
+		elseif whiteListUsers[nick] ~= nil and Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[msg] ~= nil then
 			ycnelllHoE_BblnoJIHeHue_koMaHdbl, coo6llleHue_olllu6ku = pcall(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[msg])
 			if not ycnelllHoE_BblnoJIHeHue_koMaHdbl then zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, coo6llleHue_olllu6ku) end
-		else
+		elseif whiteListUsers[mick] == nil and Ta6JIuca_koMaHg_gJI9l_rocTeu[msg] ~= nil then
 			ycnelllHoE_BblnoJIHeHue_koMaHdbl, coo6llleHue_olllu6ku = pcall(Ta6JIuca_koMaHg_gJI9l_rocTeu[msg])
 			if not ycnelllHoE_BblnoJIHeHue_koMaHdbl then zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, coo6llleHue_olllu6ku) end
+		end
+	end
+end
+function npoBepka_gocTyna_k_KoMaHge(nick)
+	if nick == admin then
+		if Ta6JIuca_admin_koMaHg[msg] ~= nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "админская команда: " .. g .. "НАЙДЕНА")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "админская команда: " .. r .. "НЕ НАЙДЕНА")
+		end
+	elseif whiteListUsers[nick] ~= nil then
+		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[msg] ~= nil
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для тиммейтов: " .. g .. "НАЙДЕНА")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для тиммейтов: " .. r .. "НЕ НАЙДЕНА")
+		end
+	else
+		Ta6JIuca_koMaHg_gJI9l_rocTeu[msg] ~= nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для гостей: " .. g .. "НАЙДЕНА")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для гостей: " .. r .. "НЕ НАЙДЕНА")
 		end
 	end
 end
@@ -727,6 +775,9 @@ function co3gaHue_HoBou_3oHbl(start_x, start_y, start_z, end_x, end_y, end_z, zo
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "зона успешно создана!")
 end
 function npoBepka_HaxoJgeHu9l_B_3oHe(x, y, z)
+	if x == nil or y == nil or z == nil then
+		return "ошибка опеределения координат"
+	end
 	for _, zona in ipairs(zoHbl_JIoroB) do
 		if tonumber(x) > tonumber(zona[1]) and tonumber(x) < tonumber(zona[4]) and tonumber(y) > tonumber(zona[2]) and tonumber(y) < tonumber(zona[5]) and tonumber(z) > tonumber(zona[3]) and tonumber(z) < tonumber(zona[6]) then return zona[7] end
 	end
@@ -1534,9 +1585,12 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "расскажи стишок (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "что в сундуке (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "стереть адрес сундука (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика (тиммейт)") --посмотреть режим теста отклика (вклюено или нет)
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика переключить (тиммейт)") --тестирование отклика алисы на команды чере чат
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика проверка всех сообщений (тиммейт)") --тестировать обсолютно все сообщения от игроков (включено или нет)
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика проверка всех сообщений переключить (тиммейт)") --тестировать все сообщения от игроков (включено или нет)
 	
 	--управлением одним сенсором
-	
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция х (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция у (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция з (админ)")
@@ -1547,7 +1601,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор скрыть игрока (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор отобразить всех (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор скрыть всех (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], " (тиммейт)")
+	
 	
 	
 	
@@ -1675,10 +1729,10 @@ do
 	local nepBa9l_6ykba = unicode.upper(nepBa9l_6ykba)
 	Ta6JIuca_koMnoHeHToB["chat_box"].setName(p .. nepBa9l_6ykba .. ocTaJIbHoe .. gr)
 	--метатаблицы
-	setmetatable(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB, {__index = function() return function() end end})
-	setmetatable(Ta6JIuca_admin_koMaHg, {__index = function() return function() end end})
+	--setmetatable(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB, {__index = function() return function() end end})
+	--setmetatable(Ta6JIuca_admin_koMaHg, {__index = function() return function() end end})
 	setmetatable(Ta6JIuca_koMnoHeHToB, {__index = function() return function() end end})
-	setmetatable(Ta6JIuca_koMaHg_gJI9l_rocTeu, {__index = function() return function() end end})
+	--setmetatable(Ta6JIuca_koMaHg_gJI9l_rocTeu, {__index = function() return function() end end})
 	setmetatable(configuration, {__index = function() return "nil" end})
 	--создание функций команд
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"] = function()
@@ -2616,13 +2670,17 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "модерация будет оповещена")
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " сменить админа"] = function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. 'ввод пароля через монитор компа?')
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. 'введи пароль через монитор компа:')
 		--nick_gJI9l_npuBeTcTBu9l
 		local coo6llleHue = io.read()
 		term.clear()
 		if tostring(coo6llleHue) ~= "1232" then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверно")
 			return
+		end
+		local users = table.pack(computer.users())
+		for k, v in ipairs(users) do
+			computer.removeUser(v)
 		end
 		admin = nick_gJI9l_npuBeTcTBu9l
 		whiteListUsers[admin] = "ok"
@@ -2922,6 +2980,36 @@ do
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса удалить счет " .. coo6llleHue)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. "тест отклика переключить"] = function() ----тестирование отклика алисы на команды чере чат
+		TecT_oTkJIuka = not TecT_oTkJIuka
+		if TecT_oTkJIuka then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. g .. "ВКЛ")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. r .. "ВЫКЛ")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. "тест отклика проверка всех сообщений переключить"] = function() ----тестирование отклика алисы на команды чере чат
+		npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = not npoBepka_o6coJIl0THo_Bcex_coo6llleHuu
+		if npoBepka_o6coJIl0THo_Bcex_coo6llleHuu then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка обсолютно всех сообщений: " .. g .. "ВКЛ")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка обсолютно всех сообщений: " .. r .. "ВЫКЛ")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тест отклика"] = function()
+		if TecT_oTkJIuka then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. g .. "ВКЛ")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. r .. "ВЫКЛ")
+		end
+	end
+	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тест отклика проверка всех сообщений"] = function() ----тестировать обсолютно все сообщения от игроков
+		if npoBepka_o6coJIl0THo_Bcex_coo6llleHuu then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест обсолютно всех сообщений: " .. g .. "ВКЛ")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест обсолютно всех сообщений: " .. r .. "ВЫКЛ")
 		end
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор список игроков"] = function()
@@ -4802,7 +4890,7 @@ do
 	else
 		zagepJka_ygaJieHu9l_coo6llleHuu = configuration[16]
 	end
-	if configuration[18] == "nil" then
+	if configuration[18] == "nil" then --запись админа
 		configuration[18] = admin
 		setConfiguration()
 	else
@@ -4953,6 +5041,9 @@ do
 	else
 		urpoKu_gJI9l_oTo6paJeHu9l = configuration[42]
 	end
+	--конфигурация 43 занята (настройками способа приема сообщений алисой), юзай конфигурацию 44
+	
+	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
 	end
@@ -5001,6 +5092,8 @@ do
 	else
 		event.listen("chat_message", chat_message)
 	end
+	
+	
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
 		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "порт модема для сообщений: " .. g .. "600") end
 		Ta6JIuca_koMnoHeHToB["modem"].open(600)
@@ -5218,8 +5311,8 @@ do
 								online = "ONLINE"
 								computer.removeUser(Huk)
 							end
+							local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
 							pcall(function()
-								local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
 								Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z .. " " .. zoHa .. " " .. online)
 							end)
 							cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10

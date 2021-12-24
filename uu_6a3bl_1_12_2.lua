@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "подключение событий"
+local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -14,9 +14,11 @@ local one_ceHcop_BKJI = false
 local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
+local cucTeMHbl_napaMeTpbl_KoMna
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
+local noTok_B_o4Kax = {}
 local agpec_agMuH_MocTa = "123"
 local TecT_oTkJIuka = false
 local npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = false
@@ -1684,17 +1686,36 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
+function HoBblu_noTok(nick)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан для: " .. g .. nick)
+	local Text_CuCTeMHblx_napaMeTpoB = component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
+	
+	while true do
+		Text_CuCTeMHblx_napaMeTpoB.setText(cucTeMHbl_napaMeTpbl_KoMna)
+		component.invoke(agpec_agMuH_MocTa, "sync")
+		os.sleep(0.1)
+	end
+end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название события: " .. g .. tostring(event_type))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес1: " .. g .. tostring(agrecc))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес2: " .. g .. tostring(agrecc2))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока: " .. g .. tostring(nick))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название события: " .. g .. tostring(event_type))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес1: " .. g .. tostring(agrecc))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес2: " .. g .. tostring(agrecc2))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока: " .. g .. tostring(nick))
+	
+	if noTok_B_o4Kax[nick] == nil then
+		noTok_B_o4Kax[nick] = myThread.create(HoBblu_noTok, nick)
+	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название события: " .. g .. tostring(event_type))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес1: " .. g .. tostring(agrecc))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес2: " .. g .. tostring(agrecc2))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока: " .. g .. tostring(nick))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название события: " .. g .. tostring(event_type))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес1: " .. g .. tostring(agrecc))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес2: " .. g .. tostring(agrecc2))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока: " .. g .. tostring(nick))
+	if noTok_B_o4Kax[nick] ~= nil then
+		myThread.kill(noTok_B_o4Kax[nick])
+		noTok_B_o4Kax[nick] = nil
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток уничтожен для: " .. g .. nick)	
+	end
 end
 
 
@@ -5341,9 +5362,9 @@ do
 				end
 			end
 			if not o6HapyJeH_4yJou_urpok then
-				local cucTeMHbl_napaMeTpbl_KoMna = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))
+				cucTeMHbl_napaMeTpbl_KoMna = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))
 				component.invoke(agpec_agMuH_MocTa, "clear")
-				component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
+				--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
 				local koorguHaTa_o4koB = cMellleHue_BblBoga_o4koB_no_y + 10
 				local oTcopTupoBaHHa9l_Ta6JIuca = {}
 				for k, v in ipairs(TekcT_gJI9l_BugJeToB) do table.insert(oTcopTupoBaHHa9l_Ta6JIuca, {v, cBeT_gJI9l_o4koB[k]}) end

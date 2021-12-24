@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "дебаг"
+local Ha3BaHue_o6HoBJIeHu9l = "замена адресов моста"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -17,7 +17,7 @@ local one_ceHcop_z = 0
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
-local agpec_agMuH_MocTa = ""
+local agpec_agMuH_MocTa = "123"
 local TecT_oTkJIuka = false
 local npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = false
 local test_mod = false
@@ -442,9 +442,9 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	event.ignore("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
 	event.ignore("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
-		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
-		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		component.invoke(agpec_agMuH_MocTa, "clear")
+		component.invoke(agpec_agMuH_MocTa, "addText", 1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
+		component.invoke(agpec_agMuH_MocTa, "sync")
 	end
 	myThread.killAll()
 	computer.addUser(admin)
@@ -1711,9 +1711,9 @@ do
 	math.randomseed(os.time())
 	--сообщение на очки
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
-		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "ВКЛЮЧЕНИЕ СЕТИ")
-		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		component.invoke(agpec_agMuH_MocTa, "clear")
+		component.invoke(agpec_agMuH_MocTa, "addText", 1, 1, "ВКЛЮЧЕНИЕ СЕТИ")
+		component.invoke(agpec_agMuH_MocTa, "sync")
 	end
 	--присвоение названия базе
 	if configuration[11] == "nil" or configuration[11] == "" or configuration[11] == nil then --конфиг названия базы
@@ -4726,7 +4726,7 @@ do
 	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " на ком очки"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-			local Bce_noJIb3oBaTeJIu = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getUsers()
+			local Bce_noJIb3oBaTeJIu = component.invoke(agpec_agMuH_MocTa, "getUsers")
 			for k, v in ipairs(Bce_noJIb3oBaTeJIu) do
 				if whiteListUsers[v.name] ~= nil then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. k .. ": " .. g .. v.name)
@@ -5052,6 +5052,7 @@ do
 	
 	print("проверка адреса админ моста")
 	local ycnelllHoe_co3gaHue_agMuckoro_MocTa, _ = pcall(component.setPrimary, "openperipheral_bridge", agpec_agMuH_MocTa)
+	io.write("agpec_agMuH_MocTa-> "); print(agpec_agMuH_MocTa)
 	io.write("ycnelllHoe_co3gaHue_agMuckoro_MocTa-> "); print(ycnelllHoe_co3gaHue_agMuckoro_MocTa)
 	io.read()
 	if not ycnelllHoe_co3gaHue_agMuckoro_MocTa then
@@ -5309,25 +5310,25 @@ do
 			Ta6JIuca_gucTaHcuu_pagapa = Ta6JIuca_koMnoHeHToB["radar"].getPlayers(gucTaHcu9l_pagapa)
 		end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-			local Ha_KoM_ogeTbl_o4ku = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getUsers()
+			local Ha_KoM_ogeTbl_o4ku = component.invoke(agpec_agMuH_MocTa, "getUsers")
 			local o6HapyJeH_4yJou_urpok = false
 			for _, ta6JIuca_noJIb3oBaTeJIeu in pairs(Ha_KoM_ogeTbl_o4ku) do
 				if whiteListUsers[ta6JIuca_noJIb3oBaTeJIeu.name] == nil then
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, cMellleHue_BblBoga_o4koB_no_y + 10, "ОБНАРУЖЕН ПОСТОРОННИЙ ИГРОК В ОЧКАХ " .. tostring(ta6JIuca_noJIb3oBaTeJIeu.name))
+					component.invoke(agpec_agMuH_MocTa, "clear")
+					component.invoke(agpec_agMuH_MocTa, "addText", 1, cMellleHue_BblBoga_o4koB_no_y + 10, "ОБНАРУЖЕН ПОСТОРОННИЙ ИГРОК В ОЧКАХ " .. tostring(ta6JIuca_noJIb3oBaTeJIeu.name))
 					o6HapyJeH_4yJou_urpok = true
 				end
 			end
 			if not o6HapyJeH_4yJou_urpok then
 				local cucTeMHbl_napaMeTpbl_KoMna = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))
-				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
-				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
+				component.invoke(agpec_agMuH_MocTa, "clear")
+				component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
 				local koorguHaTa_o4koB = cMellleHue_BblBoga_o4koB_no_y + 10
 				local oTcopTupoBaHHa9l_Ta6JIuca = {}
 				for k, v in ipairs(TekcT_gJI9l_BugJeToB) do table.insert(oTcopTupoBaHHa9l_Ta6JIuca, {v, cBeT_gJI9l_o4koB[k]}) end
 				table.sort(oTcopTupoBaHHa9l_Ta6JIuca, mySort)
 				for _, zHa4eHue_Ta6JIucbl in ipairs(oTcopTupoBaHHa9l_Ta6JIuca) do
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, koorguHaTa_o4koB, zHa4eHue_Ta6JIucbl[1], zHa4eHue_Ta6JIucbl[2])
+					component.invoke(agpec_agMuH_MocTa, "addText", 1, koorguHaTa_o4koB, zHa4eHue_Ta6JIucbl[1], zHa4eHue_Ta6JIucbl[2])
 					koorguHaTa_o4koB = koorguHaTa_o4koB + 10
 				end
 				if oTnpaBJl9lTb_JIor_c_geTekTopoB then
@@ -5338,7 +5339,7 @@ do
 				local cMellleHue_oTo6paJeHu9l_TekcTa_no_y = koorguHaTa_o4koB + 10
 				for uM9l_urpoka, cTaTyc_urpoka in pairs(rJIo6aJIbHa9l_Ta6JIuca_urpokoB) do	--отображение игроков через сенсор
 					if cTaTyc_urpoka["player_x"] ~= nil then
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
+						component.invoke(agpec_agMuH_MocTa, "addText" 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 				end
@@ -5359,7 +5360,7 @@ do
 							end
 							local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
 							pcall(function()
-								Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z .. " " .. zoHa .. " " .. online)
+								component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z .. " " .. zoHa .. " " .. online)
 							end)
 							cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 						end
@@ -5367,23 +5368,23 @@ do
 				end
 				for moder, _ in pairs(Ta6JIuca_mogeroB_gJI9l_o4koB) do
 					if computer.addUser(moder) then
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, tostring(moder) .. " - ONLINE")
+						component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, tostring(moder) .. " - ONLINE")
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 					computer.removeUser(moder)
 				end
 				if coo6llleHue_TuHHeJI9l and #coo6llleHue_TuHHeJI9l > 0 and coo6llleHue_TuHHeJI9l[1] == "лог детекторов" then
 					for i = 2, #coo6llleHue_TuHHeJI9l do
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, coo6llleHue_TuHHeJI9l[i])
+						component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, coo6llleHue_TuHHeJI9l[i])
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 				end
 				if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then 
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ДИСТ. ОТ ЦЕНТРА МЭ:")
+					component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ДИСТ. ОТ ЦЕНТРА МЭ:")
 					cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 				end
 				for k, v in ipairs(Ta6JIuca_gucTaHcuu_pagapa) do
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, v.name .. ": " .. tostring(math.floor(v.distance)))
+					component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, v.name .. ": " .. tostring(math.floor(v.distance)))
 					cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 				end
 				koopguHaTa_coo6llleHu9l_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y
@@ -5391,7 +5392,7 @@ do
 			for i = 1, #Ta6JIuca_coo6llleHuu do
 				pcall(function()
 					if Ta6JIuca_coo6llleHuu[i][2] > cekyHdbl_gJI9l_JIoroB then
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ta6JIuca_coo6llleHuu[i][1], red)
+						component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ta6JIuca_coo6llleHuu[i][1], red)
 						koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 					else
 						Ta6JIuca_coo6llleHuu[i] = nil
@@ -5399,7 +5400,7 @@ do
 				end)
 			end
 			if coo6llleHue_oT_redstone then
-				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. teKcT_coo6llleHu9l, red)
+				component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. teKcT_coo6llleHu9l, red)
 				koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 			end
 			if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 and MaTpuca_cBo6ogHa then
@@ -5410,11 +5411,11 @@ do
 			end
 			if coo6llleHue_OT_MaTpucbl ~= nil and #coo6llleHue_OT_MaTpucbl > 0 then
 				for _, v in ipairs(coo6llleHue_OT_MaTpucbl) do
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. tostring(v), red)
+					component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. tostring(v), red)
 					koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 				end
 			end
-			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+			component.invoke(agpec_agMuH_MocTa, "sync")
 		end
 		if BblBog_JIoroB_urpokoB_Ha_MoHuTop and cekyHdbl_gJI9l_JIoroB > BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop then
 			BblBog_akTuBHocTu_urpokoB_Ha_MoHuTop(true)
@@ -5434,9 +5435,9 @@ do
 	end
 end
 if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
-	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
-	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+	component.invoke(agpec_agMuH_MocTa, "clear")
+	component.invoke(agpec_agMuH_MocTa, "addText", 1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
+	component.invoke(agpec_agMuH_MocTa, "sync")
 end
 computer.addUser(admin)
 typpeJIu_reJum_orH9l(false)

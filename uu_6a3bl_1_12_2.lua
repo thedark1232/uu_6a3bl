@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "адрес админ моста"
+local Ha3BaHue_o6HoBJIeHu9l = "дебаг"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -17,9 +17,7 @@ local one_ceHcop_z = 0
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
-
-local agMuHcKuu_MocT = ""
-
+local agpec_agMuH_MocTa = ""
 local TecT_oTkJIuka = false
 local npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = false
 local test_mod = false
@@ -5046,13 +5044,16 @@ do
 	end
 	--конфигурация 43 занята (настройками способа приема сообщений алисой), юзай конфигурацию 44
 	if configuration[44] == "nil" then
-		configuration[44] = agMuHcKuu_MocT
+		configuration[44] = agpec_agMuH_MocTa
 		setConfiguration()
 	else
 		agpec_agMuH_MocTa = configuration[44]
 	end
 	
+	print("проверка адреса админ моста")
 	local ycnelllHoe_co3gaHue_agMuckoro_MocTa, _ = pcall(component.setPrimary, "openperipheral_bridge", agpec_agMuH_MocTa)
+	io.write("ycnelllHoe_co3gaHue_agMuckoro_MocTa-> "); print(ycnelllHoe_co3gaHue_agMuckoro_MocTa)
+	io.read()
 	if not ycnelllHoe_co3gaHue_agMuckoro_MocTa then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес админского моста не найден")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "или устарел")

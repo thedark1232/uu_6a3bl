@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков2"
+local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1687,13 +1687,19 @@ function HauTu_HoBblx_urpokoB()
 	end	
 end
 function HoBblu_noTok(nick)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан для: " .. g .. nick)
-	local Text_CuCTeMHblx_napaMeTpoB = component.invoke(agpec_agMuH_MocTa, "addText", 2, 40, cucTeMHbl_napaMeTpbl_KoMna)
-	
-	while true do
-		Text_CuCTeMHblx_napaMeTpoB.setText(cucTeMHbl_napaMeTpbl_KoMna)
-		component.invoke(agpec_agMuH_MocTa, "sync")
-		os.sleep(0.1)
+	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан для: " .. g .. nick)
+		local Text_CuCTeMHblx_napaMeTpoB = component.invoke(agpec_agMuH_MocTa, "addText", 2, 40, cucTeMHbl_napaMeTpbl_KoMna)
+		
+		while true do
+			Text_CuCTeMHblx_napaMeTpoB.setText(cucTeMHbl_napaMeTpbl_KoMna)
+			component.invoke(agpec_agMuH_MocTa, "sync")
+			os.sleep(0.1)
+		end
+	end)
+	if not cTaTyc_BblnoJIHeHu9l then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка в потоке: " .. g .. nick)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. onucaHue_olllu6ku)
 	end
 end
 function glasses_capture(event_type, agrecc, nick, agrecc2)

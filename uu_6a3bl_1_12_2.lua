@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "исправление багов"
+local Ha3BaHue_o6HoBJIeHu9l = "подключение событий"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -441,6 +441,9 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	event.ignore("glasses_chat_message", chat_message)
 	event.ignore("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
 	event.ignore("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
+	event.ignore("glasses_capture", glasses_capture)
+	event.ignore("glasses_release", glasses_release)
+	
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 		component.invoke(agpec_agMuH_MocTa, "clear")
 		component.invoke(agpec_agMuH_MocTa, "addText", 1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
@@ -1681,6 +1684,19 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
+function glasses_capture(event_type, agrecc, nick, agrecc2)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название события: " .. g .. tostring(event_type))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес1: " .. g .. tostring(agrecc))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес2: " .. g .. tostring(agrecc2))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока: " .. g .. tostring(nick))
+end
+function glasses_release(event_type, agrecc, nick, agrecc2)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название события: " .. g .. tostring(event_type))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес1: " .. g .. tostring(agrecc))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес2: " .. g .. tostring(agrecc2))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока: " .. g .. tostring(nick))
+end
+
 
 do
 	computer.addUser(admin)
@@ -5142,6 +5158,8 @@ do
 	else
 		event.listen("chat_message", chat_message)
 	end
+	event.listen("glasses_capture", glasses_capture)
+	event.listen("glasses_release", glasses_release)
 	
 	
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then

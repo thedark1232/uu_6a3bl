@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "привет хуярки трололо"
+local Ha3BaHue_o6HoBJIeHu9l = "адрес админ моста"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -17,6 +17,9 @@ local one_ceHcop_z = 0
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
+
+local agMuHcKuu_MocT = ""
+
 local TecT_oTkJIuka = false
 local npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = false
 local test_mod = false
@@ -719,13 +722,13 @@ function npoBepka_gocTyna_k_KoMaHge(nick)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "админская команда: " .. r .. "НЕ НАЙДЕНА")
 		end
 	elseif whiteListUsers[nick] ~= nil then
-		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[msg] ~= nil
+		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[msg] ~= nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для тиммейтов: " .. g .. "НАЙДЕНА")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для тиммейтов: " .. r .. "НЕ НАЙДЕНА")
 		end
 	else
-		Ta6JIuca_koMaHg_gJI9l_rocTeu[msg] ~= nil then
+		if Ta6JIuca_koMaHg_gJI9l_rocTeu[msg] ~= nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для гостей: " .. g .. "НАЙДЕНА")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для гостей: " .. r .. "НЕ НАЙДЕНА")
@@ -1688,8 +1691,8 @@ do
 	--проверка доступности компонентов
 	zarpy3ka_koMnoHeHToB()
 	--загрузка библиотеки
-	tape_drive = getLibrary("tape_loader")	
 	filesLibrary = getLibrary("filesLibrary")
+	tape_drive = getLibrary("tape_loader")	
 	myComponentsLibrary = getLibrary("myComponentsLibrary")
 	JIor_viewer_detectors = getLibrary("JIor_viewer_detectors")
 	raidLibrary = getLibrary("raidLibrary")
@@ -5042,7 +5045,49 @@ do
 		urpoKu_gJI9l_oTo6paJeHu9l = configuration[42]
 	end
 	--конфигурация 43 занята (настройками способа приема сообщений алисой), юзай конфигурацию 44
+	if configuration[44] == "nil" then
+		configuration[44] = agMuHcKuu_MocT
+		setConfiguration()
+	else
+		agpec_agMuH_MocTa = configuration[44]
+	end
 	
+	local ycnelllHoe_co3gaHue_agMuckoro_MocTa, _ = pcall(component.setPrimary, "openperipheral_bridge", agpec_agMuH_MocTa)
+	if not ycnelllHoe_co3gaHue_agMuckoro_MocTa then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес админского моста не найден")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "или устарел")
+		local Bce_MocTbl = component.list("openperipheral_bridge")
+		local koJIu4ecTBo_MocToB = 0
+		for agreca_MocToB, _ in pairs(Bce_MocTbl) do
+			koJIu4ecTBo_MocToB = koJIu4ecTBo_MocToB + 1
+		end
+		if koJIu4ecTBo_MocToB == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "мосты не найдены")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подключи хотя бы 1 мост к ии базы")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компьютер будет выключен")
+			computer.shutdown()
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введи 3 цифры адреса админского моста")
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+		if not BBog_koppekTeH then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "время истекло")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ии базы будет выключена")
+			computer.shutdown()
+		end
+		for agreca_MocToB, _ in pairs(Bce_MocTbl) do
+			if string.sub(agreca_MocToB, 1, 3) == coo6llleHue then		
+				agMuHcKuu_MocT = agreca_MocToB
+				configuration[44] = agMuHcKuu_MocT
+				setConfiguration()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес моста найден и сохранен")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выполняю рестарт сети")
+				computer.shutdown(true)
+			end
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес моста не найден")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ии базы будет выключена")
+		computer.shutdown()
+	end
 	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end

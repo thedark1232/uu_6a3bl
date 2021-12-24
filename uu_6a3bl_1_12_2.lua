@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков3"
+local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1690,7 +1690,11 @@ function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан для: " .. g .. nick)
 		local Text_CuCTeMHblx_napaMeTpoB = component.invoke(agpec_agMuH_MocTa, "addText", 2, 40, cucTeMHbl_napaMeTpbl_KoMna)
-		
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тип: " .. type(Text_CuCTeMHblx_napaMeTpoB))
+		for k, v in pairs(Text_CuCTeMHblx_napaMeTpoB) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. " " .. tostring(V))
+		end
+	
 		while true do
 			Text_CuCTeMHblx_napaMeTpoB.setText(cucTeMHbl_napaMeTpbl_KoMna)
 			component.invoke(agpec_agMuH_MocTa, "sync")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков"
+local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1688,7 +1688,7 @@ function HauTu_HoBblx_urpokoB()
 end
 function HoBblu_noTok(nick)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан для: " .. g .. nick)
-	local Text_CuCTeMHblx_napaMeTpoB = component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
+	local Text_CuCTeMHblx_napaMeTpoB = component.invoke(agpec_agMuH_MocTa, "addText", 2, 40, cucTeMHbl_napaMeTpbl_KoMna)
 	
 	while true do
 		Text_CuCTeMHblx_napaMeTpoB.setText(cucTeMHbl_napaMeTpbl_KoMna)
@@ -5364,7 +5364,7 @@ do
 			if not o6HapyJeH_4yJou_urpok then
 				cucTeMHbl_napaMeTpbl_KoMna = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))
 				component.invoke(agpec_agMuH_MocTa, "clear")
-				--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
+				component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
 				local koorguHaTa_o4koB = cMellleHue_BblBoga_o4koB_no_y + 10
 				local oTcopTupoBaHHa9l_Ta6JIuca = {}
 				for k, v in ipairs(TekcT_gJI9l_BugJeToB) do table.insert(oTcopTupoBaHHa9l_Ta6JIuca, {v, cBeT_gJI9l_o4koB[k]}) end

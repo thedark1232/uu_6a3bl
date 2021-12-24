@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "замена адресов моста"
+local Ha3BaHue_o6HoBJIeHu9l = "исправление багов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1704,6 +1704,56 @@ do
 	else
 		Tuxuu_pecTapT = configuration[38]
 	end
+	
+	--определение адреса админ моста
+	if configuration[44] == "nil" then
+		configuration[44] = agpec_agMuH_MocTa
+		setConfiguration()
+	else
+		agpec_agMuH_MocTa = configuration[44]
+	end
+	
+	--print("проверка адреса админ моста")
+	local ycnelllHoe_co3gaHue_agMuckoro_MocTa, _ = pcall(component.setPrimary, "openperipheral_bridge", agpec_agMuH_MocTa)
+	--io.write("agpec_agMuH_MocTa-> "); print(agpec_agMuH_MocTa)
+	--io.write("ycnelllHoe_co3gaHue_agMuckoro_MocTa-> "); print(ycnelllHoe_co3gaHue_agMuckoro_MocTa)
+	--io.read()
+	if not ycnelllHoe_co3gaHue_agMuckoro_MocTa then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес админского моста не найден")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "или устарел")
+		local Bce_MocTbl = component.list("openperipheral_bridge")
+		local koJIu4ecTBo_MocToB = 0
+		for agreca_MocToB, _ in pairs(Bce_MocTbl) do
+			koJIu4ecTBo_MocToB = koJIu4ecTBo_MocToB + 1
+		end
+		if koJIu4ecTBo_MocToB == 0 then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "мосты не найдены")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подключи хотя бы 1 мост к ии базы")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компьютер будет выключен")
+			computer.shutdown()
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введи 3 цифры адреса админского моста")
+		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+		if not BBog_koppekTeH then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "время истекло")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ии базы будет выключена")
+			computer.shutdown()
+		end
+		for agreca_MocToB, _ in pairs(Bce_MocTbl) do
+			if string.sub(agreca_MocToB, 1, 3) == coo6llleHue then		
+				agMuHcKuu_MocT = agreca_MocToB
+				configuration[44] = agMuHcKuu_MocT
+				setConfiguration()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес моста найден и сохранен")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выполняю рестарт сети")
+				computer.shutdown(true)
+			end
+		end
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес моста не найден")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ии базы будет выключена")
+		computer.shutdown()
+	end
+	
 	--приветствие базы на мониторе
 	local TekcT_nocJIe_x = HanuCaTb_6oJIblllou_TekcT(10, 1, {"М", "А", "Л", "Ы", "Ш", "К", "А", "пробел", "пробел", "А", "Л", "И", "С", "А", "двоеточие"}, "setPurple")
 	HanuCaTb_6oJIblllou_TekcT(TekcT_nocJIe_x + 1, 1, {"З", "А", "Г", "Р", "У", "З", "К", "А"}, "setYellow")
@@ -5042,54 +5092,7 @@ do
 	else
 		urpoKu_gJI9l_oTo6paJeHu9l = configuration[42]
 	end
-	--конфигурация 43 занята (настройками способа приема сообщений алисой), юзай конфигурацию 44
-	if configuration[44] == "nil" then
-		configuration[44] = agpec_agMuH_MocTa
-		setConfiguration()
-	else
-		agpec_agMuH_MocTa = configuration[44]
-	end
-	
-	print("проверка адреса админ моста")
-	local ycnelllHoe_co3gaHue_agMuckoro_MocTa, _ = pcall(component.setPrimary, "openperipheral_bridge", agpec_agMuH_MocTa)
-	io.write("agpec_agMuH_MocTa-> "); print(agpec_agMuH_MocTa)
-	io.write("ycnelllHoe_co3gaHue_agMuckoro_MocTa-> "); print(ycnelllHoe_co3gaHue_agMuckoro_MocTa)
-	io.read()
-	if not ycnelllHoe_co3gaHue_agMuckoro_MocTa then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес админского моста не найден")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "или устарел")
-		local Bce_MocTbl = component.list("openperipheral_bridge")
-		local koJIu4ecTBo_MocToB = 0
-		for agreca_MocToB, _ in pairs(Bce_MocTbl) do
-			koJIu4ecTBo_MocToB = koJIu4ecTBo_MocToB + 1
-		end
-		if koJIu4ecTBo_MocToB == 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "мосты не найдены")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подключи хотя бы 1 мост к ии базы")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компьютер будет выключен")
-			computer.shutdown()
-		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введи 3 цифры адреса админского моста")
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
-		if not BBog_koppekTeH then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "время истекло")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ии базы будет выключена")
-			computer.shutdown()
-		end
-		for agreca_MocToB, _ in pairs(Bce_MocTbl) do
-			if string.sub(agreca_MocToB, 1, 3) == coo6llleHue then		
-				agMuHcKuu_MocT = agreca_MocToB
-				configuration[44] = agMuHcKuu_MocT
-				setConfiguration()
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес моста найден и сохранен")
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выполняю рестарт сети")
-				computer.shutdown(true)
-			end
-		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес моста не найден")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ии базы будет выключена")
-		computer.shutdown()
-	end
+	--конфигурация 43 занята (настройками способа приема сообщений алисой), юзай конфигурацию 45
 	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
@@ -5339,7 +5342,7 @@ do
 				local cMellleHue_oTo6paJeHu9l_TekcTa_no_y = koorguHaTa_o4koB + 10
 				for uM9l_urpoka, cTaTyc_urpoka in pairs(rJIo6aJIbHa9l_Ta6JIuca_urpokoB) do	--отображение игроков через сенсор
 					if cTaTyc_urpoka["player_x"] ~= nil then
-						component.invoke(agpec_agMuH_MocTa, "addText" 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
+						component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 				end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков5"
+local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5369,14 +5369,14 @@ do
 			local o6HapyJeH_4yJou_urpok = false
 			for _, ta6JIuca_noJIb3oBaTeJIeu in pairs(Ha_KoM_ogeTbl_o4ku) do
 				if whiteListUsers[ta6JIuca_noJIb3oBaTeJIeu.name] == nil then
-					component.invoke(agpec_agMuH_MocTa, "clear")
+					--component.invoke(agpec_agMuH_MocTa, "clear")
 					component.invoke(agpec_agMuH_MocTa, "addText", 1, cMellleHue_BblBoga_o4koB_no_y + 10, "ОБНАРУЖЕН ПОСТОРОННИЙ ИГРОК В ОЧКАХ " .. tostring(ta6JIuca_noJIb3oBaTeJIeu.name))
 					o6HapyJeH_4yJou_urpok = true
 				end
 			end
 			if not o6HapyJeH_4yJou_urpok then
 				cucTeMHbl_napaMeTpbl_KoMna = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))
-				component.invoke(agpec_agMuH_MocTa, "clear")
+				--component.invoke(agpec_agMuH_MocTa, "clear")
 				component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
 				local koorguHaTa_o4koB = cMellleHue_BblBoga_o4koB_no_y + 10
 				local oTcopTupoBaHHa9l_Ta6JIuca = {}

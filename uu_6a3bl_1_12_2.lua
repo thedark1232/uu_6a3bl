@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка3"
+local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -516,7 +516,9 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 	if y > 0 then --скролл вниз
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "прокрутка вниз")
 		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].h) .. " < " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].max_y) .. " = " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].h < noTok_B_o4Kax[nick .. " main_scroll"][1].max_y))
 			if noTok_B_o4Kax[nick .. " main_scroll"][1].h < noTok_B_o4Kax[nick .. " main_scroll"][1].max_y then
 				noTok_B_o4Kax[nick .. " main_scroll"][1].setY = noTok_B_o4Kax[nick .. " main_scroll"][1].getY + 1
 			end
@@ -1795,6 +1797,7 @@ function creat_new_vertical_scroll(agress, x, y, w, h, min_y, max_y, color_backg
 end
 function vertical_scroll_click(nick)
 	noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = true
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние ползунка: " .. g .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
 end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}

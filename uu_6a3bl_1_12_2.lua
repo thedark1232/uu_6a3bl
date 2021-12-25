@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла3"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1766,7 +1766,7 @@ function creat_main_agmin_form(agrecc)
 		return y
 	end
 	--создание формы
-	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 154, 200, blue)
+	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 159, 200, blue)
 	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 172, white)
@@ -1778,7 +1778,7 @@ function creat_main_agmin_form(agrecc)
 	rawset(table_form.scroll_badur_up, "visible", table_form.scroll_badur_up.setVisible)
 	table_form.scroll_badur_up.setClickable(false)
 	
-	table_form.scroll_line = component.invoke(agrecc, "addLine", {135, 40}, {135, 178})
+	table_form.scroll_line = component.invoke(agrecc, "addLine", {145, 40}, {145, 178})
 	rawset(table_form.scroll_line, "visible", table_form.scroll_line.setVisible)
 	table_form.scroll_line.setClickable(false)
 	

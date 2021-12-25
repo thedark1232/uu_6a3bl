@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы6"
+local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -14,7 +14,9 @@ local one_ceHcop_BKJI = false
 local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
-local cucTeMHbl_napaMeTpbl_KoMna
+local napaMeTp_BpeMeHu
+local napaMeTp_eHepruu
+local napaMeTp_o3y
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
@@ -93,7 +95,6 @@ local hous, minute, secunde
 local o6bekT_TekcTa_BpeMeHu
 local TekcToBble_BugJeTbl_nog_DeTecTopbl = {}
 local koJIu4ecTBo_BugJeToB_nog_geTekTopbl = 7
-local noka3aTb_O3Y, koJIu4ecTBo_O3Y
 local zagepJka = 0.1
 local KoorguHaTbl_ceJIu_TeppeJIu = {}
 local agpec_gucka_uu_6a3bl = ""
@@ -1692,7 +1693,11 @@ end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 50, 50, blue)
-	table_form.TekcT_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, cucTeMHbl_napaMeTpbl_KoMna)
+	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
+	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
+	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)
+	
+	
 	component.invoke(agrecc, "sync")
 	return table_form
 end
@@ -1712,7 +1717,9 @@ function HoBblu_noTok(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")
 	
 		while true do
-			noTok_B_o4Kax[nick].TekcT_BpeMeHu.setText(cucTeMHbl_napaMeTpbl_KoMna)
+			noTok_B_o4Kax[nick].napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
+			noTok_B_o4Kax[nick].napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
+			noTok_B_o4Kax[nick].napaMeTp_o3y.setText(napaMeTp_o3y)
 			component.invoke(agpec_agMuH_MocTa, "sync")
 			os.sleep(0.1)
 		end
@@ -4324,20 +4331,6 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи озу"] = function()
-		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
-		noka3aTb_O3Y = true
-		configuration[7] = true
-		setConfiguration()
-	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " скрой озу"] = function()
-		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
-		noka3aTb_O3Y = false
-		configuration[7] = false
-		setConfiguration()
-	end
 	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи мои команды"] = function()
 		local c4eT4uk = 1
 		if nick_gJI9l_npuBeTcTBu9l == admin then
@@ -4936,18 +4929,6 @@ do
 			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "modem = " .. r .. "пробуждение = ?") end
 		end
 	end
-	if configuration[7] == "nil" then --показ ОЗУ в очках
-		noka3aTb_O3Y = false
-		configuration[7] = false
-		setConfiguration()
-		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто") end
-	elseif configuration[7] == true then
-		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. g .. " показ") end
-		noka3aTb_O3Y = configuration[7]
-	else
-		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ОЗУ:" .. r .. " скрыто") end
-		noka3aTb_O3Y = configuration[7]
-	end
 	if configuration[9] == "nil" then --конфиг таблицы вайт листа
 		configuration[9] = whiteListUsers
 		setConfiguration()
@@ -5379,8 +5360,10 @@ do
 			end)
 		end
 		if one_ceHcop_BKJI == true then pcall(HauTu_HoBblx_urpokoB) end
-		if noka3aTb_O3Y then koJIu4ecTBo_O3Y = "     ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%" else koJIu4ecTBo_O3Y = "" end
-		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then o6bekT_TekcTa_BpeMeHu.setText(hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))) end
+		napaMeTp_BpeMeHu = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde
+		napaMeTp_eHepruu = "энергия компа: " .. tostring(math.floor(computer.energy()))
+		napaMeTp_o3y = "ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%" else napaMeTp_o3y = "" end
+		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then o6bekT_TekcTa_BpeMeHu.setText(hous .. ":" .. minute .. ":" .. secunde .. napaMeTp_o3y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))) end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then
 			Ta6JIuca_gucTaHcuu_pagapa = Ta6JIuca_koMnoHeHToB["radar"].getPlayers(gucTaHcu9l_pagapa)
 		end
@@ -5395,9 +5378,8 @@ do
 				end
 			end
 			if not o6HapyJeH_4yJou_urpok then
-				cucTeMHbl_napaMeTpbl_KoMna = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))
 				--component.invoke(agpec_agMuH_MocTa, "clear")
-				--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
+				--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, napaMeTp_BpeMeHu)
 				local koorguHaTa_o4koB = cMellleHue_BblBoga_o4koB_no_y + 10
 				local oTcopTupoBaHHa9l_Ta6JIuca = {}
 				for k, v in ipairs(TekcT_gJI9l_BugJeToB) do table.insert(oTcopTupoBaHHa9l_Ta6JIuca, {v, cBeT_gJI9l_o4koB[k]}) end
@@ -5407,7 +5389,7 @@ do
 					koorguHaTa_o4koB = koorguHaTa_o4koB + 10
 				end
 				if oTnpaBJl9lTb_JIor_c_geTekTopoB then
-					table.insert(TekcT_gJI9l_BugJeToB, cucTeMHbl_napaMeTpbl_KoMna)
+					table.insert(TekcT_gJI9l_BugJeToB, napaMeTp_BpeMeHu)
 					table.insert(TekcT_gJI9l_BugJeToB, 1, "лог детекторов")
 					tunnel.send(serialization.serialize(TekcT_gJI9l_BugJeToB))
 				end

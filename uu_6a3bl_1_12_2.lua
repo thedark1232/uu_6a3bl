@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы10"
+local Ha3BaHue_o6HoBJIeHu9l = "тест 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1693,7 +1693,8 @@ end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 140, 200, blue)
-	table_form.main_box2 = component.invoke(agrecc, "addBox", 2, 30, 134, 168, whihe)
+	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, whihe)
+	table_form.button_reboot = component.invoke(agrecc, "addBox", 6, 32, 130, green)
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
 	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
 	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)

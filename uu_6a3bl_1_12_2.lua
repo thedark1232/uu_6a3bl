@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 14"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 15"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1757,6 +1757,18 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 	
 	return table_button
 end
+function creat_new_vertical_scroll(agress, x, y, w, h, min_y, max_y, color_background, scroll_function)
+	local table_scroll
+	
+	table_scroll = component.invoke(agress, "addBox", x, y, w, h, color_background)
+	rawset(table_scroll, "min_y", min_y)
+	rawset(table_scroll, "max_y", max_y)
+	rawset(table_scroll, "visible", table_scroll.setVisible)
+	rawset(table_button, "getType", "scroll_button")
+	
+	return table_scroll
+end
+
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	
@@ -1780,7 +1792,7 @@ function creat_main_agmin_form(agrecc)
 	table_form.scroll_badur_down = component.invoke(agrecc, "addBox", 140, 192, 10, 10, gray)
 	rawset(table_form.scroll_badur_down, "visible", table_form.scroll_badur_down.setVisible)
 	table_form.scroll_badur_down.setClickable(false)
-
+	
 	--информационный текст
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 4, 2, napaMeTp_BpeMeHu)
 	rawset(table_form.napaMeTp_BpeMeHu, "visible", table_form.napaMeTp_BpeMeHu.setVisible)
@@ -1794,7 +1806,14 @@ function creat_main_agmin_form(agrecc)
 	
 	return table_form
 end
-
+function creat_main_scroll(agrecc)
+	local main_scroll = {}
+	table.insert(main_scroll, creat_new_vertical_scroll(agrecc, 140, 40, 10, 50, 40, 192, gray, function()
+		
+	
+	end))
+	return main_scroll
+end
 function creat_main_buttons(agrecc)
 	local y = 32
 	local y_func = function()
@@ -1840,7 +1859,6 @@ function creat_main_buttons(agrecc)
 	
 	return main_buttons
 end
-
 function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
@@ -1863,6 +1881,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 			noTok_B_o4Kax[nick .. " main_form"] = creat_main_agmin_form(agpec_agMuH_MocTa)
 			noTok_B_o4Kax[nick .. " main_buttons"] = creat_main_buttons(agpec_agMuH_MocTa)
+			moTok_B_o4kax[nick .. " main_scroll"] = creat_main_scroll(agpec_agMuH_MocTa)
 			noTok_B_o4Kax[nick .. "noTok"] = myThread.create(HoBblu_noTok, nick)
 		end
 		for _, v in pairs(noTok_B_o4Kax[nick .. " main_form"]) do

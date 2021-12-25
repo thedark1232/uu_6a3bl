@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 17"
+local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -475,8 +475,12 @@ end
 function glasses_key_up(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_up")
 end
-function glasses_mouse_scroll(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_scroll")
+function glasses_mouse_scroll(event_type, agpec1, nick, agpec2, value)
+	if value > 0 then
+	
+	elseif value < 0 then
+	
+	end
 end
 function glasses_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
@@ -487,8 +491,8 @@ end
 function glasses_component_mouse_wheel(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
 end
-function glasses_component_mouse_down(...)
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_down")
+function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val
+	noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = false
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	for k, v in pairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
@@ -505,8 +509,20 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 		end
 	end
 end
-function glasses_mouse_drag(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_drag")
+function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
+	if y > 0 then --скролл вниз
+		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
+			if noTok_B_o4Kax[nick .. " main_scroll"][1].h < noTok_B_o4Kax[nick .. " main_scroll"][1].max_y then
+				noTok_B_o4Kax[nick .. " main_scroll"][1].setY = noTok_B_o4Kax[nick .. " main_scroll"][1].getY + 1
+			end
+		end
+	elseif y < 0 then --скролл вверх
+		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
+			if noTok_B_o4Kax[nick .. " main_scroll"][1].getY > noTok_B_o4Kax[nick .. " main_scroll"][1].min_y then
+				noTok_B_o4Kax[nick .. " main_scroll"][1].setY = noTok_B_o4Kax[nick .. " main_scroll"][1].getY - 1
+			end
+		end
+	end
 end
 function zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, nepegaBaEMoe_3Ha4eHue)
 	if baza_Bblxog ~= msg then
@@ -1739,6 +1755,7 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
+
 function creat_new_button(agress, x, y, w, h, label, color_background, color_foreground, click_function)
 	local table_button
 	local w2 = math.floor(w / 2)
@@ -1758,17 +1775,22 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 	return table_button
 end
 function creat_new_vertical_scroll(agress, x, y, w, h, min_y, max_y, color_background, scroll_function)
-	local table_scroll
-	
+	local table_scroll	
 	table_scroll = component.invoke(agress, "addBox", x, y, w, h, color_background)
 	rawset(table_scroll, "min_y", min_y)
 	rawset(table_scroll, "max_y", max_y)
 	rawset(table_scroll, "visible", table_scroll.setVisible)
 	rawset(table_scroll, "getType", "scroll_button")
+	rawset(table_scroll, "value", 1)
+	rawset(table_scroll, "enabled", false)
+	rawset(table_scroll, "scroll", scroll_function)
+	rawset(table_scroll, "h", y + h)
 	
 	return table_scroll
 end
-
+function vertical_scroll_click(nick)
+	noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = true
+end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	
@@ -1808,10 +1830,7 @@ function creat_main_agmin_form(agrecc)
 end
 function creat_main_scroll(agrecc)
 	local main_scroll = {}
-	table.insert(main_scroll, creat_new_vertical_scroll(agrecc, 140, 40, 10, 50, 40, 192, white, function()
-		
-	
-	end))
+	table.insert(main_scroll, creat_new_vertical_scroll(agrecc, 140, 40, 10, 50, 40, 192, white, vertical_scroll_click))
 	return main_scroll
 end
 function creat_main_buttons(agrecc)

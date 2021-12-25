@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы3"
+local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1695,7 +1695,7 @@ function creat_main_agmin_form(agrecc)
 	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 50, 50, blue)
 	table_form.TekcT_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, cucTeMHbl_napaMeTpbl_KoMna)
 	component.invoke(agrecc, "sync")
-	
+	return table_form
 end
 function form:new(myTable)
 	myTable = myTable or {}
@@ -1715,7 +1715,7 @@ function HoBblu_noTok(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")
 	
 		while true do
-			noTok_B_o4Kax[nick].setText(cucTeMHbl_napaMeTpbl_KoMna)
+			noTok_B_o4Kax[nick].TekcT_BpeMeHu.setText(cucTeMHbl_napaMeTpbl_KoMna)
 			component.invoke(agpec_agMuH_MocTa, "sync")
 			os.sleep(0.1)
 		end

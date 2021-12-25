@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла5"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -17,6 +17,7 @@ local one_ceHcop_z = 0
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
+local co3gaHue_co6blTuu = true
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
@@ -1778,7 +1779,7 @@ function creat_main_agmin_form(agrecc)
 	rawset(table_form.scroll_badur_up, "visible", table_form.scroll_badur_up.setVisible)
 	table_form.scroll_badur_up.setClickable(false)
 	
-	table_form.scroll_line = component.invoke(agrecc, "addLine", {145, 40}, {145, 178})
+	table_form.scroll_line = component.invoke(agrecc, "addLine", {145, 40}, {145, 192}, white)
 	rawset(table_form.scroll_line, "visible", table_form.scroll_line.setVisible)
 	table_form.scroll_line.setClickable(false)
 	
@@ -5395,26 +5396,6 @@ do
 	whiteListUsers[admin] = "ok"
 	
 	component.invoke(agpec_agMuH_MocTa, "clear")
-
-	event.listen("modem_message", modem_message)
-	event.listen("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
-	event.listen("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
-	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-		event.listen("glasses_chat_message", chat_message)
-	else
-		event.listen("chat_message", chat_message)
-	end
-	event.listen("glasses_capture", glasses_capture)
-	event.listen("glasses_release", glasses_release)
-	event.listen("glasses_key_down", glasses_key_down)
-	event.listen("glasses_key_up", glasses_key_up)
-	event.listen("glasses_mouse_scroll", glasses_mouse_scroll)
-	event.listen("glasses_mouse_down", glasses_mouse_down)
-	event.listen("glasses_mouse_up", glasses_mouse_up)
-	event.listen("glasses_component_mouse_wheel", glasses_component_mouse_wheel)
-	event.listen("glasses_component_mouse_down", glasses_component_mouse_down)
-	event.listen("glasses_component_mouse_up", glasses_component_mouse_up)
-	event.listen("glasses_mouse_drag", glasses_mouse_drag)
 	
 --ГЛАВНЫЙ ЦИКЛ
 	while not_exit do
@@ -5629,6 +5610,28 @@ do
 			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание следующих обновлений в: " .. g .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec)) end
 		end
 		
+		if co3gaHue_co6blTuu then
+			co3gaHue_co6blTuu = not co3gaHue_co6blTuu
+			event.listen("modem_message", modem_message)
+			event.listen("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
+			event.listen("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
+			if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
+				event.listen("glasses_chat_message", chat_message)
+			else
+				event.listen("chat_message", chat_message)
+			end
+			event.listen("glasses_capture", glasses_capture)
+			event.listen("glasses_release", glasses_release)
+			event.listen("glasses_key_down", glasses_key_down)
+			event.listen("glasses_key_up", glasses_key_up)
+			event.listen("glasses_mouse_scroll", glasses_mouse_scroll)
+			event.listen("glasses_mouse_down", glasses_mouse_down)
+			event.listen("glasses_mouse_up", glasses_mouse_up)
+			event.listen("glasses_component_mouse_wheel", glasses_component_mouse_wheel)
+			event.listen("glasses_component_mouse_down", glasses_component_mouse_down)
+			event.listen("glasses_component_mouse_up", glasses_component_mouse_up)
+			event.listen("glasses_mouse_drag", glasses_mouse_drag)
+		end
 	end
 end
 if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then

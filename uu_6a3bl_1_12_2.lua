@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание первой формы"
+local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1597,6 +1597,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика переключить (тиммейт)") --тестирование отклика алисы на команды чере чат
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика проверка всех сообщений (тиммейт)") --тестировать обсолютно все сообщения от игроков (включено или нет)
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика проверка всех сообщений переключить (тиммейт)") --тестировать все сообщения от игроков (включено или нет)
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "показать адрес админ моста (админ)")
 	
 	--управлением одним сенсором
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция х (админ)")
@@ -1704,7 +1705,7 @@ end
 
 function form:addText(x, y, text, color, id)
 	component.invoke(self.glassAgress, "setText", 50, 50, " ")
-	self[nick .. id] = 
+	--self[nick .. id] = 
 end
 
 
@@ -1729,6 +1730,7 @@ end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
 	
 	if noTok_B_o4Kax[nick] == nil then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 		noTok_B_o4Kax[nick] = true
 		creat_main_agmin_form(agpec_agMuH_MocTa)
 		component.invoke(agpec_agMuH_MocTa, "sync")
@@ -2772,6 +2774,9 @@ do
 		one_ceHcop_z = coo6llleHue
 		configuration[41] = one_ceHcop_z
 		setConfiguration()
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать адрес админ моста"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес: " .. g .. agpec_agMuH_MocTa)
 	end
 	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then

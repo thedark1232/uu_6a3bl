@@ -1756,7 +1756,6 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 	end)
 	return table_button
 end
-
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	local oTcTyn = 17
@@ -1767,7 +1766,7 @@ function creat_main_agmin_form(agrecc)
 		return y
 	end
 	--создание формы
-	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 159, 200, blue)
+	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 159, 205, blue)
 	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 172, white)

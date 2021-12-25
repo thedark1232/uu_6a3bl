@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 16"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 17"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1890,7 +1890,10 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 		for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
 			v.visible(true)
 		end	
-		noTok_B_o4Kax[nick .. " main_scroll"].visible(true)
+		for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
+			v.visible(true)
+		end
+		
 	end)
 	if not cTaTyc then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
@@ -1905,6 +1908,9 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
 		v.visible(false)
 	end	
+	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
+		v.visible(false)
+	end
 	noTok_B_o4Kax[nick .. " main_scroll"].visible(false)
 end
 

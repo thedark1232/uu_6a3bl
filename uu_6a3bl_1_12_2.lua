@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла9"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1805,7 +1805,6 @@ function creat_main_agmin_form(agrecc)
 
 	--создание кнопок
 	table_form.main_buttons = {}
-	table_form.main_buttons.visible = function() end
 	
 	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
@@ -1870,7 +1869,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 		for _, v in pairs(noTok_B_o4Kax[nick]) do
 			v.visible(true)
 		end
-		for _, v in pairs(noTok_B_o4Kax[nick].main_buttons) do
+		for _, v in ipairs(noTok_B_o4Kax[nick].main_buttons) do
 			v.visible(true)
 		end			
 	end)
@@ -1884,7 +1883,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	for _, v in pairs(noTok_B_o4Kax[nick]) do
 		v.visible(false)
 	end
-	for _, v in pairs(noTok_B_o4Kax[nick].main_buttons) do
+	for _, v in ipairs(noTok_B_o4Kax[nick].main_buttons) do
 		v.visible(false)
 	end	
 end

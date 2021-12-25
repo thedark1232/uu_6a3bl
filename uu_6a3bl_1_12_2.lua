@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест 25"
+local Ha3BaHue_o6HoBJIeHu9l = "кнопки1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -491,12 +491,8 @@ function glasses_component_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_down")
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	term.clear()
-	io.write("id нажатия->"); print(id)
 	for k, v in pairs(noTok_B_o4Kax[nick]) do
 		if v.getId() == id then
-			--io.write("айди совпало с кнопкой:->"); print(v.caption.getText())
-			--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "нажатие на: " .. g .. v.label)
 			v.click()
 		end
 	end
@@ -1759,12 +1755,16 @@ function creat_main_agmin_form(agrecc)
 	--содание кнопки рестарта
 	table_form.button_reboot = creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, 
 	function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "клик по кнопке рестарта")
+		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
 	end)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id рестарт: " .. tostring(table_form.button_reboot.getId()))
 	--создание кнопки выхода
 	table_form.button_exit = creat_new_button(agrecc, 6, 49, 128, 15, "выход", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "клик по кнопке выход")
+		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]()
+	end)
+	
+	table_form.button_update = creat_new_button(agrecc, 6, 66, 128, 15, "обновить", black, white, function()
+		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]()
 	end)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id выход: " .. tostring(table_form.button_exit.getId()))
 	
@@ -1773,7 +1773,7 @@ function creat_main_agmin_form(agrecc)
 	table_form.napaMeTp_BpeMeHu.setClickable(false)
 	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
 	rawset(table_form.napaMeTp_eHepruu, "visible", table_form.napaMeTp_eHepruu.setVisible)
-	table_form.napaMeTp_BpeMeHu.napaMeTp_eHepruu(false)
+	table_form.napaMeTp_BpeMeHu.setClickable(false)
 	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)
 	rawset(table_form.napaMeTp_o3y, "visible", table_form.napaMeTp_o3y.setVisible)
 	table_form.napaMeTp_o3y.setClickable(false)
@@ -1984,7 +1984,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!")
 		end
 	end	
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удалить тиммейта"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -2859,7 +2859,7 @@ do
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать адрес админ моста"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес: " .. g .. agpec_agMuH_MocTa)
 	end
-	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " привет"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " привет"] = function()
 		if nick_gJI9l_npuBeTcTBu9l == admin then
 			if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("zdraBcTByu_JIopg_The_Dark.dfpwm") end
 		elseif whiteListUsers[nick_gJI9l_npuBeTcTBu9l] ~= nil then
@@ -2870,11 +2870,11 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "Здравствуй " .. nick_gJI9l_npuBeTcTBu9l)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "Как сам?")		
 	end	
-	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " иди нахуй"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " иди нахуй"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "дата и время мата в чате сохранены")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "модерация будет оповещена")
 	end
-	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " сменить админа"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить админа"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. 'введи пароль через монитор компа:')
 		--nick_gJI9l_npuBeTcTBu9l
 		local coo6llleHue = io.read()
@@ -2895,18 +2895,18 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end	
-	Ta6JIuca_koMaHg_gJI9l_rocTeu[Ha3BaHue_6a3bl .. " команды"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " команды"] = function()
 		if koMaHgbl then
 			koMaHgbl = not koMaHgbl
 			koMaHgbl_uu_6a3bl() 
 			koMaHgbl = not koMaHgbl
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино адреса"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино адреса"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "эмы за эмы: " .. g .. agpec_casino_mm)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "шмотки за эмы: " .. g .. agpec_casino_im)
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статус"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино статус"] = function()
 		local mm_HaugeH
 		local im_HaugeH
 		mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
@@ -2981,7 +2981,7 @@ do
 		setConfiguration()
 		return true
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино снять деньги"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"] = function()
 		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статус"]() then
 			local Huk_urpoka = nick_gJI9l_npuBeTcTBu9l
 			
@@ -3064,7 +3064,7 @@ do
 			filesLibrary.creat_file("/home/" .. Huk_urpoka .. ".cas", serialization.serialize(JIoru_u3_qpauJIa))
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино логи списаний"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино логи списаний"] = function()
 		local c4eTa_TuMMeuToB = BepHyTb_TaJIucy_qpauJIoB("/home/", ".cas")
 		if #c4eTa_TuMMeuToB == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "счета тиммейтов не найдены")
@@ -3170,7 +3170,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " магаз счета"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз счета"] = function()
 		if component.isAvailable("modem") then
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(15, "алиса счета")
 		else
@@ -3187,7 +3187,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. "тест отклика переключить"] = function() ----тестирование отклика алисы на команды чере чат
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. "тест отклика переключить"] = function() ----тестирование отклика алисы на команды чере чат
 		TecT_oTkJIuka = not TecT_oTkJIuka
 		if TecT_oTkJIuka then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. g .. "ВКЛ")
@@ -3195,7 +3195,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. r .. "ВЫКЛ")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. "тест отклика проверка всех сообщений переключить"] = function() ----тестирование отклика алисы на команды чере чат
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. "тест отклика проверка всех сообщений переключить"] = function() ----тестирование отклика алисы на команды чере чат
 		npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = not npoBepka_o6coJIl0THo_Bcex_coo6llleHuu
 		if npoBepka_o6coJIl0THo_Bcex_coo6llleHuu then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка обсолютно всех сообщений: " .. g .. "ВКЛ")
@@ -3203,21 +3203,21 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка обсолютно всех сообщений: " .. r .. "ВЫКЛ")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тест отклика"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тест отклика"] = function()
 		if TecT_oTkJIuka then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. g .. "ВКЛ")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. r .. "ВЫКЛ")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тест отклика проверка всех сообщений"] = function() ----тестировать обсолютно все сообщения от игроков
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тест отклика проверка всех сообщений"] = function() ----тестировать обсолютно все сообщения от игроков
 		if npoBepka_o6coJIl0THo_Bcex_coo6llleHuu then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест обсолютно всех сообщений: " .. g .. "ВКЛ")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест обсолютно всех сообщений: " .. r .. "ВЫКЛ")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор список игроков"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор список игроков"] = function()
 		local koJIu4ecTBo_urpokoB_B_cnucke = 0
 		local c4eT4uk_HuKoB = 1
 		for Huk, _ in pairs(one_ceHcop_HoBble_urpoku) do
@@ -3233,7 +3233,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица пуста")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор отобразить игрока"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор отобразить игрока"] = function()
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		if urpoKu_gJI9l_oTo6paJeHu9l[coo6llleHue] == nil then
@@ -3243,7 +3243,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "команды выполнена")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор скрыть игрока"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор скрыть игрока"] = function()
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		if urpoKu_gJI9l_oTo6paJeHu9l[coo6llleHue] == nil then
@@ -3253,19 +3253,19 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "команды выполнена")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор отобразить всех"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор отобразить всех"] = function()
 		for Huk, _ in pairs(urpoKu_gJI9l_oTo6paJeHu9l) do
 			urpoKu_gJI9l_oTo6paJeHu9l[Huk] = true
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "команды выполнена")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор скрыть всех"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор скрыть всех"] = function()
 		for Huk, _ in pairs(urpoKu_gJI9l_oTo6paJeHu9l) do
 			urpoKu_gJI9l_oTo6paJeHu9l[Huk] = false
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "команды выполнена")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " что в сундуке"] = function()
 		agrec_cyHgyka = configuration[25]
 		if agrec_cyHgyka == "nil" then agrec_cyHgyka = nil end
 		if agrec_cyHgyka ~= nil then
@@ -3313,13 +3313,13 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запусти функцию заного")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " стереть адрес сундука"] = function() --адрес сундука для проверки итемов "алиса что в сундуке"
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " стереть адрес сундука"] = function() --адрес сундука для проверки итемов "алиса что в сундуке"
 		agrec_cyHgyka = nil
 		configuration[25] = "nil"
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес сундука стерт!")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " треугольник"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " треугольник"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи нечетное число не больше 100")
 		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(-10000,10000)
 		if not re3yJIbTaT_BBoga then return end
@@ -3351,7 +3351,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. ta6JIuca_cuMBoJIoB[i])
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица крафт"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица крафт"] = function()
 		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
 			return
@@ -3375,14 +3375,14 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт добавлен в очередь")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица состояние"] = function() --состояние свободна или заняа
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние"] = function() --состояние свободна или заняа
 		if MaTpuca_cBo6ogHa then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. g .. "свободна")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. r .. "занята")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица состояние переключить"] = function() --переключить состояние матрицы на свободную, если занята и наоборот
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние переключить"] = function() --переключить состояние матрицы на свободную, если занята и наоборот
 		MaTpuca_cBo6ogHa = not MaTpuca_cBo6ogHa
 		if MaTpuca_cBo6ogHa then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. g .. "свободна")
@@ -3390,7 +3390,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. r .. "занята")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очередь"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очередь"] = function()
 		if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
 			return
@@ -3399,7 +3399,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. v[1].Ha3BaHue .. c .. "(" .. g .. v[2] .. c .. " шт.)")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить всю очередь"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить всю очередь"] = function()
 		if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
 			return
@@ -3409,7 +3409,7 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь удалена")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить из очереди"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить из очереди"] = function()
 		if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очередь пуста")
 			return
@@ -3425,7 +3425,7 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "удалено!")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица инфо"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "способ крафта на матрице:")
 		if me_interface_gJI9l_MaTpucbl then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "заказ командами в чат")
@@ -3444,7 +3444,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "матрица: " .. r .. "занята")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
 		local nepBblu_cJIoT = 1
 		--local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
 		--component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
@@ -3531,7 +3531,7 @@ do
 		end	
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "обработка рецепта завершена!")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица рецепты инфо"] = function() --вывод списка всех рецептов
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепты инфо"] = function() --вывод списка всех рецептов
 		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
 			return
@@ -3541,7 +3541,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. g .. pecenT.Ha3BaHue)
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица рецепт инфо"] = function() --подробности об определенном рецепте
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепт инфо"] = function() --подробности об определенном рецепте
 		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
 			return
@@ -3569,7 +3569,7 @@ do
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "===================")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица удалить рецепт"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить рецепт"] = function()
 		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица рецептов пуста")
 			return
@@ -3588,10 +3588,10 @@ do
 		end
 		setMathixRecepts()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"] = function() --просмотреть все подключенные компоненты
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"] = function() --просмотреть все подключенные компоненты
 		y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи все компоненты"] = function() --просмотреть все подключенные компоненты
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все компоненты"] = function() --просмотреть все подключенные компоненты
 		local Bce_KoMnoHeHTbl = {}
 		local re3yJIbTaT_noucka = component.list()
 		local c4eT4uk_no3ucuu = 1
@@ -3610,7 +3610,7 @@ do
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общее кол-во: " .. tostring(o6lllee_koJIu4ecTBo))
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " статус онлайна"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус онлайна"] = function()
 		local c4e4uk_online = 1
 		local Ta6JIuca_nyTeu_JIoroB = {}
 		local TuMMeuTbl_online = {}
@@ -3675,12 +3675,12 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи цвета"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи цвета"] = function()
 		for Ha3BaHue_uBeTa, onucaHue in pairs(colors) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "цвет: " .. onucaHue[1] .. Ha3BaHue_uBeTa .. c .. " = " .. onucaHue[1] .. onucaHue[2])
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи тиммейтов"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи тиммейтов"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "админ базы: " .. tostring(admin))
 		local c4eT4uk_tuMMeuToB = 1
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тиммейты:")
@@ -3689,19 +3689,19 @@ do
 			c4eT4uk_tuMMeuToB = c4eT4uk_tuMMeuToB + 1
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " запись логов вкл"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись логов вкл"] = function()
 		zanucblBaTb_JIoru = true
 		configuration[19] = zanucblBaTb_JIoru
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. g .. "ВКЛ")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " запись логов выкл"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись логов выкл"] = function()
 		zanucblBaTb_JIoru = false
 		configuration[19] = zanucblBaTb_JIoru
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "запись логов: " .. r .. "ВЫКЛ")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред инфо"] = function() --список всех блоков красного камня
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред инфо"] = function() --список всех блоков красного камня
 		local c4eT4uk_redstone = 1
 		for k, v in pairs(configRedStone) do
 			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " вкл"] = function()
@@ -3781,7 +3781,7 @@ do
 			c4eT4uk_redstone = c4eT4uk_redstone + 1
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред события"] = function() --показать список поступивших сигналов на ред стоун
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события"] = function() --показать список поступивших сигналов на ред стоун
 		--1 название
 		--2 сторона
 		--3 предыдущий сигнал
@@ -3799,16 +3799,16 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "=============================")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удалить сообщения матрицы"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить сообщения матрицы"] = function()
 		coo6llleHue_oT_redstone = false
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред события очистить"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события очистить"] = function()
 		co6blTu9l_redStone = {}
 		configuration[27] = co6blTu9l_redStone
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "очистка завершена")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред тест"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред тест"] = function()
 		term.clear()
 		for k, v in pairs(co6blTu9l_redStone) do
 			print(v)
@@ -3817,7 +3817,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи последние логи"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи последние логи"] = function()
 		term.clear()
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
@@ -3828,7 +3828,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. v)
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи активность игроков"] = function() --таблица через чат бокс игроков + количество времени
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи активность игроков"] = function() --таблица через чат бокс игроков + количество времени
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "провожу вычисление времени...")
 		local Ha3BaHue_qpauJIoB = JIor_viewer_detectors.HauTu_Bce_qpauJIbl_JIoroB(nytb_k_JIoraM)
@@ -3848,7 +3848,7 @@ do
 		
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общее время: " .. g ..  all_day .. "д " .. all_hour .. "ч " .. all_min .. "м " .. string.format("%.f", all_sec) .. "с")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " создать новую зону"] = function() --новая зон
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " создать новую зону"] = function() --новая зон
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ожидание ввода: название зоны, х1, у1, z1, x2, y2, z2")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -3860,18 +3860,18 @@ do
 		co3gaHue_HoBou_3oHbl(nepBblu_x, nepBblu_y, nepBblu_z, BTopou_x, BTopou_y, BTopou_z, Ha3BaHue_3oHbl)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "возврат из функции")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи все зоны"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все зоны"] = function()
 		for k, v in ipairs(zoHbl_JIoroB) do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": (x=" .. v[1] .. ",y=" .. v[2] .. ",z=" .. v[3] .. ")(x=" .. v[4] .. ",y=" .. v[5] .. ",z=" .. v[6] .. ") " .. v[7])
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удали все зоны"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали все зоны"] = function()
 		zoHbl_JIoroB = {}
 		configuration[12] = zoHbl_JIoroB
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "зоны успешно удалены")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удалить зону"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить зону"] = function()
 		if #zoHbl_JIoroB > 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список зон:")
 			for k, v in ipairs(zoHbl_JIoroB) do
@@ -3890,7 +3890,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "удалять нечего:(")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сменить приоритет зоны"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить приоритет зоны"] = function()
 		local BBog_koppekTeH, coo6llleHue
 		if #zoHbl_JIoroB > 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список зон:")
@@ -3918,7 +3918,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "удалять нечего:(")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " показать зоны"] = function() --пишет в чат таблицу зон для логов
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать зоны"] = function() --пишет в чат таблицу зон для логов
 		if #zoHbl_JIoroB > 0 then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список зон:")
 			for k, v in ipairs(zoHbl_JIoroB) do
@@ -3929,7 +3929,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "удалять нечего:(")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " посмотреть открытые порты модема"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " посмотреть открытые порты модема"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю поиск открытых портов модема:")
 			local c4eT4uk_oTkpblTblX_nopToB = 0
@@ -3945,147 +3945,147 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент модема отсутствует")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 1"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 1"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(1)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 2"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 2"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(2)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 3"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 3"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(3)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 4"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 4"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(4)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 5"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 5"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(5)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 6"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 6"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(6)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 7"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 7"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(7)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 8"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 8"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(8)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 9"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 9"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(9)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 10"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 10"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(10)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 11"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 11"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(11)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 12"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 12"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(12)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 13"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 13"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(13)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 14"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 14"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(14)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 15"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 15"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(15)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 16"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 16"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(16)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 17"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 17"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(17)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 18"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 18"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(18)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 19"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 19"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(19)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп сет 20"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет 20"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			nepeonregeJIuTb_kopgbl_TeJIenopTy(20)
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 1"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 1"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4095,7 +4095,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 2"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 2"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4105,7 +4105,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 3"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 3"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4115,7 +4115,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 4"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 4"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4125,7 +4125,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 5"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 5"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4135,7 +4135,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 6"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 6"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4145,7 +4145,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 7"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 7"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4155,7 +4155,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 8"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 8"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4165,7 +4165,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 9"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 9"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4175,7 +4175,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 10"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 10"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4185,7 +4185,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 11"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 11"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4195,7 +4195,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 12"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 12"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4205,7 +4205,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 13"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 13"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4215,7 +4215,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 14"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 14"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4225,7 +4225,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 15"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 15"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4235,7 +4235,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 16"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 16"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4245,7 +4245,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 17"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 17"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4255,7 +4255,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 18"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 18"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4265,7 +4265,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 19"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 19"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4275,7 +4275,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп 20"] = function() --тп на стационарные коорды
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп 20"] = function() --тп на стационарные коорды
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then
 			computer.beep(1000, 0.1)
 			computer.beep(1000, 0.1)
@@ -4285,7 +4285,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп"] = function() --тп на игрока
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп"] = function() --тп на игрока
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["mo_transporter"] == nil then	
 			computer.beep(1000, 0.1)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "куда?")
@@ -4300,7 +4300,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тп инфо"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп инфо"] = function()
 		for i = 1, 20 do
 			if koopgbl_gJI9l_TpaHcnocePa[i] == nil then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. i .. ": " .. r .. " не назначена")
@@ -4309,7 +4309,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тт"] = function() --туррели открывают огонь на поражение по конкретному игроку:)
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"] = function() --туррели открывают огонь на поражение по конкретному игроку:)
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil and typpeJIu_gocTynHbl then
 			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "какой ник у нарушителя?")
@@ -4329,7 +4329,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " туррели авторежим"] = function() --туррели открывают огонь на поражение по конкретному игроку:)
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"] = function() --туррели открывают огонь на поражение по конкретному игроку:)
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil and typpeJIu_gocTynHbl then
 			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
 				if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
@@ -4345,7 +4345,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тур офф"] = function() --переводит туррели в спящий режим
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"] = function() --переводит туррели в спящий режим
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil then
 			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
 				typpeJIu_reJum_orH9l(false)
@@ -4359,7 +4359,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " тур он"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil then	
 			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
 				typpeJIu_reJum_orH9l(true)
@@ -4372,20 +4372,20 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " рестарт сети"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю рестарт сети")
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_pecTapT_ceTu.dfpwm") end
 		deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl()
 		computer.shutdown(true)
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " расскажи стишок"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " расскажи стишок"] = function()
 		if tape_drive ~= nil then
 			tape_drive.BoCnpou3BecTu_qpauJI("Haxy9l_Tbl_py4ky_gepHyJI.dfpwm")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("§6тап драйв не установлен")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " статус модема"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус модема"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] ~= nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент модема отсутствует")
 		else
@@ -4410,7 +4410,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи мои команды"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи мои команды"] = function()
 		local c4eT4uk = 1
 		if nick_gJI9l_npuBeTcTBu9l == admin then
 			for k, _ in pairs(Ta6JIuca_admin_koMaHg) do
@@ -4426,7 +4426,7 @@ do
 			return
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " мои хп"] = function() --хп игрока
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " мои хп"] = function() --хп игрока
 		if npoBepka_agpeca_HaHo6oToB() then
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[nick_gJI9l_npuBeTcTBu9l]), "nanomachines", "getHealth")
 			local ta6JIuca_coo6llleHuu_HaHuToB = {event.pull(zagepJka_oTBeTa_HaHuToB, "modem_message")}
@@ -4437,11 +4437,11 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " перезаписать ключ нанитам"] = function() --уникальный ключ пароль для нанитов
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " перезаписать ключ нанитам"] = function() --уникальный ключ пароль для нанитов
 		adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[nick_gJI9l_npuBeTcTBu9l] = nil
 		npoBepka_agpeca_HaHo6oToB()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " заряд нанитов"] = function() --оставшийся заряд нанитов
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " заряд нанитов"] = function() --оставшийся заряд нанитов
 		if npoBepka_agpeca_HaHo6oToB() then
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[nick_gJI9l_npuBeTcTBu9l]), "nanomachines", "getPowerState")
 			local ta6JIuca_coo6llleHuu_HaHuToB = {event.pull(zagepJka_oTBeTa_HaHuToB, "modem_message")}
@@ -4454,7 +4454,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " мой голод"] = function() -- голод игрока
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " мой голод"] = function() -- голод игрока
 		if npoBepka_agpeca_HaHo6oToB() then
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[nick_gJI9l_npuBeTcTBu9l]), "nanomachines", "getHunger")
 			local ta6JIuca_coo6llleHuu_HaHuToB = {event.pull(zagepJka_oTBeTa_HaHuToB, "modem_message")}
@@ -4465,7 +4465,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " максимум эффектов нанитов"] = function() --из файлов конфигов os максимально доступное число эффектов на сервере
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " максимум эффектов нанитов"] = function() --из файлов конфигов os максимально доступное число эффектов на сервере
 		if npoBepka_agpeca_HaHo6oToB() then
 			local ta6JIuca_coo6llleHuu_HaHuToB = {}
 			local bezonacHble_effekTbl = 0
@@ -4499,7 +4499,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "всего переключателей эффектов " .. Bcero_coeguHeHuu)
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " мои активные эффекты нанитов"] = function() --показывает таблицу активных эффетов
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " мои активные эффекты нанитов"] = function() --показывает таблицу активных эффетов
 		if npoBepka_agpeca_HaHo6oToB() then
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[nick_gJI9l_npuBeTcTBu9l]), "nanomachines", "getActiveEffects")
 			local ta6JIuca_coo6llleHuu_HaHuToB = {event.pull(zagepJka_oTBeTa_HaHuToB, "modem_message")}
@@ -4517,7 +4517,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " состояние эффекта нанитов"] = function() --посмотреть состояние одного эфффекта
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " состояние эффекта нанитов"] = function() --посмотреть состояние одного эфффекта
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи номер эффекта от 1 до 18")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, nick_gJI9l_npuBeTcTBu9l)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -4540,7 +4540,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " переключить эффект нанитов"] = function() --номер эффекта + вкл или выкл
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переключить эффект нанитов"] = function() --номер эффекта + вкл или выкл
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи номер эффекта от 1 до 18 и команду вкл или выкл")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, nick_gJI9l_npuBeTcTBu9l)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -4570,7 +4570,7 @@ do
 			end	
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сканирование всех эффектов нанитов"] = function() --записывает в лог файл эффектов
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сканирование всех эффектов нанитов"] = function() --записывает в лог файл эффектов
 --запрос на поиск комбо эффектов
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "Искать комбинации? - " .. g .. "да" .. c .. "/" .. r .. "нет")
 		local paclllupeHblu_nouck = false
@@ -4759,7 +4759,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " моя таблица эффектов нанитов"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " моя таблица эффектов нанитов"] = function()
 		if configuration[5][nick_gJI9l_npuBeTcTBu9l] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "требуется сканирование всех эффектов")
 			return
@@ -4782,7 +4782,7 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сканирование таблицы завершено")
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " отключить последний проверяемый эффект нанитов"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить последний проверяемый эффект нанитов"] = function()
 		local ta6JIuca_coo6llleHuu_HaHuToB
 		if nocJIegHuu_npoBep9leMblu_eff1 ~= 0 then
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[nick_gJI9l_npuBeTcTBu9l]), "nanomachines", "setInput", tonumber(nocJIegHuu_npoBep9leMblu_eff1), false)
@@ -4803,7 +4803,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "последний проверяемый эффект2 не найден")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " н1"] = function() --включить быструю комбинацию нанитов 1
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " н1"] = function() --включить быструю комбинацию нанитов 1
 		if configuration[6][1] ~= nil then
 			local effect1, effect2 = string.match(tostring(configuration[6][1]), "(%d+).-(%d+)")
 			if npoBepka_agpeca_HaHo6oToB() then
@@ -4827,7 +4827,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "конфигурация не назначена")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " о1"] = function() --выключить быструю комбинацию нанитов 1
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " о1"] = function() --выключить быструю комбинацию нанитов 1
 		if configuration[6][1] ~= nil then
 			local effect1, effect2 = string.match(tostring(configuration[6][1]), "(%d+).-(%d+)")
 			if npoBepka_agpeca_HaHo6oToB() then
@@ -4851,7 +4851,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "конфигурация не назначена")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " копировать конфиг нанитов"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " копировать конфиг нанитов"] = function()
 		if npoBepka_agpeca_HaHo6oToB() then
 			Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[nick_gJI9l_npuBeTcTBu9l]), "nanomachines", "saveConfiguration")
 			local configuration_HaHo_table = {event.pull(2, "modem_message")}
@@ -4865,7 +4865,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " отключить все эффекты нанитов"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить все эффекты нанитов"] = function()
 		if npoBepka_agpeca_HaHo6oToB() then
 			for i = 1, 18 do
 				Ta6JIuca_koMnoHeHToB["modem"].broadcast(tonumber(adrec_nopTa_HaHo_po6oTa_gJI9l_urpoka[nick_gJI9l_npuBeTcTBu9l]), "nanomachines", "setInput", tonumber(i), false)
@@ -4879,7 +4879,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сообщение"] = function() --к сообщению добавляется секретное слово
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сообщение"] = function() --к сообщению добавляется секретное слово
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ожидание ввода: " .. gr .. "[" .. g .. "номер порта" .. gr .. "]" .. c .. "," .. gr .. " [" .. g .. "сообщение для отправки" .. gr .. "]")
 			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(20, nick_gJI9l_npuBeTcTBu9l, true)
@@ -4895,10 +4895,10 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "модем недоступен")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " очистить монитор"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " очистить монитор"] = function()
 		term.clear()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " сенсор удалить игрока"] = function() --убрать игрока из глобальной таблицы
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сенсор удалить игрока"] = function() --убрать игрока из глобальной таблицы
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока для удаления")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -4909,12 +4909,12 @@ do
 			rJIo6aJIbHa9l_Ta6JIuca_urpokoB[coo6llleHue] = nil
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " стереть сообщения туннеля"] = function() --стирает сообщения тунеля другой базы
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " стереть сообщения туннеля"] = function() --стирает сообщения тунеля другой базы
 		if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 		coo6llleHue_TuHHeJI9l = {}
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " на ком очки"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " на ком очки"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 			local Bce_noJIb3oBaTeJIu = component.invoke(agpec_agMuH_MocTa, "getUsers")
 			for k, v in ipairs(Bce_noJIb3oBaTeJIu) do
@@ -4928,20 +4928,20 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "мост недоступен")
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи активность игроков на мониторе"] = function() --выводить 5 игроков с топовым временем
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи активность игроков на мониторе"] = function() --выводить 5 игроков с топовым временем
 		Ta6JIuca_koMnoHeHToB["chat_box"].say("§6выполняю команду")
 		BblBog_JIoroB_urpokoB_Ha_MoHuTop = true
 		configuration[21] = BblBog_JIoroB_urpokoB_Ha_MoHuTop
 		setConfiguration()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " скрой активность игроков на мониторе"] = function() 
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " скрой активность игроков на мониторе"] = function() 
 		Ta6JIuca_koMnoHeHToB["chat_box"].say("§6выполняю команду")
 		BblBog_akTuBHocTu_urpokoB_Ha_MoHuTop(false)
 		BblBog_JIoroB_urpokoB_Ha_MoHuTop = false
 		configuration[21] = BblBog_JIoroB_urpokoB_Ha_MoHuTop
 		setConfiguration()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " добавь игрока в онлайн"] = function() --проверять онлайн игрока "статус онлайна"
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " добавь игрока в онлайн"] = function() --проверять онлайн игрока "статус онлайна"
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник игрока:")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -4960,7 +4960,7 @@ do
 		configuration[23] = Ta6JIuca_npoBepku_online
 		setConfiguration()
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " удали из онлайна"] = function() --удалить игрока из проверки онлайна
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали из онлайна"] = function() --удалить игрока из проверки онлайна
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник игрока:")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l, true)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -4980,7 +4980,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"] = function() --показывает какие игроки есть в таблице(только их ники)
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"] = function() --показывает какие игроки есть в таблице(только их ники)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "список игроков:")
 		local c4eT4uk_urpokoB_B_Ta6JIuce = 1
 		for k, _ in pairs(Ta6JIuca_npoBepku_online) do

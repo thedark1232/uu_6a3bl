@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла2"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1766,10 +1766,10 @@ function creat_main_agmin_form(agrecc)
 		return y
 	end
 	--создание формы
-	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 160, 200, blue)
+	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 154, 200, blue)
 	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
-	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, white)
+	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 172, white)
 	rawset(table_form.main_box2, "visible", table_form.main_box2.setVisible)
 	table_form.main_box2.setClickable(false)
 	
@@ -1778,11 +1778,11 @@ function creat_main_agmin_form(agrecc)
 	rawset(table_form.scroll_badur_up, "visible", table_form.scroll_badur_up.setVisible)
 	table_form.scroll_badur_up.setClickable(false)
 	
-	table_form.scroll_line = component.invoke(agrecc, "addLine", {160, 40}, {160, 178})
+	table_form.scroll_line = component.invoke(agrecc, "addLine", {135, 40}, {135, 178})
 	rawset(table_form.scroll_line, "visible", table_form.scroll_line.setVisible)
 	table_form.scroll_line.setClickable(false)
 	
-	table_form.scroll_badur_down = component.invoke(agrecc, "addBox", 140, 188, 10, 10, gray)
+	table_form.scroll_badur_down = component.invoke(agrecc, "addBox", 140, 192, 10, 10, gray)
 	rawset(table_form.scroll_badur_down, "visible", table_form.scroll_badur_down.setVisible)
 	table_form.scroll_badur_down.setClickable(false)
 
@@ -5318,28 +5318,6 @@ do
 	--загрузка точек телепотера
 	koopgbl_gJI9l_TpaHcnocePa = serialization.unserialize(filesLibrary.write_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, "nil"))
 	if koopgbl_gJI9l_TpaHcnocePa == nil or koopgbl_gJI9l_TpaHcnocePa == "nil" then koopgbl_gJI9l_TpaHcnocePa = {} end
-	--подключить слушатели событий
-	event.listen("modem_message", modem_message)
-	event.listen("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
-	event.listen("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
-	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-		event.listen("glasses_chat_message", chat_message)
-	else
-		event.listen("chat_message", chat_message)
-	end
-	event.listen("glasses_capture", glasses_capture)
-	event.listen("glasses_release", glasses_release)
-	
-	event.listen("glasses_key_down", glasses_key_down)
-	event.listen("glasses_key_up", glasses_key_up)
-	event.listen("glasses_mouse_scroll", glasses_mouse_scroll)
-	event.listen("glasses_mouse_down", glasses_mouse_down)
-	event.listen("glasses_mouse_up", glasses_mouse_up)
-	event.listen("glasses_component_mouse_wheel", glasses_component_mouse_wheel)
-	event.listen("glasses_component_mouse_down", glasses_component_mouse_down)
-	event.listen("glasses_component_mouse_up", glasses_component_mouse_up)
-	event.listen("glasses_mouse_drag", glasses_mouse_drag)
-	
 	
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then
 		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "порт модема для сообщений: " .. g .. "600") end
@@ -5416,7 +5394,27 @@ do
 	whiteListUsers[admin] = "ok"
 	
 	component.invoke(agpec_agMuH_MocTa, "clear")
-	myThread.killAll()
+
+	event.listen("modem_message", modem_message)
+	event.listen("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
+	event.listen("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
+	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
+		event.listen("glasses_chat_message", chat_message)
+	else
+		event.listen("chat_message", chat_message)
+	end
+	event.listen("glasses_capture", glasses_capture)
+	event.listen("glasses_release", glasses_release)
+	event.listen("glasses_key_down", glasses_key_down)
+	event.listen("glasses_key_up", glasses_key_up)
+	event.listen("glasses_mouse_scroll", glasses_mouse_scroll)
+	event.listen("glasses_mouse_down", glasses_mouse_down)
+	event.listen("glasses_mouse_up", glasses_mouse_up)
+	event.listen("glasses_component_mouse_wheel", glasses_component_mouse_wheel)
+	event.listen("glasses_component_mouse_down", glasses_component_mouse_down)
+	event.listen("glasses_component_mouse_up", glasses_component_mouse_up)
+	event.listen("glasses_mouse_drag", glasses_mouse_drag)
+	
 --ГЛАВНЫЙ ЦИКЛ
 	while not_exit do
 		os.sleep(zagepJka)

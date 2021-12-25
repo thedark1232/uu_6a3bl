@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест 14"
+local Ha3BaHue_o6HoBJIeHu9l = "тест 15"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -492,6 +492,10 @@ function glasses_component_mouse_down(...)
 end
 function glasses_component_mouse_up(...)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_up")
+	local apryMeHTbl = 1
+	for k, v in pairs(...) do
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(apryMeHTbl) .. ": " .. g .. tostring(v))
+	end
 end
 function glasses_mouse_drag(...)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_drag")
@@ -1731,8 +1735,18 @@ function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 140, 200, blue)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, whihe)
+	--содание кнопки рестарта
 	table_form.button_reboot = component.invoke(agrecc, "addBox", 6, 32, 128, 15, black)
-	noTok_B_o4Kax[nick].button_reboot.setClickable(true)
+	table_form.button_reboot_text = component.invoke(agrecc, "addText", 7, 33, "рестарт", white)
+	table_form.button_reboot.setClickable(true)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id рестарт: " .. tostring(table_form.button_reboot.getId))
+	
+	--создание кнопки выхода
+	table_form.button_exit = component.invoke(agrecc, "addBox", 6, 49, 128, 15, black)
+	table_form.button_exit_text = component.invoke(agrecc, "addText", 7, 50, "выход", white)
+	table_form.button_exit.setClickable(true)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id выход: " .. tostring(table_form.button_exit.getId))
+	
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
 	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
 	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)

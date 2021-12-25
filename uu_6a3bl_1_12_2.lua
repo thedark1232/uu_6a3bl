@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "центрирование текста в кнопках2"
+local Ha3BaHue_o6HoBJIeHu9l = "центрирование текста в кнопках 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1731,9 +1731,18 @@ function HauTu_HoBblx_urpokoB()
 end
 function creat_new_button(agress, x, y, w, h, label, color_background, color_foreground, click_function)
 	local table_button
+	print("ширина кнопки: " .. w)
+	
 	local w2 = math.floor(w / 2)
+	print("ширина кнопки / 2 = " .. w2)
 	local l2 = math.floor(unicode.len(label) / 2)
+	print("ширина " .. label .. " = " .. tostring(unicode.len(label))
+	print("label / 2 = " .. tostring(l2))
 	local center_x = w2 - l2
+	print("w2 - l2 = " .. tostring(center_x))
+	print("x = " .. tostring(x))
+	print("x + center_x = " .. tostring(x + center_x))
+	io.read()
 	table_button = component.invoke(agress, "addBox", x, y, w, h, color_background)
 	local caption = component.invoke(agress, "addText", x + center_x, y + 3, label, color_foreground)
 	caption.setClickable(false)
@@ -1826,7 +1835,10 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 			--noTok_B_o4Kax[nick].button_reboot.setClickable(true)
 		end
 	end)
-	if not cTaTyc then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
+	if not cTaTyc then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
+		noTok_B_o4Kax[nick] = nil
+	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	for _, v in pairs(noTok_B_o4Kax[nick]) do
@@ -5360,6 +5372,7 @@ do
 	whiteListUsers[admin] = "ok"
 	
 	component.invoke(agpec_agMuH_MocTa, "clear")
+	myThread.killAll()
 --ГЛАВНЫЙ ЦИКЛ
 	while not_exit do
 		os.sleep(zagepJka)

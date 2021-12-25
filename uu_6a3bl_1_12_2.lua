@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест 12"
+local Ha3BaHue_o6HoBJIeHu9l = "тест 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -448,7 +448,16 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	event.ignore("glasses_key_down", BBog_coo6llleHu9l_c_BupTyaJIbHou_kJIaBbl)
 	event.ignore("redstone_changed", o6pa6oTka_Bxog9llllux_curHaJIoB_redStone)
 	event.ignore("glasses_capture", glasses_capture)
-	event.ignore("glasses_release", glasses_release)
+	event.ignore("glasses_release", glasses_release)	
+	event.ignore("glasses_key_down", glasses_key_down)
+	event.ignore("glasses_key_up", glasses_key_up)
+	event.ignore("glasses_mouse_scroll", glasses_mouse_scroll)
+	event.ignore("glasses_mouse_down", glasses_mouse_down)
+	event.ignore("glasses_mouse_up", glasses_mouse_up)
+	event.ignore("glasses_component_mouse_wheel", glasses_component_mouse_wheel)
+	event.ignore("glasses_component_mouse_down", glasses_component_mouse_down)
+	event.ignore("glasses_component_mouse_up", glasses_component_mouse_up)
+	event.ignore("glasses_mouse_drag", glasses_mouse_drag)
 	
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 		component.invoke(agpec_agMuH_MocTa, "clear")
@@ -459,6 +468,33 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	computer.addUser(admin)
 	configuration[42] = urpoKu_gJI9l_oTo6paJeHu9l
 	setConfiguration()
+end
+function glasses_key_down(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_down")
+end
+function glasses_key_up(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_up")
+end
+function glasses_mouse_scroll(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_scroll")
+end
+function glasses_mouse_down(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
+end
+function glasses_mouse_up(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_up")
+end
+function glasses_component_mouse_wheel(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
+end
+function glasses_component_mouse_down(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_down")
+end
+function glasses_component_mouse_up(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_up")
+end
+function glasses_mouse_drag(...)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_drag")
 end
 function zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, nepegaBaEMoe_3Ha4eHue)
 	if baza_Bblxog ~= msg then
@@ -1695,7 +1731,8 @@ function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 140, 200, blue)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, whihe)
-	table_form.button_reboot = component.invoke(agrecc, "addBox", 6, 32, 130, 15, black)
+	table_form.button_reboot = component.invoke(agrecc, "addBox", 6, 32, 128, 15, black)
+	noTok_B_o4Kax[nick].button_reboot.setClickable(true)
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
 	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
 	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)
@@ -1719,8 +1756,8 @@ function HoBblu_noTok(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")
 		for _, v in pairs(noTok_B_o4Kax[nick]) do
 			v.setVisible(true)
-		end
-	
+		end	
+			
 		while true do
 			noTok_B_o4Kax[nick].napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
 			noTok_B_o4Kax[nick].napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
@@ -1744,11 +1781,15 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 		for _, v in pairs(noTok_B_o4Kax[nick]) do
 			v.setVisible(true)
 		end
+		--noTok_B_o4Kax[nick].button_reboot.setClickable(true)
 	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	for _, v in pairs(noTok_B_o4Kax[nick]) do
 		v.setVisible(false)
+		--if v.getClickable() then
+		--	v.setClickable(false)
+		--end
 	end
 end
 
@@ -5192,6 +5233,16 @@ do
 	end
 	event.listen("glasses_capture", glasses_capture)
 	event.listen("glasses_release", glasses_release)
+	
+	event.listen("glasses_key_down", glasses_key_down)
+	event.listen("glasses_key_up", glasses_key_up)
+	event.listen("glasses_mouse_scroll", glasses_mouse_scroll)
+	event.listen("glasses_mouse_down", glasses_mouse_down)
+	event.listen("glasses_mouse_up", glasses_mouse_up)
+	event.listen("glasses_component_mouse_wheel", glasses_component_mouse_wheel)
+	event.listen("glasses_component_mouse_down", glasses_component_mouse_down)
+	event.listen("glasses_component_mouse_up", glasses_component_mouse_up)
+	event.listen("glasses_mouse_drag", glasses_mouse_drag)
 	
 	
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] == nil then

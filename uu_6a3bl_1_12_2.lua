@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "центрирование текста в кнопках"
+local Ha3BaHue_o6HoBJIeHu9l = "центрирование текста в кнопках2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -52,9 +52,7 @@ local gr = "§7" -- серый светлый
 local Bepcu9l_uu_6a3bl = "0"
 local gpu = component.gpu
 local cocTo9lHue_noToka_MaTpucbl = ""
-local Ta6JIuca_koMaHg_gJI9l_TuMMeuToB = {}
 local Ta6JIuca_admin_koMaHg = {}
-local Ta6JIuca_koMaHg_gJI9l_rocTeu = {}
 local co6blTu9l_redStone = {}
 local uHTepBaJI_3agepJku_3anucu_JIoroB = 5
 local zanucblBaTb_JIoru = true
@@ -752,8 +750,8 @@ function chat_message(event_name, _, nick, msg, msg2, modem_message)
 		if nick == admin and Ta6JIuca_admin_koMaHg[msg] ~= nil then
 			ycnelllHoE_BblnoJIHeHue_koMaHdbl, coo6llleHue_olllu6ku = pcall(Ta6JIuca_admin_koMaHg[msg])
 			if not ycnelllHoE_BblnoJIHeHue_koMaHdbl then zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, coo6llleHue_olllu6ku) end
-		elseif whiteListUsers[nick] ~= nil and Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[msg] ~= nil then
-			ycnelllHoE_BblnoJIHeHue_koMaHdbl, coo6llleHue_olllu6ku = pcall(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[msg])
+		elseif whiteListUsers[nick] ~= nil and Ta6JIuca_admin_koMaHg[msg] ~= nil then
+			ycnelllHoE_BblnoJIHeHue_koMaHdbl, coo6llleHue_olllu6ku = pcall(Ta6JIuca_admin_koMaHg[msg])
 			if not ycnelllHoE_BblnoJIHeHue_koMaHdbl then zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, coo6llleHue_olllu6ku) end
 		elseif whiteListUsers[mick] == nil and Ta6JIuca_koMaHg_gJI9l_rocTeu[msg] ~= nil then
 			ycnelllHoE_BblnoJIHeHue_koMaHdbl, coo6llleHue_olllu6ku = pcall(Ta6JIuca_koMaHg_gJI9l_rocTeu[msg])
@@ -769,7 +767,7 @@ function npoBepka_gocTyna_k_KoMaHge(nick)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "админская команда: " .. r .. "НЕ НАЙДЕНА")
 		end
 	elseif whiteListUsers[nick] ~= nil then
-		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[msg] ~= nil then
+		if Ta6JIuca_admin_koMaHg[msg] ~= nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для тиммейтов: " .. g .. "НАЙДЕНА")
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "команда для тиммейтов: " .. r .. "НЕ НАЙДЕНА")
@@ -1733,9 +1731,9 @@ function HauTu_HoBblx_urpokoB()
 end
 function creat_new_button(agress, x, y, w, h, label, color_background, color_foreground, click_function)
 	local table_button
-	local w2 = w / 2
-	local l2 = unicode.len(label) / 2
-	local center_x = math.floor(w2 - l2)
+	local w2 = math.floor(w / 2)
+	local l2 = math.floor(unicode.len(label) / 2)
+	local center_x = w2 - l2
 	table_button = component.invoke(agress, "addBox", x, y, w, h, color_background)
 	local caption = component.invoke(agress, "addText", x + center_x, y + 3, label, color_foreground)
 	caption.setClickable(false)
@@ -1934,7 +1932,7 @@ do
 	local nepBa9l_6ykba = unicode.upper(nepBa9l_6ykba)
 	Ta6JIuca_koMnoHeHToB["chat_box"].setName(p .. nepBa9l_6ykba .. ocTaJIbHoe .. gr)
 	--метатаблицы
-	--setmetatable(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB, {__index = function() return function() end end})
+	--setmetatable(Ta6JIuca_admin_koMaHg, {__index = function() return function() end end})
 	--setmetatable(Ta6JIuca_admin_koMaHg, {__index = function() return function() end end})
 	setmetatable(Ta6JIuca_koMnoHeHToB, {__index = function() return function() end end})
 	--setmetatable(Ta6JIuca_koMaHg_gJI9l_rocTeu, {__index = function() return function() end end})
@@ -2054,7 +2052,7 @@ do
 				filesystem.copy(nyTb_k_uu_6a3bl .. "1232", nyTb_k_uu_6a3bl)
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "удаление временных файлов")
 				filesystem.remove(nyTb_k_uu_6a3bl .. "1232")
-				Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " рестарт сети"]()
+				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка: " .. tostring(Ha3BaHue_olllu6ku))
 			end
@@ -2985,7 +2983,7 @@ do
 		return true
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"] = function()
-		if Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " казино статус"]() then
+		if Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино статус"]() then
 			local Huk_urpoka = nick_gJI9l_npuBeTcTBu9l
 			
 			--расчет, сколько можно снять
@@ -3707,7 +3705,7 @@ do
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред инфо"] = function() --список всех блоков красного камня
 		local c4eT4uk_redstone = 1
 		for k, v in pairs(configRedStone) do
-			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " вкл"] = function()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " вкл"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 				configRedStone[k] = {v[1], "true", v[3]}
 				for i = 0, 5 do
@@ -3716,7 +3714,7 @@ do
 				configuration[17] = configRedStone
 				setConfiguration()
 			end
-			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " выкл"] = function()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " выкл"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 				configRedStone[k] = {v[1], "false", v[3]}
 				for i = 0, 5 do
@@ -3725,7 +3723,7 @@ do
 				configuration[17] = configRedStone
 				setConfiguration()
 			end
-			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " импульс"] = function()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " импульс"] = function()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 				configRedStone[k] = {v[1], "false", v[3]}
 				for i = 0, 5 do
@@ -3741,11 +3739,11 @@ do
 				configuration[17] = configRedStone
 				setConfiguration()
 			end
-			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = function()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = function()
 				configRedStone[k] = nil
 				configuration[17] = configRedStone
 				setConfiguration()
-				Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = nil
+				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"] = nil
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "удаление завершено")
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "требуется рестарт сети")
 			end
@@ -4422,7 +4420,7 @@ do
 			end
 			return
 		elseif whiteListUsers[nick_gJI9l_npuBeTcTBu9l] ~= nil then
-			for k, _ in pairs(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB) do
+			for k, _ in pairs(Ta6JIuca_admin_koMaHg) do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4eT4uk).. ": " .. k)
 				c4eT4uk = c4eT4uk + 1
 			end
@@ -4614,7 +4612,7 @@ do
 			if configuration[5][nick_gJI9l_npuBeTcTBu9l] == nil or paclllupeHblu_nouck and configuration[5][nick_gJI9l_npuBeTcTBu9l] == nil and tonumber(eff1) == 1 and tonumber(eff2) == 1 or not paclllupeHblu_nouck and configuration[5][nick_gJI9l_npuBeTcTBu9l] == nil and tonumber(eff1) == 1 then
 				configuration[5][nick_gJI9l_npuBeTcTBu9l] = {}
 			end
-			if not Ta6JIuca_koMaHg_gJI9l_TuMMeuToB["наниты мои активные эффекты"]() then
+			if not Ta6JIuca_admin_koMaHg["наниты мои активные эффекты"]() then
 --начало цикла
 				for i = eff1, 18 do
 					nocJIegHuu_npoBep9leMblu_eff1 = i
@@ -5301,7 +5299,7 @@ do
 			end
 			configuration[17] = configRedStone
 			setConfiguration()
-			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред инфо"]()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред инфо"]()
 		else
 			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "количество найденых редстоун блоков: " .. r .. "0") end
 		end
@@ -5332,18 +5330,12 @@ do
 			end
 			configuration[17] = configRedStone
 			setConfiguration()
-			Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[Ha3BaHue_6a3bl .. " ред инфо"]()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред инфо"]()
 		else
 			if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "количество найденых редстоун блоков: " .. r .. "0") end
 		end
 	end
-	--добавить команды в админскую таблицу
-	for k, _ in pairs(Ta6JIuca_koMaHg_gJI9l_rocTeu) do
-		Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[k] = Ta6JIuca_koMaHg_gJI9l_rocTeu[k]
-	end
-	for k, _ in pairs(Ta6JIuca_koMaHg_gJI9l_TuMMeuToB) do
-		Ta6JIuca_admin_koMaHg[k] = Ta6JIuca_koMaHg_gJI9l_TuMMeuToB[k]
-	end	
+
 	--подключение raid
 	raid_agrec = raidLibrary.getRAID_agpec()
 	if raid_agrec ~= "nil" then

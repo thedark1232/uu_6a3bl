@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "центрирование текста в кнопках 4"
+local Ha3BaHue_o6HoBJIeHu9l = "тесты клика по кнопке"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -491,7 +491,15 @@ end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	for k, v in pairs(noTok_B_o4Kax[nick]) do
 		if v.getId() == id then
-			v.click()
+			if v.getType == "button" then
+				v.setClickable(false)
+				local button_color = v.getColor()
+				v.setColor = green
+				os.sleep(0.1) --нужно для синхронизации с очками
+				v.click()
+				v.setColor = button_color
+				v.setClickable(true)
+			end
 		end
 	end
 end
@@ -1740,6 +1748,7 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "click", click_function)
 	rawset(table_button, "visible", function(val)
+	rawset(table_button, "getType", "button")
 		table_button.setVisible(val)
 		table_button.caption.setVisible(val)
 	end)
@@ -1747,39 +1756,42 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
+	--создание формы
 	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 140, 200, blue)
 	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, white)
 	rawset(table_form.main_box2, "visible", table_form.main_box2.setVisible)
 	table_form.main_box2.setClickable(false)
-	--содание кнопки рестарта
+
+	--информационный текст
+	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 4, 2, napaMeTp_BpeMeHu)
+	rawset(table_form.napaMeTp_BpeMeHu, "visible", table_form.napaMeTp_BpeMeHu.setVisible)
+	table_form.napaMeTp_BpeMeHu.setClickable(false)
+	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 4, 12, napaMeTp_eHepruu)
+	rawset(table_form.napaMeTp_eHepruu, "visible", table_form.napaMeTp_eHepruu.setVisible)
+	table_form.napaMeTp_BpeMeHu.setClickable(false)
+	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 4, 22, napaMeTp_o3y)
+	rawset(table_form.napaMeTp_o3y, "visible", table_form.napaMeTp_o3y.setVisible)
+	table_form.napaMeTp_o3y.setClickable(false)
+
+
+	--создание кнопок
 	table_form.button_reboot = creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, 
 	function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
 	end)
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id рестарт: " .. tostring(table_form.button_reboot.getId()))
-	--создание кнопки выхода
 	table_form.button_exit = creat_new_button(agrecc, 6, 49, 128, 15, "выход", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]()
 	end)
-	
 	table_form.button_update = creat_new_button(agrecc, 6, 66, 128, 15, "обновить", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]()
 	end)
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id выход: " .. tostring(table_form.button_exit.getId()))
+	table_form.button_update = creat_new_button(agrecc, 6, 83, 128, 15, "тест кнопка", black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку")
+	end)
 	
-	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
-	rawset(table_form.napaMeTp_BpeMeHu, "visible", table_form.napaMeTp_BpeMeHu.setVisible)
-	table_form.napaMeTp_BpeMeHu.setClickable(false)
-	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
-	rawset(table_form.napaMeTp_eHepruu, "visible", table_form.napaMeTp_eHepruu.setVisible)
-	table_form.napaMeTp_BpeMeHu.setClickable(false)
-	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)
-	rawset(table_form.napaMeTp_o3y, "visible", table_form.napaMeTp_o3y.setVisible)
-	table_form.napaMeTp_o3y.setClickable(false)
-	
-	component.invoke(agrecc, "sync")
+	--component.invoke(agrecc, "sync")
 	return table_form
 end
 function form:new(myTable)

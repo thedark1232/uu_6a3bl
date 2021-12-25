@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла10"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1749,7 +1749,6 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 	caption.setClickable(false)
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "click", click_function)
-	rawset(table_button, "outOfRange", false)
 	rawset(table_button, "visible", function(val)
 		table_button.setVisible(val)
 		table_button.caption.setVisible(val)
@@ -1802,9 +1801,13 @@ function creat_main_agmin_form(agrecc)
 	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 4, 22, napaMeTp_o3y)
 	rawset(table_form.napaMeTp_o3y, "visible", table_form.napaMeTp_o3y.setVisible)
 	table_form.napaMeTp_o3y.setClickable(false)
+	
+	return table_form
+end
 
+function creat_main_buttons(agrecc)
 	--создание кнопок
-	table_form.main_buttons = {}
+	local main_buttons = {}
 	
 	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
@@ -1840,7 +1843,7 @@ function creat_main_agmin_form(agrecc)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8")
 	end))
 	
-	return table_form
+	return main_buttons
 end
 
 function HoBblu_noTok(nick)
@@ -1863,13 +1866,14 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local cTaTyc, err = pcall(function()
 		if noTok_B_o4Kax[nick] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
-			noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
+			noTok_B_o4Kax[nick .. " main_form"] = creat_main_agmin_form(agpec_agMuH_MocTa)
+			noTok_B_o4Kax[nick .. " main_buttons"] = creat_main_buttons(agpec_agMuH_MocTa)
 			noTok_B_o4Kax[nick .. "noTok"] = myThread.create(HoBblu_noTok, nick)
 		end
-		for _, v in pairs(noTok_B_o4Kax[nick]) do
+		for _, v in pairs(noTok_B_o4Kax[nick .. " main_form"]) do
 			v.visible(true)
 		end
-		for _, v in ipairs(noTok_B_o4Kax[nick].main_buttons) do
+		for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
 			v.visible(true)
 		end			
 	end)
@@ -1880,10 +1884,10 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
-	for _, v in pairs(noTok_B_o4Kax[nick]) do
+	for _, v in pairs(noTok_B_o4Kax[nick .. " main_form"]) do
 		v.visible(false)
 	end
-	for _, v in ipairs(noTok_B_o4Kax[nick].main_buttons) do
+	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
 		v.visible(false)
 	end	
 end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы2"
+local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1692,7 +1692,7 @@ end
 
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
-	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 50, 50)
+	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 50, 50, blue)
 	table_form.TekcT_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, cucTeMHbl_napaMeTpbl_KoMna)
 	component.invoke(agrecc, "sync")
 	
@@ -1712,13 +1712,10 @@ end
 
 function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан для: " .. g .. nick)
-		local Text_CuCTeMHblx_napaMeTpoB = component.invoke(agpec_agMuH_MocTa, "addText", 2, 40, cucTeMHbl_napaMeTpbl_KoMna)
-	
-	
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")
 	
 		while true do
-			Text_CuCTeMHblx_napaMeTpoB.setText(cucTeMHbl_napaMeTpbl_KoMna)
+			noTok_B_o4Kax[nick].setText(cucTeMHbl_napaMeTpbl_KoMna)
 			component.invoke(agpec_agMuH_MocTa, "sync")
 			os.sleep(0.1)
 		end
@@ -1732,8 +1729,8 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 	
 	if noTok_B_o4Kax[nick] == nil then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
-		noTok_B_o4Kax[nick] = true
-		creat_main_agmin_form(agpec_agMuH_MocTa)
+		noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
+		HoBblu_noTok(nick)
 		
 		-- noTok_B_o4Kax[nick] = myThread.create(HoBblu_noTok, nick)
 		-- forms[nick] = form:new{player = nick, bridge_agrec = agpec_agMuH_MocTa}

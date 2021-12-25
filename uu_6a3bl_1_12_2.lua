@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тесты клика по кнопке3"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -120,6 +120,7 @@ local green = 0x66FFCC
 local blue = 0x0000FF
 local white = 0xFFFFFF
 local black = 0x000000
+local gray = 0x574848
 local BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop = 0
 local BblBog_JIoroB_urpokoB_Ha_MoHuTop = false
 local zagepJka_B_ceKyHgax_BblBoga = 3600 --3600 секунд = 1 час
@@ -1771,6 +1772,19 @@ function creat_main_agmin_form(agrecc)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, white)
 	rawset(table_form.main_box2, "visible", table_form.main_box2.setVisible)
 	table_form.main_box2.setClickable(false)
+	
+	--создание скролл_бокса
+	table_form.scroll_badur_up = component.invoke(agrecc, "addBox", 150, 30, 20, 10, gray)
+	rawset(table_form.scroll_badur_up, "visible", table_form.scroll_badur_up.setVisible)
+	table_form.scroll_badur_up.setClickable((false)
+	
+	table_form.scroll_line = component.invoke(agrecc, "addLine", {160, 40}, {160, 102})
+	rawset(table_form.scroll_line, "visible", table_form.scroll_line.setVisible)
+	table_form.scroll_line.setClickable(false)
+	
+	table_form.scroll_badur_down = component.invoke(agrecc, "addBox", 150, 112, 20, 10, gray)
+	rawset(table_form.scroll_badur_down, "visible", table_form.scroll_badur_down.setVisible)
+	table_form.scroll_badur_down.setClickable(false)
 
 	--информационный текст
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 4, 2, napaMeTp_BpeMeHu)

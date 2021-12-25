@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тесты клика по кнопке"
+local Ha3BaHue_o6HoBJIeHu9l = "тесты клика по кнопке2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -494,10 +494,10 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 			if v.getType == "button" then
 				v.setClickable(false)
 				local button_color = v.getColor()
-				v.setColor = green
+				v.setColor(green)
 				os.sleep(0.1) --нужно для синхронизации с очками
 				v.click()
-				v.setColor = button_color
+				v.setColor(button_color)
 				v.setClickable(true)
 			end
 		end

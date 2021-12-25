@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы4"
+local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1689,7 +1689,6 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
-
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 50, 50, blue)
@@ -1703,12 +1702,10 @@ function form:new(myTable)
 	self.__index = self
 	return myTable
 end
-
 function form:addText(x, y, text, color, id)
 	component.invoke(self.glassAgress, "setText", 50, 50, " ")
 	--self[nick .. id] = 
 end
-
 
 function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
@@ -1730,7 +1727,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 	if noTok_B_o4Kax[nick] == nil then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 		noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
-		HoBblu_noTok(nick)
+		myThread.create(HoBblu_noTok, nick)
 		
 		-- noTok_B_o4Kax[nick] = myThread.create(HoBblu_noTok, nick)
 		-- forms[nick] = form:new{player = nick, bridge_agrec = agpec_agMuH_MocTa}

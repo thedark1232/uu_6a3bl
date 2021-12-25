@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тесты клика по кнопке2"
+local Ha3BaHue_o6HoBJIeHu9l = "тесты клика по кнопке3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1754,10 +1754,18 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 	end)
 	return table_button
 end
+
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
+	local oTcTyn = 17
+	local y = 32
+	
+	local y_func = function()
+		y = y + 17
+		return y
+	end
 	--создание формы
-	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 140, 200, blue)
+	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 160, 200, blue)
 	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, white)
@@ -1775,20 +1783,39 @@ function creat_main_agmin_form(agrecc)
 	rawset(table_form.napaMeTp_o3y, "visible", table_form.napaMeTp_o3y.setVisible)
 	table_form.napaMeTp_o3y.setClickable(false)
 
-
 	--создание кнопок
-	table_form.button_reboot = creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, 
-	function()
+	table_form.button_reboot = creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
 	end)
-	table_form.button_exit = creat_new_button(agrecc, 6, 49, 128, 15, "выход", black, white, function()
+	table_form.button_exit = creat_new_button(agrecc, 6, y_func(), 128, 15, "выход", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]()
 	end)
-	table_form.button_update = creat_new_button(agrecc, 6, 66, 128, 15, "обновить", black, white, function()
+	table_form.button_update = creat_new_button(agrecc, 6, y_func(), 128, 15, "обновить", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]()
 	end)
-	table_form.button_update = creat_new_button(agrecc, 6, 83, 128, 15, "тест кнопка", black, white, function()
+	table_form.button_test = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку")
+	end)
+	table_form.button_test2 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка2", black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку2")
+	end)
+	table_form.button_test3 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка3", black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку3")
+	end)
+	table_form.button_test4 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка4", black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку4")
+	end)
+	table_form.button_test5 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка5", black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку5")
+	end)
+	table_form.button_test6 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка6", black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку6")
+	end)
+	table_form.button_test7 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка7", black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7")
+	end)
+	table_form.button_test8 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка8", black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8")
 	end)
 	
 	--component.invoke(agrecc, "sync")

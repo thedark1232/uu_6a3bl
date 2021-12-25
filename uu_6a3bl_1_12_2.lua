@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест 23"
+local Ha3BaHue_o6HoBJIeHu9l = "тест 24"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1742,14 +1742,19 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 	caption.setClickable(false)
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "click", click_function)
-	rawset(table_button, "getType", "button")
+	rawset(table_button, "visible", function(val)
+		table_button.setVisible(val)
+		table_button.caption.setVisible(val)
+	end)
 	return table_button
 end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 140, 200, blue)
+	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, white)
+	rawset(table_form.main_box2, "visible", table_form.main_box2.setVisible)
 	table_form.main_box2.setClickable(false)
 	--содание кнопки рестарта
 	table_form.button_reboot = creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, 
@@ -1764,10 +1769,13 @@ function creat_main_agmin_form(agrecc)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id выход: " .. tostring(table_form.button_exit.getId()))
 	
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
+	rawset(table_form.napaMeTp_BpeMeHu, "visible", table_form.napaMeTp_BpeMeHu.setVisible)
 	table_form.napaMeTp_BpeMeHu.setClickable(false)
 	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
+	rawset(table_form.napaMeTp_eHepruu, "visible", table_form.napaMeTp_eHepruu.setVisible)
 	table_form.napaMeTp_BpeMeHu.napaMeTp_eHepruu(false)
 	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)
+	rawset(table_form.napaMeTp_o3y, "visible", table_form.napaMeTp_o3y.setVisible)
 	table_form.napaMeTp_o3y.setClickable(false)
 	
 	component.invoke(agrecc, "sync")
@@ -1812,20 +1820,14 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 		myThread.create(HoBblu_noTok, nick)
 	else
 		for _, v in pairs(noTok_B_o4Kax[nick]) do
-			v.setVisible(true)
-			if v.getType == "button" then
-				v.caption.setVisible(true)
-			end
+			v.visible(true)
 		end
 		--noTok_B_o4Kax[nick].button_reboot.setClickable(true)
 	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	for _, v in pairs(noTok_B_o4Kax[nick]) do
-		v.setVisible(false)
-		if v.getType == "button" then
-			v.caption.setVisible(false)
-		end
+		v.visible(false)
 	end
 end
 

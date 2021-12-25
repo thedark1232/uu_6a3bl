@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы7"
+local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1692,7 +1692,7 @@ function HauTu_HoBblx_urpokoB()
 end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
-	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 50, 50, blue)
+	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 100, 24, blue)
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
 	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
 	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)
@@ -1715,6 +1715,9 @@ end
 function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")
+		for _, v in pairs(noTok_B_o4Kax[nick]) do
+			v.setVisible(true)
+		end
 	
 		while true do
 			noTok_B_o4Kax[nick].napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
@@ -1735,22 +1738,12 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 		noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
 		myThread.create(HoBblu_noTok, nick)
-		
-		-- noTok_B_o4Kax[nick] = myThread.create(HoBblu_noTok, nick)
-		-- forms[nick] = form:new{player = nick, bridge_agrec = agpec_agMuH_MocTa}
-		-- forms[nick].addText(
-	else
-		
-		
 	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
-
-	--if noTok_B_o4Kax[nick] ~= nil then
-		--myThread.kill(noTok_B_o4Kax[nick])
-		--noTok_B_o4Kax[nick] = nil
-		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток уничтожен для: " .. g .. nick)	
-	--end
+	for _, v in pairs(noTok_B_o4Kax[nick]) do
+		v.setVisible(false)
+	end
 end
 
 
@@ -5362,7 +5355,7 @@ do
 		if one_ceHcop_BKJI == true then pcall(HauTu_HoBblx_urpokoB) end
 		napaMeTp_BpeMeHu = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde
 		napaMeTp_eHepruu = "энергия компа: " .. tostring(math.floor(computer.energy()))
-		napaMeTp_o3y = "ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%" else napaMeTp_o3y = "" end
+		napaMeTp_o3y = "ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%"
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then o6bekT_TekcTa_BpeMeHu.setText(hous .. ":" .. minute .. ":" .. secunde .. napaMeTp_o3y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))) end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then
 			Ta6JIuca_gucTaHcuu_pagapa = Ta6JIuca_koMnoHeHToB["radar"].getPlayers(gucTaHcu9l_pagapa)

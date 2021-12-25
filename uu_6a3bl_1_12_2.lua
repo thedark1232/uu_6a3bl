@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "подключение потоков7"
+local Ha3BaHue_o6HoBJIeHu9l = "создание первой формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -128,6 +128,8 @@ local Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa = 1
 local Tekyllluu_cBeT = white
 local zagepJka_ygaJieHu9l_coo6llleHuu = 5
 local gucTaHcu9l_pagapa = 199
+local form = {}
+local forms = {}
 local Ta6JIuca_gucTaHcuu_pagapa = {}
 local cBeT_gJI9l_o4koB = {}
 local redStone_functions = {}
@@ -1686,21 +1688,36 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
+
+function creat_main_agmin_form(agrecc)
+	local table_form = {}
+	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 10, 30)
+	table_form.TekcT_BpeMeHu = component.invoke(agrecc, "setText", 2, 2, cucTeMHbl_napaMeTpbl_KoMna)
+	
+end
+function form:new(myTable)
+	myTable = myTable or {}
+	setmetatable(myTable, self)
+	self.__index = self
+	return myTable
+end
+
+function form:addText(x, y, text, color, id)
+	component.invoke(self.glassAgress, "setText", 50, 50, " ")
+	self[nick .. id] = 
+end
+
+
 function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан для: " .. g .. nick)
 		local Text_CuCTeMHblx_napaMeTpoB = component.invoke(agpec_agMuH_MocTa, "addText", 2, 40, cucTeMHbl_napaMeTpbl_KoMna)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тип: " .. type(Text_CuCTeMHblx_napaMeTpoB))
-		for k, v in pairs(Text_CuCTeMHblx_napaMeTpoB) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. " " .. tostring(v))
-		end
-		
-		local Text = 1
+	
+	
 	
 		while true do
-			Text_CuCTeMHblx_napaMeTpoB.setText(Text_CuCTeMHblx_napaMeTpoB)
+			Text_CuCTeMHblx_napaMeTpoB.setText(cucTeMHbl_napaMeTpbl_KoMna)
 			component.invoke(agpec_agMuH_MocTa, "sync")
-			Text = Text + 1
 			os.sleep(0.1)
 		end
 	end)
@@ -1710,25 +1727,26 @@ function HoBblu_noTok(nick)
 	end
 end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название события: " .. g .. tostring(event_type))
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес1: " .. g .. tostring(agrecc))
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес2: " .. g .. tostring(agrecc2))
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока: " .. g .. tostring(nick))
 	
 	if noTok_B_o4Kax[nick] == nil then
-		noTok_B_o4Kax[nick] = myThread.create(HoBblu_noTok, nick)
+		noTok_B_o4Kax[nick] = true
+		creat_main_agmin_form(agpec_agMuH_MocTa)
+		component.invoke(agpec_agMuH_MocTa, "sync")
+		-- noTok_B_o4Kax[nick] = myThread.create(HoBblu_noTok, nick)
+		-- forms[nick] = form:new{player = nick, bridge_agrec = agpec_agMuH_MocTa}
+		-- forms[nick].addText(
+	else
+		
+		
 	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "название события: " .. g .. tostring(event_type))
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес1: " .. g .. tostring(agrecc))
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "адрес2: " .. g .. tostring(agrecc2))
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "ник игрока: " .. g .. tostring(nick))
-	if noTok_B_o4Kax[nick] ~= nil then
-		myThread.kill(noTok_B_o4Kax[nick])
-		noTok_B_o4Kax[nick] = nil
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток уничтожен для: " .. g .. nick)	
-	end
+
+	--if noTok_B_o4Kax[nick] ~= nil then
+		--myThread.kill(noTok_B_o4Kax[nick])
+		--noTok_B_o4Kax[nick] = nil
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток уничтожен для: " .. g .. nick)	
+	--end
 end
 
 
@@ -5370,20 +5388,20 @@ do
 			for _, ta6JIuca_noJIb3oBaTeJIeu in pairs(Ha_KoM_ogeTbl_o4ku) do
 				if whiteListUsers[ta6JIuca_noJIb3oBaTeJIeu.name] == nil then
 					--component.invoke(agpec_agMuH_MocTa, "clear")
-					component.invoke(agpec_agMuH_MocTa, "addText", 1, cMellleHue_BblBoga_o4koB_no_y + 10, "ОБНАРУЖЕН ПОСТОРОННИЙ ИГРОК В ОЧКАХ " .. tostring(ta6JIuca_noJIb3oBaTeJIeu.name))
+					--component.invoke(agpec_agMuH_MocTa, "addText", 1, cMellleHue_BblBoga_o4koB_no_y + 10, "ОБНАРУЖЕН ПОСТОРОННИЙ ИГРОК В ОЧКАХ " .. tostring(ta6JIuca_noJIb3oBaTeJIeu.name))
 					o6HapyJeH_4yJou_urpok = true
 				end
 			end
 			if not o6HapyJeH_4yJou_urpok then
 				cucTeMHbl_napaMeTpbl_KoMna = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. koJIu4ecTBo_O3Y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))
 				--component.invoke(agpec_agMuH_MocTa, "clear")
-				component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
+				--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, cucTeMHbl_napaMeTpbl_KoMna)
 				local koorguHaTa_o4koB = cMellleHue_BblBoga_o4koB_no_y + 10
 				local oTcopTupoBaHHa9l_Ta6JIuca = {}
 				for k, v in ipairs(TekcT_gJI9l_BugJeToB) do table.insert(oTcopTupoBaHHa9l_Ta6JIuca, {v, cBeT_gJI9l_o4koB[k]}) end
 				table.sort(oTcopTupoBaHHa9l_Ta6JIuca, mySort)
 				for _, zHa4eHue_Ta6JIucbl in ipairs(oTcopTupoBaHHa9l_Ta6JIuca) do
-					component.invoke(agpec_agMuH_MocTa, "addText", 1, koorguHaTa_o4koB, zHa4eHue_Ta6JIucbl[1], zHa4eHue_Ta6JIucbl[2])
+					--component.invoke(agpec_agMuH_MocTa, "addText", 1, koorguHaTa_o4koB, zHa4eHue_Ta6JIucbl[1], zHa4eHue_Ta6JIucbl[2])
 					koorguHaTa_o4koB = koorguHaTa_o4koB + 10
 				end
 				if oTnpaBJl9lTb_JIor_c_geTekTopoB then
@@ -5394,7 +5412,7 @@ do
 				local cMellleHue_oTo6paJeHu9l_TekcTa_no_y = koorguHaTa_o4koB + 10
 				for uM9l_urpoka, cTaTyc_urpoka in pairs(rJIo6aJIbHa9l_Ta6JIuca_urpokoB) do	--отображение игроков через сенсор
 					if cTaTyc_urpoka["player_x"] ~= nil then
-						component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
+						--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 				end
@@ -5415,7 +5433,7 @@ do
 							end
 							local zoHa = npoBepka_HaxoJgeHu9l_B_3oHe(koopgbl.player_x, koopgbl.player_y, koopgbl.player_z)
 							pcall(function()
-								component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z .. " " .. zoHa .. " " .. online)
+								--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ceH: " .. Huk .. ": x: " .. koopgbl.player_x .. " y: " .. koopgbl.player_y .. " z: " .. koopgbl.player_z .. " " .. zoHa .. " " .. online)
 							end)
 							cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 						end
@@ -5423,23 +5441,23 @@ do
 				end
 				for moder, _ in pairs(Ta6JIuca_mogeroB_gJI9l_o4koB) do
 					if computer.addUser(moder) then
-						component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, tostring(moder) .. " - ONLINE")
+						--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, tostring(moder) .. " - ONLINE")
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 					computer.removeUser(moder)
 				end
 				if coo6llleHue_TuHHeJI9l and #coo6llleHue_TuHHeJI9l > 0 and coo6llleHue_TuHHeJI9l[1] == "лог детекторов" then
 					for i = 2, #coo6llleHue_TuHHeJI9l do
-						component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, coo6llleHue_TuHHeJI9l[i])
+						--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, coo6llleHue_TuHHeJI9l[i])
 						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 					end
 				end
 				if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then 
-					component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ДИСТ. ОТ ЦЕНТРА МЭ:")
+					--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, "ДИСТ. ОТ ЦЕНТРА МЭ:")
 					cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 				end
 				for k, v in ipairs(Ta6JIuca_gucTaHcuu_pagapa) do
-					component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, v.name .. ": " .. tostring(math.floor(v.distance)))
+					--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, v.name .. ": " .. tostring(math.floor(v.distance)))
 					cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 				end
 				koopguHaTa_coo6llleHu9l_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y
@@ -5447,7 +5465,7 @@ do
 			for i = 1, #Ta6JIuca_coo6llleHuu do
 				pcall(function()
 					if Ta6JIuca_coo6llleHuu[i][2] > cekyHdbl_gJI9l_JIoroB then
-						component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ta6JIuca_coo6llleHuu[i][1], red)
+						--component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ta6JIuca_coo6llleHuu[i][1], red)
 						koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 					else
 						Ta6JIuca_coo6llleHuu[i] = nil
@@ -5455,7 +5473,7 @@ do
 				end)
 			end
 			if coo6llleHue_oT_redstone then
-				component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. teKcT_coo6llleHu9l, red)
+				--component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. teKcT_coo6llleHu9l, red)
 				koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 			end
 			if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 and MaTpuca_cBo6ogHa then
@@ -5466,11 +5484,11 @@ do
 			end
 			if coo6llleHue_OT_MaTpucbl ~= nil and #coo6llleHue_OT_MaTpucbl > 0 then
 				for _, v in ipairs(coo6llleHue_OT_MaTpucbl) do
-					component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. tostring(v), red)
+					--component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. tostring(v), red)
 					koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 				end
 			end
-			component.invoke(agpec_agMuH_MocTa, "sync")
+			--component.invoke(agpec_agMuH_MocTa, "sync")
 		end
 		if BblBog_JIoroB_urpokoB_Ha_MoHuTop and cekyHdbl_gJI9l_JIoroB > BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop then
 			BblBog_akTuBHocTu_urpokoB_Ha_MoHuTop(true)

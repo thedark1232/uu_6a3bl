@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест 21"
+local Ha3BaHue_o6HoBJIeHu9l = "тест 22"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -495,7 +495,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 	io.write("id нажатия->"); print(id)
 	for k, v in pairs(noTok_B_o4Kax[nick]) do
 		if v.getId() == id then
-			io.write("айди совпало с кнопкой:->"); print(v.label)
+			io.write("айди совпало с кнопкой:->"); print(v.caption.getText())
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "нажатие на: " .. g .. v.label)
 		end
 	end
@@ -1734,20 +1734,28 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
+function creat_new_button(agress, x, y, w, h, label, color_background, color_foreground, click_function)
+	local table_button
+	table_button = component.invoke(agress, "addBox", x, y, w, h, color_background)
+	local caption = component.invoke(agress, "addText", x + 1, y + 1, label, color_foreground)
+	caption.setClickable(false)
+	rawset(table_button, "caption", caption)
+	rawset(table_button, "click", click_function)
+end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 140, 200, blue)
-	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, whihe)
+	table_form.main_box.setClickable(false)
+	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 168, white)
+	table_form.main_box2.setClickable(false)
 	--содание кнопки рестарта
-	table_form.button_reboot = component.invoke(agrecc, "addBox", 6, 32, 128, 15, black)
-	table_form.button_reboot_text = component.invoke(agrecc, "addText", 7, 33, "рестарт", white)
-	rawset(table_form.button_reboot, "label", "ребут")
+	table_form.button_reboot = creat_new_button(agrecc, 6, 32, 128, 15, black, white, TecToBblu_click_no_kHonKe)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id рестарт: " .. tostring(table_form.button_reboot.getId()))
 	
 	--создание кнопки выхода
 	table_form.button_exit = component.invoke(agrecc, "addBox", 6, 49, 128, 15, black)
 	table_form.button_exit_text = component.invoke(agrecc, "addText", 7, 50, "выход", white)
-	rawset(table_form.button_exit_text, "label", "выход")
+	rawset(table_form.button_exit, "label", "выход")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id выход: " .. tostring(table_form.button_exit.getId()))
 	
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
@@ -1808,6 +1816,10 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 		--	v.setClickable(false)
 		--end
 	end
+end
+
+function TecToBblu_click_no_kHonKe()
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тестовый клик по кнопке")
 end
 
 

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1774,15 +1774,15 @@ function creat_main_agmin_form(agrecc)
 	table_form.main_box2.setClickable(false)
 	
 	--создание скролл_бокса
-	table_form.scroll_badur_up = component.invoke(agrecc, "addBox", 150, 30, 20, 10, gray)
+	table_form.scroll_badur_up = component.invoke(agrecc, "addBox", 140, 30, 10, 10, gray)
 	rawset(table_form.scroll_badur_up, "visible", table_form.scroll_badur_up.setVisible)
-	table_form.scroll_badur_up.setClickable((false)
+	table_form.scroll_badur_up.setClickable(false)
 	
-	table_form.scroll_line = component.invoke(agrecc, "addLine", {160, 40}, {160, 102})
+	table_form.scroll_line = component.invoke(agrecc, "addLine", {160, 40}, {160, 178})
 	rawset(table_form.scroll_line, "visible", table_form.scroll_line.setVisible)
 	table_form.scroll_line.setClickable(false)
 	
-	table_form.scroll_badur_down = component.invoke(agrecc, "addBox", 150, 112, 20, 10, gray)
+	table_form.scroll_badur_down = component.invoke(agrecc, "addBox", 140, 188, 10, 10, gray)
 	rawset(table_form.scroll_badur_down, "visible", table_form.scroll_badur_down.setVisible)
 	table_form.scroll_badur_down.setClickable(false)
 

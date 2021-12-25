@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 12"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1759,16 +1759,6 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
-	local oTcTyn = 17
-	local y = 32
-	--local min_visible_x, max_visible_x = 1, 140
-	--local min_visible_y, max_visible_y = y - 1
-	
-	local y_func = function()
-		--max_visible_y = y + 1
-		y = y + 17
-		return y
-	end
 	
 	--создание формы
 	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 152, 205, blue)
@@ -1806,10 +1796,15 @@ function creat_main_agmin_form(agrecc)
 end
 
 function creat_main_buttons(agrecc)
+	local y = 32
+	local y_func = function()
+		y = y + 17
+		return y
+	end
 	--создание кнопок
 	local main_buttons = {}
 	
-	table.insert(main_buttons, creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, function()
+	table.insert(main_buttons, creat_new_button(agrecc, 6, y, 128, 15, "рестарт", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
 	end))
 	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "выход", black, white, function()

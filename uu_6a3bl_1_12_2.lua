@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка8"
+local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -520,7 +520,7 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
 			if noTok_B_o4Kax[nick .. " main_scroll"][1].h < noTok_B_o4Kax[nick .. " main_scroll"][1].max_y then
 				--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало перемещения")
-				local a, b = pcall(noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY + 1))
+				local a, b = pcall(function() noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY + 1) end)
 				 Ta6JIuca_koMnoHeHToB["chat_box"].say("успех?-> " .. tostring(a))
 				if not a then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. b) end
 			end

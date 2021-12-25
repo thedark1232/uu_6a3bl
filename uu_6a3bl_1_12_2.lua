@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла4"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")

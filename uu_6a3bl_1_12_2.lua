@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест 18"
+local Ha3BaHue_o6HoBJIeHu9l = "тест 20"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -470,33 +470,31 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	setConfiguration()
 end
 function glasses_key_down(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_down")
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_down")
 end
 function glasses_key_up(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_up")
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_up")
 end
 function glasses_mouse_scroll(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_scroll")
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_scroll")
 end
 function glasses_mouse_down(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
 end
 function glasses_mouse_up(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_up")
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_up")
 end
 function glasses_component_mouse_wheel(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
 end
 function glasses_component_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_down")
 end
-function glasses_component_mouse_up(...)
-	local params = table.pack(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_up")
-	local apryMeHTbl = 1
-	for k, v in pairs(params) do
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(apryMeHTbl) .. ": " .. g .. tostring(v))
-		apryMeHTbl = apryMeHTbl + 1
+function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
+	for k, v in pairs(noTok_B_o4Kax[nick]) do
+		if v.getId() == id then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "нажатие на: " .. g .. v.label)
+		end
 	end
 end
 function glasses_mouse_drag(...)
@@ -1741,6 +1739,7 @@ function creat_main_agmin_form(agrecc)
 	table_form.button_reboot = component.invoke(agrecc, "addBox", 6, 32, 128, 15, black)
 	table_form.button_reboot_text = component.invoke(agrecc, "addText", 7, 33, "рестарт", white)
 	table_form.button_reboot.setClickable(true)
+	table_form.button_reboot.label = "ребут"
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id рестарт: " .. tostring(table_form.button_reboot.getId()))
 	
 	--создание кнопки выхода

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка"
+local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -491,7 +491,7 @@ end
 function glasses_component_mouse_wheel(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
 end
-function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val
+function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = false
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
@@ -506,6 +506,11 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 				v.setColor(button_color)
 				v.setClickable(true)
 			end
+		end
+	end
+	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
+		if v.getId() == id then
+			v.click()
 		end
 	end
 end
@@ -1783,7 +1788,7 @@ function creat_new_vertical_scroll(agress, x, y, w, h, min_y, max_y, color_backg
 	rawset(table_scroll, "getType", "scroll_button")
 	rawset(table_scroll, "value", 1)
 	rawset(table_scroll, "enabled", false)
-	rawset(table_scroll, "scroll", scroll_function)
+	rawset(table_scroll, "click", scroll_function)
 	rawset(table_scroll, "h", y + h)
 	
 	return table_scroll

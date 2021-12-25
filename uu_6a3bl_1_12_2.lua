@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы5"
+local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5293,6 +5293,8 @@ do
 	HanuCaTb_6oJIblllou_TekcT(TekcT_nocJIe_x + 1, 1, {"А", "К", "Т", "И", "В", "Н", "А"}, "setGreen")
 	--добавление админа в вайт лист
 	whiteListUsers[admin] = "ok"
+	
+	component.invoke(agpec_agMuH_MocTa, "clear")
 --ГЛАВНЫЙ ЦИКЛ
 	while not_exit do
 		os.sleep(zagepJka)

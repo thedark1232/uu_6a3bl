@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 15"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 16"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1764,7 +1764,7 @@ function creat_new_vertical_scroll(agress, x, y, w, h, min_y, max_y, color_backg
 	rawset(table_scroll, "min_y", min_y)
 	rawset(table_scroll, "max_y", max_y)
 	rawset(table_scroll, "visible", table_scroll.setVisible)
-	rawset(table_button, "getType", "scroll_button")
+	rawset(table_scroll, "getType", "scroll_button")
 	
 	return table_scroll
 end
@@ -1808,7 +1808,7 @@ function creat_main_agmin_form(agrecc)
 end
 function creat_main_scroll(agrecc)
 	local main_scroll = {}
-	table.insert(main_scroll, creat_new_vertical_scroll(agrecc, 140, 40, 10, 50, 40, 192, gray, function()
+	table.insert(main_scroll, creat_new_vertical_scroll(agrecc, 140, 40, 10, 50, 40, 192, white, function()
 		
 	
 	end))
@@ -1881,7 +1881,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 			noTok_B_o4Kax[nick .. " main_form"] = creat_main_agmin_form(agpec_agMuH_MocTa)
 			noTok_B_o4Kax[nick .. " main_buttons"] = creat_main_buttons(agpec_agMuH_MocTa)
-			moTok_B_o4kax[nick .. " main_scroll"] = creat_main_scroll(agpec_agMuH_MocTa)
+			noTok_B_o4Kax[nick .. " main_scroll"] = creat_main_scroll(agpec_agMuH_MocTa)
 			noTok_B_o4Kax[nick .. "noTok"] = myThread.create(HoBblu_noTok, nick)
 		end
 		for _, v in pairs(noTok_B_o4Kax[nick .. " main_form"]) do
@@ -1889,7 +1889,8 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 		end
 		for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
 			v.visible(true)
-		end			
+		end	
+		noTok_B_o4Kax[nick .. " main_scroll"].visible(true)
 	end)
 	if not cTaTyc then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
@@ -1904,6 +1905,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
 		v.visible(false)
 	end	
+	noTok_B_o4Kax[nick .. " main_scroll"].visible(false)
 end
 
 do

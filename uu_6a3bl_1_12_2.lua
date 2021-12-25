@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка9"
+local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -495,7 +495,7 @@ end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	if noTok_B_o4Kax[nick .. " main_scroll"][1].getId() == id then
 		noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = true
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
 	end
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
@@ -513,22 +513,19 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 		end
 	end
 	noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = false
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 	if y > 0 then --скролл вниз
 		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
 			if noTok_B_o4Kax[nick .. " main_scroll"][1].h < noTok_B_o4Kax[nick .. " main_scroll"][1].max_y then
-				--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало перемещения")
-				local a, b = pcall(function() noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY + 1) end)
-				 Ta6JIuca_koMnoHeHToB["chat_box"].say("успех?-> " .. tostring(a))
-				if not a then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. b) end
+				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY() + 1) end)
 			end
 		end
 	elseif y < 0 then --скролл вверх
 		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
 			if noTok_B_o4Kax[nick .. " main_scroll"][1].getY > noTok_B_o4Kax[nick .. " main_scroll"][1].min_y then
-				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY - 1)
+				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY() - 1)
 			end
 		end
 	end

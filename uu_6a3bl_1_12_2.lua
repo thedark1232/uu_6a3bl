@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы8"
+local Ha3BaHue_o6HoBJIeHu9l = "тест первой формы9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1692,10 +1692,11 @@ function HauTu_HoBblx_urpokoB()
 end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
-	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 100, 24, blue)
+	table_form.box = component.invoke(agrecc, "addBox", 1, 1, 140, 200, blue)
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)
 	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 2, 12, napaMeTp_eHepruu)
 	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 2, 22, napaMeTp_o3y)
+	table_form.box = component.invoke(agrecc, "addBox", 2, 30, 134, 168, blue)
 	
 	
 	component.invoke(agrecc, "sync")
@@ -1738,6 +1739,10 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 		noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
 		myThread.create(HoBblu_noTok, nick)
+	else
+		for _, v in pairs(noTok_B_o4Kax[nick]) do
+			v.setVisible(true)
+		end
 	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)

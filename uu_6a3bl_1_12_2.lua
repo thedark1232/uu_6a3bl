@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка10"
+local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -487,7 +487,7 @@ function glasses_mouse_down(...)
 end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
 	noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = false
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
 end
 function glasses_component_mouse_wheel(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
@@ -519,13 +519,13 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 	if y > 0 then --скролл вниз
 		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
 			if noTok_B_o4Kax[nick .. " main_scroll"][1].h < noTok_B_o4Kax[nick .. " main_scroll"][1].max_y then
-				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY() + 1) end)
+				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY() + 10)
 			end
 		end
 	elseif y < 0 then --скролл вверх
 		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
-			if noTok_B_o4Kax[nick .. " main_scroll"][1].getY > noTok_B_o4Kax[nick .. " main_scroll"][1].min_y then
-				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY() - 1)
+			if noTok_B_o4Kax[nick .. " main_scroll"][1].getY() > noTok_B_o4Kax[nick .. " main_scroll"][1].min_y then
+				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY() - 10)
 			end
 		end
 	end

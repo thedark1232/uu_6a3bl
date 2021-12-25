@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла8"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1804,60 +1804,49 @@ function creat_main_agmin_form(agrecc)
 	table_form.napaMeTp_o3y.setClickable(false)
 
 	--создание кнопок
-	table_form.button_reboot = creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, function()
+	table_form.main_buttons = {}
+	table_form.main_buttons.visible = function() end
+	
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, 32, 128, 15, "рестарт", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
-	end)
-	table_form.button_exit = creat_new_button(agrecc, 6, y_func(), 128, 15, "выход", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "выход", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]()
-	end)
-	table_form.button_update = creat_new_button(agrecc, 6, y_func(), 128, 15, "обновить", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "обновить", black, white, function()
 		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]()
-	end)
-	table_form.button_test = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку")
-	end)
-	table_form.button_test2 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка2", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка2", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку2")
-	end)
-	table_form.button_test3 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка3", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка3", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку3")
-	end)
-	table_form.button_test4 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка4", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка4", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку4")
-	end)
-	table_form.button_test5 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка5", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка5", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку5")
-	end)
-	table_form.button_test6 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка6", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка6", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку6")
-	end)
-	table_form.button_test7 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка7", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка7", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7")
-	end)
-	table_form.button_test8 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка8", black, white, function()
+	end))
+	table.insert(table_form.main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка8", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8")
-	end)
+	end))
 	
 	return table_form
-end
-function form:new(myTable)
-	myTable = myTable or {}
-	setmetatable(myTable, self)
-	self.__index = self
-	return myTable
-end
-function form:addText(x, y, text, color, id)
-	component.invoke(self.glassAgress, "setText", 50, 50, " ")
-	--self[nick .. id] = 
 end
 
 function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")
-		for _, v in pairs(noTok_B_o4Kax[nick]) do
-			v.setVisible(true)
-		end	
-			
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
 		while true do
 			noTok_B_o4Kax[nick].napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
 			noTok_B_o4Kax[nick].napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
@@ -1877,11 +1866,13 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 			noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
 			noTok_B_o4Kax[nick .. "noTok"] = myThread.create(HoBblu_noTok, nick)
-		else
-			for _, v in pairs(noTok_B_o4Kax[nick]) do
-				v.visible(true)	
-			end
 		end
+		for _, v in pairs(noTok_B_o4Kax[nick]) do
+			v.visible(true)
+		end
+		for _, v in pairs(noTok_B_o4Kax[nick].main_buttons) do
+			v.visible(true)
+		end			
 	end)
 	if not cTaTyc then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
@@ -1893,6 +1884,9 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	for _, v in pairs(noTok_B_o4Kax[nick]) do
 		v.visible(false)
 	end
+	for _, v in pairs(noTok_B_o4Kax[nick].main_buttons) do
+		v.visible(false)
+	end	
 end
 
 do

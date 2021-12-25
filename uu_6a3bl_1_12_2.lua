@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест 24"
+local Ha3BaHue_o6HoBJIeHu9l = "тест 25"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1813,17 +1813,19 @@ function HoBblu_noTok(nick)
 	end
 end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
-	
-	if noTok_B_o4Kax[nick] == nil then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
-		noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
-		myThread.create(HoBblu_noTok, nick)
-	else
-		for _, v in pairs(noTok_B_o4Kax[nick]) do
-			v.visible(true)
+	local cTaTyc, err = pcall(function()
+		if noTok_B_o4Kax[nick] == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
+			noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
+			myThread.create(HoBblu_noTok, nick)
+		else
+			for _, v in pairs(noTok_B_o4Kax[nick]) do
+				v.visible(true)
+			end
+			--noTok_B_o4Kax[nick].button_reboot.setClickable(true)
 		end
-		--noTok_B_o4Kax[nick].button_reboot.setClickable(true)
-	end
+	end)
+	if not cTaTyc then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	for _, v in pairs(noTok_B_o4Kax[nick]) do

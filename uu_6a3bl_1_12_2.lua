@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест 16"
+local Ha3BaHue_o6HoBJIeHu9l = "тест 18"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -488,13 +488,15 @@ function glasses_component_mouse_wheel(...)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
 end
 function glasses_component_mouse_down(...)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_down")
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_down")
 end
 function glasses_component_mouse_up(...)
+	local params = table.pack(...)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_up")
 	local apryMeHTbl = 1
-	for k, v in pairs(arg) do
+	for k, v in pairs(params) do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(apryMeHTbl) .. ": " .. g .. tostring(v))
+		apryMeHTbl = apryMeHTbl + 1
 	end
 end
 function glasses_mouse_drag(...)
@@ -1744,7 +1746,7 @@ function creat_main_agmin_form(agrecc)
 	--создание кнопки выхода
 	table_form.button_exit = component.invoke(agrecc, "addBox", 6, 49, 128, 15, black)
 	table_form.button_exit_text = component.invoke(agrecc, "addText", 7, 50, "выход", white)
-	table_form.button_exit.setClickable(true)
+	table_form.button_exit.setClickable(false)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id выход: " .. tostring(table_form.button_exit.getId()))
 	
 	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 2, 2, napaMeTp_BpeMeHu)

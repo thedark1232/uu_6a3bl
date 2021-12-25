@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 13"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -491,7 +491,7 @@ function glasses_component_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_down")
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	for k, v in pairs(noTok_B_o4Kax[nick]) do
+	for k, v in pairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
 		if v.getId() == id then
 			if v.getType == "button" then
 				v.setClickable(false)
@@ -1845,9 +1845,9 @@ function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
 		while true do
-			noTok_B_o4Kax[nick].napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
-			noTok_B_o4Kax[nick].napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
-			noTok_B_o4Kax[nick].napaMeTp_o3y.setText(napaMeTp_o3y)
+			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
+			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
+			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_o3y.setText(napaMeTp_o3y)
 			component.invoke(agpec_agMuH_MocTa, "sync")
 			os.sleep(0.1)
 		end
@@ -1859,7 +1859,7 @@ function HoBblu_noTok(nick)
 end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local cTaTyc, err = pcall(function()
-		if noTok_B_o4Kax[nick] == nil then
+		if noTok_B_o4Kax[nick .. " main_form"] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 			noTok_B_o4Kax[nick .. " main_form"] = creat_main_agmin_form(agpec_agMuH_MocTa)
 			noTok_B_o4Kax[nick .. " main_buttons"] = creat_main_buttons(agpec_agMuH_MocTa)

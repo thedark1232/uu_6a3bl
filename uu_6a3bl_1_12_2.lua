@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание скролла7"
+local Ha3BaHue_o6HoBJIeHu9l = "создание скролла8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -476,7 +476,7 @@ function glasses_key_up(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_up")
 end
 function glasses_mouse_scroll(...)
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_scroll")
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_scroll")
 end
 function glasses_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
@@ -1749,24 +1749,30 @@ function creat_new_button(agress, x, y, w, h, label, color_background, color_for
 	caption.setClickable(false)
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "click", click_function)
+	rawset(table_button, "outOfRange", false)
 	rawset(table_button, "visible", function(val)
-	rawset(table_button, "getType", "button")
 		table_button.setVisible(val)
 		table_button.caption.setVisible(val)
 	end)
+	rawset(table_button, "getType", "button")
+	
 	return table_button
 end
 function creat_main_agmin_form(agrecc)
 	local table_form = {}
 	local oTcTyn = 17
 	local y = 32
+	--local min_visible_x, max_visible_x = 1, 140
+	--local min_visible_y, max_visible_y = y - 1
 	
 	local y_func = function()
+		--max_visible_y = y + 1
 		y = y + 17
 		return y
 	end
+	
 	--создание формы
-	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 159, 205, blue)
+	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 152, 205, blue)
 	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 172, white)
@@ -1813,7 +1819,6 @@ function creat_main_agmin_form(agrecc)
 	table_form.button_test2 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка2", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку2")
 	end)
-	table_form.button_test2.setVisible(false)
 	table_form.button_test3 = creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка3", black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку3")
 	end)
@@ -1833,7 +1838,6 @@ function creat_main_agmin_form(agrecc)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8")
 	end)
 	
-	--component.invoke(agrecc, "sync")
 	return table_form
 end
 function form:new(myTable)
@@ -1872,17 +1876,17 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 		if noTok_B_o4Kax[nick] == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
 			noTok_B_o4Kax[nick] = creat_main_agmin_form(agpec_agMuH_MocTa)
-			myThread.create(HoBblu_noTok, nick)
+			noTok_B_o4Kax[nick .. "noTok"] = myThread.create(HoBblu_noTok, nick)
 		else
 			for _, v in pairs(noTok_B_o4Kax[nick]) do
-				v.visible(true)
+				v.visible(true)	
 			end
-			--noTok_B_o4Kax[nick].button_reboot.setClickable(true)
 		end
 	end)
 	if not cTaTyc then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
 		noTok_B_o4Kax[nick] = nil
+		myThread.kill(noTok_B_o4Kax[nick .. "noTok"])
 	end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)

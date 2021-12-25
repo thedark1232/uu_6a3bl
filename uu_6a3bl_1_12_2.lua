@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "кнопки1"
+local Ha3BaHue_o6HoBJIeHu9l = "центрирование текста в кнопках"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1733,8 +1733,11 @@ function HauTu_HoBblx_urpokoB()
 end
 function creat_new_button(agress, x, y, w, h, label, color_background, color_foreground, click_function)
 	local table_button
+	local w2 = w / 2
+	local l2 = unicode.len(label) / 2
+	local center_x = math.floor(w2 - l2)
 	table_button = component.invoke(agress, "addBox", x, y, w, h, color_background)
-	local caption = component.invoke(agress, "addText", x + 1, y + 1, label, color_foreground)
+	local caption = component.invoke(agress, "addText", x + center_x, y + 3, label, color_foreground)
 	caption.setClickable(false)
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "click", click_function)

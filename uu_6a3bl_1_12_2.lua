@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка11"
+local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -130,6 +130,10 @@ local Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa = 1
 local Tekyllluu_cBeT = white
 local zagepJka_ygaJieHu9l_coo6llleHuu = 5
 local gucTaHcu9l_pagapa = 199
+
+local MoHuTop_urpoka = {}
+local Bce_ragJeTbl_urpoka = {}
+
 local form = {}
 local forms = {}
 local Ta6JIuca_gucTaHcuu_pagapa = {}
@@ -1761,7 +1765,6 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
-
 function creat_new_button(agress, x, y, w, h, label, color_background, color_foreground, click_function)
 	local table_button
 	local w2 = math.floor(w / 2)
@@ -1800,11 +1803,9 @@ function vertical_scroll_click(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние ползунка: " .. g .. tostring(v.enabled))
 	end
 end
-function creat_main_agmin_form(agrecc)
-	local table_form = {}
-	
+function creat_main_agmin_form(nick)
 	--создание формы
-	table_form.main_box = component.invoke(agrecc, "addBox", 1, 1, 152, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 152, 205, blue)
 	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 172, white)
@@ -1838,9 +1839,7 @@ function creat_main_agmin_form(agrecc)
 	return table_form
 end
 function creat_main_scroll(agrecc)
-	local main_scroll = {}
-	table.insert(main_scroll, creat_new_vertical_scroll(agrecc, 140, 40, 10, 50, 40, 192, white, vertical_scroll_click))
-	return main_scroll
+	return creat_new_vertical_scroll(agrecc, 140, 40, 10, 50, 40, 192, white, vertical_scroll_click))
 end
 function creat_main_buttons(agrecc)
 	local y = 32
@@ -1894,7 +1893,6 @@ function HoBblu_noTok(nick)
 			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
 			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
 			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_o3y.setText(napaMeTp_o3y)
-			component.invoke(agpec_agMuH_MocTa, "sync")
 			os.sleep(0.1)
 		end
 	end)
@@ -1904,42 +1902,66 @@ function HoBblu_noTok(nick)
 	end
 end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
-	local cTaTyc, err = pcall(function()
-		if noTok_B_o4Kax[nick .. " main_form"] == nil then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
-			noTok_B_o4Kax[nick .. " main_form"] = creat_main_agmin_form(agpec_agMuH_MocTa)
-			noTok_B_o4Kax[nick .. " main_buttons"] = creat_main_buttons(agpec_agMuH_MocTa)
-			noTok_B_o4Kax[nick .. " main_scroll"] = creat_main_scroll(agpec_agMuH_MocTa)
-			noTok_B_o4Kax[nick .. "noTok"] = myThread.create(HoBblu_noTok, nick)
+	if whiteListUsers[nick] ~= nil then
+		if MoHuTop_urpoka[nick] == nil then MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick) end
+		if Bce_ragJeTbl_urpoka[nick] == nil then
+			Bce_ragJeTbl_urpoka[nick] = {}
+			if nick == admin then
+				Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
+			else
+				Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
+			end
+		else
+			if nick == admin then
+				Bce_ragJeTbl_urpoka[nick].main_admin_form.visible = true		
+			else
+				Bce_ragJeTbl_urpoka[nick].main_form.visible = true
+			end
 		end
-		for _, v in pairs(noTok_B_o4Kax[nick .. " main_form"]) do
-			v.visible(true)
-		end
-		for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
-			v.visible(true)
-		end	
-		for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
-			v.visible(true)
-		end
-		
-	end)
-	if not cTaTyc then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
-		noTok_B_o4Kax[nick] = nil
-		myThread.kill(noTok_B_o4Kax[nick .. "noTok"])
 	end
+	-- local cTaTyc, err = pcall(function()
+		-- if noTok_B_o4Kax[nick .. " main_form"] == nil then
+			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
+			-- noTok_B_o4Kax[nick .. " main_form"] = creat_main_agmin_form(agpec_agMuH_MocTa)
+			-- noTok_B_o4Kax[nick .. " main_buttons"] = creat_main_buttons(agpec_agMuH_MocTa)
+			-- noTok_B_o4Kax[nick .. " main_scroll"] = creat_main_scroll(agpec_agMuH_MocTa)
+			-- noTok_B_o4Kax[nick .. "noTok"] = myThread.create(HoBblu_noTok, nick)
+		-- end
+		-- for _, v in pairs(noTok_B_o4Kax[nick .. " main_form"]) do
+			-- v.visible(true)
+		-- end
+		-- for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
+			-- v.visible(true)
+		-- end	
+		-- for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
+			-- v.visible(true)
+		-- end
+		
+	-- end)
+	-- if not cTaTyc then
+		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
+		-- noTok_B_o4Kax[nick] = nil
+		-- myThread.kill(noTok_B_o4Kax[nick .. "noTok"])
+	-- end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
-	for _, v in pairs(noTok_B_o4Kax[nick .. " main_form"]) do
-		v.visible(false)
+	if whiteListUsers[nick] ~= nil then
+		if MoHuTop_urpoka[nick] == nil then MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick) end
+		if Bce_ragJeTbl_urpoka[nick] == nil then
+			Bce_ragJeTbl_urpoka[nick] = {}
+			if nick == admin then
+				Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
+			else
+				Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
+			end
+		else
+			if nick == admin then
+				Bce_ragJeTbl_urpoka[nick].main_admin_form.visible = true		
+			else
+				Bce_ragJeTbl_urpoka[nick].main_form.visible = true
+			end
+		end
 	end
-	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
-		v.visible(false)
-	end	
-	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
-		v.visible(false)
-	end
-	noTok_B_o4Kax[nick .. " main_scroll"].visible(false)
 end
 
 do
@@ -5331,6 +5353,7 @@ do
 	end
 	--конфигурация 43 занята (настройками способа приема сообщений алисой), юзай конфигурацию 45
 	
+	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
 	end
@@ -5643,7 +5666,7 @@ do
 					koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
 				end
 			end
-			--component.invoke(agpec_agMuH_MocTa, "sync")
+			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		end
 		if BblBog_JIoroB_urpokoB_Ha_MoHuTop and cekyHdbl_gJI9l_JIoroB > BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop then
 			BblBog_akTuBHocTu_urpokoB_Ha_MoHuTop(true)
@@ -5685,9 +5708,8 @@ do
 	end
 end
 if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-	component.invoke(agpec_agMuH_MocTa, "clear")
-	component.invoke(agpec_agMuH_MocTa, "addText", 1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
-	component.invoke(agpec_agMuH_MocTa, "sync")
+	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
+	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 end
 computer.addUser(admin)
 typpeJIu_reJum_orH9l(false)

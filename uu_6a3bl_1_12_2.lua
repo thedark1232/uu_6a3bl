@@ -1909,13 +1909,13 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 			if nick == admin then
 				Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
 			else
-				Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
+				--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
 			end
 		else
 			if nick == admin then
 				Bce_ragJeTbl_urpoka[nick].main_admin_form.visible = true		
 			else
-				Bce_ragJeTbl_urpoka[nick].main_form.visible = true
+				--Bce_ragJeTbl_urpoka[nick].main_form.visible = true
 			end
 		end
 	end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода3"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1799,7 +1799,8 @@ function vertical_scroll_click(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние ползунка: " .. g .. tostring(v.enabled))
 	end
 end
-function creat_main_agmin_form(nick)
+
+function forms:creat_main_agmin_form(nick, Ta6JIuca)
 	local table_form = {}
 	--создание формы
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 152, 205, blue)
@@ -1844,7 +1845,7 @@ function creat_main_agmin_form(nick)
 	table_form.test8 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка8", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end)
 	
 	--создание функции видимости окна
-	rawset(table_form, "setVisible", function(visible)
+	rawset(Ta6JIuca, "setVisible", function(visible)
 		for k, v in pairs(table_form) do
 			v.setVisible(visible)
 		end
@@ -1875,7 +1876,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 			if Bce_ragJeTbl_urpoka[nick] == nil then
 				Bce_ragJeTbl_urpoka[nick] = {}
 				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
+					Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick, Bce_ragJeTbl_urpoka[nick].main_admin_form)
 				else
 					--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
 				end

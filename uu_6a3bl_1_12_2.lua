@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 13"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1808,7 +1808,9 @@ function forms:creat_main_agmin_form(nick)
 	--создание функции видимости окна
 	table_form.setVisible = function(visible)
 		for k, v in pairs(table_form) do
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("переключение режима: " .. k .. type(v))
 			if type(v) ~= "function" then v.setVisible(visible) end
+			
 		end
 	end
 	
@@ -1888,10 +1890,10 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 				end
 			else
 				if nick == admin then
-					for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. v)
-					end
-					--Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
+					--for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
+						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. type(v))
+					--end
+					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
 				else
 					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)
 				end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода7"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1850,6 +1850,8 @@ function forms:creat_main_agmin_form(nick)
 			if type(v) ~= "function" then v.setVisible(visible) end
 		end
 	end)
+	
+	return self
 end
 
 function HoBblu_noTok(nick)

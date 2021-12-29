@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода2"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1800,6 +1800,7 @@ function vertical_scroll_click(nick)
 	end
 end
 function creat_main_agmin_form(nick)
+	local table_form = {}
 	--создание формы
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 152, 205, blue)
 	table_form.main_box.setClickable(false)
@@ -1880,14 +1881,14 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 				end
 			else
 				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form.visible(true)
+					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
 				else
-					--Bce_ragJeTbl_urpoka[nick].main_form.visible(true)
+					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)
 				end
 			end
 		end
 	end)
-	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
+	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
@@ -1902,14 +1903,14 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 				end
 			else
 				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form.visible(true)
+					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
 				else
-					--Bce_ragJeTbl_urpoka[nick].main_form.visible(true)
+					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)
 				end
 			end
 		end
 	end)
-	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
+	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 
 do

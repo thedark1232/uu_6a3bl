@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 16"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 17"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1809,9 +1809,13 @@ function forms:creat_main_agmin_form(nick)
 	table_form.setVisible = function(visible)
 		for k, v in pairs(table_form) do
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("переключение режима: " .. k .. type(v))
-			print("в таблице: " .. k .. "-> " .. tostring(v.getVisible))
-			if type(v) ~= "function" then v.setVisible(visible) end
-			print("после переключения видимости: -> " .. tostring(v.getVisible))
+			
+			if type(v) ~= "function" then 
+				print("в таблице: " .. k .. "-> " .. tostring(v.getVisible()))
+				v.setVisible(visible)
+				print("после переключения видимости: -> " .. tostring(v.getVisible()))
+			end
+			
 		end
 	end
 	

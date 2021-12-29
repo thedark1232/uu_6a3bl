@@ -1921,9 +1921,9 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 				end
 			else
 				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
+					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(false)
 				else
-					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)
+					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(false)
 				end
 			end
 		end

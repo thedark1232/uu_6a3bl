@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода6"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1845,9 +1845,9 @@ function forms:creat_main_agmin_form(nick)
 	self.main_admin_form.test8 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка8", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end)
 	
 	--создание функции видимости окна
-	rawset(self.main_admin_form, "setVisible", function(visible)
+	self.main_admin_form.setVisible = function(visible)
 		for k, v in pairs(self.main_admin_form) do
-			v.setVisible(visible)
+			if type(v) ~= "function" then v.setVisible(visible) end
 		end
 	end)
 end

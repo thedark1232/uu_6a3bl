@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тест ползунка12"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1765,30 +1765,26 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
-function creat_new_button(agress, x, y, w, h, label, color_background, color_foreground, click_function)
+
+function creat_new_button(nick, x, y, w, h, label, color_background, color_foreground, click_function)
 	local table_button
 	local w2 = math.floor(w / 2)
 	local l2 = math.floor(unicode.len(label) * 5 / 2) 
 	local center_x = w2 - l2
-	table_button = component.invoke(agress, "addBox", x, y, w, h, color_background)
-	local caption = component.invoke(agress, "addText", x + center_x, y + 3, label, color_foreground)
+	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
+	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
 	caption.setClickable(false)
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "click", click_function)
-	rawset(table_button, "visible", function(val)
-		table_button.setVisible(val)
-		table_button.caption.setVisible(val)
-	end)
 	rawset(table_button, "getType", "button")
 	
 	return table_button
 end
-function creat_new_vertical_scroll(agress, x, y, w, h, min_y, max_y, color_background, scroll_function)
+function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, color_background, scroll_function)
 	local table_scroll	
-	table_scroll = component.invoke(agress, "addBox", x, y, w, h, color_background)
+	table_scroll = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	rawset(table_scroll, "min_y", min_y)
 	rawset(table_scroll, "max_y", max_y)
-	rawset(table_scroll, "visible", table_scroll.setVisible)
 	rawset(table_scroll, "getType", "scroll_button")
 	rawset(table_scroll, "value", 1)
 	rawset(table_scroll, "enabled", false)
@@ -1806,93 +1802,63 @@ end
 function creat_main_agmin_form(nick)
 	--создание формы
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 152, 205, blue)
-	rawset(table_form.main_box, "visible", table_form.main_box.setVisible)
 	table_form.main_box.setClickable(false)
-	table_form.main_box2 = component.invoke(agrecc, "addBox", 4, 30, 132, 172, white)
-	rawset(table_form.main_box2, "visible", table_form.main_box2.setVisible)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 	
 	--создание скролл_бокса
-	table_form.scroll_badur_up = component.invoke(agrecc, "addBox", 140, 30, 10, 10, gray)
-	rawset(table_form.scroll_badur_up, "visible", table_form.scroll_badur_up.setVisible)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(140, 30, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	
-	table_form.scroll_line = component.invoke(agrecc, "addLine", {145, 40}, {145, 192}, white)
-	rawset(table_form.scroll_line, "visible", table_form.scroll_line.setVisible)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({145, 40}, {145, 192}, white)
 	table_form.scroll_line.setClickable(false)
-	
-	table_form.scroll_badur_down = component.invoke(agrecc, "addBox", 140, 192, 10, 10, gray)
-	rawset(table_form.scroll_badur_down, "visible", table_form.scroll_badur_down.setVisible)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(140, 192, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, 40, 10, 50, 40, 192, white, vertical_scroll_click))
 	
 	--информационный текст
-	table_form.napaMeTp_BpeMeHu = component.invoke(agrecc, "addText", 4, 2, napaMeTp_BpeMeHu)
-	rawset(table_form.napaMeTp_BpeMeHu, "visible", table_form.napaMeTp_BpeMeHu.setVisible)
+	table_form.napaMeTp_BpeMeHu = MoHuTop_urpoka[nick].addText(4, 2, napaMeTp_BpeMeHu)
 	table_form.napaMeTp_BpeMeHu.setClickable(false)
-	table_form.napaMeTp_eHepruu = component.invoke(agrecc, "addText", 4, 12, napaMeTp_eHepruu)
-	rawset(table_form.napaMeTp_eHepruu, "visible", table_form.napaMeTp_eHepruu.setVisible)
+	table_form.napaMeTp_eHepruu =MoHuTop_urpoka[nick].addText(4, 12, napaMeTp_eHepruu)
 	table_form.napaMeTp_BpeMeHu.setClickable(false)
-	table_form.napaMeTp_o3y = component.invoke(agrecc, "addText", 4, 22, napaMeTp_o3y)
-	rawset(table_form.napaMeTp_o3y, "visible", table_form.napaMeTp_o3y.setVisible)
+	table_form.napaMeTp_o3y = MoHuTop_urpoka[nick].addText(4, 22, napaMeTp_o3y)
 	table_form.napaMeTp_o3y.setClickable(false)
 	
-	return table_form
-end
-function creat_main_scroll(agrecc)
-	return creat_new_vertical_scroll(agrecc, 140, 40, 10, 50, 40, 192, white, vertical_scroll_click))
-end
-function creat_main_buttons(agrecc)
+	--создание кнопок
 	local y = 32
 	local y_func = function()
 		y = y + 17
 		return y
 	end
-	--создание кнопок
-	local main_buttons = {}
 	
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y, 128, 15, "рестарт", black, white, function()
-		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]()
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "выход", black, white, function()
-		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]()
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "обновить", black, white, function()
-		Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]()
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку")
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка2", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку2")
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка3", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку3")
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка4", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку4")
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка5", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку5")
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка6", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку6")
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка7", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7")
-	end))
-	table.insert(main_buttons, creat_new_button(agrecc, 6, y_func(), 128, 15, "тест кнопка8", black, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8")
-	end))
+	table_form.restart = creat_new_button(nick, 6, y, 128, 15, "рестарт", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end))
+	table_form.exit = creat_new_button(nick, 6, y_func(), 128, 15, "выход", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end))
+	table_form.o6HoBuTb_uu_6a3bl = creat_new_button(nick, 6, y_func(), 128, 15, "обновить", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end))
+	table_form.test1 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку") end))
+	table_form.test2 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка2", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку2") end))
+	table_form.test3 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка3", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку3") end))
+	table_form.test4 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка4", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку4") end))
+	table_form.test5 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка5", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку5") end))
+	table_form.test6 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка6", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку6") end))
+	table_form.test7 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка7", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7") end))
+	table_form.test8 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка8", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end))
 	
-	return main_buttons
+	--создание функции видимости окна
+	rawset(table_form, "setVisible", function(visible)
+		for k, v in pairs(table_form) do
+			v.setVisible(visible)
+		end
+	end)
+	
+	return table_form
 end
+
 function HoBblu_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
 		while true do
-			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
-			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
-			noTok_B_o4Kax[nick .. " main_form"].napaMeTp_o3y.setText(napaMeTp_o3y)
+			Bce_ragJeTbl_urpoka[nick].main_admin_form.napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
+			Bce_ragJeTbl_urpoka[nick].main_admin_form.napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
+			Bce_ragJeTbl_urpoka[nick].main_admin_form.napaMeTp_o3y.setText(napaMeTp_o3y)
 			os.sleep(0.1)
 		end
 	end)
@@ -1952,13 +1918,13 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			if nick == admin then
 				Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
 			else
-				Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
+				--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
 			end
 		else
 			if nick == admin then
 				Bce_ragJeTbl_urpoka[nick].main_admin_form.visible = true		
 			else
-				Bce_ragJeTbl_urpoka[nick].main_form.visible = true
+				--Bce_ragJeTbl_urpoka[nick].main_form.visible = true
 			end
 		end
 	end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 12"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1888,7 +1888,10 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 				end
 			else
 				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
+					for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. v)
+					end
+					--Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
 				else
 					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)
 				end

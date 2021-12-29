@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода8"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1803,6 +1803,14 @@ end
 function forms:creat_main_agmin_form(nick)
 	--создание формы
 	self.main_admin_form = {}
+	
+	--создание функции видимости окна
+	self.main_admin_form.setVisible = function(visible)
+		for k, v in pairs(self.main_admin_form) do
+			if type(v) ~= "function" then v.setVisible(visible) end
+		end
+	end
+	
 	self.main_admin_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 152, 205, blue)
 	self.main_admin_form.main_box.setClickable(false)
 	self.main_admin_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 132, 172, white)
@@ -1843,14 +1851,7 @@ function forms:creat_main_agmin_form(nick)
 	self.main_admin_form.test6 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка6", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку6") end)
 	self.main_admin_form.test7 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка7", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7") end)
 	self.main_admin_form.test8 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка8", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end)
-	
-	--создание функции видимости окна
-	self.main_admin_form.setVisible = function(visible)
-		for k, v in pairs(self.main_admin_form) do
-			if type(v) ~= "function" then v.setVisible(visible) end
-		end
-	end)
-	
+		
 	return self
 end
 

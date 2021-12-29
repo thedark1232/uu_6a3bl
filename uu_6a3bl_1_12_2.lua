@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1813,7 +1813,7 @@ function creat_main_agmin_form(nick)
 	table_form.scroll_line.setClickable(false)
 	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(140, 192, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, 40, 10, 50, 40, 192, white, vertical_scroll_click))
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, 40, 10, 50, 40, 192, white, vertical_scroll_click)
 	
 	--информационный текст
 	table_form.napaMeTp_BpeMeHu = MoHuTop_urpoka[nick].addText(4, 2, napaMeTp_BpeMeHu)
@@ -1830,17 +1830,17 @@ function creat_main_agmin_form(nick)
 		return y
 	end
 	
-	table_form.restart = creat_new_button(nick, 6, y, 128, 15, "рестарт", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end))
-	table_form.exit = creat_new_button(nick, 6, y_func(), 128, 15, "выход", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end))
-	table_form.o6HoBuTb_uu_6a3bl = creat_new_button(nick, 6, y_func(), 128, 15, "обновить", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end))
-	table_form.test1 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку") end))
-	table_form.test2 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка2", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку2") end))
-	table_form.test3 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка3", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку3") end))
-	table_form.test4 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка4", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку4") end))
-	table_form.test5 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка5", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку5") end))
-	table_form.test6 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка6", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку6") end))
-	table_form.test7 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка7", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7") end))
-	table_form.test8 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка8", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end))
+	table_form.restart = creat_new_button(nick, 6, y, 128, 15, "рестарт", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
+	table_form.exit = creat_new_button(nick, 6, y_func(), 128, 15, "выход", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
+	table_form.o6HoBuTb_uu_6a3bl = creat_new_button(nick, 6, y_func(), 128, 15, "обновить", black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
+	table_form.test1 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку") end)
+	table_form.test2 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка2", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку2") end)
+	table_form.test3 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка3", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку3") end)
+	table_form.test4 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка4", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку4") end)
+	table_form.test5 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка5", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку5") end)
+	table_form.test6 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка6", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку6") end)
+	table_form.test7 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка7", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7") end)
+	table_form.test8 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка8", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end)
 	
 	--создание функции видимости окна
 	rawset(table_form, "setVisible", function(visible)
@@ -1868,66 +1868,48 @@ function HoBblu_noTok(nick)
 	end
 end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
-	if whiteListUsers[nick] ~= nil then
-		if MoHuTop_urpoka[nick] == nil then MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick) end
-		if Bce_ragJeTbl_urpoka[nick] == nil then
-			Bce_ragJeTbl_urpoka[nick] = {}
-			if nick == admin then
-				Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
+	local result, err = pcall(function()
+		if whiteListUsers[nick] ~= nil then
+			if MoHuTop_urpoka[nick] == nil then MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick) end
+			if Bce_ragJeTbl_urpoka[nick] == nil then
+				Bce_ragJeTbl_urpoka[nick] = {}
+				if nick == admin then
+					Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
+				else
+					--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
+				end
 			else
-				--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
-			end
-		else
-			if nick == admin then
-				Bce_ragJeTbl_urpoka[nick].main_admin_form.visible = true		
-			else
-				--Bce_ragJeTbl_urpoka[nick].main_form.visible = true
+				if nick == admin then
+					Bce_ragJeTbl_urpoka[nick].main_admin_form.visible(true)
+				else
+					--Bce_ragJeTbl_urpoka[nick].main_form.visible(true)
+				end
 			end
 		end
-	end
-	-- local cTaTyc, err = pcall(function()
-		-- if noTok_B_o4Kax[nick .. " main_form"] == nil then
-			-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "создание формы")
-			-- noTok_B_o4Kax[nick .. " main_form"] = creat_main_agmin_form(agpec_agMuH_MocTa)
-			-- noTok_B_o4Kax[nick .. " main_buttons"] = creat_main_buttons(agpec_agMuH_MocTa)
-			-- noTok_B_o4Kax[nick .. " main_scroll"] = creat_main_scroll(agpec_agMuH_MocTa)
-			-- noTok_B_o4Kax[nick .. "noTok"] = myThread.create(HoBblu_noTok, nick)
-		-- end
-		-- for _, v in pairs(noTok_B_o4Kax[nick .. " main_form"]) do
-			-- v.visible(true)
-		-- end
-		-- for _, v in ipairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
-			-- v.visible(true)
-		-- end	
-		-- for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
-			-- v.visible(true)
-		-- end
-		
-	-- end)
-	-- if not cTaTyc then
-		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
-		-- noTok_B_o4Kax[nick] = nil
-		-- myThread.kill(noTok_B_o4Kax[nick .. "noTok"])
-	-- end
+	end)
+	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
 end
 function glasses_release(event_type, agrecc, nick, agrecc2)
-	if whiteListUsers[nick] ~= nil then
-		if MoHuTop_urpoka[nick] == nil then MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick) end
-		if Bce_ragJeTbl_urpoka[nick] == nil then
-			Bce_ragJeTbl_urpoka[nick] = {}
-			if nick == admin then
-				Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
+	local result, err = pcall(function()
+		if whiteListUsers[nick] ~= nil then
+			if MoHuTop_urpoka[nick] == nil then MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick) end
+			if Bce_ragJeTbl_urpoka[nick] == nil then
+				Bce_ragJeTbl_urpoka[nick] = {}
+				if nick == admin then
+					Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
+				else
+					--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
+				end
 			else
-				--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
-			end
-		else
-			if nick == admin then
-				Bce_ragJeTbl_urpoka[nick].main_admin_form.visible = true		
-			else
-				--Bce_ragJeTbl_urpoka[nick].main_form.visible = true
+				if nick == admin then
+					Bce_ragJeTbl_urpoka[nick].main_admin_form.visible(true)
+				else
+					--Bce_ragJeTbl_urpoka[nick].main_form.visible(true)
+				end
 			end
 		end
-	end
+	end)
+	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
 end
 
 do

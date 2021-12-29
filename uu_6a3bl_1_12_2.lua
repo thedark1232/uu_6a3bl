@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода11"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1813,7 +1813,7 @@ function forms:creat_main_agmin_form(nick)
 	end
 	
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 152, 205, blue)
-	table_form.setClickable(false)
+	table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 	
@@ -1853,7 +1853,9 @@ function forms:creat_main_agmin_form(nick)
 	table_form.test7 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка7", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7") end)
 	table_form.test8 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка8", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end)
 	
-	setmetatable(self, table_form)
+	setmetatable(table_form, self)
+	self.__index = self
+	
 	return table_form
 end
 

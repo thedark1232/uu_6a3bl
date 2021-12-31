@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы 15"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы 16"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2042,12 +2042,11 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 				v.delete()
 			end
 		end
-		myThread.kill(Bce_noToku[nick].main_form)
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
-	local x_win = 160
+	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)

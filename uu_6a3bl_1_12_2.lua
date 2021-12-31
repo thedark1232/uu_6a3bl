@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 35"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 36"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -535,32 +535,35 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
-	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if type(v) ~= "function" and v.getType() == "scroll" and v.enabled then	
-			--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл")
-			if y > 0 then --скролл ВНИЗ
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВНИЗ")
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h + v.cgBur-> " .. tostring(v.getY() + v.h + v.cgBur))
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.max_y-> " .. tostring(v.max_y))
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h < v.max_y-> " .. tostring(v.getY() + v.h < v.max_y))
-				if v.getY() + v.h + v.cgBur <= v.max_y then
-					v.setY(v.getY() + v.cgBur)
-					v.value = v.value + 1 
-					v.buttons_visible()
-				end
-			elseif y < 0 then --скролл ВВЕРХ
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВВЕРХ")
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY()-> " .. tostring(v.getY()))
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.min_y-> " .. tostring(v.min_y))
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() > v.min_y-> " .. tostring(v.getY() > v.min_y))
-				if v.getY() > v.min_y then
-					v.setY(v.getY() - cgBur)
-					v.value = v.value - 1
-					v.buttons_visible()
-				end		
-			end	
+	local stat, err = pcall(function()
+		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
+			if type(v) ~= "function" and v.getType() == "scroll" and v.enabled then	
+				--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл")
+				if y > 0 then --скролл ВНИЗ
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВНИЗ")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h + v.cgBur-> " .. tostring(v.getY() + v.h + v.cgBur))
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.max_y-> " .. tostring(v.max_y))
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h < v.max_y-> " .. tostring(v.getY() + v.h < v.max_y))
+					if v.getY() + v.h + v.cgBur <= v.max_y then
+						v.setY(v.getY() + v.cgBur)
+						v.value = v.value + 1 
+						v.buttons_visible()
+					end
+				elseif y < 0 then --скролл ВВЕРХ
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВВЕРХ")
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY()-> " .. tostring(v.getY()))
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.min_y-> " .. tostring(v.min_y))
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() > v.min_y-> " .. tostring(v.getY() > v.min_y))
+					if v.getY() > v.min_y then
+						v.setY(v.getY() - cgBur)
+						v.value = v.value - 1
+						v.buttons_visible()
+					end		
+				end	
+			end
 		end
-	end
+	end)
+	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 function zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, nepegaBaEMoe_3Ha4eHue)
 	if baza_Bblxog ~= msg then

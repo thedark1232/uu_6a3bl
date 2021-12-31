@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской 5"
+local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2127,7 +2127,9 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	local y_max = 192
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "ynpaBJIeHue_alice")
+	
+	local st, er = pcall(function() table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "ynpaBJIeHue_alice") end)
+	if not st then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. er) end
 	
 	--объединение таблиц
 	self = {}

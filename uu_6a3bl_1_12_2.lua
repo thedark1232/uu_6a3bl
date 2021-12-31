@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы 14"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы 15"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2146,11 +2146,9 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 						myThread.kill(noTok)
 					end
 				end
-				Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 				Bce_noToku[nick] = {}
-			else
-				Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 			end
+			Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end

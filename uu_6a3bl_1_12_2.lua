@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "добавление новых кнопок3"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -490,9 +490,11 @@ function glasses_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
 end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
-	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if type(v) ~= "function" and v.getType() == "scroll" then
-			v.enabled = false
+	for _, next_form in pairs((Bce_ragJeTbl_urpoka[nick]) do
+		for k, v in pairs(next_form) do
+			if type(v) ~= "function" and v.getType() == "scroll" then
+				v.enabled = false
+			end
 		end
 	end
 end
@@ -500,28 +502,32 @@ function glasses_component_mouse_wheel(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
 end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if type(v) ~= "function" and v.getId() == id and v.getType() == "scroll" then
-			v.enabled = true
+	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
+		for k, v in pairs(next_form)
+			if type(v) ~= "function" and v.getId() == id and v.getType() == "scroll" then
+				v.enabled = true
+			end
 		end
 	end
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	local stat, err = pcall(function()
-		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-			if type(v) ~= "function" and v.getType() == "scroll" then
-				v.enabled = false
-			end
-			if type(v) ~= "function" and v.getId() == id and v.getType() == "button" then
-				v.setClickable(false)
-				local button_color = v.getColor()
-				v.setColor(green)
-				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-				v.click()
-				v.setColor(button_color)
-				v.setClickable(true)
-				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-				return
+		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
+			for k, v in pairs(next_form) do
+				if type(v) ~= "function" and v.getType() == "scroll" then
+					v.enabled = false
+				end
+				if type(v) ~= "function" and v.getId() == id and v.getType() == "button" then
+					v.setClickable(false)
+					local button_color = v.getColor()
+					v.setColor(green)
+					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+					v.click()
+					v.setColor(button_color)
+					v.setClickable(true)
+					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+					return
+				end
 			end
 		end
 	end)
@@ -529,21 +535,23 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 	local stat, err = pcall(function()
-		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-			if type(v) ~= "function" and v.getType() == "scroll" and v.enabled then	
-				if y > 0 then --скролл ВНИЗ
-					if v.getY() + v.h + v.cgBur <= v.max_y then
-						v.setY(v.getY() + v.cgBur)
-						v.value = v.value + 1 
-						Bce_ragJeTbl_urpoka[nick].main_admin_form.buttons_visible(true)
-					end
-				elseif y < 0 then --скролл ВВЕРХ
-					if v.getY() > v.min_y then
-						v.setY(v.getY() - v.cgBur)
-						v.value = v.value - 1
-						Bce_ragJeTbl_urpoka[nick].main_admin_form.buttons_visible(false)
-					end		
-				end	
+		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
+			for k, v in pairs(next_form) do
+				if type(v) ~= "function" and v.getType() == "scroll" and v.enabled then	
+					if y > 0 then --скролл ВНИЗ
+						if v.getY() + v.h + v.cgBur <= v.max_y then
+							v.setY(v.getY() + v.cgBur)
+							v.value = v.value + 1 
+							Bce_ragJeTbl_urpoka[nick].main_admin_form.buttons_visible(true)
+						end
+					elseif y < 0 then --скролл ВВЕРХ
+						if v.getY() > v.min_y then
+							v.setY(v.getY() - v.cgBur)
+							v.value = v.value - 1
+							Bce_ragJeTbl_urpoka[nick].main_admin_form.buttons_visible(false)
+						end		
+					end	
+				end
 			end
 		end
 	end)

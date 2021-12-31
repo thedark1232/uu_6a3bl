@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы3"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -543,13 +543,13 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 						if v.getY() + v.h + v.cgBur <= v.max_y then
 							v.setY(v.getY() + v.cgBur)
 							v.value = v.value + 1 
-							Bce_ragJeTbl_urpoka[nick].main_form.buttons_visible(true)
+							v.buttons_visible(true)
 						end
 					elseif y < 0 then --скролл ВВЕРХ
 						if v.getY() > v.min_y then
 							v.setY(v.getY() - v.cgBur)
 							v.value = v.value - 1
-							Bce_ragJeTbl_urpoka[nick].main_form.buttons_visible(false)
+							v.buttons_visible(false)
 						end		
 					end	
 				end
@@ -1813,7 +1813,7 @@ function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, c
 	rawset(table_scroll, "max_y", max_y)
 	rawset(table_scroll, "getType", function() return "scroll" end)
 	rawset(table_scroll, "enabled", false)
-	rawset(table_scroll, "click", scroll_function)
+	rawset(table_scroll, "setVisible", scroll_function)
 	rawset(table_scroll, "h", h)
 	rawset(table_scroll, "cgBur", cgBur_no_y)
 	rawset(table_scroll, "value", 1)	
@@ -1821,9 +1821,9 @@ function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, c
 	return table_scroll
 end
 function vertical_scroll_click(nick)
-	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
-		v.enabled = true
-	end
+	-- for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
+		-- v.enabled = true
+	-- end
 end
 function forms:creat_main_form(nick)
 	--создание формы
@@ -1912,7 +1912,7 @@ function forms:creat_main_form(nick)
 	table_form.restart = creat_new_button(num_button(), nick, 6, y, 128, 15, "рестарт", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
 	table_form.exit = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "выход", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
 	table_form.o6HoBuTb_uu_6a3bl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "обновить", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
-	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление Алисой", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form() end)
+	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление Алисой", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
 	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: магаз дюрекса") end)
 	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: казино") end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "логи игроков", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: логи игроков") end)
@@ -1952,7 +1952,7 @@ function forms:creat_main_form(nick)
 	local y_max = 192
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, vertical_scroll_click)
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, table_form.buttons_visible)
 	
 	--объединение таблиц
 	self = {}
@@ -2068,7 +2068,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	local MakcuMyM_BuguMblx_kHonok
 	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {145, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {144 + x_win, 192}, white)
 	table_form.scroll_line.setClickable(false)
 	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
@@ -2081,7 +2081,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	local y_max = 192
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, vertical_scroll_click)
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, table_form.setVisible)
 	
 	--объединение таблиц
 	self = {}

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 26"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 27"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -491,7 +491,7 @@ function glasses_mouse_down(...)
 end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if v.getType() == "scroll" then
+		if type(v) ~= "function" and v.getType() == "scroll" then
 			v.enabled = false
 		end
 	end
@@ -501,7 +501,7 @@ function glasses_component_mouse_wheel(...)
 end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if v.getId() == id and v.getType() == "scroll" then
+		if type(v) ~= "function" and v.getId() == id and v.getType() == "scroll" then
 			v.enabled = true
 		end
 	end
@@ -509,7 +509,7 @@ end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	local stat, err = pcall(function()
 		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say("просмотр ключа: " .. tostring(k))
+			--Ta6JIuca_koMnoHeHToB["chat_box"].say("просмотр ключа: " .. tostring(k))
 			if type(v) ~= "function" and v.getType() == "scroll" then
 				v.enabled = false
 			end

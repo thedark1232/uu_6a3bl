@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской 4"
+local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2063,8 +2063,8 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	local num = 0
 	local start_visible = true
 	local num_button = function()
-		if num - 1 > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
 		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
 		return num
 	end
 	

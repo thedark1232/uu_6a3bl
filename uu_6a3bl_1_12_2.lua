@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 42"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 43"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1812,7 +1812,7 @@ function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, c
 	rawset(table_scroll, "click", scroll_function)
 	rawset(table_scroll, "h", h)
 	rawset(table_scroll, "cgBur", cgBur_no_y)
-	rawset(table_scroll, "value", 1)
+	rawset(table_scroll, "value", 1)	
 	
 	return table_scroll
 end
@@ -1824,7 +1824,6 @@ function vertical_scroll_click(nick)
 end
 function forms:creat_main_agmin_form(nick)
 	--создание формы
-	
 	local table_form = {}
 	
 	--создание функции видимости окна
@@ -1939,6 +1938,7 @@ function forms:creat_main_agmin_form(nick)
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
 	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, vertical_scroll_click)
 	
+	self = {}
 	setmetatable(table_form, self)
 	self.__index = self
 	
@@ -1963,11 +1963,10 @@ end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
-			if MoHuTop_urpoka[nick] == nil then MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick) end
+			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			if Bce_ragJeTbl_urpoka[nick] == nil then
 				Bce_ragJeTbl_urpoka[nick] = {}
 				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form = {}
 					Bce_ragJeTbl_urpoka[nick].main_admin_form = forms:creat_main_agmin_form(nick)
 					myThread.create(HoBblu_noTok, nick)
 				else

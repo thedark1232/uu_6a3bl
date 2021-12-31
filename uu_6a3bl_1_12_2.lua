@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 19"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 21"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -501,7 +501,7 @@ function glasses_component_mouse_wheel(...)
 end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	for k, v in pairs(MoHuTop_urpoka[nick]) do
-		if v.getId = id and v.getType == "scroll" then
+		if v.getId == id and v.getType == "scroll" then
 			v.enabled = true
 		end
 	end
@@ -511,20 +511,19 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 		if v.getType == "scroll" then
 			v.enabled = false
 		end
-		if v.getId() == id then
-			if v.getType == "button" then
-				v.setClickable(false)
-				local button_color = v.getColor()
-				v.setColor(green)
-				os.sleep(0.1) --нужно для синхронизации с очками
-				v.click()
-				v.setColor(button_color)
-				v.setClickable(true)		
-			end
+		print("v.getId() == id-> " .. tostring(v.getId() == id))
+		print("v.getType == button-> " .. tostring(v.getType == button))
+		if v.getId() == id and v.getType == "button" then
+			v.setClickable(false)
+			local button_color = v.getColor()
+			v.setColor(green)
+			os.sleep(0.1) --нужно для синхронизации с очками
+			v.click()
+			v.setColor(button_color)
+			v.setClickable(true)		
 		end
+		io.read()
 	end
-	--noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = false
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 		for k, v in pairs(MoHuTop_urpoka[nick]) do

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы2"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1823,7 +1823,6 @@ end
 function vertical_scroll_click(nick)
 	for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
 		v.enabled = true
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние ползунка: " .. g .. tostring(v.enabled))
 	end
 end
 function forms:creat_main_form(nick)
@@ -1913,7 +1912,7 @@ function forms:creat_main_form(nick)
 	table_form.restart = creat_new_button(num_button(), nick, 6, y, 128, 15, "рестарт", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
 	table_form.exit = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "выход", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
 	table_form.o6HoBuTb_uu_6a3bl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "обновить", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
-	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление Алисой", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: управление Алисой") end)
+	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление Алисой", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form() end)
 	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: магаз дюрекса") end)
 	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: казино") end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "логи игроков", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: логи игроков") end)
@@ -1962,7 +1961,135 @@ function forms:creat_main_form(nick)
 	
 	return table_form
 end
+function forms:creat_ynpaBJIeHue_alice_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 160
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 32
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	
+	local num = 0
+	local num_button = function()
+		num = num + 1
+		return num
+	end
+	
+	table_form.restart = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "рестарт", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
+	table_form.exit = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
+	table_form.o6HoBuTb_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
+	table_form.alice_control = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "управление Алисой", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: управление Алисой") end)
+	table_form.magaz = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "магаз дюрекса", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: магаз дюрекса") end)
+	table_form.casino = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "казино", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: казино") end)
+	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "логи игроков", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: логи игроков") end)
+	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тиммейты", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: тиммейты") end)
+	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "чат тимы", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: чат тимы") end)
+	table_form.pegCToyH = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "редстоун", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: редстоун") end)
+	table_form.TeJIenopTep = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "телепортер", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: телепортер") end)
+	table_form.MaTpuca = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "матрица", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: матрица") end)
+	table_form.HaHuTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "наниты", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: наниты") end)
+	table_form.geTekTopbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "детекторы", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: детекторы") end)
+	table_form.oguH_ceHcop = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "1 сенсор", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 1 сенсор") end)
+	table_form.ceHcopbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сенсоры", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: сенсоры") end)
+	table_form.TypeJIu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "турели", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: турели") end)
+	table_form.TeHHeJIb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "туннель", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: туннель") end)
+	table_form.modem = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "модем", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: модем") end)
+	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "зоны базы", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: зоны базы") end)
+	table_form.open_glasses = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "open glasses", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: open glasses") end)
+	table_form.tab_grive = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тап драйв", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: тап драйв") end)
+	table_form.npo4ee = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "прочее", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: прочее") end)
+	
 
+	
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {145, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = 40
+	local y_min = start_no_y
+	local y_max = 192
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, vertical_scroll_click)
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
 function main_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		

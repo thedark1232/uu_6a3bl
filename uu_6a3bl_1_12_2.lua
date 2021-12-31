@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "уничтожение форм 1"
+local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -17,6 +17,7 @@ local one_ceHcop_z = 0
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
+local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l
 local co3gaHue_co6blTuu = true
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
@@ -518,7 +519,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 				if type(v) ~= "function" and v.getType() == "scroll" then
 					v.enabled = false
 				end
-				if type(v) ~= "function" and v.getId() == id and v.getType() == "button" then
+				if type(v) ~= "function" and v.getId() == id and string.match(v.getType(), "button") ~= nil then
 					v.setClickable(false)
 					local button_color = v.getColor()
 					v.setColor(green)
@@ -1792,7 +1793,6 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
-
 function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_background, color_foreground, click_function)
 	local table_button
 	local w2 = math.floor(w / 2)
@@ -1922,9 +1922,6 @@ function forms:creat_main_form(nick)
 		return num
 	end
 	
-	table_form.restart = creat_new_button(num_button(), nick, 6, y, 128, 15, "рестарт", "button", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
-	table_form.exit = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "выход", "button", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
-	table_form.o6HoBuTb_uu_6a3bl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "обновить", "button", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
 	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление Алисой", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
 	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: магаз дюрекса") end)
 	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: казино") end)
@@ -1981,6 +1978,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	--создание формы
 	local table_form = {}
 	
+	Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = "ynpaBJIeHue_alice"
 	--создание функции видимости окна
 	table_form.setVisible = function(visible)
 		for k, v in pairs(table_form) do
@@ -2006,6 +2004,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 			end
 		end
 	end
+
 	--функция видимости кнопок при скролле
 	table_form.buttons_visible = function(down)
 		local cgBur_no_Y = 17
@@ -2033,6 +2032,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 		end
 	end
 	
+	--уничтожение формы
 	table_form.destroy = function()
 		for k, v in pairs(table_form) do
 			if type(v) ~= "function" then 
@@ -2059,7 +2059,6 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 		y = y + 17
 		return y
 	end
-	
 	local num = 0
 	local num_button = function()
 		num = num + 1
@@ -2069,6 +2068,19 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 19, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
+	--админские кнопки
+	if nick == admin then
+		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "обновить ии", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
+		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "отсутст. компон.", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
+		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "тихий рестарт", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
+		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "выход", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
+		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "убить Алису", "button", true, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
+		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "отключить сеть", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
+		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "задержка глав. цикла", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"]() end)
+		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "переименовать базу", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"]() end)		
+	end
+	
+	--кнопки тиммейтов
 	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "тест кнопка1", "button", true, black, white, function() TTa6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 1") end)
 	table_form.test2 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка2", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 2") end)
 	table_form.test3 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка3", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 3") end)
@@ -2124,7 +2136,7 @@ end
 function main_noTok(nick)
 	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
 		while true do
 			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
 			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
@@ -2162,6 +2174,9 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
+			if Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l ~= nil then
+				Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l].destroy()
+			end
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end

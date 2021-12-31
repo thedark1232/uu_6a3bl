@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 34"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 35"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -543,7 +543,7 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h + v.cgBur-> " .. tostring(v.getY() + v.h + v.cgBur))
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.max_y-> " .. tostring(v.max_y))
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h < v.max_y-> " .. tostring(v.getY() + v.h < v.max_y))
-				if v.getY() + v.h + v.cgBur < v.max_y then
+				if v.getY() + v.h + v.cgBur <= v.max_y then
 					v.setY(v.getY() + v.cgBur)
 					v.value = v.value + 1 
 					v.buttons_visible()
@@ -1848,9 +1848,11 @@ function forms:creat_main_agmin_form(nick)
 						
 						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() then
 							v.setVisible(visible)
+							v.setClickable(visible)
 							v.caption.setVisible(visible)
 						else
 							v.setVisible(not visible)
+							v.setClickable(not visible)
 							v.caption.setVisible(not visible)
 						end
 					else
@@ -1870,9 +1872,11 @@ function forms:creat_main_agmin_form(nick)
 				if v.getType() == "button" then
 					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() then
 						v.setVisible(true)
+						v.setClickable(true)
 						v.caption.setVisible(true)
 					else
 						v.setVisible(false)
+						v.setClickable(false)
 						v.caption.setVisible(false)
 					end
 				end

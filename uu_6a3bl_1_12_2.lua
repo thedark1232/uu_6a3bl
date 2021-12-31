@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы9"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -543,22 +543,15 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 						if v.getY() + v.h + v.cgBur <= v.max_y then
 							v.setY(v.getY() + v.cgBur)
 							v.value = v.value + 1
-							if v.cB9l3b() == "main_form" then
-								Bce_ragJeTbl_urpoka[nick].main_form.buttons_visible(true)
-							elseif v.v.cB9l3b() == "ynpaBJIeHue_alice" then
-								Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice.buttons_visible(true)
-							end
+							Bce_ragJeTbl_urpoka[nick][v.cB9l3b].buttons_visible(true)
 							--v.setVisible(true)
 						end
 					elseif y < 0 then --скролл ВВЕРХ
 						if v.getY() > v.min_y then
 							v.setY(v.getY() - v.cgBur)
 							v.value = v.value - 1
-							if v.cB9l3b() == "main_form" then
-								Bce_ragJeTbl_urpoka[nick].main_form.buttons_visible(false)
-							elseif v.v.cB9l3b() == "ynpaBJIeHue_alice" then
-								Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice.buttons_visible(false)
-							end
+							Bce_ragJeTbl_urpoka[nick][v.cB9l3b].buttons_visible(false)
+
 							--v.setVisible(false)
 						end		
 					end	

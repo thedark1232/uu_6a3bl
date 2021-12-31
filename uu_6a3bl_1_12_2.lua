@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 25"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 26"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -519,10 +519,11 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 				v.setClickable(false)
 				local button_color = v.getColor()
 				v.setColor(green)
-				os.sleep(0.1) --нужно для синхронизации с очками
+				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 				v.click()
 				v.setColor(button_color)
 				v.setClickable(true)
+				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 				return
 			end
 			--io.read()

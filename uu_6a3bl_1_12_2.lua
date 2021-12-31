@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 24"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 25"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -509,19 +509,21 @@ end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	local stat, err = pcall(function()
 		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-			if v.getType() == "scroll" then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("просмотр ключа: " .. tostring(k))
+			if type(v) ~= "function" and v.getType() == "scroll" then
 				v.enabled = false
 			end
 			--print("v.getId() == id-> " .. tostring(v.getId() == id))
 			--print("v.getType == button-> " .. tostring(v.getType == button))
-			if v.getId() == id and v.getType() == "button" then
+			if type(v) ~= "function" and v.getId() == id and v.getType() == "button" then
 				v.setClickable(false)
 				local button_color = v.getColor()
 				v.setColor(green)
 				os.sleep(0.1) --нужно для синхронизации с очками
 				v.click()
 				v.setColor(button_color)
-				v.setClickable(true)		
+				v.setClickable(true)
+				return
 			end
 			--io.read()
 		end
@@ -1815,7 +1817,7 @@ function forms:creat_main_agmin_form(nick)
 			if type(v) ~= "function" then 
 				--print("в таблице: " .. k .. "-> " .. tostring(v.getVisible()))
 				v.setVisible(visible)
-				if v.getType == "button" then v.caption.setVisible(visible) end
+				if v.getType() == "button" then v.caption.setVisible(visible) end
 				--print("после переключения видимости: -> " .. tostring(v.getVisible()))
 			end
 			

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 44"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 45"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1957,8 +1957,8 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
-			if Bce_ragJeTbl_urpoka[nick] == nil then
+			--Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
+			if #MoHuTop_urpoka[nick].getAllObjects() == 0 then
 				Bce_ragJeTbl_urpoka[nick] = {}
 				if nick == admin then
 					Bce_ragJeTbl_urpoka[nick].main_admin_form = forms:creat_main_agmin_form(nick)

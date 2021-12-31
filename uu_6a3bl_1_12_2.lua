@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 23"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 24"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -491,7 +491,7 @@ function glasses_mouse_down(...)
 end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if v.getType == "scroll" then
+		if v.getType() == "scroll" then
 			v.enabled = false
 		end
 	end
@@ -501,7 +501,7 @@ function glasses_component_mouse_wheel(...)
 end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if v.getId == id and v.getType == "scroll" then
+		if v.getId() == id and v.getType() == "scroll" then
 			v.enabled = true
 		end
 	end
@@ -509,12 +509,12 @@ end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	local stat, err = pcall(function()
 		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-			if v.getType == "scroll" then
+			if v.getType() == "scroll" then
 				v.enabled = false
 			end
 			--print("v.getId() == id-> " .. tostring(v.getId() == id))
 			--print("v.getType == button-> " .. tostring(v.getType == button))
-			if v.getId() == id and v.getType == "button" then
+			if v.getId() == id and v.getType() == "button" then
 				v.setClickable(false)
 				local button_color = v.getColor()
 				v.setColor(green)
@@ -526,11 +526,11 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 			--io.read()
 		end
 	end)
-	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .l err) end
+	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if v.getType == "scroll" and v.enabled then	
+		if v.getType() == "scroll" and v.enabled then	
 			if y > 0 then --скролл вниз
 				if v.getY() > v.min_y then v.setY(v.getY() - 10) end
 			elseif y < 0 then --скролл вверх
@@ -1780,7 +1780,7 @@ function creat_new_button(nick, x, y, w, h, label, color_background, color_foreg
 	caption.setClickable(false)
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "click", click_function)
-	rawset(table_button, "getType", "button")
+	rawset(table_button, "getType", function() return "button" end)
 	
 	return table_button
 end
@@ -1789,7 +1789,7 @@ function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, color_backgro
 	table_scroll = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	rawset(table_scroll, "min_y", min_y)
 	rawset(table_scroll, "max_y", max_y)
-	rawset(table_scroll, "getType", "scroll")
+	rawset(table_scroll, "getType", function() return "scroll" end)
 	rawset(table_scroll, "enabled", false)
 	rawset(table_scroll, "click", scroll_function)
 	rawset(table_scroll, "h", h)

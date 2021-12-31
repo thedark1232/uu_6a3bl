@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 36"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 37"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -547,7 +547,6 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 					if v.getY() + v.h + v.cgBur <= v.max_y then
 						v.setY(v.getY() + v.cgBur)
 						v.value = v.value + 1 
-						v.buttons_visible()
 					end
 				elseif y < 0 then --скролл ВВЕРХ
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВВЕРХ")
@@ -555,12 +554,12 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.min_y-> " .. tostring(v.min_y))
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() > v.min_y-> " .. tostring(v.getY() > v.min_y))
 					if v.getY() > v.min_y then
-						v.setY(v.getY() - cgBur)
+						v.setY(v.getY() - v.cgBur)
 						v.value = v.value - 1
-						v.buttons_visible()
 					end		
 				end	
 			end
+			v.buttons_visible()
 		end
 	end)
 	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end

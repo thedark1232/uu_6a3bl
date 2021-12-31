@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы8"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1816,14 +1816,14 @@ function creat_new_button(num, nick, x, y, w, h, label, visible, color_backgroun
 	
 	return table_button
 end
-function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, color_background, scroll_function)
+function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, color_background, cB93b)
 	local table_scroll	
 	table_scroll = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	rawset(table_scroll, "min_y", min_y)
 	rawset(table_scroll, "max_y", max_y)
 	rawset(table_scroll, "getType", function() return "scroll" end)
 	rawset(table_scroll, "enabled", false)
-	rawset(table_scroll, "setVisible", scroll_function)
+	rawset(table_scroll, "cB9l3b", cB93b)
 	rawset(table_scroll, "h", h)
 	rawset(table_scroll, "cgBur", cgBur_no_y)
 	rawset(table_scroll, "value", 1)	
@@ -1962,7 +1962,7 @@ function forms:creat_main_form(nick)
 	local y_max = 192
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, table_form.buttons_visible)
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "main_form")
 	
 	--объединение таблиц
 	self = {}
@@ -2091,7 +2091,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	local y_max = 192
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, table_form.setVisible)
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "ynpaBJIeHue_alice")
 	
 	--объединение таблиц
 	self = {}

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 29"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 30"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -538,14 +538,14 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if type(v) ~= "function" and v.getType() == "scroll" and v.enabled then	
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл")
-			if y > 0 then --скролл вверх
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВВЕРХ")
+			if y > 0 then --скролл ВНИЗ
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВНИЗ")
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h-> " .. tostring(v.getY() + v.h))
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.max_y-> " .. tostring(v.max_y))
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h < v.max_y-> " .. tostring(v.getY() + v.h < v.max_y))
-				if v.getY() + v.h < v.max_y then v.setY(v.getY() + 10) end
-			elseif y < 0 then --скролл вниз
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВНИЗ")
+				if v.getY() + v.h + 10 < v.max_y then v.setY(v.getY() + 10) end
+			elseif y < 0 then --скролл ВВЕРХ
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВВЕРХ")
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY()-> " .. tostring(v.getY()))
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.min_y-> " .. tostring(v.min_y))
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() > v.min_y-> " .. tostring(v.getY() > v.min_y))
@@ -1828,10 +1828,8 @@ function forms:creat_main_agmin_form(nick)
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("переключение режима: " .. k .. type(v))
 			
 			if type(v) ~= "function" then 
-				--print("в таблице: " .. k .. "-> " .. tostring(v.getVisible()))
 				v.setVisible(visible)
 				if v.getType() == "button" then v.caption.setVisible(visible) end
-				--print("после переключения видимости: -> " .. tostring(v.getVisible()))
 			end
 			
 		end
@@ -1841,16 +1839,7 @@ function forms:creat_main_agmin_form(nick)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 132, 172, white)
 	table_form.main_box2.setClickable(false)
-	
-	--создание скролл_бокса
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(140, 30, 10, 10, gray)
-	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({145, 40}, {145, 192}, white)
-	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(140, 192, 10, 10, gray)
-	table_form.scroll_badur_down.setClickable(false)
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, 40, 10, 50, 40, 192, white, vertical_scroll_click)
-	
+		
 	--информационный текст
 	table_form.napaMeTp_BpeMeHu = MoHuTop_urpoka[nick].addText(4, 2, napaMeTp_BpeMeHu)
 	table_form.napaMeTp_BpeMeHu.setClickable(false)
@@ -1877,6 +1866,17 @@ function forms:creat_main_agmin_form(nick)
 	table_form.test6 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка6", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку6") end)
 	table_form.test7 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка7", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7") end)
 	table_form.test8 = creat_new_button(nick, 6, y_func(), 128, 15, "тест кнопка8", black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end)
+	
+	--создание скролла
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(140, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({145, 40}, {145, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(140, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local bazoBblu_pa3Mep_ckpoJIJIa = 152
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, 40, 10, bazoBblu_pa3Mep_ckpoJIJIa, 40, 192, white, vertical_scroll_click)
 	
 	setmetatable(table_form, self)
 	self.__index = self
@@ -1914,9 +1914,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 				end
 			else
 				if nick == admin then
-					--for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ": " .. type(v))
-					--end
+					
 					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
 				else
 					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)

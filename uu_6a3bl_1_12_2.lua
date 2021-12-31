@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы10"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2019,6 +2019,18 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 			end
 		end
 	end
+	
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
@@ -2041,9 +2053,9 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 		return num
 	end
 	
-	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "тест кнопка1", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " срабатываение кнопки: 1"]() end)
-	table_form.test2 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка2", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " срабатываение кнопки: 2"]() end)
-	table_form.test3 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка3", true, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " срабатываение кнопки: 3"]() end)
+	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "тест кнопка1", true, black, white, function() TTa6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 1"]() end)
+	table_form.test2 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка2", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 2"]() end)
+	table_form.test3 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка3", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 3"]() end)
 	table_form.test4 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка4", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 4") end)
 	table_form.test5 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка5", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 5") end)
 	table_form.test6 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка6", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 6") end)
@@ -2120,12 +2132,10 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 						myThread.kill(noTok)
 					end
 				end
-				Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 				Bce_noToku[nick] = {}
-				table.insert(Bce_noToku[nick], myThread.create(main_noTok, nick))
-			else
-				Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)
+				Bce_noToku[nick].main_form = myThread.create(main_noTok, nick))
 			end
+			Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
@@ -2134,7 +2144,9 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
-			Bce_ragJeTbl_urpoka[nick].main_form.setVisible(false)
+			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
+			Bce_ragJeTbl_urpoka[nick].main_form = nil
+			myThread.kill(Bce_noToku[nick].main_form)
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end

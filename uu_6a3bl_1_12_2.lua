@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "добавление новых кнопок"
+local Ha3BaHue_o6HoBJIeHu9l = "добавление новых кнопок2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1913,6 +1913,18 @@ function forms:creat_main_agmin_form(nick)
 	table_form.test7 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка7", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку7") end)
 	table_form.test8 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка8", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку8") end)
 	table_form.test9 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка9", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку9") end)
+	table_form.test10 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка10", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку10") end)
+	table_form.test11 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка11", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку11") end)
+	table_form.test12 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка12", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку12") end)
+	table_form.test13 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка13", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку13") end)
+	table_form.test14 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка14", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку14") end)
+	table_form.test15 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка15", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку15") end)
+	table_form.test16 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка16", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку16") end)
+	table_form.test17 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка17", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку17") end)
+	table_form.test18 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка18", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку18") end)
+	table_form.test19 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка19", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку19") end)
+	table_form.test20 = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тест кнопка20", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "нажатие на тестовую кнопку20") end)
+	
 
 	
 	--создание каркаса скролла

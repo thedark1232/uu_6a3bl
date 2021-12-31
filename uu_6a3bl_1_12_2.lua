@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 18"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 19"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -490,20 +490,27 @@ function glasses_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
 end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
-	noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = false
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
+	for k, v in pairs(MoHuTop_urpoka[nick]) do
+		if v.getType == "scroll" then
+			v.enabled = false
+		end
+	end
 end
 function glasses_component_mouse_wheel(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
 end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	if noTok_B_o4Kax[nick .. " main_scroll"][1].getId() == id then
-		noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = true
-		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
+	for k, v in pairs(MoHuTop_urpoka[nick]) do
+		if v.getId = id and v.getType == "scroll" then
+			v.enabled = true
+		end
 	end
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	for k, v in pairs(noTok_B_o4Kax[nick .. " main_buttons"]) do
+	for k, v in pairs(MoHuTop_urpoka[nick]) do
+		if v.getType == "scroll" then
+			v.enabled = false
+		end
 		if v.getId() == id then
 			if v.getType == "button" then
 				v.setClickable(false)
@@ -512,25 +519,21 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 				os.sleep(0.1) --нужно для синхронизации с очками
 				v.click()
 				v.setColor(button_color)
-				v.setClickable(true)
+				v.setClickable(true)		
 			end
 		end
 	end
-	noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = false
+	--noTok_B_o4Kax[nick .. " main_scroll"][1].enabled = false
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние скролла -> " .. tostring(noTok_B_o4Kax[nick .. " main_scroll"][1].enabled))
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
-	if y > 0 then --скролл вниз
-		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
-			if noTok_B_o4Kax[nick .. " main_scroll"][1].h < noTok_B_o4Kax[nick .. " main_scroll"][1].max_y then
-				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY() + 10)
-			end
-		end
-	elseif y < 0 then --скролл вверх
-		if noTok_B_o4Kax[nick .. " main_scroll"][1].enabled then
-			if noTok_B_o4Kax[nick .. " main_scroll"][1].getY() > noTok_B_o4Kax[nick .. " main_scroll"][1].min_y then
-				noTok_B_o4Kax[nick .. " main_scroll"][1].setY(noTok_B_o4Kax[nick .. " main_scroll"][1].getY() - 10)
-			end
+		for k, v in pairs(MoHuTop_urpoka[nick]) do
+		if v.getType == "scroll" and v.enabled then	
+			if y > 0 then --скролл вниз
+				if v.getY() > v.min_y then v.setY(v.getY() - 10) end
+			elseif y < 0 then --скролл вверх
+				if v.y + v.h < v.max_y then v.setY(v.getY() + 10) end
+			end	
 		end
 	end
 end
@@ -1785,11 +1788,10 @@ function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, color_backgro
 	table_scroll = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	rawset(table_scroll, "min_y", min_y)
 	rawset(table_scroll, "max_y", max_y)
-	rawset(table_scroll, "getType", "scroll_button")
-	rawset(table_scroll, "value", 1)
+	rawset(table_scroll, "getType", "scroll")
 	rawset(table_scroll, "enabled", false)
 	rawset(table_scroll, "click", scroll_function)
-	rawset(table_scroll, "h", y + h)
+	rawset(table_scroll, "h", h)
 	
 	return table_scroll
 end

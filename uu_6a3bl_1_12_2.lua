@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы4"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -543,13 +543,13 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 						if v.getY() + v.h + v.cgBur <= v.max_y then
 							v.setY(v.getY() + v.cgBur)
 							v.value = v.value + 1 
-							v.buttons_visible(true)
+							v.setVisible(true)
 						end
 					elseif y < 0 then --скролл ВВЕРХ
 						if v.getY() > v.min_y then
 							v.setY(v.getY() - v.cgBur)
 							v.value = v.value - 1
-							v.buttons_visible(false)
+							v.setVisible(false)
 						end		
 					end	
 				end

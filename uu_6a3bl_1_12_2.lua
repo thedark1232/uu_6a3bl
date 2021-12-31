@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 21"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 22"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -490,7 +490,7 @@ function glasses_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
 end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
-	for k, v in pairs(MoHuTop_urpoka[nick]) do
+	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if v.getType == "scroll" then
 			v.enabled = false
 		end
@@ -500,14 +500,14 @@ function glasses_component_mouse_wheel(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
 end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	for k, v in pairs(MoHuTop_urpoka[nick]) do
+	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if v.getId == id and v.getType == "scroll" then
 			v.enabled = true
 		end
 	end
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	for k, v in pairs(MoHuTop_urpoka[nick]) do
+	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if v.getType == "scroll" then
 			v.enabled = false
 		end
@@ -526,7 +526,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 	end
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
-		for k, v in pairs(MoHuTop_urpoka[nick]) do
+		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if v.getType == "scroll" and v.enabled then	
 			if y > 0 then --скролл вниз
 				if v.getY() > v.min_y then v.setY(v.getY() - 10) end
@@ -1767,7 +1767,6 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
-
 function creat_new_button(nick, x, y, w, h, label, color_background, color_foreground, click_function)
 	local table_button
 	local w2 = math.floor(w / 2)
@@ -1800,7 +1799,6 @@ function vertical_scroll_click(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние ползунка: " .. g .. tostring(v.enabled))
 	end
 end
-
 function forms:creat_main_agmin_form(nick)
 	--создание формы
 	

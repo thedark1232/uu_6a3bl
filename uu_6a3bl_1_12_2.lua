@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской"
+local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1910,7 +1910,7 @@ function forms:creat_main_form(nick)
 	table_form.napaMeTp_o3y.setClickable(false)
 	
 	--создание кнопок
-	local y = 32
+	local y = 15
 	local y_func = function()
 		y = y + 17
 		return y
@@ -2054,7 +2054,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок
-	local y = 32
+	local y = 15
 	local y_func = function()
 		y = y + 17
 		return y
@@ -2066,22 +2066,22 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	end
 	
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 19, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y + 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "обновить ии", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
-		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "отсутст. компон.", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
-		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "тихий рестарт", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
-		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "выход", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
-		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "убить Алису", "button", true, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
-		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "отключить сеть", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
-		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "задержка глав. цикла", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"]() end)
-		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "переименовать базу", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"]() end)		
+		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить ии", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
+		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отсутст. компон.", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
+		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тихий рестарт", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
+		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
+		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "убить Алису", "button", true, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
+		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отключить сеть", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
+		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка глав. цикла", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"]() end)
+		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"]() end)		
 	end
 	
 	--кнопки тиммейтов
-	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "тест кнопка1", "button", true, black, white, function() TTa6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 1") end)
+	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка1", "button", true, black, white, function() TTa6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 1") end)
 	table_form.test2 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка2", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 2") end)
 	table_form.test3 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка3", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 3") end)
 	table_form.test4 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка4", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 4") end)

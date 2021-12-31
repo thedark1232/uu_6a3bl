@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 39"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 40"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1876,8 +1876,10 @@ function forms:creat_main_agmin_form(nick)
 				if v.getType() == "button" then
 					if down then
 						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(getY() + cgBur_no_Y)
 					else
 						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(getY() - cgBur_no_Y)
 					end				
 					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
 						v.setVisible(true)

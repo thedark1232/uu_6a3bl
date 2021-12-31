@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской 2"
+local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1929,9 +1929,9 @@ function forms:creat_main_form(nick)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тиммейты", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: тиммейты") end)
 	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "чат тимы", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: чат тимы") end)
 	table_form.pegCToyH = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: редстоун") end)
-	table_form.TeJIenopTep = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "телепортер", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: телепортер") end)
-	table_form.MaTpuca = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "матрица", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: матрица") end)
-	table_form.HaHuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "наниты", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: наниты") end)
+	table_form.TeJIenopTep = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "телепортер", "button", true,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: телепортер") end)
+	table_form.MaTpuca = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "матрица", "button", true,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: матрица") end)
+	table_form.HaHuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "наниты", "button", true,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: наниты") end)
 	table_form.geTekTopbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "детекторы", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: детекторы") end)
 	table_form.oguH_ceHcop = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "1 сенсор", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 1 сенсор") end)
 	table_form.ceHcopbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "сенсоры", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: сенсоры") end)
@@ -2043,6 +2043,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 				v.delete()
 			end
 		end
+		Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = nil
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
@@ -2060,50 +2061,52 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 		return y
 	end
 	local num = 0
+	local start_visible = true
 	local num_button = function()
+		if num > 10 then start_visible = false end
 		num = num + 1
 		return num
 	end
 	
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y + 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить ии", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
-		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отсутст. компон.", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
-		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тихий рестарт", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
-		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
-		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "убить Алису", "button", true, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
-		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отключить сеть", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
-		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка глав. цикла", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"]() end)
-		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", true, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"]() end)		
+		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить ии", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
+		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отсутст. компон.", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
+		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тихий рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
+		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
+		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "убить Алису", "button", start_visible, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
+		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отключить сеть", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
+		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка глав. цикла", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"]() end)
+		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"]() end)		
 	end
 	
 	--кнопки тиммейтов
-	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка1", "button", true, black, white, function() TTa6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 1") end)
-	table_form.test2 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка2", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 2") end)
-	table_form.test3 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка3", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 3") end)
-	table_form.test4 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка4", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 4") end)
-	table_form.test5 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка5", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 5") end)
-	table_form.test6 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка6", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 6") end)
-	table_form.test7 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка7", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 7") end)
-	table_form.test8 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка8", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 8") end)
-	table_form.test9 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка9", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 9") end)
-	table_form.test10 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка10", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 10") end)
-	table_form.test11 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка11", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 11") end)
-	table_form.test12 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка12", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 12") end)
-	table_form.test13 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка13", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 13") end)
-	table_form.test14 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка14", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 14") end)
-	table_form.test15 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка15", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 15") end)
-	table_form.test16 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка16", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 16") end)
-	table_form.test17 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка17", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 17") end)
-	table_form.test18 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка18", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 18") end)
-	table_form.test19 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка19", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 19") end)
-	table_form.test20 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка20", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 20") end)
-	table_form.test21 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка21", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 21") end)
-	table_form.test22 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка22", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 22") end)
-	table_form.test23 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка23", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 23") end)
+	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка1", "button", start_visible, black, white, function() TTa6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 1") end)
+	table_form.test2 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка2", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 2") end)
+	table_form.test3 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка3", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 3") end)
+	table_form.test4 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка4", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 4") end)
+	table_form.test5 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка5", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 5") end)
+	table_form.test6 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка6", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 6") end)
+	table_form.test7 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка7", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 7") end)
+	table_form.test8 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка8", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 8") end)
+	table_form.test9 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка9", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 9") end)
+	table_form.test10 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка10", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 10") end)
+	table_form.test11 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка11", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 11") end)
+	table_form.test12 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка12", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 12") end)
+	table_form.test13 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка13", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 13") end)
+	table_form.test14 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка14", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 14") end)
+	table_form.test15 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка15", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 15") end)
+	table_form.test16 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка16", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 16") end)
+	table_form.test17 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка17", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 17") end)
+	table_form.test18 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка18", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 18") end)
+	table_form.test19 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка19", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 19") end)
+	table_form.test20 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка20", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 20") end)
+	table_form.test21 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка21", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 21") end)
+	table_form.test22 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка22", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 22") end)
+	table_form.test23 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка23", "button", start_visible,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 23") end)
 	
 
 	

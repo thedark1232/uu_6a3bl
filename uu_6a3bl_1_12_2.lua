@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 43"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 44"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -493,7 +493,6 @@ function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if type(v) ~= "function" and v.getType() == "scroll" then
 			v.enabled = false
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "переключение скролла: false")
 		end
 	end
 end
@@ -504,20 +503,15 @@ function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if type(v) ~= "function" and v.getId() == id and v.getType() == "scroll" then
 			v.enabled = true
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "переключение скролла: true")
 		end
 	end
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	local stat, err = pcall(function()
 		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-			--Ta6JIuca_koMnoHeHToB["chat_box"].say("просмотр ключа: " .. tostring(k))
 			if type(v) ~= "function" and v.getType() == "scroll" then
 				v.enabled = false
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "переключение скролла: false")
 			end
-			--print("v.getId() == id-> " .. tostring(v.getId() == id))
-			--print("v.getType == button-> " .. tostring(v.getType == button))
 			if type(v) ~= "function" and v.getId() == id and v.getType() == "button" then
 				v.setClickable(false)
 				local button_color = v.getColor()
@@ -529,7 +523,6 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 				return
 			end
-			--io.read()
 		end
 	end)
 	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
@@ -1964,6 +1957,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
 			if Bce_ragJeTbl_urpoka[nick] == nil then
 				Bce_ragJeTbl_urpoka[nick] = {}
 				if nick == admin then

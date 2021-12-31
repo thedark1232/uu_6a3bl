@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 27"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 28"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -493,6 +493,7 @@ function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if type(v) ~= "function" and v.getType() == "scroll" then
 			v.enabled = false
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "переключение скролла: false")
 		end
 	end
 end
@@ -503,6 +504,7 @@ function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool
 	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 		if type(v) ~= "function" and v.getId() == id and v.getType() == "scroll" then
 			v.enabled = true
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "переключение скролла: true")
 		end
 	end
 end
@@ -512,6 +514,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("просмотр ключа: " .. tostring(k))
 			if type(v) ~= "function" and v.getType() == "scroll" then
 				v.enabled = false
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "переключение скролла: false")
 			end
 			--print("v.getId() == id-> " .. tostring(v.getId() == id))
 			--print("v.getType == button-> " .. tostring(v.getType == button))
@@ -532,12 +535,22 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
-		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
-		if v.getType() == "scroll" and v.enabled then	
+	for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
+		if type(v) ~= "function" and v.getType() == "scroll" and v.enabled then	
+			--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл")
 			if y > 0 then --скролл вниз
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВНИЗ")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY()-> " .. tostring(v.getY()))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.min_y-> " .. tostring(v.min_y))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() > v.min_y-> " .. tostring(v.getY() > v.min_y))
 				if v.getY() > v.min_y then v.setY(v.getY() - 10) end
 			elseif y < 0 then --скролл вверх
-				if v.y + v.h < v.max_y then v.setY(v.getY() + 10) end
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВВЕРХ")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h-> " .. tostring(v.getY() + v.h))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.max_y-> " .. tostring(v.max_y))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h < v.max_y-> " .. tostring(v.getY() + v.h < v.max_y))
+				
+				if v.getY() + v.h < v.max_y then v.setY(v.getY() + 10) end
 			end	
 		end
 	end

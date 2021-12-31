@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы 13"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2119,6 +2119,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	return table_form
 end
 function main_noTok(nick)
+	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
 		while true do

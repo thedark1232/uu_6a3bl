@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -22,6 +22,7 @@ local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
 local noTok_B_o4Kax = {}
+local Bce_noToku = {}
 local agpec_agMuH_MocTa = "123"
 local TecT_oTkJIuka = false
 local npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = false
@@ -490,7 +491,7 @@ function glasses_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
 end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
-	for _, next_form in pairs((Bce_ragJeTbl_urpoka[nick]) do
+	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
 		for k, v in pairs(next_form) do
 			if type(v) ~= "function" and v.getType() == "scroll" then
 				v.enabled = false
@@ -503,7 +504,7 @@ function glasses_component_mouse_wheel(...)
 end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
-		for k, v in pairs(next_form)
+		for k, v in pairs(next_form) do
 			if type(v) ~= "function" and v.getId() == id and v.getType() == "scroll" then
 				v.enabled = true
 			end
@@ -542,13 +543,13 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 						if v.getY() + v.h + v.cgBur <= v.max_y then
 							v.setY(v.getY() + v.cgBur)
 							v.value = v.value + 1 
-							Bce_ragJeTbl_urpoka[nick].main_admin_form.buttons_visible(true)
+							Bce_ragJeTbl_urpoka[nick].main_form.buttons_visible(true)
 						end
 					elseif y < 0 then --скролл ВВЕРХ
 						if v.getY() > v.min_y then
 							v.setY(v.getY() - v.cgBur)
 							v.value = v.value - 1
-							Bce_ragJeTbl_urpoka[nick].main_admin_form.buttons_visible(false)
+							Bce_ragJeTbl_urpoka[nick].main_form.buttons_visible(false)
 						end		
 					end	
 				end
@@ -1825,7 +1826,7 @@ function vertical_scroll_click(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "состояние ползунка: " .. g .. tostring(v.enabled))
 	end
 end
-function forms:creat_main_agmin_form(nick)
+function forms:creat_main_form(nick)
 	--создание формы
 	local table_form = {}
 	
@@ -1962,13 +1963,13 @@ function forms:creat_main_agmin_form(nick)
 	return table_form
 end
 
-function HoBblu_noTok(nick)
+function main_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
 		while true do
-			Bce_ragJeTbl_urpoka[nick].main_admin_form.napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
-			Bce_ragJeTbl_urpoka[nick].main_admin_form.napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
-			Bce_ragJeTbl_urpoka[nick].main_admin_form.napaMeTp_o3y.setText(napaMeTp_o3y)
+			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
+			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
+			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_o3y.setText(napaMeTp_o3y)
 			os.sleep(0.1)
 		end
 	end)
@@ -1984,18 +1985,16 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
 			if #MoHuTop_urpoka[nick].getAllObjects() == 0 then
 				Bce_ragJeTbl_urpoka[nick] = {}
-				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form = forms:creat_main_agmin_form(nick)
-					myThread.create(HoBblu_noTok, nick)
-				else
-					--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
+				if type(Bce_noToku[nick]) == "table" then
+					for _, noTok in pairs(Bce_noToku[nick]) do
+						myThread.kill(noTok)
+					end
 				end
+				Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
+				Bce_noToku[nick] = {}
+				table.insert(Bce_noToku[nick], myThread.create(main_noTok, nick))
 			else
-				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(true)
-				else
-					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)
-				end
+				Bce_ragJeTbl_urpoka[nick].main_form.setVisible(true)
 			end
 		end
 	end)
@@ -2004,21 +2003,8 @@ end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
-			if MoHuTop_urpoka[nick] == nil then MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick) end
-			if Bce_ragJeTbl_urpoka[nick] == nil then
-				Bce_ragJeTbl_urpoka[nick] = {}
-				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form = creat_main_agmin_form(nick)
-				else
-					--Bce_ragJeTbl_urpoka[nick].main_form = creat_main_form(nick)
-				end
-			else
-				if nick == admin then
-					Bce_ragJeTbl_urpoka[nick].main_admin_form.setVisible(false)
-				else
-					--Bce_ragJeTbl_urpoka[nick].main_form.setVisible(false)
-				end
-			end
+			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
+			Bce_ragJeTbl_urpoka[nick].main_form.setVisible(false)
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end

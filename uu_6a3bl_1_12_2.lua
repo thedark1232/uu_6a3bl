@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы11"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новой формы 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1823,11 +1823,6 @@ function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, c
 	
 	return table_scroll
 end
-function vertical_scroll_click(nick)
-	-- for _, v in ipairs(noTok_B_o4Kax[nick .. " main_scroll"]) do
-		-- v.enabled = true
-	-- end
-end
 function forms:creat_main_form(nick)
 	--создание формы
 	local table_form = {}
@@ -1884,6 +1879,20 @@ function forms:creat_main_form(nick)
 		end
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+		myThread.kill(Bce_noToku[nick].main_form)
+	end
 	
 	--главный фрейм
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 152, 205, blue)
@@ -1957,7 +1966,10 @@ function forms:creat_main_form(nick)
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
 	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "main_form")
 	
-	--объединение таблиц
+	
+	
+	--объединение таблиц и создание потока
+	Bce_noToku[nick].main_form = myThread.create(main_noTok, nick)
 	self = {}
 	setmetatable(table_form, self)
 	self.__index = self
@@ -2030,6 +2042,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 				v.delete()
 			end
 		end
+		myThread.kill(Bce_noToku[nick].main_form)
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
@@ -2053,9 +2066,9 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 		return num
 	end
 	
-	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "тест кнопка1", true, black, white, function() TTa6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 1"]() end)
-	table_form.test2 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка2", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 2"]() end)
-	table_form.test3 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка3", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 3"]() end)
+	table_form.test1 = creat_new_button(num_button(), nick, 5 + x_win, y, 128, 15, "тест кнопка1", true, black, white, function() TTa6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 1") end)
+	table_form.test2 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка2", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 2") end)
+	table_form.test3 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка3", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " срабатываение кнопки: 3") end)
 	table_form.test4 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка4", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 4") end)
 	table_form.test5 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка5", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 5") end)
 	table_form.test6 = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест кнопка6", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 6") end)
@@ -2132,10 +2145,11 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 						myThread.kill(noTok)
 					end
 				end
+				Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 				Bce_noToku[nick] = {}
-				Bce_noToku[nick].main_form = myThread.create(main_noTok, nick))
+			else
+				Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 			end
-			Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
@@ -2146,7 +2160,6 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
-			myThread.kill(Bce_noToku[nick].main_form)
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end

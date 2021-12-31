@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 32"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 33"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1843,10 +1843,10 @@ function forms:creat_main_agmin_form(nick)
 						Ta6JIuca_koMnoHeHToB["chat_box"].say("v.button_num-> " .. tostring(v.button_num))
 						Ta6JIuca_koMnoHeHToB["chat_box"].say("table_form.scroll_button.value-> " .. tostring(table_form.scroll_button.value))
 						Ta6JIuca_koMnoHeHToB["chat_box"].say("table_form.MakcuMyM_BuguMblx_kHonok()-> " .. tostring(table_form.MakcuMyM_BuguMblx_kHonok()))
-						Ta6JIuca_koMnoHeHToB["chat_box"].say("v.button_num => table_form.scroll_button.value-> " .. tostring(v.button_num => table_form.scroll_button.value))
+						Ta6JIuca_koMnoHeHToB["chat_box"].say("v.button_num => table_form.scroll_button.value-> " .. tostring(v.button_num >= table_form.scroll_button.value))
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(" v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok()-> " .. tostring( v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok()))
 						
-						--if v.button_num => table_form.scroll_button.value or v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() then
+						--if v.button_num >= table_form.scroll_button.value or v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() then
 						--	v.setVisible(visible)
 						--	v.caption.setVisible(visible)
 						--end
@@ -1860,14 +1860,13 @@ function forms:creat_main_agmin_form(nick)
 			end
 		end
 	end
-	
 	table_form.buttons_visible = function()
 		for k, v in pairs(table_form) do
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("переключение режима: " .. k .. type(v))
 			if type(v) ~= "function" then 
 				if v.getType() == "button" then
 					
-					--if v.button_num => table_form.scroll_button.value or v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok then
+					--if v.button_num >= table_form.scroll_button.value or v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok then
 					--	v.setVisible(true)
 					--	v.caption.setVisible(true)
 					--else
@@ -1930,7 +1929,7 @@ function forms:creat_main_agmin_form(nick)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
-	
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
 	local start_no_y = 40
 	local y_min = start_no_y

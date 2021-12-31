@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 41"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 42"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -538,22 +538,13 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 	local stat, err = pcall(function()
 		for k, v in pairs(Bce_ragJeTbl_urpoka[nick].main_admin_form) do
 			if type(v) ~= "function" and v.getType() == "scroll" and v.enabled then	
-				--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл")
 				if y > 0 then --скролл ВНИЗ
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВНИЗ")
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h + v.cgBur-> " .. tostring(v.getY() + v.h + v.cgBur))
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.max_y-> " .. tostring(v.max_y))
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() + v.h < v.max_y-> " .. tostring(v.getY() + v.h < v.max_y))
 					if v.getY() + v.h + v.cgBur <= v.max_y then
 						v.setY(v.getY() + v.cgBur)
 						v.value = v.value + 1 
 						Bce_ragJeTbl_urpoka[nick].main_admin_form.buttons_visible(true)
 					end
 				elseif y < 0 then --скролл ВВЕРХ
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "начался скролл: ВВЕРХ")
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY()-> " .. tostring(v.getY()))
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.min_y-> " .. tostring(v.min_y))
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v.getY() > v.min_y-> " .. tostring(v.getY() > v.min_y))
 					if v.getY() > v.min_y then
 						v.setY(v.getY() - v.cgBur)
 						v.value = v.value - 1
@@ -1842,14 +1833,8 @@ function forms:creat_main_agmin_form(nick)
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("переключение режима: " .. k .. type(v))
 			if type(v) ~= "function" then 
 				if v.getType() == "button" then
-					if visible then
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say("v.button_num-> " .. tostring(v.button_num))
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say("table_form.scroll_button.value-> " .. tostring(table_form.scroll_button.value))
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say("table_form.MakcuMyM_BuguMblx_kHonok()-> " .. tostring(table_form.MakcuMyM_BuguMblx_kHonok()))
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say("v.button_num => table_form.scroll_button.value-> " .. tostring(v.button_num >= table_form.scroll_button.value))
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say(" v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok()-> " .. tostring( v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok()))
-						
-						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
 							v.setVisible(visible)
 							v.setClickable(visible)
 							v.caption.setVisible(visible)
@@ -1871,7 +1856,6 @@ function forms:creat_main_agmin_form(nick)
 	table_form.buttons_visible = function(down)
 		local cgBur_no_Y = 17
 		for k, v in pairs(table_form) do
-			--Ta6JIuca_koMnoHeHToB["chat_box"].say("переключение режима: " .. k .. type(v))
 			if type(v) ~= "function" then 
 				if v.getType() == "button" then
 					if down then

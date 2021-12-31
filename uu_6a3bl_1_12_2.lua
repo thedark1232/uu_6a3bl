@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 31"
+local Ha3BaHue_o6HoBJIeHu9l = "перестроение кода 32"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1840,13 +1840,19 @@ function forms:creat_main_agmin_form(nick)
 			if type(v) ~= "function" then 
 				if v.getType() == "button" then
 					if visible then
-						if v.button_num => table_form.scroll_button.value or v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok then
-							v.setVisible(visible)
-							v.caption.setVisible(visible)
-						end
+						Ta6JIuca_koMnoHeHToB["chat_box"].say("v.button_num-> " .. tostring(v.button_num))
+						Ta6JIuca_koMnoHeHToB["chat_box"].say("table_form.scroll_button.value-> " .. tostring(table_form.scroll_button.value))
+						Ta6JIuca_koMnoHeHToB["chat_box"].say("table_form.MakcuMyM_BuguMblx_kHonok()-> " .. tostring(table_form.MakcuMyM_BuguMblx_kHonok()))
+						Ta6JIuca_koMnoHeHToB["chat_box"].say("v.button_num => table_form.scroll_button.value-> " .. tostring(v.button_num => table_form.scroll_button.value))
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(" v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok()-> " .. tostring( v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok()))
+						
+						--if v.button_num => table_form.scroll_button.value or v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() then
+						--	v.setVisible(visible)
+						--	v.caption.setVisible(visible)
+						--end
 					else
-						v.setVisible(visible)
-						v.caption.setVisible(visible)
+						--v.setVisible(visible)
+						--v.caption.setVisible(visible)
 					end
 				else
 					v.setVisible(visible)
@@ -1860,13 +1866,14 @@ function forms:creat_main_agmin_form(nick)
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("переключение режима: " .. k .. type(v))
 			if type(v) ~= "function" then 
 				if v.getType() == "button" then
-					if v.button_num => table_form.scroll_button.value or v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok then
-						v.setVisible(true)
-						v.caption.setVisible(true)
-					else
-						v.setVisible(false)
-						v.caption.setVisible(false)
-					end
+					
+					--if v.button_num => table_form.scroll_button.value or v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok then
+					--	v.setVisible(true)
+					--	v.caption.setVisible(true)
+					--else
+					--	v.setVisible(false)
+					--	v.caption.setVisible(false)
+					--end
 				end
 			end
 		end

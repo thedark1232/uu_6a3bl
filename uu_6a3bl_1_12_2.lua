@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма управления алиской 7"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2048,9 +2048,9 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
-	local x_win = 150
+	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
-	table_form.main_box.setClickable(false)
+	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 			
@@ -2127,9 +2127,12 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	local y_max = 192
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	if y_pa3Mep < 10 then y_pa3Mep = 10 end
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
 	
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "ynpaBJIeHue_alice") end
+	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "ynpaBJIeHue_alice")
 	
 	--объединение таблиц
 	self = {}

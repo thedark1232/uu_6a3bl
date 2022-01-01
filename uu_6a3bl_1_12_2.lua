@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 1"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -17,7 +17,7 @@ local one_ceHcop_z = 0
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
-local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l
+local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = {}
 local co3gaHue_co6blTuu = true
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
@@ -1978,7 +1978,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	--создание формы
 	local table_form = {}
 	
-	Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = "ynpaBJIeHue_alice"
+	Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = "ynpaBJIeHue_alice"
 	--создание функции видимости окна
 	table_form.setVisible = function(visible)
 		for k, v in pairs(table_form) do
@@ -2043,7 +2043,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 				v.delete()
 			end
 		end
-		Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = nil
+		Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = nil
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
@@ -2182,7 +2182,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
-			if Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l ~= nil then
+			if Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] ~= nil then
 				Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l].destroy()
 			end
 		end

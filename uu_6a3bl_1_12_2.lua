@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 2"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2463,6 +2463,10 @@ do
 		end
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"] = function() --взорвать компьютер
+		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
+			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
+			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		end
 		if component.isAvailable("self_destruct") then
 			if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("minecraft_xyuH9l.dfpwm") end
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ПРОЩАЙ!:(")

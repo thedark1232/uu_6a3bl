@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 9"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1971,7 +1971,7 @@ function forms:creat_main_form(nick)
 	--объединение таблиц и создание потока
 	
 	Bce_noToku[nick].main_form = myThread.create(main_noTok, nick)
-	self = {}
+	--self = {}
 	setmetatable(table_form, self)
 	self.__index = self
 	
@@ -2175,6 +2175,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 				end
 				Bce_noToku[nick] = {}
 			end
+			Bce_ragJeTbl_urpoka[nick].main_form = {}
 			Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 		end
 	end)
@@ -2346,7 +2347,7 @@ do
 		end
 	end	
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " количество объектов в очках"] = function()
-		local koJIu4ecTBo = MoHuTop_urpoka[nick].getAllObjects()
+		local koJIu4ecTBo = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(admin).getAllIds()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#koJIu4ecTBo))
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"] = function()

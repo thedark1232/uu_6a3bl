@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 12"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -466,9 +466,9 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	event.ignore("glasses_mouse_drag", glasses_mouse_drag)
 	
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-		component.invoke(agpec_agMuH_MocTa, "clear")
-		component.invoke(agpec_agMuH_MocTa, "addText", 1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
-		component.invoke(agpec_agMuH_MocTa, "sync")
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "СЕТЬ ВЫКЛЮЧЕНА")
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 	end
 	myThread.killAll()
 	computer.addUser(admin)
@@ -3386,7 +3386,7 @@ do
 	end
 	
 	--print("проверка адреса админ моста")
-	local ycnelllHoe_co3gaHue_agMuckoro_MocTa, _ = pcall(component.setPrimary, "openperipheral_bridge", agpec_agMuH_MocTa)
+	--local ycnelllHoe_co3gaHue_agMuckoro_MocTa, _ = pcall(component.setPrimary, "openperipheral_bridge", agpec_agMuH_MocTa)
 	--io.write("agpec_agMuH_MocTa-> "); print(agpec_agMuH_MocTa)
 	--io.write("ycnelllHoe_co3gaHue_agMuckoro_MocTa-> "); print(ycnelllHoe_co3gaHue_agMuckoro_MocTa)
 	--io.read()
@@ -3433,9 +3433,9 @@ do
 	math.randomseed(os.time())
 	--сообщение на очки
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-		component.invoke(agpec_agMuH_MocTa, "clear")
-		component.invoke(agpec_agMuH_MocTa, "addText", 1, 1, "ВКЛЮЧЕНИЕ СЕТИ")
-		component.invoke(agpec_agMuH_MocTa, "sync")
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(1, 1, "ВКЛЮЧЕНИЕ СЕТИ")
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 	end
 	--присвоение названия базе
 	if configuration[11] == "nil" or configuration[11] == "" or configuration[11] == nil then --конфиг названия базы
@@ -6876,7 +6876,7 @@ do
 	--добавление админа в вайт лист
 	whiteListUsers[admin] = "ok"
 	
-	component.invoke(agpec_agMuH_MocTa, "clear")
+	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
 	
 --ГЛАВНЫЙ ЦИКЛ
 	while not_exit do
@@ -6970,7 +6970,7 @@ do
 			Ta6JIuca_gucTaHcuu_pagapa = Ta6JIuca_koMnoHeHToB["radar"].getPlayers(gucTaHcu9l_pagapa)
 		end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-			local Ha_KoM_ogeTbl_o4ku = component.invoke(agpec_agMuH_MocTa, "getUsers")
+			local Ha_KoM_ogeTbl_o4ku = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getUsers()
 			local o6HapyJeH_4yJou_urpok = false
 			for _, ta6JIuca_noJIb3oBaTeJIeu in pairs(Ha_KoM_ogeTbl_o4ku) do
 				if whiteListUsers[ta6JIuca_noJIb3oBaTeJIeu.name] == nil then

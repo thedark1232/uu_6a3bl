@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 6"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2949,9 +2949,18 @@ function forms:creat_redStone_form(nick)
 	
 	--кнопки тиммейтов
 	table_form.red_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "инфо", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред инфо"]() end)
-	table_form.red_co6blTu9l = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "события", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события"]() end)
-	table_form.nycTa9l_KHonka = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очистить событие", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события очистить"]() end)
+	table_form.red_co6blTu9l = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "логи", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события"]() end)
+	table_form.nycTa9l_KHonka = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очистить логи", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события очистить"]() end)
 	
+	for k, v in pairs(configRedStone) do
+		table_form[v[1] .. "BkJI"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, v[1] .. " вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " вкл"]() end)
+		table_form[v[1] .. "BblkJI"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " выкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " выкл"]() end)
+		table_form[v[1] .. "uMnyJIbc"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " импульс", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " импульс"]() end)
+		table_form[v[1] .. "ygaJIuTb"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " удалить", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " удалить"]() end)
+		table_form[v[1] .. "nepeuMeHoBaTb"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " переименовать", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " переименовать"]() end)
+		table_form[v[1] .. "qpyHkcu9l"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " функция", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " назначить функцию"]() end)
+	end
+		
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
 	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
@@ -6442,7 +6451,6 @@ do
 		urpoKu_gJI9l_oTo6paJeHu9l = configuration[42]
 	end
 	--конфигурация 43 занята (настройками способа приема сообщений алисой), юзай конфигурацию 45
-	
 	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end

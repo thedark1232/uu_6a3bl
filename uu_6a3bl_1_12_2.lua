@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 3"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2183,7 +2183,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
 			if Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] ~= nil then
-				Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l].destroy()
+				Bce_ragJeTbl_urpoka[nick].destroy()
 			end
 		end
 	end)

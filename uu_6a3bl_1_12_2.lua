@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 8"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2953,12 +2953,12 @@ function forms:creat_redStone_form(nick)
 	table_form.nycTa9l_KHonka = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очистить логи", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события очистить"]() end)
 	
 	for k, v in pairs(configRedStone) do
-		table_form[v[1] .. "BkJI"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, v[1] .. " вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " вкл"]() end)
-		table_form[v[1] .. "BblkJI"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " выкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " выкл"]() end)
-		table_form[v[1] .. "uMnyJIbc"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " импульс", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " импульс"]() end)
-		table_form[v[1] .. "ygaJIuTb"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " удалить", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " удалить"]() end)
-		table_form[v[1] .. "nepeuMeHoBaTb"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " переименовать", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " переименовать"]() end)
-		table_form[v[1] .. "qpyHkcu9l"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " функция", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. v[1] .. " назначить функцию"]() end)
+		table_form[v[1] .. "BkJI"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, v[1] .. " вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " вкл"]() end)
+		table_form[v[1] .. "BblkJI"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " выкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " выкл"]() end)
+		table_form[v[1] .. "uMnyJIbc"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " импульс", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " импульс"]() end)
+		table_form[v[1] .. "ygaJIuTb"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " удалить", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"]() end)
+		table_form[v[1] .. "nepeuMeHoBaTb"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " переименовать", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " переименовать"]() end)
+		table_form[v[1] .. "qpyHkcu9l"] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15,  v[1] .. " функция", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " назначить функцию"]() end)
 	end
 		
 	--создание каркаса скролла

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 4"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1799,7 +1799,7 @@ end
 function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_background, color_foreground, click_function)
 	local table_button
 	local w2 = math.floor(w / 2)
-	local l2 = math.floor(unicode.len(label) * 5 / 2) 
+	local l2 = math.floor(unicode.len(label) * 4 / 2) 
 	local center_x = w2 - l2
 	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	table_button.setVisible(visible)
@@ -2810,7 +2810,7 @@ function forms:creat_virtual_4aT_form(nick)
 	end
 	
 	--кнопки тиммейтов
-	table_form.nycTa9l_KHonka = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "чат на стадии разработки", "button", start_visible, black, white, function() end)
+	table_form.nycTa9l_KHonka = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тут пока пусто", "button", start_visible, black, white, function() end)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok

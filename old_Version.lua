@@ -1310,7 +1310,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "установи время задержки циклов (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "покажи время задержки циклов (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "переименовать базу (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "сменить админа (тиммейт)")
+	--table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "сменить админа (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "покажи все компоненты (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "рестарт сети (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "покажи озу (тиммейт)")
@@ -5193,9 +5193,17 @@ do
 				end
 				local cMellleHue_oTo6paJeHu9l_TekcTa_no_y = koorguHaTa_o4koB + 10
 				for uM9l_urpoka, cTaTyc_urpoka in pairs(rJIo6aJIbHa9l_Ta6JIuca_urpokoB) do	--отображение игроков через сенсор
+					computer.removeUser(uM9l_urpoka)
 					if cTaTyc_urpoka["player_x"] ~= nil then
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
-						cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
+						if not computer.addUser(uM9l_urpoka) then
+							rJIo6aJIbHa9l_Ta6JIuca_urpokoB[uM9l_urpoka] = nil
+						else
+							computer.removeUser(uM9l_urpoka)
+							Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(2, cMellleHue_oTo6paJeHu9l_TekcTa_no_y, uM9l_urpoka .. ": x: " .. cTaTyc_urpoka["player_x"] .. " y: " .. cTaTyc_urpoka["player_y"] .. " z: " .. cTaTyc_urpoka["player_z"])
+							cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
+						end
+					else
+						rJIo6aJIbHa9l_Ta6JIuca_urpokoB[uM9l_urpoka] = nil
 					end
 				end
 				if one_ceHcop_BKJI == true then

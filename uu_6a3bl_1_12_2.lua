@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 12"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2189,7 +2189,9 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
 			if Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] ~= nil then
-				Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick]].destroy()
+				if Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick]] ~= nil then
+					Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick]].destroy()
+				end
 			end
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. r .. nick .. c .. " не из вайт листа")

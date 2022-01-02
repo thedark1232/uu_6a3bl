@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 10"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1971,10 +1971,10 @@ function forms:creat_main_form(nick)
 	--объединение таблиц и создание потока
 	
 	Bce_noToku[nick].main_form = myThread.create(main_noTok, nick)
-	--self = {}
+	self = {}
 	setmetatable(table_form, self)
 	self.__index = self
-	
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перед возвращением из создания")
 	return table_form
 end
 function forms:creat_ynpaBJIeHue_alice_form(nick)
@@ -2175,8 +2175,9 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 				end
 				Bce_noToku[nick] = {}
 			end
-			Bce_ragJeTbl_urpoka[nick].main_form = {}
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перед созданием формы")
 			Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "после создания формы")
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end

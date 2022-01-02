@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 13"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3390,41 +3390,6 @@ do
 	--io.write("agpec_agMuH_MocTa-> "); print(agpec_agMuH_MocTa)
 	--io.write("ycnelllHoe_co3gaHue_agMuckoro_MocTa-> "); print(ycnelllHoe_co3gaHue_agMuckoro_MocTa)
 	--io.read()
-	if not ycnelllHoe_co3gaHue_agMuckoro_MocTa then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес админского моста не найден")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "или устарел")
-		local Bce_MocTbl = component.list("openperipheral_bridge")
-		local koJIu4ecTBo_MocToB = 0
-		for agreca_MocToB, _ in pairs(Bce_MocTbl) do
-			koJIu4ecTBo_MocToB = koJIu4ecTBo_MocToB + 1
-		end
-		if koJIu4ecTBo_MocToB == 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "мосты не найдены")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "подключи хотя бы 1 мост к ии базы")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компьютер будет выключен")
-			computer.shutdown()
-		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "введи 3 цифры адреса админского моста")
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
-		if not BBog_koppekTeH then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "время истекло")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ии базы будет выключена")
-			computer.shutdown()
-		end
-		for agreca_MocToB, _ in pairs(Bce_MocTbl) do
-			if string.sub(agreca_MocToB, 1, 3) == coo6llleHue then		
-				agMuHcKuu_MocT = agreca_MocToB
-				configuration[44] = agMuHcKuu_MocT
-				setConfiguration()
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "адрес моста найден и сохранен")
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "выполняю рестарт сети")
-				computer.shutdown(true)
-			end
-		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "адрес моста не найден")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ии базы будет выключена")
-		computer.shutdown()
-	end
 	
 	--приветствие базы на мониторе
 	local TekcT_nocJIe_x = HanuCaTb_6oJIblllou_TekcT(10, 1, {"М", "А", "Л", "Ы", "Ш", "К", "А", "пробел", "пробел", "А", "Л", "И", "С", "А", "двоеточие"}, "setPurple")

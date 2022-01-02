@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 15"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 16"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1480,6 +1480,8 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "скрой озу (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "покажи мои команды (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "очистить монитор (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "текущий админ (тиммейт)")
+	
 	
 	--модем
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "установи новый порт модема (админ)")
@@ -1690,6 +1692,8 @@ function koMaHgbl_uu_6a3bl()
 	--прочее
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "поблагодари kayatik (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "начало теста (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "показать адрес админ моста (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "количество объектов в очках (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "привет (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "иди нахуй (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "треугольник (тиммейт)")
@@ -1701,9 +1705,6 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика переключить (тиммейт)") --тестирование отклика алисы на команды чере чат
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика проверка всех сообщений (тиммейт)") --тестировать обсолютно все сообщения от игроков (включено или нет)
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика проверка всех сообщений переключить (тиммейт)") --тестировать все сообщения от игроков (включено или нет)
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "показать адрес админ моста (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "количество объектов в очках (админ)")
-	
 	
 	--управлением одним сенсором
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция х (админ)")
@@ -2074,21 +2075,22 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--админские кнопки
-	-- if nick == admin then
-		-- table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить ии", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
-		-- table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отсутст. компон.", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
-		-- table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тихий рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
-		-- table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
-		-- table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "убить Алису", "button", start_visible, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
-		-- table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отключить сеть", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
-		-- table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка глав. цикла", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"]() end)
-		-- table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"]() end)		
-	-- end
+	if nick == admin then
+		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить ии", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
+		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отсутст. компон.", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
+		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тихий рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
+		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
+		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "убить Алису", "button", start_visible, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
+		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отключить сеть", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
+		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка глав. цикла", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"]() end)
+		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"]() end)		
+	end
 	
 	--кнопки тиммейтов
 	table_form.cMeHutb_agMuHa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить админа", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить админа"]() end)
 	table_form.cnucok_koMnoHeHToB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "список компонентов", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все компоненты"]() end)
 	table_form.pecTaPT_ceTu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рестарт сети", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
+	table_form.Tekyllluu_agMuH = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто админ", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " текущий админ"]() end)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
@@ -3251,6 +3253,9 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "новый админ назначен:" .. tostring(admin))
 	end	
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " текущий админ"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. admin)
+	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " команды"] = function()
 		if koMaHgbl then
 			koMaHgbl = not koMaHgbl

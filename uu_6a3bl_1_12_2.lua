@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 18"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1926,8 +1926,8 @@ function forms:creat_main_form(nick)
 	end
 	
 	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление Алисой", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
-	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_mara3_Durex_form(nick) end)
-	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_casino_form(nick) end)
+	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
+	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "логи игроков", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: логи игроков") end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тиммейты", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: тиммейты") end)
 	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "чат тимы", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: чат тимы") end)

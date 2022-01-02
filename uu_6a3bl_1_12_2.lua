@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 1"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1540,8 +1540,8 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "статус защиты периметра (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "покажи интервал задержки логов (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "установи интервал задержки логов (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "запись логов вкл (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "запись логов выкл (тиммейт)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "запись логов вкл (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_geTekTopbl], "запись логов выкл (админ)")
 	
 	--туннель (связанная карта)
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tunnel], "отправлять лог в туннель (админ)")
@@ -1584,11 +1584,11 @@ function koMaHgbl_uu_6a3bl()
 	--логи игроков
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "установи задержку вывода активных игроков на монитор (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "установи задержку записи в файл (админ)")
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "статус рейд (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "перенеси логи в рейд (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "запись логов вкл (админ)") --логи с детекторов
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "запись логов выкл (админ)") --логи с детекторов
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "статус рейд (тиммейт)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "статус онлайна (тиммейт)")
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "запись логов вкл (тиммейт)") --логи с детекторов
-	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "запись логов выкл (тиммейт)") --логи с детекторов
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "покажи последние логи (тиммейт)") 
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "покажи активность игроков (тиммейт)") 
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_JIoru_urpokoB], "покажи таблицу онлайна (тиммейт)") 
@@ -1928,7 +1928,7 @@ function forms:creat_main_form(nick)
 	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление Алисой", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
 	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
 	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
-	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "логи игроков", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: логи игроков") end)
+	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "логи игроков", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тиммейты", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: тиммейты") end)
 	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "чат тимы", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: чат тимы") end)
 	table_form.pegCToyH = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: редстоун") end)
@@ -2228,7 +2228,7 @@ function forms:creat_mara3_Durex_form(nick)
 		table_form.mara3_pecTapT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз рестарт"]() end)
 		table_form.o6HoBuTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз обновись"]() end)
 		table_form.Bepcu9l_lib_alice = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "версия library alice", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз версия по"]() end)
-		table_form.all_users = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "текущие юзеры", "button", start_visible, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз юзеры"]() end)
+		table_form.all_users = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "текущие юзеры", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз юзеры"]() end)
 		table_form.ygaJIuTb_c4eT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить счет", "button", start_visible, gray, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз удалить счет"]() end)
 	end
 	
@@ -2371,7 +2371,7 @@ function forms:creat_casino_form(nick)
 		table_form.zanucaTb_agpec_IM = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "записать адрес ИМ", "button", start_visible, gray, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино записать адрес им"]() end)
 		table_form.u3MeHuTb_JIuMuT_IM = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "изменить лимит ИМ", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино изменить лимит"]() end)
 		table_form.BblkJIl04uTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выключить", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино выключить"]() end)
-		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино выход"]() end)
+		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино выход"]() end)
 		table_form.pecTapT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино рестарт"]() end)
 		table_form.o6HoBuTb_lib_alice = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить lib alice", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино обновись"]() end)
 		table_form.Bepcu9l_alice = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "версия lib alice", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино версия по"]() end)
@@ -2384,6 +2384,154 @@ function forms:creat_casino_form(nick)
 	table_form.cH9lTb_6a6ku = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "снять деньги", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"]() end)
 	table_form.ucTopu9l_cnucaHuu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "история", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино логи списаний"]() end)
 	
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {144 + x_win, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = 40
+	local y_min = start_no_y
+	local y_max = 192
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+	end
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+function forms:creat_player_logs_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = "player_logs"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+		Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--админские кнопки
+	if nick == admin then
+		table_form.zagepJka_BblBoga_Ha_MoHuTop = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка обн. монитора", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи задержку вывода активных игроков на монитор"]() end)
+		table_form.zagepJka_3anucu_B_qpauJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержкка записи в файл", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи задержку записи в файл"]() end)
+		table_form.nepeHecTu_JIoru_B_raid = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "перенести логи в рейд", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " перенеси логи в рейд"]() end)
+		table_form.zanucb_JIoroB_BKJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "запись логов вкл", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись логов вкл"]() end)
+		table_form.zanucb_JIoroB_BblKJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "запись логов выкл", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись логов выкл"]() end)
+	end
+	
+	--кнопки тиммейтов
+	table_form.raid_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рейд инфо", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус рейд"]() end)
+	table_form.CTaTyc_online = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто онлайн", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус онлайна"]() end)
+	table_form.nocJIegHue_JIoru = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "последние логи", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи последние логи"]() end)
+	table_form.acTuBHocTb_urpokoB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "время игроков", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи активность игроков"]() end)
+	table_form.za_keM_cJIeguM = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "за чьим онлайн следим?", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус рейд"]() end)
+	table_form.go6aBuTb_urpoka_gJI9l_cJIeJku = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "следить за...", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " добавь игрока в онлайн"]() end)
+	table_form.ygaJIuTb_urpoka_gJI9l_cJIeJku = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "не следить за...", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали из онлайна"]() end)
+		
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
 	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)

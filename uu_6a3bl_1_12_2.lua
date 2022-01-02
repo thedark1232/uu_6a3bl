@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 11"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1933,7 +1933,7 @@ function forms:creat_main_form(nick)
 	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "чат тимы", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].virtual_4aT = forms:creat_virtual_4aT_form(nick) end)
 	table_form.pegCToyH = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].redStone = forms:creat_redStone_form(nick) end)
 	table_form.TeJIenopTep = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "телепортер", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick) end)
-	table_form.MaTpuca = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "матрица", "button", true,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: матрица") end)
+	table_form.MaTpuca = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "матрица", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
 	table_form.HaHuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "наниты", "button", true,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: наниты") end)
 	table_form.geTekTopbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "детекторы", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: детекторы") end)
 	table_form.oguH_ceHcop = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "1 сенсор", "button", false,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: 1 сенсор") end)
@@ -4977,91 +4977,95 @@ do
 		end	
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица запись рецепта"] = function()
-		local nepBblu_cJIoT = 1
-		--local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
-		--component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
+		if component.isAvailable("tileinfusionstone") then
+			local nepBblu_cJIoT = 1
+			--local Bce_uTeMbl_B_ceTu = component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "getItemsInNetwork")
+			--component.invoke(agrec_me_interface_gJI9l_MaTpucbl, "exportItem", {id = Bce_uTeMbl_B_ceTu[1].name, dmg = Bce_uTeMbl_B_ceTu[1].damage}, ta6JIuca_cTopoH_gJI9l_me[j], 1, 1)
 
-		
-		--проверка центрального пьедестала
-		local npegMeT_no_ceHTpy = component.invoke(Ta6JIuca_nbegecTaJIoB[1][1], "getStackInSlot", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], nepBblu_cJIoT)
-		if npegMeT_no_ceHTpy == nil then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта прервана")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "положи предмет на центральный пьедестал")
-			return
-		end
-		
-		--проверка на наличие предметов на остальных пьедесталах
-		local Ta6JIuca_npegMeToB = {}
-		for cJIegyl0llluu_nbegecTaJI = 4, 15 do
-			local cJIegyl0llluu_npegMeT = component.invoke(Ta6JIuca_nbegecTaJIoB[cJIegyl0llluu_nbegecTaJI][1], "getStackInSlot", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], nepBblu_cJIoT)
-			if cJIegyl0llluu_npegMeT ~= nil then
-				table.insert(Ta6JIuca_npegMeToB, {cJIegyl0llluu_nbegecTaJI, cJIegyl0llluu_npegMeT})
-			end
-		end
-		if #Ta6JIuca_npegMeToB == 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта прервана")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "на пьедесталах отсутствуют предметы")
-			return
-		end
-		
-		--ввод названия рецепта
-		local gy6JIukaT = false
-		local HoMep_gy6JIukaTa_B_Ta6JIuce = -1
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи название рецепта")
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
-		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-		for HoMep_pecenTa, nouck_no in pairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
-			if coo6llleHue == nouck_no.Ha3BaHue then
-				gy6JIukaT = true
-				HoMep_gy6JIukaTa_B_Ta6JIuce = HoMep_pecenTa
-			end
-		end
-		
-		--действия, есть есть дубликат названия рецепта
-		if gy6JIukaT then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "рецепт с таким названием уже есть")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует перезаписать рецепт?")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
-			BBog_koppekTeH, coo6llleHuee = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
-			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-			if coo6llleHuee == "да" then
-				table.remove(Ta6JIuca_recenToB_Ha_MaTpuce, HoMep_gy6JIukaTa_B_Ta6JIuce)
-				coo6llleHuee = nil
-			else
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта отменена!")
-				coo6llleHuee = nil
+			
+			--проверка центрального пьедестала
+			local npegMeT_no_ceHTpy = component.invoke(Ta6JIuca_nbegecTaJIoB[1][1], "getStackInSlot", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], nepBblu_cJIoT)
+			if npegMeT_no_ceHTpy == nil then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта прервана")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "положи предмет на центральный пьедестал")
 				return
+			end
+			
+			--проверка на наличие предметов на остальных пьедесталах
+			local Ta6JIuca_npegMeToB = {}
+			for cJIegyl0llluu_nbegecTaJI = 4, 15 do
+				local cJIegyl0llluu_npegMeT = component.invoke(Ta6JIuca_nbegecTaJIoB[cJIegyl0llluu_nbegecTaJI][1], "getStackInSlot", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], nepBblu_cJIoT)
+				if cJIegyl0llluu_npegMeT ~= nil then
+					table.insert(Ta6JIuca_npegMeToB, {cJIegyl0llluu_nbegecTaJI, cJIegyl0llluu_npegMeT})
+				end
+			end
+			if #Ta6JIuca_npegMeToB == 0 then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта прервана")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "на пьедесталах отсутствуют предметы")
+				return
+			end
+			
+			--ввод названия рецепта
+			local gy6JIukaT = false
+			local HoMep_gy6JIukaTa_B_Ta6JIuce = -1
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "введи название рецепта")
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
+			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			for HoMep_pecenTa, nouck_no in pairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
+				if coo6llleHue == nouck_no.Ha3BaHue then
+					gy6JIukaT = true
+					HoMep_gy6JIukaTa_B_Ta6JIuce = HoMep_pecenTa
+				end
+			end
+			
+			--действия, есть есть дубликат названия рецепта
+			if gy6JIukaT then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "рецепт с таким названием уже есть")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует перезаписать рецепт?")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
+				BBog_koppekTeH, coo6llleHuee = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
+				if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+				if coo6llleHuee == "да" then
+					table.remove(Ta6JIuca_recenToB_Ha_MaTpuce, HoMep_gy6JIukaTa_B_Ta6JIuce)
+					coo6llleHuee = nil
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "запись рецепта отменена!")
+					coo6llleHuee = nil
+					return
+				end	
+			end
+			
+			--запись рецепта в таблицу
+			table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
+				["Ha3BaHue"] = coo6llleHue,
+				["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
+				["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
+				["okoH4aTeJIbHblu_npegMeT"] = "не определено",
+				["HoMeP_B_Ta6JIuce"] = "-1"
+			})
+			Ta6JIuca_recenToB_Ha_MaTpuce[#Ta6JIuca_recenToB_Ha_MaTpuce].HoMeP_B_Ta6JIuce = #Ta6JIuca_recenToB_Ha_MaTpuce
+			setMathixRecepts()
+			
+			--вывод данных о записи в чат
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "результат записи:")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "название рецепта" .. c .. "] = " .. g .. coo6llleHue)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "центальный пьедестал" .. c .. "] = " .. g .. npegMeT_no_ceHTpy.label)
+			for k, v in ipairs(Ta6JIuca_npegMeToB) do
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ":[" .. g .. "пьедестал " .. v[1] .. c .. "] = " .. g .. v[2].label)
+			end
+			
+			--уборка предметов с пьедесталов в сундук выдачи
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует ли убрать предметы с пьедесталов?")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
+			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
+			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			if coo6llleHue == "да" then
+				y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
 			end	
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "обработка рецепта завершена!")
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "матрица не найдена")
 		end
-		
-		--запись рецепта в таблицу
-		table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
-			["Ha3BaHue"] = coo6llleHue,
-			["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
-			["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
-			["okoH4aTeJIbHblu_npegMeT"] = "не определено",
-			["HoMeP_B_Ta6JIuce"] = "-1"
-		})
-		Ta6JIuca_recenToB_Ha_MaTpuce[#Ta6JIuca_recenToB_Ha_MaTpuce].HoMeP_B_Ta6JIuce = #Ta6JIuca_recenToB_Ha_MaTpuce
-		setMathixRecepts()
-		
-		--вывод данных о записи в чат
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "результат записи:")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "название рецепта" .. c .. "] = " .. g .. coo6llleHue)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "[" .. g .. "центальный пьедестал" .. c .. "] = " .. g .. npegMeT_no_ceHTpy.label)
-		for k, v in ipairs(Ta6JIuca_npegMeToB) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. k .. ":[" .. g .. "пьедестал " .. v[1] .. c .. "] = " .. g .. v[2].label)
-		end
-		
-		--уборка предметов с пьедесталов в сундук выдачи
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует ли убрать предметы с пьедесталов?")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
-		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, nick_gJI9l_npuBeTcTBu9l)
-		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-		if coo6llleHue == "да" then
-			y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
-		end	
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "обработка рецепта завершена!")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепты инфо"] = function() --вывод списка всех рецептов
 		if #Ta6JIuca_recenToB_Ha_MaTpuce == 0 then
@@ -5121,7 +5125,11 @@ do
 		setMathixRecepts()
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"] = function() --просмотреть все подключенные компоненты
-		y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
+		if component.isAvailable("tileinfusionstone") then
+			y6paTb_npegMeTbl_c_nbegecTaJIoB(true)
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "матрица не найдена")
+		end
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все компоненты"] = function() --просмотреть все подключенные компоненты
 		local Bce_KoMnoHeHTbl = {}

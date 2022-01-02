@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 11"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1969,12 +1969,11 @@ function forms:creat_main_form(nick)
 	
 	
 	--объединение таблиц и создание потока
-	
 	Bce_noToku[nick].main_form = myThread.create(main_noTok, nick)
 	self = {}
 	setmetatable(table_form, self)
 	self.__index = self
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перед возвращением из создания")
+
 	return table_form
 end
 function forms:creat_ynpaBJIeHue_alice_form(nick)
@@ -2174,10 +2173,11 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 					end
 				end
 				Bce_noToku[nick] = {}
-			end
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перед созданием формы")
+			end			
 			Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "после создания формы")
+		else	
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. r .. nick .. c .. " не из вайт листа")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "надел очки от: " .. r .. Ha3BaHue_6a3bl)
 		end
 	end)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
@@ -2191,8 +2191,12 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			if Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] ~= nil then
 				Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick]].destroy()
 			end
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. r .. nick .. c .. " не из вайт листа")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "снял очки от: " .. r .. Ha3BaHue_6a3bl)
 		end
 	end)
+
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 

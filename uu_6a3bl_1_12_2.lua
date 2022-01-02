@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 14"
+local Ha3BaHue_o6HoBJIeHu9l = "баги матрицы 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -14,6 +14,7 @@ local one_ceHcop_BKJI = false
 local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
+local Ta6JIuca_acnekToB
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
@@ -1403,6 +1404,10 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			until kpaqpT_3aBepllleH
 			
 			--действия перед следующим крафтом
+			for _, v in ipairs(acnektbl) do
+				acnektbl.delete()
+			end
+			acnektbl = {}
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. g .. " ЗАВЕРШЕН!")
 			Bcero_ckpaqp4eHo = i
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
@@ -3560,6 +3565,10 @@ do
 			tape_drive = getLibrary("tape_loader")
 			tape_drive.ycTaHoBka_roJIoCa_uu_6a3bl_c_Git_Hub()
 			tape_drive.zanuCb_Ta6Jlucbl_roJIocoB_Ha_kaCeTy_uu_6a3bl()
+			if configuration[1] == "nil" or configuration[1] == nil then
+				configuration[1] = 3000
+				setConfiguration()
+			end
 			tape_drive.setBpeM9l_3agepJku(configuration[1])
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "тап драйв переустановлен")
 			Ta6JIuca_admin_koMaHg["база какое время задержки тап драйв"]()
@@ -4126,11 +4135,11 @@ do
 		BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
 		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		if coo6llleHue == "да" then
+			me_interface_gJI9l_MaTpucbl = false
+		elseif coo6llleHue == "нет" then
 			me_interface_gJI9l_MaTpucbl = true
 			re3yJIbTaT_noJIe4eHu9l_agreca, agrec_me_interface_gJI9l_MaTpucbl = py4Hou_BBog_agreca("выбор адреса мэ интерфейс:", agreca_Bcex_me_interface_oTcopTupoBaHHa9l)
 			if not re3yJIbTaT_noJIe4eHu9l_agreca then return end
-		elseif coo6llleHue == "нет" then
-			me_interface_gJI9l_MaTpucbl = false
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "настройка прервана!")
@@ -7034,9 +7043,15 @@ do
 				cocTo9lHue_noToka_MaTpucbl = myThread.create(kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke)
 			end
 			if coo6llleHue_OT_MaTpucbl ~= nil and #coo6llleHue_OT_MaTpucbl > 0 then
+				local Tekyllluu_acnekT = 1
 				for _, v in ipairs(coo6llleHue_OT_MaTpucbl) do
-					--component.invoke(agpec_agMuH_MocTa, "addText", koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. tostring(v), red)
-					koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
+					if #acnektbl == 0 then
+						table.insert(acnektbl, Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(koopguHaTa_coo6llleHu9l_no_x, koopguHaTa_coo6llleHu9l_no_y, Ha3BaHue_6a3bl .. ": " .. tostring(v), red))
+						koopguHaTa_coo6llleHu9l_no_y = koopguHaTa_coo6llleHu9l_no_y + 10
+					else
+						acnektbl[Tekyllluu_acnekT].setText(Ha3BaHue_6a3bl .. ": " .. tostring(v))
+						Tekyllluu_acnekT = Tekyllluu_acnekT + 1
+					end
 				end
 			end
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()

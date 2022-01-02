@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 5"
+local Ha3BaHue_o6HoBJIeHu9l = "создание новых форм 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1799,7 +1799,7 @@ end
 function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_background, color_foreground, click_function)
 	local table_button
 	local w2 = math.floor(w / 2)
-	local l2 = math.floor(unicode.len(label) * 4 / 2) 
+	local l2 = math.floor(unicode.len(label) * 5 / 2) + 5
 	local center_x = w2 - l2
 	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	table_button.setVisible(visible)
@@ -1931,7 +1931,7 @@ function forms:creat_main_form(nick)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "логи игроков", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тиммейты", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
 	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "чат тимы", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].virtual_4aT = forms:creat_virtual_4aT_form(nick) end)
-	table_form.pegCToyH = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: редстоун") end)
+	table_form.pegCToyH = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].redStone = forms:creat_redStone_form(nick) end)
 	table_form.TeJIenopTep = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "телепортер", "button", true,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: телепортер") end)
 	table_form.MaTpuca = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "матрица", "button", true,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: матрица") end)
 	table_form.HaHuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "наниты", "button", true,  black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "срабатываение кнопки: наниты") end)
@@ -2811,6 +2811,146 @@ function forms:creat_virtual_4aT_form(nick)
 	
 	--кнопки тиммейтов
 	table_form.nycTa9l_KHonka = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тут пока пусто", "button", start_visible, black, white, function() end)
+	
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {144 + x_win, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = 40
+	local y_min = start_no_y
+	local y_max = 192
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+	end
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+function forms:creat_redStone_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = "redStone"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+		Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--админские кнопки
+	if nick == admin then
+		table_form.c6poc_HacTpoek = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сброс настроек", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред сброс настроек"]() end)
+	end
+	
+	--кнопки тиммейтов
+	table_form.red_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "инфо", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред инфо"]() end)
+	table_form.red_co6blTu9l = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "события", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события"]() end)
+	table_form.nycTa9l_KHonka = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очистить событие", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред события очистить"]() end)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok

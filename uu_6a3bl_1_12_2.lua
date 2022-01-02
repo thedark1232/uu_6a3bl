@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 4"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1702,6 +1702,8 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика проверка всех сообщений (тиммейт)") --тестировать обсолютно все сообщения от игроков (включено или нет)
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "тест отклика проверка всех сообщений переключить (тиммейт)") --тестировать все сообщения от игроков (включено или нет)
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "показать адрес админ моста (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_npo4ee], "количество объектов в очках (админ)")
+	
 	
 	--управлением одним сенсором
 	table.insert(Ta6JIuca_pa3geJIoB[one_ceHcop_KoMaHgbl], "сенсор коррекция х (админ)")
@@ -2161,7 +2163,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
-			--Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
 			if #MoHuTop_urpoka[nick].getAllObjects() == 0 then
 				Bce_ragJeTbl_urpoka[nick] = {}
 				if type(Bce_noToku[nick]) == "table" then
@@ -2183,7 +2185,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
 			if Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] ~= nil then
-				Bce_ragJeTbl_urpoka[nick].destroy()
+				Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick]].destroy()
 			end
 		end
 	end)
@@ -2341,6 +2343,9 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!")
 		end
 	end	
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " количество объектов в очках"] = function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
+	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник")
 		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, nick_gJI9l_npuBeTcTBu9l, true)

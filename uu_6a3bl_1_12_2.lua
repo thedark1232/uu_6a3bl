@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 14"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 15"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2112,7 +2112,9 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
 	end
 	
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "ynpaBJIeHue_alice")
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "ynpaBJIeHue_alice")
+	end
 	
 	--объединение таблиц
 	self = {}

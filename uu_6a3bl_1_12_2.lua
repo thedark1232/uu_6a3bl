@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 6"
+local Ha3BaHue_o6HoBJIeHu9l = "размер скролла 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2163,8 +2163,9 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
-			if #MoHuTop_urpoka[nick].getAllObjects() == 0 then
+			local koJI_Bo = MoHuTop_urpoka[nick].getAllObjects()
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(koJI_Bo))
+			if koJI_Bo == 0 then
 				Bce_ragJeTbl_urpoka[nick] = {}
 				if type(Bce_noToku[nick]) == "table" then
 					for _, noTok in pairs(Bce_noToku[nick]) do
@@ -2344,7 +2345,8 @@ do
 		end
 	end	
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " количество объектов в очках"] = function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(#MoHuTop_urpoka[nick].getAllObjects()))
+		local koJIu4ecTBo = MoHuTop_urpoka[nick].getAllObjects()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(koJIu4ecTBo))
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник")

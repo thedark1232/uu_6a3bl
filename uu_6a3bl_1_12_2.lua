@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 6"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2499,7 +2499,7 @@ function forms:creat_casino_form(nick)
 	if nick == admin then
 		table_form.zanucaTb_agpec_MM = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "записать адрес ММ", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].zapucaTb_agpec_MM = forms:creat_zapucaTb_agpec_MM_form(nick) end)
 		table_form.zanucaTb_agpec_IM = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "записать адрес ИМ", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].zapucaTb_agpec_IM = forms:creat_zapucaTb_agpec_IM_form(nick) end)
-		table_form.u3MeHuTb_JIuMuT_IM = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "изменить лимит ИМ", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино изменить лимит"]() end)
+		table_form.u3MeHuTb_JIuMuT_IM = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "изменить лимит ИМ", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].u3MeHuTb_JIuMuT = forms:creat_u3MeHuTb_JIuMuT_form(nick) end)
 		table_form.BblkJIl04uTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выключить", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино выключить"]() end)
 		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино выход"]() end)
 		table_form.pecTapT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино рестарт"]() end)
@@ -5194,7 +5194,87 @@ function forms:creat_zapucaTb_agpec_IM_form(nick)
 	
 	return table_form
 end
+function forms:creat_u3MeHuTb_JIuMuT_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "u3MeHuTb_JIuMuT"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
 
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--создание лист бокса
+	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+
+	--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 50, "3 символа адреса", red)
+	--кнопка подтверждения
+	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 50, 128, 15, "изменить лимит", "button", true, black, white, function()
+		local zHa4eHue = table_form.textBox1.caption.getText()
+		if npoBepka_Ha_cuqppy(zHa4eHue, true) then Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино изменить лимит"](zHa4eHue) end
+	end)
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
 function main_noTok(nick)
 	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
@@ -6200,16 +6280,20 @@ do
 			setConfiguration()
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино изменить лимит"] = function() --эмы за эмы минимальное количество эмов в казино
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "резервный баланс: " .. g .. re3epBHblu_6aJIaHc .. "$")
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ограничение ввода: 1 - 5000")
-		local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, 5000)
-		if not re3yJIbTaT_BBoga then return end
-		cuqppa = tonumber(cuqppa)
-		re3epBHblu_6aJIaHc = cuqppa
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино изменить лимит"] = function(limit) --эмы за эмы минимальное количество эмов в казино
+		if limit == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "резервный баланс: " .. g .. re3epBHblu_6aJIaHc .. "$")
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ограничение ввода: 1 - 5000")
+			local re3yJIbTaT_BBoga, cuqppa = oJugaHue_BBoga_cuqpPbl(1, 5000)
+			if not re3yJIbTaT_BBoga then return end
+			cuqppa = tonumber(cuqppa)
+			re3epBHblu_6aJIaHc = cuqppa
+		else
+			re3epBHblu_6aJIaHc = tonumber(limit)
+		end
 		configuration[37] = re3epBHblu_6aJIaHc
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "лимит успешно изменен")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "лимит успешно изменен на " .. g .. tostring(re3epBHblu_6aJIaHc))
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"] = function()
 		for k, v in pairs(Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB) do

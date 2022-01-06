@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 26"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 27"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5594,7 +5594,7 @@ do
 			if tonumber(coo6llleHue) < 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			num = tonumber(coo6llleHue)
 		end
-		zagepJka = num
+		zagepJka = tonumber(num)
 		configuration[10] = num
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка установлена на: " .. g .. tostring(num))
@@ -8209,7 +8209,7 @@ do
 		setConfiguration()
 		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка циклов: " .. g .. zagepJka) end
 	else
-		zagepJka = configuration[10]
+		zagepJka = tonumber(configuration[10])
 		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка циклов: " .. g .. zagepJka) end
 	end
 	if configuration[12] == "nil" then

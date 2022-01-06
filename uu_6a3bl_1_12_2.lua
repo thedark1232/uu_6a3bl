@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 17"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 18"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -488,14 +488,15 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 			for k, v in pairs(next_form) do
 				if type(v) ~= "function" then
 					if v.getType() == "textBox" and v.enabled then
-						if v.caption.getText() == "" then
-							v.caption.setText(cuMBoJI)
+						local zHa4eHue = v.caption.getText()
+						if cuqppa == 14 and unicode.len(zHa4eHue) > 0 then --backspace
+							v.caption.setText(string.sub(zHa4eHue, 1, unicode.len(zHa4eHue) - 1))
+							return
 						else
-							local zHa4eHue = v.caption.getText()
-							Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "zHa4eHue->" .. tostring(zHa4eHue))
-							Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "type(zHa4eHue)->" .. type(zHa4eHue))
-							v.caption.setText(v.caption.getText() + cuMBoJI)
+							return
 						end
+						v.caption.setText(zHa4eHue .. cuMBoJI)
+						return
 					end
 				end
 			end

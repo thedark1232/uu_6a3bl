@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 10"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1854,6 +1854,7 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	end
 	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h + 1, color_background)
 	table_button.setVisible(visible)
+	table_button.setClickable(false)
 	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
 	caption.setVisible(visible)
 	caption.setClickable(false)

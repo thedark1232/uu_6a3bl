@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 22"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 23"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -139,6 +139,41 @@ local horizontalAlignment = {}
 horizontalAlignment.left = 1
 horizontalAlignment.right = 2
 horizontalAlignment.center = 3
+
+local onacHa9l_kHonka = {}
+onacHa9l_kHonka[59] = true
+onacHa9l_kHonka[60] = true
+onacHa9l_kHonka[61] = true
+onacHa9l_kHonka[62] = true
+onacHa9l_kHonka[63] = true
+onacHa9l_kHonka[64] = true
+onacHa9l_kHonka[65] = true
+onacHa9l_kHonka[66] = true
+onacHa9l_kHonka[67] = true
+onacHa9l_kHonka[68] = true
+onacHa9l_kHonka[87] = true
+onacHa9l_kHonka[88] = true
+onacHa9l_kHonka[183] = true
+onacHa9l_kHonka[70] = true
+onacHa9l_kHonka[197] = true
+onacHa9l_kHonka[210] = true
+onacHa9l_kHonka[199] = true
+onacHa9l_kHonka[201] = true
+onacHa9l_kHonka[211] = true
+onacHa9l_kHonka[207] = true
+onacHa9l_kHonka[209] = true
+onacHa9l_kHonka[200] = true
+onacHa9l_kHonka[203] = true
+onacHa9l_kHonka[205] = true
+onacHa9l_kHonka[208] = true
+onacHa9l_kHonka[220] = true
+onacHa9l_kHonka[184] = true
+onacHa9l_kHonka[29] = true
+onacHa9l_kHonka[157] = true
+onacHa9l_kHonka[54] = true
+onacHa9l_kHonka[78] = true
+onacHa9l_kHonka[74] = true
+onacHa9l_kHonka[69] = true
 
 local MoHuTop_urpoka = {}
 local Bce_ragJeTbl_urpoka = {}
@@ -483,31 +518,34 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	setConfiguration()
 end
 function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bolevo_3Ha4eHue)
-	local status, err = pcall(function()
-		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
-			for k, v in pairs(next_form) do
-				if type(v) ~= "function" then
-					if v.getType() == "textBox" and v.enabled then
-						local zHa4eHue = v.caption.getText()
-						if cuqppa == 14 then
-							if unicode.len(zHa4eHue) > 0 then --backspace
-								v.caption.setText(unicode.sub(zHa4eHue, 1, unicode.len(zHa4eHue) - 1))
-								return
-							else
-								return
+	if not onacHa9l_kHonka[cuqppa] then
+		local status, err = pcall(function()
+			for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
+				for k, v in pairs(next_form) do
+					if type(v) ~= "function" then
+						if v.getType() == "textBox" and v.enabled then
+							local zHa4eHue = v.caption.getText()
+							if cuqppa == 14 then
+								if unicode.len(zHa4eHue) > 0 then --backspace
+									v.caption.setText(unicode.sub(zHa4eHue, 1, unicode.len(zHa4eHue) - 1))
+									return
+								else
+									return
+								end
 							end
+							v.caption.setText(zHa4eHue .. cuMBoJI)
+							return
 						end
-						v.caption.setText(zHa4eHue .. cuMBoJI)
-						return
 					end
 				end
 			end
-		end
-	end)
-	if not status then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuqppa: " .. g .. tostring(cuqppa))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuMBoJI: " .. g .. tostring(cuMBoJI))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "bolevo_3Ha4eHue: " .. g .. tostring(bolevo_3Ha4eHue))
+		end)
+		if not status then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
+	end
+	
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuqppa: " .. g .. tostring(cuqppa))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuMBoJI: " .. g .. tostring(cuMBoJI))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "bolevo_3Ha4eHue: " .. g .. tostring(bolevo_3Ha4eHue))
 	
 end
 function glasses_key_up(...)

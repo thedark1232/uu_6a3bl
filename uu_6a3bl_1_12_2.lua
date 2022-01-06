@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 1"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1834,29 +1834,21 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	local center_x
 	local w2 = math.floor(w / 2)
 	local l2 = math.floor(unicode.len(label) * 5 / 2) + 5
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "horizontal_Alignment:" .. g .. tostring(horizontal_Alignment))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "type(horizontal_Alignment):" .. g .. type(horizontal_Alignment))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "type(horizontalAlignment.center):" .. g .. type(horizontalAlignment.center))
-	
-	
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. " == horizontalAlignment.center ? -> " .. g .. tostring(horizontal_Alignment == horizontalAlignment.center))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. " == horizontalAlignment.left ? -> " .. g .. tostring(horizontal_Alignment == horizontalAlignment.left))
-	
+
 	if horizontal_Alignment == horizontalAlignment.center then
 		center_x = w2 - l2
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "горизонтальное выравнивание: центр")
 	elseif horizontal_Alignment == horizontalAlignment.left then
 		center_x = 1
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "горизонтальное выравнивание: слева")
 	elseif horizontal_Alignment == horizontalAlignment.right then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "горизонтальное выравнивание: справа")
+		center_x = 1
 	end
 	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	table_button.setVisible(visible)
 	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
 	caption.setVisible(visible)
 	caption.setClickable(false)
-	local background3 = MoHuTop_urpoka[nick].addBox(x + 2, y + 2, w, h, color_background3)
+	local background3 = MoHuTop_urpoka[nick].addBox(x + 4, y + 4, w, h, color_background3)
 	background2.setVisible(visible)
 	background2.setClickable(false)
 	local background2 = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w, h, color_background2)

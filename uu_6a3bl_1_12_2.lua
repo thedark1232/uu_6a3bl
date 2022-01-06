@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 10"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6441,7 +6441,7 @@ do
 		local result = HauTu_agpec_komnoHeHTa(true, "diamond", agp)
 		if result ~= nil then
 			agpec_casino_mm = result
-			configuration[33] = agpec_casino_mm
+			configuration[34] = agpec_casino_mm
 			setConfiguration()
 		end
 	end
@@ -6449,7 +6449,7 @@ do
 		local result = HauTu_agpec_komnoHeHTa(true, "diamond", agp)
 		if result ~= nil then
 			agpec_casino_im = result
-			configuration[34] = agpec_casino_im
+			configuration[33] = agpec_casino_im
 			setConfiguration()
 		end
 	end
@@ -8862,17 +8862,17 @@ do
 	else
 		MaTpuca_cBo6ogHa = configuration[32]
 	end
-	if configuration[33] == "nil" then
-		configuration[33] = agpec_casino_mm
-		setConfiguration()
-	else
-		agpec_casino_mm = configuration[33]
-	end
 	if configuration[34] == "nil" then
-		configuration[34] = agpec_casino_im
+		configuration[34] = agpec_casino_mm
 		setConfiguration()
 	else
-		agpec_casino_im = configuration[34]
+		agpec_casino_mm = configuration[34]
+	end
+	if configuration[33] == "nil" then
+		configuration[33] = agpec_casino_im
+		setConfiguration()
+	else
+		agpec_casino_im = configuration[33]
 	end	
 	if configuration[35] == "nil" then
 		configuration[35] = Balance_casino_mm

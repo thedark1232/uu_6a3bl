@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 21"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 22"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -491,9 +491,7 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 						local zHa4eHue = v.caption.getText()
 						if cuqppa == 14 then
 							if unicode.len(zHa4eHue) > 0 then --backspace
-								Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "unicode.len(zHa4eHue) - 1:->" .. tostring(unicode.len(zHa4eHue) - 1))
-								Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "string.sub(zHa4eHue, 1, unicode.len(zHa4eHue) - 1)->" .. tostring(string.sub(zHa4eHue, 1, unicode.len(zHa4eHue) - 1)))
-								v.caption.setText(string.sub(zHa4eHue, 1, unicode.len(zHa4eHue) - 1))
+								v.caption.setText(unicode.sub(zHa4eHue, 1, unicode.len(zHa4eHue) - 1))
 								return
 							else
 								return

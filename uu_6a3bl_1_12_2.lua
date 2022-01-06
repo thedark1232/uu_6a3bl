@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 8"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5413,7 +5413,7 @@ function forms:creat_cH9lTb_geHbru_ka3uHo_form(nick)
 		return y
 	end
 	
-	
+	local gon_x = 70
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
@@ -5421,13 +5421,13 @@ function forms:creat_cH9lTb_geHbru_ka3uHo_form(nick)
 	table_form.nogcka3ka_im = MoHuTop_urpoka[nick].addText(7 + x_win, y_func(), "баланс ИМ:", gray)
 
 	if not o6HoBJIeHue_6aJIaHca_kazino() then
-		table_form.nogcka3ka_mm2 = MoHuTop_urpoka[nick].addText(50 + x_win, 32, "сундук не найден", red)
-		table_form.nogcka3ka_im2 = MoHuTop_urpoka[nick].addText(50 + x_win, 49, "сундук не найден", red)
+		table_form.nogcka3ka_mm2 = MoHuTop_urpoka[nick].addText(gon_x + x_win, 32, "сундук не найден", red)
+		table_form.nogcka3ka_im2 = MoHuTop_urpoka[nick].addText(gon_x + x_win, 49, "сундук не найден", red)
 	else
-		table_form.nogcka3ka_mm2 = MoHuTop_urpoka[nick].addText(50 + x_win, 32, tostring(configuration[35]) .. "$", green)
-		table_form.nogcka3ka_im2 = MoHuTop_urpoka[nick].addText(50 + x_win, 49, tostring(configuration[36]) .. "$", green)
-		table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, y_func(), "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-		table_form.cH9lTb_6a6ku = creat_new_button(1, nick, 5 + x_win, 84, 128, y_func(), "снять", "button", true, black, white, function()
+		table_form.nogcka3ka_mm2 = MoHuTop_urpoka[nick].addText(gon_x + x_win, 32, tostring(configuration[35]) .. "$", green)
+		table_form.nogcka3ka_im2 = MoHuTop_urpoka[nick].addText(gon_x + x_win, 49, tostring(configuration[36]) .. "$", green)
+		table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, y_func(), 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.cH9lTb_6a6ku = creat_new_button(1, nick, 5 + x_win, y_func(), 128, 15, "снять", "button", true, black, white, function()
 			local zHa4eHue = table_form.textBox1.caption.getText()
 			if npoBepka_Ha_cuqppy(zHa4eHue, true, true) then
 				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"](zHa4eHue)

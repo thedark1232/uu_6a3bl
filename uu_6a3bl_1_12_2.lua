@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 11"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1852,19 +1852,17 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	elseif horizontal_Alignment == horizontalAlignment.right then
 		center_x = 1
 	end
-	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h + 1, color_background)
-	table_button.setVisible(visible)
-	table_button.setClickable(false)
-	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
-	caption.setVisible(visible)
-	caption.setClickable(false)
+	local background3 = MoHuTop_urpoka[nick].addBox(x, y, w, h + 1, color_background)
+	background3.setVisible(visible)
+	background3.setClickable(true)
 	local background2 = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w - 1, h, color_background2)
 	background2.setVisible(visible)
 	background2.setClickable(false)
-	local background3 = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w - 2, h - 1, color_background3)
-	background3.setVisible(visible)
-	background3.setClickable(true)
-
+	table_button = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w - 2, h - 1, color_background3)
+	table_button.setVisible(visible)
+	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
+	caption.setVisible(visible)
+	caption.setClickable(false)
 
 	rawset(table_button, "background2", background2)
 	rawset(table_button, "background3", background3)

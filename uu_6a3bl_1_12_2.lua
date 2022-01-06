@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 7"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -306,6 +306,79 @@ table.insert(redStone_functions, {"матрица", function(agrecc_curHaJIa, cT
 		coo6llleHue_oT_redstone = false
 	end
 end})
+function o6HoBJIeHue_6aJIaHca_kazino()
+	local mm_HaugeH
+	local im_HaugeH
+	mm_HaugeH, catch = pcall(function() component.invoke(agpec_casino_mm, "getInventorySize") end)
+	im_HaugeH, catch = pcall(function() component.invoke(agpec_casino_im, "getInventorySize") end)
+	if not mm_HaugeH and not im_HaugeH then return false end
+	
+	--проверка сундука мм
+	local Tekyllluu_6aJIaHc_mm = 0
+	if mm_HaugeH then	
+		local Bce_cJIoTbl_mm = component.invoke(agpec_casino_mm, "getAllStacks")
+		for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_mm) do
+			local nogpoBHO = cTaTbl.all()
+			if nogpoBHO.id == id_money and nogpoBHO.dmg == dmg_money then
+				Tekyllluu_6aJIaHc_mm = Tekyllluu_6aJIaHc_mm + nogpoBHO.qty
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "в слоте мм: " .. cJIoT .. " посторонний предмет")
+			end
+		end
+	end
+	
+	--проверка сундука им
+	local Tekyllluu_6aJIaHc_im = 0
+	if im_HaugeH then	
+		local Bce_cJIoTbl_im = component.invoke(agpec_casino_im, "getAllStacks")
+		for cJIoT, cTaTbl in pairs(Bce_cJIoTbl_im) do
+			local nogpoBHO = cTaTbl.all()
+			if nogpoBHO.id == id_money and nogpoBHO.dmg == dmg_money then
+				Tekyllluu_6aJIaHc_im = Tekyllluu_6aJIaHc_im + nogpoBHO.qty
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "в слоте им: " .. cJIoT .. " посторонний предмет")
+			end
+		end
+	end
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "==============================")
+		
+	--сравнение текущего баланса с балансом логов эмы за эмы 
+	local noJIy4eHHa9l_npu6JIb = 0
+	if Tekyllluu_6aJIaHc_mm > Balance_casino_mm then
+		noJIy4eHHa9l_npu6JIb = Tekyllluu_6aJIaHc_mm - Balance_casino_mm
+		Balance_casino_mm = Balance_casino_mm + noJIy4eHHa9l_npu6JIb
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. g .. "+" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+	elseif Tekyllluu_6aJIaHc_mm < Balance_casino_mm then
+		noJIy4eHHa9l_npu6JIb = Balance_casino_mm - Tekyllluu_6aJIaHc_mm
+		Balance_casino_mm = Balance_casino_mm - noJIy4eHHa9l_npu6JIb
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+	else
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс мм: " .. g .. tostring(Balance_casino_mm) .. c .. "$ (" .. g .. "+0$" .. c .. ")")
+	end	
+	
+	--запись в конфиг файл результата баланса эмы за эмы
+	configuration[35] = Balance_casino_mm
+	setConfiguration()
+	
+	--сравнение текущего баланса с балансом логов шмотки за эмы 
+	noJIy4eHHa9l_npu6JIb = 0
+	if Tekyllluu_6aJIaHc_im > Balance_casino_im then
+		noJIy4eHHa9l_npu6JIb = Tekyllluu_6aJIaHc_im - Balance_casino_im
+		Balance_casino_im = Balance_casino_im + noJIy4eHHa9l_npu6JIb
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+	elseif Tekyllluu_6aJIaHc_im < Balance_casino_im then
+		noJIy4eHHa9l_npu6JIb = Balance_casino_im - Tekyllluu_6aJIaHc_im
+		Balance_casino_im = Balance_casino_im - noJIy4eHHa9l_npu6JIb
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. r .. "-" .. tostring(noJIy4eHHa9l_npu6JIb) .. "$" .. c .. ")")
+	else
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий баланс им: " .. g .. tostring(Balance_casino_im) .. c .. "$ (" .. g .. "+0$" .. c .. ")")
+	end	
+	
+	--запись в конфиг файл результата баланса шмотки за эмы
+	configuration[36] = Balance_casino_im
+	setConfiguration()
+	return true
+end
 function oJugaHue_BBoga_koMaHgbl(BpeM9l_oJugaHu9l, Huk_Bbl3BaBlllero_koMaHgy, He_npeo6pa3oBblBaTb_TekcT)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "для выхода введи: " .. g .. " выход")
 	local cJIylllaTeJIb_co6blTu9l
@@ -2511,7 +2584,7 @@ function forms:creat_casino_form(nick)
 	--кнопки тиммейтов
 	table_form.npu6blJIb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "прибыль", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино статус"]() end)
 	table_form.agpeca_cyHgykoB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "адреса сундуков", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино адреса"]() end)
-	table_form.cH9lTb_6a6ku = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "снять деньги", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"]() end)
+	table_form.cH9lTb_6a6ku = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "снять деньги", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].cH9lTb_geHbru_ka3uHo = forms:creat_cH9lTb_geHbru_ka3uHo_form(nick) end)
 	table_form.ucTopu9l_cnucaHuu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "история", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино логи списаний"]() end)
 	
 	--создание каркаса скролла
@@ -5275,6 +5348,106 @@ function forms:creat_u3MeHuTb_JIuMuT_form(nick)
 	
 	return table_form
 end
+function forms:creat_cH9lTb_geHbru_ka3uHo_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "cH9lTb_geHbru_ka3uHo"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	table_form.nogcka3ka_mm = MoHuTop_urpoka[nick].addText(7 + x_win, y_func(), "баланс ММ: ", gray)
+	table_form.nogcka3ka_im = MoHuTop_urpoka[nick].addText(7 + x_win, y_func(), "баланс ИМ:", gray)
+
+	if not o6HoBJIeHue_6aJIaHca_kazino() then
+		table_form.nogcka3ka_mm2 = MoHuTop_urpoka[nick].addText(50 + x_win, 32, "сундук не найден", red)
+		table_form.nogcka3ka_im2 = MoHuTop_urpoka[nick].addText(50 + x_win, 49, "сундук не найден", red)
+	else
+		table_form.nogcka3ka_mm2 = MoHuTop_urpoka[nick].addText(50 + x_win, 32, tostring(configuration[35]) .. "$", green)
+		table_form.nogcka3ka_im2 = MoHuTop_urpoka[nick].addText(50 + x_win, 49, tostring(configuration[36]) .. "$", green)
+		table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, y_func(), "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.cH9lTb_6a6ku = creat_new_button(1, nick, 5 + x_win, 84, 128, y_func(), "снять", "button", true, black, white, function()
+			local zHa4eHue = table_form.textBox1.caption.getText()
+			if npoBepka_Ha_cuqppy(zHa4eHue, true, true) then
+				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"](zHa4eHue)
+				o6HoBJIeHue_6aJIaHca_kazino()
+				table_form.nogcka3ka_mm2.setText(tostring(configuration[35]) .. "$")
+				table_form.nogcka3ka_im2.setText(tostring(configuration[36]) .. "$")
+			end
+		end)
+	end
+	
+	--кнопка подтверждения
+
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
 function main_noTok(nick)
 	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
@@ -6498,7 +6671,7 @@ do
 		setConfiguration()
 		return true
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"] = function(cH9lTb)
 		if Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино статус"]() then
 			local Huk_urpoka = nick_gJI9l_npuBeTcTBu9l
 			
@@ -6513,12 +6686,15 @@ do
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "зови народ в казино")
 				return
 			end
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи количесто?")
-			
-			--ввод необходимой суммы
-			local re3yJIbTaT_BBoga, cyMMa_gJI9l_cH9lTu9l = oJugaHue_BBoga_cuqpPbl(1, koJIu4ecTBO_koTopoe_MogHo_cH9lTb)
-			if not re3yJIbTaT_BBoga then return end
-			
+			if cH9lTb == nil then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи количесто?")
+				
+				--ввод необходимой суммы
+				local re3yJIbTaT_BBoga, cyMMa_gJI9l_cH9lTu9l = oJugaHue_BBoga_cuqpPbl(1, koJIu4ecTBO_koTopoe_MogHo_cH9lTb)
+				if not re3yJIbTaT_BBoga then return end
+			else
+				cyMMa_gJI9l_cH9lTu9l = tonumber(cH9lTb)
+			end
 			--переложить деньги из казика эмы за шмотки в мэ
 			local limit_onepacuu = 100
 			local Bcero_BblgaHo_geHer = 0

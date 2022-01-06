@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "кнопки с работы 4"
+local Ha3BaHue_o6HoBJIeHu9l = "кнопки с работы 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1830,17 +1830,18 @@ function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_bac
 	return table_button
 end
 function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_background, color_background2, color_foreground, horizontal_Alignment)
-table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", black, white, red, horizontalAlignment.left)
 	local table_button
 	local center_x
 	local w2 = math.floor(w / 2)
 	local l2 = math.floor(unicode.len(label) * 5 / 2) + 5
 	if horizontal_Alignment == horizontalAlignment.center then
 		center_x = w2 - l2
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "горизонтальное выравнивание: центр")
 	elseif horizontal_Alignment == horizontalAlignment.left then
 		center_x = 1
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "горизонтальное выравнивание: слева")
 	elseif horizontal_Alignment == horizontalAlignment.right then
-	
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "горизонтальное выравнивание: справа")
 	end
 	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	table_button.setVisible(visible)
@@ -4847,7 +4848,7 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 	
 	--создание лист бокса
 	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", black, white, red, horizontalAlignment.left)
-	
+
 	--кнопка подтверждения
 	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 150, 128, 15, "установить задержку", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "пустая кнопка") end)
 	

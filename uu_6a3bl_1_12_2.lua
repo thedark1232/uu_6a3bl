@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 27"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 28"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2215,7 +2215,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	table_form.cnucok_koMnoHeHToB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "список компонентов", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все компоненты"]() end)
 	table_form.pecTaPT_ceTu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рестарт сети", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
 	table_form.Tekyllluu_agMuH = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто админ", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " текущий админ"]() end)
-	table_form.cMeHutb_agMuHa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить админа", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить админа"]() end)
+	--table_form.cMeHutb_agMuHa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить админа", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить админа"]() end)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
@@ -4932,10 +4932,10 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание лист бокса
-	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 
 	--кнопка подтверждения
-	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 150, 128, 15, "установить задержку", "button", true, black, white, function()
+	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 50, 128, 15, "установить задержку", "button", true, black, white, function()
 		local zHa4eHue = table_form.textBox1.caption.getText()
 		if npoBepka_Ha_cuqppy(zHa4eHue, true, true) then Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"](zHa4eHue) end
 	end)

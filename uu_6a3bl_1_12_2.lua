@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 11"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6721,7 +6721,7 @@ do
 			
 			--переложить деньги из казика эмы за эмы в мэ
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списание со счета им: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
-			if cyMMa_gJI9l_cH9lTu9l > 0 then
+			if cyMMa_gJI9l_cH9lTu9l > 0 and koJIu4ecTBO_koTopoe_MogHo_cH9lTb > cyMMa_gJI9l_cH9lTu9l then
 				limit_onepacuu = 100
 				HoMep_cJIoTa = 1
 				local npoBepo4Ha9l_cuqppa = cyMMa_gJI9l_cH9lTu9l

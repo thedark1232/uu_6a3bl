@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 7"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5098,6 +5098,7 @@ do
 					filesystem.remove(nyTb_k_uu_6a3bl .. "1232")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "обнаружено совпадение версий")
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "обновление прервано")
+					computer.beep(500, 0.5)
 					return
 				end
 				--Ha3BaHue_o6HoBJIeHu9l

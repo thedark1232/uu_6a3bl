@@ -4840,6 +4840,11 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 					v.caption.delete()
 					v.delete()
 				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
 				v.delete()
 			end
 		end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 24"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 25"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4935,7 +4935,10 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 
 	--кнопка подтверждения
-	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 150, 128, 15, "установить задержку", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "пустая кнопка") end)
+	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 150, 128, 15, "установить задержку", "button", true, black, white, function()
+		local zHa4eHue = table_form.textBox1.caption.getText()
+		if npoBepka_Ha_cuqppy(zHa4eHue, true, true) then Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"](zHa4eHue) end
+	end)
 	
 	--объединение таблиц
 	self = {}
@@ -5010,9 +5013,10 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 end
 
 function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9l, He_MoJeT_6blTb_HyJIeM)
-	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then return false end
-	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and tonumber(npoBep9leMoe_3Ha4eHue) < 0 then return false end
-	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then return false end
+	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение"); return false end
+	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть меньше нуля"); tonumber(npoBep9leMoe_3Ha4eHue) < 0 then return false end
+	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть ровно 0"); return false end
+	return true
 end
 
 do

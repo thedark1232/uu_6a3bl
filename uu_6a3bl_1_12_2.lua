@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 3"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4852,7 +4852,7 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание лист бокса
-	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", true, black, black, white, red, horizontalAlignment.left)
 
 	--кнопка подтверждения
 	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 150, 128, 15, "установить задержку", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "пустая кнопка") end)

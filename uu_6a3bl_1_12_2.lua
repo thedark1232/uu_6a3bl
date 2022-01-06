@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 3"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -613,7 +613,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 						if v.getId() == id then
 							v.enabled = true
 							if v.caption.getText() == "ввод значения" then v.caption.setText("") end
-							Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
+							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
 					end
 				end
@@ -1852,11 +1852,11 @@ function HauTu_agpec_komnoHeHTa(bool_admin, Ha3BaHue_KomnoHeHTa, cuqppbl)
 		else
 			BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(15, nick_gJI9l_npuBeTcTBu9l)
 		end
+		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 	else
 		coo6llleHue = cuqppbl
 	end
 	
-	if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "проверка адреса")
 	for agrec_u3_Ta6JIucbl, _ in pairs(Bce_KoMnoHeHTbl) do
 		if string.sub(agrec_u3_Ta6JIucbl, 1, 3) == coo6llleHue then			

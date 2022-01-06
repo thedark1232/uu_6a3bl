@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "кнопки с работы 5"
+local Ha3BaHue_o6HoBJIeHu9l = "кнопки с работы 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1834,6 +1834,14 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	local center_x
 	local w2 = math.floor(w / 2)
 	local l2 = math.floor(unicode.len(label) * 5 / 2) + 5
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "horizontal_Alignment:" .. g .. tostring(horizontal_Alignment))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "type(horizontal_Alignment):" .. g .. type(horizontal_Alignment))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "type(horizontalAlignment.center):" .. g .. type(horizontalAlignment.center))
+	
+	
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. " == horizontalAlignment.center ? -> " .. g .. tostring(horizontal_Alignment == horizontalAlignment.center))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. " == horizontalAlignment.left ? -> " .. g .. tostring(horizontal_Alignment == horizontalAlignment.left))
+	
 	if horizontal_Alignment == horizontalAlignment.center then
 		center_x = w2 - l2
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "горизонтальное выравнивание: центр")

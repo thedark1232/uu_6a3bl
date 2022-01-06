@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 9"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5430,7 +5430,7 @@ function forms:creat_cH9lTb_geHbru_ka3uHo_form(nick)
 		table_form.cH9lTb_6a6ku = creat_new_button(1, nick, 5 + x_win, y_func(), 128, 15, "снять", "button", true, black, white, function()
 			local zHa4eHue = table_form.textBox1.caption.getText()
 			if npoBepka_Ha_cuqppy(zHa4eHue, true, true) then
-				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"](zHa4eHue)
+				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"](zHa4eHue, nick)
 				o6HoBJIeHue_6aJIaHca_kazino()
 				table_form.nogcka3ka_mm2.setText(tostring(configuration[35]) .. "$")
 				table_form.nogcka3ka_im2.setText(tostring(configuration[36]) .. "$")
@@ -6671,7 +6671,7 @@ do
 		setConfiguration()
 		return true
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"] = function(cH9lTb)
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино снять деньги"] = function(cH9lTb, nick)
 		if Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " казино статус"]() then
 			local Huk_urpoka = nick_gJI9l_npuBeTcTBu9l
 			
@@ -6694,6 +6694,7 @@ do
 				if not re3yJIbTaT_BBoga then return end
 			else
 				cyMMa_gJI9l_cH9lTu9l = tonumber(cH9lTb)
+				Huk_urpoka = nick
 			end
 			--переложить деньги из казика эмы за шмотки в мэ
 			local limit_onepacuu = 100

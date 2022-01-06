@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 14"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 15"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -483,13 +483,18 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	setConfiguration()
 end
 function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bolevo_3Ha4eHue)
-	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
-		if type(v) ~= "function" then
-			if v.getType() == "textBox" and v.enabled then
-				v.caption.setText(v.caption.getText() + cuMBoJI)
+	local status, err = pcall(function()
+		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
+			for k, v in pairs(next_form) do
+				if type(v) ~= "function" then
+					if v.getType() == "textBox" and v.enabled then
+						v.caption.setText(v.caption.getText() + cuMBoJI)
+					end
+				end
 			end
-		end	
-	end
+		end
+	end)
+	if not status then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuqppa: " .. g .. tostring(cuqppa))
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuMBoJI: " .. g .. tostring(cuMBoJI))
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "bolevo_3Ha4eHue: " .. g .. tostring(bolevo_3Ha4eHue))

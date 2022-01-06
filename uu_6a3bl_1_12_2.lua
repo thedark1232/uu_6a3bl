@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 23"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 24"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -174,6 +174,10 @@ onacHa9l_kHonka[54] = true
 onacHa9l_kHonka[78] = true
 onacHa9l_kHonka[74] = true
 onacHa9l_kHonka[69] = true
+onacHa9l_kHonka[42] = true
+onacHa9l_kHonka[56] = true
+onacHa9l_kHonka[28] = true
+onacHa9l_kHonka[0] = true
 
 local MoHuTop_urpoka = {}
 local Bce_ragJeTbl_urpoka = {}
@@ -525,6 +529,7 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 					if type(v) ~= "function" then
 						if v.getType() == "textBox" and v.enabled then
 							local zHa4eHue = v.caption.getText()
+							
 							if cuqppa == 14 then
 								if unicode.len(zHa4eHue) > 0 then --backspace
 									v.caption.setText(unicode.sub(zHa4eHue, 1, unicode.len(zHa4eHue) - 1))
@@ -533,8 +538,10 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 									return
 								end
 							end
-							v.caption.setText(zHa4eHue .. cuMBoJI)
-							return
+							if unicode.len(zHa4eHue) < 21 then
+								v.caption.setText(zHa4eHue .. cuMBoJI)
+								return
+							end
 						end
 					end
 				end
@@ -543,9 +550,9 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 		if not status then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 	end
 	
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuqppa: " .. g .. tostring(cuqppa))
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuMBoJI: " .. g .. tostring(cuMBoJI))
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "bolevo_3Ha4eHue: " .. g .. tostring(bolevo_3Ha4eHue))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuqppa: " .. g .. tostring(cuqppa))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuMBoJI: " .. g .. tostring(cuMBoJI))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "bolevo_3Ha4eHue: " .. g .. tostring(bolevo_3Ha4eHue))
 	
 end
 function glasses_key_up(...)
@@ -5000,6 +5007,12 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	end)
 
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
+end
+
+function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9l, He_MoJeT_6blTb_HyJIeM)
+	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then return false end
+	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and tonumber(npoBep9leMoe_3Ha4eHue) < 0 then return false end
+	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then return false end
 end
 
 do

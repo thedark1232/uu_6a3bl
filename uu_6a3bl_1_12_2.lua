@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 25"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 26"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5014,7 +5014,7 @@ end
 
 function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9l, He_MoJeT_6blTb_HyJIeM)
 	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение"); return false end
-	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть меньше нуля"); tonumber(npoBep9leMoe_3Ha4eHue) < 0 then return false end
+	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and tonumber(npoBep9leMoe_3Ha4eHue) < 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть меньше нуля"); return false end
 	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть ровно 0"); return false end
 	return true
 end
@@ -5586,17 +5586,18 @@ do
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "доступ туррелей тиммейтам: " .. r .. "NO")
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"] = function(zagepJka)
-		if zagepJka == nil then
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"] = function(num)
+		if num == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи число")
 			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin)
 			if not BBog_koppekTeH or tonumber(coo6llleHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			if tonumber(coo6llleHue) < 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-			zagepJka = tonumber(coo6llleHue)
+			num = tonumber(coo6llleHue)
 		end
-		configuration[10] = zagepJka
+		zagepJka = num
+		configuration[10] = num
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка установлена на: " .. g .. tostring(zagepJka))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка установлена на: " .. g .. tostring(num))
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи время задержки циклов"] = function() --задержка между шагами главного цикла
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка циклов: " .. g .. zagepJka)

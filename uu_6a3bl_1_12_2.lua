@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 12"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6721,7 +6721,12 @@ do
 			
 			--переложить деньги из казика эмы за эмы в мэ
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списание со счета им: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
-			if cyMMa_gJI9l_cH9lTu9l > 0 and koJIu4ecTBO_koTopoe_MogHo_cH9lTb > cyMMa_gJI9l_cH9lTu9l then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "koJIu4ecTBO_koTopoe_MogHo_cH9lTb-> " .. tostring(koJIu4ecTBO_koTopoe_MogHo_cH9lTb))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cyMMa_gJI9l_cH9lTu9l-> " .. tostring(cyMMa_gJI9l_cH9lTu9l))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "koJIu4ecTBO_koTopoe_MogHo_cH9lTb >= cyMMa_gJI9l_cH9lTu9l -> " .. tostring(tonumber(koJIu4ecTBO_koTopoe_MogHo_cH9lTb) >= tonumber(cyMMa_gJI9l_cH9lTu9l))
+			
+			
+			if cyMMa_gJI9l_cH9lTu9l > 0 and tonumber(koJIu4ecTBO_koTopoe_MogHo_cH9lTb) >= tonumber(cyMMa_gJI9l_cH9lTu9l) then
 				limit_onepacuu = 100
 				HoMep_cJIoTa = 1
 				local npoBepo4Ha9l_cuqppa = cyMMa_gJI9l_cH9lTu9l

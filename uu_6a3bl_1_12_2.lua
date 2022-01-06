@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 16"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 17"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -491,6 +491,9 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 						if v.caption.getText() == "" then
 							v.caption.setText(cuMBoJI)
 						else
+							local zHa4eHue = v.caption.getText()
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "zHa4eHue->" .. tostring(zHa4eHue))
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "type(zHa4eHue)->" .. type(zHa4eHue))
 							v.caption.setText(v.caption.getText() + cuMBoJI)
 						end
 					end

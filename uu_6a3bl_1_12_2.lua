@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 28"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 29"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2208,7 +2208,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "убить Алису", "button", start_visible, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
 		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отключить сеть", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
 		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка глав. цикла", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].zagepJka_cukJIoB = forms:creat_zagepJka_cukJIoB_form(nick) end)
-		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"]() end)		
+		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].nepeuMeHoBaTb_6a3y = forms:creat_nepeuMeHoBaTb_6a3y_form(nick) end)		
 	end
 	
 	--кнопки тиммейтов
@@ -4937,7 +4937,7 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 	--кнопка подтверждения
 	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 50, 128, 15, "установить задержку", "button", true, black, white, function()
 		local zHa4eHue = table_form.textBox1.caption.getText()
-		if npoBepka_Ha_cuqppy(zHa4eHue, true, true) then Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи время задержки циклов"](zHa4eHue) end
+		if npoBepka_Ha_cuqppy(zHa4eHue, true, true) then Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи время задержки циклов"](zHa4eHue) end
 	end)
 	
 	--объединение таблиц
@@ -4947,7 +4947,86 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 	
 	return table_form
 end
+function forms:creat_nepeuMeHoBaTb_6a3y_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "nepeuMeHoBaTb_6a3y"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
 
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--создание лист бокса
+	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+
+	--кнопка подтверждения
+	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 50, 128, 15, "переименовать", "button", true, black, white, function()
+		local zHa4eHue = table_form.textBox1.caption.getText()
+		if npoBepka_Ha_Text(zHa4eHue, true, true) then Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"](zHa4eHue) end
+	end)
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
 
 function main_noTok(nick)
 	os.sleep(0.1)
@@ -5018,6 +5097,12 @@ function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9
 	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть ровно 0"); return false end
 	return true
 end
+
+function npoBepka_Ha_Text(npoBep9leMoe_3Ha4eHue)
+	if tostring(npoBep9leMoe_3Ha4eHue) == nil or tostring(npoBep9leMoe_3Ha4eHue) == "" or npoBep9leMoe_3Ha4eHue == "ввод значения" then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение"); return false end
+	return true
+end
+
 
 do
 	computer.addUser(admin)
@@ -5602,11 +5687,16 @@ do
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи время задержки циклов"] = function() --задержка между шагами главного цикла
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "задержка циклов: " .. g .. zagepJka)
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"] = function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ожидание ввода нового названия")
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
-		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-		Ha3BaHue_6a3bl = coo6llleHue
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " переименовать базу"] = function(HoBoe_Ha3BaHue)
+		if HoBoe_Ha3BaHue == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ожидание ввода нового названия")
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(100, admin)
+			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			Ha3BaHue_6a3bl = coo6llleHue
+		else
+			Ha3BaHue_6a3bl = HoBoe_Ha3BaHue
+		end
+		
 		configuration[11] = Ha3BaHue_6a3bl
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "присвоение названия базе: " .. g .. Ha3BaHue_6a3bl)

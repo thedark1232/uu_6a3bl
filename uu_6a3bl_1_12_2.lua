@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 12"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -546,6 +546,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 						v.enabled = false
 						if v.getId() == id then
 							v.enabled = true
+							if v.caption.getText == "ввод значения" then v.caption.setText("") end
 							Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
 					end
@@ -1848,7 +1849,7 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 		center_x = w2 - l2
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "горизонтальное выравнивание: центр")
 	elseif horizontal_Alignment == horizontalAlignment.left then
-		center_x = 1
+		center_x = 3
 	elseif horizontal_Alignment == horizontalAlignment.right then
 		center_x = 1
 	end

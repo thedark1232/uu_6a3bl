@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "кнопки с работы 6"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1829,7 +1829,7 @@ function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_bac
 	
 	return table_button
 end
-function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_background, color_background2, color_foreground, horizontal_Alignment)
+function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_background, color_background2, color_background3, color_foreground, horizontal_Alignment)
 	local table_button
 	local center_x
 	local w2 = math.floor(w / 2)
@@ -1856,10 +1856,15 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
 	caption.setVisible(visible)
 	caption.setClickable(false)
-	local background2 = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w - 1, h - 1, color_background2)
+	local background3 = MoHuTop_urpoka[nick].addBox(x + 2, y + 2, w, h, color_background3)
+	background2.setVisible(visible)
+	background2.setClickable(false)
+	local background2 = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w, h, color_background2)
 	background2.setVisible(visible)
 	background2.setClickable(true)
+
 	rawset(table_button, "background2", background2)
+	rawset(table_button, "background3", background3)
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "enabled", false)
 	rawset(table_button, "click", function() table_button.enabled = true; Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "клик по текстбоксу") end)
@@ -4855,7 +4860,7 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание лист бокса
-	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", black, white, red, horizontalAlignment.left)
+	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 
 	--кнопка подтверждения
 	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 150, 128, 15, "установить задержку", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "пустая кнопка") end)

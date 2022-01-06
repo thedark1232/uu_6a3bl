@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "кнопки с работы 3"
+local Ha3BaHue_o6HoBJIeHu9l = "кнопки с работы 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -20,6 +20,7 @@ local napaMeTp_eHepruu
 local napaMeTp_o3y
 local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = {}
 local npo4ue_qpopMbl = {}
+local Tekyllluu_TekcT = {}
 local co3gaHue_co6blTuu = true
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
@@ -134,6 +135,10 @@ local Tekyllla9l_ceKyHga_gJI9l_npoBepku_oHJIauHa = 1
 local Tekyllluu_cBeT = white
 local zagepJka_ygaJieHu9l_coo6llleHuu = 5
 local gucTaHcu9l_pagapa = 199
+local horizontalAlignment = {}
+horizontalAlignment.left = 1
+horizontalAlignment.right = 2
+horizontalAlignment.center = 3
 
 local MoHuTop_urpoka = {}
 local Bce_ragJeTbl_urpoka = {}
@@ -477,8 +482,12 @@ function deucTBu9l_nepeg_3aBepllleHuem_pa6oTbl() --действует на ре�
 	configuration[42] = urpoKu_gJI9l_oTo6paJeHu9l
 	setConfiguration()
 end
-function glasses_key_down(...)
-	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_down")
+function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bolevo_3Ha4eHue)
+
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuqppa: " .. g .. tostring(cuqppa))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuMBoJI: " .. g .. tostring(cuMBoJI))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "bolevo_3Ha4eHue: " .. g .. tostring(bolevo_3Ha4eHue))
+	
 end
 function glasses_key_up(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_key_up")
@@ -1820,6 +1829,37 @@ function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_bac
 	
 	return table_button
 end
+function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_background, color_background2, color_foreground, horizontal_Alignment)
+table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", black, white, red, horizontalAlignment.left)
+	local table_button
+	local center_x
+	local w2 = math.floor(w / 2)
+	local l2 = math.floor(unicode.len(label) * 5 / 2) + 5
+	if horizontal_Alignment == horizontalAlignment.center then
+		center_x = w2 - l2
+	elseif horizontal_Alignment == horizontalAlignment.left then
+		center_x = 1
+	elseif horizontal_Alignment == horizontalAlignment.right then
+	
+	end
+	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
+	table_button.setVisible(visible)
+	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
+	caption.setVisible(visible)
+	caption.setClickable(false)
+	local background2 = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w - 1, h - 1, color_background2)
+	background2.setVisible(visible)
+	background2.setClickable(true)
+	rawset(table_button, "background2", background2)
+	rawset(table_button, "caption", caption)
+	rawset(table_button, "enabled", false)
+	rawset(table_button, "click", function() table_button.enabled = true; Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "клик по текстбоксу") end)
+	rawset(table_button, "getType", function() return name end)
+	rawset(table_button, "button_num", num)
+	
+	return table_button
+end
+
 function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, color_background, cB93b)
 	local table_scroll	
 	table_scroll = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
@@ -4805,7 +4845,11 @@ function forms:creat_zagepJka_cukJIoB_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "установить задержку", "button", start_visible, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "пустая кнопка") end)
+	--создание лист бокса
+	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 50, 128, 15, "ввод значения", "textBox", black, white, red, horizontalAlignment.left)
+	
+	--кнопка подтверждения
+	table_form.cTepeTb_agpec_cyHgyka = creat_new_button(1, nick, 5 + x_win, 150, 128, 15, "установить задержку", "button", true, black, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "пустая кнопка") end)
 	
 	--объединение таблиц
 	self = {}

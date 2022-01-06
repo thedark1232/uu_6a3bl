@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 29"
+local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1895,6 +1895,7 @@ function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_bac
 	local center_x = w2 - l2
 	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
 	table_button.setVisible(visible)
+	table_button.setClickable(visible)
 	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
 	caption.setVisible(visible)
 	caption.setClickable(false)
@@ -1940,7 +1941,6 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	
 	return table_button
 end
-
 function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, color_background, cB93b)
 	local table_scroll	
 	table_scroll = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
@@ -2053,7 +2053,7 @@ function forms:creat_main_form(nick)
 		return num
 	end
 	
-	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление Алисой", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
+	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
 	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
 	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "логи игроков", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)

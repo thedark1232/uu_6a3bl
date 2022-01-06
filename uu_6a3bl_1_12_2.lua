@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 8"
+local Ha3BaHue_o6HoBJIeHu9l = "создание текстбокса 10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -527,19 +527,28 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 	local stat, err = pcall(function()
 		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
 			for k, v in pairs(next_form) do
-				if type(v) ~= "function" and v.getType() == "scroll" then
-					v.enabled = false
-				end
-				if type(v) ~= "function" and v.getId() == id and string.match(v.getType(), "button") ~= nil then
-					v.setClickable(false)
-					local button_color = v.getColor()
-					v.setColor(green)
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-					v.click()
-					v.setColor(button_color)
-					v.setClickable(true)
-					Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-					return
+				if type(v) ~= "function" then
+					if v.getType() == "scroll" then
+						v.enabled = false
+					end
+					if v.getId() == id and string.match(v.getType(), "button") ~= nil then
+						v.setClickable(false)
+						local button_color = v.getColor()
+						v.setColor(green)
+						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+						v.click()
+						v.setColor(button_color)
+						v.setClickable(true)
+						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+						return
+					end
+					if v.getType() == "textBox" then
+						v.enabled = false
+						if v.getId() == id then
+							v.enabled = true
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
+						end
+					end
 				end
 			end
 		end
@@ -1843,12 +1852,12 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	elseif horizontal_Alignment == horizontalAlignment.right then
 		center_x = 1
 	end
-	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h, color_background)
+	table_button = MoHuTop_urpoka[nick].addBox(x, y, w, h + 1, color_background)
 	table_button.setVisible(visible)
 	local caption = MoHuTop_urpoka[nick].addText(x + center_x, y + 3, label, color_foreground)
 	caption.setVisible(visible)
 	caption.setClickable(false)
-	local background2 = MoHuTop_urpoka[nick].addBox(x, y + 1, w - 1, h, color_background2)
+	local background2 = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w - 1, h, color_background2)
 	background2.setVisible(visible)
 	background2.setClickable(false)
 	local background3 = MoHuTop_urpoka[nick].addBox(x + 1, y + 1, w - 2, h - 1, color_background3)
@@ -1860,7 +1869,6 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	rawset(table_button, "background3", background3)
 	rawset(table_button, "caption", caption)
 	rawset(table_button, "enabled", false)
-	rawset(table_button, "click", function() table_button.enabled = true; Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "клик по текстбоксу") end)
 	rawset(table_button, "getType", function() return name end)
 	rawset(table_button, "button_num", num)
 	

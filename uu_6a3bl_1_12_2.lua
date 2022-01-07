@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "добавление игрока 3"
+local Ha3BaHue_o6HoBJIeHu9l = "добавление игрока 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5534,6 +5534,8 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 			table_form.ga.setClickable(false)
 			table_form.HeT.setVisible(false)
 			table_form.HeT.setClickable(false)
+			table_form.textBox1.enabled = false
+			table_form.textBox1.setClickable(true)
 		end
 	end)
 	table_form.ga.setVisible(false)
@@ -5548,6 +5550,8 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 		table_form.ga.setClickable(false)
 		table_form.HeT.setVisible(false)
 		table_form.HeT.setClickable(false)
+		table_form.textBox1.enabled = false
+		table_form.textBox1.setClickable(true)
 	end)
 	table_form.HeT.setVisible(false)
 	table_form.HeT.setClickable(false)
@@ -5570,6 +5574,8 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 				table_form.ga.setClickable(true)
 				table_form.HeT.setVisible(true)
 				table_form.HeT.setClickable(true)
+				table_form.textBox1.enabled = false
+				table_form.textBox1.setClickable(false)
 				return
 			end
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"](zHa4eHue)

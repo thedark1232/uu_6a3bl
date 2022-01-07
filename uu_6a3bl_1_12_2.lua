@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "просмотр онлайна"
+local Ha3BaHue_o6HoBJIeHu9l = "просмотр онлайна 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2728,7 +2728,7 @@ function forms:creat_player_logs_form(nick)
 	
 	--кнопки тиммейтов
 	table_form.raid_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рейд инфо", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус рейд"]() end)
-	table_form.CTaTyc_online = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто онлайн", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус онлайна"]() end)
+	table_form.CTaTyc_online = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто онлайн", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].npocMoTp_ONLINE = forms:creat_npocMoTp_ONLINE_form(nick) end)
 	table_form.nocJIegHue_JIoru = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "последние логи", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи последние логи"]() end)
 	table_form.acTuBHocTb_urpokoB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "время игроков", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи активность игроков"]() end)
 	table_form.za_keM_cJIeguM = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "за кем следим?", "button", start_visible, black, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"]() end)
@@ -6035,7 +6035,7 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 250, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 180, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 230, 172, white)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок
@@ -6064,11 +6064,11 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(190 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(239 + x_win, 30, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({195 + x_win, 40}, {195 + x_win, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({244 + x_win, 40}, {244 + x_win, 192}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(190 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(239 + x_win, 192, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
@@ -6085,7 +6085,7 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 239 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц

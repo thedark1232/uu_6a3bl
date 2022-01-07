@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "удаление игрока 6"
+local Ha3BaHue_o6HoBJIeHu9l = "удаление игрока 8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5800,7 +5800,7 @@ function forms:creat_za_keM_cJIeguM_form(nick)
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 50, "введи ник", red)
 	
 	--кнопка подтверждения
-	table_form.go6aBuTb = creat_new_button(1, nick, 5 + x_win, 84, 50, 15, "добавить", "button", true, black, white, function()
+	table_form.go6aBuTb = creat_new_button(1, nick, 5 + x_win, 49, 128, 15, "добавить", "button", true, black, white, function()
 		local zHa4eHue = table_form.textBox1.caption.getText()
 		if npoBepka_Ha_Text(zHa4eHue) then
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " добавь игрока в онлайн"](zHa4eHue)

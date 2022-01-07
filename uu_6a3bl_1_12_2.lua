@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ёбаный рот 5"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -15,10 +15,13 @@ local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local Ta6JIuca_acnekToB
+local qpopma_nepuMeTpa = {}
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
-local koopgbl_urpokoB = {}
+local onoBeLLleHue_o_nocTopoHHux
+local x_onoBeLLleHue_o_nocTopoHHux = 50
+local y_onoBeLLleHue_o_nocTopoHHux = 3
 local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = {}
 local npo4ue_qpopMbl = {}
 local Tekyllluu_TekcT = {}
@@ -2138,6 +2141,7 @@ function forms:creat_main_form(nick)
 		return num
 	end
 	
+	table_form.nepuMeTp = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "периметр", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].nepuMeTp = forms:creat_nepuMeTp_form(nick); qpopma_nepuMeTpa[nick] = true end)
 	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
 	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
 	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
@@ -2147,7 +2151,7 @@ function forms:creat_main_form(nick)
 	table_form.pegCToyH = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].redStone = forms:creat_redStone_form(nick) end)
 	table_form.TeJIenopTep = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "телепортер", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick) end)
 	table_form.MaTpuca = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "матрица", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
-	table_form.HaHuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "наниты", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
+	table_form.HaHuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "наниты", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
 	table_form.geTekTopbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "детекторы", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].geTekTopbl = forms:creat_geTekTopbl_form(nick) end)
 	table_form.oguH_ceHcop = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "1 сенсор", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].one_sensor = forms:creat_one_sensor_form(nick) end)
 	table_form.ceHcopbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "сенсоры", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].sensors = forms:creat_sensors_form(nick) end)
@@ -6296,7 +6300,143 @@ function forms:creat_cMeHa_agMuHa_form(nick)
 	
 	return table_form
 end
+function forms:creat_nepuMeTp_form(nick)
+--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "nepuMeTp"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
 
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 250, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 230, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+
+	--кнопки тиммейтов
+	for i = 1, 10 do
+		table_form[i] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 200, 15, i, "button", start_visible, white, black, function() end)	
+		table_form[k].caption.setX(8 + x_win)
+	end
+
+	
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(239 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({244 + x_win, 40}, {244 + x_win, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(239 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = 40
+	local y_min = start_no_y
+	local y_max = 192
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 239 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+	end
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
 function main_noTok(nick)
 	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
@@ -6306,6 +6446,13 @@ function main_noTok(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
 			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_o3y.setText(napaMeTp_o3y)
 			os.sleep(0.1)
+			if qpopma_nepuMeTpa[nick] then
+				for i = 1, 20 do
+					if oTcopTupoBaHHa9l_Ta6JIuca[i][1] ~= nil then
+						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+					end
+				end
+			end
 		end
 	end)
 	if not cTaTyc_BblnoJIHeHu9l then
@@ -6326,7 +6473,7 @@ function glasses_capture(event_type, agrecc, nick, agrecc2)
 					end
 				end
 				Bce_noToku[nick] = {}
-			end			
+			end
 			Bce_ragJeTbl_urpoka[nick].main_form = forms:creat_main_form(nick)
 		else	
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. r .. nick .. c .. " не из вайт листа")
@@ -6338,6 +6485,7 @@ end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
+			qpopma_nepuMeTpa[nick] = false
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
@@ -9960,6 +10108,7 @@ do
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 		--local Ha4aJIbHa9l_y = 1
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
+		onoBeLLleHue_o_nocTopoHHux = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux, "", red)
 		--for i = 1, 15 do
 			--table.insert(koopgbl_urpokoB, Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(3, Ha4aJIbHa9l_y, "изначальный текст"))
 			--Ha4aJIbHa9l_y = Ha4aJIbHa9l_y + 10
@@ -9997,8 +10146,10 @@ do
 							end
 							if anti_gy6JIuKaT_HuKOB[napaMeTpbl_urpoka.name] == nil then
 								Tekyllluu_cBeT = green
+								onoBeLLleHue_o_nocTopoHHux.setText("")
 								if whiteListUsers[napaMeTpbl_urpoka.name] == nil then
 									Tekyllluu_cBeT = red
+									onoBeLLleHue_o_nocTopoHHux.setText(r .. "НА БАЗЕ ПОСТОРОННИЕ!")
 									if zanucblBaTb_JIoru and cekyHdbl_coxpaHeHu9l < cekyHdbl_gJI9l_JIoroB then
 										cekyHdbl_coxpaHeHu9l = cekyHdbl_gJI9l_JIoroB + uHTepBaJI_3agepJku_3anucu_JIoroB
 										filesLibrary.addValue(nytb_k_JIoraM .. napaMeTpbl_urpoka.name .. ".log", cekyHdbl_gJI9l_JIoroB .. "," .. no3_x .. "," .. no3_y .. "," .. no3_z)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 3"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6398,7 +6398,7 @@ function forms:creat_nepuMeTp_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 
 	--кнопки тиммейтов
-	for i = 1, 10 do
+	for i = 1, 20 do
 		table_form[i] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 200, 15, i, "button", start_visible, white, black, function() end)	
 		table_form[i].caption.setX(8 + x_win)
 	end
@@ -6449,7 +6449,9 @@ function main_noTok(nick)
 			if qpopma_nepuMeTpa[nick] then
 				for i = 1, 20 do
 					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
-						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(i) .. " " tostring(oTcopTupoBaHHa9l_Ta6JIuca[i][1]))
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(Bce_ragJeTbl_urpoka[nick].nepuMeTp[i]))
+						--Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
 					end
 				end
 			end

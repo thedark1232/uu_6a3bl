@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 2"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6448,7 +6448,7 @@ function main_noTok(nick)
 			os.sleep(0.1)
 			if qpopma_nepuMeTpa[nick] then
 				for i = 1, 20 do
-					if oTcopTupoBaHHa9l_Ta6JIuca[i][1] ~= nil then
+					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
 						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
 					end
 				end

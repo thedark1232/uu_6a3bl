@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 2"
+local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -685,7 +685,12 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 						v.enabled = false
 						if v.getId() == id then
 							v.enabled = true
-							if v.caption.getText() == "ввод значения" then v.caption.setText("") end
+							if v.caption.getText() == "ввод значения" or
+							   v.caption.getText() == "ввод названия" or
+							   v.caption.getText() == "ввод х" or
+							   v.caption.getText() == "ввод у" or
+							   v.caption.getText() == "ввод z" or
+							   then v.caption.setText("") end
 							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
 					end
@@ -6167,8 +6172,8 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 		table_form.textBox_x = creat_new_textBox(nick, 5 + x_win, 49, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 		table_form.textBox_y = creat_new_textBox(nick, 5 + x_win, 66, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 		table_form.textBox_z = creat_new_textBox(nick, 5 + x_win, 83, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 100, "для детектора: " .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3), red)
-		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_win, 117, "осталось настроить: " .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
+		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 100, c .. "для детектора: " .. g .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3), red)
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
 		
 	
 		--кнопка подтверждения
@@ -6184,7 +6189,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 				table.remove(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku, 1)
 			end
 			if #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
-				table_form.nogcka3ka.setText("для детектора: " .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3))
+				table_form.nogcka3ka.setText(c .. "для детектора: " .. g .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3))
 			else
 				table_form.nogcka3ka.setText(g .. "настройки заверешены!")
 				table_form.HacTpouTb.click = function() end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 6"
+local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4638,10 +4638,10 @@ function forms:creat_zone_form(nick)
 	--кнопки тиммейтов
 	table_form.co3gaTb_3oHy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "создать зону", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].co3gaHue_3oHbl = forms:creat_co3gaHue_3oHbl_form(nick) end)
 	table_form.ygaJIuTb_3oHy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить зону", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].ygaJIeHue_3oHbl = forms:creat_ygaJIeHue_3oHbl_form(nick) end)
-	table_form.noka3aTb_Bce_3oHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "показать все", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все зоны"]() end)
+	--table_form.noka3aTb_Bce_3oHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "показать все", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все зоны"]() end)
 	table_form.ygaJIuTb_Bce_3oHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить все", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали все зоны"]() end)
-	table_form.nokaJu_Bce_3oHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "зоны", "button", start_visible, black, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать зоны"]() end)
-	table_form.cMeHuTb_npuopuTeT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить приоритет", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить приоритет зоны"]() end)
+	table_form.nokaJu_Bce_3oHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "показать зоны", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать зоны"]() end)
+	table_form.cMeHuTb_npuopuTeT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить приоритет", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].cMeHa_npuopuTeTa = forms:creat_cMeHa_npuopuTeTa_form(nick) end)
 
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
@@ -6681,6 +6681,114 @@ function forms:creat_ygaJIeHue_3oHbl_form(nick)
 	
 	return table_form
 end
+function forms:creat_cMeHa_npuopuTeTa_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "cMeHa_npuopuTeTa"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	
+	--Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " настроить детекторы"]()
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--создание лист бокса
+	table_form.HoMep_3oHbl = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "номер зоны", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.HoBa9l_no3ucu9l = creat_new_textBox(nick, 5 + x_win, 49, 128, 15, "новая позиция", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+
+	--кнопка подтверждения
+	table_form.HacTpouTb = creat_new_button(1, nick, 5 + x_win, 66, 128, 15, "настроить", "button", true, black, white, function()
+		local HOMEP_3OHbl = table_form.HoMep_3oHbl.caption.getText()
+		local HOBA9l_nO3UCU9l = table_form.HoBa9l_no3ucu9l.caption.getText()
+		if type(zoHbl_JIoroB) == "table" then
+			if #zoHbl_JIoroB > 1 then
+				if npoBepka_Ha_cuqppy(x_zha4, true, true, true) and npoBepka_Ha_cuqppy(y_zha4, true, true, true) then
+					if tonumber(HOMEP_3OHbl) <= #zoHbl_JIoroB then
+						if tonumber(HOBA9l_nO3UCU9l) <= #zoHbl_JIoroB then
+							local x1, y1, z1, x2, y2, z2, Ha3BaHue_3oHbl_u3_Ta6JIucbl = zoHbl_JIoroB[HOMEP_3OHbl][1], zoHbl_JIoroB[HOMEP_3OHbl][2], zoHbl_JIoroB[HOMEP_3OHbl][3], zoHbl_JIoroB[HOMEP_3OHbl][4], zoHbl_JIoroB[HOMEP_3OHbl][5], zoHbl_JIoroB[HOMEP_3OHbl][6], zoHbl_JIoroB[HOMEP_3OHbl][7]
+							table.remove(zoHbl_JIoroB, HOMEP_3OHbl)
+							table.insert(zoHbl_JIoroB, HOBA9l_nO3UCU9l, {x1, y1, z1, x2, y2, z2, Ha3BaHue_3oHbl_u3_Ta6JIucbl})
+							configuration[12] = zoHbl_JIoroB
+							setConfiguration()
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "усташная смена приоритета зон!")
+						else
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "новая позиция не может быть больше количества зон!")
+						end
+					else
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "номера выбранной зоны не существует!")
+					end
+				end
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "должно быть более 1 зоны")
+			end
+		else
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "таблица зон пуста")
+		end
+	end)
+		
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+
 
 function main_noTok(nick)
 	os.sleep(0.1)
@@ -6755,7 +6863,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9l, He_MoJeT_6blTb_HyJIeM, He_MoJeT_6blTb_gpo6HblM)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(npoBep9leMoe_3Ha4eHue))	
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(npoBep9leMoe_3Ha4eHue))	
 	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение"); return false end
 	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and tonumber(npoBep9leMoe_3Ha4eHue) < 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть меньше нуля"); return false end
 	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть ровно 0"); return false end

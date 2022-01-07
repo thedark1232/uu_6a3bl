@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 11"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6448,7 +6448,7 @@ function main_noTok(nick)
 			if qpopma_nepuMeTpa[nick] then
 				for i = 1, 20 do
 					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
-						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
 					else
 						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i))
 					end
@@ -10157,7 +10157,7 @@ do
 								end
 								Ha3BaHue_3oHbl_gJI9l_o4koB = npoBepka_HaxoJgeHu9l_B_3oHe(no3_x, no3_y, no3_z)
 							
-								table.insert(TekcT_gJI9l_BugJeToB, tostring(napaMeTpbl_urpoka.name) .. ": x: " .. no3_x .. " y: " .. no3_y .. " z: " .. no3_z .. " - " .. Ha3BaHue_3oHbl_gJI9l_o4koB)
+								table.insert(TekcT_gJI9l_BugJeToB, tostring(napaMeTpbl_urpoka.name) .. ": x: " .. no3_x .. " y: " .. no3_y .. " z: " .. no3_z .. " " .. Ha3BaHue_3oHbl_gJI9l_o4koB)
 								table.insert(cBeT_gJI9l_o4koB, Tekyllluu_cBeT)
 								KoorguHaTbl_ceJIu_TeppeJIu[napaMeTpbl_urpoka.name] = {napaMeTpbl_urpoka.x, napaMeTpbl_urpoka.y, napaMeTpbl_urpoka.z}
 								anti_gy6JIuKaT_HuKOB[napaMeTpbl_urpoka.name] = "coxpaHeHo"

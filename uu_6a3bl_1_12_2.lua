@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 7"
+local Ha3BaHue_o6HoBJIeHu9l = "админский пароль 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2297,7 +2297,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	table_form.cnucok_koMnoHeHToB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "список компонентов", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все компоненты"]() end)
 	table_form.pecTaPT_ceTu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рестарт сети", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
 	table_form.Tekyllluu_agMuH = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто админ", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " текущий админ"]() end)
-	--table_form.cMeHutb_agMuHa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить админа", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить админа"]() end)
+	table_form.cMeHutb_agMuHa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить админа", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].cMeHa_agMuHa = forms:creat_cMeHa_agMuHa_form(nick) end)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
@@ -6193,7 +6193,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 					table_form.nogcka3ka.setText(g .. "настройки заверешены!")
 					table_form.HacTpouTb.click = function() end
 				end
-				table_form.nogcka3ka2 = MoHuTop_urpoka[nick].setText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku))
+				table_form.nogcka3ka2.setText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku))
 			end
 		end)
 	end
@@ -6205,7 +6205,92 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 	
 	return table_form
 end
---urpoKu_gJI9l_oTo6paJeHu9l
+function forms:creat_cMeHa_agMuHa_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "cMeHa_agMuHa"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--создание лист бокса
+	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод пароля", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 49, "", red)
+
+	--кнопка подтверждения
+	table_form.cmeHuTb_admin = creat_new_button(1, nick, 5 + x_win, 66, 50, 15, "сменить", "button", true, black, white, function()
+		local zHa4eHue = table_form.textBox1.caption.getText()
+		if npoBepka_Ha_Text(zHa4eHue) and tostring(zHa4eHue) == "1232" then
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить админа"](nick)
+			table_form.nogcka3ka.setText(g .. "пароль верный!")
+		else
+			table_form.nogcka3ka.setText(r .. "пароль неверный!")
+		end
+	end)
+		
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
 
 function main_noTok(nick)
 	os.sleep(0.1)
@@ -7324,20 +7409,26 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "дата и время мата в чате сохранены")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "модерация будет оповещена")
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить админа"] = function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. 'введи пароль через монитор компа:')
-		--nick_gJI9l_npuBeTcTBu9l
-		local coo6llleHue = io.read()
-		term.clear()
-		if tostring(coo6llleHue) ~= "1232" then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверно")
-			return
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить админа"] = function(form_nick)
+		if form_nick == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. 'введи пароль через монитор компа:')
+			--nick_gJI9l_npuBeTcTBu9l
+			local coo6llleHue = io.read()
+			term.clear()
+			if tostring(coo6llleHue) ~= "1232" then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверно")
+				return
+			end
 		end
 		local users = table.pack(computer.users())
 		for k, v in ipairs(users) do
 			computer.removeUser(v)
 		end
-		admin = nick_gJI9l_npuBeTcTBu9l
+		if form_nick == nil then
+			admin = nick_gJI9l_npuBeTcTBu9l
+		else
+			admin = form_nick
+		end
 		whiteListUsers[admin] = "ok"
 		configuration[9] = whiteListUsers
 		setConfiguration()

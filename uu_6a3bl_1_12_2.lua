@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ёбаный рот 3"
+local Ha3BaHue_o6HoBJIeHu9l = "ёбаный рот 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9957,12 +9957,12 @@ do
 	--добавление админа в вайт лист
 	whiteListUsers[admin] = "ok"
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-		local Ha4aJIbHa9l_y = 1
+		--local Ha4aJIbHa9l_y = 1
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
-		for i = 1, 15 do
-			table.insert(koopgbl_urpokoB, Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(3, Ha4aJIbHa9l_y, "изначальный текст"))
-			Ha4aJIbHa9l_y = Ha4aJIbHa9l_y + 10
-		end
+		--for i = 1, 15 do
+			--table.insert(koopgbl_urpokoB, Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(3, Ha4aJIbHa9l_y, "изначальный текст"))
+			--Ha4aJIbHa9l_y = Ha4aJIbHa9l_y + 10
+		--end
 	end
 	
 	

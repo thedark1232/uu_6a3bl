@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 1"
+local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6519,7 +6519,7 @@ function forms:creat_co3gaHue_3oHbl_form(nick)
 	
 		--Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " создать новую зону"]()
 		--кнопка подтверждения
-		table_form.HacTpouTb = creat_new_button(1, nick, 5 + x_win, 134, 128, 15, "настроить", "button", true, black, white, function()
+		table_form.HacTpouTb = creat_new_button(1, nick, 5 + x_win, 151, 128, 15, "настроить", "button", true, black, white, function()
 			local uM9l = table_form.textBox_uM9l.caption.getText()
 			local x_zha4 = table_form.textBox_x.caption.getText()
 			local y_zha4 = table_form.textBox_y.caption.getText()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 1"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6400,7 +6400,7 @@ function forms:creat_nepuMeTp_form(nick)
 	--кнопки тиммейтов
 	for i = 1, 10 do
 		table_form[i] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 200, 15, i, "button", start_visible, white, black, function() end)	
-		table_form[k].caption.setX(8 + x_win)
+		table_form[i].caption.setX(8 + x_win)
 	end
 
 	

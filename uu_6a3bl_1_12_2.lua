@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 8"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6449,9 +6449,9 @@ function main_noTok(nick)
 			if qpopma_nepuMeTpa[nick] then
 				for i = 1, 20 do
 					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(i) .. " " .. tostring(oTcopTupoBaHHa9l_Ta6JIuca[i][1]))
-						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(Bce_ragJeTbl_urpoka[nick].nepuMeTp[i]))
-						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+					else
+						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i))
 					end
 				end
 			end
@@ -10147,10 +10147,10 @@ do
 								Ta6JIuca_koMnoHeHToB["mo_transporter"].setZ(0, no3_z)
 							end
 							if anti_gy6JIuKaT_HuKOB[napaMeTpbl_urpoka.name] == nil then
-								Tekyllluu_cBeT = green
+								Tekyllluu_cBeT = g
 								onoBeLLleHue_o_nocTopoHHux.setText("")
 								if whiteListUsers[napaMeTpbl_urpoka.name] == nil then
-									Tekyllluu_cBeT = red
+									Tekyllluu_cBeT = r
 									onoBeLLleHue_o_nocTopoHHux.setText(r .. "НА БАЗЕ ПОСТОРОННИЕ!")
 									if zanucblBaTb_JIoru and cekyHdbl_coxpaHeHu9l < cekyHdbl_gJI9l_JIoroB then
 										cekyHdbl_coxpaHeHu9l = cekyHdbl_gJI9l_JIoroB + uHTepBaJI_3agepJku_3anucu_JIoroB

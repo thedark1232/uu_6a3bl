@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ёбаный рот 2"
+local Ha3BaHue_o6HoBJIeHu9l = "ёбаный рот 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9960,7 +9960,7 @@ do
 		local Ha4aJIbHa9l_y = 1
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
 		for i = 1, 15 do
-			table.insert(koopgbl_urpokoB, Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(3, Ha4aJIbHa9l_y, "изначальный текст")
+			table.insert(koopgbl_urpokoB, Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(3, Ha4aJIbHa9l_y, "изначальный текст"))
 			Ha4aJIbHa9l_y = Ha4aJIbHa9l_y + 10
 		end
 	end

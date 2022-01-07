@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 1"
+local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6162,23 +6162,37 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание лист бокса
-	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 50, "тест", red)
+	if #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
+		table_form.textBox_uM9l = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.textBox_x = creat_new_textBox(nick, 5 + x_win, 49, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.textBox_y = creat_new_textBox(nick, 5 + x_win, 66, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.textBox_z = creat_new_textBox(nick, 5 + x_win, 83, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 100, "для детектора: " .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3), red)
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_win, 117, "осталось настроить: " .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
+		
 	
-	--кнопка подтверждения
-	table_form.npocMoTp_geTekTopoB = creat_new_button(1, nick, 5 + x_win, 49, 128, 15, "просмотр", "button", true, black, white, function()
-		-- local zHa4eHue = table_form.textBox1.caption.getText()
-		-- if npoBepka_Ha_Text(zHa4eHue) then
-			-- Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " добавь игрока в онлайн"](zHa4eHue)
-			-- computer.beep(1000, 0.1)
-			-- table_form.nogcka3ka.setText("успешно добавлен!")
-		-- end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "просмотр адресов")
-		for k, v in pairs(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(k) .. " " .. tostring(v))
-		end
-	end)
+		--кнопка подтверждения
+		table_form.HacTpouTb = creat_new_button(1, nick, 5 + x_win, 134, 128, 15, "настроить", "button", true, black, white, function()
+			local uM9l = table_form.textBox_uM9l.caption.getText()
+			local x_zha4 = table_form.textBox_x.caption.getText()
+			local y_zha4 = table_form.textBox_x.caption.getText()
+			local z_zha4 = table_form.textBox_x.caption.getText()
+			local agpec_gJI9l_HacTpouku = agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1]
+			
+			if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
+				myComponentsLibrary.co3gaTb_u_coxpaHuTb_uHqpy_koMnoHeHTa(agpec_gJI9l_HacTpouku, uM9l, x_zha4, y_zha4, z_zha4, nyTb_k_qpauJIy_config_geTecTopa)
+				table.remove(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku, 1)
+			end
+			if #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
+				table_form.nogcka3ka.setText("для детектора: " .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3))
+			else
+				table_form.nogcka3ka.setText(g .. "настройки заверешены!")
+				table_form.HacTpouTb.click = function() end
+			end	
+			
+			table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
+		end)
+	end
 			
 	--объединение таблиц
 	self = {}

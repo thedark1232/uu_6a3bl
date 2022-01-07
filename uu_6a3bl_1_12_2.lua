@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 3"
+local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6506,34 +6506,30 @@ function forms:creat_co3gaHue_3oHbl_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые детекторы"]()
 	--создание лист бокса
-
-		table_form.textBox_uM9l = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-		table_form.textBox_x = creat_new_textBox(nick, 5 + x_win, 49, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-		table_form.textBox_y = creat_new_textBox(nick, 5 + x_win, 66, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-		table_form.textBox_z = creat_new_textBox(nick, 5 + x_win, 83, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-		table_form.textBox_x2 = creat_new_textBox(nick, 5 + x_win, 100, 128, 15, "ввод x2", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-		table_form.textBox_y2 = creat_new_textBox(nick, 5 + x_win, 117, 128, 15, "ввод y2", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-		table_form.textBox_z2 = creat_new_textBox(nick, 5 + x_win, 134, 128, 15, "ввод z2", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-	
-		--Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " создать новую зону"]()
-		--кнопка подтверждения
-		table_form.HacTpouTb = creat_new_button(1, nick, 5 + x_win, 151, 128, 15, "настроить", "button", true, black, white, function()
-			local uM9l = table_form.textBox_uM9l.caption.getText()
-			local x_zha4 = table_form.textBox_x.caption.getText()
-			local y_zha4 = table_form.textBox_y.caption.getText()
-			local z_zha4 = table_form.textBox_z.caption.getText()
-			local x_zHa42 = table_form.textBox_x2.caption.getText()
-			local y_zHa42 = table_form.textBox_y2.caption.getText()
-			local z_zHa42 = table_form.textBox_z2.caption.getText()
-			
-			if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
-				if npoBepka_Ha_cuqppy(x_zha42, false, false, true) and npoBepka_Ha_cuqppy(y_zha42, false, false, true) and npoBepka_Ha_cuqppy(z_zha42, false, false, true) then 
-					co3gaHue_HoBou_3oHbl(x_zha4, y_zha4, z_zha4, x_zHa42, y_zHa42, z_zHa42, uM9l)
-				end
+	table_form.textBox_uM9l = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_x = creat_new_textBox(nick, 5 + x_win, 49, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_y = creat_new_textBox(nick, 5 + x_win, 66, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_z = creat_new_textBox(nick, 5 + x_win, 83, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_x2 = creat_new_textBox(nick, 5 + x_win, 100, 128, 15, "ввод x2", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_y2 = creat_new_textBox(nick, 5 + x_win, 117, 128, 15, "ввод y2", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_z2 = creat_new_textBox(nick, 5 + x_win, 134, 128, 15, "ввод z2", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	--кнопка подтверждения
+	table_form.HacTpouTb = creat_new_button(1, nick, 5 + x_win, 151, 128, 15, "настроить", "button", true, black, white, function()
+		local uM9l = table_form.textBox_uM9l.caption.getText()
+		local x_zha4 = table_form.textBox_x.caption.getText()
+		local y_zha4 = table_form.textBox_y.caption.getText()
+		local z_zha4 = table_form.textBox_z.caption.getText()
+		local x_zHa42 = table_form.textBox_x2.caption.getText()
+		local y_zHa42 = table_form.textBox_y2.caption.getText()
+		local z_zHa42 = table_form.textBox_z2.caption.getText()
+		
+		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
+			if npoBepka_Ha_cuqppy(x_zha42, false, false, true) and npoBepka_Ha_cuqppy(y_zha42, false, false, true) and npoBepka_Ha_cuqppy(z_zha42, false, false, true) then 
+				co3gaHue_HoBou_3oHbl(x_zha4, y_zha4, z_zha4, x_zHa42, y_zHa42, z_zHa42, uM9l)
 			end
-		end)
+		end
+	end)
 		
 	--объединение таблиц
 	self = {}
@@ -6759,6 +6755,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
 function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9l, He_MoJeT_6blTb_HyJIeM, He_MoJeT_6blTb_gpo6HblM)
+
 	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение"); return false end
 	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and tonumber(npoBep9leMoe_3Ha4eHue) < 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть меньше нуля"); return false end
 	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть ровно 0"); return false end
@@ -6800,12 +6797,6 @@ do
 	else
 		agpec_agMuH_MocTa = configuration[44]
 	end
-	
-	--print("проверка адреса админ моста")
-	--local ycnelllHoe_co3gaHue_agMuckoro_MocTa, _ = pcall(component.setPrimary, "openperipheral_bridge", agpec_agMuH_MocTa)
-	--io.write("agpec_agMuH_MocTa-> "); print(agpec_agMuH_MocTa)
-	--io.write("ycnelllHoe_co3gaHue_agMuckoro_MocTa-> "); print(ycnelllHoe_co3gaHue_agMuckoro_MocTa)
-	--io.read()
 	
 	--приветствие базы на мониторе
 	local TekcT_nocJIe_x = HanuCaTb_6oJIblllou_TekcT(10, 1, {"М", "А", "Л", "Ы", "Ш", "К", "А", "пробел", "пробел", "А", "Л", "И", "С", "А", "двоеточие"}, "setPurple")

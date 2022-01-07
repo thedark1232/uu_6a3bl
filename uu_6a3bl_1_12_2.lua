@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "переделывание кнопок 15"
+local Ha3BaHue_o6HoBJIeHu9l = "добавление игрока 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2867,8 +2867,8 @@ function forms:creat_TuMMeuTbl_form(nick)
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.zanucb_HoBoro_TuMMeuTa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "добавить тиммейта", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"]() end)
-		table_form.ygaJIuTb_TuMMeuTa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить тиммейта", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"]() end)
+		table_form.zanucb_HoBoro_TuMMeuTa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "добавить тиммейта", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].go6aBuTb_TuMMeuTa = forms:creat_go6aBuTb_TuMMeuTa_form(nick) end)
+		table_form.ygaJIuTb_TuMMeuTa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить тиммейта", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].go6aBuTb_TuMMeuTa = forms:creat_go6aBuTb_TuMMeuTa_form(nick) Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"]() end)
 	end
 	
 	--кнопки тиммейтов
@@ -5448,6 +5448,139 @@ function forms:creat_cH9lTb_geHbru_ka3uHo_form(nick)
 	
 	return table_form
 end
+function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "go6aBuTb_TuMMeuTa"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--создание лист бокса
+	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 50, "введи ник", red)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_win, 67, "все равно добавить?", red)
+	table_form.nogcka3ka2.setClickable(false)
+	table_form.nogcka3ka2.setVisible(false)
+	
+	--кнопка подтверждения
+	table_form.ga = creat_new_button(1, nick, 5 + x_win, 84, 128, 5, "да", "button", true, black, white, function()
+		local zHa4eHue = table_form.textBox1.caption.getText()
+		if npoBepka_Ha_Text(zHa4eHue) then
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"](zHa4eHue)
+			table_form.go6aBuTb.setClickable(true)
+			table_form.go6aBuTb.setVisible(true)
+			table_form.nogcka3ka.setText("успешно добавлен!")
+			table_form.nogcka3ka2.setVisible(false)
+			table_form.ga.setVisible(false)
+			table_form.ga.setClickable(false)
+			table_form.HeT.setVisible(false)
+			table_form.HeT.setClickable(false)
+		end
+	end)
+	table_form.ga.setVisible(false)
+	table_form.ga.setClickable(false)
+	table_form.HeT = creat_new_button(1, nick, 12 + x_win, 84, 128, 5, "нет", "button", true, black, white, function()
+		table_form.go6aBuTb.setClickable(true)
+		table_form.go6aBuTb.setVisible(true)
+		table_form.nogcka3ka.setText("не добавлен!")
+		table_form.nogcka3ka2.setVisible(false)
+		table_form.ga.setVisible(false)
+		table_form.ga.setClickable(false)
+		table_form.HeT.setVisible(false)
+		table_form.HeT.setClickable(false)
+	end)
+	table_form.HeT.setVisible(false)
+	table_form.HeT.setClickable(false)
+	table_form.go6aBuTb = creat_new_button(1, nick, 5 + x_win, 67, 128, 15, "добавить", "button", true, black, white, function()
+		local zHa4eHue = table_form.textBox1.caption.getText()
+		if npoBepka_Ha_Text(zHa4eHue) then
+			for nick, _ in pairs(whiteListUsers) do
+				if zHa4eHue == nick then
+					table_form.nogcka3ka.setText("игрок уже есть!")
+					return
+				end
+			end
+			if not computer.addUser(zHa4eHue) then
+				table_form.go6aBuTb.setClickable(false)
+				table_form.go6aBuTb.setVisible(false)
+				table_form.nogcka3ka.setText(zHa4eHue .. " оффлайн!")
+				table_form.nogcka3ka2.setVisible(true)
+				table_form.ga.setVisible(true)
+				table_form.ga.setClickable(true)
+				table_form.HeT.setVisible(true)
+				table_form.HeT.setClickable(true)
+				return
+			end
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"](zHa4eHue)
+		end
+	end)
+		
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+
 function main_noTok(nick)
 	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
@@ -5601,26 +5734,32 @@ do
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " поблагодари kayatik"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "спасибо Kayatik за хорошо проделанную воспитательную работу:)")
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"] = function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник")
-		local ocylllecTBuTb_3anucb = true
-		local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin, true)
-		if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-		coo6llleHue = string.gsub(coo6llleHue, " ", "")
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"] = function(forms_nick)
+		if forms_nick == nil then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник")
+			local ocylllecTBuTb_3anucb = true
+			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin, true)
+			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+			coo6llleHue = string.gsub(coo6llleHue, " ", "")
+		else
+			coo6llleHue = forms_nick
+		end
 		for nick, _ in pairs(whiteListUsers) do
 			if coo6llleHue == nick then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. coo6llleHue  .. " уже есть в ИИ базы"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 		end
-		if not computer.addUser(coo6llleHue) then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(r ..coo6llleHue .. " оффлайн, все равно добавить?")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
-			local BBog_BepHblu, oTBeT = oJugaHue_BBoga_koMaHgbl(10, admin)
-			if not BBog_BepHblu then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
-			if oTBeT == "да" then
-				ocylllecTBuTb_3anucb = true
-			elseif oTBeT == "нет" then
-				ocylllecTBuTb_3anucb = false
-			else
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return
+		if forms_nick == nil then
+			if not computer.addUser(coo6llleHue) then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(r ..coo6llleHue .. " оффлайн, все равно добавить?")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "да" .. c .. "/" .. r .. "нет")
+				local BBog_BepHblu, oTBeT = oJugaHue_BBoga_koMaHgbl(10, admin)
+				if not BBog_BepHblu then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
+				if oTBeT == "да" then
+					ocylllecTBuTb_3anucb = true
+				elseif oTBeT == "нет" then
+					ocylllecTBuTb_3anucb = false
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return
+				end
 			end
 		end
 		if ocylllecTBuTb_3anucb then
@@ -6723,13 +6862,7 @@ do
 				end
 			end
 			
-			--переложить деньги из казика эмы за эмы в мэ
-			--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "списание со счета им: " .. g .. tostring(Bcero_BblgaHo_geHer) .. "$")
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "koJIu4ecTBo_koTopoe_MogHo_CH9lTb_c_mm-> " .. tostring(koJIu4ecTBO_koTopoe_MogHo_cH9lTb))
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cyMMa_gJI9l_cH9lTu9l-> " .. tostring(cyMMa_gJI9l_cH9lTu9l))
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "koJIu4ecTBo_koTopoe_MogHo_CH9lTb_c_mm >= cyMMa_gJI9l_cH9lTu9l -> " .. tostring(tonumber(koJIu4ecTBO_koTopoe_MogHo_cH9lTb) >= tonumber(cyMMa_gJI9l_cH9lTu9l)))
-			
-			
+			--переложить деньги из казика эмы за эмы в мэ	
 			if cyMMa_gJI9l_cH9lTu9l > 0 and tonumber(koJIu4ecTBo_koTopoe_MogHo_CH9lTb_c_mm) >= tonumber(cyMMa_gJI9l_cH9lTu9l) then
 				limit_onepacuu = 100
 				HoMep_cJIoTa = 1
@@ -8627,7 +8760,7 @@ do
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " на ком очки"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
-			local Bce_noJIb3oBaTeJIu = component.invoke(agpec_agMuH_MocTa, "getUsers")
+			local Bce_noJIb3oBaTeJIu = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getUsers()
 			for k, v in ipairs(Bce_noJIb3oBaTeJIu) do
 				if whiteListUsers[v.name] ~= nil then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. k .. ": " .. g .. v.name)

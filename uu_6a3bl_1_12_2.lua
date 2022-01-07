@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "удаление игрока 1"
+local Ha3BaHue_o6HoBJIeHu9l = "удаление игрока 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5658,7 +5658,7 @@ function forms:creat_ygaJIuT_TuMMeuTa_form(nick)
 				v.delete()
 			end
 		end
-		Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = nil
+		npo4ue_qpopMbl[nick] = nil
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
@@ -5690,8 +5690,10 @@ function forms:creat_ygaJIuT_TuMMeuTa_form(nick)
 	--Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"]()
 	for nick_TuMMeuTa, _ in pairs(whiteListUsers) do
 		table_form[nick_TuMMeuTa] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, nick_TuMMeuTa, "button", start_visible, black, white, function()
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(table_form[nick_TuMMeuTa].caption.getText()))
-			--Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"](table_form[nick_TuMMeuTa].caption.getText())
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"](table_form[nick_TuMMeuTa].caption.getText())
+			table_form[nick_TuMMeuTa].caption.setText("удален")
+			table_form[nick_TuMMeuTa].setClickable(false)
+			table_form[nick_TuMMeuTa].setColor(red)
 		end)
 	end
 

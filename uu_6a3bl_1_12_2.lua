@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 5"
+local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6166,7 +6166,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание лист бокса
-	if #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
+	if agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku ~= nil and #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
 		table_form.textBox_uM9l = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 		table_form.textBox_x = creat_new_textBox(nick, 5 + x_win, 49, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 		table_form.textBox_y = creat_new_textBox(nick, 5 + x_win, 66, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 8"
+local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6762,6 +6762,8 @@ function forms:creat_cMeHa_npuopuTeTa_form(nick)
 				if npoBepka_Ha_cuqppy(HOMEP_3OHbl, true, true, true) and npoBepka_Ha_cuqppy(HOBA9l_nO3UCU9l, true, true, true) then
 					if tonumber(HOMEP_3OHbl) <= #zoHbl_JIoroB then
 						if tonumber(HOBA9l_nO3UCU9l) <= #zoHbl_JIoroB then
+							HOMEP_3OHbl = tonumber(HOMEP_3OHbl)
+							HOBA9l_nO3UCU9l = tonumber(HOBA9l_nO3UCU9l)
 							local x1, y1, z1, x2, y2, z2, Ha3BaHue_3oHbl_u3_Ta6JIucbl = zoHbl_JIoroB[HOMEP_3OHbl][1], zoHbl_JIoroB[HOMEP_3OHbl][2], zoHbl_JIoroB[HOMEP_3OHbl][3], zoHbl_JIoroB[HOMEP_3OHbl][4], zoHbl_JIoroB[HOMEP_3OHbl][5], zoHbl_JIoroB[HOMEP_3OHbl][6], zoHbl_JIoroB[HOMEP_3OHbl][7]
 							table.remove(zoHbl_JIoroB, HOMEP_3OHbl)
 							table.insert(zoHbl_JIoroB, HOBA9l_nO3UCU9l, {x1, y1, z1, x2, y2, z2, Ha3BaHue_3oHbl_u3_Ta6JIucbl})

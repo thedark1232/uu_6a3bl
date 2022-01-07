@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 5"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6202,7 +6202,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 					table_form.HacTpouTb.click = function() end
 					Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые детекторы"]()
 				end
-				table_form.nogcka3ka2.setText(c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku))
+				if agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku ~= nil then table_form.nogcka3ka2.setText(c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku)) end
 			end
 		end)
 	end
@@ -6449,9 +6449,9 @@ function main_noTok(nick)
 			if qpopma_nepuMeTpa[nick] then
 				for i = 1, 20 do
 					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(i) .. " " .. tostring(oTcopTupoBaHHa9l_Ta6JIuca[i][1]))
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(Bce_ragJeTbl_urpoka[nick].nepuMeTp[i]))
-						--Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(i) .. " " .. tostring(oTcopTupoBaHHa9l_Ta6JIuca[i][1]))
+						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(Bce_ragJeTbl_urpoka[nick].nepuMeTp[i]))
+						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
 					end
 				end
 			end

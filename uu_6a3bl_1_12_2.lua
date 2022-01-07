@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "удаление игрока 8"
+local Ha3BaHue_o6HoBJIeHu9l = "просмотр онлайна"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2872,7 +2872,7 @@ function forms:creat_TuMMeuTbl_form(nick)
 	end
 	
 	--кнопки тиммейтов
-	table_form.kTo_online = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто онлайн", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус онлайна"]() end)
+	table_form.kTo_online = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто онлайн", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].npocMoTp_ONLINE = forms:creat_npocMoTp_ONLINE_form(nick) end)
 	table_form.nokaJu_TuMMeuToB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "таблица тиммейтов", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи тиммейтов"]() end)
 	table_form.Ha_KoM_o4ku = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "на ком сейчас очки", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " на ком очки"]() end)
 	
@@ -5914,7 +5914,6 @@ function forms:creat_za_KeM_He_cJIeguM_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 
 	--кнопки тиммейтов
-	--Ta6JIuca_npoBepku_online[coo6llleHue]
 	for nick_urpoka, _ in pairs(Ta6JIuca_npoBepku_online) do
 		if whiteListUsers[nick_urpoka] == nil then
 			table_form[nick_urpoka] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, nick_urpoka, "button", start_visible, black, white, function()
@@ -5933,6 +5932,143 @@ function forms:creat_za_KeM_He_cJIeguM_form(nick)
 	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {144 + x_win, 192}, white)
 	table_form.scroll_line.setClickable(false)
 	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = 40
+	local y_min = start_no_y
+	local y_max = 192
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+	end
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+function forms:creat_npocMoTp_ONLINE_form(nick)
+--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "npocMoTp_ONLINE"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 250, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 180, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+
+	local tabJIuca_ONLINE = Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус онлайна"](true)
+	--кнопки тиммейтов
+	for k, v in pairs(tabJIuca_ONLINE) do
+		table_form[k] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 200, 15, v, "button", start_visible, white, black, function() end)	
+	end
+
+	
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(190 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({195 + x_win, 40}, {195 + x_win, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(190 + x_win, 192, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
@@ -7838,7 +7974,8 @@ do
 		end
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "общее кол-во: " .. tostring(o6lllee_koJIu4ecTBo))
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус онлайна"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус онлайна"] = function(BepHyTb_Ta6JIucy)
+		local Bo3BpalllaeMa9l_Ta6JIuca = {}
 		local c4e4uk_online = 1
 		local Ta6JIuca_nyTeu_JIoroB = {}
 		local TuMMeuTbl_online = {}
@@ -7869,39 +8006,73 @@ do
 				table.insert(He_TuMMeuTbl_online, {Huk[1], Huk[2]})
 			end
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ОНЛАЙН ТИММЕЙТОВ:")
+		if not BepHyTb_Ta6JIucy then
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ОНЛАЙН ТИММЕЙТОВ:")
+		else	
+			table.insert(Bo3BpalllaeMa9l_Ta6JIuca, "ОНЛАЙН ТИММЕЙТОВ:")
+		end
+		
 		for _, v in ipairs(TuMMeuTbl_online) do
 			if v[2] == "не определено" then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+				if not BepHyTb_Ta6JIucy then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+				else
+					table.insert(Bo3BpalllaeMa9l_Ta6JIuca, tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+				end
 			else
 				local datetime = os.date("*t", v[2])
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+				if not BepHyTb_Ta6JIucy then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+				else
+					table.insert(Bo3BpalllaeMa9l_Ta6JIuca, tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+				end
 			end
 			c4e4uk_online = c4e4uk_online + 1
 		end
 		c4e4uk_online = 1
 		for _, v in ipairs(ta6JIuca_TuMMeuToB_B_ceTu) do
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+			if not BepHyTb_Ta6JIucy then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+			else
+				table.insert(Bo3BpalllaeMa9l_Ta6JIuca, tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+			end
 			c4e4uk_online = c4e4uk_online + 1
 		end
 		if #He_TuMMeuTbl_online > 0 or #ta6JIuca_He_TuMMeuToB_B_ceTu > 0 then
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
+			if not BepHyTb_Ta6JIucy then
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ОНЛАЙН НЕ ТИММЕЙТОВ:")
+			else
+				table.insert(Bo3BpalllaeMa9l_Ta6JIuca, "ОНЛАЙН НЕ ТИММЕЙТОВ:")
+			end
 			c4e4uk_online = 1
 			for _, v in ipairs(He_TuMMeuTbl_online) do
 				if v[2] == "не определено" then
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+					if not BepHyTb_Ta6JIucy then
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+					else
+						table.insert(Bo3BpalllaeMa9l_Ta6JIuca, tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. r .. tostring(v[2]))
+					end
 				else
 					local datetime = os.date("*t", v[2])
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+					if not BepHyTb_Ta6JIucy then
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+					else
+						table.insert(Bo3BpalllaeMa9l_Ta6JIuca, tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. string.format("%02d", datetime.day) .. "/" .. string.format("%02d", datetime.month) .. "/" .. string.format("%04d", datetime.year) .. " " .. string.format("%02d", datetime.hour) .. ":" .. string.format("%02d", datetime.min) .. ":" .. string.format("%02d", datetime.sec))
+					end
 				end
 				c4e4uk_online = c4e4uk_online + 1
 			end
 			c4e4uk_online = 1
 			for _, v in ipairs(ta6JIuca_He_TuMMeuToB_B_ceTu) do
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+				if not BepHyTb_Ta6JIucy then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+				else
+					table.insert(Bo3BpalllaeMa9l_Ta6JIuca, tostring(c4e4uk_online) .. ": " .. v[1] .. ": " .. g .. tostring(v[2]))
+				end
 				c4e4uk_online = c4e4uk_online + 1
 			end
 		end
+		return Bo3BpalllaeMa9l_Ta6JIuca
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи цвета"] = function()
 		for Ha3BaHue_uBeTa, onucaHue in pairs(colors) do

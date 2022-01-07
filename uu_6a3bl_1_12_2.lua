@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 4"
+local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6192,7 +6192,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 					table_form.nogcka3ka.setText(g .. "настройки заверешены!")
 					table_form.HacTpouTb.click = function() end
 				end
-				table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
+				table_form.nogcka3ka2 = MoHuTop_urpoka[nick].setText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
 			end
 		end)
 	end

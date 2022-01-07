@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "админский пароль 1"
+local Ha3BaHue_o6HoBJIeHu9l = "админский пароль 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -689,7 +689,8 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 							   v.caption.getText() == "ввод названия" or
 							   v.caption.getText() == "ввод х" or
 							   v.caption.getText() == "ввод у" or
-							   v.caption.getText() == "ввод z" then v.caption.setText("") end
+							   v.caption.getText() == "ввод z" or
+							   v.caption.getText() == "ввод пароля" then v.caption.setText("") end
 							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
 					end
@@ -6193,7 +6194,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 					table_form.nogcka3ka.setText(g .. "настройки заверешены!")
 					table_form.HacTpouTb.click = function() end
 				end
-				table_form.nogcka3ka2.setText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku))
+				table_form.nogcka3ka2.setText(c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku))
 			end
 		end)
 	end

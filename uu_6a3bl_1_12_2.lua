@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 12"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -20,8 +20,8 @@ local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
 local onoBeLLleHue_o_nocTopoHHux
-local x_onoBeLLleHue_o_nocTopoHHux = 50
-local y_onoBeLLleHue_o_nocTopoHHux = 3
+local x_onoBeLLleHue_o_nocTopoHHux = 100
+local y_onoBeLLleHue_o_nocTopoHHux = 1
 local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = {}
 local npo4ue_qpopMbl = {}
 local Tekyllluu_TekcT = {}
@@ -6448,9 +6448,9 @@ function main_noTok(nick)
 			if qpopma_nepuMeTpa[nick] then
 				for i = 1, 20 do
 					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
-						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
 					else
-						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i))
+						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
 					end
 				end
 			end

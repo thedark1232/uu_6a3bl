@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "админский пароль 2"
+local Ha3BaHue_o6HoBJIeHu9l = "ёбаный рот 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -50,6 +50,7 @@ local me_interface_gJI9l_MaTpucbl = false
 local MaTpuca_cBo6ogHa = true
 local coo6llleHue_OT_MaTpucbl
 local agrec_cyHgyka
+local oTcopTupoBaHHa9l_Ta6JIuca = {}
 local c = "§6" --оранжевый
 local r = "§c" --красный
 local g = "§a" --зеленый
@@ -3768,7 +3769,7 @@ function forms:creat_geTekTopbl_form(nick)
 	table_form.cMeHuTb_uM9l_geTekTopa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить название", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сменить имя детектора"]() end)
 	table_form.HauTu_HoBble_geTekTopbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "найти новые", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые детекторы"]() end)
 	table_form.HaCTpouTb_geTekTopbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить новые", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].HacTpouka_geTeKToPoB = forms:creat_HacTpouka_geTeKToPoB_form(nick) end)
-	table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "статус защиты периметра", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
+	table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "статус защиты", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
 			
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
@@ -4206,7 +4207,7 @@ function forms:creat_tyrret_form(nick)
 		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "огонь по игроку", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"]() end)
 		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
 		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "", "туррели выкл", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
-		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "статус защиты базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
+		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "статус защиты", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
 	end
 
 	--создание каркаса скролла
@@ -6193,6 +6194,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 				else
 					table_form.nogcka3ka.setText(g .. "настройки заверешены!")
 					table_form.HacTpouTb.click = function() end
+					Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые детекторы"]()
 				end
 				table_form.nogcka3ka2.setText(c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku))
 			end
@@ -6741,7 +6743,7 @@ do
 				table.insert(BpeMeHHa9l_Ta6JIuca, v[1])
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. c4eT4uk_pagapoB .. ": " .. v[1] .. " x: " .. v[2] .. " y: " .. v[3] .. " z: " .. v[4])
 			end
-			if c4eT4uk_pagapoB == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "файл конфигурации радаров пуст!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "выход из функции"); return end
+			if c4eT4uk_pagapoB == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "файл конфигурации детекторов пуст!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "выход из функции"); return end
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "Пример ввода: 5, HoBoe_uM9l")
 			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -10049,19 +10051,11 @@ do
 		end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 			local Ha_KoM_ogeTbl_o4ku = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getUsers()
-			local o6HapyJeH_4yJou_urpok = false
-			for _, ta6JIuca_noJIb3oBaTeJIeu in pairs(Ha_KoM_ogeTbl_o4ku) do
-				if whiteListUsers[ta6JIuca_noJIb3oBaTeJIeu.name] == nil then
-					--component.invoke(agpec_agMuH_MocTa, "clear")
-					--component.invoke(agpec_agMuH_MocTa, "addText", 1, cMellleHue_BblBoga_o4koB_no_y + 10, "ОБНАРУЖЕН ПОСТОРОННИЙ ИГРОК В ОЧКАХ " .. tostring(ta6JIuca_noJIb3oBaTeJIeu.name))
-					o6HapyJeH_4yJou_urpok = true
-				end
-			end
-			if not o6HapyJeH_4yJou_urpok then
+
 				--component.invoke(agpec_agMuH_MocTa, "clear")
 				--component.invoke(agpec_agMuH_MocTa, "addText", 2, cMellleHue_BblBoga_o4koB_no_y, napaMeTp_BpeMeHu)
 				local koorguHaTa_o4koB = cMellleHue_BblBoga_o4koB_no_y + 10
-				local oTcopTupoBaHHa9l_Ta6JIuca = {}
+				oTcopTupoBaHHa9l_Ta6JIuca = {}
 				for k, v in ipairs(TekcT_gJI9l_BugJeToB) do table.insert(oTcopTupoBaHHa9l_Ta6JIuca, {v, cBeT_gJI9l_o4koB[k]}) end
 				table.sort(oTcopTupoBaHHa9l_Ta6JIuca, mySort)
 				for _, zHa4eHue_Ta6JIucbl in ipairs(oTcopTupoBaHHa9l_Ta6JIuca) do
@@ -10125,7 +10119,7 @@ do
 					cMellleHue_oTo6paJeHu9l_TekcTa_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y + 10
 				end
 				koopguHaTa_coo6llleHu9l_no_y = cMellleHue_oTo6paJeHu9l_TekcTa_no_y
-			end		
+	
 			for i = 1, #Ta6JIuca_coo6llleHuu do
 				pcall(function()
 					if Ta6JIuca_coo6llleHuu[i][2] > cekyHdbl_gJI9l_JIoroB then

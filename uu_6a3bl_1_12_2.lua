@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 3"
+local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -689,8 +689,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 							   v.caption.getText() == "ввод названия" or
 							   v.caption.getText() == "ввод х" or
 							   v.caption.getText() == "ввод у" or
-							   v.caption.getText() == "ввод z" or
-							   then v.caption.setText("") end
+							   v.caption.getText() == "ввод z" then v.caption.setText("") end
 							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
 					end
@@ -6187,15 +6186,14 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 			if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
 				myComponentsLibrary.co3gaTb_u_coxpaHuTb_uHqpy_koMnoHeHTa(agpec_gJI9l_HacTpouku, uM9l, x_zha4, y_zha4, z_zha4, nyTb_k_qpauJIy_config_geTecTopa)
 				table.remove(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku, 1)
+				if #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
+					table_form.nogcka3ka.setText(c .. "для детектора: " .. g .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3))
+				else
+					table_form.nogcka3ka.setText(g .. "настройки заверешены!")
+					table_form.HacTpouTb.click = function() end
+				end
+				table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
 			end
-			if #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
-				table_form.nogcka3ka.setText(c .. "для детектора: " .. g .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3))
-			else
-				table_form.nogcka3ka.setText(g .. "настройки заверешены!")
-				table_form.HacTpouTb.click = function() end
-			end	
-			
-			table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
 		end)
 	end
 			

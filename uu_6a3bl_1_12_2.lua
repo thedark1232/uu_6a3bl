@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 4"
+local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6523,6 +6523,14 @@ function forms:creat_co3gaHue_3oHbl_form(nick)
 		local x_zHa42 = table_form.textBox_x2.caption.getText()
 		local y_zHa42 = table_form.textBox_y2.caption.getText()
 		local z_zHa42 = table_form.textBox_z2.caption.getText()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(uM9l))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(x_zha4))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(y_zha4))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(z_zha4))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(x_zHa42))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(y_zHa42))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(z_zHa42))
+		
 		
 		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
 			if npoBepka_Ha_cuqppy(x_zha42, false, false, true) and npoBepka_Ha_cuqppy(y_zha42, false, false, true) and npoBepka_Ha_cuqppy(z_zha42, false, false, true) then 

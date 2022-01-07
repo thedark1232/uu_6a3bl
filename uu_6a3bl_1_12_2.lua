@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 6"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6451,7 +6451,7 @@ function main_noTok(nick)
 					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
 						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(i) .. " " .. tostring(oTcopTupoBaHHa9l_Ta6JIuca[i][1]))
 						--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(Bce_ragJeTbl_urpoka[nick].nepuMeTp[i]))
-						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(oTcopTupoBaHHa9l_Ta6JIuca[i][1])
 					end
 				end
 			end

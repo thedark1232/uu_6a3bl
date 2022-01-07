@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "ёбаный рот 4"
+local Ha3BaHue_o6HoBJIeHu9l = "ёбаный рот 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6066,6 +6066,7 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 	--кнопки тиммейтов
 	for k, v in pairs(tabJIuca_ONLINE) do
 		table_form[k] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 200, 15, v, "button", start_visible, white, black, function() end)	
+		table_form[k].caption.setX(8 + x_win)
 	end
 
 	

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 7"
+local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -698,6 +698,8 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 							   v.caption.getText() == "ввод x2" or
 							   v.caption.getText() == "ввод y2" or
 							   v.caption.getText() == "ввод z2" or
+							   v.caption.getText() == "номер зоны" or
+							   v.caption.getText() == "новая позиция" or
 							   v.caption.getText() == "ввод пароля" then v.caption.setText("") end
 							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
@@ -6757,7 +6759,7 @@ function forms:creat_cMeHa_npuopuTeTa_form(nick)
 		local HOBA9l_nO3UCU9l = table_form.HoBa9l_no3ucu9l.caption.getText()
 		if type(zoHbl_JIoroB) == "table" then
 			if #zoHbl_JIoroB > 1 then
-				if npoBepka_Ha_cuqppy(x_zha4, true, true, true) and npoBepka_Ha_cuqppy(y_zha4, true, true, true) then
+				if npoBepka_Ha_cuqppy(HOMEP_3OHbl, true, true, true) and npoBepka_Ha_cuqppy(HOBA9l_nO3UCU9l, true, true, true) then
 					if tonumber(HOMEP_3OHbl) <= #zoHbl_JIoroB then
 						if tonumber(HOBA9l_nO3UCU9l) <= #zoHbl_JIoroB then
 							local x1, y1, z1, x2, y2, z2, Ha3BaHue_3oHbl_u3_Ta6JIucbl = zoHbl_JIoroB[HOMEP_3OHbl][1], zoHbl_JIoroB[HOMEP_3OHbl][2], zoHbl_JIoroB[HOMEP_3OHbl][3], zoHbl_JIoroB[HOMEP_3OHbl][4], zoHbl_JIoroB[HOMEP_3OHbl][5], zoHbl_JIoroB[HOMEP_3OHbl][6], zoHbl_JIoroB[HOMEP_3OHbl][7]
@@ -6788,7 +6790,6 @@ function forms:creat_cMeHa_npuopuTeTa_form(nick)
 	
 	return table_form
 end
-
 
 function main_noTok(nick)
 	os.sleep(0.1)
@@ -6864,7 +6865,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 end
 function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9l, He_MoJeT_6blTb_HyJIeM, He_MoJeT_6blTb_gpo6HblM)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(npoBep9leMoe_3Ha4eHue))	
-	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение"); return false end
+	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение-> ".. tostring(npoBep9leMoe_3Ha4eHue)); return false end
 	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and tonumber(npoBep9leMoe_3Ha4eHue) < 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть меньше нуля"); return false end
 	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть ровно 0"); return false end
 	if He_MoJeT_6blTb_gpo6HblM and tonumber(npoBep9leMoe_3Ha4eHue) ~= math.floor(tonumber(npoBep9leMoe_3Ha4eHue)) then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть дробным числом"); return false end

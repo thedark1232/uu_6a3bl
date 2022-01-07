@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 9"
+local Ha3BaHue_o6HoBJIeHu9l = "создание кнопки периметра 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6375,9 +6375,9 @@ function forms:creat_nepuMeTp_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 250, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 350, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 230, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 330, 172, white)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок
@@ -6403,14 +6403,13 @@ function forms:creat_nepuMeTp_form(nick)
 		table_form[i].caption.setX(8 + x_win)
 	end
 
-	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(239 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(339 + x_win, 30, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({244 + x_win, 40}, {244 + x_win, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({344 + x_win, 40}, {344 + x_win, 192}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(239 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(339 + x_win, 192, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
@@ -6427,7 +6426,7 @@ function forms:creat_nepuMeTp_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 239 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 339 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц
@@ -6520,7 +6519,6 @@ function npoBepka_Ha_Text(npoBep9leMoe_3Ha4eHue)
 	if tostring(npoBep9leMoe_3Ha4eHue) == nil or tostring(npoBep9leMoe_3Ha4eHue) == "" or npoBep9leMoe_3Ha4eHue == "ввод значения" then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение"); return false end
 	return true
 end
-
 
 do
 	computer.addUser(admin)
@@ -10159,7 +10157,7 @@ do
 								end
 								Ha3BaHue_3oHbl_gJI9l_o4koB = npoBepka_HaxoJgeHu9l_B_3oHe(no3_x, no3_y, no3_z)
 							
-								table.insert(TekcT_gJI9l_BugJeToB, tostring(v[1]) .. ": " .. tostring(napaMeTpbl_urpoka.name) .. ": x = " .. no3_x .. " y = " .. no3_y .. " z = " .. no3_z .. " " .. Ha3BaHue_3oHbl_gJI9l_o4koB)
+								table.insert(TekcT_gJI9l_BugJeToB, tostring(napaMeTpbl_urpoka.name) .. ": x: " .. no3_x .. " y: " .. no3_y .. " z: " .. no3_z .. " - " .. Ha3BaHue_3oHbl_gJI9l_o4koB)
 								table.insert(cBeT_gJI9l_o4koB, Tekyllluu_cBeT)
 								KoorguHaTbl_ceJIu_TeppeJIu[napaMeTpbl_urpoka.name] = {napaMeTpbl_urpoka.x, napaMeTpbl_urpoka.y, napaMeTpbl_urpoka.z}
 								anti_gy6JIuKaT_HuKOB[napaMeTpbl_urpoka.name] = "coxpaHeHo"

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "добавление игрока 1"
+local Ha3BaHue_o6HoBJIeHu9l = "добавление игрока 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5521,7 +5521,7 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 	table_form.nogcka3ka2.setVisible(false)
 	
 	--кнопка подтверждения
-	table_form.ga = creat_new_button(1, nick, 5 + x_win, 84, 128, 5, "да", "button", true, black, white, function()
+	table_form.ga = creat_new_button(1, nick, 5 + x_win, 84, 50, 15, "да", "button", true, black, white, function()
 		local zHa4eHue = table_form.textBox1.caption.getText()
 		if npoBepka_Ha_Text(zHa4eHue) then
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"](zHa4eHue)
@@ -5537,7 +5537,7 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 	end)
 	table_form.ga.setVisible(false)
 	table_form.ga.setClickable(false)
-	table_form.HeT = creat_new_button(1, nick, 12 + x_win, 84, 128, 5, "нет", "button", true, black, white, function()
+	table_form.HeT = creat_new_button(1, nick, 60 + x_win, 84, 50, 15, "нет", "button", true, black, white, function()
 		table_form.go6aBuTb.setClickable(true)
 		table_form.go6aBuTb.setVisible(true)
 		table_form.nogcka3ka.setText("не добавлен!")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 2"
+local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4637,7 +4637,7 @@ function forms:creat_zone_form(nick)
 	
 	--кнопки тиммейтов
 	table_form.co3gaTb_3oHy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "создать зону", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].co3gaHue_3oHbl = forms:creat_co3gaHue_3oHbl_form(nick) end)
-	table_form.ygaJIuTb_3oHy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить зону", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить зону"]() end)
+	table_form.ygaJIuTb_3oHy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить зону", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].ygaJIeHue_3oHbl = forms:creat_ygaJIeHue_3oHbl_form(nick) end)
 	table_form.noka3aTb_Bce_3oHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "показать все", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все зоны"]() end)
 	table_form.ygaJIuTb_Bce_3oHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить все", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали все зоны"]() end)
 	table_form.nokaJu_Bce_3oHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "зоны", "button", start_visible, black, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать зоны"]() end)
@@ -6535,6 +6535,149 @@ function forms:creat_co3gaHue_3oHbl_form(nick)
 			end
 		end)
 		
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+function forms:creat_ygaJIeHue_3oHbl_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "ygaJIeHue_3oHbl"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	if #zoHbl_JIoroB > 0 then
+		for k, v in ipairs(zoHbl_JIoroB) do
+			table_form[k] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, v[7], "button", start_visible, black, white, function()
+				table.remove(zoHbl_JIoroB, k)
+				configuration[12] = zoHbl_JIoroB
+				setConfiguration()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "зона успешно удалена")
+				table_form.destroy()
+			end)
+		end
+	else
+		table_form.zonbl_He_co3gaHbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "зоны не созданы!", "button", true, white, red, function() end)
+	end
+
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {144 + x_win, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = 40
+	local y_min = start_no_y
+	local y_max = 192
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+	end
+	
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)

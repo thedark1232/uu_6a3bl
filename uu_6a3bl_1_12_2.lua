@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "удаление игрока 4"
+local Ha3BaHue_o6HoBJIeHu9l = "удаление игрока 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5691,10 +5691,8 @@ function forms:creat_ygaJIuT_TuMMeuTa_form(nick)
 	for nick_TuMMeuTa, _ in pairs(whiteListUsers) do
 		table_form[nick_TuMMeuTa] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, nick_TuMMeuTa, "button", start_visible, black, white, function()
 			local o6pa6aTblBaEMblu_Huk = table_form[nick_TuMMeuTa].caption.getText()
-			if o6pa6aTblBaEMblu_Huk ~= "удален" then
-				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"](o6pa6aTblBaEMblu_Huk)
-				table_form[o6pa6aTblBaEMblu_Huk].caption.setText("удален")
-			end
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить тиммейта"](o6pa6aTblBaEMblu_Huk)
+			table_form[o6pa6aTblBaEMblu_Huk].caption.setText("удален")
 		end)
 	end
 

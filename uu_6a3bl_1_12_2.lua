@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 6"
+local Ha3BaHue_o6HoBJIeHu9l = "настройки детекторов 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6165,6 +6165,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые детекторы"]()
 	--создание лист бокса
 	if agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku ~= nil and #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
 		table_form.textBox_uM9l = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left)
@@ -6192,7 +6193,7 @@ function forms:creat_HacTpouka_geTeKToPoB_form(nick)
 					table_form.nogcka3ka.setText(g .. "настройки заверешены!")
 					table_form.HacTpouTb.click = function() end
 				end
-				table_form.nogcka3ka2 = MoHuTop_urpoka[nick].setText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku), red)
+				table_form.nogcka3ka2 = MoHuTop_urpoka[nick].setText(7 + x_win, 117, c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku))
 			end
 		end)
 	end

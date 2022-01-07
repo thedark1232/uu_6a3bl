@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "добавление игрока 2"
+local Ha3BaHue_o6HoBJIeHu9l = "добавление игрока 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -5527,6 +5527,7 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"](zHa4eHue)
 			table_form.go6aBuTb.setClickable(true)
 			table_form.go6aBuTb.setVisible(true)
+			table_form.go6aBuTb.caption.setVisible(true)
 			table_form.nogcka3ka.setText("успешно добавлен!")
 			table_form.nogcka3ka2.setVisible(false)
 			table_form.ga.setVisible(false)
@@ -5540,6 +5541,7 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 	table_form.HeT = creat_new_button(1, nick, 60 + x_win, 84, 50, 15, "нет", "button", true, black, white, function()
 		table_form.go6aBuTb.setClickable(true)
 		table_form.go6aBuTb.setVisible(true)
+		table_form.go6aBuTb.caption.setVisible(true)
 		table_form.nogcka3ka.setText("не добавлен!")
 		table_form.nogcka3ka2.setVisible(false)
 		table_form.ga.setVisible(false)
@@ -5561,6 +5563,7 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 			if not computer.addUser(zHa4eHue) then
 				table_form.go6aBuTb.setClickable(false)
 				table_form.go6aBuTb.setVisible(false)
+				table_form.go6aBuTb.caption.setVisible(false)
 				table_form.nogcka3ka.setText(zHa4eHue .. " оффлайн!")
 				table_form.nogcka3ka2.setVisible(true)
 				table_form.ga.setVisible(true)
@@ -5735,9 +5738,9 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "спасибо Kayatik за хорошо проделанную воспитательную работу:)")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запись нового тиммейта"] = function(forms_nick)
+		local ocylllecTBuTb_3anucb = true
 		if forms_nick == nil then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "введи ник")
-			local ocylllecTBuTb_3anucb = true
 			local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, admin, true)
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			coo6llleHue = string.gsub(coo6llleHue, " ", "")

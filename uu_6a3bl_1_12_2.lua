@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "3 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "4 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7356,7 +7356,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 479, 250, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 476, 247, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 450, 200, white)
 	table_form.main_box2.setClickable(false)
 		
 	--table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
@@ -7380,8 +7380,8 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание кнопки старта текста
-	table_form.start_TesTa = creat_new_button(1, nick, 150 + x_win, y - 2, 128, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
-		
+	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, y - 2, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало теста")
 	end)
 	
 	-- --создание каркаса скролла
@@ -7412,7 +7412,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	-- end
 	
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.start_TesTa
+	local obj = table_form.main_box2
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150

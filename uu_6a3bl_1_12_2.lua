@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "6 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6905,7 +6905,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. table_form[agpec_TpaHcno3epa].full_agpec)
 		end)
 		table_form[agpec_TpaHcno3epa].caption.setX(7 + x_win)
-		rawset(table_form[agpec_TpaHcno3epa], full_agpec, agpec_TpaHcno3epa)
+		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
 	end
 	
 	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})

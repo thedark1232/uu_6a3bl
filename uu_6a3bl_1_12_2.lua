@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "17 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "18 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6941,6 +6941,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		local cokpaLLleHblu_agpec = string.sub(agpec_TpaHcno3epa, 1, 3)
 		table_form[agpec_TpaHcno3epa] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 25, 15, cokpaLLleHblu_agpec, "button", start_visible, black, white, function()
 			TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = table_form[agpec_TpaHcno3epa].full_agpec
+			table_form.nogcka3ka5.setText(g .. string.sub(TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa, 1, 3))
 		end)
 		table_form[agpec_TpaHcno3epa].caption.setX(9 + x_win)
 		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
@@ -6954,7 +6955,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(194 + x_win, 93, "", red)
 	
 	--создание кнопки замены
-	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_win, 77, 128, 15, "заменить", "zaMeHa_button", true, blue, white, function()
+	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "заменить", "zaMeHa_button", true, blue, white, function()
 		obj = table_form.zaMeHa_agpeca_button
 		if TekyLLluu_Bbl6paHHblu_nbegecTaJI == 0 then
 			table_form.nogcka3ka5.setText(r .. "выбери пьедестал!")

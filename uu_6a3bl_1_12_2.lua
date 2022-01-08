@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "3 логи матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "4 логи матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6999,7 +6999,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 				configuration[45] = agpec_infusion_claw
 				setConfiguration()
 				table_form.nogcka3ka10.setText(g .. "адрес переназначен!")
-				table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, string.sub(agpec_infusion_claw, 1, 3), green)
+				table_form.nogcka3ka9.setText(string.sub(agpec_infusion_claw, 1, 3), green)
 				return
 			end
 		end

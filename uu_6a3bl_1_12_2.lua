@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "6 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "7 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1353,13 +1353,16 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u, He_y6upaT
 		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or re3yJIbTaT_nepeMellleHu9l == nil
 		--io.read()
 	end
+	
 	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
 	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
 	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
-	local re3yJIbTaT_nepeMellleHu9l
-	repeat
-		re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
-	until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or re3yJIbTaT_nepeMellleHu9l == nil
+	re3yJIbTaT_nepeMellleHu9l
+	if not He_y6upaTb_ceHTapaJIbHblu then
+		repeat
+			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)
+		until re3yJIbTaT_nepeMellleHu9l == false or re3yJIbTaT_nepeMellleHu9l == 0 or re3yJIbTaT_nepeMellleHu9l == nil
+	end
 	if nepeMecTuTb_B_cyHgyk_Bblga4u then
 		transposer = Ta6JIuca_nbegecTaJIoB[2][1]
 		cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[2][3]
@@ -1522,7 +1525,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		for i = 1, koJIu4ecTBo do
 			local kraqpT_npepBaH = false
 			--выставить предметы на матрице
-			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
+			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 			if not pe3yJIbTaT_BblcTaBJIeHu9l then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
 				break
@@ -1546,6 +1549,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				local Bce_acnekTbl_BblcoCaHbl = false
 				local Ta6JIuca_acnekToB = {}
 				local Ta6JIuca_acnekToB_copTupoBka = {}
+				y6paTb_npegMeTbl_c_nbegecTaJIoB(false, true)
 				repeat
 					if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "крафт прерван! причина:")
@@ -1572,9 +1576,10 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					os.sleep(0)
 				until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH
 				if not kraqpT_npepBaH then
+					BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 					--цекл слежки за предметами, которые всасывает матрица
 					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
-
+					
 					local kpaqpT_3aBepllleH = false
 					repeat
 						os.sleep(0)

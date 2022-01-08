@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "14 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "15 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")

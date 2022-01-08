@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "12 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "13 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6875,10 +6875,10 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 300, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 50, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 22, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(70 + x_win, 30, 200, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(50 + x_win, 30, 200, 172, white)
 	table_form.main_box3.setClickable(false)
 	--создание кнопок
 	local y = 15
@@ -6914,6 +6914,10 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		table_form[agpec_TpaHcno3epa].caption.setX(7 + x_win)
 		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
 	end
+	
+	table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 100 + x_win, 100, 30, 30, cokpaLLleHblu_agpec, "ceHTpaJIbHblu_nbegecTaJI_button", start_visible, black, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка центрального пьедестала")
+	end)
 	
 	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		-- configuration[28] = Ta6JIuca_nbegecTaJIoB

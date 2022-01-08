@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "6 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6919,80 +6919,92 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
 	end
 	
-	--центральный пьедестал
-	table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 100 + x_win, 100, 20, 20, "центр", "ceHTpaJIbHblu_nbegecTaJI_button", true, black, white, function()
-		obj = table_form.ceHTpaJIbHblu_nbegecTaJI
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка центрального пьедестала")
-	end)
-	table_form.test_icon1 = MoHuTop_urpoka[nick].addIcon(148, 50, "minecraft:stone", 0)
+	-- --центральный пьедестал
+	-- table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 100 + x_win, 100, 20, 20, "центр", "ceHTpaJIbHblu_nbegecTaJI_button", true, black, white, function()
+		-- obj = table_form.ceHTpaJIbHblu_nbegecTaJI
+		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка центрального пьедестала")
+	-- end)
+	-- table_form.test_icon1 = MoHuTop_urpoka[nick].addIcon(148, 50, "minecraft:stone", 0)
 	
-	--южный пьедестал
-	table_form.l0JHblu_nbegecTaJi = creat_new_button(-1, nick, 160 + x_win, 140, 20, 20, "юг", "l0JHblu_nbegecTaJi_button", true, black, white, function()
-		obj = table_form.l0JHblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка южного пьедестала")
+	-- --южный пьедестал
+	-- table_form.l0JHblu_nbegecTaJi = creat_new_button(-1, nick, 160 + x_win, 140, 20, 20, "юг", "l0JHblu_nbegecTaJi_button", true, black, white, function()
+		-- obj = table_form.l0JHblu_nbegecTaJi
+		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка южного пьедестала")
+	-- end)
+	
+	-- --северный пьедестал
+	-- table_form.ceBepHblu_nbegecTaJi = creat_new_button(-1, nick, 200 + x_win, 140, 20, 20, "север", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+		-- obj = table_form.ceBepHblu_nbegecTaJi
+		-- Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка северного пьедестала")
+	-- end)
+	
+	--12 пьедестал
+	table_form.gBeHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 159, 20, 20, "12", "gBeHHagcaTblu_button", true, black, white, function()
+		obj = table_form.gBeHHagcaTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "12 пьедестал")
 	end)
 	
-	--северный пьедестал
-	table_form.ceBepHblu_nbegecTaJi = creat_new_button(-1, nick, 200 + x_win, 140, 20, 20, "север", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
-		obj = table_form.ceBepHblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка северного пьедестала")
+	--11 пьедестал
+	table_form.oguHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 159, 20, 20, "11", "oguHHagcaTblu_button", true, black, white, function()
+		obj = table_form.oguHHagcaTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "11 пьедестал")
 	end)
 	
-	--десятый пьедестал
-	table_form.gec9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "8", ".gec9lTblu_button", true, black, white, function()
+	--10 пьедестал
+	table_form.gec9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 138, 20, 20, "10", "gec9lTblu_button", true, black, white, function()
 		obj = table_form.gec9lTblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "10 пьедестал")
 	end)
 	
-	--девятый пьедестал
-	table_form.geB9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "8", "geB9lTblu_button", true, black, white, function()
+	--9 пьедестал
+	table_form.geB9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "9", "geB9lTblu_button", true, black, white, function()
 		obj = table_form.geB9lTblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "9 пьедестал")
 	end)
 	
-	--восьмой пьедестал
+	--8 пьедестал
 	table_form.BocbMou_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 54, 20, 20, "8", "BocbMou_button", true, black, white, function()
 		obj = table_form.BocbMou_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "8 пьедестал")
 	end)
 	
-	--седьмой пьедестал
+	--7 пьедестал
 	table_form.cegbMou_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 33, 20, 20, "7", "cegbMou_button", true, black, white, function()
 		obj = table_form.cegbMou_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "7 пьедестал")
 	end)
 	
-	--шестой пьедестал
+	--6 пьедестал
 	table_form.LLlecTou_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 33, 20, 20, "6", "LLlecTou_button", true, black, white, function()
 		obj = table_form.LLlecTou_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "6 пьедестал")
 	end)
 	
-	--пятый пьедестал
+	--5 пьедестал
 	table_form.n9lTblu_nbegecTaJi = creat_new_button(-1, nick, 67 + x_win, 159, 20, 20, "5", "n9lTblu_button", true, black, white, function()
 		obj = table_form.n9lTblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "5 пьедестал")
 	end)
 	
-	--четвертый пьедестал
+	--4 пьедестал
 	table_form.cheTBepTblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 138, 20, 20, "4", "cheTBepTblu_button", true, black, white, function()
 		obj = table_form.cheTBepTblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "4 пьедестал")
 	end)
 	
-	--третий пьедестал
+	--3 пьедестал
 	table_form.TpeTuu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 96, 20, 20, "3", "TpeTuu_button", true, black, white, function()
 		obj = table_form.TpeTuu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "3 пьедестал")
 	end)
 	
-	--второй пьедестал
+	--2 пьедестал
 	table_form.BTopou_nbegecTaJi = creat_new_button(-1, nick, 68 + x_win, 33, 20, 20, "2", "BTopou_button", true, black, white, function()
 		obj = table_form.BTopou_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "2 пьедестал")
 	end)
 	
-	--первый пьедестал
+	--1 пьедестал
 	table_form.nepBblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 54, 20, 20, "1", "nepBblu_button", true, black, white, function()
 		obj = table_form.nepBblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "1 пьедестал")

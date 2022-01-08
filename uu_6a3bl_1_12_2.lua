@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройка матирцы 2"
+local Ha3BaHue_o6HoBJIeHu9l = "настройка матирцы 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6903,7 +6903,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		local cokpaLLleHblu_agpec = string.sub(agpec_TpaHcno3epa, 1, 3)
 		table_form[agpec_TpaHcno3epa] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 50, 15, cokpaLLleHblu_agpec, "button", start_visible, black, white, function()
 			for _, agp in ipairs(table_form.agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l) do
-				if string.sub(agp, 1, 3) == button.caption.getText() then
+				if string.sub(agp, 1, 3) == table_form[agpec_TpaHcno3epa].caption.getText() then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. agp)
 				end
 			end

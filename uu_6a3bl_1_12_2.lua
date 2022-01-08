@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "11 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "12 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6925,12 +6925,16 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	--создание текста подсказки
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(194 + x_win, 33, "текущий пьедестал: ", blue)
 	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(194 + x_win, 44, "не выбран!", red)
+	
+	--открыть файл конфигурации
+	Ta6JIuca_nbegecTaJIoB = configuration[28]
+	if type(Ta6JIuca_nbegecTaJIoB) ~= "table" then Ta6JIuca_nbegecTaJIoB = {} end
 
 	--СОЗДАНИЕ КНОПОК ПЬЕДЕСТАЛОВ
 	--северный пьедестал
 	table_form.ceBepHblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 75, 20, 20, "3", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
 		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 3
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. tostring(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1]))
 		obj = table_form.ceBepHblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "3 пьедесталл")
 	end)

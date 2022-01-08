@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "5 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6938,8 +6938,20 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка северного пьедестала")
 	end)
 	
+	--десятый пьедестал
+	table_form.gec9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "8", ".gec9lTblu_button", true, black, white, function()
+		obj = table_form.gec9lTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "10 пьедестал")
+	end)
+	
+	--девятый пьедестал
+	table_form.geB9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "8", "geB9lTblu_button", true, black, white, function()
+		obj = table_form.geB9lTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "9 пьедестал")
+	end)
+	
 	--восьмой пьедестал
-	table_form.BocbMou_nbegecTaJi = creat_new_button(-1, nick, 192 + x_win, 33, 20, 20, "8", "BocbMou_button", true, black, white, function()
+	table_form.BocbMou_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 54, 20, 20, "8", "BocbMou_button", true, black, white, function()
 		obj = table_form.BocbMou_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "8 пьедестал")
 	end)

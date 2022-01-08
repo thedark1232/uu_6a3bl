@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 логи матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "2 логи матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -618,7 +618,7 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 									return
 								end
 							end
-							if unicode.len(zHa4eHue) < 21 then
+							if unicode.len(zHa4eHue) < v.MakcuMyM_cuMBoJIoB + 1 then
 								v.caption.setText(zHa4eHue .. cuMBoJI)
 								return
 							end
@@ -2022,8 +2022,9 @@ function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_bac
 	
 	return table_button
 end
-function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_background, color_background2, color_background3, color_foreground, horizontal_Alignment)
-	local table_button
+function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_background, color_background2, color_background3, color_foreground, horizontal_Alignment, maKCuMyM_cuMBoJIoB)
+	maKCuMyM_cuMBoJIoB = maKCuMyM_cuMBoJIoB or 20
+	local table_button	
 	local center_x
 	local w2 = math.floor(w / 2)
 	local l2 = math.floor(unicode.len(label) * 5 / 2) + 5
@@ -2054,6 +2055,7 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	rawset(table_button, "enabled", false)
 	rawset(table_button, "getType", function() return name end)
 	rawset(table_button, "button_num", num)
+	rawset(table_button, "MakcuMyM_cuMBoJIoB", maKCuMyM_cuMBoJIoB)
 	
 	return table_button
 end
@@ -6975,12 +6977,13 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(194 + x_win, 55, "адрес для замены", blue)
 	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(194 + x_win, 66, "не выбран", red)
 	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(194 + x_win, 93, "", red)
-	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(194 + x_win, 110, "для Infusion Claw", blue)
+	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(194 + x_win, 110, "для Infusion Claw:", blue)
 	table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(194 + x_win, 121, "3 цифры адреса", red)
-	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "редстоун контроллера", red)
+	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "ред контроллера", red)
+	table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, "адрес не найден!", red)
 
 	--настройки Infusion Claw
-	table_form.textBox_infusion_claw = creat_new_textBox(nick, 194 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_infusion_claw = creat_new_textBox(nick, 194 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
 	table_form.kHonka_Infusion_claw = creat_new_button(-1, nick, 194 + x_win, 161, 101, 15, "назначить", "Infusion_claw_button", true, blue, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка Infusion claw")
 	end)

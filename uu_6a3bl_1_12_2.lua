@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "27 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "28 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6936,6 +6936,19 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		obj = table_form.ceBepHblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка северного пьедестала")
 	end)
+	
+	--шестой пьедестал
+	table_form.LLlecTou_nbegecTaJi = creat_new_button(-1, nick, 79 + x_win, 33, 30, 30, "6", LLlecTou_button", true, black, white, function()
+		obj = table_form.LLlecTou_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "6 пьедестал")
+	end)
+	
+	--первый пьедестал
+	table_form.n9lTblu_nbegecTaJi = creat_new_button(-1, nick, 48 + x_win, 64, 30, 30, "5", "n9lTblu_button", true, black, white, function()
+		obj = table_form.n9lTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "5 пьедестал")
+	end)
+	
 	
 	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		-- configuration[28] = Ta6JIuca_nbegecTaJIoB

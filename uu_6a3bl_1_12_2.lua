@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "19 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "20 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6916,11 +6916,11 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
 	end
 	
-	table_form.BBEpx = creat_new_button(-1, nick, 300, 100, 15, 15, "/\", "up_button", true, black, white, function()
+	table_form.BBEpx = creat_new_button(-1, nick, 300, 100, 15, 15, "/\\", "up_button", true, black, white, function()
 		table_form.main_box2.setY(table_form.main_box2.getY() + 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring((table_form.main_box2.getY()))
 	end)
-	table_form.BBEpx = creat_new_button(-1, nick, 300, 120, 15, 15, "\/", "down_button", true, black, white, function()
+	table_form.BBEpx = creat_new_button(-1, nick, 300, 120, 15, 15, "\\/", "down_button", true, black, white, function()
 		table_form.main_box2.setY(table_form.main_box2.getY() - 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring((table_form.main_box2.getY()))
 	end)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "14 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "15 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6978,7 +6978,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.textBox1 = creat_new_textBox(nick, 194 + x_win, 32, 144, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 	table_form.kHonka_Infusion_claw = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "назначить", "Infusion_claw_button", true, blue, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка Infusion claw")
-	end
+	end)
 	--создание кнопки замены
 	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "заменить", "zaMeHa_button", true, blue, white, function()
 		if TekyLLluu_Bbl6paHHblu_nbegecTaJI == 0 then

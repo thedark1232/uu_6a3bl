@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "7 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "9 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1357,7 +1357,7 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u, He_y6upaT
 	transposer = Ta6JIuca_nbegecTaJIoB[1][1]
 	cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][2]
 	cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][3]
-	re3yJIbTaT_nepeMellleHu9l
+	re3yJIbTaT_nepeMellleHu9l = false
 	if not He_y6upaTb_ceHTapaJIbHblu then
 		repeat
 			re3yJIbTaT_nepeMellleHu9l = component.invoke(transposer, "transferItem", o6paTHa9l_Ta6JIuca_cTopoH["сверху"], cTopoHa_npueMHuk)

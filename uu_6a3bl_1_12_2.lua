@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "5 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -705,6 +705,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 							   v.caption.getText() == "ввод z2" or
 							   v.caption.getText() == "номер зоны" or
 							   v.caption.getText() == "новая позиция" or
+							   v.caption.getText() == "номер рецепта" or
 							   v.caption.getText() == "ввод пароля" then v.caption.setText("") end
 							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
@@ -7356,7 +7357,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 479, 250, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 450, 200, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 472, 218, white)
 	table_form.main_box2.setClickable(false)
 		
 	--table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
@@ -7382,8 +7383,16 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	--создание кнопки старта текста
 	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, y - 2, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало теста")
-	end)
+	end)	
+	--текстбокс номера рецепта
+	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, 144, 101, 15, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
+	--чекбокс проверка номера рецепта
+	table_form.npoBepka_HoMepa_pecenTa_box = MoHuTop_urpoka[nick].addBox(50, 50, 10, 10, black)
+	table_form.npoBepka_HoMepa_pecenTa_box.setClickable(false)
+	
+	table_form.raJIo4ka =  MoHuTop_urpoka[nick].addText(70, 70, "✓")
+	--✓
 	-- --создание каркаса скролла
 	-- local MakcuMyM_BuguMblx_kHonok
 	-- local x_scrolla = 33
@@ -7412,7 +7421,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	-- end
 	
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.main_box2
+	local obj = table_form.npoBepka_HoMepa_pecenTa_box
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150

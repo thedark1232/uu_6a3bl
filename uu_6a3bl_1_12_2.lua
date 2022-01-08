@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "3 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "4 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1314,7 +1314,7 @@ function oJugaHue_BBoga_cuqpPbl(oT, go)
 	end
 	return true, coo6llleHue
 end
-function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --если false, то предметы задержаться в центральном сундуке
+function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u, He_y6upaTb_ceHTapaJIbHblu) --если false, то предметы задержаться в центральном сундуке
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещаю предметы с пьедесталов")
 	local cTopoHa_npueMHuk
 	local cTopoHa_Bblga4u	
@@ -1370,7 +1370,7 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u) --есл�
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перемещение завершено")
 	end
 end
-function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)	
+function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIbHblu)	
 	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 	-- ["Ha3BaHue"] = coo6llleHue,
 	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
@@ -1402,20 +1402,24 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 	--io.read()
 	
 	--поиск центрального передмета в сундуке
-	local Heo6xoguMble_uTeMbl = {}
-	for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-		--term.clear()
-		--print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
-		--print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
-		if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and tonumber(val[2].damage) == tonumber(recept.cTapToBblu_npegMeT_no_ceHTpy.damage) and val[2].size > 0 then
-			val[2].size = val[2].size - 1
-			--print("количество предметов оставшихся в " .. val[1] .. " слоте")
-			--print(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key][2].size)
-			--io.read()
-			table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
-			Ha4aJIbHblu_npegMeT_HaugeH = true
-			break
+	if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then 
+		local Heo6xoguMble_uTeMbl = {}
+		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
+			--term.clear()
+			--print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
+			--print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
+			if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and tonumber(val[2].damage) == tonumber(recept.cTapToBblu_npegMeT_no_ceHTpy.damage) and val[2].size > 0 then
+				val[2].size = val[2].size - 1
+				--print("количество предметов оставшихся в " .. val[1] .. " слоте")
+				--print(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key][2].size)
+				--io.read()
+				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
+				Ha4aJIbHblu_npegMeT_HaugeH = true
+				break
+			end
 		end
+	else
+		Ha4aJIbHblu_npegMeT_HaugeH = true
 	end
 	
 	local He_HaugeHHble_items = {}
@@ -1517,7 +1521,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		for i = 1, koJIu4ecTBo do
 			local kraqpT_npepBaH = false
 			--выставить предметы на матрице
-			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
+			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 			if not pe3yJIbTaT_BblcTaBJIeHu9l then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
 				break

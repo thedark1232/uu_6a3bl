@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "9 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "10 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1385,7 +1385,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	local ocTaJIbHble_npegMeTbl_HaugeHbl = true
 	
 	--убрать предметы с пьедесталов в центральный сундук
-	y6paTb_npegMeTbl_c_nbegecTaJIoB(false)
+	y6paTb_npegMeTbl_c_nbegecTaJIoB(false, He_BblcTaBJI9lTb_ceHTpaJIbHblu)
 	
 	--сбор информации о предметах в центральном сундуке
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. g .. recept.Ha3BaHue)

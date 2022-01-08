@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "11 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "12 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1519,6 +1519,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local koJIu4ecTBo = o4epegb_kpaqpToB_Ha_MaTpuce[1][2]
 		local Bcero_ckpaqp4eHo = 0
 		local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
+		local HexBaTuJIo_acneKToB = {}
 		
 		--начло цикла крафта на матрице
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
@@ -1526,11 +1527,11 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			local kraqpT_npepBaH = false
 			--выставить предметы на матрице
 			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
-			if not pe3yJIbTaT_BblcTaBJIeHu9l then
+			if not pe3yJIbTaT_BblcTaBJIeHu9l or #HexBaTuJIo_acneKToB > 0 then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
 				break
 			end
-			
+			HexBaTuJIo_acneKToB = {}
 			--цикл ожидания старта матрицы
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 			computer.beep(1000, 0.1); computer.beep(1000, 0.1)
@@ -1592,17 +1593,20 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 								setMathixRecepts()
 							end
 						end
+						HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
+						
 						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
-					until kpaqpT_3aBepllleH or kraqpT_npepBaH
+					until kpaqpT_3aBepllleH or kraqpT_npepBaH or #HexBaTuJIo_acneKToB > 0
 				end
 			end
 			
+			
 			--действия перед следующим крафтом
-			if not kraqpT_npepBaH then 
+			if kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue or #HexBaTuJIo_acneKToB > 0 then 
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ОШИБКА!")
+			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. g .. " ЗАВЕРШЕН!")
 				Bcero_ckpaqp4eHo = i
-			else
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ОШИБКА!")
 			end
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
 		end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 логи матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "5 логи матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1533,11 +1533,26 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				break
 			end
 			HexBaTuJIo_acneKToB = {}
-			--цикл ожидания старта матрицы
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
-			computer.beep(1000, 0.1); computer.beep(1000, 0.1)
-			coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
+			
+			--тыкнуть палкой по матрице или через Infusion claw, если он установлен
+			local infusion_claw_activate
+			if agpec_infusion_claw ~= 0 then
+				for cTopoHa = 0, 5 do
+					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
+				end
+			end
+			if infusion_claw_activate then
+				for cTopoHa = 0, 5 do
+					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
+				end
+			else
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
+				computer.beep(1000, 0.1); computer.beep(1000, 0.1)
+				coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
+			end
+			
 			local Ta6JIuca_acnekToB = {}
+			--цикл ожидания старта матрицы
 			repeat
 				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
@@ -1580,7 +1595,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
 					--цекл слежки за предметами, которые всасывает матрица
 					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
-					
+					os.sleep(5)
 					local kpaqpT_3aBepllleH = false
 					repeat
 						os.sleep(0)
@@ -6999,7 +7014,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 				configuration[45] = agpec_infusion_claw
 				setConfiguration()
 				table_form.nogcka3ka10.setText(g .. "адрес переназначен!")
-				table_form.nogcka3ka9.setText(string.sub(agpec_infusion_claw, 1, 3), green)
+				table_form.nogcka3ka9.setText(string.sub(agpec_infusion_claw, 1, 3))
 				return
 			end
 		end

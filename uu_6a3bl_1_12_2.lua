@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "2 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1587,7 +1587,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			
 			--действия перед следующим крафтом
 			if not kraqpT_npepBaH then 
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. g .. " ЗАВЕРШЕН!") end
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. g .. " ЗАВЕРШЕН!")
 				Bcero_ckpaqp4eHo = i
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ПРЕРВАН!")

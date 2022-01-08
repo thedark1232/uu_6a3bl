@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройка матирцы 4"
+local Ha3BaHue_o6HoBJIeHu9l = "5 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2304,6 +2304,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отключить сеть", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
 		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка глав. цикла", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].zagepJka_cukJIoB = forms:creat_zagepJka_cukJIoB_form(nick) end)
 		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].nepeuMeHoBaTb_6a3y = forms:creat_nepeuMeHoBaTb_6a3y_form(nick) end)		
+		table_form.Bepcu9l_o6HoBJIeHuu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "версия обновлений", "button", start_visible, gray, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v." .. g .. Ha3BaHue_o6HoBJIeHu9l) end)		
 	end
 	
 	--кнопки тиммейтов

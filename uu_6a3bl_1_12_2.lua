@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "2 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "3 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1545,6 +1545,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "крафт прерван! причина:")
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
+						kraqpT_npepBaH = true
 					end
 					Bce_acnekTbl_BblcoCaHbl = true
 					Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
@@ -1564,25 +1565,26 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
 					end
 					os.sleep(0)
-				until Bce_acnekTbl_BblcoCaHbl
-				
-				--цекл слежки за предметами, которые всасывает матрица
-				coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
+				until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH
+				if not kraqpT_npepBaH then
+					--цекл слежки за предметами, которые всасывает матрица
+					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
 
-				local kpaqpT_3aBepllleH = false
-				repeat
-					os.sleep(0)
-					local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
-					if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
-						kpaqpT_3aBepllleH = true
-						if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
-							Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
-							Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
-							setMathixRecepts()
+					local kpaqpT_3aBepllleH = false
+					repeat
+						os.sleep(0)
+						local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
+						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
+							kpaqpT_3aBepllleH = true
+							if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
+								Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
+								Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
+								setMathixRecepts()
+							end
 						end
-					end
-					if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
-				until kpaqpT_3aBepllleH or kraqpT_npepBaH
+						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
+					until kpaqpT_3aBepllleH or kraqpT_npepBaH
+				end
 			end
 			
 			--действия перед следующим крафтом
@@ -1590,7 +1592,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. g .. " ЗАВЕРШЕН!")
 				Bcero_ckpaqp4eHo = i
 			else
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ПРЕРВАН!")
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ОШИБКА!")
 			end
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
 		end

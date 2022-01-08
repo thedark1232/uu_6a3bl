@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "15 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "1 логи матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6912,6 +6912,11 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 					v.caption.delete()
 					v.delete()
 				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
 				v.delete()
 			end
 		end
@@ -6975,8 +6980,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "редстоун контроллера", red)
 
 	--настройки Infusion Claw
-	table_form.textBox1 = creat_new_textBox(nick, 194 + x_win, 32, 144, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-	table_form.kHonka_Infusion_claw = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "назначить", "Infusion_claw_button", true, blue, white, function()
+	table_form.textBox_infusion_claw = creat_new_textBox(nick, 194 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.kHonka_Infusion_claw = creat_new_button(-1, nick, 194 + x_win, 161, 101, 15, "назначить", "Infusion_claw_button", true, blue, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка Infusion claw")
 	end)
 	--создание кнопки замены

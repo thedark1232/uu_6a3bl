@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "26 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "27 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6802,6 +6802,7 @@ end
 function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	--создание формы
 	local table_form = {}
+	local obj
 	
 	npo4ue_qpopMbl[nick] = "qpyJIJI_HacTpouka"
 	--создание функции видимости окна
@@ -6879,9 +6880,10 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 29, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(50 + x_win, 30, 200, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
 	table_form.main_box3.setClickable(false)
 	
+	obj = table_form.main_box
 	--создание кнопок
 	local y = 15
 	local y_func = function()
@@ -6917,8 +6919,22 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
 	end
 	
+	--центральный пьедестал
 	table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 100 + x_win, 100, 30, 30, "центр", "ceHTpaJIbHblu_nbegecTaJI_button", true, black, white, function()
+		obj = table_form.ceHTpaJIbHblu_nbegecTaJI
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка центрального пьедестала")
+	end)
+	
+	--южный пьедестал
+	table_form.l0JHblu_nbegecTaJi = creat_new_button(-1, nick, 160 + x_win, 140, 30, 30, "юг", "l0JHblu_nbegecTaJi_button", true, black, white, function()
+		obj = table_form.l0JHblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка южного пьедестала")
+	end)
+	
+	--северный пьедестал
+	table_form.ceBepHblu_nbegecTaJi = creat_new_button(-1, nick, 200 + x_win, 140, 30, 30, "север", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+		obj = table_form.ceBepHblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка северного пьедестала")
 	end)
 	
 	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
@@ -6954,7 +6970,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
-	local HapucoBatb_cTpeJIku = function(obj)
+	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150
 		--перемещение панели

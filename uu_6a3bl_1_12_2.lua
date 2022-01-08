@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "настройка матирцы 1"
+local Ha3BaHue_o6HoBJIeHu9l = "настройка матирцы 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6893,17 +6893,22 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 
 	--создание таблицы всех транспозеров
 	local agreca_Bcex_TraHcno3epoB = component.list("transposer")
-
-	for agpec_TpaHcno3epa, _ in pairs(agreca_Bcex_TraHcno3epoB) do
+	local agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l = {}
+	for adrs, _ in pairs(agreca_Bcex_TraHcno3epoB) do
+		table.insert(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, adrs)
+	end
+	table_form.agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l = agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l
+	
+	for _, agpec_TpaHcno3epa in pairs(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l) do
 		local cokpaLLleHblu_agpec = string.sub(agpec_TpaHcno3epa, 1, 3)
-		table_form[agpec_TpaHcno3epa] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, cokpaLLleHblu_agpec, "button", start_visible, black, white, function()
-			for agp, button in pairs(table_form) do
+		table_form[agpec_TpaHcno3epa] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 50, 15, cokpaLLleHblu_agpec, "button", start_visible, black, white, function()
+			for _, agp in ipairs(table_form.agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l) do
 				if string.sub(agp, 1, 3) == button.caption.getText() then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. agp)
 				end
 			end
-			
 		end)
+		table_form[agpec_TpaHcno3epa].caption.setX(7 + x_win)
 	end
 	
 	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})

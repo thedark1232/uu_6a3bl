@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "2 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6924,7 +6924,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		obj = table_form.ceHTpaJIbHblu_nbegecTaJI
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка центрального пьедестала")
 	end)
-	table_form.addIcon(100, 30, "minecraft:stone", 0)
+	table_form.test_icon1 = MoHuTop_urpoka[nick].addIcon(100, 30, "minecraft:stone", 0)
 	
 	--южный пьедестал
 	table_form.l0JHblu_nbegecTaJi = creat_new_button(-1, nick, 160 + x_win, 140, 30, 30, "юг", "l0JHblu_nbegecTaJi_button", true, black, white, function()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "12 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "14 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1541,7 +1541,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 				if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then kraqpT_npepBaH = true end
-				
 			until #Ta6JIuca_acnekToB > 0 or kraqpT_npepBaH
 			
 			if not kraqpT_npepBaH then
@@ -6971,7 +6970,15 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(194 + x_win, 55, "адрес для замены", blue)
 	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(194 + x_win, 66, "не выбран", red)
 	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(194 + x_win, 93, "", red)
-	
+	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(194 + x_win, 110, "для Infusion Claw", blue)
+	table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(194 + x_win, 121, "3 цифры адреса", red)
+	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "редстоун контроллера", red)
+
+	--настройки Infusion Claw
+	table_form.textBox1 = creat_new_textBox(nick, 194 + x_win, 32, 144, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.kHonka_Infusion_claw = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "назначить", "Infusion_claw_button", true, blue, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка Infusion claw")
+	end
 	--создание кнопки замены
 	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "заменить", "zaMeHa_button", true, blue, white, function()
 		if TekyLLluu_Bbl6paHHblu_nbegecTaJI == 0 then

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "21 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "23 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6916,22 +6916,29 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
 	end
 	
-	table_form.BBEpx = creat_new_button(-1, nick, 300, 100, 15, 15, "/\\", "up_button", true, black, white, function()
+	local x_cTpeJIku = 380
+	local y_cTpeJIku = 150
+	table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
 		table_form.main_box2.setY(table_form.main_box2.getY() + 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(table_form.main_box2.getY()))
 	end)
-	table_form.BBEpx = creat_new_button(-1, nick, 300, 120, 15, 15, "\\/", "down_button", true, black, white, function()
+	table_form.BBEpx.caption.setX(x_cTpeJIku + 21)
+	table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "down_button", true, black, white, function()
 		table_form.main_box2.setY(table_form.main_box2.getY() - 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(table_form.main_box2.getY()))
 	end)
-	table_form.BBEpx = creat_new_button(-1, nick, 280, 110, 15, 15, "<", "left", true, black, white, function()
+	table_form.BHu3.caption.setX(x_cTpeJIku + 21)
+	table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left", true, black, white, function()
 		table_form.main_box2.setX(table_form.main_box2.getX() - 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(table_form.main_box2.getX()))
 	end)
-	table_form.BBEpx = creat_new_button(-1, nick, 320, 110, 15, 15, ">", "right_button", true, black, white, function()
+	table_form.BJIeBO.caption.setX(x_cTpeJIku + 1)
+	table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "right_button", true, black, white, function()
 		table_form.main_box2.setX(table_form.main_box2.getX() + 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(table_form.main_box2.getX()))
 	end)
+	table_form.BnpaBo.caption.setX(x_cTpeJIku + 41)
+	
 	
 	table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 100 + x_win, 100, 30, 30, "центр", "ceHTpaJIbHblu_nbegecTaJI_button", true, black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка центрального пьедестала")

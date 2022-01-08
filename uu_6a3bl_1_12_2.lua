@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "23 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "24 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6756,7 +6756,7 @@ function forms:creat_cMeHa_npuopuTeTa_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	--создание лист бокса
+	--создание текст бокса
 	table_form.HoMep_3oHbl = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "номер зоны", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 	table_form.HoBa9l_no3ucu9l = creat_new_textBox(nick, 5 + x_win, 49, 128, 15, "новая позиция", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 
@@ -6918,26 +6918,50 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	local x_cTpeJIku = 380
 	local y_cTpeJIku = 150
+	--перемещение панели
 	table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
-		table_form.main_box2.setY(table_form.main_box2.getY() + 1)
+		table_form.main_box2.setY(table_form.main_box2.getY() - 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(table_form.main_box2.getY()))
 	end)
 	table_form.BBEpx.caption.setX(x_cTpeJIku + 21)
 	table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "down_button", true, black, white, function()
-		table_form.main_box2.setY(table_form.main_box2.getY() - 1)
+		table_form.main_box2.setY(table_form.main_box2.getY() + 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(table_form.main_box2.getY()))
 	end)
 	table_form.BHu3.caption.setX(x_cTpeJIku + 21)
-	table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left", true, black, white, function()
+	table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left_button", true, black, white, function()
 		table_form.main_box2.setX(table_form.main_box2.getX() - 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(table_form.main_box2.getX()))
 	end)
-	table_form.BJIeBO.caption.setX(x_cTpeJIku + 1)
+	table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
 	table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "right_button", true, black, white, function()
 		table_form.main_box2.setX(table_form.main_box2.getX() + 1)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(table_form.main_box2.getX()))
 	end)
-	table_form.BnpaBo.caption.setX(x_cTpeJIku + 41)
+	table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
+	--ширина и высота
+	table_form.MeHbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 30, 15, 15, "/\\", "h_min_button", true, black, white, function()
+		table_form.main_box2.setHeight(table_form.main_box2.getHeight() - 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(table_form.main_box2.getHeight()))
+	end)
+	table_form.MeHbLLle_h.caption.setX(x_cTpeJIku + 21)
+	table_form.boJIbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 50, 15, 15, "\\/", "h_max_button", true, black, white, function()
+		table_form.main_box2.setHeight(table_form.main_box2.getHeight() + 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(table_form.main_box2.getHeight()))
+	end)
+	table_form.boJIbLLle_h.caption.setX(x_cTpeJIku + 21)
+	table_form.MeHbLLle_w = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 40, 15, 15, "<", "w_min_button", true, black, white, function()
+		table_form.main_box2.setWidth(table_form.main_box2.getWidth() - 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(table_form.main_box2.getWidth()))
+	end)
+	table_form.MeHbLLle_w.caption.setX(x_cTpeJIku + 3)
+	table_form.boJIbLLle_w = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 40, 15, 15, ">", "w_max_button", true, black, white, function()
+		table_form.main_box2.setWidth(table_form.main_box2.getWidth() + 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(table_form.main_box2.getWidth()))
+	end)
+	table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
+	
+	
 	
 	
 	table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 100 + x_win, 100, 30, 30, "центр", "ceHTpaJIbHblu_nbegecTaJI_button", true, black, white, function()

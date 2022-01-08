@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "10 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "11 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1575,8 +1575,8 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					end
 					os.sleep(0)
 				until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH
-				if not kraqpT_npepBaH then
-					BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
+				local ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
+				if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
 					--цекл слежки за предметами, которые всасывает матрица
 					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
 					

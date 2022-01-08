@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "28 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "29 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6938,7 +6938,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--шестой пьедестал
-	table_form.LLlecTou_nbegecTaJi = creat_new_button(-1, nick, 79 + x_win, 33, 30, 30, "6", LLlecTou_button", true, black, white, function()
+	table_form.LLlecTou_nbegecTaJi = creat_new_button(-1, nick, 79 + x_win, 33, 30, 30, "6", "LLlecTou_button", true, black, white, function()
 		obj = table_form.LLlecTou_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "6 пьедестал")
 	end)

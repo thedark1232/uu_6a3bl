@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "29 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "1 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6862,7 +6862,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.destroy = function()
 		for k, v in pairs(table_form) do
 			if type(v) ~= "function" then 
-				if v.getType() == "button" or v.getType() == "return_button" then
+				if string.match(v.getType(), "button") ~= nil then
 					v.caption.delete()
 					v.delete()
 				end
@@ -6924,6 +6924,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		obj = table_form.ceHTpaJIbHblu_nbegecTaJI
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка центрального пьедестала")
 	end)
+	table_form.addIcon(100, 30, "minecraft:stone", 0)
 	
 	--южный пьедестал
 	table_form.l0JHblu_nbegecTaJi = creat_new_button(-1, nick, 160 + x_win, 140, 30, 30, "юг", "l0JHblu_nbegecTaJi_button", true, black, white, function()
@@ -6943,13 +6944,35 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "6 пьедестал")
 	end)
 	
-	--первый пьедестал
+	--пятый пьедестал
 	table_form.n9lTblu_nbegecTaJi = creat_new_button(-1, nick, 48 + x_win, 64, 30, 30, "5", "n9lTblu_button", true, black, white, function()
 		obj = table_form.n9lTblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "5 пьедестал")
 	end)
 	
+	--четвертый пьедестал
+	table_form.cheTBepTblu_nbegecTaJi = creat_new_button(-1, nick, 48 + x_win, 64, 30, 30, "4", "cheTBepTblu_button", true, black, white, function()
+		obj = table_form.cheTBepTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "4 пьедестал")
+	end)
 	
+	--третий пьедестал
+	table_form.TpeTuu_nbegecTaJi = creat_new_button(-1, nick, 48 + x_win, 64, 30, 30, "3", "TpeTuu_button", true, black, white, function()
+		obj = table_form.TpeTuu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "3 пьедестал")
+	end)
+	
+	--второй пьедестал
+	table_form.BTopou_nbegecTaJi = creat_new_button(-1, nick, 48 + x_win, 64, 30, 30, "2", "BTopou_button", true, black, white, function()
+		obj = table_form.BTopou_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "2 пьедестал")
+	end)
+	
+	--первый пьедестал
+	table_form.nepBblu_nbegecTaJi = creat_new_button(-1, nick, 48 + x_win, 64, 30, 30, "1", "nepBblu_button", true, black, white, function()
+		obj = table_form.nepBblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "1 пьедестал")
+	end)
 	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		-- configuration[28] = Ta6JIuca_nbegecTaJIoB
 		-- configuration[29] = me_interface_gJI9l_MaTpucbl

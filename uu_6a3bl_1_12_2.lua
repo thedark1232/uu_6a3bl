@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "18 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "19 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6941,7 +6941,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		local cokpaLLleHblu_agpec = string.sub(agpec_TpaHcno3epa, 1, 3)
 		table_form[agpec_TpaHcno3epa] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 25, 15, cokpaLLleHblu_agpec, "button", start_visible, black, white, function()
 			TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = table_form[agpec_TpaHcno3epa].full_agpec
-			table_form.nogcka3ka5.setText(g .. string.sub(TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa, 1, 3))
+			table_form.nogcka3ka4.setText(g .. string.sub(TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa, 1, 3))
 		end)
 		table_form[agpec_TpaHcno3epa].caption.setX(9 + x_win)
 		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
@@ -6997,7 +6997,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	
 	--южный пьедестал
@@ -7009,7 +7009,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--12 пьедестал
 	table_form.gBeHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 159, 20, 20, "10", "gBeHHagcaTblu_button", true, black, white, function()
@@ -7020,7 +7020,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--11 пьедестал
 	table_form.oguHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 159, 20, 20, "9", "oguHHagcaTblu_button", true, black, white, function()
@@ -7031,7 +7031,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--10 пьедестал
 	table_form.gec9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 138, 20, 20, "8", "gec9lTblu_button", true, black, white, function()
@@ -7042,7 +7042,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--9 пьедестал
 	table_form.geB9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "7", "geB9lTblu_button", true, black, white, function()
@@ -7053,7 +7053,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--8 пьедестал
 	table_form.BocbMou_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 54, 20, 20, "6", "BocbMou_button", true, black, white, function()
@@ -7064,7 +7064,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--7 пьедестал
 	table_form.cegbMou_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 33, 20, 20, "5", "cegbMou_button", true, black, white, function()
@@ -7075,7 +7075,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--6 пьедестал
 	table_form.LLlecTou_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 33, 20, 20, "4", "LLlecTou_button", true, black, white, function()
@@ -7086,7 +7086,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--5 пьедестал
 	table_form.n9lTblu_nbegecTaJi = creat_new_button(-1, nick, 67 + x_win, 159, 20, 20, "11", "n9lTblu_button", true, black, white, function()
@@ -7097,7 +7097,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--4 пьедестал
 	table_form.cheTBepTblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 138, 20, 20, "12", "cheTBepTblu_button", true, black, white, function()
@@ -7108,7 +7108,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--3 пьедестал
 	table_form.TpeTuu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 96, 20, 20, "13", "TpeTuu_button", true, black, white, function()
@@ -7119,7 +7119,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--2 пьедестал
 	table_form.BTopou_nbegecTaJi = creat_new_button(-1, nick, 68 + x_win, 33, 20, 20, "15", "BTopou_button", true, black, white, function()
@@ -7130,7 +7130,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--1 пьедестал
 	table_form.nepBblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 54, 20, 20, "14", "nepBblu_button", true, black, white, function()
@@ -7141,7 +7141,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		else
 			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
 		end
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 	end)
 	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		-- configuration[28] = Ta6JIuca_nbegecTaJIoB

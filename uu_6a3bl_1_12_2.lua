@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "8 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "11 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -15,6 +15,7 @@ local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
+local TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 local Ta6JIuca_acnekToB
 local qpopma_nepuMeTpa = {}
 local napaMeTp_BpeMeHu
@@ -5537,7 +5538,7 @@ function forms:creat_go6aBuTb_TuMMeuTa_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	--создание лист бокса
+	--создание текст бокса
 	table_form.textBox1 = creat_new_textBox(nick, 5 + x_win, 32, 128, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_win, 50, "введи ник", red)
@@ -6921,95 +6922,116 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
 	end
 	
+	--создание текста подсказки
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(194 + x_win, 33, "текущий пьедестал: ", blue)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(194 + x_win, 44, "не выбран!", red)
+
+	--СОЗДАНИЕ КНОПОК ПЬЕДЕСТАЛОВ
 	--северный пьедестал
-	table_form.ceBepHblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 75, 20, 20, "N", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+	table_form.ceBepHblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 75, 20, 20, "3", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 3
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
 		obj = table_form.ceBepHblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка северного пьедестала")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "3 пьедесталл")
 	end)
-	
 	--центральный пьедестал
-	table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 110 + x_win, 96, 20, 20, "центр", "ceHTpaJIbHblu_nbegecTaJI_button", true, black, white, function()
+	table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 110 + x_win, 96, 20, 20, "2", "ceHTpaJIbHblu_nbegecTaJI_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 2
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
 		obj = table_form.ceHTpaJIbHblu_nbegecTaJI
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка центрального пьедестала")
-	end)
-	table_form.test_icon1 = MoHuTop_urpoka[nick].addIcon(148, 50, "minecraft:stone", 0)
-	
-	--южный пьедестал
-	table_form.l0JHblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 117, 20, 20, "S", "l0JHblu_nbegecTaJi_button", true, black, white, function()
-		obj = table_form.l0JHblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка южного пьедестала")
-	end)
-		
-	--12 пьедестал
-	table_form.gBeHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 159, 20, 20, "7", "gBeHHagcaTblu_button", true, black, white, function()
-		obj = table_form.gBeHHagcaTblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "7 пьедестал")
-	end)
-	
-	--11 пьедестал
-	table_form.oguHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 159, 20, 20, "6", "oguHHagcaTblu_button", true, black, white, function()
-		obj = table_form.oguHHagcaTblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "6 пьедестал")
-	end)
-	
-	--10 пьедестал
-	table_form.gec9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 138, 20, 20, "5", "gec9lTblu_button", true, black, white, function()
-		obj = table_form.gec9lTblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "5 пьедестал")
-	end)
-	
-	--9 пьедестал
-	table_form.geB9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "4", "geB9lTblu_button", true, black, white, function()
-		obj = table_form.geB9lTblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "4 пьедестал")
-	end)
-	
-	--8 пьедестал
-	table_form.BocbMou_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 54, 20, 20, "3", "BocbMou_button", true, black, white, function()
-		obj = table_form.BocbMou_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "3 пьедестал")
-	end)
-	
-	--7 пьедестал
-	table_form.cegbMou_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 33, 20, 20, "2", "cegbMou_button", true, black, white, function()
-		obj = table_form.cegbMou_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "2 пьедестал")
 	end)
 	
-	--6 пьедестал
-	table_form.LLlecTou_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 33, 20, 20, "1", "LLlecTou_button", true, black, white, function()
-		obj = table_form.LLlecTou_nbegecTaJi
+	--южный пьедестал
+	table_form.l0JHblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 117, 20, 20, "1", "l0JHblu_nbegecTaJi_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 1
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.l0JHblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "1 пьедестал")
 	end)
-	
-	--5 пьедестал
-	table_form.n9lTblu_nbegecTaJi = creat_new_button(-1, nick, 67 + x_win, 159, 20, 20, "8", "n9lTblu_button", true, black, white, function()
-		obj = table_form.n9lTblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "8 пьедестал")
-	end)
-	
-	--4 пьедестал
-	table_form.cheTBepTblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 138, 20, 20, "9", "cheTBepTblu_button", true, black, white, function()
-		obj = table_form.cheTBepTblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "9 пьедестал")
-	end)
-	
-	--3 пьедестал
-	table_form.TpeTuu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 96, 20, 20, "10", "TpeTuu_button", true, black, white, function()
-		obj = table_form.TpeTuu_nbegecTaJi
+	--12 пьедестал
+	table_form.gBeHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 159, 20, 20, "10", "gBeHHagcaTblu_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 10
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.gBeHHagcaTblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "10 пьедестал")
 	end)
-	
-	--2 пьедестал
-	table_form.BTopou_nbegecTaJi = creat_new_button(-1, nick, 68 + x_win, 33, 20, 20, "12", "BTopou_button", true, black, white, function()
-		obj = table_form.BTopou_nbegecTaJi
+	--11 пьедестал
+	table_form.oguHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 159, 20, 20, "9", "oguHHagcaTblu_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 9
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.oguHHagcaTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "9 пьедестал")
+	end)
+	--10 пьедестал
+	table_form.gec9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 138, 20, 20, "8", "gec9lTblu_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 8
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.gec9lTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "8 пьедестал")
+	end)
+	--9 пьедестал
+	table_form.geB9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "7", "geB9lTblu_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 7
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.geB9lTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "7 пьедестал")
+	end)
+	--8 пьедестал
+	table_form.BocbMou_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 54, 20, 20, "6", "BocbMou_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 6
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.BocbMou_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "6 пьедестал")
+	end)
+	--7 пьедестал
+	table_form.cegbMou_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 33, 20, 20, "5", "cegbMou_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 5
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.cegbMou_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "5 пьедестал")
+	end)
+	--6 пьедестал
+	table_form.LLlecTou_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 33, 20, 20, "4", "LLlecTou_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 4
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.LLlecTou_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "4 пьедестал")
+	end)
+	--5 пьедестал
+	table_form.n9lTblu_nbegecTaJi = creat_new_button(-1, nick, 67 + x_win, 159, 20, 20, "11", "n9lTblu_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 11
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.n9lTblu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "11 пьедестал")
+	end)
+	--4 пьедестал
+	table_form.cheTBepTblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 138, 20, 20, "12", "cheTBepTblu_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 12
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.cheTBepTblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "12 пьедестал")
 	end)
-	
+	--3 пьедестал
+	table_form.TpeTuu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 96, 20, 20, "13", "TpeTuu_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 13
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.TpeTuu_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "13 пьедестал")
+	end)
+	--2 пьедестал
+	table_form.BTopou_nbegecTaJi = creat_new_button(-1, nick, 68 + x_win, 33, 20, 20, "15", "BTopou_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 15
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
+		obj = table_form.BTopou_nbegecTaJi
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "15 пьедестал")
+	end)
 	--1 пьедестал
-	table_form.nepBblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 54, 20, 20, "11", "nepBblu_button", true, black, white, function()
+	table_form.nepBblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 54, 20, 20, "14", "nepBblu_button", true, black, white, function()
+		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 14
+		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI))
 		obj = table_form.nepBblu_nbegecTaJi
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "11 пьедестал")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "14 пьедестал")
 	end)
 	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
 		-- configuration[28] = Ta6JIuca_nbegecTaJIoB

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "2 логи матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "3 логи матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -44,6 +44,7 @@ local agpec_casino_im --адрес алмазного сундука казин�
 local Balance_casino_mm = 0
 local Balance_casino_im = 0
 local re3epBHblu_6aJIaHc = 500
+local agpec_infusion_claw = 0
 local id_money = "customnpcs:npcMoney"
 local dmg_money = 0
 local Tuxuu_pecTapT = false
@@ -618,7 +619,7 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 									return
 								end
 							end
-							if unicode.len(zHa4eHue) < v.MakcuMyM_cuMBoJIoB + 1 then
+							if unicode.len(zHa4eHue) <= v.MakcuMyM_cuMBoJIoB then
 								v.caption.setText(zHa4eHue .. cuMBoJI)
 								return
 							end
@@ -6980,12 +6981,29 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(194 + x_win, 110, "для Infusion Claw:", blue)
 	table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(194 + x_win, 121, "3 цифры адреса", red)
 	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "ред контроллера", red)
-	table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, "адрес не найден!", red)
+	if agpec_infusion_claw == 0 then
+		table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, "адрес не назначен", red)
+	else
+		table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, string.sub(agpec_infusion_claw, 1, 3), green)
+	end
+	table_form.nogcka3ka10 = MoHuTop_urpoka[nick].addText(194 + x_win, 188, "", red)
 
 	--настройки Infusion Claw
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 194 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
 	table_form.kHonka_Infusion_claw = creat_new_button(-1, nick, 194 + x_win, 161, 101, 15, "назначить", "Infusion_claw_button", true, blue, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка Infusion claw")
+		local Bce_agpeca_redStone = component.list("redstone")
+		local agpec_u3_texTBox = table_form.textBox_infusion_claw.caption.getText()
+		for agpec, _ in pairs(Bce_agpeca_redStone) do
+			if string.sub(agpec, 1, 3) == agpec_u3_texTBox then
+				agpec_infusion_claw = agpec
+				configuration[45] = agpec_infusion_claw
+				setConfiguration()
+				table_form.nogcka3ka10.setText(g .. "адрес переназначен!")
+				table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, string.sub(agpec_infusion_claw, 1, 3), green)
+				return
+			end
+		end
+		table_form.nogcka3ka10.setText(r .. "адрес не найден!")	
 	end)
 	--создание кнопки замены
 	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "заменить", "zaMeHa_button", true, blue, white, function()
@@ -10808,8 +10826,12 @@ do
 	else
 		urpoKu_gJI9l_oTo6paJeHu9l = configuration[42]
 	end
-	--конфигурация 43 занята (настройками способа приема сообщений алисой), юзай конфигурацию 45
-	
+	if configuration[45] == "nil" then
+		configuration[45] = agpec_infusion_claw
+		setConfiguration()
+	else
+		agpec_infusion_claw = configuration[45]
+	end
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
 	end

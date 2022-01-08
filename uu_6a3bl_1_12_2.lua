@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 логи матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "1 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -21,6 +21,8 @@ local qpopma_nepuMeTpa = {}
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
+local MaTpuca_akTuBHa = false
+local TekyLLlee_cocTo9lHue_MaTpucbl = ""
 local onoBeLLleHue_o_nocTopoHHux
 local x_onoBeLLleHue_o_nocTopoHHux = 100
 local y_onoBeLLleHue_o_nocTopoHHux = 1
@@ -1521,7 +1523,8 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local Bcero_ckpaqp4eHo = 0
 		local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
 		local HexBaTuJIo_acneKToB = {}
-		
+		MaTpuca_akTuBHa = true
+		TekyLLlee_cocTo9lHue_MaTpucbl = "выкладывание предметов"
 		--начло цикла крафта на матрице
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
 		for i = 1, koJIu4ecTBo do
@@ -1529,6 +1532,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			--выставить предметы на матрице
 			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 			if not pe3yJIbTaT_BblcTaBJIeHu9l or #HexBaTuJIo_acneKToB > 0 then
+				TekyLLlee_cocTo9lHue_MaTpucbl = "заказ исключен из очереди"
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
 				break
 			end
@@ -1537,15 +1541,18 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			--тыкнуть палкой по матрице или через Infusion claw, если он установлен
 			local infusion_claw_activate
 			if agpec_infusion_claw ~= 0 then
+			TekyLLlee_cocTo9lHue_MaTpucbl = "активация через Infusion Claw"
 				for cTopoHa = 0, 5 do
 					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
 				end
+				if not infusion_claw_activate then TekyLLlee_cocTo9lHue_MaTpucbl = "ошибка подачи сигнала редстоун" end
 			end
 			if infusion_claw_activate then
 				for cTopoHa = 0, 5 do
 					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
 				end
 			else
+				TekyLLlee_cocTo9lHue_MaTpucbl = "требуется ручная активация матрицы"
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 				computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 				coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
@@ -1553,11 +1560,13 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			
 			local Ta6JIuca_acnekToB = {}
 			--цикл ожидания старта матрицы
+			TekyLLlee_cocTo9lHue_MaTpucbl = "ожидание высасывания аспектов"
 			repeat
 				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 				if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then kraqpT_npepBaH = true end
 			until #Ta6JIuca_acnekToB > 0 or kraqpT_npepBaH
+			TekyLLlee_cocTo9lHue_MaTpucbl = "начало высасывания аспектов"
 			
 			if not kraqpT_npepBaH then
 				--цикл слежки за всасыванием аспектов в матрицу
@@ -1571,6 +1580,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "крафт прерван! причина:")
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
 						kraqpT_npepBaH = true
+						TekyLLlee_cocTo9lHue_MaTpucbl = "крафт прерван! центральный предмет снят с пьедестала"
 					end
 					Bce_acnekTbl_BblcoCaHbl = true
 					Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
@@ -1594,6 +1604,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				local ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 				if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
 					--цекл слежки за предметами, которые всасывает матрица
+					TekyLLlee_cocTo9lHue_MaTpucbl = "начало сбора предметов"
 					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
 					os.sleep(5)
 					local kpaqpT_3aBepllleH = false
@@ -1612,6 +1623,9 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						
 						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
 					until kpaqpT_3aBepllleH or kraqpT_npepBaH or #HexBaTuJIo_acneKToB > 0
+					if kpaqpT_3aBepllleH then TekyLLlee_cocTo9lHue_MaTpucbl = "крафт успешно завершен" end
+					if kraqpT_npepBaH then TekyLLlee_cocTo9lHue_MaTpucbl = "крафт прерван! центральный предмет снят с пьедестала" end
+					if #HexBaTuJIo_acneKToB > 0 then TekyLLlee_cocTo9lHue_MaTpucbl = "крафт прерван! отсутствует предмет" end
 				end
 			end
 			
@@ -1634,6 +1648,8 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		end
 		
 		--окончательные действия после крафта
+		MaTpuca_akTuBHa = false
+		TekyLLlee_cocTo9lHue_MaTpucbl = ""
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
 		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
 		coo6llleHue_OT_MaTpucbl = nil
@@ -3513,11 +3529,13 @@ function forms:creat_MaTpuca_form(nick)
 	--админские кнопки
 	if nick == admin then
 		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
+		table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
 		--table_form.HacTpouTb_nbegecTaJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить пьедестал", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"]() end)
 		--table_form.HacTpouTb_uHTepqpeuc = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить интерфейс", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"]() end)
 	end
 	
 	--кнопки тиммейтов
+	table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
 	table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица крафт"]() end)
 	table_form.cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние"]() end)
 	table_form.nepekJIl04uTb_cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переключить состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние переключить"]() end)
@@ -6840,13 +6858,8 @@ function forms:creat_cMeHa_npuopuTeTa_form(nick)
 	return table_form
 end
 function forms:creat_qpyJIJI_HacTpouka_form(nick)
+	--таблица направлений сторон пьедесталов
 	local Ta6JIuca_HanpaBJIeHuu = {}
-	-- ta6JIuca_cTopoH[0] = "снизу"
-	-- ta6JIuca_cTopoH[1] = "сверху"
-	-- ta6JIuca_cTopoH[2] = "север"
-	-- ta6JIuca_cTopoH[3] = "юг"
-	-- ta6JIuca_cTopoH[4] = "запад"
-	-- ta6JIuca_cTopoH[5] = "восток"
 	table.insert(Ta6JIuca_HanpaBJIeHuu, {0, 1})
 	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
 	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
@@ -7242,7 +7255,217 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	return table_form
 end
+function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
+	--таблица направлений сторон пьедесталов
+	local Ta6JIuca_HanpaBJIeHuu = {}
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {0, 1})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 5})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {4, 5})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {5, 4})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {5, 4})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {5, 4})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
+	table.insert(Ta6JIuca_HanpaBJIeHuu, {4, 5})
 
+	--создание формы
+	local table_form = {}
+	TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
+	TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
+	
+	npo4ue_qpopMbl[nick] = "TecTupoBaTb_MaTpucy"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 300, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 29, 172, white)
+	table_form.main_box2.setClickable(false)
+		
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
+	table_form.main_box3.setClickable(false)
+
+	--создание кнопок
+	local y = 15
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	local x_scrolla = 33
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(x_scrolla + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({x_scrolla + x_win + 5, 40}, {x_scrolla + x_win + 5, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(x_scrolla + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = 40
+	local y_min = start_no_y
+	local y_max = 192
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+	end
+	
+	--создание стрелок для рисования ГУИ
+	local obj = table_form.main_box
+	local HapucoBatb_cTpeJIku = function()
+		local x_cTpeJIku = 380
+		local y_cTpeJIku = 150
+		--перемещение панели
+		table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
+			obj.setY(obj.getY() - 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
+		end)
+		table_form.BBEpx.caption.setX(x_cTpeJIku + 21)
+		table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "down_button", true, black, white, function()
+			obj.setY(obj.getY() + 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
+		end)
+		table_form.BHu3.caption.setX(x_cTpeJIku + 21)
+		table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left_button", true, black, white, function()
+			obj.setX(obj.getX() - 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
+		end)
+		table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
+		table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "right_button", true, black, white, function()
+			obj.setX(obj.getX() + 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
+		end)
+		table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
+		--ширина и высота
+		table_form.MeHbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 30, 15, 15, "/\\", "h_min_button", true, black, white, function()
+			obj.setHeight(obj.getHeight() - 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
+		end)
+		table_form.MeHbLLle_h.caption.setX(x_cTpeJIku + 21)
+		table_form.boJIbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 50, 15, 15, "\\/", "h_max_button", true, black, white, function()
+			obj.setHeight(obj.getHeight() + 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
+		end)
+		table_form.boJIbLLle_h.caption.setX(x_cTpeJIku + 21)
+		table_form.MeHbLLle_w = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 40, 15, 15, "<", "w_min_button", true, black, white, function()
+			obj.setWidth(obj.getWidth() - 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
+		end)
+		table_form.MeHbLLle_w.caption.setX(x_cTpeJIku + 3)
+		table_form.boJIbLLle_w = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 40, 15, 15, ">", "w_max_button", true, black, white, function()
+			obj.setWidth(obj.getWidth() + 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
+		end)
+		table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
+	end
+	HapucoBatb_cTpeJIku(table_form.main_box3)
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+
+--forms:creat_TecTupoBaTb_MaTpucy_form
 function main_noTok(nick)
 	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()

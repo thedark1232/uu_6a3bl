@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "6 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1457,10 +1457,11 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
 		--перемещение центрального итема
 		--term.clear(); print("перемещение итема из слота " .. Heo6xoguMble_uTeMbl[1][1])
-		component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, Heo6xoguMble_uTeMbl[1][1], 1)
-		table.remove(Heo6xoguMble_uTeMbl, 1)
-		--io.read()
-		
+		if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then
+			component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, Heo6xoguMble_uTeMbl[1][1], 1)
+			table.remove(Heo6xoguMble_uTeMbl, 1)
+		end
+		--io.read()	
 		for HoMep_uTeMa, zHa4eHue in ipairs(Heo6xoguMble_uTeMbl) do
 			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
 				--term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()

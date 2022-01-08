@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обработка зон 9"
+local Ha3BaHue_o6HoBJIeHu9l = "настройка матирцы 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3465,7 +3465,7 @@ function forms:creat_MaTpuca_form(nick)
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить"]() end)
+		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
 		table_form.HacTpouTb_nbegecTaJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить пьедестал", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"]() end)
 		table_form.HacTpouTb_uHTepqpeuc = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить интерфейс", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"]() end)
 	end
@@ -6792,6 +6792,160 @@ function forms:creat_cMeHa_npuopuTeTa_form(nick)
 	
 	return table_form
 end
+function forms:creat_qpyJIJI_HacTpouka_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "qpyJIJI_HacTpouka"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_win = 1
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = 15
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+
+	--Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить"]()
+
+	--создание таблицы всех транспозеров
+	local agreca_Bcex_TraHcno3epoB = component.list("transposer")
+
+	for agpec_TpaHcno3epa, _ in pairs(agreca_Bcex_TraHcno3epoB) do
+		local cokpaLLleHblu_agpec = string.sub(agpec_TpaHcno3epa, 1, 3)
+		table_form[agpec_TpaHcno3epa] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, cokpaLLleHblu_agpec, "button", start_visible, black, white, function()
+			for agp, button in pairs(table_form) do
+				if string.sub(agp, 1, 3) == button.caption.getText() then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. agp)
+				end
+			end
+			
+		end)
+	end
+	
+	--table.insert(Ta6JIuca_nbegecTaJIoB, {HaugeHblu_agpec, cTopoHa_npueMHuk, cTopoHa_Bblga4u})
+		-- configuration[28] = Ta6JIuca_nbegecTaJIoB
+		-- configuration[29] = me_interface_gJI9l_MaTpucbl
+		-- configuration[30] = agrec_me_interface_gJI9l_MaTpucbl
+		-- setConfiguration()
+	
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {144 + x_win, 192}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = 40
+	local y_min = start_no_y
+	local y_max = 192
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+	end
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+
 
 function main_noTok(nick)
 	os.sleep(0.1)
@@ -7473,7 +7627,7 @@ do
 			if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
 			Ha3BaHue_6a3bl = coo6llleHue
 		else
-			Ha3BaHue_6a3bl = HoBoe_Ha3BaHue
+			Ha3BaHue_6a3bl = unicode.lower(HoBoe_Ha3BaHue)
 		end
 		
 		configuration[11] = Ha3BaHue_6a3bl
@@ -8251,7 +8405,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "воткни в алису плату беспроводной сети")
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. "тест отклика переключить"] = function() ----тестирование отклика алисы на команды чере чат
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тест отклика переключить"] = function() ----тестирование отклика алисы на команды чере чат
 		TecT_oTkJIuka = not TecT_oTkJIuka
 		if TecT_oTkJIuka then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. g .. "ВКЛ")
@@ -8259,7 +8413,7 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "тест отклика: " .. r .. "ВЫКЛ")
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. "тест отклика проверка всех сообщений переключить"] = function() ----тестирование отклика алисы на команды чере чат
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тест отклика проверка всех сообщений переключить"] = function() ----тестирование отклика алисы на команды чере чат
 		npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = not npoBepka_o6coJIl0THo_Bcex_coo6llleHuu
 		if npoBepka_o6coJIl0THo_Bcex_coo6llleHuu then
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "проверка обсолютно всех сообщений: " .. g .. "ВКЛ")

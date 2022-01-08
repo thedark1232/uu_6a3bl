@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "11 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "12 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6875,10 +6875,10 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 300, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 36, 50, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 50, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(50 + x_win, 36, 200, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(70 + x_win, 30, 200, 172, white)
 	table_form.main_box3.setClickable(false)
 	--создание кнопок
 	local y = 15

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "8 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "9 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2296,7 +2296,12 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить ии", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() end)
+		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить ии", "button", start_visible, gray, white, function()
+			table_form.destroy()
+			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
+			Bce_ragJeTbl_urpoka[nick].main_form = nil
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() 
+		end)
 		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отсутст. компон.", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
 		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тихий рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
 		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "13 настройка матирцы"
+local Ha3BaHue_o6HoBJIeHu9l = "14 настройка матирцы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2300,6 +2300,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 			table_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
+			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() 
 		end)
 		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отсутст. компон.", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
@@ -6875,11 +6876,11 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 300, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 22, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 40, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(50 + x_win, 30, 200, 172, white)
-	table_form.main_box3.setClickable(false)
+	--table_form.main_box3 = MoHuTop_urpoka[nick].addBox(50 + x_win, 30, 200, 172, white)
+	--table_form.main_box3.setClickable(false)
 	--создание кнопок
 	local y = 15
 	local y_func = function()
@@ -6927,11 +6928,11 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(41 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(50 + x_win, 30, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({46 + x_win, 40}, {46 + x_win, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({55 + x_win, 40}, {55 + x_win, 192}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(41 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(50 + x_win, 192, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
@@ -6948,7 +6949,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 41 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 50 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "6 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "7 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7388,10 +7388,12 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, y - 2, 101, 15, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	--чекбокс проверка номера рецепта
-	table_form.npoBepka_HoMepa_pecenTa_box = MoHuTop_urpoka[nick].addBox(6, 32, 10, 10, black)
+	table_form.npoBepka_HoMepa_pecenTa_box = MoHuTop_urpoka[nick].addBox(6, 32, 12, 12, black)
+	table_form.npoBepka_HoMepa_pecenTa_box.setClickable(false)
+	table_form.npoBepka_HoMepa_pecenTa_box = MoHuTop_urpoka[nick].addBox(7, 33, 10, 10, white)
 	table_form.npoBepka_HoMepa_pecenTa_box.setClickable(false)
 	
-	table_form.raJIo4ka =  MoHuTop_urpoka[nick].addText(70, 70, "✓ - проверка номера рецепта", black)
+	table_form.raJIo4ka =  MoHuTop_urpoka[nick].addText(20, 33, "✓ - проверка номера рецепта", black)
 	--✓
 	-- --создание каркаса скролла
 	-- local MakcuMyM_BuguMblx_kHonok
@@ -7421,7 +7423,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	-- end
 	
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.npoBepka_HoMepa_pecenTa_box
+	local obj = table_form.raJIo4ka
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150

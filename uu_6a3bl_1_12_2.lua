@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "14 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "15 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6929,8 +6929,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(194 + x_win, 66, "не выбран", red)
 	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_win, 77, 128, 15, "заменить", "zaMeHa_button", true, black, white, function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "замена адреса!")
-	end
-	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(194 + x_win, 93, "подсказка ошибки", red)
+	end)
+	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(194 + x_win, 93, "подсказка ошибки", red)
 	
 	
 	--открыть файл конфигурации

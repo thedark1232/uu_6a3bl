@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 крафт итема"
+local Ha3BaHue_o6HoBJIeHu9l = "5 крафт итема"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1402,8 +1402,8 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	--io.read()
 	
 	--поиск центрального передмета в сундуке
-	if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then 
-		local Heo6xoguMble_uTeMbl = {}
+	local Heo6xoguMble_uTeMbl = {}
+	if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then 	
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
 			--term.clear()
 			--print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)

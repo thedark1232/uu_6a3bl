@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "3 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3529,13 +3529,12 @@ function forms:creat_MaTpuca_form(nick)
 	--админские кнопки
 	if nick == admin then
 		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
-		table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
+		table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
 		--table_form.HacTpouTb_nbegecTaJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить пьедестал", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"]() end)
 		--table_form.HacTpouTb_uHTepqpeuc = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить интерфейс", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"]() end)
 	end
 	
 	--кнопки тиммейтов
-	table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
 	table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица крафт"]() end)
 	table_form.cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние"]() end)
 	table_form.nepekJIl04uTb_cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переключить состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние переключить"]() end)
@@ -7355,13 +7354,13 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 300, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 479, 250, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 29, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 476, 247, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
-	table_form.main_box3.setClickable(false)
+	--table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
+	--table_form.main_box3.setClickable(false)
 
 	--создание кнопок
 	local y = 15
@@ -7380,35 +7379,40 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	--создание каркаса скролла
-	local MakcuMyM_BuguMblx_kHonok
-	local x_scrolla = 33
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(x_scrolla + x_win, 30, 10, 10, gray)
-	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({x_scrolla + x_win + 5, 40}, {x_scrolla + x_win + 5, 192}, white)
-	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(x_scrolla + x_win, 192, 10, 10, gray)
-	table_form.scroll_badur_down.setClickable(false)
-	--определить количество кнопок для размера скролла
-	local Bcero_KHonok = num_button() - 1
-	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
-	--создание ползунка скролла
-	local start_no_y = 40
-	local y_min = start_no_y
-	local y_max = 192
-	local cgBur_ckpoJIJIa = 10
-	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	if y_pa3Mep < 10 then
-		y_pa3Mep = 10
-		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
-	end
+	--создание кнопки старта текста
+	table_form.start_TesTa = creat_new_button(1, nick, 150 + x_win, y - 2, 128, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
+		
+	end)
 	
-	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
-	end
+	-- --создание каркаса скролла
+	-- local MakcuMyM_BuguMblx_kHonok
+	-- local x_scrolla = 33
+	-- table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(x_scrolla + x_win, 30, 10, 10, gray)
+	-- table_form.scroll_badur_up.setClickable(false)
+	-- table_form.scroll_line = MoHuTop_urpoka[nick].addLine({x_scrolla + x_win + 5, 40}, {x_scrolla + x_win + 5, 192}, white)
+	-- table_form.scroll_line.setClickable(false)
+	-- table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(x_scrolla + x_win, 192, 10, 10, gray)
+	-- table_form.scroll_badur_down.setClickable(false)
+	-- --определить количество кнопок для размера скролла
+	-- local Bcero_KHonok = num_button() - 1
+	-- local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	-- --создание ползунка скролла
+	-- local start_no_y = 40
+	-- local y_min = start_no_y
+	-- local y_max = 192
+	-- local cgBur_ckpoJIJIa = 10
+	-- local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	-- if y_pa3Mep < 10 then
+		-- y_pa3Mep = 10
+		-- cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	-- end
+	
+	-- if ckpblTble_kHOnku > 0 then
+		-- table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+	-- end
 	
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.main_box
+	local obj = table_form.start_TesTa
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "12 пьедесталы"
+local Ha3BaHue_o6HoBJIeHu9l = "13 пьедесталы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6934,7 +6934,13 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	--северный пьедестал
 	table_form.ceBepHblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 75, 20, 20, "3", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
 		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 3
-		table_form.nogcka3ka2.setText(tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. tostring(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1]))
+		local Ha3Ha4eHHblu_agpec
+		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
+			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
+		else
+			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
+		end
+		table_form.nogcka3ka2.setText(tostring(c .. TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
 		obj = table_form.ceBepHblu_nbegecTaJi
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "3 пьедесталл")
 	end)

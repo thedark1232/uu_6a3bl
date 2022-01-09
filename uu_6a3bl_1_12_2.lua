@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "22 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "23 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7363,37 +7363,31 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	--table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
 	--table_form.main_box3.setClickable(false)
 
-	--создание кнопок
-	local y = 15
-	local y_func = function()
-		y = y + 17
-		return y
-	end
-	local num = 0
-	local start_visible = true
-	local num_button = function()
-		num = num + 1
-		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
-		return num
-	end
-	
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--текстбокс номера рецепта
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, y - 2, 101, 15, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
+	--создание чекбоксов
+	local x_box = 6
 	local y_box = 32
-	for i = 1, 10 do
-		table_form.npoBepka_HoMepa_pecenTa_box = MoHuTop_urpoka[nick].addBox(6, y_box, 12, 12, black)
-		table_form.npoBepka_HoMepa_pecenTa_box2 = MoHuTop_urpoka[nick].addBox(7, y_box + 1, 10, 10, white)
+	local y = y_box - 14
+	local y_func = function()
+		y = y + 12
+		return y
+	end
+	
+	for i = 1, 18 do
+		table_form.[i] = MoHuTop_urpoka[nick].addBox(x_box, y_box, 12, 12, black)
+		table_form.[i .. "c"] = MoHuTop_urpoka[nick].addBox(x_box + 1, y_box + 1, 10, 10, white)
 		y_box = y_box + 12
 	end
 	
 	--чекбокс проверка номера рецепта
-	table_form.npoBepka_HoMepa_pecenTa_text =  MoHuTop_urpoka[nick].addText(10, 34, "   - проверка номера рецепта", black)
-	table_form.MaTpuca_text = MoHuTop_urpoka[nick].addText(10, 46, "   - проверка доступа матрицы", black)
-	table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(10, 59, "   - проверка доступа матрицы", black)
+	table_form.Homep_pecenTa =  MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка номера рецепта", black)
+	table_form.gocTyn_k_MaTpuce = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка доступа матрицы", black)
+	table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка доступа матрицы", black)
 	
 	
 
@@ -7404,9 +7398,14 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 		if npoBepka_Ha_cuqppy(val, true, true, true) then
 			val = tonumber(val)
 			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then
-				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "X" .. r .. "  - проверка номера рецепта")
+				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "X" .. r .. table_form.npoBepka_HoMepa_pecenTa_text.getText())
 			else
-				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "✓" .. g .. "  - проверка номера рецепта")
+				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "✓" .. g .. table_form.npoBepka_HoMepa_pecenTa_text.getText())
+				if MaTpuca_cBo6ogHa then
+					table_form.gocTyn_k_MaTpuce.setText(b .. "X" .. r .. table_form.gocTyn_k_MaTpuce.getText())
+				else
+					table_form.gocTyn_k_MaTpuce.setText(b .. "✓" .. g .. table_form.gocTyn_k_MaTpuce.getText())
+				end
 			end
 		end
 	end)	

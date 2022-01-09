@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "2 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "3 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7347,11 +7347,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 361, 170, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 361, 204, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 355, 165, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 355, 174, white)
 	table_form.main_box2.setClickable(false)
 		
+	local obj = table_form.main_box2
 	--table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
 	--table_form.main_box3.setClickable(false)
 
@@ -7366,7 +7367,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local cMeLLleHue_no_y = 50
 	for cMeLLleHue_no_x = 1, 10 do
 		for cMeLLleHue_no_y = 1, 10 do
-			table_form[cMeLLleHue_no_x * cMeLLleHue_no_y] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "3", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+			table_form[cMeLLleHue_no_x * cMeLLleHue_no_y] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
 				obj = table_form[cMeLLleHue_no_x * cMeLLleHue_no_y]
 			end)
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 22
@@ -7375,7 +7376,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 	end
 
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.main_box2
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150

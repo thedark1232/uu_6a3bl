@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "25 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "27 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -14,10 +14,12 @@ local one_ceHcop_BKJI = false
 local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
+local nick_testera = ""
 local TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
 local TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 local Ta6JIuca_acnekToB
 local qpopma_nepuMeTpa = {}
+local qpopma_testa_MaTpucbl = {}
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
@@ -1532,6 +1534,13 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			local kraqpT_npepBaH = false
 			--выставить предметы на матрице
 			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
+			if qpopma_testa_MaTpucbl[nick_testera] then
+				if pe3yJIbTaT_BblcTaBJIeHu9l then
+					Bce_ragJeTbl_urpoka[nick].MaTpuca.npoBepka3_text.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick].MaTpuca.npoBepka3_text.getText())
+				else
+					Bce_ragJeTbl_urpoka[nick].MaTpuca.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick].MaTpuca.npoBepka3_text.getText())
+				end				
+			end
 			if not pe3yJIbTaT_BblcTaBJIeHu9l or #HexBaTuJIo_acneKToB > 0 then
 				TekyLLlee_cocTo9lHue_MaTpucbl = "заказ исключен из очереди"
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
@@ -7378,33 +7387,36 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 		return y
 	end
 	
-	for i = 1, 18 do
+	for i = 1, 17 do
 		table_form[i] = MoHuTop_urpoka[nick].addBox(x_box, y_box, 12, 12, black)
 		table_form[i .. "c"] = MoHuTop_urpoka[nick].addBox(x_box + 1, y_box + 1, 10, 10, white)
 		y_box = y_box + 12
 	end
 	
 	--чекбокс проверка номера рецепта
+	--(НЕ МЕНЯТЬ НАЗВАНИЯ КЛЮЧЕЙ В ТАБЛИЦЕ!! т.к. она связана с функцией крафтов на матрице)
 	table_form.Homep_pecenTa =  MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка номера рецепта", black)
 	table_form.gocTyn_k_MaTpuce = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка доступа матрицы", black)
-	table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка доступа матрицы", black)
-	
-	
-
-	
+	table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - расстановка предметов", black)
+		
 	--создание кнопки старта текста
-	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, y - 2, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
+	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, 15, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
 		local val = table_form.textBox_infusion_claw.caption.getText()
 		if npoBepka_Ha_cuqppy(val, true, true, true) then
 			val = tonumber(val)
 			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then
-				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "X" .. r .. table_form.npoBepka_HoMepa_pecenTa_text.getText())
+				table_form.Homep_pecenTa.setText(b .. "X" .. r .. table_form.Homep_pecenTa.getText())
 			else
-				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "✓" .. g .. table_form.npoBepka_HoMepa_pecenTa_text.getText())
+				table_form.Homep_pecenTa.setText(b .. "✓" .. g .. table_form.Homep_pecenTa.getText())
 				if MaTpuca_cBo6ogHa then
 					table_form.gocTyn_k_MaTpuce.setText(b .. "X" .. r .. table_form.gocTyn_k_MaTpuce.getText())
 				else
 					table_form.gocTyn_k_MaTpuce.setText(b .. "✓" .. g .. table_form.gocTyn_k_MaTpuce.getText())
+					nick_testera = nick
+					qpopma_testa_MaTpucbl[nick] = true
+					table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[val], 1})
+					configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
+					setConfiguration()
 				end
 			end
 		end
@@ -7548,6 +7560,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
 			qpopma_nepuMeTpa[nick] = false
+			qpopma_testa_MaTpucbl[nick] = false
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "5 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7367,7 +7367,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local cMeLLleHue_no_y = 50
 	for cMeLLleHue_no_x = 1, 10 do
 		for cMeLLleHue_no_y = 1, 10 do
-			table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y]) = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+			table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
 				obj = table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]
 			end)
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 22

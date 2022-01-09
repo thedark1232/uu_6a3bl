@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "54 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "55 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1477,8 +1477,6 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		return false, He_HaugeHHble_items
 	end
 end
-end
-
 function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
 	--копирование таблицы
 	local HegocTal0LLlue_npegMeTbl = {}

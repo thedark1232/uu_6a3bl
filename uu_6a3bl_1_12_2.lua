@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "15 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "16 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -35,7 +35,6 @@ local one_ceHcop_HoBble_urpoku = {}
 local admin = "The_Dark1232"
 local noTok_B_o4Kax = {}
 local Bce_noToku = {}
-local agpec_agMuH_MocTa = "123"
 local TecT_oTkJIuka = false
 local npoBepka_o6coJIl0THo_Bcex_coo6llleHuu = false
 local test_mod = false
@@ -65,6 +64,7 @@ local r = "§c" --красный
 local g = "§a" --зеленый
 local p = "§5" --фиолетовый тёмный
 local gr = "§7" -- серый светлый
+local b = "§0" --чёрный
 local Bepcu9l_uu_6a3bl = "0"
 local gpu = component.gpu
 local cocTo9lHue_noToka_MaTpucbl = ""
@@ -7386,9 +7386,9 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 		if npoBepka_Ha_cuqppy(val, true, true, true) then
 			val = tonumber(val)
 			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then
-				table_form.npoBepka_HoMepa_pecenTa_text.setText(r .. "X  - проверка номера рецепта")
+				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "X" .. r .. "  - проверка номера рецепта")
 			else
-				table_form.npoBepka_HoMepa_pecenTa_text.setText(g .. "✓  - проверка номера рецепта")
+				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "✓" .. g .. "  - проверка номера рецепта")
 			end
 		end
 	end)	
@@ -7401,8 +7401,8 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.npoBepka_HoMepa_pecenTa_text =  MoHuTop_urpoka[nick].addText(10, 34, "   - проверка номера рецепта", black)
 	
 	--чекбокс проверка состояния матрицы
-	table_form.MaTpuca_box = MoHuTop_urpoka[nick].addBox(6, 100, 12, 12, black)
-	table_form.MaTpuca_box2 = MoHuTop_urpoka[nick].addBox(7, 110, 10, 10, white)
+	--table_form.MaTpuca_box = MoHuTop_urpoka[nick].addBox(6, 100, 12, 12, black)
+	table_form.MaTpuca_box2 = MoHuTop_urpoka[nick].addBox(7, 110, 10, 10, black)
 	table_form.MaTpuca_box_text = MoHuTop_urpoka[nick].addText(10, 120, "   - проверка доступа матрицы", black)
 	
 	--✓

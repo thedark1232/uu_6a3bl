@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "56 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "57 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -11243,6 +11243,7 @@ do
 		local TekcT_gJI9l_BugJeToB = {}
 		cBeT_gJI9l_o4koB = {}
 		if detectorbl_BKJI then
+			onoBeLLleHue_o_nocTopoHHux.setText("")
 			KoorguHaTbl_ceJIu_TeppeJIu = {}
 			for k,v in pairs(ta6JIuca_geTekTopoB) do
 				local status_BblnoJIHeHu9l, Ta6JIuca_napameTpoB_urpokoB = pcall(component.invoke, k, "scanPlayers", 10000)
@@ -11265,7 +11266,6 @@ do
 							end
 							if anti_gy6JIuKaT_HuKOB[napaMeTpbl_urpoka.name] == nil then
 								Tekyllluu_cBeT = g
-								onoBeLLleHue_o_nocTopoHHux.setText("")
 								if whiteListUsers[napaMeTpbl_urpoka.name] == nil then
 									Tekyllluu_cBeT = r
 									onoBeLLleHue_o_nocTopoHHux.setText(r .. "НА БАЗЕ ПОСТОРОННИЕ!")

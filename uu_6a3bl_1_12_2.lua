@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "31 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "33 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1537,8 +1537,14 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.getText())
 				else
 					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.getText())
-				end				
+				end
+				if #HexBaTuJIo_acneKToB > 0 then
+					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.getText())
+				else
+					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.setText(b .. "X" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.getText())
+				end
 			end
+	
 			if not pe3yJIbTaT_BblcTaBJIeHu9l or #HexBaTuJIo_acneKToB > 0 then
 				TekyLLlee_cocTo9lHue_MaTpucbl = "заказ исключен из очереди"
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
@@ -1549,16 +1555,20 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			--тыкнуть палкой по матрице или через Infusion claw, если он установлен
 			local infusion_claw_activate
 			if agpec_infusion_claw ~= 0 then
-			TekyLLlee_cocTo9lHue_MaTpucbl = "активация через Infusion Claw"
+				TekyLLlee_cocTo9lHue_MaTpucbl = "активация через Infusion Claw"
 				for cTopoHa = 0, 5 do
 					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
 				end
-				if not infusion_claw_activate then TekyLLlee_cocTo9lHue_MaTpucbl = "ошибка подачи сигнала редстоун" end
+				if not infusion_claw_activate then
+					TekyLLlee_cocTo9lHue_MaTpucbl = "ошибка подачи сигнала редстоун"
+					if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
+				end
 			end
 			if infusion_claw_activate then
 				for cTopoHa = 0, 5 do
 					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
 				end
+				if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
 			else
 				TekyLLlee_cocTo9lHue_MaTpucbl = "требуется ручная активация матрицы"
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
@@ -7395,7 +7405,11 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.Homep_pecenTa =  MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка номера рецепта", black)
 	table_form.gocTyn_k_MaTpuce = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка доступа матрицы", black)
 	table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - расстановка предметов", black)
-		
+	table_form.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка аспектов", black)
+	table_form.noga4a_curHaJIa_MaTpuce = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - Infusion claw подача сигнала", black)
+	table_form.OLLlu6Ku_BblnoJIHeHu9l = MoHuTop_urpoka[nick].addText(x_box + 100, 34, "ОШИБКИ ВО ВРЕМЯ ВЫПОЛНЕНИЯ:", black)
+	
+	
 	--создание кнопки старта текста
 	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, 15, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
 		local val = table_form.textBox_infusion_claw.caption.getText()
@@ -7408,6 +7422,8 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 				if not MaTpuca_cBo6ogHa then
 					table_form.gocTyn_k_MaTpuce.setText(b .. "X" .. r .. table_form.gocTyn_k_MaTpuce.getText())
 				else
+					table_form.start_TesTa.setClickable(false)
+					table_form.start_TesTa.caption.setText("кнопка недоступна")
 					table_form.gocTyn_k_MaTpuce.setText(b .. "✓" .. g .. table_form.gocTyn_k_MaTpuce.getText())
 					nick_testera = nick
 					qpopma_testa_MaTpucbl[nick] = true

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "42 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "43 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1477,7 +1477,7 @@ end
 function nonoJIHuTb_HegocTal0LLlue_npegMeTbl(recept)
 	term.clear()
 	--проверка слотов пьедесталов по рецепту
-	for k, v in pairs(Ta6JIuca_npegMeToB) do
+	for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
 		print(k, v)
 	end
 end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "45 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "46 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1484,7 +1484,7 @@ function nonoJIHuTb_HegocTal0LLlue_npegMeTbl(recept)
 		--проверка слотов пьедесталов по рецепту
 		for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
 			for key, val in pairs(v) do
-				print(k .. ": " .. key .. " " .. val)
+				print(k .. ": № пьедестала: " .. val[1] .. " № предмета: " .. val[2])
 			end
 		end
 	end)

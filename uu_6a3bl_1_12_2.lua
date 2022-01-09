@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "63 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "64 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1519,141 +1519,128 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
 		local HexBaTuJIo_acneKToB = {}
 		local ycneLLLHoe_BblcTaBJIeHue
-		local ycneLLloe_go6aBJIeHue
+		local ycneLLloe_go6aBJIe
+		local kraqpT_npepBaH = false
+		local cTapToBle_cekyHgbl
+		local TekyLLlue_cekyHgbl
+		local npeBblLLleHO_BpeM9l_oJugaHu9l = false
 		--начло цикла крафта на матрице
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
 		for i = 1, koJIu4ecTBo do
-			local kraqpT_npepBaH = false
 			--выставить предметы на матрице
 			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
-			if qpopma_testa_MaTpucbl[nick_testera] then
-				if pe3yJIbTaT_BblcTaBJIeHu9l then
-					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.getText())
-				else
-					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.getText())
-				end
-			end
+			kraqpT_npepBaH = not pe3yJIbTaT_BblcTaBJIeHu9l  
 			
 			--тыкнуть палкой по матрице или через Infusion claw, если он установлен
-			local infusion_claw_activate
-			if agpec_infusion_claw ~= 0 then
-				for cTopoHa = 0, 5 do
-					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 0) end)
-				end
-				for cTopoHa = 0, 5 do
-					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
-				end
-				if not infusion_claw_activate then
-					if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
-				end
-			end
-			if infusion_claw_activate then
-				for cTopoHa = 0, 5 do
-					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 0) end)
-				end
-				if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
-			else
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
-				computer.beep(1000, 0.1); computer.beep(1000, 0.1)
-				coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
-				TblkHu_naJIkoU_no_MaTpuce.setText("ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
-			end
-			
-			local Ta6JIuca_acnekToB = {}
-			--цикл ожидания старта матрицы
-			repeat
-				os.sleep(2)
-				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
-				if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then kraqpT_npepBaH = true end
-			until #Ta6JIuca_acnekToB > 0 or kraqpT_npepBaH
-			TblkHu_naJIkoU_no_MaTpuce.setText("")
-			os.sleep(0.1)
-			
 			if not kraqpT_npepBaH then
-				--цикл слежки за всасыванием аспектов в матрицу
-				coo6llleHue_OT_MaTpucbl = nil
-				local Bce_acnekTbl_BblcoCaHbl = false
+				local infusion_claw_activate
+				if agpec_infusion_claw ~= 0 then
+					for cTopoHa = 0, 5 do
+						infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 0) end)
+					end
+					for cTopoHa = 0, 5 do
+						infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
+					end
+					if not infusion_claw_activate then
+						if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
+					end
+				end
+				if infusion_claw_activate then
+					for cTopoHa = 0, 5 do
+						infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 0) end)
+					end
+					if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
+					computer.beep(1000, 0.1); computer.beep(1000, 0.1)
+					coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
+					TblkHu_naJIkoU_no_MaTpuce.setText("ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
+				end
+				
 				local Ta6JIuca_acnekToB = {}
-				local Ta6JIuca_acnekToB_copTupoBka = {}
-				y6paTb_npegMeTbl_c_nbegecTaJIoB(false, true)
+				--цикл ожидания старта матрицы
+				_, _, _, cTapToBle_cekyHgbl = getTime()
+				cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + 60
+				os.sleep(2)
 				repeat
-					if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "крафт прерван! причина:")
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
-						kraqpT_npepBaH = true
-						--if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("") end
-						if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("предмет снят с центрального пьедестала") end
-					end
-					Bce_acnekTbl_BblcoCaHbl = true
-					Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
-					Ta6JIuca_acnekToB_copTupoBka = {}
-					for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
-						table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa})
-					end
-					table.sort(Ta6JIuca_acnekToB_copTupoBka, mySort)
-					coo6llleHue_OT_MaTpucbl = {}
-					for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
-						if tonumber(v[1]) <= 0 then
-							Bce_acnekTbl_BblcoCaHbl = true
-						else
-							Bce_acnekTbl_BblcoCaHbl = false
-						end
-						local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
-						table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
-					end
-					if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(c .. "   - ожидание высасывания аспектов") end
-					os.sleep(0)
-				until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH
-				if qpopma_testa_MaTpucbl[nick_testera] and Bce_acnekTbl_BblcoCaHbl then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(b .. "✓" .. g .. "   - все аспекты высосаны") end
-				ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
-				if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
-					--цекл слежки за предметами, которые всасывает матрица
-					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
-					os.sleep(5)
-					local kpaqpT_3aBepllleH = false
+					Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
+					if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then kraqpT_npepBaH = true end
+					_, _, _, TekyLLlue_cekyHgbl = getTime()
+					if TekyLLlue_cekyHgbl >= cTapToBle_cekyHgbl then npeBblLLleHO_BpeM9l_oJugaHu9l = true end
+					TblkHu_naJIkoU_no_MaTpuce.setText("ОЖИДАНИЕ СТАРТА МАТРИЦЫ: " .. tostring(cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl))
+					os.sleep(0.1)
+				until #Ta6JIuca_acnekToB > 0 or kraqpT_npepBaH or npeBblLLleHO_BpeM9l_oJugaHu9l
+				TblkHu_naJIkoU_no_MaTpuce.setText("")
+				os.sleep(0.1)
+				
+				if not kraqpT_npepBaH or not npeBblLLleHO_BpeM9l_oJugaHu9l then
+					--цикл слежки за всасыванием аспектов в матрицу
+					coo6llleHue_OT_MaTpucbl = nil
+					local Bce_acnekTbl_BblcoCaHbl = false
+					local Ta6JIuca_acnekToB = {}
+					local Ta6JIuca_acnekToB_copTupoBka = {}
+					y6paTb_npegMeTbl_c_nbegecTaJIoB(false, true)
 					repeat
-						os.sleep(0)
-						local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
-						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
-							kpaqpT_3aBepllleH = true
-							if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
-								Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
-								Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
-								setMathixRecepts()
+						if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "крафт прерван! причина:")
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
+							kraqpT_npepBaH = true
+							--if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("") end
+							if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("предмет снят с центрального пьедестала") end
+						end
+						Bce_acnekTbl_BblcoCaHbl = true
+						Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
+						Ta6JIuca_acnekToB_copTupoBka = {}
+						for Ha3BaHue_acnekTa, koJIu4ecTBo_acnekTa in pairs(Ta6JIuca_acnekToB) do
+							table.insert(Ta6JIuca_acnekToB_copTupoBka, {koJIu4ecTBo_acnekTa, Ha3BaHue_acnekTa})
+						end
+						table.sort(Ta6JIuca_acnekToB_copTupoBka, mySort)
+						coo6llleHue_OT_MaTpucbl = {}
+						for _, v in ipairs(Ta6JIuca_acnekToB_copTupoBka) do
+							if tonumber(v[1]) <= 0 then
+								Bce_acnekTbl_BblcoCaHbl = true
+							else
+								Bce_acnekTbl_BblcoCaHbl = false
 							end
+							local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
+							table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
 						end
-						HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
-						if #HexBaTuJIo_acneKToB > 0 then
-							ycneLLloe_go6aBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
-						end
-						
-						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
-					until kpaqpT_3aBepllleH or kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue
-					
-
-						-- if kpaqpT_3aBepllleH then
-							-- --Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(g .. "крафт успешно завершен")
-							-- Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт успешно завершен")
-						-- end
-						-- if kraqpT_npepBaH then
-							-- --Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "центральный предмет снят с пьедестала")
-							-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
-						-- end
-						-- if not ycneLLLHoe_BblcTaBJIeHue then
-							-- --Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "недостающие предметы не выставлены")
-							-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "предметы не выставлены перед сбором")
-						-- end
-						-- if not ycneLLloe_go6aBJIeHue then
-							-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "предметы не пополнены")
-						-- end
+						if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(c .. "   - ожидание высасывания аспектов") end
+						os.sleep(0.1)
+					until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH
+					if qpopma_testa_MaTpucbl[nick_testera] and Bce_acnekTbl_BblcoCaHbl then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(b .. "✓" .. g .. "   - все аспекты высосаны") end
+					ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
+					if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
+						--цекл слежки за предметами, которые всасывает матрица
+						coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
+						local kpaqpT_3aBepllleH = false
+						repeat
+							os.sleep(0.1)
+							local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
+							if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
+								kpaqpT_3aBepllleH = true
+								if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
+									Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
+									Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
+									setMathixRecepts()
+								end
+							end
+							HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
+							if #HexBaTuJIo_acneKToB > 0 then
+								ycneLLloe_go6aBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
+							end
+							
+							if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
+						until kpaqpT_3aBepllleH or kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue			
+					end
 				end
 			end
-			
 			
 			--действия перед следующим крафтом
 			print("kraqpT_npepBaH->", kraqpT_npepBaH)
 			print("not ycneLLLHoe_BblcTaBJIeHue->", not ycneLLLHoe_BblcTaBJIeHue)
 			print("not ycneLLloe_go6aBJIeHue->", not ycneLLloe_go6aBJIeHue)
+			print("npeBblLLleHO_BpeM9l_oJugaHu9l->", npeBblLLleHO_BpeM9l_oJugaHu9l)
 			
 			if kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue or not ycneLLloe_go6aBJIeHue then 
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ОШИБКА!")

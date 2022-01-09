@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "30 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "31 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1534,9 +1534,9 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 			if qpopma_testa_MaTpucbl[nick_testera] then
 				if pe3yJIbTaT_BblcTaBJIeHu9l then
-					Bce_ragJeTbl_urpoka[nick_testera].MaTpuca.npoBepka3_text.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].MaTpuca.npoBepka3_text.getText())
+					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.getText())
 				else
-					Bce_ragJeTbl_urpoka[nick_testera].MaTpuca.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick_testera].MaTpuca.npoBepka3_text.getText())
+					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.getText())
 				end				
 			end
 			if not pe3yJIbTaT_BblcTaBJIeHu9l or #HexBaTuJIo_acneKToB > 0 then

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "11 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "13 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6977,7 +6977,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 358, 172, white)
 	table_form.main_box3.setClickable(false)
 	
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({298 + x_win, 30}, {298 + x_win, 202}, gray)
+	table_form.pa3geJIuTeJIbHa9l_JIuHu9l = MoHuTop_urpoka[nick].addLine({298 + x_win, 30}, {298 + x_win, 202}, gray)
 	
 
 	--создание кнопок
@@ -7024,8 +7024,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(194 + x_win, 110, "для Infusion Claw:", blue)
 	table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(194 + x_win, 121, "3 цифры адреса", red)
 	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "ред контроллера", red)
-	table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(300 + x_win, 33, "ожидание клика:", red)
-	table_form.nogcka3ka10 = MoHuTop_urpoka[nick].addText(300 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
+	table_form.nogcka3ka13 = MoHuTop_urpoka[nick].addText(300 + x_win, 33, "ожидание клика:", red)
+	table_form.nogcka3ka14 = MoHuTop_urpoka[nick].addText(300 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
 	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 122, "ожидание аспектов", red)
 	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 133, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
 	
@@ -7063,7 +7063,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 			BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = tonumber(cuqppa_oJugaHue_kJIuka)
 			configuration[46] = BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa
 			setConfiguration()
-			table_form.nogcka3ka10.setText(g .. tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa))
+			table_form.nogcka3ka14.setText(g .. tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa))
 		end
 	end)
 	

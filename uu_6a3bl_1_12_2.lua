@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "37 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "38 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1648,9 +1648,12 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						
 						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
 					until kpaqpT_3aBepllleH or kraqpT_npepBaH or #HexBaTuJIo_acneKToB > 0
-					if kpaqpT_3aBepllleH then TekyLLlee_cocTo9lHue_MaTpucbl = "крафт успешно завершен" end
-					if kraqpT_npepBaH then TekyLLlee_cocTo9lHue_MaTpucbl = "крафт прерван! центральный предмет снят с пьедестала" end
-					if #HexBaTuJIo_acneKToB > 0 then TekyLLlee_cocTo9lHue_MaTpucbl = "крафт прерван! отсутствует предмет" end
+					if qpopma_testa_MaTpucbl[nick_testera] then
+						if kpaqpT_3aBepllleH then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(g .. "крафт успешно завершен") end
+						if kraqpT_npepBaH then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "центральный предмет снят с пьедестала") end
+						if #HexBaTuJIo_acneKToB > 0 then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "аспекты опять всасываются") end
+						if not ycneLLLHoe_BblcTaBJIeHue then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "предметы не выставлены") end
+					end
 				end
 			end
 			

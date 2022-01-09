@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "35 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "36 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1602,6 +1602,8 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
 						kraqpT_npepBaH = true
 						TekyLLlee_cocTo9lHue_MaTpucbl = "крафт прерван! центральный предмет снят с пьедестала"
+						--if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("") end
+						if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("предмет снят с центрального пьедестала") end
 					end
 					Bce_acnekTbl_BblcoCaHbl = true
 					Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
@@ -1620,8 +1622,10 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
 						table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
 					end
+					if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(c .. "   - ожидание высасывания аспектов") end
 					os.sleep(0)
 				until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH
+				if qpopma_testa_MaTpucbl[nick_testera] and Bce_acnekTbl_BblcoCaHbl then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(b .. "✓" .. g .. "   - все аспекты высосаны") end
 				local ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 				if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
 					--цекл слежки за предметами, которые всасывает матрица
@@ -7410,7 +7414,11 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - расстановка предметов", black)
 	table_form.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка аспектов", black)
 	table_form.noga4a_curHaJIa_MaTpuce = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - Infusion claw подача сигнала", black)
-	table_form.OLLlu6Ku_BblnoJIHeHu9l = MoHuTop_urpoka[nick].addText(x_box + 150, 34, "ОШИБКИ ВО ВРЕМЯ ВЫПОЛНЕНИЯ:", black)
+	table_form.OJugaHue_BblcacblBaHu9l_acnekToB = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - ожидание высасывания аспектов", black)
+	
+	
+	table_form.OLLlu6Ku_BblnoJIHeHu9l = MoHuTop_urpoka[nick].addText(200, 34, "ОШИБКИ ВО ВРЕМЯ ВЫПОЛНЕНИЯ:", black)
+	table_form.OLLlu6Ku_BblnoJIHeHu9l1 = MoHuTop_urpoka[nick].addText(200, 46, "", red)
 	
 	
 	--создание кнопки старта текста

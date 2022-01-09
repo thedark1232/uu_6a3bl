@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "40 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "41 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1390,7 +1390,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	local ocTaJIbHble_npegMeTbl_HaugeHbl = true
 	
 	--убрать предметы с пьедесталов в центральный сундук
-	if He_y6upaTb_npegMeTbl_nepeg_BblcTaBJIeHueM then y6paTb_npegMeTbl_c_nbegecTaJIoB(false, He_BblcTaBJI9lTb_ceHTpaJIbHblu) end
+	if not He_y6upaTb_npegMeTbl_nepeg_BblcTaBJIeHueM then y6paTb_npegMeTbl_c_nbegecTaJIoB(false, He_BblcTaBJI9lTb_ceHTpaJIbHblu) end
 	
 	--сбор информации о предметах в центральном сундуке
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. g .. recept.Ha3BaHue)

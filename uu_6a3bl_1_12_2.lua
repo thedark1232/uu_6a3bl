@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "50 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "51 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1493,7 +1493,7 @@ function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
 		if result then
 			if agr == nil then
 				print("на пьедестале: " .. HoMep_nbegecTaJIa)
-				print("отсутствует: " .. gaHHble_npegMeTa.id)
+				print("отсутствует: " .. gaHHble_npegMeTa.label)
 				table.insert(HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB, {HoMep_nbegecTaJIa, gaHHble_npegMeTa})
 			end
 		else

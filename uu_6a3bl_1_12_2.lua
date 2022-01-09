@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "60 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "61 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1506,6 +1506,8 @@ function BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 	if #HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB > 0 then
 		local ycneLLlHoe_BblcTaBJIeHue, HexBaTaeT_npegMeToB = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(HegocTal0LLlue_npegMeTbl, true, true)
 		return ycneLLlHoe_BblcTaBJIeHue, HexBaTaeT_npegMeToB
+	else
+		return true
 	end
 end
 
@@ -1563,6 +1565,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then kraqpT_npepBaH = true end
 			until #Ta6JIuca_acnekToB > 0 or kraqpT_npepBaH
 			TblkHu_naJIkoU_no_MaTpuce.setText("")
+			os.sleep(0.1)
 			
 			if not kraqpT_npepBaH then
 				--цикл слежки за всасыванием аспектов в матрицу
@@ -1620,7 +1623,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						end
 						HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 						if #HexBaTuJIo_acneKToB > 0 then
-							ycneLLLHoe_BblcTaBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
+							ycneLLloe_go6aBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 						end
 						
 						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end

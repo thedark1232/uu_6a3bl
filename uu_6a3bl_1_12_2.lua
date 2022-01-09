@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "61 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "62 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1630,26 +1630,30 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					until kpaqpT_3aBepllleH or kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue
 					
 
-						if kpaqpT_3aBepllleH then
-							--Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(g .. "крафт успешно завершен")
-							Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт успешно завершен")
-						end
-						if kraqpT_npepBaH then
-							--Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "центральный предмет снят с пьедестала")
-							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
-						end
-						if not ycneLLLHoe_BblcTaBJIeHue then
-							--Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "недостающие предметы не выставлены")
-							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "предметы не выставлены перед сбором")
-						end
-						if not ycneLLloe_go6aBJIeHue then
-							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "предметы не пополнены")
-						end
+						-- if kpaqpT_3aBepllleH then
+							-- --Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(g .. "крафт успешно завершен")
+							-- Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт успешно завершен")
+						-- end
+						-- if kraqpT_npepBaH then
+							-- --Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "центральный предмет снят с пьедестала")
+							-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
+						-- end
+						-- if not ycneLLLHoe_BblcTaBJIeHue then
+							-- --Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "недостающие предметы не выставлены")
+							-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "предметы не выставлены перед сбором")
+						-- end
+						-- if not ycneLLloe_go6aBJIeHue then
+							-- Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "предметы не пополнены")
+						-- end
 				end
 			end
 			
 			
 			--действия перед следующим крафтом
+			print("kraqpT_npepBaH->", kraqpT_npepBaH)
+			print("not ycneLLLHoe_BblcTaBJIeHue->", not ycneLLLHoe_BblcTaBJIeHue)
+			print("not ycneLLloe_go6aBJIeHue->", not ycneLLloe_go6aBJIeHue)
+			
 			if kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue or not ycneLLloe_go6aBJIeHue then 
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ОШИБКА!")
 			else

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "64 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "65 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1524,6 +1524,8 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local cTapToBle_cekyHgbl
 		local TekyLLlue_cekyHgbl
 		local npeBblLLleHO_BpeM9l_oJugaHu9l = false
+		
+		local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 10
 		--начло цикла крафта на матрице
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
 		for i = 1, koJIu4ecTBo do
@@ -1560,7 +1562,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				local Ta6JIuca_acnekToB = {}
 				--цикл ожидания старта матрицы
 				_, _, _, cTapToBle_cekyHgbl = getTime()
-				cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + 60
+				cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa
 				os.sleep(2)
 				repeat
 					Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
@@ -1573,7 +1575,8 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				TblkHu_naJIkoU_no_MaTpuce.setText("")
 				os.sleep(0.1)
 				
-				if not kraqpT_npepBaH or not npeBblLLleHO_BpeM9l_oJugaHu9l then
+				if npeBblLLleHO_BpeM9l_oJugaHu9l then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "превышено время ожидания") end
+				if not kraqpT_npepBaH and not npeBblLLleHO_BpeM9l_oJugaHu9l then
 					--цикл слежки за всасыванием аспектов в матрицу
 					coo6llleHue_OT_MaTpucbl = nil
 					local Bce_acnekTbl_BblcoCaHbl = false

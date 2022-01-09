@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "38 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "39 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1538,19 +1538,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				else
 					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.getText())
 				end
-				if #HexBaTuJIo_acneKToB > 0 then
-					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.setText(b .. "X" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.getText())
-				else
-					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.getText())
-				end
 			end
-	
-			if not pe3yJIbTaT_BblcTaBJIeHu9l or #HexBaTuJIo_acneKToB > 0 then
-				TekyLLlee_cocTo9lHue_MaTpucbl = "заказ исключен из очереди"
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "заказ исключен из очереди: " .. recept.Ha3BaHue)
-				break
-			end
-			HexBaTuJIo_acneKToB = {}
 			
 			--тыкнуть палкой по матрице или через Infusion claw, если он установлен
 			local infusion_claw_activate
@@ -1645,13 +1633,15 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 							end
 						end
 						HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
+						if #HexBaTuJIo_acneKToB > 0 then
+							ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
+						end
 						
 						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
-					until kpaqpT_3aBepllleH or kraqpT_npepBaH or #HexBaTuJIo_acneKToB > 0
+					until kpaqpT_3aBepllleH or kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue
 					if qpopma_testa_MaTpucbl[nick_testera] then
 						if kpaqpT_3aBepllleH then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(g .. "крафт успешно завершен") end
 						if kraqpT_npepBaH then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "центральный предмет снят с пьедестала") end
-						if #HexBaTuJIo_acneKToB > 0 then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "аспекты опять всасываются") end
 						if not ycneLLLHoe_BblcTaBJIeHue then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "предметы не выставлены") end
 					end
 				end

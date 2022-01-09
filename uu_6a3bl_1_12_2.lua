@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "53 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "54 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1397,7 +1397,22 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
 	end
 	
+	
 	local Heo6xoguMble_uTeMbl = {}
+	--поиск центрального передмета в сундуке
+	if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then
+		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
+			if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and tonumber(val[2].damage) == tonumber(recept.cTapToBblu_npegMeT_no_ceHTpy.damage) and val[2].size > 0 then
+				val[2].size = val[2].size - 1
+				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
+				Ha4aJIbHblu_npegMeT_HaugeH = true
+				break
+			end
+		end
+	else
+		Ha4aJIbHblu_npegMeT_HaugeH = true
+	end
+	
 	local He_HaugeHHble_items = {}
 	local npegMeT_HaugeH = false
 	--поиск предметов рецепта	
@@ -1421,8 +1436,13 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	end
 	
 	--окончательный результат
-	if ocTaJIbHble_npegMeTbl_HaugeHbl then
+	if Ha4aJIbHblu_npegMeT_HaugeH and ocTaJIbHble_npegMeTbl_HaugeHbl then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
+		--перемещение центрального итема
+		if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then
+			component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, Heo6xoguMble_uTeMbl[1][1], 1)
+			table.remove(Heo6xoguMble_uTeMbl, 1)
+		end
 		for HoMep_uTeMa, zHa4eHue in ipairs(Heo6xoguMble_uTeMbl) do
 			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
 				if k > 2 then
@@ -1456,6 +1476,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		end
 		return false, He_HaugeHHble_items
 	end
+end
 end
 
 function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "8 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "10 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6969,12 +6969,12 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 450, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 420, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 29, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 403, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 373, 172, white)
 	table_form.main_box3.setClickable(false)
 
 	--создание кнопок
@@ -7021,10 +7021,10 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(194 + x_win, 110, "для Infusion Claw:", blue)
 	table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(194 + x_win, 121, "3 цифры адреса", red)
 	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "ред контроллера", red)
-	table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 33, "ожидание клика:", red)
-	table_form.nogcka3ka10 = MoHuTop_urpoka[nick].addText(194 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
-	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(194 + x_win, 89, "ожидание аспектов", red)
-	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(194 + x_win, 100, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
+	table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(300 + x_win, 33, "ожидание клика:", red)
+	table_form.nogcka3ka10 = MoHuTop_urpoka[nick].addText(300 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
+	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 122, "ожидание аспектов", red)
+	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 133, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
 	
 	if agpec_infusion_claw == 0 then
 		table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, "адрес не назначен", red)
@@ -7052,8 +7052,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--настройки время ожидания клика по матрице
-	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 300 + x_win, 55, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka__oJugaHue_kJIuka = creat_new_button(-1, nick, 300 + x_win, 72, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
+	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 300 + x_win, 60, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka__oJugaHue_kJIuka = creat_new_button(-1, nick, 300 + x_win, 77, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
 		local cuqppa_oJugaHue_kJIuka = table_form.textBox_oJugaHue_kJIuka.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_kJIuka, true, false, true) then
 			BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = tonumber(cuqppa_oJugaHue_kJIuka)
@@ -7063,8 +7063,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--настройка времени ожидания высасывания аспектов
-	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 300 + x_win, 117, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka__oJugaHue_acnekToB = creat_new_button(-1, nick, 300 + x_win, 132, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
+	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 300 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka__oJugaHue_acnekToB = creat_new_button(-1, nick, 300 + x_win, 161, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
 		local cuqppa_oJugaHue_acnekToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_acnekToB, true, false, true) then
 			BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = tonumber(cuqppa_oJugaHue_acnekToB)

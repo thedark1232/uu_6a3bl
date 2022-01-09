@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "24 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "25 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7364,10 +7364,10 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	--table_form.main_box3.setClickable(false)
 
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, 5 + x_win, 15, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--текстбокс номера рецепта
-	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, y - 2, 101, 15, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
+	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, 15, 101, 15, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	--создание чекбоксов
 	local x_box = 6

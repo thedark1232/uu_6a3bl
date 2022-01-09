@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "14 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "15 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7405,10 +7405,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 		for cMeLLleHue_no_y = 1, 10 do
 			table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
 				obj = table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(cMeLLleHue_no_x + cMeLLleHue_no_y))
 			end)
-			cMeLLleHue_no_x = cMeLLleHue_no_x + 22
+			cMeLLleHue_no_x = cMeLLleHue_no_x + 50
 		end
-		cMeLLleHue_no_y = cMeLLleHue_no_y + 22
+		cMeLLleHue_no_y = cMeLLleHue_no_y + 50
 	end
 
 	--создание стрелок для рисования ГУИ

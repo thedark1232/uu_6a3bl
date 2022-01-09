@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "67 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "1 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -19,7 +19,6 @@ local TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
 local TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 local Ta6JIuca_acnekToB
 local qpopma_nepuMeTpa = {}
-local qpopma_testa_MaTpucbl = {}
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
@@ -707,6 +706,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 							   v.caption.getText() == "номер зоны" or
 							   v.caption.getText() == "новая позиция" or
 							   v.caption.getText() == "номер рецепта" or
+							   v.caption.getText() == "поиск" or
 							   v.caption.getText() == "ввод пароля" then v.caption.setText("") end
 							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
@@ -1510,7 +1510,6 @@ function BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 		return true
 	end
 end
-
 function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 	local re3yJIbTaT, olllu6ka = pcall(function()
 		local recept = o4epegb_kpaqpToB_Ha_MaTpuce[1][1]
@@ -1545,15 +1544,11 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					for cTopoHa = 0, 5 do
 						infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
 					end
-					if not infusion_claw_activate then
-						if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
-					end
 				end
 				if infusion_claw_activate then
 					for cTopoHa = 0, 5 do
 						infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 0) end)
 					end
-					if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
 				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 					computer.beep(1000, 0.1); computer.beep(1000, 0.1)
@@ -1597,7 +1592,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "крафт прерван! причина:")
 							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
 							kraqpT_npepBaH = true
-							if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("предмет снят с центрального пьедестала") end
 						end
 						Bce_acnekTbl_BblcoCaHbl = true
 						Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspectsSum()
@@ -1616,14 +1610,13 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 							local concatuHacu9l = v[2] .. " = " .. tostring(v[1])
 							table.insert(coo6llleHue_OT_MaTpucbl, concatuHacu9l)
 						end
-						if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(c .. "   - ожидание высасывания аспектов") end
 						os.sleep(0.1)
 					until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH or npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB
 					
 					TblkHu_naJIkoU_no_MaTpuce.setText("")
 					--цекл слежки за предметами, которые всасывает матрица
-					ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 					if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue and not npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB then
+						ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 						coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
 						local kpaqpT_3aBepllleH = false
 						repeat
@@ -3551,15 +3544,13 @@ function forms:creat_MaTpuca_form(nick)
 	--админские кнопки
 	if nick == admin then
 		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
-		table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
-		table_form.nonoJIHuTb_HegocTal0LLlue_npegMeTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест пополнения", "button", start_visible, gray, white, function() BblCTaBuTb_HegocTal0LLlue_npegMeTbl(Ta6JIuca_recenToB_Ha_MaTpuce[1]) end)
 		
 		--table_form.HacTpouTb_nbegecTaJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить пьедестал", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"]() end)
 		--table_form.HacTpouTb_uHTepqpeuc = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить интерфейс", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"]() end)
 	end
 	
 	--кнопки тиммейтов
-	table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица крафт"]() end)
+	table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick) end)
 	table_form.cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние"]() end)
 	table_form.nepekJIl04uTb_cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переключить состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние переключить"]() end)
 	table_form.o4epegb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очередь крафтов", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очередь"]() end)
@@ -7278,31 +7269,11 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	return table_form
 end
-function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
-	--таблица направлений сторон пьедесталов
-	local Ta6JIuca_HanpaBJIeHuu = {}
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {0, 1})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 5})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {4, 5})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {5, 4})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {5, 4})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {5, 4})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {3, 2})
-	table.insert(Ta6JIuca_HanpaBJIeHuu, {4, 5})
-
+function forms:creat_MaTpuca_craft_form(nick)
 	--создание формы
 	local table_form = {}
-	TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
-	TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 	
-	npo4ue_qpopMbl[nick] = "TecTupoBaTb_MaTpucy"
+	npo4ue_qpopMbl[nick] = "MaTpuca_craft"
 	--создание функции видимости окна
 	table_form.setVisible = function(visible)
 		for k, v in pairs(table_form) do
@@ -7390,94 +7361,23 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, 15, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--текстбокс номера рецепта
-	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, 15, 101, 14, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
+	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, 15, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
-	--создание чекбоксов
-	local x_box = 6
-	local y_box = 32
-	local y = y_box - 10
-	local y_func = function()
-		y = y + 12
-		return y
-	end
-	
-	for i = 1, 17 do
-		table_form[i] = MoHuTop_urpoka[nick].addBox(x_box, y_box, 12, 12, black)
-		table_form[i .. "c"] = MoHuTop_urpoka[nick].addBox(x_box + 1, y_box + 1, 10, 10, white)
-		y_box = y_box + 12
-	end
-	
-	--чекбокс проверка номера рецепта
-	--(НЕ МЕНЯТЬ НАЗВАНИЯ КЛЮЧЕЙ В ТАБЛИЦЕ!! т.к. она связана с функцией крафтов на матрице)
-	table_form.Homep_pecenTa =  MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка номера рецепта", black)
-	table_form.gocTyn_k_MaTpuce = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка доступа матрицы", black)
-	table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - расстановка предметов", black)
-	table_form.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка аспектов", black)
-	table_form.noga4a_curHaJIa_MaTpuce = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - Infusion claw подача сигнала", black)
-	table_form.OJugaHue_BblcacblBaHu9l_acnekToB = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - ожидание высасывания аспектов", black)
-	
-	
-	table_form.OLLlu6Ku_BblnoJIHeHu9l = MoHuTop_urpoka[nick].addText(200, 34, "ОШИБКИ ВО ВРЕМЯ ВЫПОЛНЕНИЯ:", black)
-	table_form.OLLlu6Ku_BblnoJIHeHu9l1 = MoHuTop_urpoka[nick].addText(200, 46, "", red)
-	
-	
-	--создание кнопки старта текста
-	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, 15, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
-		local val = table_form.textBox_infusion_claw.caption.getText()
-		if npoBepka_Ha_cuqppy(val, true, true, true) then
-			val = tonumber(val)
-			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then
-				table_form.Homep_pecenTa.setText(b .. "X" .. r .. "   - проверка номера рецепта")
-			else
-				table_form.Homep_pecenTa.setText(b .. "✓" .. g .."   - проверка номера рецепта")
-				if not MaTpuca_cBo6ogHa then
-					table_form.gocTyn_k_MaTpuce.setText(b .. "X" .. r .. table_form.gocTyn_k_MaTpuce.getText())
-				else
-					table_form.start_TesTa.setClickable(false)
-					table_form.start_TesTa.caption.setClickable(false)
-					table_form.start_TesTa.setVisible(false)
-					
-					table_form.gocTyn_k_MaTpuce.setText(b .. "✓" .. g .. table_form.gocTyn_k_MaTpuce.getText())
-					nick_testera = nick
-					qpopma_testa_MaTpucbl[nick] = true
-					table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[val], 1})
-					configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
-					setConfiguration()
-				end
-			end
+	--создание ячеек предметов
+	local cMeLLleHue_no_x = 22
+	local cMeLLleHue_no_y = 22
+	for cMeLLleHue_no_x = 1, 10 do
+		for cMeLLleHue_no_y = 1, 10 do
+			table_form[{}] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "3", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+				obj = table_form[i]
+			end)
+			cMeLLleHue_no_x = cMeLLleHue_no_x + 22
 		end
-	end)	
-	
-	--✓
-	-- --создание каркаса скролла
-	-- local MakcuMyM_BuguMblx_kHonok
-	-- local x_scrolla = 33
-	-- table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(x_scrolla + x_win, 30, 10, 10, gray)
-	-- table_form.scroll_badur_up.setClickable(false)
-	-- table_form.scroll_line = MoHuTop_urpoka[nick].addLine({x_scrolla + x_win + 5, 40}, {x_scrolla + x_win + 5, 192}, white)
-	-- table_form.scroll_line.setClickable(false)
-	-- table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(x_scrolla + x_win, 192, 10, 10, gray)
-	-- table_form.scroll_badur_down.setClickable(false)
-	-- --определить количество кнопок для размера скролла
-	-- local Bcero_KHonok = num_button() - 1
-	-- local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
-	-- --создание ползунка скролла
-	-- local start_no_y = 40
-	-- local y_min = start_no_y
-	-- local y_max = 192
-	-- local cgBur_ckpoJIJIa = 10
-	-- local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	-- if y_pa3Mep < 10 then
-		-- y_pa3Mep = 10
-		-- cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
-	-- end
-	
-	-- if ckpblTble_kHOnku > 0 then
-		-- table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
-	-- end
-	
+		cMeLLleHue_no_y = cMeLLleHue_no_y + 22
+	end
+
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.OLLlu6Ku_BblnoJIHeHu9l
+	local obj = table_form.main_box2
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150
@@ -7534,7 +7434,6 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	return table_form
 end
 
---forms:creat_TecTupoBaTb_MaTpucy_form
 function main_noTok(nick)
 	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
@@ -7586,7 +7485,6 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
 			qpopma_nepuMeTpa[nick] = false
-			qpopma_testa_MaTpucbl[nick] = false
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil

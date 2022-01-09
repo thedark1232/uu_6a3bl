@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "33 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "35 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1539,9 +1539,9 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.npoBepka3_text.getText())
 				end
 				if #HexBaTuJIo_acneKToB > 0 then
-					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.getText())
-				else
 					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.setText(b .. "X" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.getText())
+				else
+					Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa.getText())
 				end
 			end
 	
@@ -1557,6 +1557,9 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			if agpec_infusion_claw ~= 0 then
 				TekyLLlee_cocTo9lHue_MaTpucbl = "активация через Infusion Claw"
 				for cTopoHa = 0, 5 do
+					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 0) end)
+				end
+				for cTopoHa = 0, 5 do
 					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
 				end
 				if not infusion_claw_activate then
@@ -1566,7 +1569,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			end
 			if infusion_claw_activate then
 				for cTopoHa = 0, 5 do
-					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
+					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 0) end)
 				end
 				if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
 			else
@@ -7407,7 +7410,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - расстановка предметов", black)
 	table_form.HexBaTuJIo_acneKToB_c_npegblgyLLlego_kpaqpTa = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - проверка аспектов", black)
 	table_form.noga4a_curHaJIa_MaTpuce = MoHuTop_urpoka[nick].addText(x_box + 4, y_func(), "   - Infusion claw подача сигнала", black)
-	table_form.OLLlu6Ku_BblnoJIHeHu9l = MoHuTop_urpoka[nick].addText(x_box + 100, 34, "ОШИБКИ ВО ВРЕМЯ ВЫПОЛНЕНИЯ:", black)
+	table_form.OLLlu6Ku_BblnoJIHeHu9l = MoHuTop_urpoka[nick].addText(x_box + 150, 34, "ОШИБКИ ВО ВРЕМЯ ВЫПОЛНЕНИЯ:", black)
 	
 	
 	--создание кнопки старта текста
@@ -7423,7 +7426,9 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 					table_form.gocTyn_k_MaTpuce.setText(b .. "X" .. r .. table_form.gocTyn_k_MaTpuce.getText())
 				else
 					table_form.start_TesTa.setClickable(false)
-					table_form.start_TesTa.caption.setText("кнопка недоступна")
+					table_form.start_TesTa.caption.setClickable(false)
+					table_form.setVisible(false)
+					
 					table_form.gocTyn_k_MaTpuce.setText(b .. "✓" .. g .. table_form.gocTyn_k_MaTpuce.getText())
 					nick_testera = nick
 					qpopma_testa_MaTpucbl[nick] = true
@@ -7464,7 +7469,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	-- end
 	
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.Homep_pecenTa
+	local obj = table_form.OLLlu6Ku_BblnoJIHeHu9l
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150

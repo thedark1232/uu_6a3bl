@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "52 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "53 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1379,10 +1379,6 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u, He_y6upaT
 	end
 end
 function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIbHblu, He_y6upaTb_npegMeTbl_nepeg_BblcTaBJIeHueM)	
-	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
-	-- ["Ha3BaHue"] = coo6llleHue,
-	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
-	-- ["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB
 	local transposer = Ta6JIuca_nbegecTaJIoB[1][1]
 	local cTopoHa_npueMHuk = Ta6JIuca_nbegecTaJIoB[1][3]
 	local cTopoHa_Bblga4u = Ta6JIuca_nbegecTaJIoB[1][2]
@@ -1401,6 +1397,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
 	end
 	
+	local Heo6xoguMble_uTeMbl = {}
 	local He_HaugeHHble_items = {}
 	local npegMeT_HaugeH = false
 	--поиск предметов рецепта	
@@ -1428,30 +1425,16 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
 		for HoMep_uTeMa, zHa4eHue in ipairs(Heo6xoguMble_uTeMbl) do
 			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
-				--term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()
 				if k > 2 then
-					--io.write("пьедестал номер " .. k .. " совпадает с номером по рецепту " .. recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1] .. " "); print(k == recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1]); io.read()
 					local transposer = cBoucTBo_nbegecTaJIa[1]
 					local cTopoHa_npueMHuk = cBoucTBo_nbegecTaJIa[2]
 					local cTopoHa_Bblga4u = cBoucTBo_nbegecTaJIa[3]
 					local HoMep_cJIoTa_itema
 					if k == recept.Ta6JIuca_npegMeToB[HoMep_uTeMa][1] then
-						-- term.clear()
-						-- print("переместить предмет через транспозер")
-						-- print("адрес: " .. string.sub(transposer, 1, 3))
-						-- print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на пьедестал")
-						-- print("вытянуть из слота под номером: " .. tostring(1) .. " " .. zHa4eHue[2].label)
 						component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, o6paTHa9l_Ta6JIuca_cTopoH["сверху"], 1, 1, 1)
-						--io.read()
 						break
 					end
 					if k == 3 then HoMep_cJIoTa_itema = zHa4eHue[1] else HoMep_cJIoTa_itema = 1 end
-					-- term.clear()
-					-- print("переместить предмет через транспозер")
-					-- print("адрес: " .. string.sub(transposer, 1, 3))
-					-- print("с " .. ta6JIuca_cTopoH[cTopoHa_npueMHuk] .. "а на " .. ta6JIuca_cTopoH[cTopoHa_Bblga4u])
-					-- print("вытянуть из слота под номером: " .. tostring(HoMep_cJIoTa_itema) .. " " .. zHa4eHue[2].label)
-					-- io.read()
 					component.invoke(transposer, "transferItem", cTopoHa_npueMHuk, cTopoHa_Bblga4u, 1, HoMep_cJIoTa_itema, 1)
 				end
 			end
@@ -1474,6 +1457,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		return false, He_HaugeHHble_items
 	end
 end
+
 function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
 	--копирование таблицы
 	local HegocTal0LLlue_npegMeTbl = {}
@@ -1491,7 +1475,7 @@ function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
 		local gaHHble_npegMeTa = v[2]
 		local result, arg = pcall(function() return component.invoke(agpec_nbegecTaJIa, "getStackInSlot", 1, 1) end)
 		if result then
-			if agr == nil then
+			if arg == nil then
 				print("на пьедестале: " .. HoMep_nbegecTaJIa)
 				print("отсутствует: " .. gaHHble_npegMeTa.label)
 				table.insert(HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB, {HoMep_nbegecTaJIa, gaHHble_npegMeTa})

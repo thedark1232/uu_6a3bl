@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "13 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "14 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1615,28 +1615,30 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					
 					TblkHu_naJIkoU_no_MaTpuce.setText("")
 					--цекл слежки за предметами, которые всасывает матрица
-					if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue and not npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB then
+					if not kraqpT_npepBaH and not npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB then
 						ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
-						coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
-						local kpaqpT_3aBepllleH = false
-						repeat
-							os.sleep(0.1)
-							local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
-							if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
-								kpaqpT_3aBepllleH = true
-								if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
-									Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
-									Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
-									setMathixRecepts()
+						if ycneLLLHoe_BblcTaBJIeHue then
+							coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
+							local kpaqpT_3aBepllleH = false
+							repeat
+								os.sleep(0.1)
+								local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
+								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
+									kpaqpT_3aBepllleH = true
+									if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
+										Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
+										Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
+										setMathixRecepts()
+									end
 								end
-							end
-							HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
-							if #HexBaTuJIo_acneKToB > 0 then
-								ycneLLloe_go6aBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
-							end
-							
-							if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
-						until kpaqpT_3aBepllleH or kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue			
+								HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
+								if #HexBaTuJIo_acneKToB > 0 then
+									ycneLLloe_go6aBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
+								end
+								
+								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
+							until kpaqpT_3aBepllleH or kraqpT_npepBaH			
+						end
 					end
 				end
 			end

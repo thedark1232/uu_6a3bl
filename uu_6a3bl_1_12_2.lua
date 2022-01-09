@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "6 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -15,6 +15,8 @@ local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
+local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 60
+local BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = 60
 local TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
 local TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 local Ta6JIuca_acnekToB
@@ -1525,8 +1527,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local npeBblLLleHO_BpeM9l_oJugaHu9l_akTuBacuu_MaTpucbl = false
 		local npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = false
 		
-		local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 10
-		local BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = 5
 		--начло цикла крафта на матрице
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
 		for i = 1, koJIu4ecTBo do
@@ -6969,12 +6969,12 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 300, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 350, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 29, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 303, 172, white)
 	table_form.main_box3.setClickable(false)
 
 	--создание кнопок
@@ -7045,6 +7045,29 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		end
 		table_form.nogcka3ka10.setText(r .. "адрес не найден!")	
 	end)
+	
+	--настройки время ожидания клика по матрице
+	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 295 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka__oJugaHue_kJIuka = creat_new_button(-1, nick, 295 + x_win, 161, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
+		local cuqppa_oJugaHue_kJIuka = table_form.textBox_oJugaHue_kJIuka.caption.getText()
+		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_kJIuka, true, false, true)
+			BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = tonumber(cuqppa_oJugaHue_kJIuka)
+			configuration[46] = BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa
+			setConfiguration()
+		end
+	end)
+	
+	--настройка времени ожидания высасывания аспектов
+	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 295 + x_win, 170, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka__oJugaHue_acnekToB = creat_new_button(-1, nick, 295 + x_win, 185, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
+		local cuqppa_oJugaHue_acnekToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
+		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_acnekToB, true, false, true)
+			BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = tonumber(cuqppa_oJugaHue_acnekToB)
+			configuration[47] = BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB
+			setConfiguration()
+		end
+	end)
+
 	--создание кнопки замены
 	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "заменить", "zaMeHa_button", true, blue, white, function()
 		if TekyLLluu_Bbl6paHHblu_nbegecTaJI == 0 then
@@ -11036,6 +11059,19 @@ do
 	else
 		agpec_infusion_claw = configuration[45]
 	end
+	if configuration[46] == "nil" then
+		configuration[46] = BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa
+		setConfiguration()
+	else
+		BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = configuration[46]
+	end
+	if configuration[47] == "nil" then
+		configuration[47] = BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB
+		setConfiguration()
+	else
+		BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = configuration[47]
+	end
+	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
 	end

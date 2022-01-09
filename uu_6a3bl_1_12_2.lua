@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "41 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "42 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1396,38 +1396,9 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. g .. recept.Ha3BaHue)
 	local Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe = {}
 	local Bcero_cJIoToB_B_cyHgyke = component.invoke(transposer, "getInventorySize", cTopoHa_Bblga4u)
-	--term.clear(); io.write("всего слотов в сундуке = "); print(Bcero_cJIoToB_B_cyHgyke)
-	--io.read()
 	for i = 1, Bcero_cJIoToB_B_cyHgyke do
 		local cJIegyl0llluu_uTem = component.invoke(transposer, "getStackInSlot", cTopoHa_Bblga4u, i)
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
-	end
-	--term.clear()
-	--print("найденные предметы в сундуке")
-	-- for k, v in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-		-- print(k, v[1], v[2])
-	-- end
-	--io.read()
-	
-	--поиск центрального передмета в сундуке
-	local Heo6xoguMble_uTeMbl = {}
-	if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then 	
-		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-			--term.clear()
-			--print("сравнение предмета: " .. val[2].name .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.name)
-			--print("сравнение дамага: " ..  val[2].damage .. " " .. recept.cTapToBblu_npegMeT_no_ceHTpy.damage)
-			if val[2].name == recept.cTapToBblu_npegMeT_no_ceHTpy.name and tonumber(val[2].damage) == tonumber(recept.cTapToBblu_npegMeT_no_ceHTpy.damage) and val[2].size > 0 then
-				val[2].size = val[2].size - 1
-				--print("количество предметов оставшихся в " .. val[1] .. " слоте")
-				--print(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe[key][2].size)
-				--io.read()
-				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
-				Ha4aJIbHblu_npegMeT_HaugeH = true
-				break
-			end
-		end
-	else
-		Ha4aJIbHblu_npegMeT_HaugeH = true
 	end
 	
 	local He_HaugeHHble_items = {}
@@ -1436,15 +1407,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	for k, v in ipairs(recept.Ta6JIuca_npegMeToB) do
 		npegMeT_HaugeH = false
 		for key, val in ipairs(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe) do
-			--term.clear()
-			--print("всего итемов в сундуке для проверки: " .. #Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe)
-			--io.write("сравнение предмета в сундуке : " .. val[2].name .. " == " .. v[2].name .. " "); print(v[2].name == val[2].name)
-			--io.write("сравнение дамага в сундуке : " ..  val[2].damage .. " == " ..v[2].damage .. " "); print(tonumber(v[2].damage) == tonumber(val[2].damage))
-			--io.write("сравнение количества в сундуке : " ..  val[2].size .. " >= " .. v[2].size .. " "); print(tonumber(val[2].size) >= tonumber(v[2].size))
-			--io.read()
 			if v[2].name == val[2].name and tonumber(v[2].damage) == tonumber(val[2].damage) and tonumber(val[2].size) >= tonumber(v[2].size) then
-				--print("найдено соответствие")
-				--io.read()
 				table.insert(Heo6xoguMble_uTeMbl, {val[1], val[2]})
 				npegMeT_HaugeH = true
 				val[2].size = val[2].size - 1
@@ -1461,15 +1424,8 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	end
 	
 	--окончательный результат
-	if Ha4aJIbHblu_npegMeT_HaugeH and ocTaJIbHble_npegMeTbl_HaugeHbl then
+	if ocTaJIbHble_npegMeTbl_HaugeHbl then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
-		--перемещение центрального итема
-		--term.clear(); print("перемещение итема из слота " .. Heo6xoguMble_uTeMbl[1][1])
-		if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then
-			component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, Heo6xoguMble_uTeMbl[1][1], 1)
-			table.remove(Heo6xoguMble_uTeMbl, 1)
-		end
-		--io.read()	
 		for HoMep_uTeMa, zHa4eHue in ipairs(Heo6xoguMble_uTeMbl) do
 			for k, cBoucTBo_nbegecTaJIa in ipairs(Ta6JIuca_nbegecTaJIoB) do
 				--term.clear(); io.write("если номер пьедестала " .. k .. " больше 2 "); print(k > 2); io.read()
@@ -1518,6 +1474,14 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		return false, He_HaugeHHble_items
 	end
 end
+function nonoJIHuTb_HegocTal0LLlue_npegMeTbl(recept)
+	term.clear()
+	--проверка слотов пьедесталов по рецепту
+	for k, v in pairs(Ta6JIuca_npegMeToB) do
+		print(k, v)
+	end
+end
+
 function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 	local re3yJIbTaT, olllu6ka = pcall(function()
 		local recept = o4epegb_kpaqpToB_Ha_MaTpuce[1][1]
@@ -3547,6 +3511,8 @@ function forms:creat_MaTpuca_form(nick)
 	if nick == admin then
 		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
 		table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
+		table_form.nonoJIHuTb_HegocTal0LLlue_npegMeTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест пополнения", "button", start_visible, gray, white, function() nonoJIHuTb_HegocTal0LLlue_npegMeTbl(Ta6JIuca_recenToB_Ha_MaTpuce[1]) end)
+		
 		--table_form.HacTpouTb_nbegecTaJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить пьедестал", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"]() end)
 		--table_form.HacTpouTb_uHTepqpeuc = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить интерфейс", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"]() end)
 	end

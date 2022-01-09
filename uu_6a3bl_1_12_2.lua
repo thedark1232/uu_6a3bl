@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "62 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "63 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1496,7 +1496,7 @@ function BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 		if result then
 			if arg == nil then
 				--print("на пьедестале: " .. HoMep_nbegecTaJIa)
-				print("отсутствует: " .. gaHHble_npegMeTa.label)
+				--print("отсутствует: " .. gaHHble_npegMeTa.label)
 				table.insert(HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB, {HoMep_nbegecTaJIa, gaHHble_npegMeTa})
 			end
 		else
@@ -1518,6 +1518,8 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local Bcero_ckpaqp4eHo = 0
 		local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
 		local HexBaTuJIo_acneKToB = {}
+		local ycneLLLHoe_BblcTaBJIeHue
+		local ycneLLloe_go6aBJIeHue
 		--начло цикла крафта на матрице
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
 		for i = 1, koJIu4ecTBo do
@@ -1603,8 +1605,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					os.sleep(0)
 				until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH
 				if qpopma_testa_MaTpucbl[nick_testera] and Bce_acnekTbl_BblcoCaHbl then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(b .. "✓" .. g .. "   - все аспекты высосаны") end
-				local ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
-				local ycneLLloe_go6aBJIeHue
+				ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 				if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
 					--цекл слежки за предметами, которые всасывает матрица
 					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}

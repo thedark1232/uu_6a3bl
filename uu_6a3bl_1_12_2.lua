@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "58 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "59 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -24,6 +24,7 @@ local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
 local onoBeLLleHue_o_nocTopoHHux
+local TblkHu_naJIkoU_no_MaTpuce
 local x_onoBeLLleHue_o_nocTopoHHux = 100
 local y_onoBeLLleHue_o_nocTopoHHux = 1
 local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = {}
@@ -1516,7 +1517,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
 		local HexBaTuJIo_acneKToB = {}
 		--начло цикла крафта на матрице
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
 		for i = 1, koJIu4ecTBo do
 			local kraqpT_npepBaH = false
 			--выставить предметы на матрице
@@ -1551,6 +1552,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 				computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 				coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
+				TblkHu_naJIkoU_no_MaTpuce.setText("ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 			end
 			
 			local Ta6JIuca_acnekToB = {}
@@ -1560,6 +1562,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 				if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then kraqpT_npepBaH = true end
 			until #Ta6JIuca_acnekToB > 0 or kraqpT_npepBaH
+			TblkHu_naJIkoU_no_MaTpuce.setText("")
 			
 			if not kraqpT_npepBaH then
 				--цикл слежки за всасыванием аспектов в матрицу
@@ -11246,6 +11249,7 @@ do
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
 		onoBeLLleHue_o_nocTopoHHux = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux, "", red)
+		TblkHu_naJIkoU_no_MaTpuce = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux + 10, "", red)
 	end
 	
 	

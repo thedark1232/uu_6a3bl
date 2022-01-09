@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "7 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "8 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7382,18 +7382,29 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	
 	--создание кнопки старта текста
 	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, y - 2, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начало теста")
+		local val = table_form.npoBepka_HoMepa_pecenTa_text.getText()
+		if npoBepka_Ha_cuqppy(val, true true, true) then
+			val = tonumber(val)
+			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then
+				table_form.npoBepka_HoMepa_pecenTa_text.setText(r .. "X  - проверка номера рецепта")
+			else
+				table_form.npoBepka_HoMepa_pecenTa_text.setText(g .. "✓  - проверка номера рецепта")
+			end
+		end
 	end)	
 	--текстбокс номера рецепта
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, y - 2, 101, 15, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	--чекбокс проверка номера рецепта
 	table_form.npoBepka_HoMepa_pecenTa_box = MoHuTop_urpoka[nick].addBox(6, 32, 12, 12, black)
-	table_form.npoBepka_HoMepa_pecenTa_box.setClickable(false)
-	table_form.npoBepka_HoMepa_pecenTa_box = MoHuTop_urpoka[nick].addBox(7, 33, 10, 10, white)
-	table_form.npoBepka_HoMepa_pecenTa_box.setClickable(false)
+	table_form.npoBepka_HoMepa_pecenTa_box2 = MoHuTop_urpoka[nick].addBox(7, 33, 10, 10, white)
+	table_form.npoBepka_HoMepa_pecenTa_text =  MoHuTop_urpoka[nick].addText(9, 34, "  - проверка номера рецепта", black)
 	
-	table_form.raJIo4ka =  MoHuTop_urpoka[nick].addText(20, 33, "✓ - проверка номера рецепта", black)
+	--чекбокс проверка состояния матрицы
+	table_form.npoBepka_cocTo9lHu9l_MaTpucbl_box = MoHuTop_urpoka[nick].addBox(6, 32, 12, 12, black)
+	table_form.npoBepka_cocTo9lHu9l_MaTpucbl_box2 = MoHuTop_urpoka[nick].addBox(7, 33, 10, 10, white)
+	table_form.npoBepka_cocTo9lHu9l_MaTpucbl_text =  MoHuTop_urpoka[nick].addText(9, 34, "  - проверка доступа матрицы", black)
+	
 	--✓
 	-- --создание каркаса скролла
 	-- local MakcuMyM_BuguMblx_kHonok
@@ -9292,7 +9303,7 @@ do
 				end
 			end
 			
-			--действия, есть есть дубликат названия рецепта
+			--действия, если есть дубликат названия рецепта
 			if gy6JIukaT then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "рецепт с таким названием уже есть")
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "следует перезаписать рецепт?")

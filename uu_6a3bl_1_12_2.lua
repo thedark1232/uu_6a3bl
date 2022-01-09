@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "51 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "52 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1489,7 +1489,7 @@ function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
 		local HoMep_nbegecTaJIa = v[1]
 		local agpec_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[HoMep_nbegecTaJIa][1]
 		local gaHHble_npegMeTa = v[2]
-		local result, arg = pcall(function() component.invoke(agpec_nbegecTaJIa, "getStackInSlot", 1, 1) end)
+		local result, arg = pcall(function() return component.invoke(agpec_nbegecTaJIa, "getStackInSlot", 1, 1) end)
 		if result then
 			if agr == nil then
 				print("на пьедестале: " .. HoMep_nbegecTaJIa)

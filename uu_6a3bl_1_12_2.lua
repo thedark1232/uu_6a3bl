@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "6 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7396,7 +7396,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, 15, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--текстбокс номера рецепта
-	table_form.textBox_infusion_claw = creat_new_textBox(nick, 5 + x_win, 150, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
+	table_form.textBox_infusion_claw = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	--создание ячеек предметов
 	local cMeLLleHue_no_x = 50
@@ -7410,9 +7410,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 	end
 	
-	table_form.test_item1 = MoHuTop_urpoka[nick].addIcon(6, 32, "ThaumicTinkerer:ichorclothChest", 0)
-	table_form.test_item2 = MoHuTop_urpoka[nick].addIcon(28, 32, "ThaumicTinkerer:ichorSwordGem", 0)
-	table_form.test_item3 = MoHuTop_urpoka[nick].addIcon(34, 32, "ThaumicTinkerer:ichorPick", 0)
+	table_form.test_item1 = MoHuTop_urpoka[nick].addIcon(8, 32, "ThaumicTinkerer:ichorclothChest", 0)
+	table_form.test_item2 = MoHuTop_urpoka[nick].addIcon(30, 32, "ThaumicTinkerer:ichorSwordGem", 0)
+	table_form.test_item3 = MoHuTop_urpoka[nick].addIcon(54, 32, "ThaumicTinkerer:ichorPick", 0)
 	
 	--table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, x_win + 20, 20, 20, 20, "", "test_cMeLLLeHu9l_button", true, black, white, function() end)
 	obj = table_form.textBox_infusion_claw

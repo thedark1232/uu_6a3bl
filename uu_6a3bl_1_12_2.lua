@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "7 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "8 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6969,12 +6969,12 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 350, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 450, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 29, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 303, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 403, 172, white)
 	table_form.main_box3.setClickable(false)
 
 	--создание кнопок
@@ -7021,6 +7021,11 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(194 + x_win, 110, "для Infusion Claw:", blue)
 	table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(194 + x_win, 121, "3 цифры адреса", red)
 	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "ред контроллера", red)
+	table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 33, "ожидание клика:", red)
+	table_form.nogcka3ka10 = MoHuTop_urpoka[nick].addText(194 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
+	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(194 + x_win, 89, "ожидание аспектов", red)
+	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(194 + x_win, 100, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
+	
 	if agpec_infusion_claw == 0 then
 		table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, "адрес не назначен", red)
 	else
@@ -7047,8 +7052,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--настройки время ожидания клика по матрице
-	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 295 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka__oJugaHue_kJIuka = creat_new_button(-1, nick, 295 + x_win, 161, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
+	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 300 + x_win, 55, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka__oJugaHue_kJIuka = creat_new_button(-1, nick, 300 + x_win, 72, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
 		local cuqppa_oJugaHue_kJIuka = table_form.textBox_oJugaHue_kJIuka.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_kJIuka, true, false, true) then
 			BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = tonumber(cuqppa_oJugaHue_kJIuka)
@@ -7058,8 +7063,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--настройка времени ожидания высасывания аспектов
-	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 295 + x_win, 170, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka__oJugaHue_acnekToB = creat_new_button(-1, nick, 295 + x_win, 185, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
+	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 300 + x_win, 117, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka__oJugaHue_acnekToB = creat_new_button(-1, nick, 300 + x_win, 132, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
 		local cuqppa_oJugaHue_acnekToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_acnekToB, true, false, true) then
 			BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = tonumber(cuqppa_oJugaHue_acnekToB)
@@ -7527,12 +7532,14 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 
 	if not result then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 end
-function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9l, He_MoJeT_6blTb_HyJIeM, He_MoJeT_6blTb_gpo6HblM)
+function npoBepka_Ha_cuqppy(npoBep9leMoe_3Ha4eHue, He_MoJeT_6blTb_MeHbIIIe_HyJI9l, He_MoJeT_6blTb_HyJIeM, He_MoJeT_6blTb_gpo6HblM, MakcuMaJIbHoe_3Ha4eHue)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(npoBep9leMoe_3Ha4eHue))	
+	MakcuMaJIbHoe_3Ha4eHue = MakcuMaJIbHoe_3Ha4eHue or math.huge
 	if tonumber(npoBep9leMoe_3Ha4eHue) == nil then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "неверное значение-> ".. tostring(npoBep9leMoe_3Ha4eHue)); return false end
 	if He_MoJeT_6blTb_MeHbIIIe_HyJI9l and tonumber(npoBep9leMoe_3Ha4eHue) < 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть меньше нуля"); return false end
 	if He_MoJeT_6blTb_HyJIeM and tonumber(npoBep9leMoe_3Ha4eHue) == 0 then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть ровно 0"); return false end
 	if He_MoJeT_6blTb_gpo6HblM and tonumber(npoBep9leMoe_3Ha4eHue) ~= math.floor(tonumber(npoBep9leMoe_3Ha4eHue)) then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "не может быть дробным числом"); return false end
+	if tonumber(npoBep9leMoe_3Ha4eHue) > MakcuMaJIbHoe_3Ha4eHue then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "превышено максимальное значение-> " .. tostring(MakcuMaJIbHoe_3Ha4eHue)); return false end
 	return true
 end
 function npoBepka_Ha_Text(npoBep9leMoe_3Ha4eHue)

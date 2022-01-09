@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "23 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "24 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7379,8 +7379,8 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	end
 	
 	for i = 1, 18 do
-		table_form.[i] = MoHuTop_urpoka[nick].addBox(x_box, y_box, 12, 12, black)
-		table_form.[i .. "c"] = MoHuTop_urpoka[nick].addBox(x_box + 1, y_box + 1, 10, 10, white)
+		table_form[i] = MoHuTop_urpoka[nick].addBox(x_box, y_box, 12, 12, black)
+		table_form[i .. "c"] = MoHuTop_urpoka[nick].addBox(x_box + 1, y_box + 1, 10, 10, white)
 		y_box = y_box + 12
 	end
 	

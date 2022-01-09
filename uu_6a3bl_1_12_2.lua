@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "17 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "18 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7380,18 +7380,6 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	--создание кнопки старта текста
-	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, y - 2, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
-		local val = table_form.textBox_infusion_claw.caption.getText()
-		if npoBepka_Ha_cuqppy(val, true, true, true) then
-			val = tonumber(val)
-			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then
-				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "X" .. r .. "  - проверка номера рецепта")
-			else
-				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "✓" .. g .. "  - проверка номера рецепта")
-			end
-		end
-	end)	
 	--текстбокс номера рецепта
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, y - 2, 101, 15, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
@@ -7409,6 +7397,19 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.npoBepka3_box = MoHuTop_urpoka[nick].addBox(45, 120, 12, 12, black)
 	table_form.npoBepka3_box2 = MoHuTop_urpoka[nick].addBox(55, 120, 10, 10, black)
 	--table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(10, 120, "   - проверка доступа матрицы", black)
+	
+	--создание кнопки старта текста
+	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, y - 2, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
+		local val = table_form.textBox_infusion_claw.caption.getText()
+		if npoBepka_Ha_cuqppy(val, true, true, true) then
+			val = tonumber(val)
+			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then
+				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "X" .. r .. "  - проверка номера рецепта")
+			else
+				table_form.npoBepka_HoMepa_pecenTa_text.setText(b .. "✓" .. g .. "  - проверка номера рецепта")
+			end
+		end
+	end)	
 	
 	--✓
 	-- --создание каркаса скролла

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "16 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "17 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7401,9 +7401,14 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.npoBepka_HoMepa_pecenTa_text =  MoHuTop_urpoka[nick].addText(10, 34, "   - проверка номера рецепта", black)
 	
 	--чекбокс проверка состояния матрицы
-	--table_form.MaTpuca_box = MoHuTop_urpoka[nick].addBox(6, 100, 12, 12, black)
-	table_form.MaTpuca_box2 = MoHuTop_urpoka[nick].addBox(7, 110, 10, 10, black)
-	table_form.MaTpuca_box_text = MoHuTop_urpoka[nick].addText(10, 120, "   - проверка доступа матрицы", black)
+	table_form.MaTpuca_box = MoHuTop_urpoka[nick].addBox(10, 100, 12, 12, black)
+	table_form.MaTpuca_box2 = MoHuTop_urpoka[nick].addBox(25, 100, 10, 10, black)
+	--table_form.MaTpuca_text = MoHuTop_urpoka[nick].addText(10, 100, "   - проверка доступа матрицы", black)
+	
+	--чекбокс проверка 3
+	table_form.npoBepka3_box = MoHuTop_urpoka[nick].addBox(45, 120, 12, 12, black)
+	table_form.npoBepka3_box2 = MoHuTop_urpoka[nick].addBox(55, 120, 10, 10, black)
+	--table_form.npoBepka3_text = MoHuTop_urpoka[nick].addText(10, 120, "   - проверка доступа матрицы", black)
 	
 	--✓
 	-- --создание каркаса скролла

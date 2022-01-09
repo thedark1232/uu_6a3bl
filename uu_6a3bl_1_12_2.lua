@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "6 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "7 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7050,7 +7050,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 295 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
 	table_form.kHonka__oJugaHue_kJIuka = creat_new_button(-1, nick, 295 + x_win, 161, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
 		local cuqppa_oJugaHue_kJIuka = table_form.textBox_oJugaHue_kJIuka.caption.getText()
-		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_kJIuka, true, false, true)
+		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_kJIuka, true, false, true) then
 			BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = tonumber(cuqppa_oJugaHue_kJIuka)
 			configuration[46] = BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa
 			setConfiguration()
@@ -7061,7 +7061,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 295 + x_win, 170, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
 	table_form.kHonka__oJugaHue_acnekToB = creat_new_button(-1, nick, 295 + x_win, 185, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
 		local cuqppa_oJugaHue_acnekToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
-		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_acnekToB, true, false, true)
+		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_acnekToB, true, false, true) then
 			BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = tonumber(cuqppa_oJugaHue_acnekToB)
 			configuration[47] = BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB
 			setConfiguration()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "10 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "11 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6969,13 +6969,16 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 420, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 405, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 29, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 373, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 358, 172, white)
 	table_form.main_box3.setClickable(false)
+	
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({298 + x_win, 30}, {298 + x_win, 202}, gray)
+	
 
 	--создание кнопок
 	local y = 15
@@ -7026,14 +7029,15 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 122, "ожидание аспектов", red)
 	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 133, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
 	
+	
+
+	--настройки Infusion Claw
 	if agpec_infusion_claw == 0 then
 		table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, "адрес не назначен", red)
 	else
 		table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, string.sub(agpec_infusion_claw, 1, 3), green)
 	end
 	table_form.nogcka3ka10 = MoHuTop_urpoka[nick].addText(194 + x_win, 188, "", red)
-
-	--настройки Infusion Claw
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 194 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
 	table_form.kHonka_Infusion_claw = creat_new_button(-1, nick, 194 + x_win, 161, 101, 15, "назначить", "Infusion_claw_button", true, blue, white, function()
 		local Bce_agpeca_redStone = component.list("redstone")
@@ -7059,6 +7063,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 			BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = tonumber(cuqppa_oJugaHue_kJIuka)
 			configuration[46] = BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa
 			setConfiguration()
+			table_form.nogcka3ka10.setText(g .. tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa))
 		end
 	end)
 	
@@ -7070,6 +7075,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 			BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = tonumber(cuqppa_oJugaHue_acnekToB)
 			configuration[47] = BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB
 			setConfiguration()
+			table_form.nogcka3ka12.setText(g .. tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB))
 		end
 	end)
 

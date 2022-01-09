@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "49 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "50 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1475,8 +1475,14 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	end
 end
 function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
-	local HegocTal0LLlue_npegMeTbl = recept
+	--копирование таблицы
+	local HegocTal0LLlue_npegMeTbl = {}
+	for k, v in pairs(recept) do
+		HegocTal0LLlue_npegMeTbl[k] = v
+	end
 	HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB = {}
+	
+	--поиск предметов
 	print("===========================")
 	-- --проверка пустых пьедесталов по рецепту
 	for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
@@ -1495,7 +1501,8 @@ function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
 		end
 	end
 	if #HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB > 0 then
-		return HegocTal0LLlue_npegMeTbl
+		local ycneLLlHoe_BblcTaBJIeHue, HexBaTaeT_npegMeToB = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(HegocTal0LLlue_npegMeTbl, true, true)
+		return ycneLLlHoe_BblcTaBJIeHue, HexBaTaeT_npegMeToB
 	end
 end
 

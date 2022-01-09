@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "44 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "45 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1476,12 +1476,19 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 end
 function nonoJIHuTb_HegocTal0LLlue_npegMeTbl(recept)
 	term.clear()
-	--проверка слотов пьедесталов по рецепту
-	for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
-		for key, val in pairs(v) do
-			print(k .. ": " .. key .. " " .. val)
+	local st, er = pcall(function()
+		for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
+			print(k, v)
 		end
-	end
+		print("======================")
+		--проверка слотов пьедесталов по рецепту
+		for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
+			for key, val in pairs(v) do
+				print(k .. ": " .. key .. " " .. val)
+			end
+		end
+	end)
+	if not st then print(er) end
 end
 
 function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()

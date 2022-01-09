@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "48 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "49 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1474,22 +1474,29 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		return false, He_HaugeHHble_items
 	end
 end
-function nonoJIHuTb_HegocTal0LLlue_npegMeTbl(recept)
-	term.clear()
-	local st, er = pcall(function()
-		for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
-			print(k, v)
-		end
-		print("======================")
-		--проверка слотов пьедесталов по рецепту
-		for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
-			print("№ пьедестала: " .. v[1])
-			for key, val in pairs(v[2]) do
-				print(key, val)
+function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
+	local HegocTal0LLlue_npegMeTbl = recept
+	HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB = {}
+	print("===========================")
+	-- --проверка пустых пьедесталов по рецепту
+	for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
+		local HoMep_nbegecTaJIa = v[1]
+		local agpec_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[HoMep_nbegecTaJIa][1]
+		local gaHHble_npegMeTa = v[2]
+		local result, arg = pcall(function() component.invoke(agpec_nbegecTaJIa, "getStackInSlot", 1, 1) end)
+		if result then
+			if agr == nil then
+				print("на пьедестале: " .. HoMep_nbegecTaJIa)
+				print("отсутствует: " .. gaHHble_npegMeTa.id)
+				table.insert(HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB, {HoMep_nbegecTaJIa, gaHHble_npegMeTa})
 			end
+		else
+			return false
 		end
-	end)
-	if not st then print(er) end
+	end
+	if #HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB > 0 then
+		return HegocTal0LLlue_npegMeTbl
+	end
 end
 
 function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
@@ -3521,7 +3528,7 @@ function forms:creat_MaTpuca_form(nick)
 	if nick == admin then
 		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
 		table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
-		table_form.nonoJIHuTb_HegocTal0LLlue_npegMeTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест пополнения", "button", start_visible, gray, white, function() nonoJIHuTb_HegocTal0LLlue_npegMeTbl(Ta6JIuca_recenToB_Ha_MaTpuce[1]) end)
+		table_form.nonoJIHuTb_HegocTal0LLlue_npegMeTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест пополнения", "button", start_visible, gray, white, function() BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(Ta6JIuca_recenToB_Ha_MaTpuce[1]) end)
 		
 		--table_form.HacTpouTb_nbegecTaJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить пьедестал", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"]() end)
 		--table_form.HacTpouTb_uHTepqpeuc = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить интерфейс", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"]() end)

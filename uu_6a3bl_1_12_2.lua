@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "29 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "30 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1534,9 +1534,9 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			local pe3yJIbTaT_BblcTaBJIeHu9l, kakue_npegMeTbl_He_HaugeHbl = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept)
 			if qpopma_testa_MaTpucbl[nick_testera] then
 				if pe3yJIbTaT_BblcTaBJIeHu9l then
-					Bce_ragJeTbl_urpoka[nick].MaTpuca.npoBepka3_text.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick].MaTpuca.npoBepka3_text.getText())
+					Bce_ragJeTbl_urpoka[nick_testera].MaTpuca.npoBepka3_text.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].MaTpuca.npoBepka3_text.getText())
 				else
-					Bce_ragJeTbl_urpoka[nick].MaTpuca.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick].MaTpuca.npoBepka3_text.getText())
+					Bce_ragJeTbl_urpoka[nick_testera].MaTpuca.npoBepka3_text.setText(b .. "X" .. r .. Bce_ragJeTbl_urpoka[nick_testera].MaTpuca.npoBepka3_text.getText())
 				end				
 			end
 			if not pe3yJIbTaT_BblcTaBJIeHu9l or #HexBaTuJIo_acneKToB > 0 then
@@ -7378,7 +7378,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	--создание чекбоксов
 	local x_box = 6
 	local y_box = 32
-	local y = y_box - 11
+	local y = y_box - 10
 	local y_func = function()
 		y = y + 12
 		return y
@@ -7402,9 +7402,9 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 		if npoBepka_Ha_cuqppy(val, true, true, true) then
 			val = tonumber(val)
 			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then
-				table_form.Homep_pecenTa.setText(b .. "X" .. r .. table_form.Homep_pecenTa.getText())
+				table_form.Homep_pecenTa.setText(b .. "X" .. r .. "   - проверка номера рецепта")
 			else
-				table_form.Homep_pecenTa.setText(b .. "✓" .. g .. table_form.Homep_pecenTa.getText())
+				table_form.Homep_pecenTa.setText(b .. "✓" .. g .."   - проверка номера рецепта")
 				if not MaTpuca_cBo6ogHa then
 					table_form.gocTyn_k_MaTpuce.setText(b .. "X" .. r .. table_form.gocTyn_k_MaTpuce.getText())
 				else

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "39 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "40 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1378,7 +1378,7 @@ function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u, He_y6upaT
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "перемещение завершено")
 	end
 end
-function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIbHblu)	
+function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIbHblu, He_y6upaTb_npegMeTbl_nepeg_BblcTaBJIeHueM)	
 	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 	-- ["Ha3BaHue"] = coo6llleHue,
 	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
@@ -1390,7 +1390,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	local ocTaJIbHble_npegMeTbl_HaugeHbl = true
 	
 	--убрать предметы с пьедесталов в центральный сундук
-	y6paTb_npegMeTbl_c_nbegecTaJIoB(false, He_BblcTaBJI9lTb_ceHTpaJIbHblu)
+	if He_y6upaTb_npegMeTbl_nepeg_BblcTaBJIeHueM then y6paTb_npegMeTbl_c_nbegecTaJIoB(false, He_BblcTaBJI9lTb_ceHTpaJIbHblu) end
 	
 	--сбор информации о предметах в центральном сундуке
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. g .. recept.Ha3BaHue)
@@ -1634,7 +1634,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						end
 						HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 						if #HexBaTuJIo_acneKToB > 0 then
-							ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
+							ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true, true)
 						end
 						
 						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end

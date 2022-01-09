@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "28 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "29 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7378,7 +7378,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	--создание чекбоксов
 	local x_box = 6
 	local y_box = 32
-	local y = y_box - 12
+	local y = y_box - 11
 	local y_func = function()
 		y = y + 12
 		return y
@@ -7448,7 +7448,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	-- end
 	
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.npoBepka_cocTo9lHu9l_MaTpucbl_box
+	local obj = table_form.Homep_pecenTa
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380
 		local y_cTpeJIku = 150

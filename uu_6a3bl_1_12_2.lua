@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "27 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "28 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -23,7 +23,6 @@ local qpopma_testa_MaTpucbl = {}
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
-local MaTpuca_akTuBHa = false
 local TekyLLlee_cocTo9lHue_MaTpucbl = ""
 local onoBeLLleHue_o_nocTopoHHux
 local x_onoBeLLleHue_o_nocTopoHHux = 100
@@ -1526,7 +1525,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local Bcero_ckpaqp4eHo = 0
 		local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
 		local HexBaTuJIo_acneKToB = {}
-		MaTpuca_akTuBHa = true
 		TekyLLlee_cocTo9lHue_MaTpucbl = "выкладывание предметов"
 		--начло цикла крафта на матрице
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
@@ -1658,7 +1656,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		end
 		
 		--окончательные действия после крафта
-		MaTpuca_akTuBHa = false
 		TekyLLlee_cocTo9lHue_MaTpucbl = ""
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
 		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
@@ -7376,12 +7373,12 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, 15, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--текстбокс номера рецепта
-	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, 15, 101, 15, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
+	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, 15, 101, 14, "номер рецепта", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	--создание чекбоксов
 	local x_box = 6
 	local y_box = 32
-	local y = y_box - 14
+	local y = y_box - 12
 	local y_func = function()
 		y = y + 12
 		return y
@@ -7408,7 +7405,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 				table_form.Homep_pecenTa.setText(b .. "X" .. r .. table_form.Homep_pecenTa.getText())
 			else
 				table_form.Homep_pecenTa.setText(b .. "✓" .. g .. table_form.Homep_pecenTa.getText())
-				if MaTpuca_cBo6ogHa then
+				if not MaTpuca_cBo6ogHa then
 					table_form.gocTyn_k_MaTpuce.setText(b .. "X" .. r .. table_form.gocTyn_k_MaTpuce.getText())
 				else
 					table_form.gocTyn_k_MaTpuce.setText(b .. "✓" .. g .. table_form.gocTyn_k_MaTpuce.getText())

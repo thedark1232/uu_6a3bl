@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "55 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "56 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -23,7 +23,6 @@ local qpopma_testa_MaTpucbl = {}
 local napaMeTp_BpeMeHu
 local napaMeTp_eHepruu
 local napaMeTp_o3y
-local TekyLLlee_cocTo9lHue_MaTpucbl = ""
 local onoBeLLleHue_o_nocTopoHHux
 local x_onoBeLLleHue_o_nocTopoHHux = 100
 local y_onoBeLLleHue_o_nocTopoHHux = 1
@@ -1477,7 +1476,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 		return false, He_HaugeHHble_items
 	end
 end
-function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
+function BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 	--копирование таблицы
 	local HegocTal0LLlue_npegMeTbl = {}
 	for k, v in pairs(recept) do
@@ -1486,7 +1485,7 @@ function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
 	HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB = {}
 	
 	--поиск предметов
-	print("===========================")
+	--print("===========================")
 	-- --проверка пустых пьедесталов по рецепту
 	for k, v in pairs(recept.Ta6JIuca_npegMeToB) do
 		local HoMep_nbegecTaJIa = v[1]
@@ -1495,7 +1494,7 @@ function BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(recept)
 		local result, arg = pcall(function() return component.invoke(agpec_nbegecTaJIa, "getStackInSlot", 1, 1) end)
 		if result then
 			if arg == nil then
-				print("на пьедестале: " .. HoMep_nbegecTaJIa)
+				--print("на пьедестале: " .. HoMep_nbegecTaJIa)
 				print("отсутствует: " .. gaHHble_npegMeTa.label)
 				table.insert(HegocTal0LLlue_npegMeTbl.Ta6JIuca_npegMeToB, {HoMep_nbegecTaJIa, gaHHble_npegMeTa})
 			end
@@ -1516,7 +1515,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local Bcero_ckpaqp4eHo = 0
 		local agrec_ceHTpaJIbHoro_nbegecTaJIa = Ta6JIuca_nbegecTaJIoB[1][1]
 		local HexBaTuJIo_acneKToB = {}
-		TekyLLlee_cocTo9lHue_MaTpucbl = "выкладывание предметов"
 		--начло цикла крафта на матрице
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
 		for i = 1, koJIu4ecTBo do
@@ -1534,7 +1532,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			--тыкнуть палкой по матрице или через Infusion claw, если он установлен
 			local infusion_claw_activate
 			if agpec_infusion_claw ~= 0 then
-				TekyLLlee_cocTo9lHue_MaTpucbl = "активация через Infusion Claw"
 				for cTopoHa = 0, 5 do
 					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 0) end)
 				end
@@ -1542,7 +1539,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					infusion_claw_activate = pcall(function() component.invoke(agpec_infusion_claw, "setOutput", cTopoHa, 15) end)
 				end
 				if not infusion_claw_activate then
-					TekyLLlee_cocTo9lHue_MaTpucbl = "ошибка подачи сигнала редстоун"
 					if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
 				end
 			end
@@ -1552,7 +1548,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				end
 				if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.setText(b .. "✓" .. g .. Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.noga4a_curHaJIa_MaTpuce.getText()) end
 			else
-				TekyLLlee_cocTo9lHue_MaTpucbl = "требуется ручная активация матрицы"
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "ТЫКНИ ПАЛКОЙ ПО МАТРИЦЕ")
 				computer.beep(1000, 0.1); computer.beep(1000, 0.1)
 				coo6llleHue_OT_MaTpucbl = {"тыкни палкой по матрице"}
@@ -1560,13 +1555,11 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			
 			local Ta6JIuca_acnekToB = {}
 			--цикл ожидания старта матрицы
-			TekyLLlee_cocTo9lHue_MaTpucbl = "ожидание высасывания аспектов"
 			repeat
 				os.sleep(2)
 				Ta6JIuca_acnekToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 				if component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1) == nil then kraqpT_npepBaH = true end
 			until #Ta6JIuca_acnekToB > 0 or kraqpT_npepBaH
-			TekyLLlee_cocTo9lHue_MaTpucbl = "начало высасывания аспектов"
 			
 			if not kraqpT_npepBaH then
 				--цикл слежки за всасыванием аспектов в матрицу
@@ -1580,7 +1573,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "крафт прерван! причина:")
 						Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
 						kraqpT_npepBaH = true
-						TekyLLlee_cocTo9lHue_MaTpucbl = "крафт прерван! центральный предмет снят с пьедестала"
 						--if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("") end
 						if qpopma_testa_MaTpucbl[nick_testera] then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText("предмет снят с центрального пьедестала") end
 					end
@@ -1608,7 +1600,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				local ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 				if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
 					--цекл слежки за предметами, которые всасывает матрица
-					TekyLLlee_cocTo9lHue_MaTpucbl = "начало сбора предметов"
 					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
 					os.sleep(5)
 					local kpaqpT_3aBepllleH = false
@@ -1625,7 +1616,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						end
 						HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
 						if #HexBaTuJIo_acneKToB > 0 then
-							ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true, true)
+							ycneLLLHoe_BblcTaBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 						end
 						
 						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
@@ -1633,14 +1624,14 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					if qpopma_testa_MaTpucbl[nick_testera] then
 						if kpaqpT_3aBepllleH then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(g .. "крафт успешно завершен") end
 						if kraqpT_npepBaH then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "центральный предмет снят с пьедестала") end
-						if not ycneLLLHoe_BblcTaBJIeHue then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "предметы не выставлены") end
+						if not ycneLLLHoe_BblcTaBJIeHue then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "недостающие предметы не выставлены") end
 					end
 				end
 			end
 			
 			
 			--действия перед следующим крафтом
-			if kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue or #HexBaTuJIo_acneKToB > 0 then 
+			if kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue then 
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ОШИБКА!")
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. g .. " ЗАВЕРШЕН!")
@@ -1657,7 +1648,6 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		end
 		
 		--окончательные действия после крафта
-		TekyLLlee_cocTo9lHue_MaTpucbl = ""
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
 		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
 		coo6llleHue_OT_MaTpucbl = nil
@@ -3538,7 +3528,7 @@ function forms:creat_MaTpuca_form(nick)
 	if nick == admin then
 		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
 		table_form.TecTopoBaTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тестировать", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].TecTupoBaTb_MaTpucy = forms:creat_TecTupoBaTb_MaTpucy_form(nick) end)
-		table_form.nonoJIHuTb_HegocTal0LLlue_npegMeTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест пополнения", "button", start_visible, gray, white, function() BepHyTb_Ta6JIucy_HegoCTal0LLlux_npegMeToB(Ta6JIuca_recenToB_Ha_MaTpuce[1]) end)
+		table_form.nonoJIHuTb_HegocTal0LLlue_npegMeTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тест пополнения", "button", start_visible, gray, white, function() BblCTaBuTb_HegocTal0LLlue_npegMeTbl(Ta6JIuca_recenToB_Ha_MaTpuce[1]) end)
 		
 		--table_form.HacTpouTb_nbegecTaJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить пьедестал", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"]() end)
 		--table_form.HacTpouTb_uHTepqpeuc = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить интерфейс", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"]() end)

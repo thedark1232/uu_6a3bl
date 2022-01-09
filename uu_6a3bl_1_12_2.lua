@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "36 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "37 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7435,7 +7435,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 				else
 					table_form.start_TesTa.setClickable(false)
 					table_form.start_TesTa.caption.setClickable(false)
-					table_form.setVisible(false)
+					table_form.start_TesTa.setVisible(false)
 					
 					table_form.gocTyn_k_MaTpuce.setText(b .. "✓" .. g .. table_form.gocTyn_k_MaTpuce.getText())
 					nick_testera = nick

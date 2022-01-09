@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "18 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "19 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7383,9 +7383,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 361, 204, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 364, 204, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 355, 174, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 358, 174, white)
 	table_form.main_box2.setClickable(false)
 		
 	local obj = table_form.main_box2
@@ -7400,23 +7400,21 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--создание ячеек предметов
 	local cMeLLleHue_no_x = 50
-	local cMeLLleHue_no_y = 50
+	local cMeLLleHue_no_y = 31
 	for i = 1, 10 do
-		cMeLLleHue_no_x = 50
-		for j = 1, 10 do
-			table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon_button", true, black, white, function()
+		cMeLLleHue_no_x = 5
+		for j = 1, 6 do
+			table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon_button", true, gray, white, function()
 				obj = table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(cMeLLleHue_no_x + cMeLLleHue_no_y))
 			end)
-			cMeLLleHue_no_x = cMeLLleHue_no_x + 22
+			cMeLLleHue_no_x = cMeLLleHue_no_x + 21
 		end
-		cMeLLleHue_no_y = cMeLLleHue_no_y + 22
+		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 	end
 	
-	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, x_win + 20, 20, 20, 20, "", "test_cMeLLLeHu9l_button", true, black, white, function()
-		 
-	end)
-	obj = table_form.test_cMeLLLeHu9l
+	--table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, x_win + 20, 20, 20, 20, "", "test_cMeLLLeHu9l_button", true, black, white, function() end)
+	--obj = table_form.test_cMeLLLeHu9l
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

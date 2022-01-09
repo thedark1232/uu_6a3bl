@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "10 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "11 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7382,7 +7382,7 @@ function forms:creat_TecTupoBaTb_MaTpucy_form(nick)
 	
 	--создание кнопки старта текста
 	table_form.start_TesTa = creat_new_button(1, nick, 135 + x_win, y - 2, 101, 15, "НАЧАЛО ТЕСТА", "test_button", true, gray, white, function()
-		local val = table_form.npoBepka_HoMepa_pecenTa_text.getText()
+		local val = table_form.textBox_infusion_claw.caption.getText()
 		if npoBepka_Ha_cuqppy(val, true, true, true) then
 			val = tonumber(val)
 			if Ta6JIuca_recenToB_Ha_MaTpuce[val] == nil then

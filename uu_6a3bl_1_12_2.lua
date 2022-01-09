@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "66 тестирование матрицы"
+local Ha3BaHue_o6HoBJIeHu9l = "67 тестирование матрицы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1620,7 +1620,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH or npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB
 					if qpopma_testa_MaTpucbl[nick_testera] and Bce_acnekTbl_BblcoCaHbl then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(b .. "✓" .. g .. "   - все аспекты высосаны") end
 					ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
-					if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
+					if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue and not npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB then
 						--цекл слежки за предметами, которые всасывает матрица
 						coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
 						local kpaqpT_3aBepllleH = false

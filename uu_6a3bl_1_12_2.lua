@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "15 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "17 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7401,15 +7401,15 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--создание ячеек предметов
 	local cMeLLleHue_no_x = 50
 	local cMeLLleHue_no_y = 50
-	for cMeLLleHue_no_x = 1, 10 do
-		for cMeLLleHue_no_y = 1, 10 do
+	for i = 1, 10 do
+		for j = 1, 10 do
 			table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
 				obj = table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(cMeLLleHue_no_x + cMeLLleHue_no_y))
 			end)
-			cMeLLleHue_no_x = cMeLLleHue_no_x + 50
+			cMeLLleHue_no_x = cMeLLleHue_no_x + 22
 		end
-		cMeLLleHue_no_y = cMeLLleHue_no_y + 50
+		cMeLLleHue_no_y = cMeLLleHue_no_y + 22
 	end
 
 	--создание стрелок для рисования ГУИ
@@ -7459,7 +7459,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		end)
 		table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
 	end
-	HapucoBatb_cTpeJIku(table_form.main_box3)
+	HapucoBatb_cTpeJIku()
 	
 	--объединение таблиц
 	self = {}
@@ -7604,7 +7604,7 @@ end
 		-- end)
 		-- table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
 	-- end
-	-- HapucoBatb_cTpeJIku(table_form.main_box3)
+	-- HapucoBatb_cTpeJIku()
 do
 	computer.addUser(admin)
 	--осчистка монитора

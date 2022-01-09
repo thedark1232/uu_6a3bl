@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "17 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "18 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7402,8 +7402,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local cMeLLleHue_no_x = 50
 	local cMeLLleHue_no_y = 50
 	for i = 1, 10 do
+		cMeLLleHue_no_x = 50
 		for j = 1, 10 do
-			table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+			table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon_button", true, black, white, function()
 				obj = table_form[tostring(cMeLLleHue_no_x + cMeLLleHue_no_y)]
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(cMeLLleHue_no_x + cMeLLleHue_no_y))
 			end)
@@ -7411,6 +7412,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 		end
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 22
 	end
+	
+	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, x_win + 20, 20, 20, 20, "", "test_cMeLLLeHu9l_button", true, black, white, function()
+		 
+	end)
+	obj = table_form.test_cMeLLLeHu9l
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

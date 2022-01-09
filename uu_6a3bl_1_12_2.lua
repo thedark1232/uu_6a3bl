@@ -1319,7 +1319,7 @@ function oJugaHue_BBoga_cuqpPbl(oT, go)
 	return true, coo6llleHue
 end
 function y6paTb_npegMeTbl_c_nbegecTaJIoB(nepeMecTuTb_B_cyHgyk_Bblga4u, He_y6upaTb_ceHTapaJIbHblu) --если false, то предметы задержаться в центральном сундуке
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещаю предметы с пьедесталов")
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "перемещаю предметы с пьедесталов")
 	local cTopoHa_npueMHuk
 	local cTopoHa_Bblga4u	
 	local transposer
@@ -1388,7 +1388,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	if not He_y6upaTb_npegMeTbl_nepeg_BblcTaBJIeHueM then y6paTb_npegMeTbl_c_nbegecTaJIoB(false, He_BblcTaBJI9lTb_ceHTpaJIbHblu) end
 	
 	--сбор информации о предметах в центральном сундуке
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. g .. recept.Ha3BaHue)
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поиск предметов для крафта: " .. g .. recept.Ha3BaHue)
 	local Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe = {}
 	local Bcero_cJIoToB_B_cyHgyke = component.invoke(transposer, "getInventorySize", cTopoHa_Bblga4u)
 	for i = 1, Bcero_cJIoToB_B_cyHgyke do
@@ -1436,7 +1436,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	
 	--окончательный результат
 	if Ha4aJIbHblu_npegMeT_HaugeH and ocTaJIbHble_npegMeTbl_HaugeHbl then
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "расстановка предметов по пьедесталам")
 		--перемещение центрального итема
 		if not He_BblcTaBJI9lTb_ceHTpaJIbHblu then
 			component.invoke(transposer, "transferItem", cTopoHa_Bblga4u, cTopoHa_npueMHuk, 1, Heo6xoguMble_uTeMbl[1][1], 1)
@@ -1458,7 +1458,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 				end
 			end
 		end
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " рецепт выложен на матрице")
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. " рецепт выложен на матрице")
 		return true
 	else
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "отсутствуют предметы")
@@ -1598,6 +1598,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 				until Bce_acnekTbl_BblcoCaHbl or kraqpT_npepBaH
 				if qpopma_testa_MaTpucbl[nick_testera] and Bce_acnekTbl_BblcoCaHbl then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OJugaHue_BblcacblBaHu9l_acnekToB.setText(b .. "✓" .. g .. "   - все аспекты высосаны") end
 				local ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
+				local ycneLLloe_go6aBJIeHue
 				if not kraqpT_npepBaH and ycneLLLHoe_BblcTaBJIeHue then
 					--цекл слежки за предметами, которые всасывает матрица
 					coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
@@ -1621,17 +1622,30 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						
 						if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
 					until kpaqpT_3aBepllleH or kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue
+					
 					if qpopma_testa_MaTpucbl[nick_testera] then
-						if kpaqpT_3aBepllleH then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(g .. "крафт успешно завершен") end
-						if kraqpT_npepBaH then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "центральный предмет снят с пьедестала") end
-						if not ycneLLLHoe_BblcTaBJIeHue then Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "недостающие предметы не выставлены") end
+						if kpaqpT_3aBepllleH then
+							Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(g .. "крафт успешно завершен")
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "крафт успешно завершен")
+						end
+						if kraqpT_npepBaH then
+							Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "центральный предмет снят с пьедестала")
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "центральный предмет снят с пьедестала")
+						end
+						if not ycneLLLHoe_BblcTaBJIeHue then
+							Bce_ragJeTbl_urpoka[nick_testera].TecTupoBaTb_MaTpucy.OLLlu6Ku_BblnoJIHeHu9l1.setText(r .. "недостающие предметы не выставлены")
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "предметы не выставлены перед сбором")
+						end
+						if not ycneLLloe_go6aBJIeHue then
+							Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "предметы не пополнены")
+						end
 					end
 				end
 			end
 			
 			
 			--действия перед следующим крафтом
-			if kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue then 
+			if kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue or not ycneLLloe_go6aBJIeHue then 
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ОШИБКА!")
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. g .. " ЗАВЕРШЕН!")

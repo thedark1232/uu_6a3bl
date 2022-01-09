@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "2 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1657,16 +1657,14 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then break end
 		end
 		
-		--способ уборки всех предметов после крафта
+		--окончательные действия после крафта
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
+		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
 		if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 then
 			y6paTb_npegMeTbl_c_nbegecTaJIoB(false) --переместить в сундук выдачи?
 		else
 			y6paTb_npegMeTbl_c_nbegecTaJIoB(true) --переместить в сундук выдачи?
 		end
-		
-		--окончательные действия после крафта
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
-		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
 		coo6llleHue_OT_MaTpucbl = nil
 		MaTpuca_cBo6ogHa = true
 		configuration[32] = MaTpuca_cBo6ogHa
@@ -7349,9 +7347,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 479, 250, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 361, 170, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 472, 218, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 355, 165, white)
 	table_form.main_box2.setClickable(false)
 		
 	--table_form.main_box3 = MoHuTop_urpoka[nick].addBox(44 + x_win, 30, 253, 172, white)
@@ -7364,12 +7362,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 238 + x_win, 15, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	--создание ячеек предметов
-	local cMeLLleHue_no_x = 22
-	local cMeLLleHue_no_y = 22
+	local cMeLLleHue_no_x = 50
+	local cMeLLleHue_no_y = 50
 	for cMeLLleHue_no_x = 1, 10 do
 		for cMeLLleHue_no_y = 1, 10 do
-			table_form[{}] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "3", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
-				obj = table_form[i]
+			table_form[cMeLLleHue_no_x * cMeLLleHue_no_y] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "3", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
+				obj = table_form[cMeLLleHue_no_x * cMeLLleHue_no_y]
 			end)
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 22
 		end

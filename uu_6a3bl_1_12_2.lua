@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "16 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "17 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7433,7 +7433,15 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local cMeLLleHue_no_x = 50
 	local cMeLLleHue_no_y = 31
 	local HyMepacu9l = 0
-		
+	
+	--создание предмета в рамке
+	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 200, 33, 20, 20, "", "test_cMeLLLeHu9l_button", true, black, white, function()
+		obj = table_form.test_cMeLLLeHu9l
+	end)
+	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(100, 100, "ThaumicTinkerer:ichorSwordGem", 0)
+	table_form.TekyLLLuu_npegMeT.setScale(4)
+	
+	
 	for i = 1, 6 do
 		cMeLLleHue_no_x = 5
 		for j = 1, 10 do
@@ -7450,12 +7458,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 	end
 	
+	--рамка текущего итема
+	--table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 358, 174, white)
 	
-	--table_form.test_item2 = MoHuTop_urpoka[nick].addIcon(30, 32, "ThaumicTinkerer:ichorSwordGem", 0)
-	--table_form.test_item3 = MoHuTop_urpoka[nick].addIcon(54, 32, "ThaumicTinkerer:ichorPick", 0)
-	
-	--table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, x_win + 20, 20, 20, 20, "", "test_cMeLLLeHu9l_button", true, black, white, function() end)
-	obj = table_form.textBox_infusion_claw
+
+	obj = table_form.TekyLLLuu_npegMeT
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

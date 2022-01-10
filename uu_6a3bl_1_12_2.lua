@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "21 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "22 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7455,13 +7455,13 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
 				--Ta6JIuca_npegMeToB[HoMep_uTema].id)
 				if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
-					table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].npegMeT_no_ceHTpy.id)
-					table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].npegMeT_no_ceHTpy.dmg)
+					table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.id)
+					table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.dmg)
 				end
 			end)
 			table_form[HyMepacu9l].button_num = HyMepacu9l
 			if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
-				table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].npegMeT_no_ceHTpy.id, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].npegMeT_no_ceHTpy.dmg)
+				table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].cTapToBblu_npegMeT_no_ceHTpy.id, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].cTapToBblu_npegMeT_no_ceHTpy.dmg)
 				table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 			end
 

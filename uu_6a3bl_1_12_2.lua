@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "79 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "80 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7452,8 +7452,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--создание предмета в рамке
 	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 52, 77, 83, black)
 	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 62, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-	table_form.cTapToBblu_npegMeT_no_ceHTpy = MoHuTop_urpoka[nick].addIcon(223, 62, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage)
-	table_form.cTapToBblu_npegMeT_no_ceHTpy.setScale(3)
+	table_form.cTapToBblu_npegMeT_no_ceHTpy = MoHuTop_urpoka[nick].addIcon(301, 100, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage)
+	table_form.cTapToBblu_npegMeT_no_ceHTpy.setScale(2)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
 	table_form.TekyLLLuu_npegMeT.setLabel("1")
 	

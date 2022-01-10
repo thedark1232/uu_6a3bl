@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "22 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "23 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7444,7 +7444,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--создание предмета в рамке
 	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 31, 77, 83, black)
-	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 41, "ThaumicTinkerer:ichorSwordGem", 0)
+	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 41, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
 	
 	--создание ячеек крафта
@@ -7455,13 +7455,13 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
 				--Ta6JIuca_npegMeToB[HoMep_uTema].id)
 				if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
-					table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.id)
-					table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.dmg)
+					table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.name)
+					table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.damage)
 				end
 			end)
 			table_form[HyMepacu9l].button_num = HyMepacu9l
 			if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
-				table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].cTapToBblu_npegMeT_no_ceHTpy.id, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].cTapToBblu_npegMeT_no_ceHTpy.dmg)
+				table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].cTapToBblu_npegMeT_no_ceHTpy.damage)
 				table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 			end
 

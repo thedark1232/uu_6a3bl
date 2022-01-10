@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "12 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "13 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7422,12 +7422,14 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local cMeLLleHue_no_x = 50
 	local cMeLLleHue_no_y = 31
 	local HyMepacu9l = 0
+		
 	for i = 1, 6 do
 		cMeLLleHue_no_x = 5
 		for j = 1, 10 do
 			HyMepacu9l = HyMepacu9l + 1
-			table_form[HyMepacu9l]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon_button", true, gray, white, function()
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. Ta6JIuca_npegMeToB[HyMepacu9l][1])
+			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon_button", true, gray, white, function()
+				local Homep_kHonku = HyMepacu9l
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка: " .. tostring(Homep_kHonku))
 			end)
 			table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_npegMeToB[HyMepacu9l][1], Ta6JIuca_npegMeToB[HyMepacu9l][2])
 			table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)

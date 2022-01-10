@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "42 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "43 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7510,8 +7510,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 296, 126, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		obj = table_form.test_cMeLLLeHu9l3
 	end)
-	table_form.tesToBa9l_icon = MoHuTop_urpoka[nick].addIcon(297, 53, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-	table_form.tesToBa9l_icon.setLabel("1
+
 	obj = table_form.test_cMeLLLeHu9l
 
 	--создание стрелок для рисования ГУИ

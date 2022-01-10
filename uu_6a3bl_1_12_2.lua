@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "60 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "62 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7543,15 +7543,29 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.Ha4aJIo_kpaqpTa = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "Ha4aTb_kpaqpT_button", true, blue, white, function()
 		table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
 		table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
+		table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB})
+		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
+		setConfiguration()
+		for i = 1, 16 do
+			if tonumber(table_form["o4epedb_icon" .. tostring(i)].getLabel()) == 0 then
+				table_form["o4epegu" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())
+				table_form["o4epegu" .. tostring(i)].setMeta(table_form.TekyLLLuu_npegMeT.getMeta())
+				table_form["o4epegu" .. tostring(i)].setLabel(table_form.TekyLLLuu_npegMeT.getLabel())
+				table_form["o4epegu" .. tostring(i)].setVisible(true)
+				return
+			end
+			x_o4epegeU = x_o4epegeU + 21
+		end
 	end)
 	
 	--ячейки очереди крафтов
-	table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(110, 180, "ОЧЕРЕДИ КРАФТОВ:", blue)
-	local x_o4epegeU = 11
+	table_form.o4epegu_kpaqpToB = MoHuTop_urpoka[nick].addText(110, 180, "ОЧЕРЕДИ КРАФТОВ:", blue)
+	local x_o4epegeU = 13
 	for i = 1, 16 do
 		table_form["o4epegu" .. tostring(i)] = MoHuTop_urpoka[nick].addBox(x_o4epegeU, 190, 20, 20, gray)
 		table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-		--table_form["o4epedb_icon" .. tostring(i)].setVisible(false)
+		table_form["o4epedb_icon" .. tostring(i)].setVisible(false)
+		table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
 		x_o4epegeU = x_o4epegeU + 21
 	end
 	
@@ -7567,7 +7581,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
 
-	obj = table_form.main_box3
+	obj = table_form.o4epegu_kpaqpToB
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

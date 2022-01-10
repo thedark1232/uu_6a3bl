@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "63 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "64 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7549,10 +7549,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 		--setConfiguration()
 		for i = 1, 16 do
 			if tonumber(table_form["o4epedb_icon" .. tostring(i)].getLabel()) == 0 then
-				table_form["o4epegu" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())
-				table_form["o4epegu" .. tostring(i)].setMeta(table_form.TekyLLLuu_npegMeT.getMeta())
-				table_form["o4epegu" .. tostring(i)].setLabel(table_form.TekyLLLuu_npegMeT.getLabel())
-				table_form["o4epegu" .. tostring(i)].setVisible(true)
+				table_form["o4epedb_icon" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())
+				table_form["o4epedb_icon" .. tostring(i)].setMeta(table_form.TekyLLLuu_npegMeT.getMeta())
+				table_form["o4epedb_icon" .. tostring(i)].setLabel(table_form.TekyLLLuu_npegMeT.getLabel())
+				table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
 				return
 			end
 			x_o4epegeU = x_o4epegeU + 21

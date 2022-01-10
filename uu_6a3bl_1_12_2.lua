@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "64 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "65 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7555,7 +7555,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 				table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
 				return
 			end
-			x_o4epegeU = x_o4epegeU + 21
 		end
 	end)
 	

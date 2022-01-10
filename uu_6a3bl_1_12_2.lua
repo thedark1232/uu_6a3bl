@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "69 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "70 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7410,12 +7410,14 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	
-	table_form.button_BJIeBo = creat_new_button(1, nick, 115 + x_win, 158, 50, 15, "☚", "left_button", true, blue, white, function()
+	table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "☚", "left_button", true, blue, white, function()
 		obj = table_form.button_BJIeBo
 	end)
-	table_form.button_BnpaBo = creat_new_button(1, nick, 174 + x_win, 158, 50, 15, "☛", "right_button", true, blue, white, function() 
+	table_form.button_BJIeBo.caption.setScale(4)
+	table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "☛", "right_button", true, blue, white, function() 
 		obj = table_form.button_BnpaBo
 	end)
+	table_form.button_BJIeBo.caption.setScale(3)
 
 	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 	-- ["Ha3BaHue"] = coo6llleHue,

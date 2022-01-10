@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "13 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "14 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7431,7 +7431,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 				local Homep_kHonku = HyMepacu9l
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка: " .. tostring(Homep_kHonku))
 			end)
-			table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_npegMeToB[HyMepacu9l][1], Ta6JIuca_npegMeToB[HyMepacu9l][2])
+			table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_npegMeToB[HyMepacu9l].id, Ta6JIuca_npegMeToB[HyMepacu9l].dmg)
 			table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 21
 			

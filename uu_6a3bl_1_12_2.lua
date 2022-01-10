@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "23 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "24 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7442,10 +7442,16 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local cMeLLleHue_no_y = 31
 	local HyMepacu9l = 0
 	
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage))
+	
 	--создание предмета в рамке
 	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 31, 77, 83, black)
 	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 41, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
+	
+
+	
 	
 	--создание ячеек крафта
 	for i = 1, 6 do

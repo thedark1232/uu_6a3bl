@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "62 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "63 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7445,6 +7445,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local cMeLLleHue_no_x = 50
 	local cMeLLleHue_no_y = 31
 	local HyMepacu9l = 0
+	local TekyLLluu_HoMep_pecenTa = 1
 	
 	--создание предмета в рамке
 	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 52, 77, 83, black)
@@ -7484,7 +7485,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 					table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.damage)
 					table_form.TekyLLLuu_npegMeT.setLabel("1")
 					table_form.nogcka3ka_Ha3BaHue.setText(Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ha3BaHue))
-					
+					TekyLLluu_HoMep_pecenTa = HoMep_uTema
 					for all_items = 1, 12 do
 						if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil then
 							table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].name)
@@ -7543,9 +7544,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.Ha4aJIo_kpaqpTa = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "Ha4aTb_kpaqpT_button", true, blue, white, function()
 		table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
 		table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
-		table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_pecenTa], koJIu4ecTBo_uTeMoB})
-		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
-		setConfiguration()
+		--table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], tonumber(table_form.TekyLLLuu_npegMeT.getLabel())})
+		--configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
+		--setConfiguration()
 		for i = 1, 16 do
 			if tonumber(table_form["o4epedb_icon" .. tostring(i)].getLabel()) == 0 then
 				table_form["o4epegu" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())
@@ -7559,7 +7560,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	end)
 	
 	--ячейки очереди крафтов
-	table_form.o4epegu_kpaqpToB = MoHuTop_urpoka[nick].addText(110, 180, "ОЧЕРЕДИ КРАФТОВ:", blue)
+	table_form.o4epegu_kpaqpToB = MoHuTop_urpoka[nick].addText(137, 180, "ОЧЕРЕДИ КРАФТОВ:", blue)
 	local x_o4epegeU = 13
 	for i = 1, 16 do
 		table_form["o4epegu" .. tostring(i)] = MoHuTop_urpoka[nick].addBox(x_o4epegeU, 190, 20, 20, gray)

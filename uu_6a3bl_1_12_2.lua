@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "58 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "59 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7546,9 +7546,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 	end)
 	
 	--ячейки очереди крафтов
-	local x_o4epegeU = 6
-	for i = 1, 17 do
-		table_form["o4epegu" .. tostring(i)] = MoHuTop_urpoka[nick].addBox(x_o4epegeU, 136, 20, 20, gray)
+	table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(170, 178, "ОЧЕРЕДИ КРАФТОВ:", blue)
+	local x_o4epegeU = 16
+	for i = 1, 16 do
+		table_form["o4epegu" .. tostring(i)] = MoHuTop_urpoka[nick].addBox(x_o4epegeU, 190, 20, 20, gray)
 		x_o4epegeU = x_o4epegeU + 21
 	end
 	
@@ -7560,11 +7561,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 3, 178, 62, 37, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
 		--obj = table_form.test_cMeLLLeHu9l2
 	--end)
-	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
-		--obj = table_form.test_cMeLLLeHu9l3
-	--end)
+	table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
+		obj = table_form.test_cMeLLLeHu9l3
+	end)
 
-	--obj = table_form.main_box3
+	obj = table_form.main_box3
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

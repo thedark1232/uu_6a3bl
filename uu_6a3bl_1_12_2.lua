@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "15 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "16 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -713,6 +713,17 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
 						end
 					end
+					if v.getId() == id and v.getType() == "icon" then
+						v.setClickable(false)
+						local button_color = v.getColor()
+						v.setColor(green)
+						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+						v.click(v.button_num)
+						v.setColor(button_color)
+						v.setClickable(true)
+						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+						return
+					end 
 				end
 			end
 		end
@@ -7427,10 +7438,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 		cMeLLleHue_no_x = 5
 		for j = 1, 10 do
 			HyMepacu9l = HyMepacu9l + 1
-			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon_button", true, gray, white, function()
-				local Homep_kHonku = HyMepacu9l
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "кнопка: " .. tostring(table_form[HyMepacu9l].getX()))
+			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id: " .. Ta6JIuca_npegMeToB[HoMep_uTema].id)
 			end)
+			table_form[HyMepacu9l].button_num = HyMepacu9l
 			table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_npegMeToB[HyMepacu9l].id, Ta6JIuca_npegMeToB[HyMepacu9l].dmg)
 			table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 21

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "31 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "32 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7472,24 +7472,36 @@ function forms:creat_MaTpuca_craft_form(nick)
 				table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.damage)
 				table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 			end
-
-			cMeLLleHue_no_x = cMeLLleHue_no_x + 21
-			
+			cMeLLleHue_no_x = cMeLLleHue_no_x + 21			
 		end
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 	end
 		
-	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 296, 52, 20, 20, "", "test_cMeLLLeHu9l_button", true, gray, white, function()
-		obj = table_form.test_cMeLLLeHu9l
-	end)
-	table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 296, 73, 20, 20, "", "test2_cMeLLLeHu9l_button", true, gray, white, function()
-		obj = table_form.test_cMeLLLeHu9l2
-	end)
-	table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 296, 94, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
-		obj = table_form.test_cMeLLLeHu9l3
-	end)
-	table_form.tesToBa9l_icon = MoHuTop_urpoka[nick].addIcon(297, 53, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-	obj = table_form.tesToBa9l_icon
+	--создание ячеек необходимых итемов для крафта
+	local HyMepacu9l2 = 0
+	local cMeLLleHue_no_x2 = 296
+	local cMeLLleHue_no_y2 = 52
+	for i = 1, 4 do
+		for j = 1, 3 do
+			HyMepacu9l2 = HyMepacu9l2 + 1
+			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function(HoMep_uTema) end)
+			table_form["icon" .. tostring(HyMepacu9l2)] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x2 + 3, cMeLLleHue_no_y2 + 1, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+			cMeLLleHue_no_x2 = cMeLLleHue_no_x2 + 21
+		end
+		cMeLLleHue_no_y2 = cMeLLleHue_no_y2 + 21
+	end
+	-- table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 296, 52, 20, 20, "", "test_cMeLLLeHu9l_button", true, gray, white, function()
+		-- obj = table_form.test_cMeLLLeHu9l
+	-- end)
+	-- table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 296, 73, 20, 20, "", "test2_cMeLLLeHu9l_button", true, gray, white, function()
+		-- obj = table_form.test_cMeLLLeHu9l2
+	-- end)
+	-- table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 296, 94, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
+		-- obj = table_form.test_cMeLLLeHu9l3
+	-- end)
+	-- table_form.tesToBa9l_icon = MoHuTop_urpoka[nick].addIcon(297, 53, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+	-- table_form.tesToBa9l_icon.setLabel("1
+	-- obj = table_form.tesToBa9l_icon
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

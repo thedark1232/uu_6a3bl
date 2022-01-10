@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "52 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "53 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7556,14 +7556,15 @@ function forms:creat_MaTpuca_craft_form(nick)
 	end)
 	
 	--подсказка 
-	table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(300, 158, "предмет добавлен", green)
+	table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(307, 138, g .. "предмет:")
+	table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(307, 148, g .. "ДОБАВЛЕН!")
 	
 	--table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "test_cMeLLLeHu9l_button", true, blue, white, function()
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начать крафт")
 	--end)
-	-- table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 296, 115, 20, 20, "", "test2_cMeLLLeHu9l_button", true, gray, white, function()
-		-- obj = table_form.test_cMeLLLeHu9l2
-	-- end)
+	table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 307, 138, 20, 20, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
+		obj = table_form.test_cMeLLLeHu9l2
+	end)
 	-- table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 296, 126, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		-- obj = table_form.test_cMeLLLeHu9l3
 	-- end)

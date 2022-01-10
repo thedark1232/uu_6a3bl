@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "39 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "40 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7462,16 +7462,16 @@ function forms:creat_MaTpuca_craft_form(nick)
 					table_form.nogcka3ka_Ha3BaHue.setText(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ha3BaHue)
 				end
 				for all_items = 1, 12 do
-						print("Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil", Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil)
+						--print("Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil", Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil)
 					if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil then
-						for k, v in pairs(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items]) do
-							print(k, v)
-						end
-						--table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items].name)
-						--table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items].damage)
-						--table_form["icon" .. tostring(all_items)].visible(true)
+						--for k, v in pairs(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items]) do
+							--print(k, v)
+						--end
+						table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].name)
+						table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].damage)
+						table_form["icon" .. tostring(all_items)].visible(true)
 					else
-						--table_form["icon" .. tostring(all_items)].visible(false)
+						table_form["icon" .. tostring(all_items)].visible(false)
 					end
 				end
 			end)

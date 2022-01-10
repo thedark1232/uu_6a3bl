@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "73 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "74 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7464,15 +7464,20 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form["icon" .. tostring(all_items)].setVisible(false)
 		end
 	end	
+
+	--название первого отображаемого итема
+	table_form.nogcka3ka_Ha3BaHue = MoHuTop_urpoka[nick].addText(219, 33, Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ha3BaHue), blue)
+	table_form.nogcka3ka_Ha3BaHue2 = MoHuTop_urpoka[nick].addText(219, 43, "", blue)
+	
 	local Ha3BaHue_uTema = function(Ha3BaHue)
 		if unicode.len(Ha3BaHue) > 23 then
-			return unicode.sub(Ha3BaHue, 1, 23)
+			return unicode.sub(Ha3BaHue, 1, 23) .. "-"
+			table_form.nogcka3ka_Ha3BaHue2.setText(unicode.sub(Ha3BaHue, 24, unicode.len(Ha3BaHue)))
 		else
+			table_form.nogcka3ka_Ha3BaHue2.setText("")
 			return Ha3BaHue
 		end
 	end
-	--название первого отображаемого итема
-	table_form.nogcka3ka_Ha3BaHue = MoHuTop_urpoka[nick].addText(219, 33, Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ha3BaHue), blue)
 	
 	--создание ячеек крафта
 	for i = 1, 6 do
@@ -11383,7 +11388,7 @@ do
 	if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
 		onoBeLLleHue_o_nocTopoHHux = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux, "", red)
-		TblkHu_naJIkoU_no_MaTpuce = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux + 10, "", red)
+		TblkHu_naJIkoU_no_MaTpuce = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(148, 18, "", red)
 	end
 	
 	

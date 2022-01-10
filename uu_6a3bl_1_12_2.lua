@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "70 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "71 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1408,6 +1408,7 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	for i = 1, Bcero_cJIoToB_B_cyHgyke do
 		local cJIegyl0llluu_uTem = component.invoke(transposer, "getStackInSlot", cTopoHa_Bblga4u, i)
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
+		os.sleep(0)
 	end
 	
 	
@@ -7410,14 +7411,14 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	
-	table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "☚", "left_button", true, blue, white, function()
+	table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, blue, white, function()
 		obj = table_form.button_BJIeBo
 	end)
-	table_form.button_BJIeBo.caption.setScale(4)
-	table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "☛", "right_button", true, blue, white, function() 
+
+	table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "==>", "right_button", true, blue, white, function() 
 		obj = table_form.button_BnpaBo
 	end)
-	table_form.button_BJIeBo.caption.setScale(3)
+	
 
 	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 	-- ["Ha3BaHue"] = coo6llleHue,

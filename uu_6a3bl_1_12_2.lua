@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "27 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "28 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7452,6 +7452,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 41, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
 	
+	table_form.nogcka3ka_Ha3BaHue = MoHuTop_urpoka[nick].addText(300, 33, Ta6JIuca_recenToB_Ha_MaTpuce[1].Ha3BaHue, blue)
+	
+	
 
 	
 	
@@ -7482,7 +7485,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 218, 31, 77, 83, "", "test_cMeLLLeHu9l_button", true, black, white, function()
 		-- obj = table_form.test_cMeLLLeHu9l
 	--end)
-	--obj = table_form.test_cMeLLLeHu9l
+	obj = table_form.nogcka3ka_Ha3BaHue
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

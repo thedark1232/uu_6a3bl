@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "18 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "19 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7435,9 +7435,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local HyMepacu9l = 0
 	
 	--создание предмета в рамке
-	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 218, 31, 77, 83, "", "test_cMeLLLeHu9l_button", true, black, white, function()
-		obj = table_form.test_cMeLLLeHu9l
-	end)
+	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 31, 77, 83, black)
 	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(227, 37, "ThaumicTinkerer:ichorSwordGem", 0)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
 	
@@ -7447,7 +7445,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 		for j = 1, 10 do
 			HyMepacu9l = HyMepacu9l + 1
 			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "id: " .. Ta6JIuca_npegMeToB[HoMep_uTema].id)
+				--Ta6JIuca_npegMeToB[HoMep_uTema].id)
+				table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_npegMeToB[HoMep_uTema].id)
+				table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_npegMeToB[HoMep_uTema].dmg)
 			end)
 			table_form[HyMepacu9l].button_num = HyMepacu9l
 			table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_npegMeToB[HyMepacu9l].id, Ta6JIuca_npegMeToB[HyMepacu9l].dmg)
@@ -7457,11 +7457,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 		end
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 	end
-	
-	--рамка текущего итема
-	--table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 358, 174, white)
-	
-
+		
+	-- table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 218, 31, 77, 83, "", "test_cMeLLLeHu9l_button", true, black, white, function()
+		-- obj = table_form.test_cMeLLLeHu9l
+	-- end)
 	obj = table_form.TekyLLLuu_npegMeT
 
 	--создание стрелок для рисования ГУИ

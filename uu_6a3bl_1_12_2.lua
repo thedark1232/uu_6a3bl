@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "43 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "44 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7501,17 +7501,32 @@ function forms:creat_MaTpuca_craft_form(nick)
 		cMeLLleHue_no_y2 = cMeLLleHue_no_y2 + 21
 	end
 	
-	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 296, 105, 20, 20, "", "test_cMeLLLeHu9l_button", true, gray, white, function()
-		obj = table_form.test_cMeLLLeHu9l
+	--создание кнопок количества для крафта
+	table_form.koJIu4ecTBo_1 = creat_new_button(-1, nick, 217, 136, 20, 20, "+1", "koJIu4ecTBo_1_button", true, blue, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "+1")
 	end)
-	table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 296, 115, 20, 20, "", "test2_cMeLLLeHu9l_button", true, gray, white, function()
-		obj = table_form.test_cMeLLLeHu9l2
+	table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 20, 20, "+10", "koJIu4ecTBo_10_button", true, blue, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "+10")
 	end)
-	table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 296, 126, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
-		obj = table_form.test_cMeLLLeHu9l3
+	table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 20, 20, "+100", "koJIu4ecTBo_100_button", true, blue, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "+100")
 	end)
+	table_form.c6poc = creat_new_button(-1, nick, 276, 136, 20, 20, "+100", "c6poc_button", true, blue, white, function()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "+100")
+	end)
+	
+	
+	-- table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 296, 105, 20, 20, "", "test_cMeLLLeHu9l_button", true, gray, white, function()
+		-- obj = table_form.test_cMeLLLeHu9l
+	-- end)
+	-- table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 296, 115, 20, 20, "", "test2_cMeLLLeHu9l_button", true, gray, white, function()
+		-- obj = table_form.test_cMeLLLeHu9l2
+	-- end)
+	-- table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 296, 126, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
+		-- obj = table_form.test_cMeLLLeHu9l3
+	-- end)
 
-	obj = table_form.test_cMeLLLeHu9l
+	-- obj = table_form.test_cMeLLLeHu9l
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

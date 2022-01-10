@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "11 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "12 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7409,9 +7409,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--временная таблица предметов
 	local Ta6JIuca_TecToBblx_npegMeToB = {}
-	table.insert(Ta6JIuca_TecToBblx_npegMeToB, {id = "ThaumicTinkerer:ichorSwordGem", dmg = 0}
-	table.insert(Ta6JIuca_TecToBblx_npegMeToB, {id = "ThaumicTinkerer:ichorclothChest", dmg = 0}
-	table.insert(Ta6JIuca_TecToBblx_npegMeToB, {id = "ThaumicTinkerer:ichorPick", dmg = 0}
+	table.insert(Ta6JIuca_TecToBblx_npegMeToB, {id = "ThaumicTinkerer:ichorSwordGem", dmg = 0})
+	table.insert(Ta6JIuca_TecToBblx_npegMeToB, {id = "ThaumicTinkerer:ichorclothChest", dmg = 0})
+	table.insert(Ta6JIuca_TecToBblx_npegMeToB, {id = "ThaumicTinkerer:ichorPick", dmg = 0})
 	
 	local Ta6JIuca_npegMeToB = {}
 	for i = 1, 500 do

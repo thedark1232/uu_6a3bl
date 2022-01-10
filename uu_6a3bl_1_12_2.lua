@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "48 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "49 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7520,7 +7520,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form.TekyLLLuu_npegMeT.setLabel("999")
 		end
 	end)
-	table_form.koJIu4ecTBo_1.caption.setX(221)
+	table_form.koJIu4ecTBo_1.caption.setX(225)
 	table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 18, 20, "10", "koJIu4ecTBo_10_button", true, blue, white, function()
 		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
 		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 10, true, true, true, 999) then
@@ -7529,7 +7529,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form.TekyLLLuu_npegMeT.setLabel("999")
 		end
 	end)
-	table_form.koJIu4ecTBo_10.caption.setX(239)
+	table_form.koJIu4ecTBo_10.caption.setX(240)
 	table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 18, 20, "100", "koJIu4ecTBo_100_button", true, blue, white, function()
 		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
 		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 100, true, true, true, 999) then
@@ -7538,15 +7538,17 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form.TekyLLLuu_npegMeT.setLabel("999")
 		end
 	end)
-	table_form.koJIu4ecTBo_100.caption.setX(259)
+	table_form.koJIu4ecTBo_100.caption.setX(258)
 	table_form.c6poc = creat_new_button(-1, nick, 276, 136, 18, 20, "С", "c6poc_button", true, blue, white, function()
 		table_form.TekyLLLuu_npegMeT.setLabel("1")
 	end)
-	table_form.c6poc.caption.setX(280)
+	table_form.c6poc.caption.setX(285)
 	
-	-- table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 296, 105, 20, 20, "", "test_cMeLLLeHu9l_button", true, gray, white, function()
-		-- obj = table_form.test_cMeLLLeHu9l
-	-- end)
+	
+	
+	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 217, 153, 20, 20, "скрафтить", "test_cMeLLLeHu9l_button", true, blue, white, function()
+		obj = table_form.test_cMeLLLeHu9l
+	end)
 	-- table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 296, 115, 20, 20, "", "test2_cMeLLLeHu9l_button", true, gray, white, function()
 		-- obj = table_form.test_cMeLLLeHu9l2
 	-- end)

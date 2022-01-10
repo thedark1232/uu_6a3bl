@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "37 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "38 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7442,11 +7442,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local cMeLLleHue_no_y = 31
 	local HyMepacu9l = 0
 	
-	
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say("type: " .. type(Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage))
-	
 	--создание предмета в рамке
 	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 52, 77, 83, black)
 	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 62, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
@@ -7498,7 +7493,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		cMeLLleHue_no_x2 = 296
 		for j = 1, 3 do
 			HyMepacu9l2 = HyMepacu9l2 + 1
-			table_form[HyMepacu9l2] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function(HoMep_uTema) end)
+			table_form["craft" .. tostring(HyMepacu9l2)] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function() end)
 			table_form["icon" .. tostring(HyMepacu9l2)] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x2 + 3, cMeLLleHue_no_y2 + 1, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
 			table_form["icon" .. tostring(HyMepacu9l2)].setVisible(false)
 			cMeLLleHue_no_x2 = cMeLLleHue_no_x2 + 21

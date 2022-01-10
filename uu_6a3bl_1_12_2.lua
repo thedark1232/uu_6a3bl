@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "75 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "76 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7410,7 +7410,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	
-	table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, blue, white, function()
+	table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, gray, white, function()
 		obj = table_form.button_BJIeBo
 	end)
 
@@ -7471,8 +7471,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	local Ha3BaHue_uTema = function(Ha3BaHue)
 		if unicode.len(Ha3BaHue) > 23 then
-			return unicode.sub(Ha3BaHue, 1, 23) .. "-"
 			table_form.nogcka3ka_Ha3BaHue2.setText(unicode.sub(Ha3BaHue, 24, unicode.len(Ha3BaHue)))
+			return unicode.sub(Ha3BaHue, 1, 23) .. "-"
 		else
 			table_form.nogcka3ka_Ha3BaHue2.setText("")
 			return Ha3BaHue

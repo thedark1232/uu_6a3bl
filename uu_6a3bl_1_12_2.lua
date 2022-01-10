@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "80 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "81 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7403,6 +7403,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(3 + x_win, 177, 357, 37, white)
 	table_form.main_box3.setClickable(false)
+	
+	table_form.box_nogcka3ok = MoHuTop_urpoka[nick].addBox(297, 136, 62, 37, black) --бокс подссказок "предмет добавлен"
 	local obj = table_form.main_box2
 
 	--отдельная кнопка выхода, от остальных кнопок
@@ -7588,7 +7590,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 	end
 	
 	--подсказка 
-	table_form.box_nogcka3ok = MoHuTop_urpoka[nick].addBox(297, 136, 62, 37, black)
 	table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(307, 145, "", green)
 	table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(304, 157, "", green)
 	

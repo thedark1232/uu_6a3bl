@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "20 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "21 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7429,6 +7429,14 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table.insert(Ta6JIuca_npegMeToB, Ta6JIuca_TecToBblx_npegMeToB[math.random(1, 3)])
 	end
 	
+	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
+	-- ["Ha3BaHue"] = coo6llleHue,
+	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
+	-- ["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
+	-- ["okoH4aTeJIbHblu_npegMeT"] = "не определено",
+	-- ["HoMeP_B_Ta6JIuce"] = "-1"
+	-- })
+	
 	--создание ячеек предметов
 	local cMeLLleHue_no_x = 50
 	local cMeLLleHue_no_y = 31
@@ -7446,12 +7454,17 @@ function forms:creat_MaTpuca_craft_form(nick)
 			HyMepacu9l = HyMepacu9l + 1
 			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
 				--Ta6JIuca_npegMeToB[HoMep_uTema].id)
-				table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_npegMeToB[HoMep_uTema].id)
-				table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_npegMeToB[HoMep_uTema].dmg)
+				if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
+					table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].npegMeT_no_ceHTpy.id)
+					table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].npegMeT_no_ceHTpy.dmg)
+				end
 			end)
 			table_form[HyMepacu9l].button_num = HyMepacu9l
-			table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_npegMeToB[HyMepacu9l].id, Ta6JIuca_npegMeToB[HyMepacu9l].dmg)
-			table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
+			if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
+				table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].npegMeT_no_ceHTpy.id, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].npegMeT_no_ceHTpy.dmg)
+				table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
+			end
+
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 21
 			
 		end
@@ -7461,7 +7474,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 218, 31, 77, 83, "", "test_cMeLLLeHu9l_button", true, black, white, function()
 		-- obj = table_form.test_cMeLLLeHu9l
 	end)
-	obj = table_form.table_form.test_cMeLLLeHu9l
+	obj = table_form.test_cMeLLLeHu9l
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

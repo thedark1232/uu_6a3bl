@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "68 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "69 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7544,9 +7544,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.Ha4aJIo_kpaqpTa = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "Ha4aTb_kpaqpT_button", true, blue, white, function()
 		table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
 		table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
-		--table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], tonumber(table_form.TekyLLLuu_npegMeT.getLabel())})
-		--configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
-		--setConfiguration()
+		table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], tonumber(table_form.TekyLLLuu_npegMeT.getLabel())})
+		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
+		setConfiguration()
 		for i = 1, 16 do
 			if tonumber(table_form["o4epedb_icon" .. tostring(i)].getLabel()) == 0 then
 				table_form["o4epedb_icon" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())

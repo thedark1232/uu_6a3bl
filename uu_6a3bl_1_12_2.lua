@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "65 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "66 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7563,9 +7563,15 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local x_o4epegeU = 13
 	for i = 1, 16 do
 		table_form["o4epegu" .. tostring(i)] = MoHuTop_urpoka[nick].addBox(x_o4epegeU, 190, 20, 20, gray)
-		table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-		table_form["o4epedb_icon" .. tostring(i)].setVisible(false)
-		table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
+		if o4epegb_kpaqpToB_Ha_MaTpuce[i] == nil then	
+			table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+			table_form["o4epedb_icon" .. tostring(i)].setVisible(false)
+			table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
+		else
+			table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage)
+			table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
+			table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
+		end
 		x_o4epegeU = x_o4epegeU + 21
 	end
 	

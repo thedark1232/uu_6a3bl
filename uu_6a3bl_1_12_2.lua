@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "9 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "10 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7399,13 +7399,14 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.textBox_infusion_claw = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 	
 	
-	table_form.BJIeBo = creat_new_button(1, nick, 300 + x_win, 150, 50, 15, "<-", "left_button", true, blue, white, function()
+	table_form.BJIeBo = creat_new_button(1, nick, 107 + x_win, 158, 50, 15, "<-", "left_button", true, blue, white, function()
 		obj = table_form.BJIeBo
 	end)
-	table_form.BnpaBo = creat_new_button(1, nick, 400 + x_win, 100, 50, 15, "->", "right_button", true, blue, white, function() 
+	table_form.BnpaBo = creat_new_button(1, nick, 160 + x_win, 158, 50, 15, "->", "right_button", true, blue, white, function() 
 		obj = table_form.BnpaBo
 	end)
 	
+	local Ta6JIuca_npegMeToB = {}
 	
 	--создание ячеек предметов
 	local cMeLLleHue_no_x = 50
@@ -7414,9 +7415,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 	for i = 1, 6 do
 		cMeLLleHue_no_x = 5
 		for j = 1, 10 do
-			--table_form[{}]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon_button", true, gray, white, function() end)
-			cMeLLleHue_no_x = cMeLLleHue_no_x + 21
+			table_form[{}]= creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon_button", true, gray, white, function()
+				
+			end)
 			table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
+			cMeLLleHue_no_x = cMeLLleHue_no_x + 21
 			HyMepacu9l = HyMepacu9l + 1
 		end
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21

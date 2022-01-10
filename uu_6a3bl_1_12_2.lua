@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "84 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "85 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1540,6 +1540,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local npeBblLLleHO_BpeM9l_oJugaHu9l_akTuBacuu_MaTpucbl = false
 		local npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = false
 		local npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB = false
+		local He_nocJIegHuu_npegMeT = true
 		
 		--начло цикла крафта на матрице
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
@@ -1651,15 +1652,18 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 									end
 								end
 								HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()
-								if #HexBaTuJIo_acneKToB > 0 then
+								if #HexBaTuJIo_acneKToB > 0 and He_nocJIegHuu_npegMeT then
 									ycneLLloe_go6aBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 								end
 								
 								if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then
+									He_nocJIegHuu_npegMeT = false
+									ycneLLloe_go6aBJIeHue = true
 									_, _, _, TekyLLlue_cekyHgbl = getTime()
 									TblkHu_naJIkoU_no_MaTpuce.setText("ТАЙМАУТ КРАФТА ПОСЛЕДНЕГО ПРЕДМЕТА: " .. tostring(cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl))
 									if TekyLLlue_cekyHgbl >= cTapToBle_cekyHgbl then
 										npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB = true
+										ycneLLloe_go6aBJIeHue = false
 									end
 								else
 									if not ycneLLloe_go6aBJIeHue then

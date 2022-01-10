@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "7 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "8 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7400,10 +7400,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	
 	table_form.BJIeBo = creat_new_button(1, nick, 5 + x_win, 100, 50, 15, "<-", "left_button", true, blue, white, function()
-		obj
+		obj = table_form.BJIeBo
 	end)
 	table_form.BnpaBo = creat_new_button(1, nick, 5 + x_win, 100, 50, 15, "->", "right_button", true, blue, white, function() 
-
+		obj = table_form.BnpaBo
 	end)
 	
 	

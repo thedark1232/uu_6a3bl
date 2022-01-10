@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "81 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "82 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1649,6 +1649,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 									ycneLLloe_go6aBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 								end
 								
+								if i ~= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] and not ycneLLloe_go6aBJIeHue then kraqpT_npepBaH = true end
 								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
 							until kpaqpT_3aBepllleH or kraqpT_npepBaH			
 						end
@@ -7454,7 +7455,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--создание предмета в рамке
 	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 52, 77, 83, black)
 	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 62, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-	table_form.cTapToBblu_npegMeT_no_ceHTpy = MoHuTop_urpoka[nick].addIcon(301, 100, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage)
+	table_form.cTapToBblu_npegMeT_no_ceHTpy = MoHuTop_urpoka[nick].addIcon(312, 138, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage)
 	table_form.cTapToBblu_npegMeT_no_ceHTpy.setScale(2)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
 	table_form.TekyLLLuu_npegMeT.setLabel("1")

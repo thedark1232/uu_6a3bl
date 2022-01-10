@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "36 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "37 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7467,10 +7467,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 					table_form.nogcka3ka_Ha3BaHue.setText(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ha3BaHue)
 				end
 				for all_items = 1, 12 do
-					if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil then
 						print("Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil", Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil)
 						print("Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items].name", Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items].name)
 						print("tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items].damage", Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items].damage)
+					if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil then
+
 						--table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items].name)
 						--table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items].damage)
 						--table_form["icon" .. tostring(all_items)].visible(true)
@@ -7497,7 +7498,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		cMeLLleHue_no_x2 = 296
 		for j = 1, 3 do
 			HyMepacu9l2 = HyMepacu9l2 + 1
-			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function(HoMep_uTema) end)
+			table_form[HyMepacu9l2] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function(HoMep_uTema) end)
 			table_form["icon" .. tostring(HyMepacu9l2)] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x2 + 3, cMeLLleHue_no_y2 + 1, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
 			table_form["icon" .. tostring(HyMepacu9l2)].setVisible(false)
 			cMeLLleHue_no_x2 = cMeLLleHue_no_x2 + 21

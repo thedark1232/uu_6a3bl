@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "55 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "56 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7394,7 +7394,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 364, 178, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 364, 218, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 357, 144, white)
 	table_form.main_box2.setClickable(false)
@@ -7560,7 +7560,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		-- obj = table_form.test_cMeLLLeHu9l3
 	-- end)
 
-	 obj = table_form.nogcka3ka_go6aBJIeHu9l2
+	 obj = table_form.main_box2
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

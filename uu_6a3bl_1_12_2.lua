@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "53 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "54 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7394,9 +7394,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--главный фрейм
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 394, 208, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 364, 178, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 388, 174, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 357, 144, white)
 	table_form.main_box2.setClickable(false)
 		
 	local obj = table_form.main_box2
@@ -7556,20 +7556,21 @@ function forms:creat_MaTpuca_craft_form(nick)
 	end)
 	
 	--подсказка 
+	table_form.box_nogcka3ok = MoHuTop_urpoka[nick].addBox(297, 136, 62, 37, black)
 	table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(307, 138, g .. "предмет:")
-	table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(307, 148, g .. "ДОБАВЛЕН!")
+	table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(304, 148, g .. "ДОБАВЛЕН!")
 	
 	--table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "test_cMeLLLeHu9l_button", true, blue, white, function()
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "начать крафт")
 	--end)
-	table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 307, 138, 20, 20, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
-		obj = table_form.test_cMeLLLeHu9l2
-	end)
+	--table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 297, 136, 62, 37, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
+		--obj = table_form.test_cMeLLLeHu9l2
+	--end)
 	-- table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 296, 126, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		-- obj = table_form.test_cMeLLLeHu9l3
 	-- end)
 
-	 obj = table_form.nogcka3ka_go6aBJIeHu9l
+	 obj = table_form.nogcka3ka_go6aBJIeHu9l2
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

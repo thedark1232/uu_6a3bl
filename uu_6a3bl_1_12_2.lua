@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "44 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "46 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7461,13 +7461,13 @@ function forms:creat_MaTpuca_craft_form(nick)
 				if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
 					table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.name)
 					table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.damage)
+					table_form.TekyLLLuu_npegMeT.setLabel("1")
 					table_form.nogcka3ka_Ha3BaHue.setText(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ha3BaHue)
 					
 					for all_items = 1, 12 do
 						if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil then
 							table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].name)
 							table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].damage)
-							table_form["icon" .. tostring(all_items)].setLabel("1")
 							table_form["icon" .. tostring(all_items)].setVisible(true)
 						else
 							table_form["icon" .. tostring(all_items)].setVisible(false)
@@ -7502,17 +7502,17 @@ function forms:creat_MaTpuca_craft_form(nick)
 	end
 	
 	--создание кнопок количества для крафта
-	table_form.koJIu4ecTBo_1 = creat_new_button(-1, nick, 217, 136, 20, 20, "+1", "koJIu4ecTBo_1_button", true, blue, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "+1")
+	table_form.koJIu4ecTBo_1 = creat_new_button(-1, nick, 217, 136, 18, 20, "+1", "koJIu4ecTBo_1_button", true, blue, white, function()
+		table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 1))
 	end)
-	table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 20, 20, "+10", "koJIu4ecTBo_10_button", true, blue, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "+10")
+	table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 18, 20, "+10", "koJIu4ecTBo_10_button", true, blue, white, function()
+		table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 10))
 	end)
-	table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 20, 20, "+100", "koJIu4ecTBo_100_button", true, blue, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "+100")
+	table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 18, 20, "+100", "koJIu4ecTBo_100_button", true, blue, white, function()
+		table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 100))
 	end)
-	table_form.c6poc = creat_new_button(-1, nick, 276, 136, 20, 20, "+100", "c6poc_button", true, blue, white, function()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "+100")
+	table_form.c6poc = creat_new_button(-1, nick, 276, 136, 18, 20, "+100", "c6poc_button", true, blue, white, function()
+		table_form.TekyLLLuu_npegMeT.setLabel("1")
 	end)
 	
 	

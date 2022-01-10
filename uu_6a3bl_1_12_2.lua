@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "40 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "41 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7469,9 +7469,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 						--end
 						table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].name)
 						table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].damage)
-						table_form["icon" .. tostring(all_items)].visible(true)
+						table_form["icon" .. tostring(all_items)].setVisible(true)
 					else
-						table_form["icon" .. tostring(all_items)].visible(false)
+						table_form["icon" .. tostring(all_items)].setVisible(false)
 					end
 				end
 			end)

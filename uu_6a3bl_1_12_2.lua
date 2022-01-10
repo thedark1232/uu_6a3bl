@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "19 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "20 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,7 +16,7 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 60
-local BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = 60
+local BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = 300
 local TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
 local TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 local Ta6JIuca_acnekToB
@@ -1634,7 +1634,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 							repeat
 								os.sleep(0.1)
 								local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
-								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
+								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
 									kpaqpT_3aBepllleH = true
 									if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
 										Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
@@ -7436,10 +7436,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	--создание предмета в рамке
 	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 31, 77, 83, black)
-	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(227, 37, "ThaumicTinkerer:ichorSwordGem", 0)
+	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 41, "ThaumicTinkerer:ichorSwordGem", 0)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
 	
-	
+	--создание ячеек крафта
 	for i = 1, 6 do
 		cMeLLleHue_no_x = 5
 		for j = 1, 10 do
@@ -7458,10 +7458,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 	end
 		
-	-- table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 218, 31, 77, 83, "", "test_cMeLLLeHu9l_button", true, black, white, function()
+	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 218, 31, 77, 83, "", "test_cMeLLLeHu9l_button", true, black, white, function()
 		-- obj = table_form.test_cMeLLLeHu9l
-	-- end)
-	obj = table_form.TekyLLLuu_npegMeT
+	end)
+	obj = table_form.table_form.test_cMeLLLeHu9l
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

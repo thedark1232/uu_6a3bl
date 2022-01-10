@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "47 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "48 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7437,6 +7437,22 @@ function forms:creat_MaTpuca_craft_form(nick)
 	-- ["HoMeP_B_Ta6JIuce"] = "-1"
 	-- })
 	
+	--создание ячеек необходимых итемов для крафта
+	local HyMepacu9l2 = 0
+	local cMeLLleHue_no_x2 = 296
+	local cMeLLleHue_no_y2 = 52
+	for i = 1, 4 do
+		cMeLLleHue_no_x2 = 296
+		for j = 1, 3 do
+			HyMepacu9l2 = HyMepacu9l2 + 1
+			table_form["craft" .. tostring(HyMepacu9l2)] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function() end)
+			table_form["icon" .. tostring(HyMepacu9l2)] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x2 + 3, cMeLLleHue_no_y2 + 1, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+			table_form["icon" .. tostring(HyMepacu9l2)].setVisible(false)
+			cMeLLleHue_no_x2 = cMeLLleHue_no_x2 + 21
+		end
+		cMeLLleHue_no_y2 = cMeLLleHue_no_y2 + 21
+	end
+		
 	--создание ячеек предметов
 	local cMeLLleHue_no_x = 50
 	local cMeLLleHue_no_y = 31
@@ -7447,6 +7463,16 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 62, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
 	table_form.TekyLLLuu_npegMeT.setLabel("1")
+	
+	for all_items = 1, 12 do
+		if Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items] ~= nil then
+			table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items][2].name)
+			table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items][2].damage)
+			table_form["icon" .. tostring(all_items)].setVisible(true)
+		else
+			table_form["icon" .. tostring(all_items)].setVisible(false)
+		end
+	end	
 	
 	
 	table_form.nogcka3ka_Ha3BaHue = MoHuTop_urpoka[nick].addText(219, 33, Ta6JIuca_recenToB_Ha_MaTpuce[1].Ha3BaHue, blue)
@@ -7484,23 +7510,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		end
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 	end
-		
-	--создание ячеек необходимых итемов для крафта
-	local HyMepacu9l2 = 0
-	local cMeLLleHue_no_x2 = 296
-	local cMeLLleHue_no_y2 = 52
-	for i = 1, 4 do
-		cMeLLleHue_no_x2 = 296
-		for j = 1, 3 do
-			HyMepacu9l2 = HyMepacu9l2 + 1
-			table_form["craft" .. tostring(HyMepacu9l2)] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function() end)
-			table_form["icon" .. tostring(HyMepacu9l2)] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x2 + 3, cMeLLleHue_no_y2 + 1, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-			table_form["icon" .. tostring(HyMepacu9l2)].setVisible(false)
-			cMeLLleHue_no_x2 = cMeLLleHue_no_x2 + 21
-		end
-		cMeLLleHue_no_y2 = cMeLLleHue_no_y2 + 21
-	end
-	
+			
 	--создание кнопок количества для крафта
 	table_form.koJIu4ecTBo_1 = creat_new_button(-1, nick, 217, 136, 18, 20, "1", "koJIu4ecTBo_1_button", true, blue, white, function()
 		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
@@ -7510,6 +7520,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form.TekyLLLuu_npegMeT.setLabel("999")
 		end
 	end)
+	table_form.koJIu4ecTBo_1.caption.setX(221)
 	table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 18, 20, "10", "koJIu4ecTBo_10_button", true, blue, white, function()
 		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
 		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 10, true, true, true, 999) then
@@ -7518,6 +7529,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form.TekyLLLuu_npegMeT.setLabel("999")
 		end
 	end)
+	table_form.koJIu4ecTBo_10.caption.setX(239)
 	table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 18, 20, "100", "koJIu4ecTBo_100_button", true, blue, white, function()
 		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
 		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 100, true, true, true, 999) then
@@ -7526,10 +7538,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form.TekyLLLuu_npegMeT.setLabel("999")
 		end
 	end)
+	table_form.koJIu4ecTBo_100.caption.setX(259)
 	table_form.c6poc = creat_new_button(-1, nick, 276, 136, 18, 20, "С", "c6poc_button", true, blue, white, function()
 		table_form.TekyLLLuu_npegMeT.setLabel("1")
 	end)
-	
+	table_form.c6poc.caption.setX(280)
 	
 	-- table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 296, 105, 20, 20, "", "test_cMeLLLeHu9l_button", true, gray, white, function()
 		-- obj = table_form.test_cMeLLLeHu9l

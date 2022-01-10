@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "71 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "73 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1408,7 +1408,6 @@ function BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, He_BblcTaBJI9lTb_ceHTpaJIb
 	for i = 1, Bcero_cJIoToB_B_cyHgyke do
 		local cJIegyl0llluu_uTem = component.invoke(transposer, "getStackInSlot", cTopoHa_Bblga4u, i)
 		if cJIegyl0llluu_uTem ~= nil then table.insert(Ta6JIuca_Bcex_uTeMoB_B_cyHgyKe, {i, cJIegyl0llluu_uTem}) end
-		os.sleep(0)
 	end
 	
 	
@@ -7589,8 +7588,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
-
-	obj = table_form.o4epegu_kpaqpToB
+	table_form.ygaJIutb = MoHuTop_urpoka[nick].addText(307, 145, "ОЖИДАНИЕ ВЫСАСЫВАНИЯ АСПЕКТОВ: 500", red)
+	obj = table_form.ygaJIutb
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

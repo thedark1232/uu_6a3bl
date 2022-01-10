@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "25 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "26 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7468,7 +7468,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 				end
 			end)
 			table_form[HyMepacu9l].button_num = HyMepacu9l
-			if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
+			if Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l] ~= nil then
 				table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.damage)
 				table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 			end

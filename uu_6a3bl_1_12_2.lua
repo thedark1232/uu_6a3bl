@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "82 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "83 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1539,6 +1539,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		local TekyLLlue_cekyHgbl
 		local npeBblLLleHO_BpeM9l_oJugaHu9l_akTuBacuu_MaTpucbl = false
 		local npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = false
+		local npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB = false
 		
 		--начло цикла крафта на матрице
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выкладывание крафта на пьедесталы: " .. g .. recept.Ha3BaHue)
@@ -1633,6 +1634,11 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 						if ycneLLLHoe_BblcTaBJIeHue then
 							coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
 							local kpaqpT_3aBepllleH = false
+							--тайминг ожидания последнего предмета на матрице
+							if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then
+								_, _, _, cTapToBle_cekyHgbl = getTime()
+								cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB
+							end
 							repeat
 								os.sleep(0.1)
 								local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
@@ -1649,9 +1655,19 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 									ycneLLloe_go6aBJIeHue = BblCTaBuTb_HegocTal0LLlue_npegMeTbl(recept)
 								end
 								
-								if i ~= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] and not ycneLLloe_go6aBJIeHue then kraqpT_npepBaH = true end
+								if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then
+									if not ycneLLloe_go6aBJIeHue then
+										kraqpT_npepBaH = true 
+									end
+								else
+									_, _, _, TekyLLlue_cekyHgbl = getTime()
+									TblkHu_naJIkoU_no_MaTpuce.setText("ТАЙМАУТ ВСАСЫВАНИЯ ПРЕДМЕТОВ В МАТРИЦУ: " .. tostring(cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl))
+									if TekyLLlue_cekyHgbl >= cTapToBle_cekyHgbl then
+										npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB = true
+									end
+								end
 								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
-							until kpaqpT_3aBepllleH or kraqpT_npepBaH			
+							until kpaqpT_3aBepllleH or kraqpT_npepBaH or npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB	
 						end
 					end
 				end
@@ -1663,6 +1679,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 			print("not ycneLLloe_go6aBJIeHue->", not ycneLLloe_go6aBJIeHue)
 			print("npeBblLLleHO_BpeM9l_oJugaHu9l_akTuBacuu_MaTpucbl->", npeBblLLleHO_BpeM9l_oJugaHu9l_akTuBacuu_MaTpucbl)
 			print("npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB->", npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB)
+			print("npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB->", npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB)
 			
 			if kraqpT_npepBaH or not ycneLLLHoe_BblcTaBJIeHue or not ycneLLloe_go6aBJIeHue or npeBblLLleHO_BpeM9l_oJugaHu9l_akTuBacuu_MaTpucbl or npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB then 
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "крафт итема (" .. g .. recept.Ha3BaHue ..c .. ")" .. r .. " ОШИБКА!")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "74 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "75 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7593,8 +7593,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
-	table_form.ygaJIutb = MoHuTop_urpoka[nick].addText(307, 145, "ОЖИДАНИЕ ВЫСАСЫВАНИЯ АСПЕКТОВ: 500", red)
-	obj = table_form.ygaJIutb
 
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()

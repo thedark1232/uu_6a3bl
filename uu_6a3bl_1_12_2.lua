@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "51 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "52 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7481,7 +7481,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		end
 	end
 	--название первого отображаемого итема
-	table_form.nogcka3ka_Ha3BaHue = MoHuTop_urpoka[nick].addText(219, 33, Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ha3BaHue), 1, 23), blue)
+	table_form.nogcka3ka_Ha3BaHue = MoHuTop_urpoka[nick].addText(219, 33, Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ha3BaHue), blue)
 	
 	--создание ячеек крафта
 	for i = 1, 6 do

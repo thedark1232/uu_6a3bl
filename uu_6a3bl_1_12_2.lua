@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "85 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "86 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1657,8 +1657,10 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 								end
 								
 								if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then
-									He_nocJIegHuu_npegMeT = false
-									ycneLLloe_go6aBJIeHue = true
+									if not ycneLLloe_go6aBJIeHue then
+										He_nocJIegHuu_npegMeT = false
+										ycneLLloe_go6aBJIeHue = true
+									end
 									_, _, _, TekyLLlue_cekyHgbl = getTime()
 									TblkHu_naJIkoU_no_MaTpuce.setText("ТАЙМАУТ КРАФТА ПОСЛЕДНЕГО ПРЕДМЕТА: " .. tostring(cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl))
 									if TekyLLlue_cekyHgbl >= cTapToBle_cekyHgbl then

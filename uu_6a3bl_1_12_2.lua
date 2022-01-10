@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "83 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "84 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1656,14 +1656,14 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 								end
 								
 								if i >= o4epegb_kpaqpToB_Ha_MaTpuce[1][2] then
-									if not ycneLLloe_go6aBJIeHue then
-										kraqpT_npepBaH = true 
-									end
-								else
 									_, _, _, TekyLLlue_cekyHgbl = getTime()
-									TblkHu_naJIkoU_no_MaTpuce.setText("ТАЙМАУТ ВСАСЫВАНИЯ ПРЕДМЕТОВ В МАТРИЦУ: " .. tostring(cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl))
+									TblkHu_naJIkoU_no_MaTpuce.setText("ТАЙМАУТ КРАФТА ПОСЛЕДНЕГО ПРЕДМЕТА: " .. tostring(cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl))
 									if TekyLLlue_cekyHgbl >= cTapToBle_cekyHgbl then
 										npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB = true
+									end
+								else
+									if not ycneLLloe_go6aBJIeHue then
+										kraqpT_npepBaH = true 
 									end
 								end
 								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
@@ -1691,6 +1691,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 		end
 		
 		--окончательные действия после крафта
+		TblkHu_naJIkoU_no_MaTpuce.setText("")
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "всего скрафчено итемов: " .. tostring(Bcero_ckpaqp4eHo))
 		table.remove(o4epegb_kpaqpToB_Ha_MaTpuce, 1)
 		if #o4epegb_kpaqpToB_Ha_MaTpuce > 0 then

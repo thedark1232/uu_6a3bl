@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "17 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "18 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7435,10 +7435,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 	local HyMepacu9l = 0
 	
 	--создание предмета в рамке
-	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 200, 33, 20, 20, "", "test_cMeLLLeHu9l_button", true, black, white, function()
+	table_form.test_cMeLLLeHu9l = creat_new_button(-1, nick, 218, 31, 77, 83, "", "test_cMeLLLeHu9l_button", true, black, white, function()
 		obj = table_form.test_cMeLLLeHu9l
 	end)
-	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(100, 100, "ThaumicTinkerer:ichorSwordGem", 0)
+	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(227, 37, "ThaumicTinkerer:ichorSwordGem", 0)
 	table_form.TekyLLLuu_npegMeT.setScale(4)
 	
 	

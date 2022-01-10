@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "46 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "47 форма крафта"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7502,16 +7502,31 @@ function forms:creat_MaTpuca_craft_form(nick)
 	end
 	
 	--создание кнопок количества для крафта
-	table_form.koJIu4ecTBo_1 = creat_new_button(-1, nick, 217, 136, 18, 20, "+1", "koJIu4ecTBo_1_button", true, blue, white, function()
-		table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 1))
+	table_form.koJIu4ecTBo_1 = creat_new_button(-1, nick, 217, 136, 18, 20, "1", "koJIu4ecTBo_1_button", true, blue, white, function()
+		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
+		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 1, true, true, true, 999) then
+			table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 1))
+		else
+			table_form.TekyLLLuu_npegMeT.setLabel("999")
+		end
 	end)
-	table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 18, 20, "+10", "koJIu4ecTBo_10_button", true, blue, white, function()
-		table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 10))
+	table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 18, 20, "10", "koJIu4ecTBo_10_button", true, blue, white, function()
+		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
+		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 10, true, true, true, 999) then
+			table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 10))
+		else
+			table_form.TekyLLLuu_npegMeT.setLabel("999")
+		end
 	end)
-	table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 18, 20, "+100", "koJIu4ecTBo_100_button", true, blue, white, function()
-		table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 100))
+	table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 18, 20, "100", "koJIu4ecTBo_100_button", true, blue, white, function()
+		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
+		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 100, true, true, true, 999) then
+			table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 100))
+		else
+			table_form.TekyLLLuu_npegMeT.setLabel("999")
+		end
 	end)
-	table_form.c6poc = creat_new_button(-1, nick, 276, 136, 18, 20, "+100", "c6poc_button", true, blue, white, function()
+	table_form.c6poc = creat_new_button(-1, nick, 276, 136, 18, 20, "С", "c6poc_button", true, blue, white, function()
 		table_form.TekyLLLuu_npegMeT.setLabel("1")
 	end)
 	

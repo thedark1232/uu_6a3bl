@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "86 форма крафта"
+local Ha3BaHue_o6HoBJIeHu9l = "правки с работы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -18,6 +18,7 @@ local nick_testera = ""
 local nepBblu_B_o4epegu = false
 local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 60
 local BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = 300
+local BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB = 100
 local TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
 local TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 local Ta6JIuca_acnekToB
@@ -1630,7 +1631,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 					
 					TblkHu_naJIkoU_no_MaTpuce.setText("")
 					--цекл слежки за предметами, которые всасывает матрица
-					if not kraqpT_npepBaH and not npeBblLLeHo_BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB then
+					if not kraqpT_npepBaH and not npeBblLLeHo_BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB then
 						ycneLLLHoe_BblcTaBJIeHue = BblcTaBuTb_npegMeTbl_Ha_nbegecTaJIbl(recept, true)
 						if ycneLLLHoe_BblcTaBJIeHue then
 							coo6llleHue_OT_MaTpucbl = {"все аспекты высосаны!", "матрица забирает предметы"}
@@ -1638,7 +1639,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 							--тайминг ожидания последнего предмета на матрице
 							if o4epegb_kpaqpToB_Ha_MaTpuce[1][2] < 2 then
 								_, _, _, cTapToBle_cekyHgbl = getTime()
-								cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB
+								cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB
 							end
 							repeat
 								os.sleep(0.1)
@@ -7080,9 +7081,12 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "ред контроллера", red)
 	table_form.nogcka3ka13 = MoHuTop_urpoka[nick].addText(300 + x_win, 33, "ожидание клика:", red)
 	table_form.nogcka3ka14 = MoHuTop_urpoka[nick].addText(300 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
-	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 122, "ожидание аспектов", red)
-	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 133, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
+	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 92, "ожидание аспектов", red)
+	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 103, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
+	table_form.nogcka3ka15 = MoHuTop_urpoka[nick].addText(300 + x_win, 144, "ожидание предметов", red)
+	table_form.nogcka3ka16 = MoHuTop_urpoka[nick].addText(300 + x_win, 161, tostring(BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB), red)
 	
+	--BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB
 	
 
 	--настройки Infusion Claw
@@ -7111,7 +7115,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	--настройки время ожидания клика по матрице
 	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 300 + x_win, 60, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka__oJugaHue_kJIuka = creat_new_button(-1, nick, 300 + x_win, 77, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
+	table_form.kHonka_oJugaHue_kJIuka = creat_new_button(-1, nick, 300 + x_win, 77, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
 		local cuqppa_oJugaHue_kJIuka = table_form.textBox_oJugaHue_kJIuka.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_kJIuka, true, false, true) then
 			BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = tonumber(cuqppa_oJugaHue_kJIuka)
@@ -7122,8 +7126,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--настройка времени ожидания высасывания аспектов
-	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 300 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka__oJugaHue_acnekToB = creat_new_button(-1, nick, 300 + x_win, 161, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
+	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 300 + x_win, 172, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka_oJugaHue_acnekToB = creat_new_button(-1, nick, 300 + x_win, 187, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
 		local cuqppa_oJugaHue_acnekToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_acnekToB, true, false, true) then
 			BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = tonumber(cuqppa_oJugaHue_acnekToB)
@@ -7133,6 +7137,18 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		end
 	end)
 
+	--настройка времени ожидания всасывания предметов
+	table_form.textBox_oJugaHue_npegMeToB = creat_new_textBox(nick, 300 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka_oJugaHue_nepgeToB = creat_new_button(-1, nick, 300 + x_win, 161, 101, 15, "назначить", "oJugaHue_npegMeToB_button", true, blue, white, function()
+		local cuqppa_oJugaHue_npegMeToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
+		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_npegMeToB, true, false, true) then
+			BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB = tonumber(cuqppa_oJugaHue_npegMeToB)
+			configuration[48] = BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB
+			setConfiguration()
+			table_form.nogcka3ka12.setText(g .. tostring(BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB))
+		end
+	end)
+	
 	--создание кнопки замены
 	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_win, 77, 101, 15, "заменить", "zaMeHa_button", true, blue, white, function()
 		if TekyLLluu_Bbl6paHHblu_nbegecTaJI == 0 then
@@ -11348,7 +11364,12 @@ do
 	else
 		BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = configuration[47]
 	end
-	
+	if configuration[48] == "nil" then
+		configuration[48] = BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB
+		setConfiguration()
+	else
+		BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB = configuration[48]
+	end
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
 	end

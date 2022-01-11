@@ -7619,7 +7619,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 					table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
 				end
 				table_form["o4epedb_icon" .. tostring(i)].setLabel(table_form.TekyLLLuu_npegMeT.getLabel())
-				
 				return
 			end
 		end
@@ -7636,13 +7635,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "нельзя прервать крафт")
 			elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT.name ~= table_form["o4epedb_icon" .. tostring(button_num)].getItemId() then
 				table_form.o4epegu_kpaqpToB.setText(r .. "ОЧЕРЕДЬ УСТАРЕЛА: ПЕРЕЗАЙДИ В ОКНО")
-			else
-				if o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] ~= 0 then
-					o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] = o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] - 1
-					table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
-				end
+			elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] ~= 0 then
+				o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] = o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] - 1
+				table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
 			end
-		end
+		end)
 		table_form["o4epegu" .. tostring(i)].button_num = i
 		if o4epegb_kpaqpToB_Ha_MaTpuce[i] == nil then	
 			if type(o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT) ~= "table" then

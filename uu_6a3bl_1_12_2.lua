@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "2 фулл настройка"
+local Ha3BaHue_o6HoBJIeHu9l = "3 фулл настройка"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6928,6 +6928,12 @@ function forms:creat_cMeHa_npuopuTeTa_form(nick)
 end
 function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	--таблица направлений сторон пьедесталов
+	-- ta6JIuca_cTopoH[0] = "снизу"
+	-- ta6JIuca_cTopoH[1] = "сверху"
+	-- ta6JIuca_cTopoH[2] = "север"
+	-- ta6JIuca_cTopoH[3] = "юг"
+	-- ta6JIuca_cTopoH[4] = "запад"
+	-- ta6JIuca_cTopoH[5] = "восток"
 	local Ta6JIuca_HanpaBJIeHuu = {}
 	table.insert(Ta6JIuca_HanpaBJIeHuu, {0, 1})
 	table.insert(Ta6JIuca_HanpaBJIeHuu, {2, 3})
@@ -7085,12 +7091,9 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka14 = MoHuTop_urpoka[nick].addText(300 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
 	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 86, "ожидание аспектов", red)
 	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 97, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
-	table_form.nogcka3ka15 = MoHuTop_urpoka[nick].addText(300 + x_win, 140, "ожидание предметов", red)
+	table_form.nogcka3ka15 = MoHuTop_urpoka[nick].addText(300 + x_win, 140, "ожидание итемов", red)
 	table_form.nogcka3ka16 = MoHuTop_urpoka[nick].addText(300 + x_win, 151, tostring(BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB), red)
 	
-	--BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB
-	
-
 	--настройки Infusion Claw
 	if agpec_infusion_claw == 0 then
 		table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(194 + x_win, 177, "адрес не назначен", red)
@@ -7143,12 +7146,12 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	--настройка времени ожидания всасывания предметов
 	table_form.textBox_oJugaHue_npegMeToB = creat_new_textBox(nick, 300 + x_win, 162, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
 	table_form.kHonka_oJugaHue_nepgeToB = creat_new_button(-1, nick, 300 + x_win, 177, 101, 15, "назначить", "oJugaHue_npegMeToB_button", true, blue, white, function()
-		local cuqppa_oJugaHue_npegMeToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
+		local cuqppa_oJugaHue_npegMeToB = table_form.textBox_oJugaHue_npegMeToB.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_npegMeToB, true, false, true) then
 			BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB = tonumber(cuqppa_oJugaHue_npegMeToB)
 			configuration[48] = BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB
 			setConfiguration()
-			table_form.nogcka3ka12.setText(g .. tostring(BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB))
+			table_form.nogcka3ka16.setText(g .. tostring(BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB))
 		end
 	end)
 	
@@ -7170,7 +7173,22 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--кнопка автонастройки пьедесталов
-	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 66 + x_win, 182, 105, 15, "автонастройка", "aBToHacTpouka_button", true, blue, white, function()
+	table_form.aBToHacTpouka_button = creat_new_button(-1, nick, 66 + x_win, 182, 105, 15, "автонастройка", "aBToHacTpouka_button", true, blue, white, function()
+		local cobblestone = "minecraft:cobblestone"
+		--поиск центрального пьедестала
+		for _, agpec in ipairs(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l) do
+			if component.invoke(agpec, "getInventorySize" , 1) ~= nil then
+				local npocMaTpuBaEMblu_cJIoT = component.invoke(agpec, "getStackInSlot", 1, 1)
+				if npocMaTpuBaEMblu_cJIoT ~= nil and npocMaTpuBaEMblu_cJIoT.name == cobblestone then
+					component.invoke(agpec, "transferItem", 1, 0)
+					Ta6JIuca_nbegecTaJIoB[1] = {agpec, Ta6JIuca_HanpaBJIeHuu[1][1], Ta6JIuca_HanpaBJIeHuu[1][2]}
+					configuration[28] = Ta6JIuca_nbegecTaJIoB
+					setConfiguration()
+					table_form.ceBepHblu_nbegecTaJi.setColor(green)
+				end
+			end
+			
+		end
 	
 	end)
 		

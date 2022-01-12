@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 фулл настройка"
+local Ha3BaHue_o6HoBJIeHu9l = "6 фулл настройка"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7194,9 +7194,9 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.aBToHacTpouka_button = creat_new_button(-1, nick, 66 + x_win, 182, 105, 15, "автонастройка", "aBToHacTpouka_button", true, blue, white, function()
 		for i = 1, 14 do
 			if nouck_TpaHcno3epa(i) then
-				table_form[i].getColor(green)
+				table_form[i].setColor(green)
 			else
-				table_form[i].getColor(red)
+				table_form[i].setColor(red)
 				return
 			end
 		end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 фулл настройка"
+local Ha3BaHue_o6HoBJIeHu9l = "5 фулл настройка"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7176,14 +7176,15 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	local nouck_TpaHcno3epa = function(HoMep_nbegecTaJIa)
 		local cobblestone = "minecraft:cobblestone"
 		for _, agpec in ipairs(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l) do
-		if component.invoke(agpec, "getInventorySize" ,Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][1]) ~= nil then
-			local npocMaTpuBaEMblu_cJIoT = component.invoke(agpec, "getStackInSlot", Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][1], 1)
-			if npocMaTpuBaEMblu_cJIoT ~= nil and npocMaTpuBaEMblu_cJIoT.name == cobblestone then
-				if Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][3] then component.invoke(agpec, "transferItem", 1, 0) end
-				Ta6JIuca_nbegecTaJIoB[HoMep_nbegecTaJIa] = {agpec, Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][1], Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][2]}
-				configuration[28] = Ta6JIuca_nbegecTaJIoB
-				setConfiguration()
-				return true
+			if component.invoke(agpec, "getInventorySize" ,Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][1]) ~= nil then
+				local npocMaTpuBaEMblu_cJIoT = component.invoke(agpec, "getStackInSlot", Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][1], 1)
+				if npocMaTpuBaEMblu_cJIoT ~= nil and npocMaTpuBaEMblu_cJIoT.name == cobblestone then
+					if Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][3] then component.invoke(agpec, "transferItem", 1, 0) end
+					Ta6JIuca_nbegecTaJIoB[HoMep_nbegecTaJIa] = {agpec, Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][1], Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][2]}
+					configuration[28] = Ta6JIuca_nbegecTaJIoB
+					setConfiguration()
+					return true
+				end
 			end
 		end
 		return false

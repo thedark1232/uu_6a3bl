@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 фулл настройка"
+local Ha3BaHue_o6HoBJIeHu9l = "2 фулл настройка"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7083,10 +7083,10 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "ред контроллера", red)
 	table_form.nogcka3ka13 = MoHuTop_urpoka[nick].addText(300 + x_win, 33, "ожидание клика:", red)
 	table_form.nogcka3ka14 = MoHuTop_urpoka[nick].addText(300 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
-	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 92, "ожидание аспектов", red)
-	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 103, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
-	table_form.nogcka3ka15 = MoHuTop_urpoka[nick].addText(300 + x_win, 144, "ожидание предметов", red)
-	table_form.nogcka3ka16 = MoHuTop_urpoka[nick].addText(300 + x_win, 161, tostring(BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB), red)
+	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 86, "ожидание аспектов", red)
+	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 97, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
+	table_form.nogcka3ka15 = MoHuTop_urpoka[nick].addText(300 + x_win, 140, "ожидание предметов", red)
+	table_form.nogcka3ka16 = MoHuTop_urpoka[nick].addText(300 + x_win, 151, tostring(BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB), red)
 	
 	--BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB
 	
@@ -7116,8 +7116,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--настройки время ожидания клика по матрице
-	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 300 + x_win, 60, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka_oJugaHue_kJIuka = creat_new_button(-1, nick, 300 + x_win, 77, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
+	table_form.textBox_oJugaHue_kJIuka = creat_new_textBox(nick, 300 + x_win, 53, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka_oJugaHue_kJIuka = creat_new_button(-1, nick, 300 + x_win, 69, 101, 15, "назначить", "oJugaHue_kJIuka_button", true, blue, white, function()
 		
 		local cuqppa_oJugaHue_kJIuka = table_form.textBox_oJugaHue_kJIuka.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_kJIuka, true, false, true) then
@@ -7129,8 +7129,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 	
 	--настройка времени ожидания высасывания аспектов
-	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 300 + x_win, 172, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka_oJugaHue_acnekToB = creat_new_button(-1, nick, 300 + x_win, 187, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
+	table_form.textBox_oJugaHue_acnekToB = creat_new_textBox(nick, 300 + x_win, 108, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka_oJugaHue_acnekToB = creat_new_button(-1, nick, 300 + x_win, 124, 101, 15, "назначить", "oJugaHue_acnekToB_button", true, blue, white, function()
 		local cuqppa_oJugaHue_acnekToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_acnekToB, true, false, true) then
 			BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = tonumber(cuqppa_oJugaHue_acnekToB)
@@ -7141,8 +7141,8 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end)
 
 	--настройка времени ожидания всасывания предметов
-	table_form.textBox_oJugaHue_npegMeToB = creat_new_textBox(nick, 300 + x_win, 144, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
-	table_form.kHonka_oJugaHue_nepgeToB = creat_new_button(-1, nick, 300 + x_win, 161, 101, 15, "назначить", "oJugaHue_npegMeToB_button", true, blue, white, function()
+	table_form.textBox_oJugaHue_npegMeToB = creat_new_textBox(nick, 300 + x_win, 162, 101, 15, "ввод значения", "textBox", true, black, gray, white, red, horizontalAlignment.left, 3)
+	table_form.kHonka_oJugaHue_nepgeToB = creat_new_button(-1, nick, 300 + x_win, 177, 101, 15, "назначить", "oJugaHue_npegMeToB_button", true, blue, white, function()
 		local cuqppa_oJugaHue_npegMeToB = table_form.textBox_oJugaHue_acnekToB.caption.getText()
 		if npoBepka_Ha_cuqppy(cuqppa_oJugaHue_npegMeToB, true, false, true) then
 			BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB = tonumber(cuqppa_oJugaHue_npegMeToB)
@@ -7167,6 +7167,11 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3))
 		configuration[28] = Ta6JIuca_nbegecTaJIoB
 		setConfiguration()
+	end)
+	
+	--кнопка автонастройки пьедесталов
+	table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 66 + x_win, 182, 105, 15, "автонастройка", "aBToHacTpouka_button", true, blue, white, function()
+	
 	end)
 		
 	--открыть файл конфигурации

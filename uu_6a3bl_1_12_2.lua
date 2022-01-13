@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "46 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "47 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7569,10 +7569,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.zHak_Bonpoca.setScale(6)
 		table_form.zHak_Bonpoca.setVisible(false)
 		
-		table_form.Tpe6yeTc9l = MoHuTop_urpoka[nick].addText(240, 80, "Требуется", red)
+		table_form.Tpe6yeTc9l = MoHuTop_urpoka[nick].addText(228, 104, "Требуется", red)
 		table_form.Tpe6yeTc9l.setVisible(false)
-		obj = table_form.Tpe6yeTc9l
-		--table_form.kpaqpT = 
+		table_form.kpaqpT = MoHuTop_urpoka[nick].addText(235, 116, "крафт!", red)
+		table_form.kpaqpT.setVisible(false)
+		
+		obj =  table_form.kpaqpT
 		
 		for all_items = 1, 12 do
 			if Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items] ~= nil then
@@ -7612,10 +7614,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 							table_form.TekyLLLuu_npegMeT.setVisible(true)
 							table_form.zHak_Bonpoca.setVisible(false)
 							table_form.Tpe6yeTc9l.setVisible(false)
+							table_form.kpaqpT.setVisible(false)
 						else
 							table_form.TekyLLLuu_npegMeT.setVisible(false)
 							table_form.zHak_Bonpoca.setVisible(true)
 							table_form.Tpe6yeTc9l.setVisible(true)
+							table_form.kpaqpT.setVisible(true)
 						end
 						table_form.TekyLLLuu_npegMeT.setLabel("1")
 						table_form.cTapToBblu_npegMeT_no_ceHTpy.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.name)

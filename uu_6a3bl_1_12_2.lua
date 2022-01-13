@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "28 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "29 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -153,6 +153,22 @@ local horizontalAlignment = {}
 horizontalAlignment.left = 1
 horizontalAlignment.right = 2
 horizontalAlignment.center = 3
+
+local default_text = {} --дефолтный текст для текстбокса
+default_text["ввод значения"] = true
+default_text["ввод названия"] = true
+default_text["ввод х"] = true
+default_text["ввод у"] = true
+default_text["ввод z"] = true
+default_text["ввод x2"] = true
+default_text["ввод y2"] = true
+default_text["ввод z2"] = true
+default_text["номер зоны"] = true
+default_text["новая позиция"] = true
+default_text["номер рецепта"] = true
+default_text["поиск"] = true
+default_text["ввод названия рецепта"] = true
+default_text["ввод пароля"] = true
 
 local onacHa9l_kHonka = {}
 onacHa9l_kHonka[59] = true
@@ -699,20 +715,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 						v.enabled = false
 						if v.getId() == id then
 							v.enabled = true
-							if v.caption.getText() == "ввод значения" or
-							   v.caption.getText() == "ввод названия" or
-							   v.caption.getText() == "ввод х" or
-							   v.caption.getText() == "ввод у" or
-							   v.caption.getText() == "ввод z" or
-							   v.caption.getText() == "ввод x2" or
-							   v.caption.getText() == "ввод y2" or
-							   v.caption.getText() == "ввод z2" or
-							   v.caption.getText() == "номер зоны" or
-							   v.caption.getText() == "новая позиция" or
-							   v.caption.getText() == "номер рецепта" or
-							   v.caption.getText() == "поиск" or
-							   v.caption.getText() == "ввод пароля" then v.caption.setText("") end
-							--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текст бокс: " .. g .. "активирован")
+							if default_text[v.caption.getText()] then v.caption.setText("") end
 						end
 					end
 					if v.getId() == id and v.getType() == "icon" then
@@ -7953,7 +7956,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 76 + x_win, 120 + y_win, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
 				obj = table_form.kHonka_go6aBJIeHu9l_pecenTa
 			end)
-			table_form.textBox_BBog_Ha3BaHu9l_pecenTa = creat_new_textBox(nick, 20, 30, 218, 15, "ввод названия рецепта", "textBox", true, black, gray, red, blue, horizontalAlignment.left, 37)
+			table_form.textBox_BBog_Ha3BaHu9l_pecenTa = creat_new_textBox(nick, 22, 30, 218, 15, "ввод названия рецепта", "textBox", true, black, gray, red, blue, horizontalAlignment.left, 37)
 			obj = table_form.textBox_BBog_Ha3BaHu9l_pecenTa
 			--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(157, 51, "предмет по центру", red)		
 			--table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(176, 62, "не найден", red)

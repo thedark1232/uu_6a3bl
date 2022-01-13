@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "41 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "42 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7627,7 +7627,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 						table_form[tostring(HyMepacu9l) .. "item"].setVisible(true)
 						table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 					else
-						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addText(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1)
+						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addText(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "?", red)
 						table_form[tostring(HyMepacu9l) .. "item"].setScale(2)
 					end
 				end

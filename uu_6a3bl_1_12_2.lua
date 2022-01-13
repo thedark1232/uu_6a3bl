@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "37 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "38 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7964,7 +7964,9 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 				Ha3BaHue_pecenTa = trim(Ha3BaHue_pecenTa)
 				--проверка на ввод названия
 				if Ha3BaHue_pecenTa == "ввод названия рецепта" or Ha3BaHue_pecenTa == "" then
+					table_form.nogcka3ka_co3gaHu9l1.setX(85)
 					table_form.nogcka3ka_co3gaHu9l1.setText("Сначала введи")
+					table_form.nogcka3ka_co3gaHu9l2.setX(74)
 					table_form.nogcka3ka_co3gaHu9l2.setText("название рецепта!")
 					return
 				end
@@ -7974,6 +7976,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 						table_form.nogcka3ka_co3gaHu9l1.setText("Такое название")
 						table_form.nogcka3ka_co3gaHu9l1.setX(74)
 						table_form.nogcka3ka_co3gaHu9l2.setText("уже существует")
+						table_form.nogcka3ka_co3gaHu9l2.setX(74)
 						return
 					end
 				end
@@ -7992,11 +7995,11 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 					return
 				end
 				--добавление рецепта в таблицу
-				table_form.nogcka3ka_co3gaHu9l1.setText("рецепт добавлен!")
-				table_form.nogcka3ka_co3gaHu9l1.setX(85)
-				table_form.nogcka3ka_co3gaHu9l1.setY(88)
-				table_form.nogcka3ka_co3gaHu9l2.setText("")
-				table_form.nogcka3ka_co3gaHu9l1.setColor(green)
+				table_form.nogcka3ka_co3gaHu9l2.setText("рецепт добавлен!")
+				table_form.nogcka3ka_co3gaHu9l2.setX(85)
+				table_form.nogcka3ka_co3gaHu9l2.setColor(green)
+				table_form.nogcka3ka_co3gaHu9l1.setText("")
+				
 			end)
 			table_form.textBox_BBog_Ha3BaHu9l_pecenTa = creat_new_textBox(nick, 20, 32, 218, 15, "ввод названия рецепта", "textBox", true, black, gray, red, blue, horizontalAlignment.left, 36)
 			

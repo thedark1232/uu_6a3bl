@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "2 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "3 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7501,32 +7501,34 @@ function forms:creat_MaTpuca_craft_form(nick)
 	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(3 + x_win, 177, 357, 37, white)
 	table_form.main_box3.setClickable(false)
 	
-	table_form.box_nogcka3ok = MoHuTop_urpoka[nick].addBox(297, 136, 62, 37, black) --бокс подссказок "предмет добавлен"
-	local obj = table_form.main_box2
-
-	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_win, 15, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	--текстбокс номера рецепта
-	table_form.textBox_infusion_claw = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
-
-	--кнопки переключения страниц итемов
-	table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, gray, white, function()
-		obj = table_form.button_BJIeBo
-	end)
-	table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "==>", "right_button", true, blue, white, function() 
-		obj = table_form.button_BnpaBo
-	end)
 	
-
-	-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
-	-- ["Ha3BaHue"] = coo6llleHue,
-	-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
-	-- ["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
-	-- ["okoH4aTeJIbHblu_npegMeT"] = "не определено",
-	-- ["HoMeP_B_Ta6JIuce"] = "-1"
-	-- })
 	if  Ta6JIuca_recenToB_Ha_MaTpuce[1] ~= nil then
+		--отдельная кнопка выхода, от остальных кнопок
+		table_form.return_button = creat_new_button(1, nick, 5 + x_win, 15, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+		
+		--текстбокс номера рецепта
+		table_form.textBox_nouck = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
+		
+		--бокс подссказок "предмет добавлен"
+		table_form.box_nogcka3ok = MoHuTop_urpoka[nick].addBox(297, 136, 62, 37, black) 
+
+		--кнопки переключения страниц итемов
+		table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, gray, white, function()
+			obj = table_form.button_BJIeBo
+		end)
+		table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "==>", "right_button", true, blue, white, function() 
+			obj = table_form.button_BnpaBo
+		end)
+		
+
+		-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
+		-- ["Ha3BaHue"] = coo6llleHue,
+		-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
+		-- ["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
+		-- ["okoH4aTeJIbHblu_npegMeT"] = "не определено",
+		-- ["HoMeP_B_Ta6JIuce"] = "-1"
+		-- })
 	
 		--создание ячеек необходимых итемов для крафта
 		local HyMepacu9l2 = 0
@@ -7722,7 +7724,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(304, 157, "", green)
 	else
 		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(114, 46, "Таблица", red)
-		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(90, 77, "рецептов", red)
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(107, 77, "рецептов", red)
 		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(114, 108, "пуста!", red)
 		table_form.nogcka3ka1.setScale(3)
 		table_form.nogcka3ka2.setScale(3)
@@ -7734,7 +7736,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
-	obj = table_form.nogcka3ka2
+	local obj = table_form.nogcka3ka3
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380

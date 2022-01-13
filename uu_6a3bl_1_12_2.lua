@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "23 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "24 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7950,11 +7950,11 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			
 			--кнопка добавления рецепта
 			table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 162, 34, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
-
+				obj = table_form.kHonka_go6aBJIeHu9l_pecenTa
 			end)
-			obj = table_form.kHonka_go6aBJIeHu9l_pecenTa
-			table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(157, 51, "предмет по центру", red)		
-			table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(176, 62, "не найден", red)
+			
+			--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(157, 51, "предмет по центру", red)		
+			--table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(176, 62, "не найден", red)
 			
 			for i = 4, 15 do
 				item = component.invoke(Ta6JIuca_nbegecTaJIoB[i][1], "getStackInSlot", 1, 1)
@@ -7967,6 +7967,9 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 		else
 			table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(157, 34, "предмет по центру", red)		
 			table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(176, 45, "не найден", red)
+			table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(176, 45, "?", red)
+			table_form.nogcka3ka3.setScale(4)
+			obj = table_form.nogcka3ka3
 		end
 
 	else

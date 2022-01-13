@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "44 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "46 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7565,11 +7565,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.cTapToBblu_npegMeT_no_ceHTpy.setScale(2)
 		table_form.TekyLLLuu_npegMeT.setScale(4)
 		table_form.TekyLLLuu_npegMeT.setLabel("1")
-		table_form.zHak_Bonpoca = MoHuTop_urpoka[nick].addText(219, 53, "?", red)
+		table_form.zHak_Bonpoca = MoHuTop_urpoka[nick].addText(240, 57, "?", red)
 		table_form.zHak_Bonpoca.setScale(6)
-		obj = table_form.zHak_Bonpoca
+		
 		--table_form.zHak_Bonpoca.setVisible(false)
-		--table_form.Tpe6yeTc9l =
+		table_form.Tpe6yeTc9l =  MoHuTop_urpoka[nick].addText(240, 80, "Требуется", red)
+		obj = table_form.Tpe6yeTc9l
 		--table_form.kpaqpT = 
 		
 		for all_items = 1, 12 do
@@ -7635,7 +7636,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 						table_form[tostring(HyMepacu9l) .. "item"].setVisible(true)
 						table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 					else
-						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addText(cMeLLleHue_no_x + 5, cMeLLleHue_no_y + 3, "?", red)
+						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addText(cMeLLleHue_no_x + 7, cMeLLleHue_no_y + 3, "?", red)
 						table_form[tostring(HyMepacu9l) .. "item"].setScale(2)
 						table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 					end

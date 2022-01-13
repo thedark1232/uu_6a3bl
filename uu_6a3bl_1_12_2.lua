@@ -7734,7 +7734,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
-	obj = table_form.nogcka3ka1
+	obj = table_form.nogcka3ka2
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380

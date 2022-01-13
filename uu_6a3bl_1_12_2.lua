@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "55 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "56 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7735,7 +7735,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 					table_form.nogcka3ka_go6aBJIeHu9l2.setColor(red)
 					table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
 					table_form.nogcka3ka_go6aBJIeHu9l2.setText("УДАЛЕН!")
-					table_form.nogcka3ka_go6aBJIeHu9l2.setX(304)
+					table_form.nogcka3ka_go6aBJIeHu9l2.setX(307)
 					if table_form["o4epedb_icon" .. tostring(i)].getVisible() then
 						table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
 					end
@@ -7761,6 +7761,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 				if type(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT) == "table" then
 					print(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
 					table_form["o4epedb_icon" .. tostring(i)].setItemId = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name
+					print("table_form["o4epedb_icon" .. tostring(i)].getItemId()", table_form["o4epedb_icon" .. tostring(i)].getItemId())
 					table_form["o4epedb_icon" .. tostring(i)].setMeta = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage
 					table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
 					table_form["o4epedb_icon" .. tostring(i)].setVisible(true)

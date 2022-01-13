@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "30 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "31 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7972,9 +7972,9 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 		else
 			table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(110 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y + y_win, "предмет по центру", red)		
 			table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(110 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y + y_win, "не найден", red)
-			table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(176, 45, "?", red)
+			table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(117, 119, "?", red)
 			table_form.nogcka3ka3.setScale(2)
-			obj = table_form.nogcka3ka3
+			obj = table_form.nogcka3ka
 		end
 
 	else

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 сохранение рецептов"
+local Ha3BaHue_o6HoBJIeHu9l = "2 сохранение рецептов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1659,12 +1659,14 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 							repeat
 								os.sleep(0.1)
 								local cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe = component.invoke(agrec_ceHTpaJIbHoro_nbegecTaJIa, "getStackInSlot", 1, 1)
-								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil and cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name then
-									kpaqpT_3aBepllleH = true
-									if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
-										Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
-										Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
-										setMathixRecepts()
+								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe ~= nil then
+									if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.name ~= recept.cTapToBblu_npegMeT_no_ceHTpy.name or cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe.damage ~= recept.cTapToBblu_npegMeT_no_ceHTpy.damage then
+										kpaqpT_3aBepllleH = true
+										if type(recept.okoH4aTeJIbHblu_npegMeT) == "string" then
+											Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "результат крафта записан в таблицу")
+											Ta6JIuca_recenToB_Ha_MaTpuce[recept.HoMeP_B_Ta6JIuce].okoH4aTeJIbHblu_npegMeT = cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe
+											setMathixRecepts()
+										end
 									end
 								end
 								HexBaTuJIo_acneKToB = Ta6JIuca_koMnoHeHToB["tileinfusionstone"].getAspects()

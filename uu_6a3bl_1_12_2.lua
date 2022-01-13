@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "6 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "7 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7794,6 +7794,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 	return table_form
 end
 function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
+	local obj = table_form.main_box2
+
 
 	--создание формы
 	local table_form = {}
@@ -7875,10 +7877,10 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
-	local x_win = -46
+	local x_win = -43
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 405, 205, blue)
 		
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 387, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 238, 172, white)
 	table_form.main_box2.setClickable(false)
 	
 	--создание кнопок
@@ -7922,179 +7924,28 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	if type(Ta6JIuca_nbegecTaJIoB) ~= "table" then Ta6JIuca_nbegecTaJIoB = {} end
 
 	--СОЗДАНИЕ КНОПОК ПЬЕДЕСТАЛОВ
-	--северный пьедестал
-	table_form.ceBepHblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 75, 20, 20, "3", "ceBepHblu_nbegecTaJi_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 3
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
 	--центральный пьедестал
-	table_form.ceHTpaJIbHblu_nbegecTaJI = creat_new_button(-1, nick, 110 + x_win, 96, 20, 20, "1", "ceHTpaJIbHblu_nbegecTaJI_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 1
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--южный пьедестал
-	table_form.l0JHblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 117, 20, 20, "2", "l0JHblu_nbegecTaJi_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 2
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--12 пьедестал
-	table_form.gBeHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 159, 20, 20, "10", "gBeHHagcaTblu_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 10
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--11 пьедестал
-	table_form.oguHHagcaTblu_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 159, 20, 20, "9", "oguHHagcaTblu_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 9
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--10 пьедестал
-	table_form.gec9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 138, 20, 20, "8", "gec9lTblu_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 8
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--9 пьедестал
-	table_form.geB9lTblu_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 96, 20, 20, "7", "geB9lTblu_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 7
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--8 пьедестал
-	table_form.BocbMou_nbegecTaJi = creat_new_button(-1, nick, 172 + x_win, 54, 20, 20, "6", "BocbMou_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 6
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--7 пьедестал
-	table_form.cegbMou_nbegecTaJi = creat_new_button(-1, nick, 151 + x_win, 33, 20, 20, "5", "cegbMou_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 5
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--6 пьедестал
-	table_form.LLlecTou_nbegecTaJi = creat_new_button(-1, nick, 110 + x_win, 33, 20, 20, "4", "LLlecTou_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 4
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--5 пьедестал
-	table_form.n9lTblu_nbegecTaJi = creat_new_button(-1, nick, 67 + x_win, 159, 20, 20, "11", "n9lTblu_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 11
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--4 пьедестал
-	table_form.cheTBepTblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 138, 20, 20, "12", "cheTBepTblu_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 12
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--3 пьедестал
-	table_form.TpeTuu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 96, 20, 20, "13", "TpeTuu_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 13
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--2 пьедестал
-	table_form.BTopou_nbegecTaJi = creat_new_button(-1, nick, 68 + x_win, 33, 20, 20, "15", "BTopou_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 15
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	--1 пьедестал
-	table_form.nepBblu_nbegecTaJi = creat_new_button(-1, nick, 47 + x_win, 54, 20, 20, "14", "nepBblu_button", true, black, white, function()
-		TekyLLluu_Bbl6paHHblu_nbegecTaJI = 14
-		local Ha3Ha4eHHblu_agpec
-		if Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI] ~= nil then
-			Ha3Ha4eHHblu_agpec = g .. string.sub(Ta6JIuca_nbegecTaJIoB[TekyLLluu_Bbl6paHHblu_nbegecTaJI][1], 1, 3)
-		else
-			Ha3Ha4eHHblu_agpec = r .. "не назначено!"
-		end
-		table_form.nogcka3ka2.setText(c .. tostring(TekyLLluu_Bbl6paHHblu_nbegecTaJI) .. " - " .. Ha3Ha4eHHblu_agpec)
-	end)
-	
---table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 3, 178, 62, 37, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
+	table_form[1] = addBox(47 + x_win, 54, 20, 20,  black)
+	table_form[2] = addBox(68 + x_win, 33, 20, 20,  black)
+	table_form[3] = addBox(47 + x_win, 96, 20, 20,  black)
+	table_form[4] = addBox(47 + x_win, 138, 20, 20,  black)
+	table_form[5] = addBox(67 + x_win, 159, 20, 20,  black)
+	table_form[6] = addBox(110 + x_win, 33, 20, 20,  black)
+	table_form[7] = addBox(151 + x_win, 33, 20, 20,  black)
+	table_form[8] = addBox(172 + x_win, 54, 20, 20,  black)
+	table_form[9] = addBox(172 + x_win, 96, 20, 20,  black)
+	table_form[10] = addBox(172 + x_win, 138, 20, 20,  black)
+	table_form[11] = addBox(151 + x_win, 159, 20, 20,  black)
+	table_form[12] = addBox(110 + x_win, 159, 20, 20,  black)
+	table_form[13] = addBox(110 + x_win, 96, 20, 20,  black)
+
+	--table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 3, 178, 62, 37, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
 		--obj = table_form.test_cMeLLLeHu9l2
 	--end)
 	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
-	local obj = table_form.main_box2
+	obj = kHonka_Infusion_claw
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380

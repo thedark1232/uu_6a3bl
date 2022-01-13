@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "6 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7875,7 +7875,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
-	local x_win = 10
+	local x_win = -46
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 405, 205, blue)
 		
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 387, 172, white)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "54 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "55 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7702,9 +7702,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 						table_form["Bonpoc" .. tostring(i)].setVisible(true)
 						koJIu4ecTBo_gJI9l_kpaqpTa = 1
 					end
-					print("o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name",  o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
+					
 					print("TekyLLluu_HoMep_pecenTa", TekyLLluu_HoMep_pecenTa)
-					print("Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa]", Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa])
+					print("Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa].okoH4aTeJIbHblu_npegMeT.name", Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa].okoH4aTeJIbHblu_npegMeT.name)
 					table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], koJIu4ecTBo_gJI9l_kpaqpTa})
 					configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
 					setConfiguration()

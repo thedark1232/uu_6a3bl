@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "3 сохранение рецептов"
+local Ha3BaHue_o6HoBJIeHu9l = "4 сохранение рецептов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1692,6 +1692,7 @@ function kpaqpT_nPegMeTa_Ha_MaTpuce_B_noToke()
 								end
 								if cocTo9lHue_npegMeTa_Ha_ceHTpaJIbHoM_nbegecTaJIe == nil then kraqpT_npepBaH = true end
 							until kpaqpT_3aBepllleH or kraqpT_npepBaH or npeBblLLeHo_BpeM9l_oJugaHu9l_3a6opa_npegMeToB	
+							TblkHu_naJIkoU_no_MaTpuce.setText("")
 						end
 					end
 				end

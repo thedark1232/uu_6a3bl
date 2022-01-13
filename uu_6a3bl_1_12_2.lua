@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "53 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "54 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7511,7 +7511,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, 15, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	if  Ta6JIuca_recenToB_Ha_MaTpuce[1] ~= nil then
+	if Ta6JIuca_recenToB_Ha_MaTpuce[1] ~= nil then
 		--текстбокс номера рецепта
 		table_form.textBox_nouck = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
 		
@@ -7702,8 +7702,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 						table_form["Bonpoc" .. tostring(i)].setVisible(true)
 						koJIu4ecTBo_gJI9l_kpaqpTa = 1
 					end
+					print("o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name",  o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
+					print("TekyLLluu_HoMep_pecenTa", TekyLLluu_HoMep_pecenTa)
+					print("Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa]", Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa])
 					table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], koJIu4ecTBo_gJI9l_kpaqpTa})
-					print("нажатие кнопки добавления: " .. o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
 					configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
 					setConfiguration()
 					table_form.nogcka3ka_go6aBJIeHu9l.setColor(green)

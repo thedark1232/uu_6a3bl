@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "13 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "14 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7910,9 +7910,9 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	
 	--открыть файл конфигурации
 	Ta6JIuca_nbegecTaJIoB = configuration[28]
-	table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(10, 46, "Требуется", red)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(107, 77, "настройка", red)
-	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(131, 108, "пьедесталов!", red)
+	table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(34, 46, "Требуется", red)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(34, 77, "настройка", red)
+	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(29, 108, "пьедесталов!", red)
 	table_form.nogcka3ka1.setScale(3)
 	table_form.nogcka3ka2.setScale(3)
 	table_form.nogcka3ka3.setScale(3)
@@ -7931,8 +7931,12 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	if #Ta6JIuca_nbegecTaJIoB == 0 then
 		--СОЗДАНИЕ КНОПОК ПЬЕДЕСТАЛОВ
 		--центральный пьедестал
+		local item
 		table_form[1] = MoHuTop_urpoka[nick].addBox(47 + x_win, 54, 20, 20, black)
-		table_form["icon1"] = MoHuTop_urpoka[nick].addIcon(47 + x_win + cMeLLleHue_icon_x, 54 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+		item = component.invoke(Ta6JIuca_nbegecTaJIoB[1][1], "getStackInSlot", 1, 1)
+		if type(item) == "table" then
+			table_form["icon1"] = MoHuTop_urpoka[nick].addIcon(47 + x_win + cMeLLleHue_icon_x, 54 + cMeLLleHue_icon_y, item.name, item.damage)
+		end
 		table_form[4] = MoHuTop_urpoka[nick].addBox(68 + x_win, 33, 20, 20, black)
 		table_form["icon4"] = MoHuTop_urpoka[nick].addIcon(68 + x_win + cMeLLleHue_icon_x, 33 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
 		table_form[5] = MoHuTop_urpoka[nick].addBox(47 + x_win, 96, 20, 20, black)
@@ -7966,7 +7970,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
-	obj = table_form.nogcka3ka1
+	obj = table_form.nogcka3ka3
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380

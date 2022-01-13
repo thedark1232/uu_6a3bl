@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "8 фулл настройка"
+local Ha3BaHue_o6HoBJIeHu9l = "1 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3597,24 +3597,25 @@ function forms:creat_MaTpuca_form(nick)
 	--админские кнопки
 	if nick == admin then
 		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
-		table_form.cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние"]() end)
-		table_form.nepekJIl04uTb_cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переключить состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние переключить"]() end)
+		table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick) end)
+		table_form.cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "состояние", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние"]() end)
+		table_form.nepekJIl04uTb_cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переключить состояние", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние переключить"]() end)
 		--table_form.HacTpouTb_nbegecTaJI = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить пьедестал", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить пьедестал"]() end)
 		--table_form.HacTpouTb_uHTepqpeuc = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "настроить интерфейс", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица перенастроить интерфейс"]() end)
-		table_form.ygaJIuTb_pecenT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить рецепт", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить рецепт"]() end)
-		table_form.pecenTbl_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рецепты инфо", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепты инфо"]() end)
-		table_form.pecenT_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рецепт инфо", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепт инфо"]() end)
-		table_form.o4ucTuTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очистить пьедесталы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"]() end)
-		table_form.y6paTb_coo6llleHu9l = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить из очереди", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить сообщения матрицы"]() end)
-			table_form.o4epegb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очередь крафтов", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очередь"]() end)
-		table_form.ygaJIbTb_u3_o4epegu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить из очереди", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить из очереди"]() end)
-		table_form.ygaJIuTb_Bcl0_o4epegb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить всю очередь", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить всю очередь"]() end)
-		table_form.info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "инфо настроек", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица инфо"]() end)
+		table_form.ygaJIuTb_pecenT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить рецепт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить рецепт"]() end)
+		table_form.pecenTbl_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рецепты инфо", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепты инфо"]() end)
+		table_form.pecenT_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рецепт инфо", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепт инфо"]() end)
+		table_form.o4ucTuTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очистить пьедесталы", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"]() end)
+		table_form.y6paTb_coo6llleHu9l = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить из очереди", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить сообщения матрицы"]() end)
+			table_form.o4epegb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очередь крафтов", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очередь"]() end)
+		table_form.ygaJIbTb_u3_o4epegu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить из очереди", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить из очереди"]() end)
+		table_form.ygaJIuTb_Bcl0_o4epegb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить всю очередь", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить всю очередь"]() end)
+
 	end
 	
 	--кнопки тиммейтов
 	table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick) end)
-
+	table_form.info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "инфо настроек", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица инфо"]() end)
 
 	table_form.zanucb_pecenTa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "запись рецепта", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_3anucb_pecenTa = forms:creat_MaTpuca_3anucb_pecenTa_form(nick) end)
 
@@ -7525,208 +7526,215 @@ function forms:creat_MaTpuca_craft_form(nick)
 	-- ["okoH4aTeJIbHblu_npegMeT"] = "не определено",
 	-- ["HoMeP_B_Ta6JIuce"] = "-1"
 	-- })
+	if  Ta6JIuca_recenToB_Ha_MaTpuce[1] ~= nil then
 	
-	--создание ячеек необходимых итемов для крафта
-	local HyMepacu9l2 = 0
-	local cMeLLleHue_no_x2 = 296
-	local cMeLLleHue_no_y2 = 52
-	for i = 1, 4 do
-		cMeLLleHue_no_x2 = 296
-		for j = 1, 3 do
-			HyMepacu9l2 = HyMepacu9l2 + 1
-			table_form["craft" .. tostring(HyMepacu9l2)] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function() end)
-			table_form["icon" .. tostring(HyMepacu9l2)] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x2 + 3, cMeLLleHue_no_y2 + 1, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-			table_form["icon" .. tostring(HyMepacu9l2)].setVisible(false)
-			cMeLLleHue_no_x2 = cMeLLleHue_no_x2 + 21
-		end
-		cMeLLleHue_no_y2 = cMeLLleHue_no_y2 + 21
-	end
-		
-	--создание ячеек предметов
-	local cMeLLleHue_no_x = 50
-	local cMeLLleHue_no_y = 31
-	local HyMepacu9l = 0
-	local TekyLLluu_HoMep_pecenTa = 1
-	
-	--создание предмета в рамке
-	table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 52, 77, 83, black)
-	table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 62, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-	table_form.cTapToBblu_npegMeT_no_ceHTpy = MoHuTop_urpoka[nick].addIcon(312, 138, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage)
-	table_form.cTapToBblu_npegMeT_no_ceHTpy.setScale(2)
-	table_form.TekyLLLuu_npegMeT.setScale(4)
-	table_form.TekyLLLuu_npegMeT.setLabel("1")
-	
-	for all_items = 1, 12 do
-		if Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items] ~= nil then
-			table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items][2].name)
-			table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items][2].damage)
-			table_form["icon" .. tostring(all_items)].setVisible(true)
-		else
-			table_form["icon" .. tostring(all_items)].setVisible(false)
-		end
-	end	
-	
-	--название первого отображаемого итема
-	table_form.nogcka3ka_Ha3BaHue2 = MoHuTop_urpoka[nick].addText(219, 43, "", blue)
-	local Ha3BaHue_uTema = function(Ha3BaHue)
-		if unicode.len(Ha3BaHue) > 23 then
-			table_form.nogcka3ka_Ha3BaHue2.setText(unicode.sub(Ha3BaHue, 24, unicode.len(Ha3BaHue)))
-			return unicode.sub(Ha3BaHue, 1, 23) .. "-"
-		else
-			table_form.nogcka3ka_Ha3BaHue2.setText("")
-			return Ha3BaHue
-		end
-	end
-	table_form.nogcka3ka_Ha3BaHue = MoHuTop_urpoka[nick].addText(219, 33, Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ha3BaHue), blue)
-
-	--создание ячеек крафта
-	for i = 1, 6 do
-		cMeLLleHue_no_x = 5
-		for j = 1, 10 do
-			HyMepacu9l = HyMepacu9l + 1
-			table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
-				table_form.nogcka3ka_go6aBJIeHu9l.setText("")
-				table_form.nogcka3ka_go6aBJIeHu9l2.setText("")
-				if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
-					if type(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT) == "table" then
-						table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.name)
-						table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.damage)
-						table_form.TekyLLLuu_npegMeT.setVisible(true)
-					else
-						table_form.TekyLLLuu_npegMeT.setVisible(false)
-					end
-					table_form.TekyLLLuu_npegMeT.setLabel("1")
-					table_form.cTapToBblu_npegMeT_no_ceHTpy.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.name)
-					table_form.cTapToBblu_npegMeT_no_ceHTpy.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.damage)
-					
-					table_form.nogcka3ka_Ha3BaHue.setText(Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ha3BaHue))
-					TekyLLluu_HoMep_pecenTa = HoMep_uTema
-					for all_items = 1, 12 do
-						if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil then
-							table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].name)
-							table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].damage)
-							table_form["icon" .. tostring(all_items)].setVisible(true)
-						else
-							table_form["icon" .. tostring(all_items)].setVisible(false)
-						end
-					end	
-				end
-			end)
-			table_form[HyMepacu9l].button_num = HyMepacu9l
-			if Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l] ~= nil then
-				if type(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT) == "table" then
-					table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.damage)
-					table_form[tostring(HyMepacu9l) .. "item"].setVisible(true)
-					table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
-				else
-					
-				end
+		--создание ячеек необходимых итемов для крафта
+		local HyMepacu9l2 = 0
+		local cMeLLleHue_no_x2 = 296
+		local cMeLLleHue_no_y2 = 52
+		for i = 1, 4 do
+			cMeLLleHue_no_x2 = 296
+			for j = 1, 3 do
+				HyMepacu9l2 = HyMepacu9l2 + 1
+				table_form["craft" .. tostring(HyMepacu9l2)] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x2, cMeLLleHue_no_y2, 20, 20, "", "button", true, gray, white, function() end)
+				table_form["icon" .. tostring(HyMepacu9l2)] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x2 + 3, cMeLLleHue_no_y2 + 1, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+				table_form["icon" .. tostring(HyMepacu9l2)].setVisible(false)
+				cMeLLleHue_no_x2 = cMeLLleHue_no_x2 + 21
 			end
-			cMeLLleHue_no_x = cMeLLleHue_no_x + 21			
+			cMeLLleHue_no_y2 = cMeLLleHue_no_y2 + 21
 		end
-		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
-	end
 			
-	--создание кнопок количества для крафта
-	table_form.koJIu4ecTBo_1 = creat_new_button(-1, nick, 217, 136, 18, 20, "1", "koJIu4ecTBo_1_button", true, blue, white, function()
-		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
-		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 1, true, true, true, 999) then
-			table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 1))
-		else
-			table_form.TekyLLLuu_npegMeT.setLabel("999")
-		end
-	end)
-	table_form.koJIu4ecTBo_1.caption.setX(224)
-	table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 18, 20, "10", "koJIu4ecTBo_10_button", true, blue, white, function()
-		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
-		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 10, true, true, true, 999) then
-			table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 10))
-		else
-			table_form.TekyLLLuu_npegMeT.setLabel("999")
-		end
-	end)
-	table_form.koJIu4ecTBo_10.caption.setX(240)
-	table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 18, 20, "100", "koJIu4ecTBo_100_button", true, blue, white, function()
-		local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
-		if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 100, true, true, true, 999) then
-			table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 100))
-		else
-			table_form.TekyLLLuu_npegMeT.setLabel("999")
-		end
-	end)
-	table_form.koJIu4ecTBo_100.caption.setX(258)
-	table_form.c6poc = creat_new_button(-1, nick, 276, 136, 18, 20, "С", "c6poc_button", true, blue, white, function()
+		--создание ячеек предметов
+		local cMeLLleHue_no_x = 50
+		local cMeLLleHue_no_y = 31
+		local HyMepacu9l = 0
+		local TekyLLluu_HoMep_pecenTa = 1
+		
+		--создание предмета в рамке
+		table_form.paMka_TekyLLlero_npegMeTa = MoHuTop_urpoka[nick].addBox(217, 52, 77, 83, black)
+		table_form.TekyLLLuu_npegMeT = MoHuTop_urpoka[nick].addIcon(223, 62, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+		table_form.cTapToBblu_npegMeT_no_ceHTpy = MoHuTop_urpoka[nick].addIcon(312, 138, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].cTapToBblu_npegMeT_no_ceHTpy.damage)
+		table_form.cTapToBblu_npegMeT_no_ceHTpy.setScale(2)
+		table_form.TekyLLLuu_npegMeT.setScale(4)
 		table_form.TekyLLLuu_npegMeT.setLabel("1")
-	end)
-	table_form.c6poc.caption.setX(283)
-	
-	--создание кнопки начала крафта
-	table_form.Ha4aJIo_kpaqpTa = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "Ha4aTb_kpaqpT_button", true, blue, white, function()
-		table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
-		table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
-		if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then nepBblu_B_o4epegu = true end --нужно, чтобы не подвисало гуи после добавления первого крафта
-		table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], tonumber(table_form.TekyLLLuu_npegMeT.getLabel())})
-		configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
-		setConfiguration()
-		for i = 1, 16 do
-			if tonumber(table_form["o4epedb_icon" .. tostring(i)].getLabel()) == 0 then
-				if type(Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa].okoH4aTeJIbHblu_npegMeT) == "table" then
-					table_form["o4epedb_icon" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())
-					table_form["o4epedb_icon" .. tostring(i)].setMeta(table_form.TekyLLLuu_npegMeT.getMeta())
-					table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
-				end
-				table_form["o4epedb_icon" .. tostring(i)].setLabel(table_form.TekyLLLuu_npegMeT.getLabel())
-				return
+		
+		for all_items = 1, 12 do
+			if Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items] ~= nil then
+				table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items][2].name)
+				table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items][2].damage)
+				table_form["icon" .. tostring(all_items)].setVisible(true)
+			else
+				table_form["icon" .. tostring(all_items)].setVisible(false)
+			end
+		end	
+		
+		--название первого отображаемого итема
+		table_form.nogcka3ka_Ha3BaHue2 = MoHuTop_urpoka[nick].addText(219, 43, "", blue)
+		local Ha3BaHue_uTema = function(Ha3BaHue)
+			if unicode.len(Ha3BaHue) > 23 then
+				table_form.nogcka3ka_Ha3BaHue2.setText(unicode.sub(Ha3BaHue, 24, unicode.len(Ha3BaHue)))
+				return unicode.sub(Ha3BaHue, 1, 23) .. "-"
+			else
+				table_form.nogcka3ka_Ha3BaHue2.setText("")
+				return Ha3BaHue
 			end
 		end
-	end)
-	
-	--ячейки очереди крафтов
-	table_form.o4epegu_kpaqpToB = MoHuTop_urpoka[nick].addText(137, 180, "ОЧЕРЕДИ КРАФТОВ:", blue)
-	local x_o4epegeU = 13
-	for i = 1, 16 do
-		table_form["o4epegu" .. tostring(i)] = creat_new_button(-1, nick, x_o4epegeU, 190, 20, 20, "", "icon", true, gray, white, function(button_num)
-			if o4epegb_kpaqpToB_Ha_MaTpuce[button_num] == nil then
-				table_form.o4epegu_kpaqpToB.setText(r .. "ОЧЕРЕДЬ УСТАРЕЛА: ПЕРЕЗАЙДИ В ОКНО")
-			elseif type(o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT) ~= "table" then
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "нельзя прервать крафт")
-			elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT.name ~= table_form["o4epedb_icon" .. tostring(button_num)].getItemId() then
-				table_form.o4epegu_kpaqpToB.setText(r .. "ОЧЕРЕДЬ УСТАРЕЛА: ПЕРЕЗАЙДИ В ОКНО")
-			elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] ~= 0 then
-				o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] = o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] - 1
-				table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
+		table_form.nogcka3ka_Ha3BaHue = MoHuTop_urpoka[nick].addText(219, 33, Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ha3BaHue), blue)
+
+		--создание ячеек крафта
+		for i = 1, 6 do
+			cMeLLleHue_no_x = 5
+			for j = 1, 10 do
+				HyMepacu9l = HyMepacu9l + 1
+				table_form[HyMepacu9l] = creat_new_button(-1, nick, x_win + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
+					table_form.nogcka3ka_go6aBJIeHu9l.setText("")
+					table_form.nogcka3ka_go6aBJIeHu9l2.setText("")
+					if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema] ~= nil then
+						if type(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT) == "table" then
+							table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.name)
+							table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.damage)
+							table_form.TekyLLLuu_npegMeT.setVisible(true)
+						else
+							table_form.TekyLLLuu_npegMeT.setVisible(false)
+						end
+						table_form.TekyLLLuu_npegMeT.setLabel("1")
+						table_form.cTapToBblu_npegMeT_no_ceHTpy.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.name)
+						table_form.cTapToBblu_npegMeT_no_ceHTpy.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.damage)
+						
+						table_form.nogcka3ka_Ha3BaHue.setText(Ha3BaHue_uTema(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ha3BaHue))
+						TekyLLluu_HoMep_pecenTa = HoMep_uTema
+						for all_items = 1, 12 do
+							if Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items] ~= nil then
+								table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].name)
+								table_form["icon" .. tostring(all_items)].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].Ta6JIuca_npegMeToB[all_items][2].damage)
+								table_form["icon" .. tostring(all_items)].setVisible(true)
+							else
+								table_form["icon" .. tostring(all_items)].setVisible(false)
+							end
+						end	
+					end
+				end)
+				table_form[HyMepacu9l].button_num = HyMepacu9l
+				if Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l] ~= nil then
+					if type(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT) == "table" then
+						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.damage)
+						table_form[tostring(HyMepacu9l) .. "item"].setVisible(true)
+						table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
+					else
+						
+					end
+				end
+				cMeLLleHue_no_x = cMeLLleHue_no_x + 21			
+			end
+			cMeLLleHue_no_y = cMeLLleHue_no_y + 21
+		end
+				
+		--создание кнопок количества для крафта
+		table_form.koJIu4ecTBo_1 = creat_new_button(-1, nick, 217, 136, 18, 20, "1", "koJIu4ecTBo_1_button", true, blue, white, function()
+			local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
+			if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 1, true, true, true, 999) then
+				table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 1))
+			else
+				table_form.TekyLLLuu_npegMeT.setLabel("999")
 			end
 		end)
-		table_form["o4epegu" .. tostring(i)].button_num = i
-		if o4epegb_kpaqpToB_Ha_MaTpuce[i] == nil then	
-			table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-
-			table_form["o4epedb_icon" .. tostring(i)].setVisible(false)
-			table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
-			table_form["o4epedb_icon" .. tostring(i)].setClickable(false)
-		else
-			if type(o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT) ~= "table" then
-				table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage)
-				table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
+		table_form.koJIu4ecTBo_1.caption.setX(224)
+		table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, 237, 136, 18, 20, "10", "koJIu4ecTBo_10_button", true, blue, white, function()
+			local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
+			if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 10, true, true, true, 999) then
+				table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 10))
+			else
+				table_form.TekyLLLuu_npegMeT.setLabel("999")
 			end
-			table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
-			table_form["o4epedb_icon" .. tostring(i)].setClickable(false)
+		end)
+		table_form.koJIu4ecTBo_10.caption.setX(240)
+		table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, 257, 136, 18, 20, "100", "koJIu4ecTBo_100_button", true, blue, white, function()
+			local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
+			if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 100, true, true, true, 999) then
+				table_form.TekyLLLuu_npegMeT.setLabel(tostring(tonumber(table_form.TekyLLLuu_npegMeT.getLabel()) + 100))
+			else
+				table_form.TekyLLLuu_npegMeT.setLabel("999")
+			end
+		end)
+		table_form.koJIu4ecTBo_100.caption.setX(258)
+		table_form.c6poc = creat_new_button(-1, nick, 276, 136, 18, 20, "С", "c6poc_button", true, blue, white, function()
+			table_form.TekyLLLuu_npegMeT.setLabel("1")
+		end)
+		table_form.c6poc.caption.setX(283)
+		
+		--создание кнопки начала крафта
+		table_form.Ha4aJIo_kpaqpTa = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "Ha4aTb_kpaqpT_button", true, blue, white, function()
+			table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
+			table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
+			if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then nepBblu_B_o4epegu = true end --нужно, чтобы не подвисало гуи после добавления первого крафта
+			table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], tonumber(table_form.TekyLLLuu_npegMeT.getLabel())})
+			configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
+			setConfiguration()
+			for i = 1, 16 do
+				if tonumber(table_form["o4epedb_icon" .. tostring(i)].getLabel()) == 0 then
+					if type(Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa].okoH4aTeJIbHblu_npegMeT) == "table" then
+						table_form["o4epedb_icon" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())
+						table_form["o4epedb_icon" .. tostring(i)].setMeta(table_form.TekyLLLuu_npegMeT.getMeta())
+						table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
+					end
+					table_form["o4epedb_icon" .. tostring(i)].setLabel(table_form.TekyLLLuu_npegMeT.getLabel())
+					return
+				end
+			end
+		end)
+		
+		--ячейки очереди крафтов
+		table_form.o4epegu_kpaqpToB = MoHuTop_urpoka[nick].addText(137, 180, "ОЧЕРЕДИ КРАФТОВ:", blue)
+		local x_o4epegeU = 13
+		for i = 1, 16 do
+			table_form["o4epegu" .. tostring(i)] = creat_new_button(-1, nick, x_o4epegeU, 190, 20, 20, "", "icon", true, gray, white, function(button_num)
+				if o4epegb_kpaqpToB_Ha_MaTpuce[button_num] == nil then
+					table_form.o4epegu_kpaqpToB.setText(r .. "ОЧЕРЕДЬ УСТАРЕЛА: ПЕРЕЗАЙДИ В ОКНО")
+				elseif type(o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT) ~= "table" then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "нельзя прервать крафт")
+				elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT.name ~= table_form["o4epedb_icon" .. tostring(button_num)].getItemId() then
+					table_form.o4epegu_kpaqpToB.setText(r .. "ОЧЕРЕДЬ УСТАРЕЛА: ПЕРЕЗАЙДИ В ОКНО")
+				elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] ~= 0 then
+					o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] = o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] - 1
+					table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
+				end
+			end)
+			table_form["o4epegu" .. tostring(i)].button_num = i
+			if o4epegb_kpaqpToB_Ha_MaTpuce[i] == nil then	
+				table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+
+				table_form["o4epedb_icon" .. tostring(i)].setVisible(false)
+				table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
+				table_form["o4epedb_icon" .. tostring(i)].setClickable(false)
+			else
+				if type(o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT) ~= "table" then
+					table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage)
+					table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
+				end
+				table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
+				table_form["o4epedb_icon" .. tostring(i)].setClickable(false)
+			end
+			x_o4epegeU = x_o4epegeU + 21
 		end
-		x_o4epegeU = x_o4epegeU + 21
+		
+		--подсказка 
+		table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(307, 145, "", green)
+		table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(304, 157, "", green)
+	else
+		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(1, 1, "Таблица", red)
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(1, 50, "рецептов", red)
+		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(1, 100, "пуста!", red)
+		table_form.nogcka3ka1.setScale(3)
+		table_form.nogcka3ka2.setScale(3)
+		table_form.nogcka3ka3.setScale(3)	
 	end
-	
-	--подсказка 
-	table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(307, 145, "", green)
-	table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(304, 157, "", green)
-	
-	
 	--table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 3, 178, 62, 37, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
 		--obj = table_form.test_cMeLLLeHu9l2
 	--end)
 	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
-	obj = table_form.cTapToBblu_npegMeT_no_ceHTpy
+	obj = table_form.nogcka3ka1
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380

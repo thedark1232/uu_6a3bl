@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "35 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "36 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7968,13 +7968,16 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 					table_form.nogcka3ka_co3gaHu9l2.setText("название рецепта!")
 					return
 				end
+				--проверка на совпадения названий с таблицей рецептов
 				for _, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
 					if pecenT.Ha3BaHue == Ha3BaHue_pecenTa then
-						table_form.nogcka3ka_co3gaHu9l1.setText("рецепт с таким названием")
+						table_form.nogcka3ka_co3gaHu9l1.setText("Такое название")
+						table_form.nogcka3ka_co3gaHu9l1.setX(74)
 						table_form.nogcka3ka_co3gaHu9l2.setText("уже существует")
 						return
 					end
 				end
+				--проверка на наличие предметов на пьедесталах
 				local Bce_nbegecTaJIbl_nycTbl = true
 				for i = 4, 15 do
 					if table_form["icon" .. tostring(i)].getVisible() then
@@ -7982,7 +7985,14 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 						break
 					end
 				end
-				
+				if Bce_nbegecTaJIbl_nycTbl then
+					table_form.nogcka3ka_co3gaHu9l1.setText("пьедесталы пусты!")
+					table_form.nogcka3ka_co3gaHu9l1.setX(80)
+					return
+				end
+				--добавление рецепта в таблицу
+				table_form.nogcka3ka_co3gaHu9l1.setText("рецепт добавлен!")
+				table_form.nogcka3ka_co3gaHu9l1.setColor(green)
 			end)
 			table_form.textBox_BBog_Ha3BaHu9l_pecenTa = creat_new_textBox(nick, 20, 32, 218, 15, "ввод названия рецепта", "textBox", true, black, gray, red, blue, horizontalAlignment.left, 36)
 			

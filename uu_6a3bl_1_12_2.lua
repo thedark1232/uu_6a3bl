@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "14 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "15 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7902,33 +7902,22 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 6, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
-	--создание текста подсказки
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(195, 33, "текущий пьедестал: ", blue)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(195, 44, "не выбран!", red)
-	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(195, 55, "адрес для замены", blue)
-
-	
 	--открыть файл конфигурации
 	Ta6JIuca_nbegecTaJIoB = configuration[28]
-	table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(34, 46, "Требуется", red)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(34, 77, "настройка", red)
-	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(29, 108, "пьедесталов!", red)
-	table_form.nogcka3ka1.setScale(3)
-	table_form.nogcka3ka2.setScale(3)
-	table_form.nogcka3ka3.setScale(3)
+	if #Ta6JIuca_nbegecTaJIoB ~= 0 then
+		--кнопка добавления рецепта
+		table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 153, 34, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
+			--проверка итема на первом пьедестале
+			
+			
+			
+			for _, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
+			
+			end
+		end)
 	
-	--кнопка добавления рецепта
-	table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 153, 34, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
-		--проверка итема на первом пьедестале
-		
-		
-		
-		for _, v in ipairs(Ta6JIuca_nbegecTaJIoB) do
-		
-		end
-	end)
 	
-	if #Ta6JIuca_nbegecTaJIoB == 0 then
+	
 		--СОЗДАНИЕ КНОПОК ПЬЕДЕСТАЛОВ
 		--центральный пьедестал
 		local item
@@ -7936,33 +7925,45 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 		item = component.invoke(Ta6JIuca_nbegecTaJIoB[1][1], "getStackInSlot", 1, 1)
 		if type(item) == "table" then
 			table_form["icon1"] = MoHuTop_urpoka[nick].addIcon(47 + x_win + cMeLLleHue_icon_x, 54 + cMeLLleHue_icon_y, item.name, item.damage)
+			
+			table_form[4] = MoHuTop_urpoka[nick].addBox(68 + x_win, 33, 20, 20, black)
+			table_form["icon4"] = MoHuTop_urpoka[nick].addIcon(68 + x_win + cMeLLleHue_icon_x, 33 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[5] = MoHuTop_urpoka[nick].addBox(47 + x_win, 96, 20, 20, black)
+			table_form["icon5"] = MoHuTop_urpoka[nick].addIcon(47 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[6] = MoHuTop_urpoka[nick].addBox(47 + x_win, 138, 20, 20, black)
+			table_form["icon6"] = MoHuTop_urpoka[nick].addIcon(47 + x_win + cMeLLleHue_icon_x, 138 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[7] = MoHuTop_urpoka[nick].addBox(67 + x_win, 159, 20, 20, black)
+			table_form["icon7"] = MoHuTop_urpoka[nick].addIcon(67 + x_win + cMeLLleHue_icon_x, 159 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[8] = MoHuTop_urpoka[nick].addBox(110 + x_win, 33, 20, 20, black)
+			table_form["icon8"] = MoHuTop_urpoka[nick].addIcon(110 + x_win + cMeLLleHue_icon_x, 33 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[9] = MoHuTop_urpoka[nick].addBox(151 + x_win, 33, 20, 20, black)
+			table_form["icon9"] = MoHuTop_urpoka[nick].addIcon(151 + x_win + cMeLLleHue_icon_x, 33 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[10] = MoHuTop_urpoka[nick].addBox(172 + x_win, 54, 20, 20, black)
+			table_form["icon10"] = MoHuTop_urpoka[nick].addIcon(172 + x_win + cMeLLleHue_icon_x, 54 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[11] = MoHuTop_urpoka[nick].addBox(172 + x_win, 96, 20, 20, black)
+			table_form["icon11"] = MoHuTop_urpoka[nick].addIcon(172 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[12] = MoHuTop_urpoka[nick].addBox(172 + x_win, 138, 20, 20, black)
+			table_form["icon12"] = MoHuTop_urpoka[nick].addIcon(172 + x_win + cMeLLleHue_icon_x, 138 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[13] = MoHuTop_urpoka[nick].addBox(151 + x_win, 159, 20, 20, black)
+			table_form["icon13"] = MoHuTop_urpoka[nick].addIcon(151 + x_win + cMeLLleHue_icon_x, 159 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[14] = MoHuTop_urpoka[nick].addBox(110 + x_win, 159, 20, 20, black)
+			table_form["icon14"] = MoHuTop_urpoka[nick].addIcon(110 + x_win + cMeLLleHue_icon_x, 159 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+			table_form[15] = MoHuTop_urpoka[nick].addBox(110 + x_win, 96, 20, 20, black)
+			table_form["icon15"] = MoHuTop_urpoka[nick].addIcon(110 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)	
+		else
+			table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(40, 33, "предмет на", red)
+			obj = table_form.nogcka3ka 
+			--table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(195, 44, "центральном пьедестале", red)
+			--table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(195, 55, "не найден!", red)
 		end
-		table_form[4] = MoHuTop_urpoka[nick].addBox(68 + x_win, 33, 20, 20, black)
-		table_form["icon4"] = MoHuTop_urpoka[nick].addIcon(68 + x_win + cMeLLleHue_icon_x, 33 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[5] = MoHuTop_urpoka[nick].addBox(47 + x_win, 96, 20, 20, black)
-		table_form["icon5"] = MoHuTop_urpoka[nick].addIcon(47 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[6] = MoHuTop_urpoka[nick].addBox(47 + x_win, 138, 20, 20, black)
-		table_form["icon6"] = MoHuTop_urpoka[nick].addIcon(47 + x_win + cMeLLleHue_icon_x, 138 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[7] = MoHuTop_urpoka[nick].addBox(67 + x_win, 159, 20, 20, black)
-		table_form["icon7"] = MoHuTop_urpoka[nick].addIcon(67 + x_win + cMeLLleHue_icon_x, 159 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[8] = MoHuTop_urpoka[nick].addBox(110 + x_win, 33, 20, 20, black)
-		table_form["icon8"] = MoHuTop_urpoka[nick].addIcon(110 + x_win + cMeLLleHue_icon_x, 33 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[9] = MoHuTop_urpoka[nick].addBox(151 + x_win, 33, 20, 20, black)
-		table_form["icon9"] = MoHuTop_urpoka[nick].addIcon(151 + x_win + cMeLLleHue_icon_x, 33 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[10] = MoHuTop_urpoka[nick].addBox(172 + x_win, 54, 20, 20, black)
-		table_form["icon10"] = MoHuTop_urpoka[nick].addIcon(172 + x_win + cMeLLleHue_icon_x, 54 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[11] = MoHuTop_urpoka[nick].addBox(172 + x_win, 96, 20, 20, black)
-		table_form["icon11"] = MoHuTop_urpoka[nick].addIcon(172 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[12] = MoHuTop_urpoka[nick].addBox(172 + x_win, 138, 20, 20, black)
-		table_form["icon12"] = MoHuTop_urpoka[nick].addIcon(172 + x_win + cMeLLleHue_icon_x, 138 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[13] = MoHuTop_urpoka[nick].addBox(151 + x_win, 159, 20, 20, black)
-		table_form["icon13"] = MoHuTop_urpoka[nick].addIcon(151 + x_win + cMeLLleHue_icon_x, 159 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[14] = MoHuTop_urpoka[nick].addBox(110 + x_win, 159, 20, 20, black)
-		table_form["icon14"] = MoHuTop_urpoka[nick].addIcon(110 + x_win + cMeLLleHue_icon_x, 159 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
-		table_form[15] = MoHuTop_urpoka[nick].addBox(110 + x_win, 96, 20, 20, black)
-		table_form["icon15"] = MoHuTop_urpoka[nick].addIcon(110 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y, "ThaumicTinkerer:ichorclothChest", 0)
+
 	else
-	
+		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(34, 46, "Требуется", red)
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(34, 77, "настройка", red)
+		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(16, 108, "пьедесталов!", red)
+		table_form.nogcka3ka1.setScale(3)
+		table_form.nogcka3ka2.setScale(3)
+		table_form.nogcka3ka3.setScale(3)
 	end
 	--table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 3, 178, 62, 37, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
 		--obj = table_form.test_cMeLLLeHu9l2
@@ -7970,7 +7971,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	--table_form.test_cMeLLLeHu9l3 = creat_new_button(-1, nick, 33, 178, 20, 20, "", "test3_cMeLLLeHu9l_button", true, gray, white, function()
 		--obj = table_form.test_cMeLLLeHu9l3
 	--end)
-	obj = table_form.nogcka3ka3
+
 	--создание стрелок для рисования ГУИ
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 380

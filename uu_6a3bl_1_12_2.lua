@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "34 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "35 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2105,6 +2105,7 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
+function trim(text) return text:gsub("^%s+", ""):gsub("%s+$", "") end
 --создание компонентов для форм
 function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_background, color_foreground, click_function)
 	local table_button
@@ -7187,7 +7188,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 				local npocMaTpuBaEMblu_cJIoT = component.invoke(agpec, "getStackInSlot", cTopoHa1, 1)
 				if npocMaTpuBaEMblu_cJIoT ~= nil and npocMaTpuBaEMblu_cJIoT.name == cobblestone then
 					if Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][3] then component.invoke(agpec, "transferItem", cTopoHa1, cTopoHa2) end
-					Ta6JIuca_nbegecTaJIoB[HoMep_nbegecTaJIa] = {agpec, cTopoHa1, cTopoHa2}
+					Ta6JIuca_nbegecTaJIoB[HoMep_nbegecTaJIa] = {agpec, Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][1], Ta6JIuca_HanpaBJIeHuu[HoMep_nbegecTaJIa][2]}
 					configuration[28] = Ta6JIuca_nbegecTaJIoB
 					setConfiguration()
 					return true
@@ -7909,7 +7910,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	
 	--подсказки создания рецепта
 	table_form.nogcka3ka_co3gaHu9l1 = MoHuTop_urpoka[nick].addText(85, 77, "", red)		
-	table_form.nogcka3ka_co3gaHu9l2 = MoHuTop_urpoka[nick].addText(85, 88, "", red)
+	table_form.nogcka3ka_co3gaHu9l2 = MoHuTop_urpoka[nick].addText(74, 88, "", red)
 	
 	--открыть файл конфигурации
 	Ta6JIuca_nbegecTaJIoB = configuration[28]
@@ -7959,11 +7960,29 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			--кнопка добавления рецепта
 			table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 76 + x_win, 120 + y_win, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
 				obj = table_form.nogcka3ka_co3gaHu9l2
-				local Ha3BaHue_pecenTa = table_form.textBox_BBog_Ha3BaHu9l_pecenTa.caption.getText()
-				if Ha3BaHue_pecenTa == "ввод названия рецепта" then
+				local Ha3BaHue_pecenTa = unicode.lower(table_form.textBox_BBog_Ha3BaHu9l_pecenTa.caption.getText())
+				Ha3BaHue_pecenTa = trim(Ha3BaHue_pecenTa)
+				--проверка на ввод названия
+				if Ha3BaHue_pecenTa == "ввод названия рецепта" or Ha3BaHue_pecenTa == "" then
 					table_form.nogcka3ka_co3gaHu9l1.setText("Сначала введи")
 					table_form.nogcka3ka_co3gaHu9l2.setText("название рецепта!")
+					return
 				end
+				for _, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
+					if pecenT.Ha3BaHue == Ha3BaHue_pecenTa then
+						table_form.nogcka3ka_co3gaHu9l1.setText("рецепт с таким названием")
+						table_form.nogcka3ka_co3gaHu9l2.setText("уже существует")
+						return
+					end
+				end
+				local Bce_nbegecTaJIbl_nycTbl = true
+				for i = 4, 15 do
+					if table_form["icon" .. tostring(i)].getVisible() then
+						Bce_nbegecTaJIbl_nycTbl = false
+						break
+					end
+				end
+				
 			end)
 			table_form.textBox_BBog_Ha3BaHu9l_pecenTa = creat_new_textBox(nick, 20, 32, 218, 15, "ввод названия рецепта", "textBox", true, black, gray, red, blue, horizontalAlignment.left, 36)
 			

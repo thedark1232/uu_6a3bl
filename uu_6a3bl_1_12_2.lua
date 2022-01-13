@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "27 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "28 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7878,7 +7878,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	
 	--главный фрейм
 	local x_win = 2
-	local y_win = 10
+	local y_win = 20
 	local cMeLLleHue_icon_x = 2
 	local cMeLLleHue_icon_y = 2
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 405, 205, blue)
@@ -7950,10 +7950,10 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			table_form["icon1"].setVisible(true)
 			
 			--кнопка добавления рецепта
-			table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 76 + x_win, 160 + y_win, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
+			table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 76 + x_win, 120 + y_win, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
 				obj = table_form.kHonka_go6aBJIeHu9l_pecenTa
 			end)
-			table_form.textBox_BBog_Ha3BaHu9l_pecenTa = creat_new_textBox(nick, 10, 30, 101, 15, "ввод названия рецепта", "textBox", true, black, gray, red, blue, horizontalAlignment.left, 50)
+			table_form.textBox_BBog_Ha3BaHu9l_pecenTa = creat_new_textBox(nick, 20, 30, 218, 15, "ввод названия рецепта", "textBox", true, black, gray, red, blue, horizontalAlignment.left, 37)
 			obj = table_form.textBox_BBog_Ha3BaHu9l_pecenTa
 			--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(157, 51, "предмет по центру", red)		
 			--table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(176, 62, "не найден", red)

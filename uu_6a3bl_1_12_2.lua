@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "48 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "49 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7573,9 +7573,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.Tpe6yeTc9l.setVisible(false)
 		table_form.kpaqpT = MoHuTop_urpoka[nick].addText(240, 116, "крафт!", red)
 		table_form.kpaqpT.setVisible(false)
-		
-		obj =  table_form.kpaqpT
-		
+				
 		for all_items = 1, 12 do
 			if Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items] ~= nil then
 				table_form["icon" .. tostring(all_items)].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[1].Ta6JIuca_npegMeToB[all_items][2].name)
@@ -7691,8 +7689,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 		
 		--создание кнопки начала крафта
 		table_form.Ha4aJIo_kpaqpTa = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "Ha4aTb_kpaqpT_button", true, blue, white, function()
+			table_form.nogcka3ka_go6aBJIeHu9l.setColor(green)
+			table_form.nogcka3ka_go6aBJIeHu9l2.setColor(green)
 			table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
 			table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
+			table_form.nogcka3ka_go6aBJIeHu9l2.setX(307)
+			
 			if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then nepBblu_B_o4epegu = true end --нужно, чтобы не подвисало гуи после добавления первого крафта
 			table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], tonumber(table_form.TekyLLLuu_npegMeT.getLabel())})
 			configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
@@ -7714,35 +7716,45 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.o4epegu_kpaqpToB = MoHuTop_urpoka[nick].addText(137, 180, "ОЧЕРЕДИ КРАФТОВ:", blue)
 		local x_o4epegeU = 13
 		for i = 1, 16 do
+			--создание кликабельной кнопки для отмены крафта
 			table_form["o4epegu" .. tostring(i)] = creat_new_button(-1, nick, x_o4epegeU, 190, 20, 20, "", "icon", true, gray, white, function(button_num)
-				if o4epegb_kpaqpToB_Ha_MaTpuce[button_num] == nil then
-					table_form.o4epegu_kpaqpToB.setText(r .. "ОЧЕРЕДЬ УСТАРЕЛА: ПЕРЕЗАЙДИ В ОКНО")
-				elseif type(o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT) ~= "table" then
-					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "нельзя прервать крафт")
-				elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT.name ~= table_form["o4epedb_icon" .. tostring(button_num)].getItemId() then
-					table_form.o4epegu_kpaqpToB.setText(r .. "ОЧЕРЕДЬ УСТАРЕЛА: ПЕРЕЗАЙДИ В ОКНО")
-				elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] ~= 0 then
+				if o4epegb_kpaqpToB_Ha_MaTpuce[button_num] ~= nil then
 					o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] = 0
-					table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
+					table_form.nogcka3ka_go6aBJIeHu9l.setColor(red)
+					table_form.nogcka3ka_go6aBJIeHu9l2.setColor(red)
+					table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
+					table_form.nogcka3ka_go6aBJIeHu9l2.setText("УДАЛЕН!")
+					table_form.nogcka3ka_go6aBJIeHu9l2.setX(304)
+					if table_form["o4epedb_icon" .. tostring(i)].getVisible() then
+						table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
+					end
 				end
 			end)
 			table_form["o4epegu" .. tostring(i)].button_num = i
-			table_form["Bonpoc" .. tostring(i)] = MoHuTop_urpoka[nick].addText(x_o4epegeU + 6, 194, "?", red)
-			table_form["Bonpoc" .. tostring(i)].setClickable(false)
 			
-			if o4epegb_kpaqpToB_Ha_MaTpuce[i] == nil then	
-				table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-				
-				table_form["o4epedb_icon" .. tostring(i)].setVisible(false)
-				table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
-				table_form["o4epedb_icon" .. tostring(i)].setClickable(false)
-			else
-				if type(o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT) ~= "table" then
-					table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage)
+			--создание знаков вопроса для очередей
+			table_form["Bonpoc" .. tostring(i)] = MoHuTop_urpoka[nick].addText(x_o4epegeU + 6, 194, "?", red)
+			table_form["Bonpoc" .. tostring(i)].setScale(2)
+			table_form["Bonpoc" .. tostring(i)].setClickable(false)
+			table_form["Bonpoc" .. tostring(i)].setVisible(false)
+			
+			--создание иконок для очередей
+			table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+			table_form["o4epedb_icon" .. tostring(i)].setClickable(false)
+			table_form["o4epedb_icon" .. tostring(i)].setVisible(false)	
+			table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
+			--table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name, o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage)
+			
+			--проверка очередей крафта для заполнения ячеек очередей
+			if o4epegb_kpaqpToB_Ha_MaTpuce[i] ~= nil then
+				if type(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT) == "table" then
+					table_form["o4epedb_icon" .. tostring(i)].setItemId = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name
+					table_form["o4epedb_icon" .. tostring(i)].setMeta = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage
+					table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
 					table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
+				else
+					table_form["Bonpoc" .. tostring(i)].setVisible(true)
 				end
-				table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
-				table_form["o4epedb_icon" .. tostring(i)].setClickable(false)
 			end
 			x_o4epegeU = x_o4epegeU + 21
 		end

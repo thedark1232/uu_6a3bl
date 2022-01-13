@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "56 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "57 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7759,9 +7759,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 			--проверка очередей крафта для заполнения ячеек очередей
 			if o4epegb_kpaqpToB_Ha_MaTpuce[i] ~= nil then
 				if type(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT) == "table" then
-					print(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
+					print("o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name", o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
 					table_form["o4epedb_icon" .. tostring(i)].setItemId = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name
-					print("table_form["o4epedb_icon" .. tostring(i)].getItemId()", table_form["o4epedb_icon" .. tostring(i)].getItemId())
+					print('table_form["o4epedb_icon" .. tostring(i)].getItemId()', table_form["o4epedb_icon" .. tostring(i)].getItemId())
 					table_form["o4epedb_icon" .. tostring(i)].setMeta = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage
 					table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
 					table_form["o4epedb_icon" .. tostring(i)].setVisible(true)

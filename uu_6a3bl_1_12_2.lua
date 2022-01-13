@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "51 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "52 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7756,6 +7756,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			--проверка очередей крафта для заполнения ячеек очередей
 			if o4epegb_kpaqpToB_Ha_MaTpuce[i] ~= nil then
 				if type(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT) == "table" then
+					print(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
 					table_form["o4epedb_icon" .. tostring(i)].setItemId = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name
 					table_form["o4epedb_icon" .. tostring(i)].setMeta = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage
 					table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))

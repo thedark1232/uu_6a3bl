@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "7 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "8 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7794,7 +7794,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	return table_form
 end
 function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
-	local obj = table_form.main_box2
+	local obj
 
 
 	--создание формы

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "31 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "33 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7907,6 +7907,10 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 6, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
+	--подсказки создания рецепта
+	table_form.nogcka3ka_co3gaHu9l1 = MoHuTop_urpoka[nick].addText(74, 137, "", red)		
+	table_form.nogcka3ka_co3gaHu9l2 = MoHuTop_urpoka[nick].addText(93, 148, "", red)
+	
 	--открыть файл конфигурации
 	Ta6JIuca_nbegecTaJIoB = configuration[28]
 	if #Ta6JIuca_nbegecTaJIoB ~= 0 then
@@ -7954,12 +7958,14 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			
 			--кнопка добавления рецепта
 			table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 76 + x_win, 120 + y_win, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
-				obj = table_form.kHonka_go6aBJIeHu9l_pecenTa
+				obj = table_form.nogcka3ka_co3gaHu9l1
+				local Ha3BaHue_pecenTa = table_form.textBox_BBog_Ha3BaHu9l_pecenTa.caption.getText()
+				if Ha3BaHue_pecenTa == "ввод названия рецепта" then
+					table_form.nogcka3ka_co3gaHu9l1.setText("Сначала введи")
+					table_form.nogcka3ka_co3gaHu9l2.setText("название рецепта")
+				end
 			end)
 			table_form.textBox_BBog_Ha3BaHu9l_pecenTa = creat_new_textBox(nick, 20, 32, 218, 15, "ввод названия рецепта", "textBox", true, black, gray, red, blue, horizontalAlignment.left, 36)
-			obj = table_form.textBox_BBog_Ha3BaHu9l_pecenTa
-			--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(157, 51, "предмет по центру", red)		
-			--table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(176, 62, "не найден", red)
 			
 			for i = 4, 15 do
 				item = component.invoke(Ta6JIuca_nbegecTaJIoB[i][1], "getStackInSlot", 1, 1)
@@ -7970,8 +7976,8 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 				end
 			end
 		else
-			table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(110 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y + y_win, "предмет по центру", red)		
-			table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(110 + x_win + cMeLLleHue_icon_x, 96 + cMeLLleHue_icon_y + y_win, "не найден", red)
+			table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(74, 137, "предмет по центру", red)		
+			table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(93, 148, "не найден", red)
 			table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(117, 119, "?", red)
 			table_form.nogcka3ka3.setScale(2)
 			obj = table_form.nogcka3ka

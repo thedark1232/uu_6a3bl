@@ -7567,9 +7567,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.TekyLLLuu_npegMeT.setLabel("1")
 		table_form.zHak_Bonpoca = MoHuTop_urpoka[nick].addText(240, 57, "?", red)
 		table_form.zHak_Bonpoca.setScale(6)
+		table_form.zHak_Bonpoca.setVisible(false)
 		
-		--table_form.zHak_Bonpoca.setVisible(false)
-		table_form.Tpe6yeTc9l =  MoHuTop_urpoka[nick].addText(240, 80, "Требуется", red)
+		table_form.Tpe6yeTc9l = MoHuTop_urpoka[nick].addText(240, 80, "Требуется", red)
+		table_form.Tpe6yeTc9l.setVisible(false)
 		obj = table_form.Tpe6yeTc9l
 		--table_form.kpaqpT = 
 		
@@ -7609,8 +7610,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 							table_form.TekyLLLuu_npegMeT.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.name)
 							table_form.TekyLLLuu_npegMeT.setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].okoH4aTeJIbHblu_npegMeT.damage)
 							table_form.TekyLLLuu_npegMeT.setVisible(true)
+							table_form.zHak_Bonpoca.setVisible(false)
+							table_form.Tpe6yeTc9l.setVisible(false)
 						else
 							table_form.TekyLLLuu_npegMeT.setVisible(false)
+							table_form.zHak_Bonpoca.setVisible(true)
+							table_form.Tpe6yeTc9l.setVisible(true)
 						end
 						table_form.TekyLLLuu_npegMeT.setLabel("1")
 						table_form.cTapToBblu_npegMeT_no_ceHTpy.setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HoMep_uTema].cTapToBblu_npegMeT_no_ceHTpy.name)

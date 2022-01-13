@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "5 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7897,18 +7897,6 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 6, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
-
-	--Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить"]()
-
-	--создание таблицы всех транспозеров
-	local agreca_Bcex_TraHcno3epoB = component.list("transposer")
-	local agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l = {}
-	for adrs, _ in pairs(agreca_Bcex_TraHcno3epoB) do
-		table.insert(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l, adrs)
-	end
-	for _, agpec_TpaHcno3epa in pairs(agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l) do
-		rawset(table_form[agpec_TpaHcno3epa], "full_agpec", agpec_TpaHcno3epa)
-	end
 	
 	--создание текста подсказки
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(195, 33, "текущий пьедестал: ", blue)

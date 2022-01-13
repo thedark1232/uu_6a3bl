@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "49 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "50 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7689,27 +7689,35 @@ function forms:creat_MaTpuca_craft_form(nick)
 		
 		--создание кнопки начала крафта
 		table_form.Ha4aJIo_kpaqpTa = creat_new_button(-1, nick, 217, 158, 77, 15, "скрафтить", "Ha4aTb_kpaqpT_button", true, blue, white, function()
-			table_form.nogcka3ka_go6aBJIeHu9l.setColor(green)
-			table_form.nogcka3ka_go6aBJIeHu9l2.setColor(green)
-			table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
-			table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
-			table_form.nogcka3ka_go6aBJIeHu9l2.setX(307)
-			
 			if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then nepBblu_B_o4epegu = true end --нужно, чтобы не подвисало гуи после добавления первого крафта
-			table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], tonumber(table_form.TekyLLLuu_npegMeT.getLabel())})
-			configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
-			setConfiguration()
+			local koJIu4ecTBo_gJI9l_kpaqpTa = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
 			for i = 1, 16 do
-				if tonumber(table_form["o4epedb_icon" .. tostring(i)].getLabel()) == 0 then
+				if o4epegb_kpaqpToB_Ha_MaTpuce[i] == 0 then
 					if type(Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa].okoH4aTeJIbHblu_npegMeT) == "table" then
 						table_form["o4epedb_icon" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())
 						table_form["o4epedb_icon" .. tostring(i)].setMeta(table_form.TekyLLLuu_npegMeT.getMeta())
 						table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
+						table_form["o4epedb_icon" .. tostring(i)].setLabel(table_form.TekyLLLuu_npegMeT.getLabel())	
+					else
+						table_form["Bonpoc" .. tostring(i)].setVisible(true)
+						koJIu4ecTBo_gJI9l_kpaqpTa = 1
 					end
-					table_form["o4epedb_icon" .. tostring(i)].setLabel(table_form.TekyLLLuu_npegMeT.getLabel())
+					table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], koJIu4ecTBo_gJI9l_kpaqpTa})
+					configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
+					setConfiguration()
+					table_form.nogcka3ka_go6aBJIeHu9l.setColor(green)
+					table_form.nogcka3ka_go6aBJIeHu9l2.setColor(green)
+					table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
+					table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
+					table_form.nogcka3ka_go6aBJIeHu9l2.setX(307)
 					return
 				end
 			end
+			table_form.nogcka3ka_go6aBJIeHu9l.setColor(red)
+			table_form.nogcka3ka_go6aBJIeHu9l2.setColor(red)
+			table_form.nogcka3ka_go6aBJIeHu9l.setText("ОЧЕРЕДЬ")
+			table_form.nogcka3ka_go6aBJIeHu9l2.setText("ЗАПОЛНЕНА!")
+			table_form.nogcka3ka_go6aBJIeHu9l2.setX(307)
 		end)
 		
 		--ячейки очереди крафтов

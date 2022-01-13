@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "50 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "51 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7692,7 +7692,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			if #o4epegb_kpaqpToB_Ha_MaTpuce == 0 then nepBblu_B_o4epegu = true end --нужно, чтобы не подвисало гуи после добавления первого крафта
 			local koJIu4ecTBo_gJI9l_kpaqpTa = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
 			for i = 1, 16 do
-				if o4epegb_kpaqpToB_Ha_MaTpuce[i] == 0 then
+				if o4epegb_kpaqpToB_Ha_MaTpuce[i] == nil then
 					if type(Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa].okoH4aTeJIbHblu_npegMeT) == "table" then
 						table_form["o4epedb_icon" .. tostring(i)].setItemId(table_form.TekyLLLuu_npegMeT.getItemId())
 						table_form["o4epedb_icon" .. tostring(i)].setMeta(table_form.TekyLLLuu_npegMeT.getMeta())
@@ -7717,7 +7717,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form.nogcka3ka_go6aBJIeHu9l2.setColor(red)
 			table_form.nogcka3ka_go6aBJIeHu9l.setText("ОЧЕРЕДЬ")
 			table_form.nogcka3ka_go6aBJIeHu9l2.setText("ЗАПОЛНЕНА!")
-			table_form.nogcka3ka_go6aBJIeHu9l2.setX(307)
+			table_form.nogcka3ka_go6aBJIeHu9l2.setX(300)
 		end)
 		
 		--ячейки очереди крафтов

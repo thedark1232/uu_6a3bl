@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "57 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "58 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7702,9 +7702,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 						table_form["Bonpoc" .. tostring(i)].setVisible(true)
 						koJIu4ecTBo_gJI9l_kpaqpTa = 1
 					end
-					
-					print("TekyLLluu_HoMep_pecenTa", TekyLLluu_HoMep_pecenTa)
-					print("Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa].okoH4aTeJIbHblu_npegMeT.name", Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa].okoH4aTeJIbHblu_npegMeT.name)
 					table.insert(o4epegb_kpaqpToB_Ha_MaTpuce, {Ta6JIuca_recenToB_Ha_MaTpuce[TekyLLluu_HoMep_pecenTa], koJIu4ecTBo_gJI9l_kpaqpTa})
 					configuration[31] = o4epegb_kpaqpToB_Ha_MaTpuce
 					setConfiguration()
@@ -7759,10 +7756,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 			--проверка очередей крафта для заполнения ячеек очередей
 			if o4epegb_kpaqpToB_Ha_MaTpuce[i] ~= nil then
 				if type(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT) == "table" then
-					print("o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name", o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
-					table_form["o4epedb_icon" .. tostring(i)].setItemId = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name
-					print('table_form["o4epedb_icon" .. tostring(i)].getItemId()', table_form["o4epedb_icon" .. tostring(i)].getItemId())
-					table_form["o4epedb_icon" .. tostring(i)].setMeta = o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage
+					table_form["o4epedb_icon" .. tostring(i)].setItemId(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.name)
+					table_form["o4epedb_icon" .. tostring(i)].setMeta(o4epegb_kpaqpToB_Ha_MaTpuce[i][1].okoH4aTeJIbHblu_npegMeT.damage)
 					table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
 					table_form["o4epedb_icon" .. tostring(i)].setVisible(true)
 				else

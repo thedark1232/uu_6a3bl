@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "2 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3614,7 +3614,7 @@ function forms:creat_MaTpuca_form(nick)
 	end
 	
 	--кнопки тиммейтов
-	table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick) end)
+	--table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick) end)
 	table_form.info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "инфо настроек", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица инфо"]() end)
 
 	table_form.zanucb_pecenTa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "запись рецепта", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_3anucb_pecenTa = forms:creat_MaTpuca_3anucb_pecenTa_form(nick) end)
@@ -7721,9 +7721,9 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(307, 145, "", green)
 		table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(304, 157, "", green)
 	else
-		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(1, 1, "Таблица", red)
-		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(1, 50, "рецептов", red)
-		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(1, 100, "пуста!", red)
+		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(114, 46, "Таблица", red)
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(90, 77, "рецептов", red)
+		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(114, 108, "пуста!", red)
 		table_form.nogcka3ka1.setScale(3)
 		table_form.nogcka3ka2.setScale(3)
 		table_form.nogcka3ka3.setScale(3)	

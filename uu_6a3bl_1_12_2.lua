@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "39 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "40 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7799,7 +7799,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 end
 function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	local obj
-
+	local npegMeT_no_ceHTpy = {}
+	local Ta6JIuca_npegMeToB = {}
 
 	--создание формы
 	local table_form = {}
@@ -7956,6 +7957,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			table_form["icon1"].setItemId(item.name)
 			table_form["icon1"].setMeta(item.damage)
 			table_form["icon1"].setVisible(true)
+			npegMeT_no_ceHTpy = item
 			
 			--кнопка добавления рецепта
 			table_form.kHonka_go6aBJIeHu9l_pecenTa = creat_new_button(-1, nick, 76 + x_win, 120 + y_win, 87, 15, "добавить", "go6aBuTb_pecenT_button", true, blue, white, function()
@@ -7994,7 +7996,16 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 					table_form.nogcka3ka_co3gaHu9l2.setText("")
 					return
 				end
-				--добавление рецепта в таблицу
+				--запись рецепта в таблицу
+				table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
+					["Ha3BaHue"] = Ha3BaHue_pecenTa,
+					["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
+					["Ta6JIuca_npegMeToB"] = Ta6JIuca_npegMeToB,
+					["okoH4aTeJIbHblu_npegMeT"] = "не определено",
+					["HoMeP_B_Ta6JIuce"] = "-1"
+				})
+				Ta6JIuca_recenToB_Ha_MaTpuce[#Ta6JIuca_recenToB_Ha_MaTpuce].HoMeP_B_Ta6JIuce = #Ta6JIuca_recenToB_Ha_MaTpuce
+				setMathixRecepts()
 				table_form.nogcka3ka_co3gaHu9l2.setText("рецепт добавлен!")
 				table_form.nogcka3ka_co3gaHu9l2.setX(76)
 				table_form.nogcka3ka_co3gaHu9l2.setColor(green)
@@ -8010,6 +8021,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 					table_form["icon" .. tostring(i)].setItemId(item.name)
 					table_form["icon" .. tostring(i)].setMeta(item.damage)
 					table_form["icon" .. tostring(i)].setVisible(true)
+					table.insert(Ta6JIuca_npegMeToB, {i, item})
 				end
 			end
 		else

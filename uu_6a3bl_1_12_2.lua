@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "8 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "9 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7925,19 +7925,19 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 
 	--СОЗДАНИЕ КНОПОК ПЬЕДЕСТАЛОВ
 	--центральный пьедестал
-	table_form[1] = addBox(47 + x_win, 54, 20, 20,  black)
-	table_form[2] = addBox(68 + x_win, 33, 20, 20,  black)
-	table_form[3] = addBox(47 + x_win, 96, 20, 20,  black)
-	table_form[4] = addBox(47 + x_win, 138, 20, 20,  black)
-	table_form[5] = addBox(67 + x_win, 159, 20, 20,  black)
-	table_form[6] = addBox(110 + x_win, 33, 20, 20,  black)
-	table_form[7] = addBox(151 + x_win, 33, 20, 20,  black)
-	table_form[8] = addBox(172 + x_win, 54, 20, 20,  black)
-	table_form[9] = addBox(172 + x_win, 96, 20, 20,  black)
-	table_form[10] = addBox(172 + x_win, 138, 20, 20,  black)
-	table_form[11] = addBox(151 + x_win, 159, 20, 20,  black)
-	table_form[12] = addBox(110 + x_win, 159, 20, 20,  black)
-	table_form[13] = addBox(110 + x_win, 96, 20, 20,  black)
+	table_form["1"] = addBox(47 + x_win, 54, 20, 20, black)
+	table_form[2] = addBox(68 + x_win, 33, 20, 20, black)
+	table_form[3] = addBox(47 + x_win, 96, 20, 20, black)
+	table_form[4] = addBox(47 + x_win, 138, 20, 20, black)
+	table_form[5] = addBox(67 + x_win, 159, 20, 20, black)
+	table_form[6] = addBox(110 + x_win, 33, 20, 20, black)
+	table_form[7] = addBox(151 + x_win, 33, 20, 20, black)
+	table_form[8] = addBox(172 + x_win, 54, 20, 20, black)
+	table_form[9] = addBox(172 + x_win, 96, 20, 20, black)
+	table_form[10] = addBox(172 + x_win, 138, 20, 20, black)
+	table_form[11] = addBox(151 + x_win, 159, 20, 20, black)
+	table_form[12] = addBox(110 + x_win, 159, 20, 20, black)
+	table_form[13] = addBox(110 + x_win, 96, 20, 20, black)
 
 	--table_form.test_cMeLLLeHu9l2 = creat_new_button(-1, nick, 3, 178, 62, 37, "", "test2_cMeLLLeHu9l_button", true, black, white, function()
 		--obj = table_form.test_cMeLLLeHu9l2

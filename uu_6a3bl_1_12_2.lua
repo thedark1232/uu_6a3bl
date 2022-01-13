@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "47 крафт на матрице"
+local Ha3BaHue_o6HoBJIeHu9l = "48 крафт на матрице"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7571,7 +7571,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 		
 		table_form.Tpe6yeTc9l = MoHuTop_urpoka[nick].addText(228, 104, "Требуется", red)
 		table_form.Tpe6yeTc9l.setVisible(false)
-		table_form.kpaqpT = MoHuTop_urpoka[nick].addText(235, 116, "крафт!", red)
+		table_form.kpaqpT = MoHuTop_urpoka[nick].addText(240, 116, "крафт!", red)
 		table_form.kpaqpT.setVisible(false)
 		
 		obj =  table_form.kpaqpT
@@ -7634,6 +7634,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 								table_form["icon" .. tostring(all_items)].setVisible(true)
 							else
 								table_form["icon" .. tostring(all_items)].setVisible(false)
+								
 							end
 						end	
 					end
@@ -7645,7 +7646,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 						table_form[tostring(HyMepacu9l) .. "item"].setVisible(true)
 						table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 					else
-						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addText(cMeLLleHue_no_x + 7, cMeLLleHue_no_y + 3, "?", red)
+						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addText(cMeLLleHue_no_x + 6, cMeLLleHue_no_y + 3, "?", red)
 						table_form[tostring(HyMepacu9l) .. "item"].setScale(2)
 						table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
 					end
@@ -7721,14 +7722,17 @@ function forms:creat_MaTpuca_craft_form(nick)
 				elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][1].okoH4aTeJIbHblu_npegMeT.name ~= table_form["o4epedb_icon" .. tostring(button_num)].getItemId() then
 					table_form.o4epegu_kpaqpToB.setText(r .. "ОЧЕРЕДЬ УСТАРЕЛА: ПЕРЕЗАЙДИ В ОКНО")
 				elseif o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] ~= 0 then
-					o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] = o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] - 1
-					table_form["o4epedb_icon" .. tostring(i)].setLabel(tostring(o4epegb_kpaqpToB_Ha_MaTpuce[i][2]))
+					o4epegb_kpaqpToB_Ha_MaTpuce[button_num][2] = 0
+					table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
 				end
 			end)
 			table_form["o4epegu" .. tostring(i)].button_num = i
+			table_form["Bonpoc" .. tostring(i)] = MoHuTop_urpoka[nick].addText(x_o4epegeU + 6, 194, "?", red)
+			table_form["Bonpoc" .. tostring(i)].setClickable(false)
+			
 			if o4epegb_kpaqpToB_Ha_MaTpuce[i] == nil then	
 				table_form["o4epedb_icon" .. tostring(i)] = MoHuTop_urpoka[nick].addIcon(x_o4epegeU + 3, 191, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
-
+				
 				table_form["o4epedb_icon" .. tostring(i)].setVisible(false)
 				table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
 				table_form["o4epedb_icon" .. tostring(i)].setClickable(false)

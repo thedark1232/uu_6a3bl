@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "2 сохранение рецептов"
+local Ha3BaHue_o6HoBJIeHu9l = "3 сохранение рецептов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7937,7 +7937,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	local y_win = 20
 	local cMeLLleHue_icon_x = 2
 	local cMeLLleHue_icon_y = 2
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 405, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 259, 205, blue)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 251, 173, white)
 	table_form.main_box2.setClickable(false)
 	

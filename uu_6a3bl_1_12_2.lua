@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "3 поиск итемов"
+local Ha3BaHue_o6HoBJIeHu9l = "4 поиск итемов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7544,7 +7544,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 	
 	if Ta6JIuca_recenToB_Ha_MaTpuce[1] ~= nil then
 		--текстбокс номера рецепта
-		table_form.textBox_nouck = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 5)
+		table_form.textBox_nouck = creat_new_textBox(nick, 5 + x_win, 158, 101, 14, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 18)
 		
 		--бокс подссказок "предмет добавлен"
 		table_form.box_nogcka3ok = MoHuTop_urpoka[nick].addBox(297, 136, 62, 37, black) 
@@ -7848,14 +7848,14 @@ function forms:creat_MaTpuca_craft_form(nick)
 			end
 		end)	
 		--table_form.button_BJIeBo.caption.setX(table_form.button_BJIeBo.caption.getX() + 1)
-		--table_form.button_BnpaBo.caption.setX(table_form.button_BnpaBo.caption.getX() + 5)
+		table_form.button_BnpaBo.caption.setX(table_form.button_BnpaBo.caption.getX() + 5)
 		
 		--кнопка поиска предметов
 		table_form.kHonka_noucka = creat_new_button(1, nick, 107 + x_win, 158, 35, 15, "найти", "nouck_button", true, blue, white, function()
 			--obj = table_form.kHonka_noucka	
 
 		end)
-		table_form.kHonka_noucka.caption.setX(table_form.kHonka_noucka.getX() + 2)
+		table_form.kHonka_noucka.caption.setX(table_form.kHonka_noucka.getX() + 3)
 		
 	else
 	

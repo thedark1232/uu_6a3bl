@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 загрузка рецептов"
+local Ha3BaHue_o6HoBJIeHu9l = "1 переключение страниц"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7550,16 +7550,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 		--бокс подссказок "предмет добавлен"
 		table_form.box_nogcka3ok = MoHuTop_urpoka[nick].addBox(297, 136, 62, 37, black) 
 
-		--кнопки переключения страниц итемов
-		table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, gray, white, function()
-
-		end)
-		table_form.button_BJIeBo.caption.setX(table_form.button_BJIeBo.caption.getX() + 10)
-		table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "==>", "right_button", true, blue, white, function() 
-
-		end)
-		table_form.button_BnpaBo.caption.setX(table_form.button_BnpaBo.caption.getX() + 10)
-
 		-- table.insert(Ta6JIuca_recenToB_Ha_MaTpuce, {
 		-- ["Ha3BaHue"] = coo6llleHue,
 		-- ["cTapToBblu_npegMeT_no_ceHTpy"] = npegMeT_no_ceHTpy,
@@ -7670,15 +7660,22 @@ function forms:creat_MaTpuca_craft_form(nick)
 					end
 				end)
 				table_form[HyMepacu9l].button_num = HyMepacu9l
+				table_form[tostring(HyMepacu9l) .. "text"] = MoHuTop_urpoka[nick].addText(cMeLLleHue_no_x + 6, cMeLLleHue_no_y + 3, "?", red)
+				table_form[tostring(HyMepacu9l) .. "text"].setScale(2)
+				table_form[tostring(HyMepacu9l) .. "text"].setVisible(false)
+				table_form[tostring(HyMepacu9l) .. "text"].setClickable(false)
+				table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[1].okoH4aTeJIbHblu_npegMeT.damage)
+				table_form[tostring(HyMepacu9l) .. "item"].setVisible(false)
+				table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)				
 				if Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l] ~= nil then
 					if type(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT) == "table" then
-						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.name, Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.damage)
+						table_form[tostring(HyMepacu9l) .. "item"].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.name)
+						table_form[tostring(HyMepacu9l) .. "item"].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.damage)
 						table_form[tostring(HyMepacu9l) .. "item"].setVisible(true)
-						table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
+						table_form[tostring(HyMepacu9l) .. "text"].setVisible(false)
 					else
-						table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addText(cMeLLleHue_no_x + 6, cMeLLleHue_no_y + 3, "?", red)
-						table_form[tostring(HyMepacu9l) .. "item"].setScale(2)
-						table_form[tostring(HyMepacu9l) .. "item"].setClickable(false)
+						table_form[tostring(HyMepacu9l) .. "item"].setVisible(false)
+						table_form[tostring(HyMepacu9l) .. "text"].setVisible(true)
 					end
 				end
 				cMeLLleHue_no_x = cMeLLleHue_no_x + 21			
@@ -7802,6 +7799,60 @@ function forms:creat_MaTpuca_craft_form(nick)
 		--подсказка 
 		table_form.nogcka3ka_go6aBJIeHu9l = MoHuTop_urpoka[nick].addText(307, 145, "", green)
 		table_form.nogcka3ka_go6aBJIeHu9l2 = MoHuTop_urpoka[nick].addText(304, 157, "", green)
+		
+		--кнопки переключения страниц итемов
+		local TekyLLla9l_cTpaHuca = 1
+		local HoMePa_uTeMoB_Ha_cTapaHuce = {}
+		table.insert(HoMePa_uTeMoB_Ha_cTapaHuce, {1, 60})
+		table.insert(HoMePa_uTeMoB_Ha_cTapaHuce, {61, 120})
+		table.insert(HoMePa_uTeMoB_Ha_cTapaHuce, {121, 180})
+		table.insert(HoMePa_uTeMoB_Ha_cTapaHuce, {181, 240})
+		
+		local cMeHa_napaMeTpoB_9l4euku = function(Homep_kHonku, c4eTkuk)
+			table_form[c4eTkuk].button_num = Homep_kHonku
+			if Ta6JIuca_recenToB_Ha_MaTpuce[Homep_kHonku] ~= nil then
+				if type(Ta6JIuca_recenToB_Ha_MaTpuce[Homep_kHonku].okoH4aTeJIbHblu_npegMeT) == "table" then
+					table_form[tostring(c4eTkuk) .. "item"].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.name)
+					table_form[tostring(c4eTkuk) .. "item"].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.damage)
+					table_form[tostring(c4eTkuk) .. "item"].setVisible(true)
+					table_form[tostring(c4eTkuk) .. "text"].setVisible(false)
+				else
+					table_form[tostring(c4eTkuk) .. "item"].setVisible(false)
+					table_form[tostring(c4eTkuk) .. "text"].setVisible(true)
+				end
+			else
+				table_form[tostring(c4eTkuk) .. "text"].setVisible(false)
+				table_form[tostring(c4eTkuk) .. "item"].setVisible(false)
+			end
+		end
+		
+		table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, gray, white, function()
+			if TekyLLla9l_cTpaHuca > 1 then 
+				TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca - 1
+				local c4eTkuk = 1
+				for Homep_kHonku = HoMePa_uTeMoB_Ha_cTapaHuce[TekyLLla9l_cTpaHuca][1], HoMePa_uTeMoB_Ha_cTapaHuce[TekyLLla9l_cTpaHuca][2] do
+					cMeHa_napaMeTpoB_9l4euku(Homep_kHonku, c4eTkuk)
+					c4eTkuk = c4eTkuk + 1
+				end
+			else
+				table_form.button_BJIeBo.setColor(gray)
+			end
+			
+		end)
+		table_form.button_BJIeBo.caption.setX(table_form.button_BJIeBo.caption.getX() + 5)
+		table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "==>", "right_button", true, blue, white, function() 
+			if TekyLLla9l_cTpaHuca < #HoMePa_uTeMoB_Ha_cTapaHuce and Ta6JIuca_recenToB_Ha_MaTpuce[HoMePa_uTeMoB_Ha_cTapaHuce[TekyLLla9l_cTpaHuca + 1][1]] ~= nil then
+				TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca + 1
+				local c4eTkuk = 1
+				for Homep_kHonku = HoMePa_uTeMoB_Ha_cTapaHuce[TekyLLla9l_cTpaHuca][1], HoMePa_uTeMoB_Ha_cTapaHuce[TekyLLla9l_cTpaHuca][2] do
+					cMeHa_napaMeTpoB_9l4euku(Homep_kHonku, c4eTkuk)
+					c4eTkuk = c4eTkuk + 1
+				end
+			else
+				table_form.button_BnpaBo.setColor(gray)
+			end
+		end)
+		table_form.button_BnpaBo.caption.setX(table_form.button_BnpaBo.caption.getX() + 10)
 	else
 		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(114, 46, "Таблица", red)
 		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(107, 77, "рецептов", red)
@@ -8113,7 +8164,6 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	
 	return table_form
 end
-
 
 function main_noTok(nick)
 	os.sleep(0.1)

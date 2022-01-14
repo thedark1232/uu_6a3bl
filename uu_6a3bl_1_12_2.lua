@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "6 поиск итемов"
+local Ha3BaHue_o6HoBJIeHu9l = "7 поиск итемов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7863,7 +7863,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			c4eTkuk = 1
 			for k, v in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
 				if string.match(v.Ha3BaHue, cTpoka_noucka) ~= nil then
-					table_form[c4eTkuk].button_num = HoMeP_B_Ta6JIuce
+					table_form[c4eTkuk].button_num = k
 					if type(v.okoH4aTeJIbHblu_npegMeT) == "table" then
 						table_form[tostring(c4eTkuk) .. "item"].setItemId(v.okoH4aTeJIbHblu_npegMeT.name)
 						table_form[tostring(c4eTkuk) .. "item"].setMeta(v.okoH4aTeJIbHblu_npegMeT.damage)

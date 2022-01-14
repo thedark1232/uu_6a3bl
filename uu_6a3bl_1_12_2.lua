@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 переключение страниц"
+local Ha3BaHue_o6HoBJIeHu9l = "2 переключение страниц"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7812,8 +7812,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form[c4eTkuk].button_num = Homep_kHonku
 			if Ta6JIuca_recenToB_Ha_MaTpuce[Homep_kHonku] ~= nil then
 				if type(Ta6JIuca_recenToB_Ha_MaTpuce[Homep_kHonku].okoH4aTeJIbHblu_npegMeT) == "table" then
-					table_form[tostring(c4eTkuk) .. "item"].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.name)
-					table_form[tostring(c4eTkuk) .. "item"].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[HyMepacu9l].okoH4aTeJIbHblu_npegMeT.damage)
+					table_form[tostring(c4eTkuk) .. "item"].setItemId(Ta6JIuca_recenToB_Ha_MaTpuce[Homep_kHonku].okoH4aTeJIbHblu_npegMeT.name)
+					table_form[tostring(c4eTkuk) .. "item"].setMeta(Ta6JIuca_recenToB_Ha_MaTpuce[Homep_kHonku].okoH4aTeJIbHblu_npegMeT.damage)
 					table_form[tostring(c4eTkuk) .. "item"].setVisible(true)
 					table_form[tostring(c4eTkuk) .. "text"].setVisible(false)
 				else
@@ -7826,7 +7826,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			end
 		end
 		
-		table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, gray, white, function()
+		table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, blue, white, function()
 			if TekyLLla9l_cTpaHuca > 1 then 
 				TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca - 1
 				local c4eTkuk = 1
@@ -7834,12 +7834,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 					cMeHa_napaMeTpoB_9l4euku(Homep_kHonku, c4eTkuk)
 					c4eTkuk = c4eTkuk + 1
 				end
-			else
-				table_form.button_BJIeBo.setColor(gray)
 			end
 			
 		end)
-		table_form.button_BJIeBo.caption.setX(table_form.button_BJIeBo.caption.getX() + 5)
+		
 		table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "==>", "right_button", true, blue, white, function() 
 			if TekyLLla9l_cTpaHuca < #HoMePa_uTeMoB_Ha_cTapaHuce and Ta6JIuca_recenToB_Ha_MaTpuce[HoMePa_uTeMoB_Ha_cTapaHuce[TekyLLla9l_cTpaHuca + 1][1]] ~= nil then
 				TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca + 1
@@ -7848,10 +7846,10 @@ function forms:creat_MaTpuca_craft_form(nick)
 					cMeHa_napaMeTpoB_9l4euku(Homep_kHonku, c4eTkuk)
 					c4eTkuk = c4eTkuk + 1
 				end
-			else
-				table_form.button_BnpaBo.setColor(gray)
 			end
 		end)
+		
+		table_form.button_BJIeBo.caption.setX(table_form.button_BJIeBo.caption.getX() + 1)
 		table_form.button_BnpaBo.caption.setX(table_form.button_BnpaBo.caption.getX() + 10)
 	else
 		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(114, 46, "Таблица", red)

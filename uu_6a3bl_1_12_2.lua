@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "3 загрузка рецептов"
+local Ha3BaHue_o6HoBJIeHu9l = "4 загрузка рецептов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -919,6 +919,7 @@ function zarpy3uTb_qpauJI_u3_git(ccblJIka, nyTb_kyga_3arpyJaTb)
 		local wget_function, olllu6ka = loadfile("/bin/wget.lua")
 		local status_wget, Ha3BaHue_olllu6ku = wget_function(ccblJIka, nyTb_kyga_3arpyJaTb)
 		if not status_wget then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка при скачивании: " .. Ha3BaHue_olllu6ku) end
+		print(Ha3BaHue_olllu6ku)
 	else
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "вставь интернет карту в комп")
 	end	

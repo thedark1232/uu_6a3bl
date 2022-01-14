@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "7 поиск итемов"
+local Ha3BaHue_o6HoBJIeHu9l = "1 запись крафтов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3642,7 +3642,7 @@ function forms:creat_MaTpuca_form(nick)
 		table_form.coxPaHuTb_pecenTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сохранить в dis", "button", start_visible, gray, white, function() coxpaHuTb_qpauJI_B_Discord(nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce) end)
 		table_form.zarpy3uTb_pecenTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "загрузить из git", "button", start_visible, gray, white, function()
 			filesystem.remove(nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce)
-			zarpy3uTb_qpauJI_u3_git("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/home_matricaRecept", nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce)
+			zarpy3uTb_qpauJI_u3_git("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/home_matricaRecept.lua", nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce)
 			getMathixRecepts()
 		end)
 		table_form.ygaJIuTb_pecenT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить рецепт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить рецепт"]() end)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "2 загрузка рецептов"
+local Ha3BaHue_o6HoBJIeHu9l = "3 загрузка рецептов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -211,6 +211,9 @@ onacHa9l_kHonka[42] = true
 onacHa9l_kHonka[56] = true
 onacHa9l_kHonka[28] = true
 onacHa9l_kHonka[0] = true
+onacHa9l_kHonka[15] = true
+onacHa9l_kHonka[58] = true
+onacHa9l_kHonka[219] = true
 
 local MoHuTop_urpoka = {}
 local Bce_ragJeTbl_urpoka = {}
@@ -656,9 +659,9 @@ function glasses_key_down(event_type, agpec1, nick, agpec2, cuqppa, cuMBoJI, bol
 		if not status then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
 	end
 	
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuqppa: " .. g .. tostring(cuqppa))
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuMBoJI: " .. g .. tostring(cuMBoJI))
-	a6JIuca_koMnoHeHToB["chat_box"].say(c .. "bolevo_3Ha4eHue: " .. g .. tostring(bolevo_3Ha4eHue))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuqppa: " .. g .. tostring(cuqppa))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "cuMBoJI: " .. g .. tostring(cuMBoJI))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "bolevo_3Ha4eHue: " .. g .. tostring(bolevo_3Ha4eHue))
 
 end
 function glasses_key_up(...)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 поиск итемов"
+local Ha3BaHue_o6HoBJIeHu9l = "2 поиск итемов"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7824,7 +7824,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 				table_form[tostring(c4eTkuk) .. "item"].setVisible(false)
 			end
 		end		
-		table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 108, 50, 15, "<==", "left_button", true, blue, white, function()
+		table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, blue, white, function()
+			obj = table_form.button_BJIeBo
 			if TekyLLla9l_cTpaHuca > 1 then 
 				TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca - 1
 				local c4eTkuk = 1
@@ -7835,7 +7836,8 @@ function forms:creat_MaTpuca_craft_form(nick)
 			end
 			
 		end)
-		table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 108, 50, 15, "==>", "right_button", true, blue, white, function() 
+		table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "==>", "right_button", true, blue, white, function() 
+			obj = table_form.button_BnpaBo
 			if TekyLLla9l_cTpaHuca < #HoMePa_uTeMoB_Ha_cTapaHuce and Ta6JIuca_recenToB_Ha_MaTpuce[HoMePa_uTeMoB_Ha_cTapaHuce[TekyLLla9l_cTpaHuca + 1][1]] ~= nil then
 				TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca + 1
 				local c4eTkuk = 1
@@ -7849,10 +7851,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.button_BnpaBo.caption.setX(table_form.button_BnpaBo.caption.getX() + 5)
 		
 		--кнопка поиска предметов
-		table_form.kHonka_noucka = creat_new_button(1, nick, 110 + x_win, 108, 50, 15, "найти", "nouck_button", true, blue, white, function()
-
+		table_form.kHonka_noucka = creat_new_button(1, nick, 107 + x_win, 158, 35, 15, "найти", "nouck_button", true, blue, white, function()
+			obj = table_form.kHonka_noucka	
 
 		end)
+		table_form.kHonka_noucka.caption.setX(table_form.kHonka_noucka.getX() + 1)
 		
 	else
 	

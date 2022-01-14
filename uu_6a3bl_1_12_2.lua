@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "2 переключение страниц"
+local Ha3BaHue_o6HoBJIeHu9l = "3 переключение страниц"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3626,12 +3626,18 @@ function forms:creat_MaTpuca_form(nick)
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
+
+	
+	--кнопки тиммейтов
+	table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick) end)
+	table_form.zanucb_pecenTa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "запись рецепта", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_3anucb_pecenTa = forms:creat_MaTpuca_3anucb_pecenTa_form(nick) end)
+	table_form.o4ucTuTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очистить пьедесталы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"]() end)
+	table_form.info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "инфо настроек", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица инфо"]() end)
+	table_form.cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "состояние", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние"]() end)
+	
 	--админские кнопки
 	if nick == admin then
 		table_form.HacTpouTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "фулл настройка", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].qpyJIJI_HacTpouka = forms:creat_qpyJIJI_HacTpouka_form(nick) end)
-		table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick) end)
-		table_form.zanucb_pecenTa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "запись рецепта", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_3anucb_pecenTa = forms:creat_MaTpuca_3anucb_pecenTa_form(nick) end)
-		table_form.cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "состояние", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние"]() end)
 		table_form.nepekJIl04uTb_cocTo9lHue = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переключить состояние", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица состояние переключить"]() end)
 		table_form.coxPaHuTb_pecenTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сохранить в dis", "button", start_visible, gray, white, function() coxpaHuTb_qpauJI_B_Discord(nyTb_k_qpauJIy_pecenToB_Ha_MaTpuce) end)
 		table_form.zarpy3uTb_pecenTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "загрузить из git", "button", start_visible, gray, white, function()
@@ -3642,18 +3648,11 @@ function forms:creat_MaTpuca_form(nick)
 		table_form.ygaJIuTb_pecenT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить рецепт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить рецепт"]() end)
 		table_form.pecenTbl_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рецепты инфо", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепты инфо"]() end)
 		table_form.pecenT_info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рецепт инфо", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица рецепт инфо"]() end)
-		table_form.o4ucTuTb_nbegecTaJIbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очистить пьедесталы", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очистить пьедесталы"]() end)
 		table_form.y6paTb_coo6llleHu9l = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить из очереди", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удалить сообщения матрицы"]() end)
 		table_form.o4epegb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "очередь крафтов", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица очередь"]() end)
 		table_form.ygaJIbTb_u3_o4epegu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить из очереди", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить из очереди"]() end)
 		table_form.ygaJIuTb_Bcl0_o4epegb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить всю очередь", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица удалить всю очередь"]() end)
-
 	end
-	
-	--кнопки тиммейтов
-	--table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick) end)
-	table_form.info = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "инфо настроек", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица инфо"]() end)
-
 	
 
 	
@@ -7113,7 +7112,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	--создание текста подсказки
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(194 + x_win, 33, "текущий пьедестал: ", blue)
 	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(194 + x_win, 44, "не выбран!", red)
-	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(194 + x_win, 55, "адрес для замены", blue)
+	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(194 + x_win, 55, "адрес для замены:", blue)
 	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(194 + x_win, 66, "не выбран", red)
 	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(194 + x_win, 93, "", red)
 	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(194 + x_win, 110, "для Infusion Claw:", blue)
@@ -7121,9 +7120,9 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(194 + x_win, 132, "ред контроллера", red)
 	table_form.nogcka3ka13 = MoHuTop_urpoka[nick].addText(300 + x_win, 33, "ожидание клика:", red)
 	table_form.nogcka3ka14 = MoHuTop_urpoka[nick].addText(300 + x_win, 44, tostring(BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa), red)
-	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 86, "ожидание аспектов", red)
+	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(300 + x_win, 86, "ожидание аспектов:", red)
 	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(300 + x_win, 97, tostring(BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB), red)
-	table_form.nogcka3ka15 = MoHuTop_urpoka[nick].addText(300 + x_win, 140, "ожидание итемов", red)
+	table_form.nogcka3ka15 = MoHuTop_urpoka[nick].addText(300 + x_win, 140, "ожидание итемов:", red)
 	table_form.nogcka3ka16 = MoHuTop_urpoka[nick].addText(300 + x_win, 151, tostring(BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB), red)
 		
 	--настройки Infusion Claw
@@ -7824,8 +7823,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 				table_form[tostring(c4eTkuk) .. "text"].setVisible(false)
 				table_form[tostring(c4eTkuk) .. "item"].setVisible(false)
 			end
-		end
-		
+		end		
 		table_form.button_BJIeBo = creat_new_button(1, nick, 110 + x_win, 158, 50, 15, "<==", "left_button", true, blue, white, function()
 			if TekyLLla9l_cTpaHuca > 1 then 
 				TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca - 1
@@ -7837,7 +7835,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 			end
 			
 		end)
-		
 		table_form.button_BnpaBo = creat_new_button(1, nick, 164 + x_win, 158, 50, 15, "==>", "right_button", true, blue, white, function() 
 			if TekyLLla9l_cTpaHuca < #HoMePa_uTeMoB_Ha_cTapaHuce and Ta6JIuca_recenToB_Ha_MaTpuce[HoMePa_uTeMoB_Ha_cTapaHuce[TekyLLla9l_cTpaHuca + 1][1]] ~= nil then
 				TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca + 1
@@ -7847,11 +7844,12 @@ function forms:creat_MaTpuca_craft_form(nick)
 					c4eTkuk = c4eTkuk + 1
 				end
 			end
-		end)
-		
+		end)	
 		table_form.button_BJIeBo.caption.setX(table_form.button_BJIeBo.caption.getX() + 1)
-		table_form.button_BnpaBo.caption.setX(table_form.button_BnpaBo.caption.getX() + 10)
+		table_form.button_BnpaBo.caption.setX(table_form.button_BnpaBo.caption.getX() + 5)
+		
 	else
+	
 		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(114, 46, "Таблица", red)
 		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(107, 77, "рецептов", red)
 		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(131, 108, "пуста!", red)
@@ -7859,55 +7857,6 @@ function forms:creat_MaTpuca_craft_form(nick)
 		table_form.nogcka3ka2.setScale(3)
 		table_form.nogcka3ka3.setScale(3)	
 	end
-
-	--создание стрелок для рисования ГУИ
-	local HapucoBatb_cTpeJIku = function()
-		local x_cTpeJIku = 380
-		local y_cTpeJIku = 150
-		--перемещение панели
-		table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
-			obj.setY(obj.getY() - 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
-		end)
-		table_form.BBEpx.caption.setX(x_cTpeJIku + 21)
-		table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "down_button", true, black, white, function()
-			obj.setY(obj.getY() + 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
-		end)
-		table_form.BHu3.caption.setX(x_cTpeJIku + 21)
-		table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left_button", true, black, white, function()
-			obj.setX(obj.getX() - 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
-		end)
-		table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
-		table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "right_button", true, black, white, function()
-			obj.setX(obj.getX() + 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
-		end)
-		table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
-		--ширина и высота
-		table_form.MeHbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 30, 15, 15, "/\\", "h_min_button", true, black, white, function()
-			obj.setHeight(obj.getHeight() - 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
-		end)
-		table_form.MeHbLLle_h.caption.setX(x_cTpeJIku + 21)
-		table_form.boJIbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 50, 15, 15, "\\/", "h_max_button", true, black, white, function()
-			obj.setHeight(obj.getHeight() + 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
-		end)
-		table_form.boJIbLLle_h.caption.setX(x_cTpeJIku + 21)
-		table_form.MeHbLLle_w = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 40, 15, 15, "<", "w_min_button", true, black, white, function()
-			obj.setWidth(obj.getWidth() - 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
-		end)
-		table_form.MeHbLLle_w.caption.setX(x_cTpeJIku + 3)
-		table_form.boJIbLLle_w = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 40, 15, 15, ">", "w_max_button", true, black, white, function()
-			obj.setWidth(obj.getWidth() + 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
-		end)
-		table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
-	end
-	HapucoBatb_cTpeJIku()
 	
 	--объединение таблиц
 	self = {}

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "глобальные параметры 1"
+local Ha3BaHue_o6HoBJIeHu9l = "глобальные параметры 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -11889,11 +11889,11 @@ do
 		onoBeLLleHue_o_nocTopoHHux = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux, "", red)
 		TblkHu_naJIkoU_no_MaTpuce = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(148, 18, "", red)
 		--информационный текст
-		Bpem9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, napaMeTp_BpeMeHu)
+		Bpem9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, "")
 		Bpem9l.setClickable(false)
-		eHepru9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 12, napaMeTp_eHepruu)
+		eHepru9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 12, "")
 		eHepru9l.setClickable(false)
-		O3Y = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 22, napaMeTp_o3y)
+		O3Y = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 22, "")
 		O3Y.setClickable(false)
 	end
 	

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 запись крафтов"
+local Ha3BaHue_o6HoBJIeHu9l = "глобальные параметры 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -23,9 +23,6 @@ local TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
 local TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 local Ta6JIuca_acnekToB
 local qpopma_nepuMeTpa = {}
-local napaMeTp_BpeMeHu
-local napaMeTp_eHepruu
-local napaMeTp_o3y
 local onoBeLLleHue_o_nocTopoHHux
 local TblkHu_naJIkoU_no_MaTpuce
 local x_onoBeLLleHue_o_nocTopoHHux = 100
@@ -2283,12 +2280,12 @@ function forms:creat_main_form(nick)
 	table_form.main_box2.setClickable(false)
 		
 	--информационный текст
-	table_form.napaMeTp_BpeMeHu = MoHuTop_urpoka[nick].addText(4, 2, napaMeTp_BpeMeHu)
-	table_form.napaMeTp_BpeMeHu.setClickable(false)
-	table_form.napaMeTp_eHepruu =MoHuTop_urpoka[nick].addText(4, 12, napaMeTp_eHepruu)
-	table_form.napaMeTp_BpeMeHu.setClickable(false)
-	table_form.napaMeTp_o3y = MoHuTop_urpoka[nick].addText(4, 22, napaMeTp_o3y)
-	table_form.napaMeTp_o3y.setClickable(false)
+	--table_form.napaMeTp_BpeMeHu = MoHuTop_urpoka[nick].addText(4, 2, napaMeTp_BpeMeHu)
+	--table_form.napaMeTp_BpeMeHu.setClickable(false)
+	--table_form.napaMeTp_eHepruu =MoHuTop_urpoka[nick].addText(4, 12, napaMeTp_eHepruu)
+	--table_form.napaMeTp_BpeMeHu.setClickable(false)
+	--table_form.napaMeTp_o3y = MoHuTop_urpoka[nick].addText(4, 22, napaMeTp_o3y)
+	--table_form.napaMeTp_o3y.setClickable(false)
 	
 	--создание кнопок
 	local y = 15
@@ -8153,9 +8150,9 @@ function main_noTok(nick)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "поток создан")		
 		while true do
-			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
-			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
-			Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_o3y.setText(napaMeTp_o3y)
+			--Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_BpeMeHu.setText(napaMeTp_BpeMeHu)
+			--Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
+			--Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_o3y.setText(napaMeTp_o3y)
 			os.sleep(0.1)
 			if qpopma_nepuMeTpa[nick] then
 				for i = 1, 20 do
@@ -11891,6 +11888,13 @@ do
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
 		onoBeLLleHue_o_nocTopoHHux = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux, "", red)
 		TblkHu_naJIkoU_no_MaTpuce = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(148, 18, "", red)
+		--информационный текст
+		Bpem9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, napaMeTp_BpeMeHu)
+		Bpem9l.setClickable(false)
+		eHepru9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 12, napaMeTp_eHepruu)
+		eHepru9l.setClickable(false)
+		O3Y = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 22, napaMeTp_o3y)
+		O3Y.setClickable(false)
 	end
 	
 	
@@ -11980,9 +11984,9 @@ do
 			end)
 		end
 		if one_ceHcop_BKJI == true then pcall(HauTu_HoBblx_urpokoB) end
-		napaMeTp_BpeMeHu = Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde
-		napaMeTp_eHepruu = "энергия компа: " .. tostring(math.floor(computer.energy()))
-		napaMeTp_o3y = "ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%"
+		Bpem9l.setText(Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde)
+		eHepru9l.setText("энергия компа: " .. tostring(math.floor(computer.energy())))
+		O3Y.setText("ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%")
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then o6bekT_TekcTa_BpeMeHu.setText(hous .. ":" .. minute .. ":" .. secunde .. napaMeTp_o3y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))) end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then
 			Ta6JIuca_gucTaHcuu_pagapa = Ta6JIuca_koMnoHeHToB["radar"].getPlayers(gucTaHcu9l_pagapa)

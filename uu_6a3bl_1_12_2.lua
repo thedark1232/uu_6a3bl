@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "глобальные параметры 2"
+local Ha3BaHue_o6HoBJIeHu9l = "глобальные параметры 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -15,6 +15,7 @@ local one_ceHcop_x = 0
 local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
+local o6LLlee
 local nepBblu_B_o4epegu = false
 local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 60
 local BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = 300
@@ -25,7 +26,7 @@ local Ta6JIuca_acnekToB
 local qpopma_nepuMeTpa = {}
 local onoBeLLleHue_o_nocTopoHHux
 local TblkHu_naJIkoU_no_MaTpuce
-local x_onoBeLLleHue_o_nocTopoHHux = 100
+local x_onoBeLLleHue_o_nocTopoHHux = 150
 local y_onoBeLLleHue_o_nocTopoHHux = 1
 local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = {}
 local npo4ue_qpopMbl = {}
@@ -11889,12 +11890,14 @@ do
 		onoBeLLleHue_o_nocTopoHHux = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux, "", red)
 		TblkHu_naJIkoU_no_MaTpuce = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(148, 18, "", red)
 		--информационный текст
-		Bpem9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, "")
-		Bpem9l.setClickable(false)
-		eHepru9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 12, "")
-		eHepru9l.setClickable(false)
-		O3Y = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 22, "")
-		O3Y.setClickable(false)
+		--Bpem9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, "")
+		--Bpem9l.setClickable(false)
+		--eHepru9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 12, "")
+		--eHepru9l.setClickable(false)
+		--O3Y = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 22, "")
+		--O3Y.setClickable(false)
+		o6LLlee = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, "")
+		o6LLlee.setClickable(false)
 	end
 	
 	
@@ -11984,9 +11987,10 @@ do
 			end)
 		end
 		if one_ceHcop_BKJI == true then pcall(HauTu_HoBblx_urpokoB) end
-		Bpem9l.setText(Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde)
-		eHepru9l.setText("энергия компа: " .. tostring(math.floor(computer.energy())))
-		O3Y.setText("ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%")
+		--Bpem9l.setText(Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde)
+		--eHepru9l.setText("энергия компа: " .. tostring(math.floor(computer.energy())))
+		--O3Y.setText("ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%")
+		o6LLlee.setText(Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. "/" .. tostring(math.floor(computer.energy())) .. "/" .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%")
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then o6bekT_TekcTa_BpeMeHu.setText(hous .. ":" .. minute .. ":" .. secunde .. napaMeTp_o3y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))) end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then
 			Ta6JIuca_gucTaHcuu_pagapa = Ta6JIuca_koMnoHeHToB["radar"].getPlayers(gucTaHcu9l_pagapa)

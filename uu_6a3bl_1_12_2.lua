@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "глобальные параметры 4"
+local Ha3BaHue_o6HoBJIeHu9l = "1 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7980,6 +7980,36 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 		end
 		npo4ue_qpopMbl[nick] = nil
 	end
+	
+	--сдвиг окна
+	table_form.move_form = function(x_mov, y_mov)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() ~= "gebug_button" then
+					if string.match(v.getType(), "button") ~= nil then
+						v.setX(v.getX() + x_mov)
+						v.setY(v.getY() + y_mov)
+						v.caption.setX(v.caption.getX() + x_mov)
+						v.caption.setY(v.caption.getY() + y_mov)
+					end
+					if v.getType() == "textBox" then
+						v.setX(v.getX() + x_mov)
+						v.setY(v.getY() + y_mov)
+						
+						v.caption.setX(v.caption.getX() + x_mov)
+						v.caption.setY(v.caption.getY() + y_mov)
+						v.background2.setX(v.background2.getX() + x_mov)
+						v.background2.setY(v.background2.getY() + y_mov)
+						v.background3.setX(v.background3.getX() + x_mov)
+						v.background2.setX(v.background3.getY() + y_mov)
+					end
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+				end	
+			end
+		end
+	end
+	
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
@@ -8128,6 +8158,25 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(117, 119, "?", red)
 			table_form.nogcka3ka3.setScale(2)
 		end
+		
+		local x_cTpeJIku = 380
+		local y_cTpeJIku = 150
+		
+		table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "gebug_button", true, black, white, function()
+			table_form.move_form(0, -1)
+		end
+		table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "gebug_button", true, black, white, function()
+			table_form.move_form(0, 1)
+		end)
+		table_form.BHu3.caption.setX(x_cTpeJIku + 21)
+		table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "gebug_button", true, black, white, function()
+			table_form.move_form(-1, 0)
+		end)
+		table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
+		table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "gebug_button", true, black, white, function()
+			table_form.move_form(1, 0)
+		end)
+		table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
 
 	else
 		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(34, 46, "Требуется", red)
@@ -11900,6 +11949,8 @@ do
 		o6LLlee = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, "")
 		o6LLlee.setClickable(false)
 	end
+	
+	filesLibrary.creat_file("/home/.shrc", "t")
 	
 	
 --ГЛАВНЫЙ ЦИКЛ

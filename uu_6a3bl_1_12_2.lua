@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "1 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "2 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8164,7 +8164,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 		
 		table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "gebug_button", true, black, white, function()
 			table_form.move_form(0, -1)
-		end
+		end)
 		table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "gebug_button", true, black, white, function()
 			table_form.move_form(0, 1)
 		end)

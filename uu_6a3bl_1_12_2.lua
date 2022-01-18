@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "18 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "19 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -695,10 +695,6 @@ function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool
 				if v.getId() == id then
 					if v.getType() == "scroll" then
 						v.enabled = true
-					elseif v.getType() == "move_form" then
-						koopguHaTbl_MblLLlu[nick] = {["x"] = math.floor(x), ["y"] = math.floor(y)}
-						print("начальная позиция x:", koopguHaTbl_MblLLlu[nick].x)
-						print("начальная позиция у:", koopguHaTbl_MblLLlu[nick].y)
 					end
 				end
 			end
@@ -768,12 +764,7 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 					end	
 				end
 				if type(v) ~= "function" and v.getType() == "move_form" then
-					local x_no3 = koopguHaTbl_MblLLlu[nick].x - math.floor(x)
-					local y_no3 = koopguHaTbl_MblLLlu[nick].y - math.floor(y)
-					
-					print("koopguHaTbl_MblLLlu[nick].x - math.floor(x)", koopguHaTbl_MblLLlu[nick].x, " - ", math.floor(x), "=", x_no3)
-					print("koopguHaTbl_MblLLlu[nick].y - math.floor(y)", koopguHaTbl_MblLLlu[nick].y, " - ", math.floor(y), "=", y_no3)
-					Bce_ragJeTbl_urpoka[nick][v.form_name].move_form(x_no3, y_no3)
+					Bce_ragJeTbl_urpoka[nick][v.form_name].move_form(math.floor(x),  math.floor(y))
 				end
 			end
 		end

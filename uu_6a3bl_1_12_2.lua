@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "27 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "28 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3706,7 +3706,7 @@ function forms:creat_MaTpuca_form(nick)
 		if TekyLLlee_koJIu4ecTBo_O3Y > 90 then
 			Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick)
 		else
-			Bce_ragJeTbl_urpoka[nick]._HeXBaTaeT_O3Y = forms:creat_HeXBaTaeT_O3Y_form(nick)
+			Bce_ragJeTbl_urpoka[nick].HeXBaTaeT_O3Y = forms:creat_HeXBaTaeT_O3Y_form(nick)
 		end
 	end)
 	table_form.zanucb_pecenTa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "запись рецепта", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca_3anucb_pecenTa = forms:creat_MaTpuca_3anucb_pecenTa_form(nick) end)
@@ -8564,11 +8564,11 @@ function forms:creat_HeXBaTaeT_O3Y_form(nick)
 	table_form.destroy = function()
 		for k, v in pairs(table_form) do
 			if type(v) ~= "function" then 
-				if v.getType() == "button" or v.getType() == "return_button" then
+				if string.match(v.getType(), "button") ~= nil then
 					v.caption.delete()
 					v.delete()
 				end
-				if v.getType() == "textBox" then
+				if string.match(v.getType(), "textBox") ~= nil then 
 					v.caption.delete()
 					v.background2.delete()
 					v.background3.delete()

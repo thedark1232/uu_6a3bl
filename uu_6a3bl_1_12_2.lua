@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "6 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "7 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -690,8 +690,14 @@ end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
 	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
 		for k, v in pairs(next_form) do
-			if type(v) ~= "function" and v.getId() == id and v.getType() == "scroll" then
-				v.enabled = true
+			if type(v) ~= "function" 
+				if v.getId() == id 
+					if v.getType() == "scroll" then
+						v.enabled = true
+					elseif v.getType() == "move_form" then
+						Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(x) .. "," .. tostring(y))
+					end
+				end
 			end
 		end
 	end
@@ -8020,6 +8026,9 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 251, 173, white)
 	table_form.main_box2.setClickable(false)
 	
+	--кнопка сдвига формы
+	table_form.move_button = creat_new_button(1, nick, 1, 1, 259, 10, "", "move_form", true, gray, white, function() end)
+	
 	--создание кнопок
 	local y = 15
 	local y_func = function()
@@ -8035,7 +8044,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	end
 	
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 6, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, 6, y - 2, 10, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--подсказки создания рецепта
 	table_form.nogcka3ka_co3gaHu9l1 = MoHuTop_urpoka[nick].addText(85, 77, "", red)		

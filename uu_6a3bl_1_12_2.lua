@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "28 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "29 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8591,18 +8591,18 @@ function forms:creat_HeXBaTaeT_O3Y_form(nick)
 	--создание кнопок
 	local y = y_main + 14
 		
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 5, "Для открытия окна", red)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 16, "необходимо 50% ОЗУ!", red)
-	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 27, "Текущее ОЗУ: " .. tostring(TekyLLlee_koJIu4ecTBo_O3Y) .. "%", red)
-	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 38, "Ожидай, пока кто то", red)
-	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 49, "из тиммейтов закроет", red)
-	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 60, "окно!", red)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 5, "Для открытия окна", red)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 16, "необходимо 50% ОЗУ!", red)
+	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 27, "Текущее ОЗУ: " .. tostring(TekyLLlee_koJIu4ecTBo_O3Y) .. "%", red)
+	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 38, "Ожидай, пока кто то", red)
+	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 49, "из тиммейтов закроет", red)
+	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 60, "окно!", red)
 	
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y_main + 183, 128, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.main_box2
+	local obj = table_form.return_button
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 379
 		local y_cTpeJIku = 149

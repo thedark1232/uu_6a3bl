@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "25 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "26 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8427,8 +8427,8 @@ do
 	setmetatable(configuration, {__index = function() return "nil" end})
 	--создание функций команд
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сброс координат стартового окна"] = function()
-		cTapToBble_koopguHaTbl[nick].main_form.x = 1
-		cTapToBble_koopguHaTbl[nick].main_form.y = 1
+		cTapToBble_koopguHaTbl[admin].main_form.x = 1
+		cTapToBble_koopguHaTbl[admin].main_form.y = 1
 		configuration[49] = cTapToBble_koopguHaTbl
 		setConfiguration()
 	end

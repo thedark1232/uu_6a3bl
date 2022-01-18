@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "14 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "15 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3409,8 +3409,10 @@ function forms:creat_redStone_form(nick)
 		table_form[v[1] .. "BblkJI"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " выкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " выкл"]() end)
 		table_form[v[1] .. "uMnyJIbc"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " импульс", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " импульс"]() end)
 		table_form[v[1] .. "ygaJIuTb"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " удалить", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " удалить"]() end)
-		table_form[v[1] .. "nepeuMeHoBaTb"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " переименовать", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " переименовать"]() end)
-		table_form[v[1] .. "qpyHkcu9l"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " функция", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " назначить функцию"]() end)
+		if nick == admin then
+			table_form[v[1] .. "nepeuMeHoBaTb"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " переименовать", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " переименовать"]() end)
+			table_form[v[1] .. "qpyHkcu9l"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " функция", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " назначить функцию"]() end)
+		end
 	end
 		
 	--создание каркаса скролла
@@ -6235,7 +6237,11 @@ function forms:creat_za_KeM_He_cJIeguM_form(nick)
 end
 function forms:creat_npocMoTp_ONLINE_form(nick)
 	Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
-	Bce_ragJeTbl_urpoka[nick]["player_logs"].destroy()
+	if Bce_ragJeTbl_urpoka[nick]["player_logs"] ~= nil then
+		Bce_ragJeTbl_urpoka[nick]["player_logs"].destroy()
+	else
+		Bce_ragJeTbl_urpoka[nick]["TuMMeuTbl"].destroy()
+	end
 	
 --создание формы
 	local table_form = {}
@@ -6370,7 +6376,7 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 	rawset(table_form.move_button, "enabled", false)
 	rawset(table_form.move_button, "getType", function() return "move_form" end)
 	
-	table_form.return_button = creat_new_button(1, nick, x_main + 240, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, x_main + 239, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 			
@@ -6994,9 +7000,9 @@ function forms:creat_ygaJIeHue_3oHbl_form(nick)
 	--главный фрейм
 	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
 	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, 1, 152, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, 30, 132, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок

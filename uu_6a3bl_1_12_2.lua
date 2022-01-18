@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "13 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "14 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,7 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+local TekyLLlee_koJIu4ecTBo_O3Y
 local cTapToBble_koopguHaTbl = {}
 local nepBblu_B_o4epegu = false
 local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 60
@@ -6233,6 +6234,9 @@ function forms:creat_za_KeM_He_cJIeguM_form(nick)
 	return table_form
 end
 function forms:creat_npocMoTp_ONLINE_form(nick)
+	Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
+	Bce_ragJeTbl_urpoka[nick]["player_logs"].destroy()
+	
 --создание формы
 	local table_form = {}
 	
@@ -6305,13 +6309,70 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
+	--сдвиг окна
+	table_form.move_form = function(x_mov, y_mov)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+				elseif string.match(v.getType(), "textBox") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+					v.background2.setX(v.background2.getX() + x_mov)
+					v.background2.setY(v.background2.getY() + y_mov)
+					v.background3.setX(v.background3.getX() + x_mov)
+					v.background3.setY(v.background3.getY() + y_mov)
+				elseif v.getType() == "line" then
+					v.setP1({v.getP1().x + x_mov, v.getP1().y + y_mov})
+					v.setP2({v.getP2().x + x_mov, v.getP2().y + y_mov})
+				else
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+				end
+			end
+		end
+		cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE.x = table_form.main_box.getX()
+		cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE.y = table_form.main_box.getY()
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+	
+	--коондинаты отрисовки окна
+	local x_main
+	local y_main	
+
+	if cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE == nil then
+		cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE = {}
+		cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE.x = 1
+		cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE.y = 1
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+	x_main = cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE.x
+	y_main = cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE.y	
+	
 	--главный фрейм
-	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
-	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	local x_main = cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE.x
+	local y_main = cTapToBble_koopguHaTbl[nick].npocMoTp_ONLINE.y
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 250, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 230, 172, white)
 	table_form.main_box2.setClickable(false)
+		
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 250, 10, "", "move_form", true, gray, white, function() end)
+	rawset(table_form.move_button, "form_name", "npocMoTp_ONLINE")
+	rawset(table_form.move_button, "enabled", false)
+	rawset(table_form.move_button, "getType", function() return "move_form" end)
+	
+	table_form.return_button = creat_new_button(1, nick, x_main + 240, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 			
 	--создание кнопок
 	local y = y_main + 14
@@ -6327,8 +6388,6 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 		return num
 	end
 	
-	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 
 	local tabJIuca_ONLINE = Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус онлайна"](true)
 	--кнопки тиммейтов
@@ -8504,10 +8563,9 @@ end
 		-- setConfiguration()
 	-- end
 	
-	-- --главный фрейм
+	-- --коондинаты отрисовки окна
 	-- local x_main
 	-- local y_main	
-	-- if cTapToBble_koopguHaTbl[nick] == nil then cTapToBble_koopguHaTbl[nick] = {} end
 	-- if cTapToBble_koopguHaTbl[nick].main_form == nil then
 		-- cTapToBble_koopguHaTbl[nick].main_form = {}
 		-- cTapToBble_koopguHaTbl[nick].main_form.x = 1
@@ -12245,6 +12303,8 @@ do
 		--Bpem9l.setText(Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde)
 		--eHepru9l.setText("энергия компа: " .. tostring(math.floor(computer.energy())))
 		--O3Y.setText("ОЗУ свободно: " .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%")
+		TekyLLlee_koJIu4ecTBo_O3Y = math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())
+		
 		o6LLlee.setText(Ha3BaHue_6a3bl .. ": " .. hous .. ":" .. minute .. ":" .. secunde .. "/" .. tostring(math.floor(computer.energy())) .. "/" .. tostring(math.floor(100 * tonumber(computer.freeMemory()) / computer.totalMemory())) .. "%")
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["glasses"] == nil then o6bekT_TekcTa_BpeMeHu.setText(hous .. ":" .. minute .. ":" .. secunde .. napaMeTp_o3y .. "     энергия компа: " .. tostring(math.floor(computer.energy()))) end
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["radar"] == nil then

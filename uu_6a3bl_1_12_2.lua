@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "5 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2490,7 +2490,6 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	--главный фрейм
 	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
 	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
-	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(x_main + 3, y_main + 29, 132, 172, white)
@@ -2645,14 +2644,16 @@ function forms:creat_mara3_Durex_form(nick)
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
-	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок
-	local y = 15
+	local y = y_main + 14
 	local y_func = function()
 		y = y + 17
 		return y
@@ -2666,28 +2667,28 @@ function forms:creat_mara3_Durex_form(nick)
 	end
 	
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.mara3_Bblxod = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз выход"]() end)
-		table_form.mara3_pecTapT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз рестарт"]() end)
-		table_form.o6HoBuTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз обновись"]() end)
-		table_form.Bepcu9l_lib_alice = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "версия library alice", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз версия по"]() end)
-		table_form.all_users = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "текущие юзеры", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз юзеры"]() end)
-		table_form.ygaJIuTb_c4eT = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "удалить счет", "button", start_visible, gray, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз удалить счет"]() end)
+		table_form.mara3_Bblxod = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз выход"]() end)
+		table_form.mara3_pecTapT = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз рестарт"]() end)
+		table_form.o6HoBuTb = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "обновить", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз обновись"]() end)
+		table_form.Bepcu9l_lib_alice = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "версия library alice", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз версия по"]() end)
+		table_form.all_users = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "текущие юзеры", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз юзеры"]() end)
+		table_form.ygaJIuTb_c4eT = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "удалить счет", "button", start_visible, gray, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз удалить счет"]() end)
 	end
 	
 	--кнопки тиммейтов
-	table_form.npocMoTp_c4eToB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "счета игроков", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз счета"]() end)
+	table_form.npocMoTp_c4eToB = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "счета игроков", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " магаз счета"]() end)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {144 + x_win, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_main, y_main + 39}, {144 + x_main, y_main + 191}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 191, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
@@ -2695,7 +2696,7 @@ function forms:creat_mara3_Durex_form(nick)
 	--создание ползунка скролла
 	local start_no_y = 40
 	local y_min = start_no_y
-	local y_max = 192
+	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
 	if y_pa3Mep < 10 then
@@ -2704,7 +2705,7 @@ function forms:creat_mara3_Durex_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц

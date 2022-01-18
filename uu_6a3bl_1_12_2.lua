@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "18 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "19 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7179,6 +7179,9 @@ function forms:creat_cMeHa_npuopuTeTa_form(nick)
 	return table_form
 end
 function forms:creat_qpyJIJI_HacTpouka_form(nick)
+	Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
+	Bce_ragJeTbl_urpoka[nick]["MaTpuca"].destroy()
+		
 	--таблица направлений сторон пьедесталов
 	local Ta6JIuca_HanpaBJIeHuu = {} --третий параметр (переложить итем после автопоиска)
 	table.insert(Ta6JIuca_HanpaBJIeHuu, {0, 1, true})
@@ -7276,9 +7279,53 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
+	--сдвиг окна
+	table_form.move_form = function(x_mov, y_mov)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+				elseif string.match(v.getType(), "textBox") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+					v.background2.setX(v.background2.getX() + x_mov)
+					v.background2.setY(v.background2.getY() + y_mov)
+					v.background3.setX(v.background3.getX() + x_mov)
+					v.background3.setY(v.background3.getY() + y_mov)
+				elseif v.getType() == "line" then
+					v.setP1({v.getP1().x + x_mov, v.getP1().y + y_mov})
+					v.setP2({v.getP2().x + x_mov, v.getP2().y + y_mov})
+				else
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+				end
+			end
+		end
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.x = table_form.main_box.getX()
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.y = table_form.main_box.getY()
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+	
+	--коондинаты отрисовки окна
+	local x_main
+	local y_main	
+	if cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka == nil then
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka = {}
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.x = 1
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.y = 1
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+	x_main = cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.x
+	y_main = cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.y
+	
 	--главный фрейм
-	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
-	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 29, 172, white)
@@ -7289,6 +7336,15 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	
 	table_form.pa3geJIuTeJIbHa9l_JIuHu9l = MoHuTop_urpoka[nick].addLine({298 + x_main, y_main + 29}, {298 + x_main, y_main + 201}, gray)
 	
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 405, 10, "", "move_form", true, gray, white, function() end)
+	rawset(table_form.move_button, "form_name", "qpyJIJI_HacTpouka")
+	rawset(table_form.move_button, "enabled", false)
+	rawset(table_form.move_button, "getType", function() return "move_form" end)
+	
+	table_form.return_button = creat_new_button(1, nick, x_main + 393, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
 	--создание кнопок
 	local y = y_main + 14
@@ -7304,11 +7360,6 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 		return num
 	end
 	
-	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
-
-	--Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " матрица настроить"]()
-
 	--создание таблицы всех транспозеров
 	local agreca_Bcex_TraHcno3epoB = component.list("transposer")
 	local agreca_Bcex_TraHcno3epoB_oTcopTupoBaHa9l = {}
@@ -7666,6 +7717,9 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	return table_form
 end
 function forms:creat_MaTpuca_craft_form(nick)
+	Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
+	Bce_ragJeTbl_urpoka[nick]["MaTpuca"].destroy()
+	
 	--создание формы
 	local table_form = {}
 	local obj

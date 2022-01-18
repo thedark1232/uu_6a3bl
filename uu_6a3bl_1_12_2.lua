@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "23 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "24 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8592,14 +8592,14 @@ function forms:creat_HeXBaTaeT_O3Y_form(nick)
 	local y = y_main + 14
 		
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 31, "Для открытия окна", red)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 42, "требуется минимум 50% ОЗУ!", red)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 42, "необходимо 50% ОЗУ!", red)
 	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 53, "Текущее ОЗУ: " .. tostring(TekyLLlee_koJIu4ecTBo_O3Y) .. "%", red)
 	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 64, "Ожидай, пока кто то", red)
-	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 64, "из тиммейтов закроет", red)
-	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 75, "окно!", red)
+	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 75, "из тиммейтов закроет", red)
+	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 86, "окно!", red)
 	
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y_main + 150, 128, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y_main + 203, 128, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание стрелок для рисования ГУИ
 	local obj = table_form.return_button

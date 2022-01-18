@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "20 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "21 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8012,7 +8012,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 				table_form.TekyLLLuu_npegMeT.setLabel("999")
 			end
 		end)
-		table_form.koJIu4ecTBo_1.caption.setX(224)
+		table_form.koJIu4ecTBo_1.caption.setX(x_main + 223)
 		table_form.koJIu4ecTBo_10 = creat_new_button(-1, nick, x_main + 236, y_main + 135, 18, 20, "10", "koJIu4ecTBo_10_button", true, blue, white, function()
 			local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
 			if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 10, true, true, true, 999) then
@@ -8021,7 +8021,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 				table_form.TekyLLLuu_npegMeT.setLabel("999")
 			end
 		end)
-		table_form.koJIu4ecTBo_10.caption.setX(240)
+		table_form.koJIu4ecTBo_10.caption.setX(x_main + 239)
 		table_form.koJIu4ecTBo_100 = creat_new_button(-1, nick, x_main + 256, y_main + 135, 18, 20, "100", "koJIu4ecTBo_100_button", true, blue, white, function()
 			local TekyLLLee_koJIu4ecTBo = tonumber(table_form.TekyLLLuu_npegMeT.getLabel())
 			if npoBepka_Ha_cuqppy(TekyLLLee_koJIu4ecTBo + 100, true, true, true, 999) then
@@ -8030,11 +8030,11 @@ function forms:creat_MaTpuca_craft_form(nick)
 				table_form.TekyLLLuu_npegMeT.setLabel("999")
 			end
 		end)
-		table_form.koJIu4ecTBo_100.caption.setX(258)
+		table_form.koJIu4ecTBo_100.caption.setX(x_main + 257)
 		table_form.c6poc = creat_new_button(-1, nick, x_main + 275, y_main + 135, 18, 20, "С", "c6poc_button", true, blue, white, function()
 			table_form.TekyLLLuu_npegMeT.setLabel("1")
 		end)
-		table_form.c6poc.caption.setX(283)
+		table_form.c6poc.caption.setX(x_main + 282)
 		
 		--создание кнопки начала крафта
 		table_form.Ha4aJIo_kpaqpTa = creat_new_button(-1, nick, x_main + 216, y_main + 157, 77, 15, "скрафтить", "Ha4aTb_kpaqpT_button", true, blue, white, function()
@@ -8058,7 +8058,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 					table_form.nogcka3ka_go6aBJIeHu9l2.setColor(green)
 					table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
 					table_form.nogcka3ka_go6aBJIeHu9l2.setText("ДОБАВЛЕН!")
-					table_form.nogcka3ka_go6aBJIeHu9l2.setX(307)
+					table_form.nogcka3ka_go6aBJIeHu9l2.setX(x_main + 306)
 					return
 				end
 			end
@@ -8066,7 +8066,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 			table_form.nogcka3ka_go6aBJIeHu9l2.setColor(red)
 			table_form.nogcka3ka_go6aBJIeHu9l.setText("ОЧЕРЕДЬ")
 			table_form.nogcka3ka_go6aBJIeHu9l2.setText("ЗАПОЛНЕНА!")
-			table_form.nogcka3ka_go6aBJIeHu9l2.setX(300)
+			table_form.nogcka3ka_go6aBJIeHu9l2.setX(x_main + 299)
 		end)
 		
 		--ячейки очереди крафтов
@@ -8081,7 +8081,7 @@ function forms:creat_MaTpuca_craft_form(nick)
 					table_form.nogcka3ka_go6aBJIeHu9l2.setColor(red)
 					table_form.nogcka3ka_go6aBJIeHu9l.setText("ПРЕДМЕТ")
 					table_form.nogcka3ka_go6aBJIeHu9l2.setText("УДАЛЕН!")
-					table_form.nogcka3ka_go6aBJIeHu9l2.setX(307)
+					table_form.nogcka3ka_go6aBJIeHu9l2.setX(x_main + 306)
 					if table_form["o4epedb_icon" .. tostring(i)].getVisible() then
 						table_form["o4epedb_icon" .. tostring(i)].setLabel("0")
 					end
@@ -8443,9 +8443,9 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 				Ha3BaHue_pecenTa = trim(Ha3BaHue_pecenTa)
 				--проверка на ввод названия
 				if Ha3BaHue_pecenTa == "ввод названия рецепта" or Ha3BaHue_pecenTa == "" then
-					table_form.nogcka3ka_co3gaHu9l1.setX(85)
+					table_form.nogcka3ka_co3gaHu9l1.setX(x_main + 84)
 					table_form.nogcka3ka_co3gaHu9l1.setText("Сначала введи")
-					table_form.nogcka3ka_co3gaHu9l2.setX(74)
+					table_form.nogcka3ka_co3gaHu9l2.setX(x_main + 73)
 					table_form.nogcka3ka_co3gaHu9l2.setText("название рецепта!")
 					return
 				end
@@ -8453,9 +8453,9 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 				for _, pecenT in ipairs(Ta6JIuca_recenToB_Ha_MaTpuce) do
 					if pecenT.Ha3BaHue == Ha3BaHue_pecenTa then
 						table_form.nogcka3ka_co3gaHu9l1.setText("Такое название")
-						table_form.nogcka3ka_co3gaHu9l1.setX(81)
+						table_form.nogcka3ka_co3gaHu9l1.setX(x_main + 80)
 						table_form.nogcka3ka_co3gaHu9l2.setText("уже существует")
-						table_form.nogcka3ka_co3gaHu9l2.setX(81)
+						table_form.nogcka3ka_co3gaHu9l2.setX(x_main + 80)
 						return
 					end
 				end
@@ -8469,7 +8469,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 				end
 				if Bce_nbegecTaJIbl_nycTbl then
 					table_form.nogcka3ka_co3gaHu9l1.setText("пьедесталы пусты!")
-					table_form.nogcka3ka_co3gaHu9l1.setX(74)
+					table_form.nogcka3ka_co3gaHu9l1.setX(x_main + 73)
 					table_form.nogcka3ka_co3gaHu9l2.setText("")
 					return
 				end
@@ -8484,7 +8484,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 				Ta6JIuca_recenToB_Ha_MaTpuce[#Ta6JIuca_recenToB_Ha_MaTpuce].HoMeP_B_Ta6JIuce = #Ta6JIuca_recenToB_Ha_MaTpuce
 				setMathixRecepts()
 				table_form.nogcka3ka_co3gaHu9l2.setText("рецепт добавлен!")
-				table_form.nogcka3ka_co3gaHu9l2.setX(76)
+				table_form.nogcka3ka_co3gaHu9l2.setX(x_main + 75)
 				table_form.nogcka3ka_co3gaHu9l2.setColor(green)
 				table_form.nogcka3ka_co3gaHu9l1.setText("")
 				table_form.kHonka_go6aBJIeHu9l_pecenTa.delete()
@@ -8615,8 +8615,8 @@ end
 	-- --создание стрелок для рисования ГУИ
 	-- local obj
 	-- local HapucoBatb_cTpeJIku = function()
-		-- local x_cTpeJIku = 380
-		-- local y_cTpeJIku = 150
+		-- local x_cTpeJIku = x_main + 379
+		-- local y_cTpeJIku = y_main + 149
 		-- --перемещение панели
 		-- table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
 			-- obj.setY(obj.getY() - 1)

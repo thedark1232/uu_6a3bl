@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "26 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "27 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2300,6 +2300,9 @@ function forms:creat_main_form(nick)
 					v.background2.setY(v.background2.getY() + y_mov)
 					v.background3.setX(v.background3.getX() + x_mov)
 					v.background3.setY(v.background3.getY() + y_mov)
+				elseif v.getType() == "line" then
+					v.setP1({v.getP1()[1] + x_mov, {v.getP1()[2] + y_mov)
+					v.setP2({v.getP2()[1] + x_mov, {v.getP2()[2] + y_mov)
 				else
 					v.setX(v.getX() + x_mov)
 					v.setY(v.getY() + y_mov)
@@ -8431,6 +8434,7 @@ do
 		cTapToBble_koopguHaTbl[admin].main_form.y = 1
 		configuration[49] = cTapToBble_koopguHaTbl
 		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "координаты сброшены")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"] = function()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю выход")

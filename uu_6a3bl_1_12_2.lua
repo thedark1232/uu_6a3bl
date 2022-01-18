@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "7 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "8 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -691,7 +691,7 @@ function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool
 	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
 		for k, v in pairs(next_form) do
 			if type(v) ~= "function" 
-				if v.getId() == id 
+				if v.getId() == id then
 					if v.getType() == "scroll" then
 						v.enabled = true
 					elseif v.getType() == "move_form" then

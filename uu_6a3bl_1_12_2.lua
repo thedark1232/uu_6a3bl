@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "6 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "7 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3287,7 +3287,7 @@ function forms:creat_virtual_4aT_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -3437,7 +3437,7 @@ function forms:creat_redStone_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -3590,7 +3590,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -3751,7 +3751,7 @@ function forms:creat_MaTpuca_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -3903,7 +3903,7 @@ function forms:creat_HaHuTbl_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -4049,7 +4049,7 @@ function forms:creat_geTekTopbl_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -4196,7 +4196,7 @@ function forms:creat_one_sensor_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -4339,7 +4339,7 @@ function forms:creat_sensors_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -4491,7 +4491,7 @@ function forms:creat_tyrret_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -4631,7 +4631,7 @@ function forms:creat_tunnel_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -4774,7 +4774,7 @@ function forms:creat_modem_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -4918,7 +4918,7 @@ function forms:creat_zone_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -5059,7 +5059,7 @@ function forms:creat_tape_drive_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -5204,7 +5204,7 @@ function forms:creat_npo4ee_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц
@@ -5712,10 +5712,7 @@ function forms:creat_cH9lTb_geHbru_ka3uHo_form(nick)
 			end
 		end)
 	end
-	
-	--кнопка подтверждения
-
-	
+		
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -5997,7 +5994,7 @@ function forms:creat_ygaJIuT_TuMMeuTa_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц
@@ -6227,7 +6224,7 @@ function forms:creat_za_KeM_He_cJIeguM_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц
@@ -6366,7 +6363,7 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 239 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 239 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц
@@ -6698,7 +6695,7 @@ function forms:creat_nepuMeTp_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 339 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 339 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц
@@ -6941,7 +6938,7 @@ function forms:creat_ygaJIeHue_3oHbl_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц
@@ -7538,7 +7535,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
 	--объединение таблиц

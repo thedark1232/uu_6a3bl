@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "29 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "30 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1805,6 +1805,7 @@ function koMaHgbl_uu_6a3bl()
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "тихий рестарт (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "обнови ии базы (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "пока (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "сброс координат стартового окна (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "отключить сеть (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "выключить сеть (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_aJIucou], "установи время задержки циклов (админ)")
@@ -2272,7 +2273,7 @@ function forms:creat_main_form(nick)
 	table_form.destroy = function()
 		for k, v in pairs(table_form) do
 			if type(v) ~= "function" then 
-				if v.getType() == "button" then
+				if string.match(v.getType(), "button") ~= nil then
 					v.caption.delete()
 					v.delete()
 				end
@@ -2328,6 +2329,9 @@ function forms:creat_main_form(nick)
 	end
 	x_main = cTapToBble_koopguHaTbl[nick].main_form.x
 	y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	
+	print("x_main", x_main)
+	print("y_main", y_main)
 
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	table_form.main_box.setClickable(false)

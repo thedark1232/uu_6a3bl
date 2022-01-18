@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "19 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "20 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,7 +16,7 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
-local koopguHaTbl_MblLLlu = {}
+local cTapToBble_koopguHaTbl = {}
 local nepBblu_B_o4epegu = false
 local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 60
 local BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = 300
@@ -2279,22 +2279,68 @@ function forms:creat_main_form(nick)
 		myThread.kill(Bce_noToku[nick].main_form)
 	end
 	
+	--сдвиг окна
+	table_form.move_form = function(x_mov, y_mov)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+				elseif string.match(v.getType(), "textBox") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+					v.background2.setX(v.background2.getX() + x_mov)
+					v.background2.setY(v.background2.getY() + y_mov)
+					v.background3.setX(v.background3.getX() + x_mov)
+					v.background3.setY(v.background3.getY() + y_mov)
+				else
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+				end
+				cTapToBble_koopguHaTbl[nick].main_form.x(cTapToBble_koopguHaTbl[nick].main_form.x + x_mov)
+				cTapToBble_koopguHaTbl[nick].main_form.y(cTapToBble_koopguHaTbl[nick].main_form.y + y_mov)
+				configuration[49] = cTapToBble_koopguHaTbl
+				setConfiguration()
+			end
+		end
+	end
+	
 	--главный фрейм
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(1, 1, 152, 205, blue)
+	local x_main
+	local y_main	
+	if cTapToBble_koopguHaTbl[nick] == nil then
+		cTapToBble_koopguHaTbl[nick] = {}
+		cTapToBble_koopguHaTbl[nick].main_form = {}
+		cTapToBble_koopguHaTbl[nick].main_form.x = 1
+		cTapToBble_koopguHaTbl[nick].main_form.y = 1
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+		x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+		y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	else
+		x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+		y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	end
+	if cTapToBble_koopguHaTbl[nick].main_form  == nil then 
+	if x_main == nil 
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 132, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(x_main + 3, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 		
-	--информационный текст
-	--table_form.napaMeTp_BpeMeHu = MoHuTop_urpoka[nick].addText(4, 2, napaMeTp_BpeMeHu)
-	--table_form.napaMeTp_BpeMeHu.setClickable(false)
-	--table_form.napaMeTp_eHepruu =MoHuTop_urpoka[nick].addText(4, 12, napaMeTp_eHepruu)
-	--table_form.napaMeTp_BpeMeHu.setClickable(false)
-	--table_form.napaMeTp_o3y = MoHuTop_urpoka[nick].addText(4, 22, napaMeTp_o3y)
-	--table_form.napaMeTp_o3y.setClickable(false)
-	
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 152, 10, "", "move_form", true, gray, white, function() end)
+	rawset(table_form.move_button, "form_name", "main_form")
+	table_form.return_button = creat_new_button(1, nick, x_main + 141, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
+		
 	--создание кнопок
-	local y = 15
+	local y = y_main + 14
 	local y_func = function()
 		y = y + 17
 		return y
@@ -2306,45 +2352,45 @@ function forms:creat_main_form(nick)
 		return num
 	end
 	
-	table_form.nepuMeTp = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "периметр", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].nepuMeTp = forms:creat_nepuMeTp_form(nick); qpopma_nepuMeTpa[nick] = true end)
-	table_form.alice_control = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
-	table_form.magaz = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
-	table_form.casino = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
-	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "логи игроков", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
-	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тиммейты", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
-	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "чат тимы", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].virtual_4aT = forms:creat_virtual_4aT_form(nick) end)
-	table_form.pegCToyH = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].redStone = forms:creat_redStone_form(nick) end)
-	table_form.TeJIenopTep = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "телепортер", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick) end)
-	table_form.MaTpuca = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "матрица", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
-	table_form.HaHuTbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "наниты", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
-	table_form.geTekTopbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "детекторы", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].geTekTopbl = forms:creat_geTekTopbl_form(nick) end)
-	table_form.oguH_ceHcop = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "1 сенсор", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].one_sensor = forms:creat_one_sensor_form(nick) end)
-	table_form.ceHcopbl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "сенсоры", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].sensors = forms:creat_sensors_form(nick) end)
-	table_form.TypeJIu = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "турели", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
-	table_form.TeHHeJIb = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "туннель", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tunnel = forms:creat_tunnel_form(nick) end)
-	table_form.modem = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "модем", "button", false, black, white, function() Bce_ragJeTbl_urpoka[nick].modem = forms:creat_modem_form(nick) end)
-	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "зоны базы", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
-	table_form.tab_grive = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "тап драйв", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tape_drive = forms:creat_tape_drive_form(nick) end)
-	table_form.npo4ee = creat_new_button(num_button(), nick, 6, y_func(), 128, 15, "прочее", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].npo4ee = forms:creat_npo4ee_form(nick) end)
+	table_form.nepuMeTp = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "периметр", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].nepuMeTp = forms:creat_nepuMeTp_form(nick); qpopma_nepuMeTpa[nick] = true end)
+	table_form.alice_control = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
+	table_form.magaz = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
+	table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
+	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
+	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тиммейты", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
+	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "чат тимы", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].virtual_4aT = forms:creat_virtual_4aT_form(nick) end)
+	table_form.pegCToyH = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].redStone = forms:creat_redStone_form(nick) end)
+	table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick) end)
+	table_form.MaTpuca = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "матрица", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
+	table_form.HaHuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "наниты", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
+	table_form.geTekTopbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "детекторы", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].geTekTopbl = forms:creat_geTekTopbl_form(nick) end)
+	table_form.oguH_ceHcop = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "1 сенсор", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].one_sensor = forms:creat_one_sensor_form(nick) end)
+	table_form.ceHcopbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "сенсоры", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].sensors = forms:creat_sensors_form(nick) end)
+	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
+	table_form.TeHHeJIb = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "туннель", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tunnel = forms:creat_tunnel_form(nick) end)
+	table_form.modem = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "модем", "button", false, black, white, function() Bce_ragJeTbl_urpoka[nick].modem = forms:creat_modem_form(nick) end)
+	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "зоны базы", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
+	table_form.tab_grive = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тап драйв", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tape_drive = forms:creat_tape_drive_form(nick) end)
+	table_form.npo4ee = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "прочее", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].npo4ee = forms:creat_npo4ee_form(nick) end)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(140, 30, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(x_main + 139, y_main + 29, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({145, 40}, {145, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({x_main + 144, y_main + 39}, {x_main + 144, y_main + 191}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(140, 192, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(x_main + 139, y_main + 191, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = 192
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	table_form.scroll_button = creat_new_vertical_scroll(nick, 140, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "main_form")
+	table_form.scroll_button = creat_new_vertical_scroll(nick, x_main + 139, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "main_form")
 	
 	
 	
@@ -7907,6 +7953,8 @@ end
 function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	local npegMeT_no_ceHTpy = {}
 	local Ta6JIuca_npegMeToB = {}
+	local cTapT_x = 1
+	local cTapT_y = 1
 
 	--создание формы
 	local table_form = {}
@@ -7990,26 +8038,24 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	table_form.move_form = function(x_mov, y_mov)
 		for k, v in pairs(table_form) do
 			if type(v) ~= "function" then 
-				if v.getType() ~= "gebug_button" then
-					if string.match(v.getType(), "button") ~= nil then
-						v.setX(v.getX() + x_mov)
-						v.setY(v.getY() + y_mov)
-						v.caption.setX(v.caption.getX() + x_mov)
-						v.caption.setY(v.caption.getY() + y_mov)
-					elseif string.match(v.getType(), "textBox") ~= nil then
-						v.setX(v.getX() + x_mov)
-						v.setY(v.getY() + y_mov)
-						v.caption.setX(v.caption.getX() + x_mov)
-						v.caption.setY(v.caption.getY() + y_mov)
-						v.background2.setX(v.background2.getX() + x_mov)
-						v.background2.setY(v.background2.getY() + y_mov)
-						v.background3.setX(v.background3.getX() + x_mov)
-						v.background3.setY(v.background3.getY() + y_mov)
-					else
-						v.setX(v.getX() + x_mov)
-						v.setY(v.getY() + y_mov)
-					end
-				end	
+				if string.match(v.getType(), "button") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+				elseif string.match(v.getType(), "textBox") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+					v.background2.setX(v.background2.getX() + x_mov)
+					v.background2.setY(v.background2.getY() + y_mov)
+					v.background3.setX(v.background3.getX() + x_mov)
+					v.background3.setY(v.background3.getY() + y_mov)
+				else
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+				end
 			end
 		end
 	end
@@ -8164,57 +8210,6 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(117, 119, "?", red)
 			table_form.nogcka3ka3.setScale(2)
 		end
-		
-		--создание стрелок для рисования ГУИ
-		local obj = table_form.return_button
-		local HapucoBatb_cTpeJIku = function()
-			local x_cTpeJIku = 380
-			local y_cTpeJIku = 150
-			--перемещение панели
-			table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
-				obj.setY(obj.getY() - 1)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
-			end)
-			table_form.BBEpx.caption.setX(x_cTpeJIku + 21)
-			table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "down_button", true, black, white, function()
-				obj.setY(obj.getY() + 1)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
-			end)
-			table_form.BHu3.caption.setX(x_cTpeJIku + 21)
-			table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left_button", true, black, white, function()
-				obj.setX(obj.getX() - 1)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
-			end)
-			table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
-			table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "right_button", true, black, white, function()
-				obj.setX(obj.getX() + 1)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
-			end)
-			table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
-			--ширина и высота
-			table_form.MeHbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 30, 15, 15, "/\\", "h_min_button", true, black, white, function()
-				obj.setHeight(obj.getHeight() - 1)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
-			end)
-			table_form.MeHbLLle_h.caption.setX(x_cTpeJIku + 21)
-			table_form.boJIbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 50, 15, 15, "\\/", "h_max_button", true, black, white, function()
-				obj.setHeight(obj.getHeight() + 1)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
-			end)
-			table_form.boJIbLLle_h.caption.setX(x_cTpeJIku + 21)
-			table_form.MeHbLLle_w = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 40, 15, 15, "<", "w_min_button", true, black, white, function()
-				obj.setWidth(obj.getWidth() - 1)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
-			end)
-			table_form.MeHbLLle_w.caption.setX(x_cTpeJIku + 3)
-			table_form.boJIbLLle_w = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 40, 15, 15, ">", "w_max_button", true, black, white, function()
-				obj.setWidth(obj.getWidth() + 1)
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
-			end)
-			table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
-		end
-		HapucoBatb_cTpeJIku()
-
 	else
 		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(34, 46, "Требуется", red)
 		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(34, 77, "настройка", red)
@@ -11859,6 +11854,13 @@ do
 	else
 		BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB = configuration[48]
 	end
+	if configuration[49] = "nil" then
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	else
+		cTapToBble_koopguHaTbl = configuration[49]
+	end
+	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
 	end

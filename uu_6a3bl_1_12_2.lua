@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "17 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "18 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8259,6 +8259,16 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(x_main + 3, y_main + 29, 251, 173, white)
 	table_form.main_box2.setClickable(false)
 	
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 259, 10, "", "move_form", true, gray, white, function() end)
+	rawset(table_form.move_button, "form_name", "MaTpuca_3anucb_pecenTa")
+	rawset(table_form.move_button, "enabled", false)
+	rawset(table_form.move_button, "getType", function() return "move_form" end)
+	
+	table_form.return_button = creat_new_button(1, nick, x_main + 247, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
+	
 	--создание кнопок
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	local y = y_main + 14
@@ -8273,14 +8283,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
 		return num
 	end
-	
-	--сдвиг формы + кнопка выхода
-	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 259, 10, "", "move_form", true, gray, white, function() end)
-	rawset(table_form.move_button, "form_name", npo4ue_qpopMbl[nick])
-	table_form.return_button = creat_new_button(1, nick, x_main + 248, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
-	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
-	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
-	
+		
 	--подсказки создания рецепта
 	table_form.nogcka3ka_co3gaHu9l1 = MoHuTop_urpoka[nick].addText(x_main + 84, y_main + 76, "", red)		
 	table_form.nogcka3ka_co3gaHu9l2 = MoHuTop_urpoka[nick].addText(x_main + 73, y_main + 87, "", red)

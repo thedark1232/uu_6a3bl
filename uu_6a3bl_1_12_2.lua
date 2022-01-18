@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "33 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "34 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2396,7 +2396,7 @@ function forms:creat_main_form(nick)
 	--создание ползунка скролла
 	local start_no_y = y_main + 39
 	local y_min = start_no_y
-	local y_max = 192
+	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
 	table_form.scroll_button = creat_new_vertical_scroll(nick, x_main + 139, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "main_form")

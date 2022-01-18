@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "35 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "36 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2336,9 +2336,6 @@ function forms:creat_main_form(nick)
 	x_main = cTapToBble_koopguHaTbl[nick].main_form.x
 	y_main = cTapToBble_koopguHaTbl[nick].main_form.y
 	
-	print("x_main", x_main)
-	print("y_main", y_main)
-
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(x_main + 3, y_main + 29, 132, 172, white)
@@ -2496,7 +2493,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	local x_win = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(x_main + 3, y_main, 132, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(x_main + 3, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок
@@ -2564,7 +2561,7 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_win, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
 	end
 	
 	--объединение таблиц

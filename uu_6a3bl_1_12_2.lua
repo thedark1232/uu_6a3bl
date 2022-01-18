@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "13 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "14 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,7 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+local koopguHaTbl_MblLLlu = {}
 local nepBblu_B_o4epegu = false
 local BpeM9l_oJugaHu9l_Ha4aJIa_kpaqpTa = 60
 local BpeM9l_oJugaHu9l_BblcacblBaHu9l_acnekToB = 300
@@ -695,7 +696,7 @@ function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool
 					if v.getType() == "scroll" then
 						v.enabled = true
 					elseif v.getType() == "move_form" then
-						Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(x) .. "," .. tostring(y))
+						koopguHaTbl_MblLLlu[nick] = {x, y}
 					end
 				end
 			end
@@ -755,17 +756,19 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 							v.setY(v.getY() + v.cgBur)
 							v.value = v.value + 1
 							Bce_ragJeTbl_urpoka[nick][v.cB9l3b].buttons_visible(true)
-							--v.setVisible(true)
 						end
 					elseif y < 0 then --скролл ВВЕРХ
 						if v.getY() > v.min_y then
 							v.setY(v.getY() - v.cgBur)
 							v.value = v.value - 1
 							Bce_ragJeTbl_urpoka[nick][v.cB9l3b].buttons_visible(false)
-
-							--v.setVisible(false)
 						end		
 					end	
+				end
+				if type(v) ~= "function" and v.getType() == "move_form" then
+					local x_no3 = koopguHaTbl_MblLLlu[nick] + x
+					local y_no3 = koopguHaTbl_MblLLlu[nick] + y
+					Bce_ragJeTbl_urpoka[nick][v.form_name].move_form(x_no3, y_no3)
 				end
 			end
 		end
@@ -8042,7 +8045,8 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	
 	--сдвиг формы + кнопка выхода
 	table_form.move_button = creat_new_button(1, nick, 1, 1, 259, 10, "", "move_form", true, gray, white, function() end)
-	table_form.return_button = creat_new_button(1, nick, 253, 1, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	rawset(table_form.move_button, "form_name", npo4ue_qpopMbl[nick])
+	table_form.return_button = creat_new_button(1, nick, 249, 1, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 	

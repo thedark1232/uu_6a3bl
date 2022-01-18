@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "11 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "13 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -6689,19 +6689,19 @@ function forms:creat_nepuMeTp_form(nick)
 		
 	x_main = cTapToBble_koopguHaTbl[nick].nepuMeTp.x
 	y_main = cTapToBble_koopguHaTbl[nick].nepuMeTp.y
-			
-	--сдвиг формы + кнопка выхода
-	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 350, 10, "", "move_form", true, gray, white, function() end)
-	rawset(table_form.move_button, "form_name", "nepuMeTp")
-	rawset(table_form.move_button, "enabled", false)
-	rawset(table_form.move_button, "getType", function() return "move_form" end)
-		
+	
 	--главный фрейм
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 350, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 330, 172, white)
 	table_form.main_box2.setClickable(false)
 	
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 350, 10, "", "move_form", true, gray, white, function() end)
+	rawset(table_form.move_button, "form_name", "nepuMeTp")
+	rawset(table_form.move_button, "enabled", false)
+	rawset(table_form.move_button, "getType", function() return "move_form" end)
+
 	table_form.return_button = creat_new_button(1, nick, x_main + 340, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)

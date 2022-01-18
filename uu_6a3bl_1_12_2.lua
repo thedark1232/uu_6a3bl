@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "23 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "24 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -769,7 +769,10 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 			end
 		end
 	end)
-	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
+	if not stat then
+		print(err)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err)
+	end
 end
 function zanucb_JIoroB_olllu6ok_BblnoJIHeHu9l(nick, msg, nepegaBaEMoe_3Ha4eHue)
 	if baza_Bblxog ~= msg then
@@ -11974,13 +11977,6 @@ do
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].clear()
 		onoBeLLleHue_o_nocTopoHHux = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(x_onoBeLLleHue_o_nocTopoHHux, y_onoBeLLleHue_o_nocTopoHHux, "", red)
 		TblkHu_naJIkoU_no_MaTpuce = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(148, 18, "", red)
-		--информационный текст
-		--Bpem9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, "")
-		--Bpem9l.setClickable(false)
-		--eHepru9l = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 12, "")
-		--eHepru9l.setClickable(false)
-		--O3Y = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 22, "")
-		--O3Y.setClickable(false)
 		o6LLlee = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(4, 2, "")
 		o6LLlee.setClickable(false)
 	end

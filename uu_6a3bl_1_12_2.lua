@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "24 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "25 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8599,10 +8599,10 @@ function forms:creat_HeXBaTaeT_O3Y_form(nick)
 	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 86, "окно!", red)
 	
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y_main + 203, 128, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y_main + 183, 128, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--создание стрелок для рисования ГУИ
-	local obj = table_form.return_button
+	local obj = table_form.main_box2
 	local HapucoBatb_cTpeJIku = function()
 		local x_cTpeJIku = 379
 		local y_cTpeJIku = 149

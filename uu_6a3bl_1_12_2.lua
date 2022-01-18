@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "4 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "5 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7991,9 +7991,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 						v.setY(v.getY() + y_mov)
 						v.caption.setX(v.caption.getX() + x_mov)
 						v.caption.setY(v.caption.getY() + y_mov)
-						return
-					end
-					if v.getType() == "textBox" then
+					elseif v.getType() == "textBox" then
 						v.setX(v.getX() + x_mov)
 						v.setY(v.getY() + y_mov)
 						v.caption.setX(v.caption.getX() + x_mov)
@@ -8002,10 +8000,11 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 						v.background2.setY(v.background2.getY() + y_mov)
 						v.background3.setX(v.background3.getX() + x_mov)
 						v.background2.setX(v.background3.getY() + y_mov)
-						return
+					else
+						v.setX(v.getX() + x_mov)
+						v.setY(v.getY() + y_mov)
 					end
-					v.setX(v.getX() + x_mov)
-					v.setY(v.getY() + y_mov)
+
 				end	
 			end
 		end

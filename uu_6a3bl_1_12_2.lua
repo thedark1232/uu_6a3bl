@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "32 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "33 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -679,7 +679,7 @@ end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
 	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
 		for k, v in pairs(next_form) do
-			if type(v) ~= "function" and v.getType() == "scroll" then
+			if type(v) ~= "function" and v.getType() == "scroll" or type(v) ~= "function" and v.getType() == "move_form" then
 				v.enabled = false
 			end
 		end
@@ -706,7 +706,7 @@ function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, 
 		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
 			for k, v in pairs(next_form) do
 				if type(v) ~= "function" then
-					if v.getType() == "scroll" then
+					if v.getType() == "scroll" or v.getType() == "move_form" then
 						v.enabled = false
 					end
 					if v.getId() == id and string.match(v.getType(), "button") ~= nil then

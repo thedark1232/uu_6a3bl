@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "10 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "11 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2404,8 +2404,6 @@ function forms:creat_main_form(nick)
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
 	table_form.scroll_button = creat_new_vertical_scroll(nick, x_main + 139, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "main_form")
 	
-	
-	
 	--объединение таблиц и создание потока
 	Bce_noToku[nick].main_form = myThread.create(main_noTok, nick)
 	self = {}
@@ -4753,11 +4751,11 @@ function forms:creat_modem_form(nick)
 
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_func + 29, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_main, y_func + 39}, {144 + x_main, y_func + 191}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_main, y_main + 39}, {144 + x_main,y_main + 191}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_main, y_func + 191, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 191, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
@@ -6569,6 +6567,9 @@ function forms:creat_cMeHa_agMuHa_form(nick)
 	return table_form
 end
 function forms:creat_nepuMeTp_form(nick)
+	--удалить другие фреймы
+	Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
+
 --создание формы
 	local table_form = {}
 	
@@ -6641,13 +6642,70 @@ function forms:creat_nepuMeTp_form(nick)
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
+		--сдвиг окна
+	table_form.move_form = function(x_mov, y_mov)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+				elseif string.match(v.getType(), "textBox") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+					v.background2.setX(v.background2.getX() + x_mov)
+					v.background2.setY(v.background2.getY() + y_mov)
+					v.background3.setX(v.background3.getX() + x_mov)
+					v.background3.setY(v.background3.getY() + y_mov)
+				elseif v.getType() == "line" then
+					v.setP1({v.getP1().x + x_mov, v.getP1().y + y_mov})
+					v.setP2({v.getP2().x + x_mov, v.getP2().y + y_mov})
+				else
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+				end
+			end
+		end
+		cTapToBble_koopguHaTbl[nick].nepuMeTp.x = table_form.main_box.getX()
+		cTapToBble_koopguHaTbl[nick].nepuMeTp.y = table_form.main_box.getY()
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+		
 	--главный фрейм
-	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
-	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, 1, 350, 205, blue)
+	local x_main
+	local y_main	
+	if cTapToBble_koopguHaTbl[nick] == nil then cTapToBble_koopguHaTbl[nick] = {} end
+	if cTapToBble_koopguHaTbl[nick].nepuMeTp == nil then
+		cTapToBble_koopguHaTbl[nick].nepuMeTp = {}
+		cTapToBble_koopguHaTbl[nick].nepuMeTp.x = 1
+		cTapToBble_koopguHaTbl[nick].nepuMeTp.y = 1
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()	
+	end	
+		
+	x_main = cTapToBble_koopguHaTbl[nick].nepuMeTp.x
+	y_main = cTapToBble_koopguHaTbl[nick].nepuMeTp.y
+			
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 350, 10, "", "move_form", true, gray, white, function() end)
+	rawset(table_form.move_button, "form_name", "nepuMeTp")
+	rawset(table_form.move_button, "enabled", false)
+	rawset(table_form.move_button, "getType", function() return "move_form" end)
+		
+	--главный фрейм
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 350, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, 30, 330, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 330, 172, white)
 	table_form.main_box2.setClickable(false)
+	
+	table_form.return_button = creat_new_button(1, nick, x_main + 340, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
+	
 			
 	--создание кнопок
 	local y = y_main + 14
@@ -6663,9 +6721,6 @@ function forms:creat_nepuMeTp_form(nick)
 		return num
 	end
 	
-	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
-
 	--кнопки тиммейтов
 	for i = 1, 20 do
 		table_form[i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 200, 15, i, "button", start_visible, white, black, function() end)	
@@ -8413,6 +8468,66 @@ end
 		-- table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
 	-- end
 	-- HapucoBatb_cTpeJIku()
+	
+	
+	
+	-- --сдвиг окна
+	-- table_form.move_form = function(x_mov, y_mov)
+		-- for k, v in pairs(table_form) do
+			-- if type(v) ~= "function" then 
+				-- if string.match(v.getType(), "button") ~= nil then
+					-- v.setX(v.getX() + x_mov)
+					-- v.setY(v.getY() + y_mov)
+					-- v.caption.setX(v.caption.getX() + x_mov)
+					-- v.caption.setY(v.caption.getY() + y_mov)
+				-- elseif string.match(v.getType(), "textBox") ~= nil then
+					-- v.setX(v.getX() + x_mov)
+					-- v.setY(v.getY() + y_mov)
+					-- v.caption.setX(v.caption.getX() + x_mov)
+					-- v.caption.setY(v.caption.getY() + y_mov)
+					-- v.background2.setX(v.background2.getX() + x_mov)
+					-- v.background2.setY(v.background2.getY() + y_mov)
+					-- v.background3.setX(v.background3.getX() + x_mov)
+					-- v.background3.setY(v.background3.getY() + y_mov)
+				-- elseif v.getType() == "line" then
+					-- v.setP1({v.getP1().x + x_mov, v.getP1().y + y_mov})
+					-- v.setP2({v.getP2().x + x_mov, v.getP2().y + y_mov})
+				-- else
+					-- v.setX(v.getX() + x_mov)
+					-- v.setY(v.getY() + y_mov)
+				-- end
+			-- end
+		-- end
+		-- cTapToBble_koopguHaTbl[nick].main_form.x = table_form.main_box.getX()
+		-- cTapToBble_koopguHaTbl[nick].main_form.y = table_form.main_box.getY()
+		-- configuration[49] = cTapToBble_koopguHaTbl
+		-- setConfiguration()
+	-- end
+	
+	-- --главный фрейм
+	-- local x_main
+	-- local y_main	
+	-- if cTapToBble_koopguHaTbl[nick] == nil then cTapToBble_koopguHaTbl[nick] = {} end
+	-- if cTapToBble_koopguHaTbl[nick].main_form == nil then
+		-- cTapToBble_koopguHaTbl[nick].main_form = {}
+		-- cTapToBble_koopguHaTbl[nick].main_form.x = 1
+		-- cTapToBble_koopguHaTbl[nick].main_form.y = 1
+		-- configuration[49] = cTapToBble_koopguHaTbl
+		-- setConfiguration()
+	-- end
+	-- x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+	-- y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+		
+		
+	-- --сдвиг формы + кнопка выхода
+	-- table_form.move_button = creat_new_button(1, nick, x_main, y_main, 152, 10, "", "move_form", true, gray, white, function() end)
+	-- rawset(table_form.move_button, "form_name", "main_form")
+	-- rawset(table_form.move_button, "enabled", false)
+	-- rawset(table_form.move_button, "getType", function() return "move_form" end)
+	
+	-- table_form.return_button = creat_new_button(1, nick, x_main + 141, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	-- table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	-- table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 do
 	computer.addUser(admin)
 	--осчистка монитора

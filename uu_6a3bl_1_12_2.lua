@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "21 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "22 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -11850,7 +11850,7 @@ do
 	else
 		BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB = configuration[48]
 	end
-	if configuration[49] = "nil" then
+	if configuration[49] == "nil" then
 		configuration[49] = cTapToBble_koopguHaTbl
 		setConfiguration()
 	else

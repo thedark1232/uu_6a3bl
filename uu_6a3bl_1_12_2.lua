@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "9 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "11 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8165,24 +8165,55 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 			table_form.nogcka3ka3.setScale(2)
 		end
 		
-		local x_cTpeJIku = 380
-		local y_cTpeJIku = 150
-		
-		table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "gebug_button", true, black, white, function()
-			table_form.move_form(0, -1)
-		end)
-		table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "gebug_button", true, black, white, function()
-			table_form.move_form(0, 1)
-		end)
-		table_form.BHu3.caption.setX(x_cTpeJIku + 21)
-		table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "gebug_button", true, black, white, function()
-			table_form.move_form(-1, 0)
-		end)
-		table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
-		table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "gebug_button", true, black, white, function()
-			table_form.move_form(1, 0)
-		end)
-		table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
+		--создание стрелок для рисования ГУИ
+		local obj = table_form.return_button.caption
+		local HapucoBatb_cTpeJIku = function()
+			local x_cTpeJIku = 380
+			local y_cTpeJIku = 150
+			--перемещение панели
+			table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
+				obj.setY(obj.getY() - 1)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
+			end)
+			table_form.BBEpx.caption.setX(x_cTpeJIku + 21)
+			table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "down_button", true, black, white, function()
+				obj.setY(obj.getY() + 1)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
+			end)
+			table_form.BHu3.caption.setX(x_cTpeJIku + 21)
+			table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left_button", true, black, white, function()
+				obj.setX(obj.getX() - 1)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
+			end)
+			table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
+			table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "right_button", true, black, white, function()
+				obj.setX(obj.getX() + 1)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
+			end)
+			table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
+			--ширина и высота
+			table_form.MeHbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 30, 15, 15, "/\\", "h_min_button", true, black, white, function()
+				obj.setHeight(obj.getHeight() - 1)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
+			end)
+			table_form.MeHbLLle_h.caption.setX(x_cTpeJIku + 21)
+			table_form.boJIbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 50, 15, 15, "\\/", "h_max_button", true, black, white, function()
+				obj.setHeight(obj.getHeight() + 1)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
+			end)
+			table_form.boJIbLLle_h.caption.setX(x_cTpeJIku + 21)
+			table_form.MeHbLLle_w = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 40, 15, 15, "<", "w_min_button", true, black, white, function()
+				obj.setWidth(obj.getWidth() - 1)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
+			end)
+			table_form.MeHbLLle_w.caption.setX(x_cTpeJIku + 3)
+			table_form.boJIbLLle_w = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 40, 15, 15, ">", "w_max_button", true, black, white, function()
+				obj.setWidth(obj.getWidth() + 1)
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
+			end)
+			table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
+		end
+		HapucoBatb_cTpeJIku()
 
 	else
 		table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(34, 46, "Требуется", red)

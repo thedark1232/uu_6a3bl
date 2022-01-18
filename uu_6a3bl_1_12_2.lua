@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "11 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "13 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8026,9 +8026,6 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4, 30, 251, 173, white)
 	table_form.main_box2.setClickable(false)
 	
-	--кнопка сдвига формы
-	table_form.move_button = creat_new_button(1, nick, 1, 1, 259, 10, "", "move_form", true, gray, white, function() end)
-	
 	--создание кнопок
 	local y = 15
 	local y_func = function()
@@ -8043,8 +8040,11 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 		return num
 	end
 	
-	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 6, y - 2, 10, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, 1, 1, 259, 10, "", "move_form", true, gray, white, function() end)
+	table_form.return_button = creat_new_button(1, nick, 253, 1, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 	
 	--подсказки создания рецепта
 	table_form.nogcka3ka_co3gaHu9l1 = MoHuTop_urpoka[nick].addText(85, 77, "", red)		
@@ -8166,7 +8166,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 		end
 		
 		--создание стрелок для рисования ГУИ
-		local obj = table_form.return_button.caption
+		local obj = table_form.return_button
 		local HapucoBatb_cTpeJIku = function()
 			local x_cTpeJIku = 380
 			local y_cTpeJIku = 150

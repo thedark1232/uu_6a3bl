@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "30 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "31 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2308,8 +2308,8 @@ function forms:creat_main_form(nick)
 					v.setX(v.getX() + x_mov)
 					v.setY(v.getY() + y_mov)
 				end
-				cTapToBble_koopguHaTbl[nick].main_form.x = cTapToBble_koopguHaTbl[nick].main_form.x + x_mov
-				cTapToBble_koopguHaTbl[nick].main_form.y = cTapToBble_koopguHaTbl[nick].main_form.y + y_mov
+				cTapToBble_koopguHaTbl[nick].main_form.x = table_form.main_box.getX() + x_mov
+				cTapToBble_koopguHaTbl[nick].main_form.y = table_form.main_box.getY() + y_mov
 				configuration[49] = cTapToBble_koopguHaTbl
 				setConfiguration()
 			end

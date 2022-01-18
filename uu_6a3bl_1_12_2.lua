@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "34 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "35 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -677,10 +677,12 @@ function glasses_mouse_down(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_mouse_down")
 end
 function glasses_mouse_up(event_type, agpec1, nick, agpec2, val)
-	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
-		for k, v in pairs(next_form) do
-			if type(v) ~= "function" and v.getType() == "scroll" or type(v) ~= "function" and v.getType() == "move_form" then
-				v.enabled = false
+	if val == 0 then
+		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
+			for k, v in pairs(next_form) do
+				if type(v) ~= "function" and v.getType() == "scroll" or type(v) ~= "function" and v.getType() == "move_form" then
+					v.enabled = false
+				end
 			end
 		end
 	end
@@ -689,12 +691,14 @@ function glasses_component_mouse_wheel(...)
 	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "событие: " .. g .. "glasses_component_mouse_wheel")
 end
 function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
-		for k, v in pairs(next_form) do
-			if type(v) ~= "function" then
-				if v.getId() == id then
-					if v.getType() == "scroll" or v.getType() == "move_form" then
-						v.enabled = true
+	if val == 0 then
+		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
+			for k, v in pairs(next_form) do
+				if type(v) ~= "function" then
+					if v.getId() == id then
+						if v.getType() == "scroll" or v.getType() == "move_form" then
+							v.enabled = true
+						end
 					end
 				end
 			end
@@ -702,47 +706,49 @@ function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool
 	end
 end
 function glasses_component_mouse_up(event_type, agpec1, nick, agpec2, id, bool, x, y, val)
-	local stat, err = pcall(function()
-		for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
-			for k, v in pairs(next_form) do
-				if type(v) ~= "function" then
-					if v.getType() == "scroll" or v.getType() == "move_form" then
-						v.enabled = false
-					end
-					if v.getId() == id and string.match(v.getType(), "button") ~= nil then
-						v.setClickable(false)
-						local button_color = v.getColor()
-						v.setColor(green)
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-						v.click()
-						v.setColor(button_color)
-						v.setClickable(true)
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-						return
-					end
-					if v.getType() == "textBox" then
-						v.enabled = false
-						if v.getId() == id then
-							v.enabled = true
-							if default_text[v.caption.getText()] then v.caption.setText("") end
+	if val == 0 then
+		local stat, err = pcall(function()
+			for _, next_form in pairs(Bce_ragJeTbl_urpoka[nick]) do
+				for k, v in pairs(next_form) do
+					if type(v) ~= "function" then
+						if v.getType() == "scroll" or v.getType() == "move_form" then
+							v.enabled = false
 						end
+						if v.getId() == id and string.match(v.getType(), "button") ~= nil then
+							v.setClickable(false)
+							local button_color = v.getColor()
+							v.setColor(green)
+							Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+							v.click()
+							v.setColor(button_color)
+							v.setClickable(true)
+							Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+							return
+						end
+						if v.getType() == "textBox" then
+							v.enabled = false
+							if v.getId() == id then
+								v.enabled = true
+								if default_text[v.caption.getText()] then v.caption.setText("") end
+							end
+						end
+						if v.getId() == id and v.getType() == "icon" then
+							v.setClickable(false)
+							local button_color = v.getColor()
+							v.setColor(green)
+							Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+							v.click(v.button_num)
+							v.setColor(button_color)
+							v.setClickable(true)
+							Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+							return
+						end 
 					end
-					if v.getId() == id and v.getType() == "icon" then
-						v.setClickable(false)
-						local button_color = v.getColor()
-						v.setColor(green)
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-						v.click(v.button_num)
-						v.setColor(button_color)
-						v.setClickable(true)
-						Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-						return
-					end 
 				end
 			end
-		end
-	end)
-	if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
+		end)
+		if not stat then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. err) end
+	end
 end
 function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 	local stat, err = pcall(function()
@@ -2485,14 +2491,16 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
+	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
 	local x_win = 1
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_win, 1, 152, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_win, 30, 132, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(x_main + 3, y_main, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок
-	local y = 15
+	local y = y_main + 14
 	local y_func = function()
 		y = y + 17
 		return y
@@ -2506,48 +2514,48 @@ function forms:creat_ynpaBJIeHue_alice_form(nick)
 	end
 	
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_win, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "обновить ии", "button", start_visible, gray, white, function()
+		table_form.o6HoBu_uu_6a3bl = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "обновить ии", "button", start_visible, gray, white, function()
 			table_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " обнови ии базы"]() 
 		end)
-		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отсутст. компон.", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
-		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "тихий рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
-		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
-		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "убить Алису", "button", start_visible, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
-		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "отключить сеть", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
-		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "задержка глав. цикла", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].zagepJka_cukJIoB = forms:creat_zagepJka_cukJIoB_form(nick) end)
-		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "переименовать базу", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].nepeuMeHoBaTb_6a3y = forms:creat_nepeuMeHoBaTb_6a3y_form(nick) end)		
-		table_form.Bepcu9l_o6HoBJIeHuu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "версия обновлений", "button", start_visible, gray, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v." .. g .. Ha3BaHue_o6HoBJIeHu9l) end)		
+		table_form.noka3aTb_oTcyTcTByl0lllue_KoMnoHeHTbl = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "отсутст. компон.", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " показать отсутствующие компоненты"]() end)
+		table_form.TuXuu_restart = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тихий рестарт", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тихий рестарт"]() end)
+		table_form.Bblxog = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "выход", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " выход"]() end)
+		table_form.y6uTb_aJIucy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "убить Алису", "button", start_visible, red, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " пока"]() end)
+		table_form.BblkJIl04uTb_ceTb = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "отключить сеть", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " отключить сеть"]() end)
+		table_form.ycTaHoBka_3agepJku_rJIaBHoro_cukJIa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "задержка глав. цикла", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].zagepJka_cukJIoB = forms:creat_zagepJka_cukJIoB_form(nick) end)
+		table_form.nepeuMeHoBaTb_6a3y = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "переименовать базу", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].nepeuMeHoBaTb_6a3y = forms:creat_nepeuMeHoBaTb_6a3y_form(nick) end)		
+		table_form.Bepcu9l_o6HoBJIeHuu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "версия обновлений", "button", start_visible, gray, white, function() Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "v." .. g .. Ha3BaHue_o6HoBJIeHu9l) end)		
 	end
 	
 	--кнопки тиммейтов
-	table_form.cnucok_koMnoHeHToB = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "список компонентов", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все компоненты"]() end)
-	table_form.pecTaPT_ceTu = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "рестарт сети", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
-	table_form.Tekyllluu_agMuH = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "кто админ", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " текущий админ"]() end)
-	table_form.cMeHutb_agMuHa = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сменить админа", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].cMeHa_agMuHa = forms:creat_cMeHa_agMuHa_form(nick) end)
+	table_form.cnucok_koMnoHeHToB = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "список компонентов", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи все компоненты"]() end)
+	table_form.pecTaPT_ceTu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "рестарт сети", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " рестарт сети"]() end)
+	table_form.Tekyllluu_agMuH = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "кто админ", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " текущий админ"]() end)
+	table_form.cMeHutb_agMuHa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "сменить админа", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].cMeHa_agMuHa = forms:creat_cMeHa_agMuHa_form(nick) end)
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_win, 30, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_win, 40}, {144 + x_win, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_main, y_main + 39}, {144 + x_main, y_main + 191}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_win, 192, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 191, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
-	local y_max = 192
+	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
 	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
 	if y_pa3Mep < 10 then

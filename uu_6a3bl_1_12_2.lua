@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "31 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "32 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -693,7 +693,7 @@ function glasses_component_mouse_down(event_type, agpec1, nick, agpec2, id, bool
 		for k, v in pairs(next_form) do
 			if type(v) ~= "function" then
 				if v.getId() == id then
-					if v.getType() == "scroll" then
+					if v.getType() == "scroll" or v.getType() == "move_form" then
 						v.enabled = true
 					end
 				end
@@ -763,7 +763,7 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 						end		
 					end	
 				end
-				if type(v) ~= "function" and v.getType() == "move_form" then
+				if type(v) ~= "function" and v.getType() == "move_form" and v.enabled then
 					Bce_ragJeTbl_urpoka[nick][v.form_name].move_form(math.floor(x),  math.floor(y))
 				end
 			end
@@ -2341,6 +2341,9 @@ function forms:creat_main_form(nick)
 	--сдвиг формы + кнопка выхода
 	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 152, 10, "", "move_form", true, gray, white, function() end)
 	rawset(table_form.move_button, "form_name", "main_form")
+	rawset(table_form.move_button, "enabled", false)
+	rawset(table_form.move_button, "getType", function() return "move_form" end)
+	
 	table_form.return_button = creat_new_button(1, nick, x_main + 141, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)

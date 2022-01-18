@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "16 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "17 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -768,8 +768,8 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 					end	
 				end
 				if type(v) ~= "function" and v.getType() == "move_form" then
-					local x_no3 = koopguHaTbl_MblLLlu[nick].x + math.floor(x)
-					local y_no3 = koopguHaTbl_MblLLlu[nick].y + math.floor(y)
+					local x_no3 = koopguHaTbl_MblLLlu[nick].x - math.floor(x)
+					local y_no3 = koopguHaTbl_MblLLlu[nick].y - math.floor(y)
 					print("сдвиг x:", x_no3)
 					print("сдвиг у:", y_no3)
 					Bce_ragJeTbl_urpoka[nick][v.form_name].move_form(x_no3, y_no3)

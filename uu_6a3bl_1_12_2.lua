@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "7 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "8 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2694,7 +2694,7 @@ function forms:creat_mara3_Durex_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -2845,7 +2845,7 @@ function forms:creat_casino_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -2994,7 +2994,7 @@ function forms:creat_player_logs_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -3136,7 +3136,7 @@ function forms:creat_TuMMeuTbl_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -3276,7 +3276,7 @@ function forms:creat_virtual_4aT_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -3426,7 +3426,7 @@ function forms:creat_redStone_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -3579,7 +3579,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -3740,7 +3740,7 @@ function forms:creat_MaTpuca_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -3892,7 +3892,7 @@ function forms:creat_HaHuTbl_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -4038,7 +4038,7 @@ function forms:creat_geTekTopbl_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -4185,7 +4185,7 @@ function forms:creat_one_sensor_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -4328,7 +4328,7 @@ function forms:creat_sensors_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -4480,7 +4480,7 @@ function forms:creat_tyrret_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -4620,7 +4620,7 @@ function forms:creat_tunnel_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -4763,7 +4763,7 @@ function forms:creat_modem_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -4907,7 +4907,7 @@ function forms:creat_zone_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -5048,7 +5048,7 @@ function forms:creat_tape_drive_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -5193,7 +5193,7 @@ function forms:creat_npo4ee_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -5983,7 +5983,7 @@ function forms:creat_ygaJIuT_TuMMeuTa_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -6213,7 +6213,7 @@ function forms:creat_za_KeM_He_cJIeguM_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -6352,7 +6352,7 @@ function forms:creat_npocMoTp_ONLINE_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -6541,7 +6541,7 @@ function forms:creat_cMeHa_agMuHa_form(nick)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок
-	local y = 15
+	local y = y_main + 14
 	
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
@@ -6668,8 +6668,8 @@ function forms:creat_nepuMeTp_form(nick)
 
 	--кнопки тиммейтов
 	for i = 1, 20 do
-		table_form[i] = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 200, 15, i, "button", start_visible, white, black, function() end)	
-		table_form[i].caption.setX(8 + x_win)
+		table_form[i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 200, 15, i, "button", start_visible, white, black, function() end)	
+		table_form[i].caption.setX(8 + x_main)
 	end
 
 	--создание каркаса скролла
@@ -6684,7 +6684,7 @@ function forms:creat_nepuMeTp_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -6927,7 +6927,7 @@ function forms:creat_ygaJIeHue_3oHbl_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -7524,7 +7524,7 @@ function forms:creat_qpyJIJI_HacTpouka_form(nick)
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = 40
+	local start_no_y = y_main + 39
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10

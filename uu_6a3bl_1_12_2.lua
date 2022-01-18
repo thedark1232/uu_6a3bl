@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "5 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "6 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -7991,7 +7991,7 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 						v.setY(v.getY() + y_mov)
 						v.caption.setX(v.caption.getX() + x_mov)
 						v.caption.setY(v.caption.getY() + y_mov)
-					elseif v.getType() == "textBox" then
+					elseif string.match(v.getType(), "textBox") ~= nil then
 						v.setX(v.getX() + x_mov)
 						v.setY(v.getY() + y_mov)
 						v.caption.setX(v.caption.getX() + x_mov)
@@ -7999,12 +7999,11 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 						v.background2.setX(v.background2.getX() + x_mov)
 						v.background2.setY(v.background2.getY() + y_mov)
 						v.background3.setX(v.background3.getX() + x_mov)
-						v.background2.setX(v.background3.getY() + y_mov)
+						v.background3.setY(v.background3.getY() + y_mov)
 					else
 						v.setX(v.getX() + x_mov)
 						v.setY(v.getY() + y_mov)
 					end
-
 				end	
 			end
 		end
@@ -8045,8 +8044,6 @@ function forms:creat_MaTpuca_3anucb_pecenTa_form(nick)
 	--открыть файл конфигурации
 	Ta6JIuca_nbegecTaJIoB = configuration[28]
 	if #Ta6JIuca_nbegecTaJIoB ~= 0 then
-
-
 	
 		--СОЗДАНИЕ БОКСОВ ПЬЕДЕСТАЛОВ
 		table_form[1] = MoHuTop_urpoka[nick].addBox(110 + x_win, 96 + y_win, 20, 20, black)

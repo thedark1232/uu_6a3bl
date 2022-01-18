@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "20 сдвиг формы"
+local Ha3BaHue_o6HoBJIeHu9l = "21 сдвиг формы"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2319,14 +2319,10 @@ function forms:creat_main_form(nick)
 		cTapToBble_koopguHaTbl[nick].main_form.y = 1
 		configuration[49] = cTapToBble_koopguHaTbl
 		setConfiguration()
-		x_main = cTapToBble_koopguHaTbl[nick].main_form.x
-		y_main = cTapToBble_koopguHaTbl[nick].main_form.y
-	else
-		x_main = cTapToBble_koopguHaTbl[nick].main_form.x
-		y_main = cTapToBble_koopguHaTbl[nick].main_form.y
 	end
-	if cTapToBble_koopguHaTbl[nick].main_form  == nil then 
-	if x_main == nil 
+	x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+	y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(x_main + 3, y_main + 29, 132, 172, white)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма периметра 3"
+local Ha3BaHue_o6HoBJIeHu9l = "форма периметра 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8661,7 +8661,7 @@ end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
-			if Bce_noToku[nick].nepuMeTp_noTok ~= nil then myThread.kill(Bce_noToku[nick].nepuMeTp_noTok)
+			if Bce_noToku[nick].nepuMeTp_noTok ~= nil then myThread.kill(Bce_noToku[nick].nepuMeTp_noTok) end
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil

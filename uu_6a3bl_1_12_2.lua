@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма периметра 4"
+local Ha3BaHue_o6HoBJIeHu9l = "форма периметра 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2286,7 +2286,7 @@ function forms:creat_main_form(nick)
 				v.delete()
 			end
 		end
-		myThread.kill(Bce_noToku[nick].main_form)
+		--myThread.kill(Bce_noToku[nick].main_form)
 	end
 	
 	--сдвиг окна
@@ -6708,6 +6708,7 @@ function forms:creat_nepuMeTp_form(nick)
 			end
 		end
 		npo4ue_qpopMbl[nick] = nil
+		if Bce_noToku[nick].nepuMeTp_noTok ~= nil then myThread.kill(Bce_noToku[nick].nepuMeTp_noTok) end
 	end
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма периметра 2"
+local Ha3BaHue_o6HoBJIeHu9l = "форма периметра 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -25,7 +25,6 @@ local BpeM9l_oJugaHu9l_BcacblBaHu9l_npegMeToB = 100
 local TekyLLluu_Bbl6paHHblu_nbegecTaJI = 0
 local TekyLLluu_Bbl6paHHblu_agpecc_nbegecTaJIa = 0
 local Ta6JIuca_acnekToB
-local qpopma_nepuMeTpa = {}
 local onoBeLLleHue_o_nocTopoHHux
 local TblkHu_naJIkoU_no_MaTpuce
 local x_onoBeLLleHue_o_nocTopoHHux = 150
@@ -2365,7 +2364,7 @@ function forms:creat_main_form(nick)
 		return num
 	end
 	
-	table_form.nepuMeTp = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "периметр", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].nepuMeTp = forms:creat_nepuMeTp_form(nick); qpopma_nepuMeTpa[nick] = true end)
+	table_form.nepuMeTp = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "периметр", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].nepuMeTp = forms:creat_nepuMeTp_form(nick); Bce_noToku[nick].nepuMeTp_noTok = myThread.create(nepuMeTp_noTok, nick) end)
 	table_form.alice_control = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
 	table_form.magaz = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
 	table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
@@ -6822,10 +6821,7 @@ function forms:creat_nepuMeTp_form(nick)
 	if ckpblTble_kHOnku > 0 then
 		table_form.scroll_button = creat_new_vertical_scroll(nick, 339 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
-	
-	--создание потока периметра
-	Bce_noToku[nick].nepuMeTp_noTok = myThread.create(nepuMeTp_noTok, nick)
-	
+		
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -8665,7 +8661,7 @@ end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
-			qpopma_nepuMeTpa[nick] = false
+			if Bce_noToku[nick].nepuMeTp_noTok ~= nil then myThread.kill(Bce_noToku[nick].nepuMeTp_noTok)
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil

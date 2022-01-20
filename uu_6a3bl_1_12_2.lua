@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "привет"
+local Ha3BaHue_o6HoBJIeHu9l = "тесты 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3703,7 +3703,7 @@ function forms:creat_MaTpuca_form(nick)
 	
 	--кнопки тиммейтов
 	table_form.kpaqpT = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "крафт", "button", start_visible, black, white, function()
-		if TekyLLlee_koJIu4ecTBo_O3Y > 90 then
+		if TekyLLlee_koJIu4ecTBo_O3Y > 49 then
 			Bce_ragJeTbl_urpoka[nick].MaTpuca_craft = forms:creat_MaTpuca_craft_form(nick)
 		else
 			Bce_ragJeTbl_urpoka[nick].HeXBaTaeT_O3Y = forms:creat_HeXBaTaeT_O3Y_form(nick)
@@ -3734,7 +3734,6 @@ function forms:creat_MaTpuca_form(nick)
 	end
 	
 
-	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
 	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)
@@ -8585,72 +8584,22 @@ function forms:creat_HeXBaTaeT_O3Y_form(nick)
 	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 3, 144, 197, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(4 + x_main, y_main + 3, 144, 197, white)
 	table_form.main_box2.setClickable(false)
 			
 	--создание кнопок
 	local y = y_main + 14
 		
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 5, "Для открытия окна", red)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 16, "необходимо 50% ОЗУ!", red)
-	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 27, "Текущее ОЗУ: " .. tostring(TekyLLlee_koJIu4ecTBo_O3Y) .. "%", red)
-	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 38, "Ожидай, пока кто то", red)
-	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 49, "из тиммейтов закроет", red)
-	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 60, "окно!", red)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 15, "Для открытия окна", red)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 26, "необходимо 50% ОЗУ!", red)
+	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 37, "Текущее ОЗУ: " .. tostring(TekyLLlee_koJIu4ecTBo_O3Y) .. "%", red)
+	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 48, "Ожидай, пока кто то", red)
+	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 59, "из тиммейтов закроет", red)
+	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(17 + x_main, y_main + 70, "окно!", red)
 	
 	--отдельная кнопка выхода, от остальных кнопок
-	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y_main + 183, 128, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
-	
-	--создание стрелок для рисования ГУИ
-	local obj = table_form.return_button
-	local HapucoBatb_cTpeJIku = function()
-		local x_cTpeJIku = 379
-		local y_cTpeJIku = 149
-		--перемещение панели
-		table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
-			obj.setY(obj.getY() - 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
-		end)
-		table_form.BBEpx.caption.setX(x_cTpeJIku + 21)
-		table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "down_button", true, black, white, function()
-			obj.setY(obj.getY() + 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
-		end)
-		table_form.BHu3.caption.setX(x_cTpeJIku + 21)
-		table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left_button", true, black, white, function()
-			obj.setX(obj.getX() - 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
-		end)
-		table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
-		table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "right_button", true, black, white, function()
-			obj.setX(obj.getX() + 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
-		end)
-		table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
-		--ширина и высота
-		table_form.MeHbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 30, 15, 15, "/\\", "h_min_button", true, black, white, function()
-			obj.setHeight(obj.getHeight() - 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
-		end)
-		table_form.MeHbLLle_h.caption.setX(x_cTpeJIku + 21)
-		table_form.boJIbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 50, 15, 15, "\\/", "h_max_button", true, black, white, function()
-			obj.setHeight(obj.getHeight() + 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
-		end)
-		table_form.boJIbLLle_h.caption.setX(x_cTpeJIku + 21)
-		table_form.MeHbLLle_w = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 40, 15, 15, "<", "w_min_button", true, black, white, function()
-			obj.setWidth(obj.getWidth() - 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
-		end)
-		table_form.MeHbLLle_w.caption.setX(x_cTpeJIku + 3)
-		table_form.boJIbLLle_w = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 40, 15, 15, ">", "w_max_button", true, black, white, function()
-			obj.setWidth(obj.getWidth() + 1)
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
-		end)
-		table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
-	end
-	HapucoBatb_cTpeJIku()
-		
+	table_form.return_button = creat_new_button(1, nick, 6 + x_main, y_main + 183, 140, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
+			
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -8672,8 +8621,10 @@ function main_noTok(nick)
 			if qpopma_nepuMeTpa[nick] then
 				for i = 1, 20 do
 					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
+						print(tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
 						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
 					else
+						print("никого")
 						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
 					end
 				end

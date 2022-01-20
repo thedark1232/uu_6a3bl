@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "тесты 2"
+local Ha3BaHue_o6HoBJIeHu9l = "форма периметра 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2406,7 +2406,7 @@ function forms:creat_main_form(nick)
 	table_form.scroll_button = creat_new_vertical_scroll(nick, x_main + 139, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "main_form")
 	
 	--объединение таблиц и создание потока
-	Bce_noToku[nick].main_form = myThread.create(main_noTok, nick)
+	--Bce_noToku[nick].main_form = myThread.create(main_noTok, nick)
 	self = {}
 	setmetatable(table_form, self)
 	self.__index = self
@@ -6823,6 +6823,9 @@ function forms:creat_nepuMeTp_form(nick)
 		table_form.scroll_button = creat_new_vertical_scroll(nick, 339 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 	
+	--создание потока периметра
+	Bce_noToku[nick].nepuMeTp_noTok = myThread.create(nepuMeTp_noTok, nick)
+	
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -8618,23 +8621,24 @@ function main_noTok(nick)
 			--Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_eHepruu.setText(napaMeTp_eHepruu)
 			--Bce_ragJeTbl_urpoka[nick].main_form.napaMeTp_o3y.setText(napaMeTp_o3y)
 			os.sleep(0.1)
-			if qpopma_nepuMeTpa[nick] then
-				for i = 1, 20 do
-					if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
-						print(tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
-						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
-					else
-						print("никого")
-						Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
-					end
-				end
-			end
 		end
 	end)
 	if not cTaTyc_BblnoJIHeHu9l then
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка в потоке: " .. g .. nick)
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. onucaHue_olllu6ku)
 	end
+end
+function nepuMeTp_noTok(nick)
+	for i = 1, 20 do
+		if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
+			--print(tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+			Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+		else
+			--print("никого")
+			Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
+		end
+	end
+	os.sleep(0.1)
 end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()

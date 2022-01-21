@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 28"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 29"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9242,6 +9242,8 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:robot", 0)
 	table_form.robot_icon.setScale(3)
 	--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 53, "ожидание соединения", blue)
+	--table_form.nogcka3ka.setScale(3)
+	
 	table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 53, "о", blue)
 	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 63, "ж", blue)
 	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 73, "и", blue)
@@ -9261,7 +9263,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.nogcka3ka17 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 213, "и", blue)
 	table_form.nogcka3ka18 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 223, "я", blue)
 	
-	table_form.nogcka3ka.setScale(3)
+	
 	
 	-- --настройка соединения	
 	-- table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(15 + x_main, y_main + 32, "Выбери тип соединения...", blue)

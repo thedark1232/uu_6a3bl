@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновления 9"
+local Ha3BaHue_o6HoBJIeHu9l = "турель 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -122,6 +122,7 @@ local zoHbl_JIoroB = {}
 local zagepJka_oTBeTa_HaHuToB = 5
 local cMellleHue_BblBoga_o4koB_no_y = 20
 local noBopoT = 0 --смещение турели по горизонтали
+local HakJIoH = 0 --смещение турели по вертикали
 --ta6JIuca_coo6llleHuu_HaHuToB = {event.pull(zagepJka_oTBeTa_HaHuToB, "modem_message")}
 local coo6llleHue_TuHHeJI9l = {}
 local coo6llleHue_gJI9l_TuHHeJI9l = {}
@@ -959,6 +960,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 	--	print("поворот = " .. noBopoT .. " угол = " .. deg)
 		local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 		if y_urpoka > v[3] then degv = math.abs(degv) else degv = degv * -1 end
+		degv = degv + HakJIoH
 		--print("вертикаль = " .. degv)
 		--print("градусы горизонт: " .. deg .. " градусы вертикаль: ".. degv)
 		pcall(function() 
@@ -4451,30 +4453,30 @@ function forms:creat_tyrret_form(nick)
 	
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	local TekyLLluu_uBeT
+	if nick == admin then
+		TekyLLluu_uBeT = gray
+	else
+		TekyLLluu_uBeT = black
+	end
 	
 	--кнопки тиммейтов
-	if configuration[8] == true then
-		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"]() end)
-		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"]() end)
-		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
-		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
-		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
-	else
-		if nick == admin then
-			table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"]() end)
-			table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"]() end)
-			table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
-			table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
-			table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
-		end
+	if nick == admin or configuration[8] == true then
+		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, TekyLLluu_uBeT, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"]() end)
+		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, TekyLLluu_uBeT, white, function() Bce_ragJeTbl_urpoka[nick].oroHb_no_urpoky = forms:creat_oroHb_no_urpoky_form(nick) end)
+		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, TekyLLluu_uBeT, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
+		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", "button", start_visible, TekyLLluu_uBeT, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
+		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, TekyLLluu_uBeT, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
 	end
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.koppekcu9l_BJIeBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "коррекция влево", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттл"]() end)
-		table_form.koppekcu9l_BnpaBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "коррекция вправо", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"]() end)
+		table_form.koppekcu9l_BJIeBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "поворот левее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттл"]() end)
+		table_form.koppekcu9l_BnpaBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "поворот правее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"]() end)
+		table_form.HakJIoH_BBepx = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "наклон выше", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттв"]() end)
+		table_form.HakJIoH_BHu3 = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "наклон ниже", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттн"]() end)
 		table_form.HauTu_HoBble_TyppeJIu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "найти новые", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые туррели"]() end)
-		table_form.HacTpouTb_TyppeJIu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "настроить новые", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " настроить туррели"]() end)
+		table_form.HacTpouTb_TyppeJIu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "настроить новые", "button", start_visible, gray, white, function() Bce_ragJeTbl_urpoka[nick].HacTpouka_TypeJIeu = forms:creat_HacTpouka_TypeJIeu_form(nick)  end)
 		table_form.ygaJIuTb_HacTpouku_typpeJIeu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "удалить настройки", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " удали настройки туррелей"]() end)
 		table_form.pa3pellluTb_TuMMeuTaM_typpeJIu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "резрешить тиме юзать", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " разрешить тиммейтам использование туррелей"]() end)
 		table_form.zanpeTuTb_TuMMeuTam_typpeJIu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "запретить тиме юзать", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " запретить тиммейтам использование туррелей"]() end)
@@ -8615,7 +8617,255 @@ function forms:creat_HeXBaTaeT_O3Y_form(nick)
 	
 	return table_form
 end
+function forms:creat_oroHb_no_urpoky_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "oroHb_no_urpoky"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
 
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = y_main + 14
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	if #zoHbl_JIoroB > 0 then
+		for k, v in ipairs(zoHbl_JIoroB) do
+			table_form[k] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, v[7], "button", start_visible, black, white, function()
+				table.remove(zoHbl_JIoroB, k)
+				configuration[12] = zoHbl_JIoroB
+				setConfiguration()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "зона успешно удалена")
+				table_form.destroy()
+			end)
+		end
+	else
+		table_form.zonbl_He_co3gaHbl = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "зоны не созданы!", "button", true, white, red, function() end)
+	end
+
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_main, y_main + 39}, {144 + x_main, y_main + 191}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 191, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = y_main + 39
+	local y_min = start_no_y
+	local y_max = start_no_y + 152
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+	end
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+function forms:creat_HacTpouka_TypeJIeu_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "HacTpouka_TypeJIeu"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" or v.getType() == "return_button" then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+			
+	--создание кнопок
+	local y = y_main + 14
+		
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые туррели"]()
+	--создание лист бокса
+	if agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku ~= nil and #agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku > 0 then
+		table_form.textBox_uM9l = creat_new_textBox(nick, 5 + x_main, y_main + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.textBox_x = creat_new_textBox(nick, 5 + x_main, y_main + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.textBox_y = creat_new_textBox(nick, 5 + x_main, y_main + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.textBox_z = creat_new_textBox(nick, 5 + x_main, y_main + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 99, c .. "для турели: " .. g .. string.sub(agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku[1], 1, 3), red)
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + x_main, y_main + 116, c .. "осталось настроить: " .. g .. tostring(#agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku), red)
+		
+	
+		--кнопка подтверждения
+		table_form.HacTpouTb = creat_new_button(1, nick, 5 + x_main, y_main + 133, 128, 15, "настроить", "button", true, black, white, function()
+			local uM9l = table_form.textBox_uM9l.caption.getText()
+			local x_zha4 = table_form.textBox_x.caption.getText()
+			local y_zha4 = table_form.textBox_y.caption.getText()
+			local z_zha4 = table_form.textBox_z.caption.getText()
+			local agpec_gJI9l_HacTpouku = agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku[1]
+			
+			if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
+				myComponentsLibrary.co3gaTb_u_coxpaHuTb_uHqpy_koMnoHeHTa(agpec_gJI9l_HacTpouku, uM9l, x_zha4, y_zha4, z_zha4, nyTb_k_qpauJIy_config_typpeJIeu)
+				table.remove(agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku, 1)
+				if #agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku > 0 then
+					table_form.nogcka3ka.setText(c .. "для турели: " .. g .. string.sub(agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku[1], 1, 3))
+				else
+					table_form.nogcka3ka.setText(g .. "настройки заверешены!")
+					table_form.HacTpouTb.click = function() end
+					Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые туррели"]()
+				end
+				if agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku ~= nil then table_form.nogcka3ka2.setText(c .. "осталось настроить: " .. g .. tostring(#agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku)) end
+			end
+		end)
+	end
+			
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
 
 function main_noTok(nick)
 	os.sleep(0.1)
@@ -9136,13 +9386,25 @@ do
 		noBopoT = noBopoT + 1
 		configuration[13] = noBopoT
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "поворот туррелей: " .. g .. noBopoT .. c .. " градусов")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"] = function() --коррекция турелей на 1 градус вправо
 		noBopoT = noBopoT - 1
 		configuration[13] = noBopoT
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "поворот туррелей: " .. g .. noBopoT .. c .. " градусов")
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттв"] = function() --коррекция турелей на 1 градус вверх
+		HakJIoH = HakJIoH + 1
+		configuration[50] = HakJIoH
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "наклон туррелей: " .. g .. HakJIoH .. c .. " градусов")
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттн"] = function() --коррекция турелей на 1 градус вниз
+		HakJIoH = HakJIoH + 1
+		configuration[50] = HakJIoH
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "наклон туррелей: " .. g .. HakJIoH .. c .. " градусов")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " установи сообщение пробуждения"] = function()
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["modem"] ~= nil then
@@ -12318,6 +12580,12 @@ do
 		setConfiguration()
 	else
 		cTapToBble_koopguHaTbl = configuration[49]
+	end
+	if configuration[50] == "nil" then
+		configuration[50] = HakJIoH
+		setConfiguration()
+	else
+		HakJIoH = configuration[50]
 	end
 	
 	if one_ceHcop_BKJI then

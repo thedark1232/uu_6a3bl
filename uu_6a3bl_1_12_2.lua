@@ -8748,10 +8748,14 @@ function forms:creat_oroHb_no_urpoky_form(nick)
 	if #Ta6JIuca_ceJIeu_TypeJIeu > 0 then
 		for k, ceJIb in ipairs(Ta6JIuca_ceJIeu_TypeJIeu) do
 			table_form[k] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, ceJIb, "button", start_visible, black, white, function()
+				table_form.destroy()
+				Bce_ragJeTbl_urpoka[nick]["tyrret"].destroy()
+				Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
+				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 				ceJIb_TyppeJIeu = table_form[k].caption.getText()
 				typpeJIu_reJum_orH9l(true)
 				peJum_orH9l = true
-				table_form.destroy()
+
 			end)
 		end
 	else
@@ -9059,7 +9063,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	else
 		table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 113, "туннель", blue)
 		table_form.nogcka3ka4.setScale(2)
-		table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(75 + x_main, y_main + 133, "не найден!", blue)
+		table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(80 + x_main, y_main + 133, "не найден!", blue)
 		table_form.nogcka3ka5.setScale(2)
 	end
 	
@@ -9078,10 +9082,10 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	else
 		table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(180 + x_main, y_main + 113, "модем", blue)
 		table_form.nogcka3ka6.setScale(2)
-		table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(165 + x_main, y_main + 133, "не найден!", blue)
+		table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(153 + x_main, y_main + 133, "не найден!", blue)
 		table_form.nogcka3ka7.setScale(2)
 	end
-	obj = table_form.nogcka3ka5
+	obj = table_form.nogcka3ka6
 
 	--создание кнопок
 	-- local y = y_main + 14
@@ -13046,7 +13050,6 @@ do
 	
 --ГЛАВНЫЙ ЦИКЛ
 	while not_exit do
-		os.sleep(zagepJka)
 		hous, minute, secunde, cekyHdbl_gJI9l_JIoroB = getTime()
 		local anti_gy6JIuKaT_HuKOB = {}
 		local TekcT_gJI9l_BugJeToB = {}
@@ -13275,7 +13278,16 @@ do
 			event.listen("glasses_component_mouse_up", glasses_component_mouse_up)
 			event.listen("glasses_mouse_drag", glasses_mouse_drag)
 		end
-		if Ha_6a3e_ecTb_nocTopoHHue then computer.beep(1000, 0.1) end
+		if Ha_6a3e_ecTb_nocTopoHHue then
+			if zagepJka <= 0.1 then
+				computer.beep(1000, 0.1)
+			else
+				computer.beep(1000, 0.1)
+				os.sleep(zagepJka - 0.1)
+			end
+		else
+			os.sleep(zagepJka)
+		end
 	end
 end
 if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 24"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 26"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9242,7 +9242,9 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 
 	--иконка робота шахтера
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:robot", 0)
+	table_form.robot_icon.setScale(5)
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 178, "ожидание соединения", blue)
+	table_form.nogcka3ka.setScale(3)
 	obj = table_form.robot_icon
 	-- --настройка соединения	
 	-- table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(15 + x_main, y_main + 32, "Выбери тип соединения...", blue)

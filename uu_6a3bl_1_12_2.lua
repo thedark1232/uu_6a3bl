@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 5"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9024,7 +9024,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	--главный фрейм
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 403, 29, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 10, 403, 172, white)
 	table_form.main_box2.setClickable(false)
 		
 	--сдвиг формы + кнопка выхода
@@ -9040,7 +9040,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then
 		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(194 + x_main, y_main + 32, "Выбери тип соединения...", blue)
 		table_form.nogcka3ka.setScale(3)
-		obj = table_form.nogcka3ka
+		obj = table_form.main_box2
 		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 194 + x_main, y_main + 76, 101, 15, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() obj = table_form.coeguHeHHa9l_kapTa end)
 		table_form.modem = creat_new_button(-1, nick, 104 + x_main, y_main + 76, 101, 15, "", "modem_button", true, gray, white, function() obj = table_form.modem end)
 	else

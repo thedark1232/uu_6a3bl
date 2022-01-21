@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 16"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 17"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2372,7 +2372,7 @@ function forms:creat_main_form(nick)
 	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
 	table_form.modem = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "модем", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].modem = forms:creat_modem_form(nick) end)
 	table_form.robot_LllaxTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "робот шахтер", "button", start_visible, black, white, function()
-		HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then 
+		if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then 
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep = forms:creat_po6oT_LLlaxTep_form(nick)
 		else
 		 

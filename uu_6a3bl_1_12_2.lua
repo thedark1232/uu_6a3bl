@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турель 9"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,7 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+local HacTpouka_po6oTa_LLlaxTepa = {}
 local Ta6JIuca_ceJIeu_TypeJIeu = {}
 local TekyLLlee_koJIu4ecTBo_O3Y
 local cTapToBble_koopguHaTbl = {}
@@ -62,6 +63,7 @@ local me_interface_gJI9l_MaTpucbl = false
 local MaTpuca_cBo6ogHa = true
 local coo6llleHue_OT_MaTpucbl
 local agrec_cyHgyka
+local Ha_6a3e_ecTb_nocTopoHHue = false
 local oTcopTupoBaHHa9l_Ta6JIuca = {}
 local c = "§6" --оранжевый
 local r = "§c" --красный
@@ -2372,7 +2374,7 @@ function forms:creat_main_form(nick)
 	table_form.alice_control = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
 	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
 	table_form.modem = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "модем", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].modem = forms:creat_modem_form(nick) end)
-	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "зоны базы", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
+	table_form.robot_LllaxTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "робот шахтер", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep = forms:creat_po6oT_LLlaxTep_form(nick) end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тиммейты", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
 	table_form.MaTpuca = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "матрица", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
@@ -2387,6 +2389,7 @@ function forms:creat_main_form(nick)
 	table_form.magaz = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "магаз дюрекса", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
 	table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
 	table_form.HaHuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "наниты", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
+	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "зоны базы", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
 	table_form.npo4ee = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "прочее", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].npo4ee = forms:creat_npo4ee_form(nick) end)
 	
 	--создание каркаса скролла
@@ -8890,6 +8893,10 @@ function forms:creat_HacTpouka_TypeJIeu_form(nick)
 	
 	return table_form
 end
+function forms:creat_po6oT_LLlaxTep_form(nick)
+
+end
+
 
 function main_noTok(nick)
 	os.sleep(0.1)
@@ -12611,6 +12618,13 @@ do
 	else
 		HakJIoH = configuration[50]
 	end
+	if configuration[51] == "nil then
+		 configuration[51] = HacTpouka_po6oTa_LLlaxTepa
+		 setConfiguration()
+	else
+		HacTpouka_po6oTa_LLlaxTepa =  configuration[51]
+	end
+	
 	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end
@@ -12769,8 +12783,10 @@ do
 							if anti_gy6JIuKaT_HuKOB[napaMeTpbl_urpoka.name] == nil then
 								Tekyllluu_cBeT = g
 								table.insert(Ta6JIuca_ceJIeu_TypeJIeu, napaMeTpbl_urpoka.name)
+								Ha_6a3e_ecTb_nocTopoHHue = false
 								if whiteListUsers[napaMeTpbl_urpoka.name] == nil then
 									Tekyllluu_cBeT = r
+									Ha_6a3e_ecTb_nocTopoHHue = true
 									onoBeLLleHue_o_nocTopoHHux.setText(r .. "НА БАЗЕ ПОСТОРОННИЕ!")
 									if zanucblBaTb_JIoru and cekyHdbl_coxpaHeHu9l < cekyHdbl_gJI9l_JIoroB then
 										cekyHdbl_coxpaHeHu9l = cekyHdbl_gJI9l_JIoroB + uHTepBaJI_3agepJku_3anucu_JIoroB
@@ -12965,6 +12981,7 @@ do
 			event.listen("glasses_component_mouse_up", glasses_component_mouse_up)
 			event.listen("glasses_mouse_drag", glasses_mouse_drag)
 		end
+		if Ha_6a3e_ecTb_nocTopoHHue then computer.beep(1000, 0.1) end
 	end
 end
 if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["openperipheral_bridge"] == nil then

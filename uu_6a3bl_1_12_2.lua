@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 35"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 36"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9540,7 +9540,13 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	if ckpblTble_kHOnku > 0 then
 		table_form.scroll_button = creat_new_vertical_scroll(nick, 470, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "gebug")
 	end
-
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
 end
 
 
@@ -9613,7 +9619,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 					Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]].destroy()
 				end
 			end
-			if gebug_form ~= nil then gebug_form.destroy() end
+			if gebug_form ~= nil then Bce_ragJeTbl_urpoka[nick].gebug.destroy() end
 			Bce_ragJeTbl_urpoka[nick] = {}
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. r .. nick .. c .. " не из вайт листа")

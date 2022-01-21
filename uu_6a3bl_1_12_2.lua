@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 30"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 31"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9360,8 +9360,8 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	
 	--создание стрелок для рисования ГУИ
 	local obj
-	local x_cTpeJIku = 379
-	local y_cTpeJIku = 149
+	local x_cTpeJIku = 400
+	local y_cTpeJIku = 200
 	--перемещение панели
 	table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
 		obj.setY(obj.getY() - 1)
@@ -9422,19 +9422,22 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	end
 	
 	for k, v in pairs(table_form) do
-		table_form[k .. "bt"] = creat_new_button(num_button(), nick, 300, y_func(), 100, 15, tostring(k), "button", start_visible, black, white, function()
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран объект: " .. g .. v)
-			obj = table_form[k]
-		end)	
+		if type(v) ~= "function" then 
+			table_form[k .. "bt"] = creat_new_button(num_button(), nick, 300, y_func(), 100, 15, tostring(k), "button", start_visible, black, white, function()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран объект: " .. g .. tostring(k))
+				obj = table_form[k]
+			end)
+			--rawset(table_form[k .. "bt"], "obj_name", k)
+		end
 	end
 
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(400, y_main + 29, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(450, y_main + 29, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({405, 40}, {405, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({455, 40}, {455, 192}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(400, y_main + 191, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(450, y_main + 191, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1

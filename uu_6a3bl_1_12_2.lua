@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 20"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 21"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9063,7 +9063,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	else
 		table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 113, "туннель", blue)
 		table_form.nogcka3ka4.setScale(2)
-		table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(84 + x_main, y_main + 133, "не найден!", blue)
+		table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(82 + x_main, y_main + 133, "не найден!", blue)
 		table_form.nogcka3ka5.setScale(2)
 	end
 	
@@ -9085,7 +9085,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 		table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(203 + x_main, y_main + 133, "не найден!", blue)
 		table_form.nogcka3ka7.setScale(2)
 	end
-	obj = table_form.nogcka3ka6
+	obj = table_form.nogcka3ka7
 
 	--создание кнопок
 	-- local y = y_main + 14

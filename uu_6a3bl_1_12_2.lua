@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 33"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 34"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9368,7 +9368,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	return table_form
 end
 
-function forms:creat_gebug_form(admin, form)	--создание стрелок для рисования ГУИ
+function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ
 	local obj
 --создание формы
 	local table_form = {}

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 32"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 33"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -34,6 +34,7 @@ local x_onoBeLLleHue_o_nocTopoHHux = 150
 local y_onoBeLLleHue_o_nocTopoHHux = 1
 local Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l = {}
 local npo4ue_qpopMbl = {}
+local gebug_form
 local Tekyllluu_TekcT = {}
 local co3gaHue_co6blTuu = true
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
@@ -2377,6 +2378,7 @@ function forms:creat_main_form(nick)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep = forms:creat_po6oT_LLlaxTep_form(nick)
 		else
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = forms:creat_po6oT_LLlaxTep_work_form(nick)
+			Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work)
 		end
 	end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
@@ -9358,8 +9360,93 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 		-- table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	-- end
 	
-	--создание стрелок для рисования ГУИ
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+
+function forms:creat_gebug_form(admin, form)	--создание стрелок для рисования ГУИ
 	local obj
+--создание формы
+	local table_form = {}
+	
+	gebug_form = "gebug"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		if gebug_form ~= nil then gebug_form = nil end
+	end
+	
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	local x_cTpeJIku = 400
 	local y_cTpeJIku = 200
 	--перемещение панели
@@ -9404,11 +9491,9 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
 	end)
 	table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
-	
-	--выбор объекта для перемещения
-	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+
 	--создание кнопок
-	local y = y_main + 14
+	local y = 1
 	local y_func = function()
 		y = y + 17
 		return y
@@ -9421,21 +9506,20 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 		return num
 	end
 	
-	for k, v in pairs(table_form) do
+	for k, v in pairs(form) do
 		if type(v) ~= "function" then 
-			table_form[k .. "bt"] = creat_new_button(num_button(), nick, 390, y_func(), 80, 15, tostring(k), "button", start_visible, black, white, function()
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран объект: " .. g .. tostring(k))
-				obj = table_form[k]
+			table_form[tostring(k) .. "bt"] = creat_new_button(num_button(), nick, 390, y_func(), 80, 15, tostring(k), "button", start_visible, black, white, function()
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран объект: " .. g .. tostring(v))
+				obj = v
 			end)
 			--rawset(table_form[k .. "bt"], "obj_name", k)
 		end
 	end
 
 	--создание каркаса скролла
-	local MakcuMyM_BuguMblx_kHonok
 	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(470, 1, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({475, 11}, {475, 192}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({475, 11}, {475, 153}, white)
 	table_form.scroll_line.setClickable(false)
 	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(470, 163, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
@@ -9454,18 +9538,10 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 470, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 470, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, "gebug")
 	end
 
-	--объединение таблиц
-	self = {}
-	setmetatable(table_form, self)
-	self.__index = self
-	
-	return table_form
 end
-
-
 
 
 
@@ -9537,6 +9613,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 					Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]].destroy()
 				end
 			end
+			if gebug_form ~= nil then gebug_form = nil end
 			Bce_ragJeTbl_urpoka[nick] = {}
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. r .. nick .. c .. " не из вайт листа")

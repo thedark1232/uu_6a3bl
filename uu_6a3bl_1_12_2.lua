@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "форма периметра 5"
+local Ha3BaHue_o6HoBJIeHu9l = "обновления 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2366,23 +2366,26 @@ function forms:creat_main_form(nick)
 	
 	table_form.nepuMeTp = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "периметр", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].nepuMeTp = forms:creat_nepuMeTp_form(nick); Bce_noToku[nick].nepuMeTp_noTok = myThread.create(nepuMeTp_noTok, nick) end)
 	table_form.alice_control = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
-	table_form.magaz = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
-	table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
+	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
+	table_form.modem = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "модем", "button", false, black, white, function() Bce_ragJeTbl_urpoka[nick].modem = forms:creat_modem_form(nick) end)
+	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "зоны базы", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тиммейты", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
 	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "чат тимы", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].virtual_4aT = forms:creat_virtual_4aT_form(nick) end)
 	table_form.pegCToyH = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "редстоун", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].redStone = forms:creat_redStone_form(nick) end)
 	table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick) end)
 	table_form.MaTpuca = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "матрица", "button", true,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
-	table_form.HaHuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "наниты", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
 	table_form.geTekTopbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "детекторы", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].geTekTopbl = forms:creat_geTekTopbl_form(nick) end)
 	table_form.oguH_ceHcop = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "1 сенсор", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].one_sensor = forms:creat_one_sensor_form(nick) end)
 	table_form.ceHcopbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "сенсоры", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].sensors = forms:creat_sensors_form(nick) end)
-	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
 	table_form.TeHHeJIb = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "туннель", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tunnel = forms:creat_tunnel_form(nick) end)
-	table_form.modem = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "модем", "button", false, black, white, function() Bce_ragJeTbl_urpoka[nick].modem = forms:creat_modem_form(nick) end)
-	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "зоны базы", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
 	table_form.tab_grive = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тап драйв", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].tape_drive = forms:creat_tape_drive_form(nick) end)
+	table_form.magaz = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "магаз дюрекса", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
+	table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", true, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
+	table_form.HaHuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "наниты", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
+	
+	
+	
 	table_form.npo4ee = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "прочее", "button", false,  black, white, function() Bce_ragJeTbl_urpoka[nick].npo4ee = forms:creat_npo4ee_form(nick) end)
 	
 	--создание каркаса скролла
@@ -2976,7 +2979,7 @@ function forms:creat_player_logs_form(nick)
 	table_form.CTaTyc_online = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "кто онлайн", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].npocMoTp_ONLINE = forms:creat_npocMoTp_ONLINE_form(nick) end)
 	table_form.nocJIegHue_JIoru = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "последние логи", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи последние логи"]() end)
 	table_form.acTuBHocTb_urpokoB = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "время игроков", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи активность игроков"]() end)
-	table_form.za_keM_cJIeguM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "за кем следим?", "button", start_visible, black, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"]() end)
+	table_form.za_keM_cJIeguM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "за кем следим?", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " покажи таблицу онлайна"]() end)
 	table_form.go6aBuTb_urpoka_gJI9l_cJIeJku = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "следить за...", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].za_keM_cJIeguM = forms:creat_za_keM_cJIeguM_form(nick) end)
 	table_form.ygaJIuTb_urpoka_gJI9l_cJIeJku = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "не следить за...", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].za_KeM_He_cJIeguM = forms:creat_za_KeM_He_cJIeguM_form(nick) end)
 		

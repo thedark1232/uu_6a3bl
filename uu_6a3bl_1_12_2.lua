@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 38"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 39"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9447,10 +9447,10 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	end
 	
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
-	local x_cTpeJIku = 370
-	local y_cTpeJIku = 200
-	local x_wh = 410
-	local y_wh = 200
+	local x_cTpeJIku = 420
+	local y_cTpeJIku = 180
+	local x_wh = 420
+	local y_wh = 220
 	--перемещение панели
 	table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "y-", "up_button", true, black, white, function()
 		obj.setY(obj.getY() - 1)

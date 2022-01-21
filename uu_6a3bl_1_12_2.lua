@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турель 1"
+local Ha3BaHue_o6HoBJIeHu9l = "турель 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,7 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+local Ta6JIuca_ceJIeu_TypeJIeu = {}
 local TekyLLlee_koJIu4ecTBo_O3Y
 local cTapToBble_koopguHaTbl = {}
 local nepBblu_B_o4epegu = false
@@ -8714,18 +8715,17 @@ function forms:creat_oroHb_no_urpoky_form(nick)
 	
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
-	if #zoHbl_JIoroB > 0 then
-		for k, v in ipairs(zoHbl_JIoroB) do
-			table_form[k] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, v[7], "button", start_visible, black, white, function()
-				table.remove(zoHbl_JIoroB, k)
-				configuration[12] = zoHbl_JIoroB
-				setConfiguration()
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "зона успешно удалена")
+	if #Ta6JIuca_ceJIeu_TypeJIeu > 0 then
+		for k, ceJIb in ipairs(Ta6JIuca_ceJIeu_TypeJIeu) do
+			table_form[k] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, ceJIb, "button", start_visible, black, white, function()
+				ceJIb_TyppeJIeu = table_form[k].caption.getText()
+				typpeJIu_reJum_orH9l(true)
+				peJum_orH9l = true
 				table_form.destroy()
 			end)
 		end
 	else
-		table_form.zonbl_He_co3gaHbl = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "зоны не созданы!", "button", true, white, red, function() end)
+		table_form.zonbl_He_co3gaHbl = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "цели отсутствуют!", "button", true, white, red, function() end)
 	end
 
 	--создание каркаса скролла
@@ -9401,7 +9401,7 @@ do
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "наклон туррелей: " .. g .. HakJIoH .. c .. " градусов")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттн"] = function() --коррекция турелей на 1 градус вниз
-		HakJIoH = HakJIoH + 1
+		HakJIoH = HakJIoH - 1
 		configuration[50] = HakJIoH
 		setConfiguration()
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "наклон туррелей: " .. g .. HakJIoH .. c .. " градусов")
@@ -11630,7 +11630,7 @@ do
 			end
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"] = function() --туррели открывают огонь на поражение по конкретному игроку:)
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"] = function(nick_form) --туррели открывают огонь на поражение по конкретному игроку:)
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil and typpeJIu_gocTynHbl then
 			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "какой ник у нарушителя?")
@@ -12718,6 +12718,7 @@ do
 		hous, minute, secunde, cekyHdbl_gJI9l_JIoroB = getTime()
 		local anti_gy6JIuKaT_HuKOB = {}
 		local TekcT_gJI9l_BugJeToB = {}
+		Ta6JIuca_ceJIeu_TypeJIeu = {}
 		cBeT_gJI9l_o4koB = {}
 		if detectorbl_BKJI then
 			onoBeLLleHue_o_nocTopoHHux.setText("")
@@ -12743,6 +12744,7 @@ do
 							end
 							if anti_gy6JIuKaT_HuKOB[napaMeTpbl_urpoka.name] == nil then
 								Tekyllluu_cBeT = g
+								table.insert(Ta6JIuca_ceJIeu_TypeJIeu, napaMeTpbl_urpoka.name)
 								if whiteListUsers[napaMeTpbl_urpoka.name] == nil then
 									Tekyllluu_cBeT = r
 									onoBeLLleHue_o_nocTopoHHux.setText(r .. "НА БАЗЕ ПОСТОРОННИЕ!")

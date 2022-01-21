@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 3"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 4"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8895,10 +8895,7 @@ function forms:creat_HacTpouka_TypeJIeu_form(nick)
 end
 function forms:creat_po6oT_LLlaxTep_form(nick)
 	local obj
-	
 	local npegBapuTeJIbHa9l_HacTpouka = {}
-	Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
-	Bce_ragJeTbl_urpoka[nick]["MaTpuca"].destroy()
 			
 	--создание формы
 	local table_form = {}

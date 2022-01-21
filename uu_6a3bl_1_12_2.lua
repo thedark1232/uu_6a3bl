@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 39"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 40"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9447,10 +9447,12 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	end
 	
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
-	local x_cTpeJIku = 420
-	local y_cTpeJIku = 180
-	local x_wh = 420
-	local y_wh = 220
+	local x_cTpeJIku = 390
+	local y_cTpeJIku = 170
+	local x_wh = 390
+	local y_wh = 210
+	local x_s = 420
+	local y_s = 210
 	--перемещение панели
 	table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "y-", "up_button", true, black, white, function()
 		obj.setY(obj.getY() - 1)
@@ -9493,9 +9495,21 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
 	end)
 	table_form.boJIbLLle_w.caption.setX(x_wh + 43)
+	--масштаб
+	table_form.MeHbLLle_s = creat_new_button(-1, nick, x_s, y_s, 15, 15, "s-", "s_min_button", true, black, white, function()
+		obj.setScale(obj.getScale() - 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "s=" .. tostring(obj.getWidth()))
+	end)
+	table_form.MeHbLLle_s.caption.setX(x_s + 3)
+	table_form.boJIbLLle_s = creat_new_button(-1, nick, x_s + 40, y_s + 10, 15, 15, "s+", "s_max_button", true, black, white, function()
+		obj.setWidth(obj.getWidth() + 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "s=" .. tostring(obj.getWidth()))
+	end)
+	table_form.boJIbLLle_s.caption.setX(x_s + 43)
+
 
 	--создание кнопок
-	local y = -16
+	local y = -10
 	local y_func = function()
 		y = y + 17
 		return y

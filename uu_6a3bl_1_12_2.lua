@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турель 5"
+local Ha3BaHue_o6HoBJIeHu9l = "турель 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3404,25 +3404,25 @@ function forms:creat_redStone_form(nick)
 	--кнопки тиммейтов
 	for k, v in pairs(configRedStone) do
 		table_form[v[1] .. "uMnyJIbc"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " импульс", "button", start_visible, black, white, function()
-			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " импульс"]()
-			Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
 			table_form.destroy()
+			Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " импульс"]()
 		end)
 	end
 	
 	for k, v in pairs(configRedStone) do
 		table_form[v[1] .. "BkJI"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, v[1] .. " вкл", "button", start_visible, black, white, function()
-			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " вкл"]()
 			Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
 			table_form.destroy()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " вкл"]()
 		end)
 	end
 		
 	for k, v in pairs(configRedStone) do
 		table_form[v[1] .. "BblkJI"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15,  v[1] .. " выкл", "button", start_visible, black, white, function()
-			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " выкл"]() 
 			Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
 			table_form.destroy()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " " .. v[1] .. " выкл"]() 
 		end)
 	end
 	

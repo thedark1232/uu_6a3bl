@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 29"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 30"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9422,25 +9422,25 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	end
 	
 	for k, v in pairs(table_form) do
-		table_form[k .. "bt"] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 100, 15, tostring(k), "button", start_visible, black, white, function()
+		table_form[k .. "bt"] = creat_new_button(num_button(), nick, 300, y_func(), 100, 15, tostring(k), "button", start_visible, black, white, function()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран объект: " .. g .. v)
-			obj = v
+			obj = table_form[k]
 		end)	
 	end
 
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(400, y_main + 29, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_main, y_main + 39}, {144 + x_main, y_main + 191}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({405, 40}, {405, 192}, white)
 	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 191, 10, 10, gray)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(400, y_main + 191, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)
 	--определить количество кнопок для размера скролла
 	local Bcero_KHonok = num_button() - 1
 	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
 	--создание ползунка скролла
-	local start_no_y = y_main + 39
+	local start_no_y = 40
 	local y_min = start_no_y
 	local y_max = start_no_y + 152
 	local cgBur_ckpoJIJIa = 10
@@ -9451,7 +9451,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	end
 	
 	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 400, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
 	end
 
 	--объединение таблиц

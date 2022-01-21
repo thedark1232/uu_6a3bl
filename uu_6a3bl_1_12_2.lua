@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 40"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 41"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9498,12 +9498,12 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	--масштаб
 	table_form.MeHbLLle_s = creat_new_button(-1, nick, x_s, y_s, 15, 15, "s-", "s_min_button", true, black, white, function()
 		obj.setScale(obj.getScale() - 1)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "s=" .. tostring(obj.getWidth()))
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "s=" .. tostring(obj.getScale()))
 	end)
 	table_form.MeHbLLle_s.caption.setX(x_s + 3)
 	table_form.boJIbLLle_s = creat_new_button(-1, nick, x_s + 40, y_s + 10, 15, 15, "s+", "s_max_button", true, black, white, function()
-		obj.setWidth(obj.getWidth() + 1)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "s=" .. tostring(obj.getWidth()))
+		obj.setScale(obj.getScale() + 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "s=" .. tostring(obj.getScale()))
 	end)
 	table_form.boJIbLLle_s.caption.setX(x_s + 43)
 

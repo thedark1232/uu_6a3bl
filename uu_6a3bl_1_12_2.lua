@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 4"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9022,9 +9022,9 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	y_main = cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.y
 	
 	--главный фрейм
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 500, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 29, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 403, 29, 172, white)
 	table_form.main_box2.setClickable(false)
 		
 	--сдвиг формы + кнопка выхода

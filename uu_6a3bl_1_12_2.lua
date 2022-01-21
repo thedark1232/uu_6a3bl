@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 9"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9048,14 +9048,16 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() obj = table_form.coeguHeHHa9l_kapTa end)
 		table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:item", 51)
 		table_form.coeguHeHHa9l_kapTa_icon.setScale(6)
-		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(70 + x_main, y_main + 32, "туннель", blue)
-		
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(70 + x_main, y_main + 32, "туннель", blue)
+		table_form.nogcka3ka2.setScale(2)
 		
 		table_form.modem = creat_new_button(-1, nick, 214 + x_main, y_main + 76, 101, 100, "", "modem_button", true, gray, white, function() obj = table_form.modem end)
 		table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 259, y_main + 92, "OpenComputers:item", 13)
 		table_form.modem_icon.setScale(6)
+		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(70 + x_main, y_main + 32, "модем", blue)
+		table_form.nogcka3ka3.setScale(2)
 		
-		obj = table_form.modem
+		obj = table_form.modem_icon
 	end
 	--создание кнопок
 	-- local y = y_main + 14

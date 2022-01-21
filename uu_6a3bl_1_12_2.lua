@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турель 2"
+local Ha3BaHue_o6HoBJIeHu9l = "турель 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -12821,6 +12821,7 @@ do
 				table.sort(oTcopTupoBaHHa9l_Ta6JIuca, mySort)
 				for _, zHa4eHue_Ta6JIucbl in ipairs(oTcopTupoBaHHa9l_Ta6JIuca) do
 					--component.invoke(agpec_agMuH_MocTa, "addText", 1, koorguHaTa_o4koB, zHa4eHue_Ta6JIucbl[1], zHa4eHue_Ta6JIucbl[2])
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. zHa4eHue_Ta6JIucbl[1] .. " " .. zHa4eHue_Ta6JIucbl[2])
 					koorguHaTa_o4koB = koorguHaTa_o4koB + 10
 				end
 				if oTnpaBJl9lTb_JIor_c_geTekTopoB then

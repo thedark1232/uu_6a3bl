@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 12"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9037,20 +9037,41 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
+	--удаление кнопок настроек соединения
+	local ygaJIeHue_meHl0_HacTpoek_coeguHeHu9l = function()
+		table_form.nogcka3ka.delete()
+		table_form.nogcka3ka2.delete()
+		table_form.nogcka3ka3.delete()
+		
+		table_form.coeguHeHHa9l_kapTa.caption.delete()
+		table_form.coeguHeHHa9l_kapTa.delete()
+		table_form.coeguHeHHa9l_kapTa_icon.delete()
+		
+		table_form.modem.caption.delete()
+		table_form.modem.delete()
+		table_form.modem_icon.delete()
+	end
+
 	--настройка соединения	
 	if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then
-		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(30 + x_main, y_main + 32, "Выбери тип соединения...", blue)
+		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(15 + x_main, y_main + 32, "Выбери тип соединения...", blue)
 		table_form.nogcka3ka.setScale(3)
 		
-		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() obj = table_form.coeguHeHHa9l_kapTa end)
+		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() 
+			ygaJIeHue_meHl0_HacTpoek_coeguHeHu9l()
+			npegBapuTeJIbHa9l_HacTpouka.Tun_coeguHeHu9l = "tunnel"
+		end)
 		table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:item", 51)
 		table_form.coeguHeHHa9l_kapTa_icon.setScale(6)
 		table_form.coeguHeHHa9l_kapTa_icon.setClickable(false)
-		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(70 + x_main, y_main + 32, "туннель", blue)
+		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(92 + x_main, y_main + 178, "туннель", blue)
 		table_form.nogcka3ka2.setScale(2)
 		
-		table_form.modem = creat_new_button(-1, nick, 214 + x_main, y_main + 76, 101, 100, "", "modem_button", true, gray, white, function() obj = table_form.modem end)
-		table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 213, y_main + 86, "OpenComputers:item", 13)
+		table_form.modem = creat_new_button(-1, nick, 214 + x_main, y_main + 76, 101, 100, "", "modem_button", true, gray, white, function()
+			ygaJIeHue_meHl0_HacTpoek_coeguHeHu9l()
+			npegBapuTeJIbHa9l_HacTpouka.Tun_coeguHeHu9l = "modem"
+		end)
+		table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 222, y_main + 178, "OpenComputers:item", 13)
 		table_form.modem_icon.setScale(6)
 		table_form.modem_icon.setClickable(false)
 		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(70 + x_main, y_main + 32, "модем", blue)
@@ -9058,6 +9079,8 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 			
 		obj = table_form.nogcka3ka2
 	end
+	
+
 	--создание кнопок
 	-- local y = y_main + 14
 	-- local y_func = function()

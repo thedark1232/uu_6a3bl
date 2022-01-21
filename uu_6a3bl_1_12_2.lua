@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 1"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -12618,7 +12618,7 @@ do
 	else
 		HakJIoH = configuration[50]
 	end
-	if configuration[51] == "nil then
+	if configuration[51] == "nil" then
 		 configuration[51] = HacTpouka_po6oTa_LLlaxTepa
 		 setConfiguration()
 	else

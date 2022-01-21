@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновления 4"
+local Ha3BaHue_o6HoBJIeHu9l = "обновления 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4469,8 +4469,16 @@ function forms:creat_tyrret_form(nick)
 		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"]() end)
 		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"]() end)
 		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
-		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "", "туррели выкл", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
+		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
 		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
+	else
+		if nick == admin then
+			table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"]() end)
+			table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"]() end)
+			table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
+			table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
+			table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
+		end
 	end
 
 	--создание каркаса скролла

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "обновления 7"
+local Ha3BaHue_o6HoBJIeHu9l = "обновления 9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1114,9 +1114,9 @@ function co3gaHue_HoBou_3oHbl(start_x, start_y, start_z, end_x, end_y, end_z, zo
 	if start_z > end_z then start_z, end_z = end_z, start_z end
 	if start_x < 0 then start_x = start_x - 1 else start_x = start_x + 1 end
 	if start_z < 0 then start_z = start_z - 1 else start_z = start_z + 1 end
-	start_y = start_y - 1
-	if end_x < 0 then end_x = end_x - 1 else end_x = end_x + 1 end
-	if end_z < 0 then end_z = end_z - 1 else end_z = end_z + 1 end
+	if end_x < 0 then end_x = end_x + 1 else end_x = end_x - 1 end
+	if end_z < 0 then end_z = end_z + 1 else end_z = end_z - 1 end
+	
 	start_y = start_y - 1
 	end_y = end_y + 1
 	table.insert(zoHbl_JIoroB, {start_x, start_y, start_z, end_x, end_y, end_z, zone_name})
@@ -1128,16 +1128,8 @@ function npoBepka_HaxoJgeHu9l_B_3oHe(x, y, z)
 	if x == nil or y == nil or z == nil then
 		return "ошибка опеределения координат"
 	end
-	--local pe3yJIbTaT_x = false
-	--local pe3yJIbTaT_y = false
-	--local pe3yJIbTaT_z = false
 	for _, zona in ipairs(zoHbl_JIoroB) do
-		--if zona[1] < 0 then
-		
-		--else
-		
-		--end
-		if tonumber(x) < tonumber(zona[1]) and tonumber(x) > tonumber(zona[4]) and tonumber(y) > tonumber(zona[2]) and tonumber(y) < tonumber(zona[5]) and tonumber(z) < tonumber(zona[3]) and tonumber(z) > tonumber(zona[6]) then return zona[7] end
+		if tonumber(x) > tonumber(zona[1]) and tonumber(x) < tonumber(zona[4]) and tonumber(y) > tonumber(zona[2]) and tonumber(y) < tonumber(zona[5]) and tonumber(z) > tonumber(zona[3]) and tonumber(z) < tonumber(zona[6]) then return zona[7] end
 	end
 	return ""
 end

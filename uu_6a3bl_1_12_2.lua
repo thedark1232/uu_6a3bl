@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 6"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -774,7 +774,7 @@ function glasses_mouse_drag(event_type, agpec1, nick, agpec2, x, y)
 					end	
 				end
 				if type(v) ~= "function" and v.getType() == "move_form" and v.enabled then
-					Bce_ragJeTbl_urpoka[nick][v.form_name].move_form(math.floor(x),  math.floor(y))
+					Bce_ragJeTbl_urpoka[nick][v.form_name].move_form(math.floor(x), math.floor(y))
 				end
 			end
 		end
@@ -8900,7 +8900,8 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	--создание формы
 	local table_form = {}
 	
-	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep"
+	--изменить в сдвиге окна значение, если будешь копировать форму
+	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep" 
 	--создание функции видимости окна
 	table_form.setVisible = function(visible)
 		for k, v in pairs(table_form) do
@@ -9002,8 +9003,8 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 				end
 			end
 		end
-		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.x = table_form.main_box.getX()
-		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.y = table_form.main_box.getY()
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.x = table_form.main_box.getX()
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.y = table_form.main_box.getY()
 		configuration[49] = cTapToBble_koopguHaTbl
 		setConfiguration()
 	end
@@ -9024,7 +9025,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	--главный фрейм
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 10, 403, 172, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 398, 189, white)
 	table_form.main_box2.setClickable(false)
 		
 	--сдвиг формы + кнопка выхода
@@ -9036,15 +9037,20 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
-	--создание подсказок	
+	--настройка соединения	
 	if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then
 		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(194 + x_main, y_main + 32, "Выбери тип соединения...", blue)
 		table_form.nogcka3ka.setScale(3)
-		obj = table_form.main_box2
-		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 194 + x_main, y_main + 76, 101, 15, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() obj = table_form.coeguHeHHa9l_kapTa end)
-		table_form.modem = creat_new_button(-1, nick, 104 + x_main, y_main + 76, 101, 15, "", "modem_button", true, gray, white, function() obj = table_form.modem end)
-	else
-
+		
+		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() obj = table_form.coeguHeHHa9l_kapTa end)
+		table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 311, y_main + 137, "OpenComputers:item", 51)
+		table_form.coeguHeHHa9l_kapTa_icon.setScale(4)
+		
+		table_form.modem = creat_new_button(-1, nick, 214 + x_main, y_main + 76, 101, 100, "", "modem_button", true, gray, white, function() obj = table_form.modem end)
+		table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 311, y_main + 137, "OpenComputers:item", 13)
+		table_form.modem_icon.setScale(4)
+		
+		obj = table_form.coeguHeHHa9l_kapTa_icon
 	end
 	--создание кнопок
 	-- local y = y_main + 14

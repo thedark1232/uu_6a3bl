@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 23"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 24"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,7 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+local po6oT_LLlaxTep_online = false
 local HacTpouka_po6oTa_LLlaxTepa = {}
 local Ta6JIuca_ceJIeu_TypeJIeu = {}
 local TekyLLlee_koJIu4ecTBo_O3Y
@@ -2375,7 +2376,7 @@ function forms:creat_main_form(nick)
 		if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then 
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep = forms:creat_po6oT_LLlaxTep_form(nick)
 		else
-		 
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = forms:creat_po6oT_LLlaxTep_work_form(nick)
 		end
 	end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
@@ -9094,14 +9095,16 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 end
 function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим робота шахтера
 	local obj
-	local npegBapuTeJIbHa9l_HacTpouka = {}
+	po6oT_LLlaxTep_online = false
+	
+	
 	if Bce_ragJeTbl_urpoka[nick]["main_form"] ~= nil then Bce_ragJeTbl_urpoka[nick]["main_form"].destroy() end
 			
 	--создание формы
 	local table_form = {}
 	
 	--изменить в сдвиге окна значение, если будешь копировать форму
-	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep" 
+	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep_work" 
 	--создание функции видимости окна
 	table_form.setVisible = function(visible)
 		for k, v in pairs(table_form) do
@@ -9203,8 +9206,8 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 				end
 			end
 		end
-		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.x = table_form.main_box.getX()
-		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.y = table_form.main_box.getY()
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.x = table_form.main_box.getX()
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.y = table_form.main_box.getY()
 		configuration[49] = cTapToBble_koopguHaTbl
 		setConfiguration()
 	end
@@ -9212,15 +9215,15 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	--коондинаты отрисовки окна
 	local x_main
 	local y_main	
-	if cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep == nil then
-		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep = {}
-		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.x = 1
-		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.y = 1
+	if cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work == nil then
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work = {}
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.x = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.x
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.y = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.y
 		configuration[49] = cTapToBble_koopguHaTbl
 		setConfiguration()
 	end
-	x_main = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.x
-	y_main = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep.y
+	x_main = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.x
+	y_main = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.y
 	
 	--главный фрейм
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
@@ -9230,54 +9233,58 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 		
 	--сдвиг формы + кнопка выхода
 	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 405, 10, "", "move_form", true, gray, white, function() end)
-	rawset(table_form.move_button, "form_name", "po6oT_LLlaxTep")
+	rawset(table_form.move_button, "form_name", "po6oT_LLlaxTep_work")
 	rawset(table_form.move_button, "enabled", false)
 	rawset(table_form.move_button, "getType", function() return "move_form" end)
 	table_form.return_button = creat_new_button(1, nick, x_main + 393, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
-	--настройка соединения	
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(15 + x_main, y_main + 32, "Выбери тип соединения...", blue)
-	table_form.nogcka3ka.setScale(3)
+	--иконка робота шахтера
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:robot", 0)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 178, "ожидание соединения", blue)
+	obj = table_form.robot_icon
+	-- --настройка соединения	
+	-- table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(15 + x_main, y_main + 32, "Выбери тип соединения...", blue)
+	-- table_form.nogcka3ka.setScale(3)
 	
-	--иконка соединенной карты
-	if component.isAvailable("tunnel") then
-		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() 
-			table_form.destroy()
-			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "tunnel"
-		end)
-		table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:item", 51)
-		table_form.coeguHeHHa9l_kapTa_icon.setScale(6)
-		table_form.coeguHeHHa9l_kapTa_icon.setClickable(false)
-		table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 178, "туннель", blue)
-		table_form.nogcka3ka2.setScale(2)
-	else
-		table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 113, "туннель", blue)
-		table_form.nogcka3ka4.setScale(2)
-		table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(79 + x_main, y_main + 133, "не найден!", blue)
-		table_form.nogcka3ka5.setScale(2)
-	end
+	-- --иконка соединенной карты
+	-- if component.isAvailable("tunnel") then
+		-- table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() 
+			-- table_form.destroy()
+			-- HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "tunnel"
+		-- end)
+		-- table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:item", 51)
+		-- table_form.coeguHeHHa9l_kapTa_icon.setScale(6)
+		-- table_form.coeguHeHHa9l_kapTa_icon.setClickable(false)
+		-- table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 178, "туннель", blue)
+		-- table_form.nogcka3ka2.setScale(2)
+	-- else
+		-- table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 113, "туннель", blue)
+		-- table_form.nogcka3ka4.setScale(2)
+		-- table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(79 + x_main, y_main + 133, "не найден!", blue)
+		-- table_form.nogcka3ka5.setScale(2)
+	-- end
 	
-	--иконка модема
-	if component.isAvailable("modem") then
-		table_form.modem = creat_new_button(-1, nick, 214 + x_main, y_main + 76, 101, 100, "", "modem_button", true, gray, white, function()
-			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "modem"
-			modem.open(1000)
-			table_form.destroy()
-		end)
-		table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 214, y_main + 87, "OpenComputers:item", 13)
-		table_form.modem_icon.setScale(6)
-		table_form.modem_icon.setClickable(false)
-		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(234 + x_main, y_main + 178, "модем", blue)
-		table_form.nogcka3ka3.setScale(2)
-	else
-		table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(230 + x_main, y_main + 113, "модем", blue)
-		table_form.nogcka3ka6.setScale(2)
-		table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(208 + x_main, y_main + 133, "не найден!", blue)
-		table_form.nogcka3ka7.setScale(2)
-	end
-	obj = table_form.nogcka3ka5
+	-- --иконка модема
+	-- if component.isAvailable("modem") then
+		-- table_form.modem = creat_new_button(-1, nick, 214 + x_main, y_main + 76, 101, 100, "", "modem_button", true, gray, white, function()
+			-- HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "modem"
+			-- modem.open(1000)
+			-- table_form.destroy()
+		-- end)
+		-- table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 214, y_main + 87, "OpenComputers:item", 13)
+		-- table_form.modem_icon.setScale(6)
+		-- table_form.modem_icon.setClickable(false)
+		-- table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(234 + x_main, y_main + 178, "модем", blue)
+		-- table_form.nogcka3ka3.setScale(2)
+	-- else
+		-- table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(230 + x_main, y_main + 113, "модем", blue)
+		-- table_form.nogcka3ka6.setScale(2)
+		-- table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(208 + x_main, y_main + 133, "не найден!", blue)
+		-- table_form.nogcka3ka7.setScale(2)
+	-- end
+	-- obj = table_form.nogcka3ka5
 
 	--создание кнопок
 	-- local y = y_main + 14

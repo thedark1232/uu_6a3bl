@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 13"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9074,10 +9074,10 @@ function forms:creat_po6oT_LLlaxTep_form(nick)
 		table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 222, y_main + 178, "OpenComputers:item", 13)
 		table_form.modem_icon.setScale(6)
 		table_form.modem_icon.setClickable(false)
-		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(70 + x_main, y_main + 32, "модем", blue)
+		table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(222 + x_main, y_main + 178, "модем", blue)
 		table_form.nogcka3ka3.setScale(2)
 			
-		obj = table_form.nogcka3ka2
+		obj = table_form.modem_icon
 	end
 	
 

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 2"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8894,7 +8894,267 @@ function forms:creat_HacTpouka_TypeJIeu_form(nick)
 	return table_form
 end
 function forms:creat_po6oT_LLlaxTep_form(nick)
+	local obj
+	
+	local npegBapuTeJIbHa9l_HacTpouka = {}
+	Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
+	Bce_ragJeTbl_urpoka[nick]["MaTpuca"].destroy()
+			
+	--создание формы
+	local table_form = {}
+	
+	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
 
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--сдвиг окна
+	table_form.move_form = function(x_mov, y_mov)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+				elseif string.match(v.getType(), "textBox") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+					v.background2.setX(v.background2.getX() + x_mov)
+					v.background2.setY(v.background2.getY() + y_mov)
+					v.background3.setX(v.background3.getX() + x_mov)
+					v.background3.setY(v.background3.getY() + y_mov)
+				elseif v.getType() == "line" then
+					v.setP1({v.getP1().x + x_mov, v.getP1().y + y_mov})
+					v.setP2({v.getP2().x + x_mov, v.getP2().y + y_mov})
+				else
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+				end
+			end
+		end
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.x = table_form.main_box.getX()
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.y = table_form.main_box.getY()
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+	
+	--коондинаты отрисовки окна
+	local x_main
+	local y_main	
+	if cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka == nil then
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka = {}
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.x = 1
+		cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.y = 1
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+	x_main = cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.x
+	y_main = cTapToBble_koopguHaTbl[nick].qpyJIJI_HacTpouka.y
+	
+	--главный фрейм
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 500, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 29, 172, white)
+	table_form.main_box2.setClickable(false)
+		
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 405, 10, "", "move_form", true, gray, white, function() end)
+	rawset(table_form.move_button, "form_name", "qpyJIJI_HacTpouka")
+	rawset(table_form.move_button, "enabled", false)
+	rawset(table_form.move_button, "getType", function() return "move_form" end)
+	table_form.return_button = creat_new_button(1, nick, x_main + 393, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
+
+	--создание подсказок	
+	if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then
+		table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(194 + x_main, y_main + 32, "Выбери тип соединения...", blue)
+		table_form.nogcka3ka.setScale(3)
+		obj = table_form.nogcka3ka
+		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 194 + x_main, y_main + 76, 101, 15, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() obj = table_form.coeguHeHHa9l_kapTa end)
+		table_form.modem = creat_new_button(-1, nick, 104 + x_main, y_main + 76, 101, 15, "", "modem_button", true, gray, white, function() obj = table_form.modem end)
+	else
+
+	end
+	--создание кнопок
+	-- local y = y_main + 14
+	-- local y_func = function()
+		-- y = y + 17
+		-- return y
+	-- end
+	-- local num = 0
+	-- local start_visible = true
+	-- local num_button = function()
+		-- num = num + 1
+		-- if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		-- return num
+	-- end
+	
+	
+	--создание текста подсказки
+	--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(194 + x_main, y_main + 32, "текущий пьедестал: ", blue)
+		
+		
+		
+	--создание кнопки замены
+	--table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_main, y_main + 76, 101, 15, "заменить", "zaMeHa_button", true, blue, white, function() end)
+	
+	
+	--создание каркаса скролла
+	-- local MakcuMyM_BuguMblx_kHonok
+	-- local x_scrolla = 33
+	-- table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(x_scrolla + x_main, y_main + 29, 10, 10, gray)
+	-- table_form.scroll_badur_up.setClickable(false)
+	-- table_form.scroll_line = MoHuTop_urpoka[nick].addLine({x_scrolla + x_main + 5, y_main + 39}, {x_scrolla + x_main + 5, y_main + 191}, white)
+	-- table_form.scroll_line.setClickable(false)
+	-- table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(x_scrolla + x_main, y_main + 191, 10, 10, gray)
+	-- table_form.scroll_badur_down.setClickable(false)
+	-- --определить количество кнопок для размера скролла
+	-- local Bcero_KHonok = num_button() - 1
+	-- local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	-- --создание ползунка скролла
+	-- local start_no_y = y_main + 39
+	-- local y_min = start_no_y
+	-- local y_max = start_no_y + 152
+	-- local cgBur_ckpoJIJIa = 10
+	-- local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	-- if y_pa3Mep < 10 then
+		-- y_pa3Mep = 10
+		-- cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	-- end
+	
+	-- if ckpblTble_kHOnku > 0 then
+		-- table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
+	-- end
+	
+	--создание стрелок для рисования ГУИ
+	local HapucoBatb_cTpeJIku = function()
+		local x_cTpeJIku = 379
+		local y_cTpeJIku = 149
+		--перемещение панели
+		table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "/\\", "up_button", true, black, white, function()
+			obj.setY(obj.getY() - 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
+		end)
+		table_form.BBEpx.caption.setX(x_cTpeJIku + 21)
+		table_form.BHu3 = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 20, 15, 15, "\\/", "down_button", true, black, white, function()
+			obj.setY(obj.getY() + 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "y=" .. tostring(obj.getY()))
+		end)
+		table_form.BHu3.caption.setX(x_cTpeJIku + 21)
+		table_form.BJIeBO = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 10, 15, 15, "<", "left_button", true, black, white, function()
+			obj.setX(obj.getX() - 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
+		end)
+		table_form.BJIeBO.caption.setX(x_cTpeJIku + 3)
+		table_form.BnpaBo = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 10, 15, 15, ">", "right_button", true, black, white, function()
+			obj.setX(obj.getX() + 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "x=" .. tostring(obj.getX()))
+		end)
+		table_form.BnpaBo.caption.setX(x_cTpeJIku + 43)
+		--ширина и высота
+		table_form.MeHbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 30, 15, 15, "/\\", "h_min_button", true, black, white, function()
+			obj.setHeight(obj.getHeight() - 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
+		end)
+		table_form.MeHbLLle_h.caption.setX(x_cTpeJIku + 21)
+		table_form.boJIbLLle_h = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku + 50, 15, 15, "\\/", "h_max_button", true, black, white, function()
+			obj.setHeight(obj.getHeight() + 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "h=" .. tostring(obj.getHeight()))
+		end)
+		table_form.boJIbLLle_h.caption.setX(x_cTpeJIku + 21)
+		table_form.MeHbLLle_w = creat_new_button(-1, nick, x_cTpeJIku, y_cTpeJIku + 40, 15, 15, "<", "w_min_button", true, black, white, function()
+			obj.setWidth(obj.getWidth() - 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
+		end)
+		table_form.MeHbLLle_w.caption.setX(x_cTpeJIku + 3)
+		table_form.boJIbLLle_w = creat_new_button(-1, nick, x_cTpeJIku + 40, y_cTpeJIku + 40, 15, 15, ">", "w_max_button", true, black, white, function()
+			obj.setWidth(obj.getWidth() + 1)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "w=" .. tostring(obj.getWidth()))
+		end)
+		table_form.boJIbLLle_w.caption.setX(x_cTpeJIku + 43)
+	end
+	HapucoBatb_cTpeJIku()
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
 end
 
 

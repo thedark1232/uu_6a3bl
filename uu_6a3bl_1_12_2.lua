@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 37"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 38"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9447,9 +9447,9 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	end
 	
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
-	local x_cTpeJIku = 350
+	local x_cTpeJIku = 370
 	local y_cTpeJIku = 200
-	local x_wh = 430
+	local x_wh = 410
 	local y_wh = 200
 	--перемещение панели
 	table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "y-", "up_button", true, black, white, function()
@@ -9495,7 +9495,7 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	table_form.boJIbLLle_w.caption.setX(x_wh + 43)
 
 	--создание кнопок
-	local y = 1
+	local y = -16
 	local y_func = function()
 		y = y + 17
 		return y
@@ -9511,7 +9511,7 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	for k, v in pairs(form) do
 		if type(v) ~= "function" then 
 			table_form[tostring(k) .. "bt"] = creat_new_button(num_button(), nick, 390, y_func(), 80, 15, tostring(k), "button", start_visible, black, white, function()
-				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран объект: " .. g .. tostring(v))
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран объект: " .. g .. tostring(k))
 				obj = v
 			end)
 			--rawset(table_form[k .. "bt"], "obj_name", k)
@@ -9521,7 +9521,7 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	--создание каркаса скролла
 	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(470, 1, 10, 10, gray)
 	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({475, 11}, {475, 153}, white)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({475, 11}, {475, 163}, white)
 	table_form.scroll_line.setClickable(false)
 	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(470, 163, 10, 10, gray)
 	table_form.scroll_badur_down.setClickable(false)

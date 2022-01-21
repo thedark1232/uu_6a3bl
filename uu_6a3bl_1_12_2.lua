@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 34"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 35"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9613,7 +9613,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 					Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]].destroy()
 				end
 			end
-			if gebug_form ~= nil then gebug_form = nil end
+			if gebug_form ~= nil then gebug_form.destroy() end
 			Bce_ragJeTbl_urpoka[nick] = {}
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. r .. nick .. c .. " не из вайт листа")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 86"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 87"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -169,6 +169,11 @@ coo6LLleHu9l_OT_po6oToB = {}
 setmetatable(coo6LLleHu9l_OT_po6oToB, {__index = function() return function() end end})
 coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function() LLlaxTep_online = true end
 LLlaxTep_online = false
+coo6LLleHu9l_OT_po6oToB.test_function = function(Ta6JIuca_cocTo9lHu9l)
+	for k, v in pairs(Ta6JIuca_cocTo9lHu9l) do
+		 Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. ": " .. g .. tostring(v))
+	end
+end
 
 local default_text = {} --дефолтный текст для текстбокса
 default_text["ввод значения"] = true
@@ -1094,7 +1099,6 @@ function npoBepka_gocTyna_k_KoMaHge(nick)
 	end
 end
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. tostring(coo6llleHue_oT_mogema))
 	local st, er = pcall(function()
 		local Ta6JIuca_uHcTpyKcuu = serialization.unserialize(coo6llleHue_oT_mogema)
 		coo6LLleHu9l_OT_po6oToB[Ta6JIuca_uHcTpyKcuu[1]](Ta6JIuca_uHcTpyKcuu)

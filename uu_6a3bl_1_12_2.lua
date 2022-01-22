@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 99"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 100"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2225,24 +2225,18 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	
 	return table_button
 end
-function creat_new_cirle()
-	local detail = 20
-
+function creat_new_cirle(KoJIu4ecTBo_noJIuroHoB, x, y, scale)
 	local calculateCords = function(angle, r, a, b)
 		local x = r * math.sin(math.pi * 2 * angle / 360);
 		local y = r * math.cos(math.pi * 2 * angle / 360)
-		return {x+a,(y+b),math.random(0xffffff),1,}
+		return {x + a, y + b, math.random(0xffffff), 1}
 	end
 
-	local drawCircle = function(x, y, r)
-		local cords = {}
-		for i=1,detail do
-			table.insert(cords, calculateCords(360/detail * i, r, x, y))
-		end
-		glass.addGradientPolygon(table.unpack(cords))
+	local cords = {}
+	for i= 1, KoJIu4ecTBo_noJIuroHoB do
+		table.insert(cords, calculateCords(360 / KoJIu4ecTBo_noJIuroHoB * i, scale, x, y))
 	end
-
-	drawCircle(200,100, 50)
+	return MoHuTop_urpoka[nick].addGradientPolygon(table.unpack(cords))
 end
 function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, color_background, cB93b)
 	local table_scroll	
@@ -9346,7 +9340,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 	
 	return table_form
 end
-function forms:creat_po6oT_LLlaxTep_main_form(nick)	
+function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управления робота шахтера
 	if Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"] ~= nil then Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"].destroy() end
 			
 	--создание формы
@@ -9495,9 +9489,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
 	--иконка робота
-	table_form.robot_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 32, 41, gray)
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "OpenComputers:robot", 0)
-	table_form.robot_icon.setScale(2)
+
 	
 	--полоска энергии
 	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 83, 16, black)
@@ -9511,12 +9503,15 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	--table_form.ender_eye_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_eye", 0)
 	
 	--NSWE
+	table_form.radar = creat_new_cirle(20, 100, 100, 50)
 	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "С", red)
 	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "Ю", red)
 	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "З", red)
 	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "В", red)
 	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({10, 10}, {10, 20}, black)
 	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({10, 10}, {20, 10}, black)
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "OpenComputers:robot", 0)
+	table_form.robot_icon.setScale(2)
 	
 	--инвентарь робота
 	local HoMep_9l4euKu = 1

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 49"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 50"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9240,12 +9240,15 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
-	--иконка робота шахтера
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 220, y_main + 90, "OpenComputers:robot", 0)
-	table_form.robot_icon.setScale(3)
+	--иконки и подсказки робота шахтера
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 65, "ожидание соединения", blue)
 	table_form.nogcka3ka.setScale(3)
-		
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 208, y_main + 105, "OpenComputers:robot", 0) --робот
+	table_form.robot_icon.setScale(5)
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 208, y_main + 105, "minecraft:diamond_pickaxe", 0) --кирка
+	table_form.robot_icon.setScale(5)
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 208, y_main + 105, "minecraft:diamond_ore", 0) --алмазная руда
+	table_form.robot_icon.setScale(5)
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -9339,7 +9342,7 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	local y_wh = 215
 	local x_s = 450
 	local y_s = 175
-	local x_r = 330
+	local x_r = 370
 	local y_r = 175
 	--перемещение панели
 	table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "y-", "up_button", true, black, white, function()

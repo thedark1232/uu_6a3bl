@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 83"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 84"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1094,13 +1094,8 @@ function npoBepka_gocTyna_k_KoMaHge(nick)
 	end
 end
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-
-	coo6LLleHu9l_OT_po6oToB[coo6llleHue_oT_mogema]()
-	--print(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-	--coo6llleHue_TuHHeJI9l = serialization.unserialize(coo6llleHue_oT_mogema)
-	--for k,v in pairs(coo6llleHue_TuHHeJI9l) do
-		--print(k, v)
-	--end
+	local Ta6JIuca_uHcTpyKcuu = serialization.unserialize(coo6llleHue_oT_mogema)
+	coo6LLleHu9l_OT_po6oToB[Ta6JIuca_uHcTpyKcuu[1]](Ta6JIuca_uHcTpyKcuu)
 end
 function co3gaHue_HoBou_3oHbl(start_x, start_y, start_z, end_x, end_y, end_z, zone_name)
 	start_x = tonumber(start_x); start_y = tonumber(start_y); start_z = tonumber(start_z)
@@ -9717,8 +9712,8 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	_, _, _, cTapToBle_cekyHgbl = getTime()
 	cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l
 	LLlaxTep_online = false
-	HacTpouka_po6oTa_LLlaxTepa.send("1232") --послать сообщение пробуждения
-	HacTpouka_po6oTa_LLlaxTepa.send("check_online")
+	HacTpouka_po6oTa_LLlaxTepa.send("{'1232'}") --послать сообщение пробуждения
+	HacTpouka_po6oTa_LLlaxTepa.send("{'check_online'}")
 	
 	repeat
 		for _, anim in ipairs(animation) do

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 45"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 46"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9510,7 +9510,7 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 
 
 	--создание кнопок
-	local y = -10
+	local y = -13
 	local y_func = function()
 		y = y + 17
 		return y

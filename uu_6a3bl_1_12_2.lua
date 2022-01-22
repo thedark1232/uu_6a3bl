@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 64"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 65"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9245,13 +9245,13 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	
 	table_form.BpeM9l = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 32, "10 сек", blue)
 	table_form.BpeM9l.setScale(3)
-	--table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 174, y_main + 68, "OpenComputers:robot", 0) --робот
-	--table_form.robot_icon.setScale(4)
-	table_form.pickaxe_icon = MoHuTop_urpoka[nick].addIcon(x_main + 194, y_main + 153, "minecraft:diamond_pickaxe", 0) --кирка
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 174, y_main + 68, "OpenComputers:robot", 0) --робот
+	table_form.robot_icon.setScale(4)
+	table_form.pickaxe_icon = MoHuTop_urpoka[nick].addIcon(x_main + 152, y_main + 39, "minecraft:diamond_pickaxe", 0) --кирка
 	table_form.pickaxe_icon.setScale(5)
 	table_form.pickaxe_icon.setRotation(-121)
-	--table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
-	--table_form.diamong_ore_icon.setScale(5)
+	table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
+	table_form.diamong_ore_icon.setScale(5)
 	
 	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 184, y_main + 153, -121, true)
 	

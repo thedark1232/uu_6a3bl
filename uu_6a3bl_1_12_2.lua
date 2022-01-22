@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 71"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 72"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -160,10 +160,10 @@ internet = require('component').internet
 headers = {["User-Agent"]="OpenComputers", ["Content-Type"] = "multipart/form-data; boundary=------------------------b4ba0694e3cf9579"}
 horizontalAlignment.left = 1
 horizontalAlignment.right = 2
-horizontalAlignment.center = 3 nopTbl
+horizontalAlignment.center = 3
+nopTbl = {}
 nopTbl.coo6LLleHu9l_oT_LLlaxTepa = 1000
 nopTbl.coo6LLleHu9l_LLlaxTepy = 1001
-
 
 local default_text = {} --дефолтный текст для текстбокса
 default_text["ввод значения"] = true

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 101"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 102"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2225,7 +2225,7 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	
 	return table_button
 end
-function creat_new_cirle(KoJIu4ecTBo_noJIuroHoB, x, y, scale)
+function creat_new_cirle(nick, KoJIu4ecTBo_noJIuroHoB, x, y, scale)
 	local calculateCords = function(angle, r, a, b)
 		local x = r * math.sin(math.pi * 2 * angle / 360);
 		local y = r * math.cos(math.pi * 2 * angle / 360)
@@ -9503,7 +9503,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--table_form.ender_eye_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_eye", 0)
 	
 	--NSWE
-	table_form.radar = creat_new_cirle(20, 100, 100, 50)
+	table_form.radar = creat_new_cirle(nick, 20, 100, 100, 50)
 	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "С", red)
 	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "Ю", red)
 	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "З", red)
@@ -9922,7 +9922,6 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			if npo4ue_qpopMbl[nick] ~= nil then
 				if Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]] ~= nil then
 					Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]].destroy()
-					Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]] = nil
 				end
 			end
 			if gebug_form ~= nil then

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 63"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 64"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8751,14 +8751,13 @@ function forms:creat_oroHb_no_urpoky_form(nick)
 	if #Ta6JIuca_ceJIeu_TypeJIeu > 0 then
 		for k, ceJIb in ipairs(Ta6JIuca_ceJIeu_TypeJIeu) do
 			table_form[k] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, ceJIb, "button", start_visible, black, white, function()
+				ceJIb_TyppeJIeu = table_form[k].caption.getText()
+				typpeJIu_reJum_orH9l(true)
+				peJum_orH9l = true
 				table_form.destroy()
 				Bce_ragJeTbl_urpoka[nick]["tyrret"].destroy()
 				Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
 				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-				ceJIb_TyppeJIeu = table_form[k].caption.getText()
-				typpeJIu_reJum_orH9l(true)
-				peJum_orH9l = true
-
 			end)
 		end
 	else

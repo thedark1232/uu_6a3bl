@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 68"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 69"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9260,7 +9260,9 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.BkJI_animation = function()
 		Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
 	end
-		
+	
+	table_form.destroy_button = creat_new_button(1, nick, x_main + 135, y_main + 150, 80, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
+			
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -9532,7 +9534,7 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	if cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl then
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText("нет ответа")
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setColor(red)
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() + 134)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() - 16)
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 	end
 end

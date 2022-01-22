@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 82"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 83"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -8913,7 +8913,7 @@ function forms:creat_HacTpouka_TypeJIeu_form(nick)
 	
 	return table_form
 end
-function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соединения робота шахтера
+function forms:creat_po6oT_LLlaxTep_form(nick) --выбра типа соединения робота шахтера (турель, модем)
 	local npegBapuTeJIbHa9l_HacTpouka = {}
 	Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
 			
@@ -9114,7 +9114,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 	
 	return table_form
 end
-function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим робота шахтера
+function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соединения робота шахтера
 	po6oT_LLlaxTep_online = false
 	
 	if Bce_ragJeTbl_urpoka[nick]["main_form"] ~= nil then Bce_ragJeTbl_urpoka[nick]["main_form"].destroy() end
@@ -9288,7 +9288,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	
 	--включение анимации
 	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 187, y_main + 153, -131, true)
-	
+		
 	table_form.BkJI_animation = function()
 		Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
 	end
@@ -9303,6 +9303,8 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	end)
 	table_form.online_button.setClickable(false)
 	table_form.online_button.setVisible(false)
+	table_form.online_button.caption.setVisible(false)
+	
 	
 			
 	--объединение таблиц
@@ -9761,6 +9763,7 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() - 25)
 		
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.online_button.setVisible(true)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.online_button.caption.setVisible(true)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.online_button.setClickable(true)
 		
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()

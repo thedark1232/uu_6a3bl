@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 87"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 88"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9303,6 +9303,8 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 	table_form.online_button = creat_new_button(1, nick, x_main + 140, y_main + 175, 80, 15, "далее", "online_button", true, green, white, function()
 		table_form.destroy()
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main = forms:creat_po6oT_LLlaxTep_main_form(nick)
+		Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"my_status"})
 	end)
 	table_form.online_button.setClickable(false)
 	table_form.online_button.setVisible(false)
@@ -9465,7 +9467,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
 	--иконки и подсказки робота шахтера
-	Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
+	
 		
 	--объединение таблиц
 	self = {}

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 62"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 63"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9243,6 +9243,9 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	--иконки и подсказки робота шахтера
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 12, "ожидание соединения", blue)
 	table_form.nogcka3ka.setScale(3)
+	
+	table_form.BpeM9l = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 32, "10 сек", blue)
+	table_form.BpeM9l.setScale(3)
 	--table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 174, y_main + 68, "OpenComputers:robot", 0) --робот
 	--table_form.robot_icon.setScale(4)
 	table_form.pickaxe_icon = MoHuTop_urpoka[nick].addIcon(x_main + 194, y_main + 153, "minecraft:diamond_pickaxe", 0) --кирка
@@ -9511,13 +9514,23 @@ function nepuMeTp_noTok(nick)
 	os.sleep(0.1)
 end
 function po6oT_LLlaxTep_work_noTok(nick, animation)	
-	for _, anim in ipairs(animation) do
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setX(anim.x)
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setY(anim.y)
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setRotation(anim.r)
-		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-		os.sleep(0.1)
-	end
+	local cTapToBle_cekyHgbl
+	local TekyLLlue_cekyHgbl
+	local BpeM9l_oJugaHu9l = 10
+	_, _, _, cTapToBle_cekyHgbl = getTime()
+	cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l
+
+	repeat
+		for _, anim in ipairs(animation) do
+			_, _, _, TekyLLlue_cekyHgbl = getTime()
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setX(anim.x)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setY(anim.y)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setRotation(anim.r)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText(tostring(cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl) .. " сек")
+			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+			os.sleep(0.1)
+		end
+	until cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl
 end
 
 function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue)

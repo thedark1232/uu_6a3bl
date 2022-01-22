@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 72"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 73"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1836,6 +1836,7 @@ function koMaHgbl_uu_6a3bl()
 	
 	--модем
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "установи новый порт модема (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "сброс настроек робота шахтера (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "установи сообщение пробуждения (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "покажи сообщение пробуждения (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_modem], "посмотреть открытые порты модема (тиммейт)")
@@ -1897,6 +1898,7 @@ function koMaHgbl_uu_6a3bl()
 	--туннель (связанная карта)
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tunnel], "отправлять лог в туннель (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tunnel], "не отправлять лог в туннель (админ)")
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_tunnel], "сброс настроек робота шахтера (админ)")
 
 	--наниты
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_HaHuTbl], "с1 (админ)") --назначить быструю конфиграцию нанитов 1
@@ -9061,6 +9063,8 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "tunnel"
 			HacTpouka_po6oTa_LLlaxTepa.send = component.tunnel
 		end)
+		configuration[51] = HacTpouka_po6oTa_LLlaxTepa
+		setConfiguration()
 		table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:item", 51)
 		table_form.coeguHeHHa9l_kapTa_icon.setScale(6)
 		table_form.coeguHeHHa9l_kapTa_icon.setClickable(false)
@@ -9082,6 +9086,8 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 			HacTpouka_po6oTa_LLlaxTepa.send = function(message)
 				component.modem.broadcast(nopTbl.coo6LLleHu9l_LLlaxTepy, message)
 			end
+			configuration[51] = HacTpouka_po6oTa_LLlaxTepa
+			setConfiguration()
 		end)
 		table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 214, y_main + 87, "OpenComputers:item", 13)
 		table_form.modem_icon.setScale(6)
@@ -9727,6 +9733,12 @@ do
 	--setmetatable(Ta6JIuca_koMaHg_gJI9l_rocTeu, {__index = function() return function() end end})
 	setmetatable(configuration, {__index = function() return "nil" end})
 	--создание функций команд
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сброс настроек робота шахтера"] = function()
+		HacTpouka_po6oTa_LLlaxTepa = {}
+		configuration[51] = HacTpouka_po6oTa_LLlaxTepa
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "настройки сброшены")
+	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сброс координат стартового окна"] = function()
 		cTapToBble_koopguHaTbl[admin].main_form.x = 1
 		cTapToBble_koopguHaTbl[admin].main_form.y = 1

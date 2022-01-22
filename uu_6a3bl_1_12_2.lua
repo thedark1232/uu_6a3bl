@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 79"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 80"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9091,8 +9091,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "modem"
 			modem.open(nopTbl.coo6LLleHu9l_oT_LLlaxTepa)
 			HacTpouka_po6oTa_LLlaxTepa.send = function(message)
-				component.modem.broadcast(nopTbl.coo6LLleHu9l_LLlaxTepy, message)
-			end
+			component.modem.broadcast(nopTbl.coo6LLleHu9l_LLlaxTepy, message)
 			configuration[51] = HacTpouka_po6oTa_LLlaxTepa
 			setConfiguration()
 		end)
@@ -13249,7 +13248,18 @@ do
 		 configuration[51] = HacTpouka_po6oTa_LLlaxTepa
 		 setConfiguration()
 	else
-		HacTpouka_po6oTa_LLlaxTepa =  configuration[51]
+		HacTpouka_po6oTa_LLlaxTepa = configuration[51]
+		if not component.isAvailable("modem") and not component.isAvailable("tunnel") then
+			HacTpouka_po6oTa_LLlaxTepa = {}
+		else
+			if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == "modem" then
+				modem.open(nopTbl.coo6LLleHu9l_oT_LLlaxTepa)
+				HacTpouka_po6oTa_LLlaxTepa.send = function(message)
+				component.modem.broadcast(nopTbl.coo6LLleHu9l_LLlaxTepy, message)
+			elseif HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == "tunnel" then
+				HacTpouka_po6oTa_LLlaxTepa.send = component.tunnel.send
+			end
+		end
 	end
 	
 	

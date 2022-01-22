@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 75"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 76"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9061,7 +9061,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() 
 			table_form.destroy()
 			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "tunnel"
-			HacTpouka_po6oTa_LLlaxTepa.send = component.tunnel
+			HacTpouka_po6oTa_LLlaxTepa.send = component.tunnel.send
 		end)
 		configuration[51] = HacTpouka_po6oTa_LLlaxTepa
 		setConfiguration()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 61"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 62"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9251,7 +9251,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	--table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
 	--table_form.diamong_ore_icon.setScale(5)
 	
-	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 104, y_main + 153, -121, true)
+	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 184, y_main + 153, -121, true)
 	
 	table_form.BkJI_animation = creat_new_button(-1, nick, 80 + x_main, y_main + 179, 101, 15, "вкл. анимацию", "animation_button", true, gray, white, function()
 		if Bce_noToku[nick].po6oT_LLlaxTep_work == nil then
@@ -9540,7 +9540,7 @@ function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_
 		elseif r2 > r then
 			r = r + 1
 		end
-		table.insert(animation, {["x"] = x, ["y"] = y, ["r"] =  r})
+		table.insert(animation, {["x"] = x, ["y"] = y, ["r"] = r})
 		--print(x, " == ", x2, x == x2)
 		--print(y, " == ", y2, y == y2)
 		--print(r, " == ", r2, r == r2)
@@ -9549,7 +9549,7 @@ function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_
 	if nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue then
 		local newTable = {}
 		for i = #animation, 1, -1 do
-			table.insert(newTable, {animation[i].x, animation[i].y, animation[i].r})
+			table.insert(newTable, {["x"] = animation[i].x, ["y"] = animation[i].y, ["r"] = animation[i].r})
 		end
 		
 		for _, v in ipairs(newTable) do

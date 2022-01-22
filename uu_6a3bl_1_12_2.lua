@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 96"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 97"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2224,6 +2224,42 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	rawset(table_button, "MakcuMyM_cuMBoJIoB", maKCuMyM_cuMBoJIoB)
 	
 	return table_button
+end
+function creat_new_cirle()
+	local detail = 10
+	local a = 10
+	local b = 10
+	local r = 5
+
+	local calculateCords = function(x) 
+		local result = {}
+		local unsignedNumber = math.sqrt((math.pow(r, 2) - math.pow((x-a), 2)))
+		if (unsignedNumber == 0) then
+			local cord = {}
+			cord.x = x
+			cord.y = b
+			table.insert(result, cord)
+		else
+			local cord1 = {}
+			cord1.x = x
+			cord1.y = unsignedNumber+b
+			table.insert(result, cord1)
+
+			local cord2 = {}
+			cord2.x = x
+			cord2.y = (unsignedNumber*-1)+b
+			table.insert(result, cord2)
+		end
+		return result
+	end
+
+	local cords = {}
+	for x = (a - r) * detail, (a + r) * detail do
+		local tempCords = calculateCords(x / detail)
+		for i = 1, #tempCords do
+			table.insert(cords, tempCords[i]) 
+		end
+	end 
 end
 function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, color_background, cB93b)
 	local table_scroll	
@@ -9482,8 +9518,15 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 81, 14, gray)
 	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 10, 14, green)
 	
-	--подсказка 
-	table_form.kpyr1 = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "о", red)
+	--круглые кнопки
+	table_form.cHer_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:snowball", 0)
+	table_form.cJIu3b_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:slime_ball", 0)
+	table_form.ender_pearl_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_pearl", 0)
+	table_form.ender_eye_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_eye", 0)
+	
+	
+	
+	--table_form.kpyr1 = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "о", red)
 	
 	--инвентарь робота
 	local HoMep_9l4euKu = 1
@@ -9497,8 +9540,8 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 			end)
 			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 21	
+			table_form[tostring(HoMep_9l4euKu) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "minecraft:diamond_pickaxe", 0)
 			HoMep_9l4euKu = HoMep_9l4euKu + 1
-			table_form[tostring(HyMepacu9l) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "minecraft:diamond_pickaxe", 0)
 		end
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 		

@@ -9909,8 +9909,11 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 				end
 			end
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
-			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
-			Bce_ragJeTbl_urpoka[nick].main_form = nil
+			if  Bce_ragJeTbl_urpoka[nick].main_form ~= nil then
+				Bce_ragJeTbl_urpoka[nick].main_form.destroy()
+				Bce_ragJeTbl_urpoka[nick].main_form = nil
+			end
+			
 			if Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] ~= nil then
 				if Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick]] ~= nil then
 					Bce_ragJeTbl_urpoka[nick][Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick]].destroy()
@@ -9919,9 +9922,13 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			if npo4ue_qpopMbl[nick] ~= nil then
 				if Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]] ~= nil then
 					Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]].destroy()
+					Bce_ragJeTbl_urpoka[nick][npo4ue_qpopMbl[nick]] = nil
 				end
 			end
-			if gebug_form ~= nil then Bce_ragJeTbl_urpoka[nick].gebug.destroy() end
+			if gebug_form ~= nil then
+				Bce_ragJeTbl_urpoka[nick].gebug.destroy()
+				Bce_ragJeTbl_urpoka[nick] = nil
+			end
 			Bce_ragJeTbl_urpoka[nick] = {}
 			
 		else

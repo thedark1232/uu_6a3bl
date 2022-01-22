@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 73"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 74"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9277,7 +9277,10 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 		Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
 	end
 	
-	table_form.destroy_button = creat_new_button(1, nick, x_main + 156, y_main + 192, 80, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.destroy_button = creat_new_button(1, nick, x_main + 156, y_main + 175, 80, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.setClickable(false)
+	table_form.setVisible(false)
+	
 			
 	--объединение таблиц
 	self = {}

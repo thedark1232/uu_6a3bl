@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 52"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 53"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9521,7 +9521,7 @@ end
 function creat_animation(x1, y1, r1, x2, y2, r2)
 	local animation = {}
 	local x, y, r = x1, y1, r1
-	table.insert(animation, {["x"] = x1, ["y"] = y1, ["r"] =  r1})
+	table.insert(animation, {["x"] = x1, ["y"] = y1, ["r"] = r1})
 	repeat
 		if x2 < x then
 			x = x + 1
@@ -9539,7 +9539,11 @@ function creat_animation(x1, y1, r1, x2, y2, r2)
 			r = r - 1
 		end
 		table.insert(animation, {["x"] = x, ["y"] = y, ["r"] =  r})
-	until x == x2 and y == x2 and r == r2
+		--print(x, " == ", x2, x == x2)
+		--print(y, " == ", y2, y == y2)
+		--print(r, " == ", r2, r == r2)
+		--io.read()
+	until x == x2 and y == y2 and r == r2
 
 	return animation
 end

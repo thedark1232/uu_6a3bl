@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 69"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 70"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -161,6 +161,10 @@ local headers = {["User-Agent"]="OpenComputers", ["Content-Type"] = "multipart/f
 horizontalAlignment.left = 1
 horizontalAlignment.right = 2
 horizontalAlignment.center = 3
+local nopTbl
+nopTbl.coo6LLleHu9l_oT_LLlaxTepa = 1000
+nopTbl.coo6LLleHu9l_LLlaxTepy = 1001
+
 
 local default_text = {} --дефолтный текст для текстбокса
 default_text["ввод значения"] = true
@@ -9056,6 +9060,7 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 		table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() 
 			table_form.destroy()
 			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "tunnel"
+			HacTpouka_po6oTa_LLlaxTepa.send = component.tunnel
 		end)
 		table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:item", 51)
 		table_form.coeguHeHHa9l_kapTa_icon.setScale(6)
@@ -9072,9 +9077,12 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 	--иконка модема
 	if component.isAvailable("modem") then
 		table_form.modem = creat_new_button(-1, nick, 214 + x_main, y_main + 76, 101, 100, "", "modem_button", true, gray, white, function()
-			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "modem"
-			modem.open(1000)
 			table_form.destroy()
+			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "modem"
+			modem.open(nopTbl.coo6LLleHu9l_oT_LLlaxTepa)
+			HacTpouka_po6oTa_LLlaxTepa.send = function(message)
+				component.modem.broadcast(nopTbl.coo6LLleHu9l_LLlaxTepy, message)
+			end
 		end)
 		table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 214, y_main + 87, "OpenComputers:item", 13)
 		table_form.modem_icon.setScale(6)
@@ -9236,6 +9244,9 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	rawset(table_form.move_button, "form_name", "po6oT_LLlaxTep_work")
 	rawset(table_form.move_button, "enabled", false)
 	rawset(table_form.move_button, "getType", function() return "move_form" end)
+	table_form.move_button.setVisible(false)
+	table_form.move_button.setClickable(false)
+	
 	table_form.return_button = creat_new_button(1, nick, x_main + 393, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
@@ -9261,7 +9272,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 		Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
 	end
 	
-	table_form.destroy_button = creat_new_button(1, nick, x_main + 135, y_main + 150, 80, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.destroy_button = creat_new_button(1, nick, x_main + 156, y_main + 192, 80, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
 			
 	--объединение таблиц
 	self = {}
@@ -9515,6 +9526,7 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	local ocTaJIocb_CekyHg
 	_, _, _, cTapToBle_cekyHgbl = getTime()
 	cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l
+	HacTpouka_po6oTa_LLlaxTepa.send("1232") --послать сообщение пробуждения
 
 	repeat
 		for _, anim in ipairs(animation) do
@@ -9534,7 +9546,13 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	if cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl then
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText("нет ответа")
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setColor(red)
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() - 16)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() - 20)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.move_button.setVisible(true)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.move_button.setClickable(true)
+		
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.destroy_button.setVisible(true)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.destroy_button.setClickable(true)
+		
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 	end
 end

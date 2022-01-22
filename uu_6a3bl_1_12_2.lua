@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 54"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 55"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9512,7 +9512,10 @@ function nepuMeTp_noTok(nick)
 end
 function po6oT_LLlaxTep_work_noTok(nick, animation)	
 	for _, anim in ipairs(animation) do
-		Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setX(anim.x)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setY(anim.y)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setRotation(anim.r)
+		
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		os.sleep(0.1)
 	end

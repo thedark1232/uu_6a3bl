@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 90"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 92"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9444,8 +9444,11 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	local y_main	
 	if cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main == nil then
 		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main = {}
-		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.x = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.x
-		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.y = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.y
+		--cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.x = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.x
+		--cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.y = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.y
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.x = 1
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.y = 1
+		
 		configuration[49] = cTapToBble_koopguHaTbl
 		setConfiguration()
 	end
@@ -9463,9 +9466,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	rawset(table_form.move_button, "form_name", "po6oT_LLlaxTep_main")
 	rawset(table_form.move_button, "enabled", false)
 	rawset(table_form.move_button, "getType", function() return "move_form" end)
-	table_form.move_button.setVisible(false)
-	table_form.move_button.setClickable(false)
-	
+
 	table_form.return_button = creat_new_button(1, nick, x_main + 393, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)

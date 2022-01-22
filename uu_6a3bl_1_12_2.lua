@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 66"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 67"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2379,6 +2379,7 @@ function forms:creat_main_form(nick)
 		else
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = forms:creat_po6oT_LLlaxTep_work_form(nick)
 			Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BkJI_animation()
 		end
 	end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
@@ -9253,20 +9254,13 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
 	table_form.diamong_ore_icon.setScale(5)
 	
+	--включение анимации
 	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 187, y_main + 153, -131, true)
 	
-	table_form.BkJI_animation = creat_new_button(-1, nick, 80 + x_main, y_main + 179, 101, 15, "вкл. анимацию", "animation_button", true, gray, white, function()
-		if Bce_noToku[nick].po6oT_LLlaxTep_work == nil then
-			Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
-		end
-	end)
-	table_form.BblkJI_animation = creat_new_button(-1, nick, 190 + x_main, y_main + 179, 101, 15, "выкл. анимацию", "animation_button", true, gray, white, function()
-		if Bce_noToku[nick].po6oT_LLlaxTep_work ~= nil then
-			myThread.kill(Bce_noToku[nick].po6oT_LLlaxTep_work)
-			Bce_noToku[nick].po6oT_LLlaxTep_work = nil
-		end
-	end)
-	
+	table_form.BkJI_animation = function()
+		Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
+	end
+		
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -9516,6 +9510,7 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	local cTapToBle_cekyHgbl
 	local TekyLLlue_cekyHgbl
 	local BpeM9l_oJugaHu9l = 10
+	local ocTaJIocb_CekyHg
 	_, _, _, cTapToBle_cekyHgbl = getTime()
 	cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l
 
@@ -9525,11 +9520,20 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setX(anim.x)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setY(anim.y)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setRotation(anim.r)
-			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText(tostring(cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl) .. " сек")
+			ocTaJIocb_CekyHg = cTapToBle_cekyHgbl - TekyLLlue_cekyHgbl
+			if ocTaJIocb_CekyHg >= 0 then
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText(tostring(ocTaJIocb_CekyHg) .. " сек")
+			end
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 			os.sleep(0.1)
 		end
 	until cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl
+	
+	if cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl then
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText("нет ответа")
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setColor(red)
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+	end
 end
 
 function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue)

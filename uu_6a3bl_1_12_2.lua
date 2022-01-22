@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 60"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 61"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9549,10 +9549,10 @@ function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_
 	if nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue then
 		local newTable = {}
 		for i = #animation, 1, -1 do
-			table.insert(newTable, {animation[i].x, animation[i].y, animation[i].z})
+			table.insert(newTable, {animation[i].x, animation[i].y, animation[i].r})
 		end
 		
-		for _, v in ipairs(newTable)
+		for _, v in ipairs(newTable) do
 			table.insert(animation, v)
 		end
 	end

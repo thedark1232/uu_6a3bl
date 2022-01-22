@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 92"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 93"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9472,14 +9472,32 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
 	--иконка робота
-	table_form.robot_box = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 10, 10, gray)
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 10, y_main + 10, "OpenComputers:robot", 0)
+	table_form.robot_box = MoHuTop_urpoka[nick].addBox(x_main + 4, y_main + 16, 32, 41, gray)
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 9, y_main + 16, "OpenComputers:robot", 0)
+	table_form.robot_icon.setScale(2)
 	table_form.uHcTpyMeHT_icon = MoHuTop_urpoka[nick].addIcon(x_main + 10, y_main + 10, "minecraft:diamond_pickaxe", 0)
 	
 	--полоска энергии
 	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 10, 10, black)
 	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 10, 10, gray)
 	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 10, 10, green)
+	
+	--инвентарь робота
+	local HoMep_9l4euKu = 1
+	local cMeLLleHue_no_x
+	local cMeLLleHue_no_y = 149 + y_main
+	for i = 1, 4 do
+		cMeLLleHue_no_x = x_main + 5
+		for j = 1, 4 do
+			table_form[HoMep_9l4euKu] = creat_new_button(-1, nick, x_main + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
+			
+			end)
+			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
+			cMeLLleHue_no_x = cMeLLleHue_no_x + 21	
+			HoMep_9l4euKu = HoMep_9l4euKu + 1
+		end
+		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
+	end
 	
 	--объединение таблиц
 	self = {}

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 106"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 107"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9475,7 +9475,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--главный фрейм
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 398, 189, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 180, 189, white)
 	table_form.main_box2.setClickable(false)
 		
 	--сдвиг формы + кнопка выхода
@@ -9504,15 +9504,15 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--NSWE
 	--creat_new_cirle(nick, KoJIu4ecTBo_noJIuroHoB, x, y, scale)
-	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 11, y_main + 121, 10, 14, gray)
+	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 83, 72, gray)
 	table_form.radar = creat_new_cirle(nick, 20, x_main + 44, y_main + 154, 30)
 	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 41, y_main + 121, "С", blue)
 	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 42, y_main + 180, "Ю", blue)
 	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 11, y_main + 150, "З", blue)
 	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 72, y_main + 150, "В", blue)
-	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({x_main + 44, y_main + 131}, {x_main + 44, y_main + 190}, black)
-	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({x_main + 21, y_main + 154}, {x_main + 82, y_main + 154}, black)
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 138, "OpenComputers:robot", 0)
+	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({x_main + 44, y_main + 126}, {x_main + 44, y_main + 185}, black)
+	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({x_main + 16, y_main + 154}, {x_main + 77, y_main + 154}, black)
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 28, y_main + 138, "OpenComputers:robot", 0)
 	table_form.robot_icon.setScale(2)
 	
 	--инвентарь робота

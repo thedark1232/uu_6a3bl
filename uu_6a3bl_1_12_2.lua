@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 89"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 90"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9471,13 +9471,14 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
 	--иконка робота
-	
+	table_form.robot_box = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 10, 10, gray)
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 10, y_main + 10, "OpenComputers:robot", 0)
 	table_form.uHcTpyMeHT_icon = MoHuTop_urpoka[nick].addIcon(x_main + 10, y_main + 10, "minecraft:diamond_pickaxe", 0)
-	table_form.robot_box = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 405, 205, gray)
-	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 405, 205, black)
-	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 405, 205, gray)
-	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 405, 205, green)
+	
+	--полоска энергии
+	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 10, 10, black)
+	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 10, 10, gray)
+	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 10, 10, green)
 	
 	--объединение таблиц
 	self = {}

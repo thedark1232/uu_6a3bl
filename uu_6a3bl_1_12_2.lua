@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 46"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 48"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9243,123 +9243,9 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	--иконка робота шахтера
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:robot", 0)
 	table_form.robot_icon.setScale(3)
-	--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 53, "ожидание соединения", blue)
-	--table_form.nogcka3ka.setScale(3)
-	
-	table_form.nogcka3ka1 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 53, "о", blue)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 63, "ж", blue)
-	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 73, "и", blue)
-	table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 83, "д", blue)
-	table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 93, "а", blue)
-	table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 103, "н", blue)
-	table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 113, "и", blue)
-	table_form.nogcka3ka8 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 123, "е", blue)
-	table_form.nogcka3ka9 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 133, "с", blue)
-	table_form.nogcka3ka10 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 143, "о", blue)
-	table_form.nogcka3ka11 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 153, "е", blue)
-	table_form.nogcka3ka12 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 163, "д", blue)
-	table_form.nogcka3ka13 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 173, "и", blue)
-	table_form.nogcka3ka14 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 183, "н", blue)
-	table_form.nogcka3ka15 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 193, "е", blue)
-	table_form.nogcka3ka16 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 203, "н", blue)
-	table_form.nogcka3ka17 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 213, "и", blue)
-	table_form.nogcka3ka18 = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 223, "я", blue)
-	
-	
-	
-	-- --настройка соединения	
-	-- table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(15 + x_main, y_main + 32, "Выбери тип соединения...", blue)
-	-- table_form.nogcka3ka.setScale(3)
-	
-	-- --иконка соединенной карты
-	-- if component.isAvailable("tunnel") then
-		-- table_form.coeguHeHHa9l_kapTa = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 100, "", "coeguHeHHa9l_kapTa_button", true, gray, white, function() 
-			-- table_form.destroy()
-			-- HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "tunnel"
-		-- end)
-		-- table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:item", 51)
-		-- table_form.coeguHeHHa9l_kapTa_icon.setScale(6)
-		-- table_form.coeguHeHHa9l_kapTa_icon.setClickable(false)
-		-- table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 178, "туннель", blue)
-		-- table_form.nogcka3ka2.setScale(2)
-	-- else
-		-- table_form.nogcka3ka4 = MoHuTop_urpoka[nick].addText(90 + x_main, y_main + 113, "туннель", blue)
-		-- table_form.nogcka3ka4.setScale(2)
-		-- table_form.nogcka3ka5 = MoHuTop_urpoka[nick].addText(79 + x_main, y_main + 133, "не найден!", blue)
-		-- table_form.nogcka3ka5.setScale(2)
-	-- end
-	
-	-- --иконка модема
-	-- if component.isAvailable("modem") then
-		-- table_form.modem = creat_new_button(-1, nick, 214 + x_main, y_main + 76, 101, 100, "", "modem_button", true, gray, white, function()
-			-- HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "modem"
-			-- modem.open(1000)
-			-- table_form.destroy()
-		-- end)
-		-- table_form.modem_icon = MoHuTop_urpoka[nick].addIcon(x_main + 214, y_main + 87, "OpenComputers:item", 13)
-		-- table_form.modem_icon.setScale(6)
-		-- table_form.modem_icon.setClickable(false)
-		-- table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(234 + x_main, y_main + 178, "модем", blue)
-		-- table_form.nogcka3ka3.setScale(2)
-	-- else
-		-- table_form.nogcka3ka6 = MoHuTop_urpoka[nick].addText(230 + x_main, y_main + 113, "модем", blue)
-		-- table_form.nogcka3ka6.setScale(2)
-		-- table_form.nogcka3ka7 = MoHuTop_urpoka[nick].addText(208 + x_main, y_main + 133, "не найден!", blue)
-		-- table_form.nogcka3ka7.setScale(2)
-	-- end
-	-- obj = table_form.nogcka3ka5
-
-	--создание кнопок
-	-- local y = y_main + 14
-	-- local y_func = function()
-		-- y = y + 17
-		-- return y
-	-- end
-	-- local num = 0
-	-- local start_visible = true
-	-- local num_button = function()
-		-- num = num + 1
-		-- if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
-		-- return num
-	-- end
-	
-	
-	--создание текста подсказки
-	--table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(194 + x_main, y_main + 32, "текущий пьедестал: ", blue)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 53, "ожидание соединения", blue)
+	table_form.nogcka3ka.setScale(3)
 		
-		
-		
-	--создание кнопки замены
-	--table_form.zaMeHa_agpeca_button = creat_new_button(-1, nick, 194 + x_main, y_main + 76, 101, 15, "заменить", "zaMeHa_button", true, blue, white, function() end)
-	
-	
-	--создание каркаса скролла
-	-- local MakcuMyM_BuguMblx_kHonok
-	-- local x_scrolla = 33
-	-- table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(x_scrolla + x_main, y_main + 29, 10, 10, gray)
-	-- table_form.scroll_badur_up.setClickable(false)
-	-- table_form.scroll_line = MoHuTop_urpoka[nick].addLine({x_scrolla + x_main + 5, y_main + 39}, {x_scrolla + x_main + 5, y_main + 191}, white)
-	-- table_form.scroll_line.setClickable(false)
-	-- table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(x_scrolla + x_main, y_main + 191, 10, 10, gray)
-	-- table_form.scroll_badur_down.setClickable(false)
-	-- --определить количество кнопок для размера скролла
-	-- local Bcero_KHonok = num_button() - 1
-	-- local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
-	-- --создание ползунка скролла
-	-- local start_no_y = y_main + 39
-	-- local y_min = start_no_y
-	-- local y_max = start_no_y + 152
-	-- local cgBur_ckpoJIJIa = 10
-	-- local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	-- if y_pa3Mep < 10 then
-		-- y_pa3Mep = 10
-		-- cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
-	-- end
-	
-	-- if ckpblTble_kHOnku > 0 then
-		-- table_form.scroll_button = creat_new_vertical_scroll(nick, x_scrolla + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, npo4ue_qpopMbl[nick])
-	-- end
-	
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -9597,6 +9483,8 @@ function nepuMeTp_noTok(nick)
 	end
 	os.sleep(0.1)
 end
+
+
 function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
@@ -9622,7 +9510,11 @@ end
 function glasses_release(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then
-			if Bce_noToku[nick].nepuMeTp_noTok ~= nil then myThread.kill(Bce_noToku[nick].nepuMeTp_noTok) end
+			if type(Bce_noToku[nick]) == "table" then
+				for _, noTok in pairs(Bce_noToku[nick]) do
+					myThread.kill(noTok)
+				end
+			end
 			MoHuTop_urpoka[nick] = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].getSurfaceByName(nick)
 			Bce_ragJeTbl_urpoka[nick].main_form.destroy()
 			Bce_ragJeTbl_urpoka[nick].main_form = nil
@@ -9638,6 +9530,7 @@ function glasses_release(event_type, agrecc, nick, agrecc2)
 			end
 			if gebug_form ~= nil then Bce_ragJeTbl_urpoka[nick].gebug.destroy() end
 			Bce_ragJeTbl_urpoka[nick] = {}
+			
 		else
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "игрок: " .. r .. nick .. c .. " не из вайт листа")
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "снял очки от: " .. r .. Ha3BaHue_6a3bl)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 94"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 95"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9488,7 +9488,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	local cMeLLleHue_no_x
 	local cMeLLleHue_no_y = 15 + y_main
 	for i = 1, 4 do
-		cMeLLleHue_no_x = x_main + 6
+		cMeLLleHue_no_x = x_main + 4
 		for j = 1, 4 do
 			table_form[HoMep_9l4euKu] = creat_new_button(-1, nick, x_main + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
 			

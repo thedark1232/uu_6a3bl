@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 74"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 75"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9278,8 +9278,8 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	end
 	
 	table_form.destroy_button = creat_new_button(1, nick, x_main + 156, y_main + 175, 80, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
-	table_form.setClickable(false)
-	table_form.setVisible(false)
+	table_form.destroy_button.setClickable(false)
+	table_form.destroy_button.setVisible(false)
 	
 			
 	--объединение таблиц

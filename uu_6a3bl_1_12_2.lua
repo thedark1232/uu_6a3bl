@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 102"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 104"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9503,9 +9503,10 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--table_form.ender_eye_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_eye", 0)
 	
 	--NSWE
-	table_form.radar = creat_new_cirle(nick, 20, 100, 100, 50)
-	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "С", red)
-	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "Ю", red)
+	--creat_new_cirle(nick, KoJIu4ecTBo_noJIuroHoB, x, y, scale)
+	table_form.radar = creat_new_cirle(nick, 20, y_main + 44, y_main + 154, 30)
+	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 44, y_main + 120, "С", red)
+	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 44, y_main + 180, "Ю", red)
 	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "З", red)
 	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "В", red)
 	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({10, 10}, {10, 20}, black)

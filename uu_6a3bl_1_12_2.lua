@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 88"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 89"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -169,10 +169,14 @@ coo6LLleHu9l_OT_po6oToB = {}
 setmetatable(coo6LLleHu9l_OT_po6oToB, {__index = function() return function() end end})
 coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function() LLlaxTep_online = true end
 LLlaxTep_online = false
-coo6LLleHu9l_OT_po6oToB.test_function = function(Ta6JIuca_cocTo9lHu9l)
+coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 	for k, v in pairs(Ta6JIuca_cocTo9lHu9l) do
 		 Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. ": " .. g .. tostring(v))
 	end
+end
+coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка команды робота:")
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(oLLlu6ka.onucaHue))
 end
 
 local default_text = {} --дефолтный текст для текстбокса
@@ -9304,7 +9308,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 		table_form.destroy()
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main = forms:creat_po6oT_LLlaxTep_main_form(nick)
 		Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"my_status"})
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_status"})
 	end)
 	table_form.online_button.setClickable(false)
 	table_form.online_button.setVisible(false)
@@ -9466,9 +9470,15 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
-	--иконки и подсказки робота шахтера
+	--иконка робота
 	
-		
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 10, y_main + 10, "OpenComputers:robot", 0)
+	table_form.uHcTpyMeHT_icon = MoHuTop_urpoka[nick].addIcon(x_main + 10, y_main + 10, "minecraft:diamond_pickaxe", 0)
+	table_form.robot_box = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 405, 205, gray)
+	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 405, 205, black)
+	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 405, 205, gray)
+	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 10, y_main + 10, 405, 205, green)
+	
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -9946,6 +9956,9 @@ do
 	--setmetatable(Ta6JIuca_koMaHg_gJI9l_rocTeu, {__index = function() return function() end end})
 	setmetatable(configuration, {__index = function() return "nil" end})
 	--создание функций команд
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " шахтер выход"] = function()
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"})
+	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " сброс настроек робота шахтера"] = function()
 		HacTpouka_po6oTa_LLlaxTepa = {}
 		configuration[51] = HacTpouka_po6oTa_LLlaxTepa

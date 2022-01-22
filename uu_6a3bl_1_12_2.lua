@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 58"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 59"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9253,12 +9253,12 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	
 	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 184, y_main + 153, -121)
 	
-	table_form.BkJI_animation = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 15, "вкл. анимацию", "animation_button", true, gray, white, function()
+	table_form.BkJI_animation = creat_new_button(-1, nick, 80 + x_main, y_main + 76, 179, 15, "вкл. анимацию", "animation_button", true, gray, white, function()
 		if Bce_noToku[nick].po6oT_LLlaxTep_work == nil then
 			Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
 		end
 	end)
-	table_form.BblkJI_animation = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 15, "выкл. анимацию", "animation_button", true, gray, white, function()
+	table_form.BblkJI_animation = creat_new_button(-1, nick, 190 + x_main, y_main + 179, 101, 15, "выкл. анимацию", "animation_button", true, gray, white, function()
 		if Bce_noToku[nick].po6oT_LLlaxTep_work ~= nil then
 			myThread.kill(Bce_noToku[nick].po6oT_LLlaxTep_work)
 			Bce_noToku[nick].po6oT_LLlaxTep_work = nil

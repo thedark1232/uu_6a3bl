@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 50"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 51"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9241,14 +9241,14 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
 	--иконки и подсказки робота шахтера
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 65, "ожидание соединения", blue)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 12, "ожидание соединения", blue)
 	table_form.nogcka3ka.setScale(3)
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 208, y_main + 105, "OpenComputers:robot", 0) --робот
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 148, y_main + 81, "OpenComputers:robot", 0) --робот
 	table_form.robot_icon.setScale(5)
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 208, y_main + 105, "minecraft:diamond_pickaxe", 0) --кирка
-	table_form.robot_icon.setScale(5)
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 208, y_main + 105, "minecraft:diamond_ore", 0) --алмазная руда
-	table_form.robot_icon.setScale(5)
+	table_form.pickaxe_icon = MoHuTop_urpoka[nick].addIcon(x_main + 208, y_main + 105, "minecraft:diamond_pickaxe", 0) --кирка
+	table_form.pickaxe_icon.setScale(5)
+	table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 108, y_main + 81, "minecraft:diamond_ore", 0) --алмазная руда
+	table_form.diamong_ore_icon.setScale(5)
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)

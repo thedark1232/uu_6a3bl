@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 76"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 77"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -161,9 +161,14 @@ headers = {["User-Agent"]="OpenComputers", ["Content-Type"] = "multipart/form-da
 horizontalAlignment.left = 1
 horizontalAlignment.right = 2
 horizontalAlignment.center = 3
-nopTbl = {}
+nopTbl = {} --так же скопировать таблицу в робота шахтера
 nopTbl.coo6LLleHu9l_oT_LLlaxTepa = 1000
 nopTbl.coo6LLleHu9l_LLlaxTepy = 1001
+
+coo6LLleHu9l_OT_po6oToB = {}
+setmetatable(coo6LLleHu9l_OT_po6oToB, {__index = function() return function(t, k)Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "получено сообщение: " .. g .. tostring(k)) end end})
+coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function() LLlaxTep_online = true end
+LLlaxTep_online = false
 
 local default_text = {} --дефолтный текст для текстбокса
 default_text["ввод значения"] = true
@@ -1089,9 +1094,10 @@ function npoBepka_gocTyna_k_KoMaHge(nick)
 	end
 end
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "получено сообщение: " .. g .. coo6llleHue_oT_mogema)
+
+	coo6LLleHu9l_OT_po6oToB[coo6llleHue_oT_mogema]()
 	--print(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-	coo6llleHue_TuHHeJI9l = serialization.unserialize(coo6llleHue_oT_mogema)
+	--coo6llleHue_TuHHeJI9l = serialization.unserialize(coo6llleHue_oT_mogema)
 	--for k,v in pairs(coo6llleHue_TuHHeJI9l) do
 		--print(k, v)
 	--end
@@ -9530,12 +9536,14 @@ end
 function po6oT_LLlaxTep_work_noTok(nick, animation)	
 	local cTapToBle_cekyHgbl
 	local TekyLLlue_cekyHgbl
-	local BpeM9l_oJugaHu9l = 10
+	local BpeM9l_oJugaHu9l = 15
 	local ocTaJIocb_CekyHg
 	_, _, _, cTapToBle_cekyHgbl = getTime()
 	cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l
+	LLlaxTep_online = false
 	HacTpouka_po6oTa_LLlaxTepa.send("1232") --послать сообщение пробуждения
-
+	HacTpouka_po6oTa_LLlaxTepa.send("check_online")
+	
 	repeat
 		for _, anim in ipairs(animation) do
 			_, _, _, TekyLLlue_cekyHgbl = getTime()
@@ -9549,7 +9557,7 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 			os.sleep(0.1)
 		end
-	until cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl
+	until cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl or LLlaxTep_online
 	
 	if cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl then
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText("нет ответа")
@@ -9562,6 +9570,11 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.destroy_button.setClickable(true)
 		
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		return
+	end
+	
+	if LLlaxTep_online then
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "робот шахтер онлайн")
 	end
 end
 

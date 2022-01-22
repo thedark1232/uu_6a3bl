@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 48"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 49"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9241,9 +9241,9 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
 	--иконка робота шахтера
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:robot", 0)
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 220, y_main + 90, "OpenComputers:robot", 0)
 	table_form.robot_icon.setScale(3)
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(31 + x_main, y_main + 53, "ожидание соединения", blue)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 65, "ожидание соединения", blue)
 	table_form.nogcka3ka.setScale(3)
 		
 	--объединение таблиц
@@ -9339,6 +9339,8 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	local y_wh = 215
 	local x_s = 450
 	local y_s = 175
+	local x_r = 330
+	local y_r = 175
 	--перемещение панели
 	table_form.BBEpx = creat_new_button(-1, nick, x_cTpeJIku + 20, y_cTpeJIku, 15, 15, "y-", "up_button", true, black, white, function()
 		obj.setY(obj.getY() - 1)
@@ -9392,8 +9394,17 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "s=" .. tostring(obj.getScale()))
 	end)
 	table_form.MeHbLLle_s.caption.setX(x_s + 3)
-
-
+	--поворот
+	table_form.boJIbLLle_r = creat_new_button(-1, nick, x_r, y_r, 15, 15, "r+", "s_max_button", true, blue, white, function()
+		obj.setRotation(obj.getRotation() + 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "r=" .. tostring(obj.getRotation()))
+	end)
+	table_form.boJIbLLle_r.caption.setX(x_r + 3)
+	table_form.MeHbLLle_r = creat_new_button(-1, nick, x_r, y_r + 20, 15, 15, "r-", "s_min_button", true, blue, white, function()
+		obj.setRotation(obj.getRotation() - 1)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "r=" .. tostring(obj.getRotation()))
+	end)
+	table_form.MeHbLLle_r.caption.setX(x_r + 3)
 
 	--создание кнопок
 	local y = -13

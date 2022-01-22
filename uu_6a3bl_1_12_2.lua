@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 104"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 105"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9505,13 +9505,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--NSWE
 	--creat_new_cirle(nick, KoJIu4ecTBo_noJIuroHoB, x, y, scale)
 	table_form.radar = creat_new_cirle(nick, 20, y_main + 44, y_main + 154, 30)
-	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 44, y_main + 120, "С", red)
-	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 44, y_main + 180, "Ю", red)
-	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "З", red)
-	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "В", red)
-	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({10, 10}, {10, 20}, black)
-	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({10, 10}, {20, 10}, black)
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "OpenComputers:robot", 0)
+	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 41, y_main + 121, "С", blue)
+	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 42, y_main + 180, "Ю", blue)
+	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 11, y_main + 150, "З", blue)
+	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 72, y_main + 150, "В", blue)
+	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({41, 121}, {41, 180}, black)
+	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({11, 150}, {72, 150}, black)
+	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 138, "OpenComputers:robot", 0)
 	table_form.robot_icon.setScale(2)
 	
 	--инвентарь робота

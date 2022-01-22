@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 59"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 60"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9251,9 +9251,9 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	--table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
 	--table_form.diamong_ore_icon.setScale(5)
 	
-	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 184, y_main + 153, -121)
+	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 104, y_main + 153, -121, true)
 	
-	table_form.BkJI_animation = creat_new_button(-1, nick, 80 + x_main, y_main + 76, 179, 15, "вкл. анимацию", "animation_button", true, gray, white, function()
+	table_form.BkJI_animation = creat_new_button(-1, nick, 80 + x_main, y_main + 179, 101, 15, "вкл. анимацию", "animation_button", true, gray, white, function()
 		if Bce_noToku[nick].po6oT_LLlaxTep_work == nil then
 			Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
 		end
@@ -9515,13 +9515,12 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setX(anim.x)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setY(anim.y)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setRotation(anim.r)
-		
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		os.sleep(0.1)
 	end
 end
 
-function creat_animation(x1, y1, r1, x2, y2, r2)
+function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue)
 	local animation = {}
 	local x, y, r = x1, y1, r1
 	table.insert(animation, {["x"] = x1, ["y"] = y1, ["r"] = r1})
@@ -9547,6 +9546,16 @@ function creat_animation(x1, y1, r1, x2, y2, r2)
 		--print(r, " == ", r2, r == r2)
 		--io.read()
 	until x == x2 and y == y2 and r == r2
+	if nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue then
+		local newTable = {}
+		for i = #animation, 1, -1 do
+			table.insert(newTable, {animation[i].x, animation[i].y, animation[i].z})
+		end
+		
+		for _, v in ipairs(newTable)
+			table.insert(animation, v)
+		end
+	end
 
 	return animation
 end

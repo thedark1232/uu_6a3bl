@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 81"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 82"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2389,7 +2389,6 @@ function forms:creat_main_form(nick)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep = forms:creat_po6oT_LLlaxTep_form(nick)
 		else
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = forms:creat_po6oT_LLlaxTep_work_form(nick)
-			Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BkJI_animation()
 		end
 	end)
@@ -9298,11 +9297,171 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.destroy_button.setClickable(false)
 	table_form.destroy_button.setVisible(false)
 	
-	table_form.online_button = creat_new_button(1, nick, x_main + 140, y_main + 175, 80, 15, "далее", "online_button", true, green, white, function() table_form.destroy() end)
+	table_form.online_button = creat_new_button(1, nick, x_main + 140, y_main + 175, 80, 15, "далее", "online_button", true, green, white, function()
+		table_form.destroy()
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main = forms:creat_po6oT_LLlaxTep_main_form(nick)
+	end)
 	table_form.online_button.setClickable(false)
 	table_form.online_button.setVisible(false)
 	
 			
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+function forms:creat_po6oT_LLlaxTep_main_form(nick)	
+	
+	if Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"] ~= nil then Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"].destroy() end
+			
+	--создание формы
+	local table_form = {}
+	
+	--изменить в сдвиге окна значение, если будешь копировать форму
+	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep_main" 
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		npo4ue_qpopMbl[nick] = nil
+	end
+	
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--сдвиг окна
+	table_form.move_form = function(x_mov, y_mov)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+				elseif string.match(v.getType(), "textBox") ~= nil then
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+					v.caption.setX(v.caption.getX() + x_mov)
+					v.caption.setY(v.caption.getY() + y_mov)
+					v.background2.setX(v.background2.getX() + x_mov)
+					v.background2.setY(v.background2.getY() + y_mov)
+					v.background3.setX(v.background3.getX() + x_mov)
+					v.background3.setY(v.background3.getY() + y_mov)
+				elseif v.getType() == "line" then
+					v.setP1({v.getP1().x + x_mov, v.getP1().y + y_mov})
+					v.setP2({v.getP2().x + x_mov, v.getP2().y + y_mov})
+				else
+					v.setX(v.getX() + x_mov)
+					v.setY(v.getY() + y_mov)
+				end
+			end
+		end
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.x = table_form.main_box.getX()
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.y = table_form.main_box.getY()
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+	
+	--коондинаты отрисовки окна
+	local x_main
+	local y_main	
+	if cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main == nil then
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main = {}
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.x = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.x
+		cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.y = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_work.y
+		configuration[49] = cTapToBble_koopguHaTbl
+		setConfiguration()
+	end
+	x_main = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.x
+	y_main = cTapToBble_koopguHaTbl[nick].po6oT_LLlaxTep_main.y
+	
+	--главный фрейм
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 398, 189, white)
+	table_form.main_box2.setClickable(false)
+		
+	--сдвиг формы + кнопка выхода
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 405, 10, "", "move_form", true, gray, white, function() end)
+	rawset(table_form.move_button, "form_name", "po6oT_LLlaxTep_main")
+	rawset(table_form.move_button, "enabled", false)
+	rawset(table_form.move_button, "getType", function() return "move_form" end)
+	table_form.move_button.setVisible(false)
+	table_form.move_button.setClickable(false)
+	
+	table_form.return_button = creat_new_button(1, nick, x_main + 393, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
+	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
+
+	--иконки и подсказки робота шахтера
+	Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
+		
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)

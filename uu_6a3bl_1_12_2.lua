@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 97"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 99"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2226,40 +2226,23 @@ function creat_new_textBox(nick, x, y, w, h, label, name, visible, color_backgro
 	return table_button
 end
 function creat_new_cirle()
-	local detail = 10
-	local a = 10
-	local b = 10
-	local r = 5
+	local detail = 20
 
-	local calculateCords = function(x) 
-		local result = {}
-		local unsignedNumber = math.sqrt((math.pow(r, 2) - math.pow((x-a), 2)))
-		if (unsignedNumber == 0) then
-			local cord = {}
-			cord.x = x
-			cord.y = b
-			table.insert(result, cord)
-		else
-			local cord1 = {}
-			cord1.x = x
-			cord1.y = unsignedNumber+b
-			table.insert(result, cord1)
-
-			local cord2 = {}
-			cord2.x = x
-			cord2.y = (unsignedNumber*-1)+b
-			table.insert(result, cord2)
-		end
-		return result
+	local calculateCords = function(angle, r, a, b)
+		local x = r * math.sin(math.pi * 2 * angle / 360);
+		local y = r * math.cos(math.pi * 2 * angle / 360)
+		return {x+a,(y+b),math.random(0xffffff),1,}
 	end
 
-	local cords = {}
-	for x = (a - r) * detail, (a + r) * detail do
-		local tempCords = calculateCords(x / detail)
-		for i = 1, #tempCords do
-			table.insert(cords, tempCords[i]) 
+	local drawCircle = function(x, y, r)
+		local cords = {}
+		for i=1,detail do
+			table.insert(cords, calculateCords(360/detail * i, r, x, y))
 		end
-	end 
+		glass.addGradientPolygon(table.unpack(cords))
+	end
+
+	drawCircle(200,100, 50)
 end
 function creat_new_vertical_scroll(nick, x, y, w, h, min_y, max_y, cgBur_no_y, color_background, cB93b)
 	local table_scroll	
@@ -9160,7 +9143,10 @@ end
 function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соединения робота шахтера
 	po6oT_LLlaxTep_online = false
 	
-	if Bce_ragJeTbl_urpoka[nick]["main_form"] ~= nil then Bce_ragJeTbl_urpoka[nick]["main_form"].destroy() end
+	if Bce_ragJeTbl_urpoka[nick]["main_form"] ~= nil then
+		Bce_ragJeTbl_urpoka[nick]["main_form"].destroy()
+		Bce_ragJeTbl_urpoka[nick]["main_form"] = nil
+	end
 			
 	--создание формы
 	local table_form = {}
@@ -9342,6 +9328,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 	
 	table_form.online_button = creat_new_button(1, nick, x_main + 140, y_main + 175, 80, 15, "далее", "online_button", true, green, white, function()
 		table_form.destroy()
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = nil
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main = forms:creat_po6oT_LLlaxTep_main_form(nick)
 		Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_status"})
@@ -9360,7 +9347,6 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 	return table_form
 end
 function forms:creat_po6oT_LLlaxTep_main_form(nick)	
-	
 	if Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"] ~= nil then Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"].destroy() end
 			
 	--создание формы
@@ -9509,7 +9495,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 
 	--иконка робота
-	table_form.robot_box = MoHuTop_urpoka[nick].addBox(x_main + 4, y_main + 116, 32, 41, gray)
+	table_form.robot_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 32, 41, gray)
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "OpenComputers:robot", 0)
 	table_form.robot_icon.setScale(2)
 	
@@ -9519,14 +9505,18 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 10, 14, green)
 	
 	--круглые кнопки
-	table_form.cHer_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:snowball", 0)
-	table_form.cJIu3b_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:slime_ball", 0)
-	table_form.ender_pearl_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_pearl", 0)
-	table_form.ender_eye_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_eye", 0)
+	--table_form.cHer_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:snowball", 0)
+	--table_form.cJIu3b_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:slime_ball", 0)
+	--table_form.ender_pearl_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_pearl", 0)
+	--table_form.ender_eye_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_eye", 0)
 	
-	
-	
-	--table_form.kpyr1 = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "о", red)
+	--NSWE
+	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "С", red)
+	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "Ю", red)
+	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "З", red)
+	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 150, y_main + 150, "В", red)
+	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({10, 10}, {10, 20}, black)
+	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({10, 10}, {20, 10}, black)
 	
 	--инвентарь робота
 	local HoMep_9l4euKu = 1
@@ -9539,9 +9529,9 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)
 			
 			end)
 			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
-			cMeLLleHue_no_x = cMeLLleHue_no_x + 21	
-			table_form[tostring(HoMep_9l4euKu) .. "item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "minecraft:diamond_pickaxe", 0)
+			table_form[tostring(HoMep_9l4euKu) .. " item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "minecraft:diamond_pickaxe", 0)
 			HoMep_9l4euKu = HoMep_9l4euKu + 1
+			cMeLLleHue_no_x = cMeLLleHue_no_x + 21	
 		end
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
 		

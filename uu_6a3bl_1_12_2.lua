@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 84"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 85"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9712,8 +9712,8 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	_, _, _, cTapToBle_cekyHgbl = getTime()
 	cTapToBle_cekyHgbl = cTapToBle_cekyHgbl + BpeM9l_oJugaHu9l
 	LLlaxTep_online = false
-	HacTpouka_po6oTa_LLlaxTepa.send("{'1232'}") --послать сообщение пробуждения
-	HacTpouka_po6oTa_LLlaxTepa.send("{'check_online'}")
+	HacTpouka_po6oTa_LLlaxTepa.send("1232") --послать сообщение пробуждения
+	HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"check_online"})
 	
 	repeat
 		for _, anim in ipairs(animation) do

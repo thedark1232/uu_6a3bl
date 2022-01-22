@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 67"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 68"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9532,6 +9532,7 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	if cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl then
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText("нет ответа")
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setColor(red)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() + 134)
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 	end
 end

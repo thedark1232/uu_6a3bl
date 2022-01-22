@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 78"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 79"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9068,9 +9068,10 @@ function forms:creat_po6oT_LLlaxTep_form(nick) --настройки соедин
 			table_form.destroy()
 			HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l = "tunnel"
 			HacTpouka_po6oTa_LLlaxTepa.send = component.tunnel.send
+			configuration[51] = HacTpouka_po6oTa_LLlaxTepa
+			setConfiguration()
 		end)
-		configuration[51] = HacTpouka_po6oTa_LLlaxTepa
-		setConfiguration()
+
 		table_form.coeguHeHHa9l_kapTa_icon = MoHuTop_urpoka[nick].addIcon(x_main + 86, y_main + 76, "OpenComputers:item", 51)
 		table_form.coeguHeHHa9l_kapTa_icon.setScale(6)
 		table_form.coeguHeHHa9l_kapTa_icon.setClickable(false)
@@ -9276,13 +9277,13 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
 	table_form.diamong_ore_icon.setScale(5)
 	
-	table_form.diamond1 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond", 0)
+	table_form.diamond1 =  MoHuTop_urpoka[nick].addIcon(x_main + 109, y_main + 83, "minecraft:diamond", 0)
 	table_form.diamond1.setVisible(false)
 	table_form.diamond1.setScale(4)
 	table_form.diamond2 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond", 0)
 	table_form.diamond2.setVisible(false)
 	table_form.diamond2.setScale(4)
-	table_form.diamond3 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond", 0)
+	table_form.diamond3 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 99, "minecraft:diamond", 0)
 	table_form.diamond3.setVisible(false)
 	table_form.diamond3.setScale(4)
 	
@@ -9297,7 +9298,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.destroy_button.setClickable(false)
 	table_form.destroy_button.setVisible(false)
 	
-	table_form.online_button = creat_new_button(1, nick, x_main + 156, y_main + 175, 80, 15, "далее", "online_button", true, green, white, function() table_form.destroy() end)
+	table_form.online_button = creat_new_button(1, nick, x_main + 140, y_main + 175, 80, 15, "далее", "online_button", true, green, white, function() table_form.destroy() end)
 	table_form.online_button.setClickable(false)
 	table_form.online_button.setVisible(false)
 	

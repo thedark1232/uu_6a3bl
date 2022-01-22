@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 77"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 78"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -166,7 +166,7 @@ nopTbl.coo6LLleHu9l_oT_LLlaxTepa = 1000
 nopTbl.coo6LLleHu9l_LLlaxTepy = 1001
 
 coo6LLleHu9l_OT_po6oToB = {}
-setmetatable(coo6LLleHu9l_OT_po6oToB, {__index = function() return function(t, k)Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "получено сообщение: " .. g .. tostring(k)) end end})
+setmetatable(coo6LLleHu9l_OT_po6oToB, {__index = function() return function() end end})
 coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function() LLlaxTep_online = true end
 LLlaxTep_online = false
 
@@ -9276,6 +9276,16 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
 	table_form.diamong_ore_icon.setScale(5)
 	
+	table_form.diamond1 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond", 0)
+	table_form.diamond1.setVisible(false)
+	table_form.diamond1.setScale(4)
+	table_form.diamond2 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond", 0)
+	table_form.diamond2.setVisible(false)
+	table_form.diamond2.setScale(4)
+	table_form.diamond3 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond", 0)
+	table_form.diamond3.setVisible(false)
+	table_form.diamond3.setScale(4)
+	
 	--включение анимации
 	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 187, y_main + 153, -131, true)
 	
@@ -9286,6 +9296,10 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	table_form.destroy_button = creat_new_button(1, nick, x_main + 156, y_main + 175, 80, 15, "ОК", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.destroy_button.setClickable(false)
 	table_form.destroy_button.setVisible(false)
+	
+	table_form.online_button = creat_new_button(1, nick, x_main + 156, y_main + 175, 80, 15, "далее", "online_button", true, green, white, function() table_form.destroy() end)
+	table_form.online_button.setClickable(false)
+	table_form.online_button.setVisible(false)
 	
 			
 	--объединение таблиц
@@ -9562,7 +9576,7 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	if cTapToBle_cekyHgbl <= TekyLLlue_cekyHgbl then
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText("нет ответа")
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setColor(red)
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() - 20)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() - 25)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.move_button.setVisible(true)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.move_button.setClickable(true)
 		
@@ -9574,6 +9588,23 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 	end
 	
 	if LLlaxTep_online then
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.diamong_ore_icon.setVisible(false)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.diamond1.setVisible(true)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.diamond2.setVisible(true)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.diamond3.setVisible(true)
+		
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.move_button.setVisible(true)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.move_button.setClickable(true)
+		
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setText("ONLINE")
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setColor(green)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.setX(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BpeM9l.getX() - 25)
+		
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.online_button.setVisible(true)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.online_button.setClickable(true)
+		
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		
 		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "робот шахтер онлайн")
 	end
 end

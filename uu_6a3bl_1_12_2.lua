@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 85"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 86"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1094,8 +1094,12 @@ function npoBepka_gocTyna_k_KoMaHge(nick)
 	end
 end
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
-	local Ta6JIuca_uHcTpyKcuu = serialization.unserialize(coo6llleHue_oT_mogema)
-	coo6LLleHu9l_OT_po6oToB[Ta6JIuca_uHcTpyKcuu[1]](Ta6JIuca_uHcTpyKcuu)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. tostring(coo6llleHue_oT_mogema))
+	local st, er = pcall(function()
+		local Ta6JIuca_uHcTpyKcuu = serialization.unserialize(coo6llleHue_oT_mogema)
+		coo6LLleHu9l_OT_po6oToB[Ta6JIuca_uHcTpyKcuu[1]](Ta6JIuca_uHcTpyKcuu)
+	end)
+	if not st then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(er)) end
 end
 function co3gaHue_HoBou_3oHbl(start_x, start_y, start_z, end_x, end_y, end_z, zone_name)
 	start_x = tonumber(start_x); start_y = tonumber(start_y); start_z = tonumber(start_z)
@@ -9762,8 +9766,6 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.online_button.setClickable(true)
 		
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-		
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "робот шахтер онлайн")
 	end
 end
 

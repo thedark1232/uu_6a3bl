@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 51"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 52"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9243,12 +9243,28 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --рабочий режим 
 	--иконки и подсказки робота шахтера
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 12, "ожидание соединения", blue)
 	table_form.nogcka3ka.setScale(3)
-	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 148, y_main + 81, "OpenComputers:robot", 0) --робот
-	table_form.robot_icon.setScale(5)
-	table_form.pickaxe_icon = MoHuTop_urpoka[nick].addIcon(x_main + 208, y_main + 105, "minecraft:diamond_pickaxe", 0) --кирка
+	--table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 174, y_main + 68, "OpenComputers:robot", 0) --робот
+	--table_form.robot_icon.setScale(4)
+	table_form.pickaxe_icon = MoHuTop_urpoka[nick].addIcon(x_main + 194, y_main + 153, "minecraft:diamond_pickaxe", 0) --кирка
 	table_form.pickaxe_icon.setScale(5)
-	table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 108, y_main + 81, "minecraft:diamond_ore", 0) --алмазная руда
-	table_form.diamong_ore_icon.setScale(5)
+	table_form.pickaxe_icon.setRotation(-121)
+	--table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
+	--table_form.diamong_ore_icon.setScale(5)
+	
+	local animation = creat_animation(x_main + 194, y_main + 153, -121, x_main + 104, y_main + 153, -121)
+	
+	table_form.BkJI_animation = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 15, "вкл. анимацию", "animation_button", true, gray, white, function()
+		if Bce_noToku[nick].po6oT_LLlaxTep_work == nil then
+			Bce_noToku[nick].po6oT_LLlaxTep_work = myThread.create(po6oT_LLlaxTep_work_noTok, nick, animation)
+		end
+	end)
+	table_form.BblkJI_animation = creat_new_button(-1, nick, 82 + x_main, y_main + 76, 101, 15, "выкл. анимацию", "animation_button", true, gray, white, function()
+		if Bce_noToku[nick].po6oT_LLlaxTep_work ~= nil then
+			myThread.kill(Bce_noToku[nick].po6oT_LLlaxTep_work)
+			Bce_noToku[nick].po6oT_LLlaxTep_work = nil
+		end
+	end)
+	
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -9466,9 +9482,6 @@ function forms:creat_gebug_form(nick, form)	--создание стрелок д
 	return table_form
 end
 
-
-
-
 function main_noTok(nick)
 	os.sleep(0.1)
 	local cTaTyc_BblnoJIHeHu9l, onucaHue_olllu6ku = pcall(function()
@@ -9497,8 +9510,39 @@ function nepuMeTp_noTok(nick)
 	end
 	os.sleep(0.1)
 end
+function po6oT_LLlaxTep_work_noTok(nick, animation)	
+	for _, anim in ipairs(animation) do
+		Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		os.sleep(0.1)
+	end
+end
 
+function creat_animation(x1, y1, r1, x2, y2, r2)
+	local animation = {}
+	local x, y, r = x1, y1, r1
+	table.insert(animation, {["x"] = x1, ["y"] = y1, ["r"] =  r1})
+	repeat
+		if x2 < x then
+			x = x + 1
+		else
+			x = x - 1
+		end
+		if y2 < y then
+			y = y + 1
+		else
+			y = y - 1
+		end
+		if r2 < r then
+			r = r + 1
+		else
+			r = r - 1
+		end
+		table.insert(animation, {["x"] = x, ["y"] = y, ["r"] =  r})
+	until x == x2 and y == x2 and r == r2
 
+	return animation
+end
 function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then

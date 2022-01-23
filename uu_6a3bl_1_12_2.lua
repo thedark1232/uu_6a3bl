@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 111"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 112"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9496,7 +9496,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 83, 72, gray)
 	table_form.radar = creat_new_cirle(nick, 20, x_main + 44, y_main + 154, 30)
 	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({x_main + 44, y_main + 123}, {x_main + 44, y_main + 181}, black)
-	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({x_main + 13, y_main + 154}, {x_main + 77, y_main + 150}, black)
+	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({x_main + 13, y_main + 154}, {x_main + 77, y_main + 154}, black)
 	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 41, y_main + 121, "С", blue)
 	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 42, y_main + 180, "Ю", blue)
 	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 11, y_main + 150, "З", blue)
@@ -9504,9 +9504,9 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 28, y_main + 138, "OpenComputers:robot", 0)
 	table_form.robot_icon.setScale(2)
 	
-	local animationWN = creat_animation(x_main + 28, y_main + 138, 0, x_main + 60, y_main + 138, 90)
+	local robot_turn_W_N = creat_animation(x_main + 28, y_main + 138, 0, x_main + 60, y_main + 138, 90)
 	
-	local robot_turn_W_N = function(animation)
+	local play_animation = function(animation)
 		for _, anim in ipairs(animation) do
 			table_form.robot_icon.setX(anim.x)
 			table_form.robot_icon.setY(anim.y)

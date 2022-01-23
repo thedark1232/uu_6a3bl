@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 112"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 113"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9505,18 +9505,19 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.robot_icon.setScale(2)
 	
 	local robot_turn_W_N = creat_animation(x_main + 28, y_main + 138, 0, x_main + 60, y_main + 138, 90)
+	local robot_turn_N_W = creat_animation(x_main + 60, y_main + 138, 90, x_main + 28, y_main + 138, 0)
 	
 	local play_animation = function(animation)
 		for _, anim in ipairs(animation) do
 			table_form.robot_icon.setX(anim.x)
 			table_form.robot_icon.setY(anim.y)
 			table_form.robot_icon.setRotation(anim.r)
+			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		end
 	end
 	
-	table_form.noBopoTWN = creat_new_button(-1, nick, x_main + 150, y_main + 150, 100, 15, "поворот WN", "button", true, gray, white, function()
-		play_animation(robot_turn_W_N)
-	end)
+	table_form.noBopoTWN = creat_new_button(-1, nick, x_main + 150, y_main + 150, 100, 15, "поворот WN", "button", true, gray, white, function() play_animation(robot_turn_W_N) end)
+	table_form.noBopoTWN = creat_new_button(-1, nick, x_main + 150, y_main + 135, 100, 15, "поворот NW", "button", true, gray, white, function() play_animation(robot_turn_N_W) end)
 	
 	--28, 138 - W 0*
 	--60, 138 - N 90*

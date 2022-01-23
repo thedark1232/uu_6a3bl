@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 110"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 111"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9516,7 +9516,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	table_form.noBopoTWN = creat_new_button(-1, nick, x_main + 150, y_main + 150, 100, 15, "поворот WN", "button", true, gray, white, function()
 		play_animation(robot_turn_W_N)
-	end
+	end)
 	
 	--28, 138 - W 0*
 	--60, 138 - N 90*

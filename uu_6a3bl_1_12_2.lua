@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 108"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 110"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9483,27 +9483,16 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	rawset(table_form.move_button, "form_name", "po6oT_LLlaxTep_main")
 	rawset(table_form.move_button, "enabled", false)
 	rawset(table_form.move_button, "getType", function() return "move_form" end)
-
 	table_form.return_button = creat_new_button(1, nick, x_main + 393, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
-
-	--иконка робота
-
 	
 	--полоска энергии
 	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 83, 16, black)
 	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 81, 14, gray)
 	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 10, 14, green)
-	
-	--круглые кнопки
-	--table_form.cHer_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:snowball", 0)
-	--table_form.cJIu3b_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:slime_ball", 0)
-	--table_form.ender_pearl_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_pearl", 0)
-	--table_form.ender_eye_icon = MoHuTop_urpoka[nick].addIcon(x_main + 30, y_main + 144, "minecraft:ender_eye", 0)
-	
+		
 	--NSWE
-	--creat_new_cirle(nick, KoJIu4ecTBo_noJIuroHoB, x, y, scale)
 	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 83, 72, gray)
 	table_form.radar = creat_new_cirle(nick, 20, x_main + 44, y_main + 154, 30)
 	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({x_main + 44, y_main + 123}, {x_main + 44, y_main + 181}, black)
@@ -9512,9 +9501,27 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.S = MoHuTop_urpoka[nick].addText(x_main + 42, y_main + 180, "Ю", blue)
 	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 11, y_main + 150, "З", blue)
 	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 72, y_main + 150, "В", blue)
-
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 28, y_main + 138, "OpenComputers:robot", 0)
 	table_form.robot_icon.setScale(2)
+	
+	local animationWN = creat_animation(x_main + 28, y_main + 138, 0, x_main + 60, y_main + 138, 90)
+	
+	local robot_turn_W_N = function(animation)
+		for _, anim in ipairs(animation) do
+			table_form.robot_icon.setX(anim.x)
+			table_form.robot_icon.setY(anim.y)
+			table_form.robot_icon.setRotation(anim.r)
+		end
+	end
+	
+	table_form.noBopoTWN = creat_new_button(-1, nick, x_main + 150, y_main + 150, 100, 15, "поворот WN", "button", true, gray, white, function()
+		play_animation(robot_turn_W_N)
+	end
+	
+	--28, 138 - W 0*
+	--60, 138 - N 90*
+	--60, 170 - E 180*
+	--170, 28 - S 270*
 	
 	--инвентарь робота
 	local HoMep_9l4euKu = 1

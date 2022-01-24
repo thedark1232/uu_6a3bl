@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 116"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 117"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9488,11 +9488,11 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 	
 	--полоска энергии
-	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 83, 16, black)
-	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 81, 14, gray)
+	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 99, 16, black)
+	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 97, 14, gray)
 	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 10, 14, green)
 		
-	--NSWE
+	--радар
 	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 83, 72, gray)
 	table_form.radar = creat_new_cirle(nick, 20, x_main + 44, y_main + 154, 30)
 	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({x_main + 44, y_main + 124}, {x_main + 44, y_main + 183}, black)
@@ -9504,6 +9504,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 19, y_main + 146, "OpenComputers:robot", 0)
 	--table_form.robot_icon.setScale(2)
 	
+	--создание анимаций
 	--С СЕВЕРА ...
 	local robot_turn_N_W = creat_animation(x_main + 36, y_main + 128, 0, x_main + 19, y_main + 146, 0)
 	local robot_turn_N_S = creat_animation(x_main + 36, y_main + 128, 0, x_main + 36, y_main + 164, 0)
@@ -9529,8 +9530,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	local robot_turn_C_S = creat_animation(x_main + 36, y_main + 146, 0, x_main + 36, y_main + 164, 0)
 	local robot_turn_C_W = creat_animation(x_main + 36, y_main + 146, 0, x_main + 19, y_main + 146, 0)
 	local robot_turn_C_E = creat_animation(x_main + 36, y_main + 146, 0, x_main + 53, y_main + 146, 0)
-	
-		
+
 	local play_animation = function(animation)
 		for _, anim in ipairs(animation) do
 			table_form.robot_icon.setX(anim.x)
@@ -9540,8 +9540,10 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		end
 	end
 	
+	
 	table_form.noBopoT_W_N = creat_new_button(-1, nick, x_main + 150, y_main + 150, 100, 15, "поворот WN", "button", true, gray, white, function() play_animation(robot_turn_W_N) end)
 	table_form.noBopoT_N_W = creat_new_button(-1, nick, x_main + 150, y_main + 135, 100, 15, "поворот NW", "button", true, gray, white, function() play_animation(robot_turn_N_W) end)
+	
 		
 	--инвентарь робота
 	local HoMep_9l4euKu = 1
@@ -9562,6 +9564,18 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		
 		
 	end
+	
+	--прокрутка инвентаря
+	--кнопки сдвига инвентаря робота
+	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 15, 41, "", "button", true, gray, white, function() 
+
+	end)
+	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 16}, {x_main + 103, y_main + 16}, {x_main + 7, y_main + 56}, blue, 1)
+
+	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 15, 41, "", "button", true, gray, white, function() 
+
+	end)
+	--table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + }, {x_main + }, {x_main + }, blue, 1)
 	
 	--объединение таблиц
 	self = {}

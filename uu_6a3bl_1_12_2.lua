@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 117"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 118"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9570,12 +9570,12 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 15, 41, "", "button", true, gray, white, function() 
 
 	end)
-	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 16}, {x_main + 103, y_main + 16}, {x_main + 7, y_main + 56}, blue, 1)
+	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 56}, {x_main + 103, y_main + 56}, {x_main + 97, y_main + 16}, blue, 1)
 
 	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 15, 41, "", "button", true, gray, white, function() 
 
 	end)
-	--table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + }, {x_main + }, {x_main + }, blue, 1)
+	table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 58}, {x_main + 103, y_main + 58}, {x_main + 97, y_main + 97}, blue, 1)
 	
 	--объединение таблиц
 	self = {}

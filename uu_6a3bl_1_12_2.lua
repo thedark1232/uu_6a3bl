@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 119"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 120"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9576,7 +9576,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 
 	end)
 	table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 87}, {x_main + 103, y_main + 87}, {x_main + 97, y_main + 97}, blue, 1)
-	table_form.TpeyroJIbHuk_BHu3.setClickable(false0
+	table_form.TpeyroJIbHuk_BHu3.setClickable(false)
 	
 	--объединение таблиц
 	self = {}

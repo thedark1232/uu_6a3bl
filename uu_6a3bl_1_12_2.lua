@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 121"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 122"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9488,13 +9488,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 	
 	--полоска энергии
-	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 99, 16, black)
-	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 97, 14, gray)
+	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 98, 16, black)
+	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 96, 14, gray)
 	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 10, 14, green)
 		
 	--радар
-	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 99, 72, gray)
-	table_form.radar = creat_new_cirle(nick, 20, x_main + 64, y_main + 154, 30)
+	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 98, 72, gray)
+	table_form.radar = creat_new_cirle(nick, 20, x_main + 54, y_main + 154, 30)
 	table_form.vertical_line = MoHuTop_urpoka[nick].addLine({x_main + 44, y_main + 124}, {x_main + 44, y_main + 183}, black)
 	table_form.horizontal_line = MoHuTop_urpoka[nick].addLine({x_main + 14, y_main + 154}, {x_main + 77, y_main + 153}, black)
 	table_form.N = MoHuTop_urpoka[nick].addText(x_main + 41, y_main + 121, "С", blue)
@@ -9570,16 +9570,17 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 15, 41, "", "button", true, gray, white, function() 
 
 	end)
-	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 26}, {x_main + 103, y_main + 26}, {x_main + 96, y_main + 16}, blue, 1)
+	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 26}, {x_main + 102, y_main + 26}, {x_main + 96, y_main + 16}, blue, 1)
 	table_form.TpeyroJIbHuk_BBepx.setClickable(false)
-	table_form.box_BepxHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 90, y_main + 100, 10, 10, blue)
+	table_form.box_BepxHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 36, 8, 10, blue)
 	table_form.box_BepxHero_TpeyroJIbHuka.setClickable(false)
 	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 15, 41, "", "button", true, gray, white, function() 
 
 	end)
-	table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 87}, {x_main + 103, y_main + 87}, {x_main + 95, y_main + 97}, blue, 1)
+	table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 87}, {x_main + 102, y_main + 87}, {x_main + 96, y_main + 97}, blue, 1)
 	table_form.TpeyroJIbHuk_BHu3.setClickable(false)
-	table_form.box_HuJHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 90, y_main + 100, 10, 10, blue)
+	table_form.box_HuJHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 66, 8, 10, blue)
+	table_form.box_HuJHero_TpeyroJIbHuka.setClickable(false)
 	
 	--объединение таблиц
 	self = {}

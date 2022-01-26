@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 168"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 169"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9610,9 +9610,12 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	
 	--прокрутка инвентаря
-	table_form.oTo6paJeHue_PecoB = function(noMep_cTpaHucbl)
+	table_form.oTo6paJeHue_PecoB = function(HoMep_cTpaHucbl)
+		print("HoMep_cTpaHucbl")
+		print("Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl]", Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl])
+		print("#Bce_uTeMbl_po6oTa_LLlaXTepa", #Bce_uTeMbl_po6oTa_LLlaXTepa)
 		local HoMep_9l4eUku = 1
-		for i = Ha4aJIbHblu_HoMep_uTema[noMep_cTpaHucbl], Ha4aJIbHblu_HoMep_uTema[noMep_cTpaHucbl] + 15 do
+		for i = Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl], Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl] + 15 do
 			if Bce_uTeMbl_po6oTa_LLlaXTepa[i][1] == "nil" then
 				table_form[tostring(HoMep_9l4eUku) .. " item"].setVisible(false)
 			else

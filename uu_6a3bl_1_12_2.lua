@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 128"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 129"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -176,6 +176,8 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 end
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка команды робота:")
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "название инструкции:" .. oLLlu6ka.Ha3BaHue_uHcTpykcuu)
+	
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(oLLlu6ka.onucaHue))
 end
 coo6LLleHu9l_OT_po6oToB.I_am_online = function()

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 145"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 147"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9480,7 +9480,8 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--полоска энергии
 	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 98, 16, black)
 	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 96, 14, gray)
-	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 10, 14, green)
+	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 0, 14, green)
+	table_form.text_energy =  MoHuTop_urpoka[nick].addText(x_main + 35, y_main + 103, "0 %", blue)
 		
 	--радар
 	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 98, 72, gray)
@@ -9530,6 +9531,9 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.setTekyLLlee_noJIoJeHue(noJIoJeHue)
 	end
 	
+	table_form.play_energy_animation = function(enery_animation_table)
+		Bce_noToku[nick].po6oT_energy_animation = myThread.create(po6oT_LLlaxTep_energy_animation, nick, enery_animation_table)
+	end
 	--создание кнопок
 	local y = y_main - 1
 	local y_func = function()
@@ -9622,6 +9626,13 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
 			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.HanpaBJIeHue_o63opa)
+				local w1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getWidth()
+				local TekyLLluu_npocent = math.floor(Ta6JIuca_cocTo9lHu9l.energy * 100 /  Ta6JIuca_cocTo9lHu9l.maxEnergy)
+				if TekyLLluu_npocent > 96 then TekyLLluu_npocent = 96 end
+				local w2 = TekyLLluu_npocent
+				local h1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getHeight()
+				local h2 = h1
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, w2, h1, h2, false))
 			end
 		end
 	end
@@ -9939,6 +9950,21 @@ function po6oT_LLlaxTep_turn_animations(nick, animation)
 		os.sleep(0)
 	end
 end
+function po6oT_LLlaxTep_energy_animation(nick, animation)
+	for _, anim in ipairs(animation) do
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.setW(anim.w)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.setH(anim.h)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.setText(tostring(anim.w) .. " %")
+		if (anim.w) > 10 then
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.setColor(blue)
+		else
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.setColor(red)
+		end
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		os.sleep(0)
+	end
+end
+--создание анимаций
 function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue)
 	local animation = {}
 	local x, y, r = x1, y1, r1
@@ -9978,6 +10004,42 @@ function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_
 
 	return animation
 end
+function creat_wh_animation(w1, h1, w2, h2, nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue)
+	local animation = {}
+	local w, h = w1, h1
+	table.insert(animation, {["w"] = w1, ["h"] = h1})
+	repeat
+		if w2 < w then
+			w = w - 1
+		elseif w2 > w then
+			w = w + 1
+		end
+		if h2 < h then
+			h = h - 1
+		elseif h2 > h then
+			h = h + 1
+		end
+
+		table.insert(animation, {["w"] = w, ["h"] = h})
+		--print(x, " == ", x2, x == x2)
+		--print(y, " == ", y2, y == y2)
+		--print(r, " == ", r2, r == r2)
+		--io.read()
+	until w == w2 and h == h2
+	if nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue then
+		local newTable = {}
+		for i = #animation, 1, -1 do
+			table.insert(newTable, {["w"] = animation[i].w, ["h"] = animation[i].h})
+		end
+		
+		for _, v in ipairs(newTable) do
+			table.insert(animation, v)
+		end
+	end
+
+	return animation
+end
+
 function glasses_capture(event_type, agrecc, nick, agrecc2)
 	local result, err = pcall(function()
 		if whiteListUsers[nick] ~= nil then

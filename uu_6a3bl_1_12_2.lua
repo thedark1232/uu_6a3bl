@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 150"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 151"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10024,10 +10024,7 @@ function creat_wh_animation(w1, h1, w2, h2, nocJIe_3aBepLLleHu9l_animation_BepHy
 		end
 
 		table.insert(animation, {["w"] = w, ["h"] = h})
-		--print(x, " == ", x2, x == x2)
-		--print(y, " == ", y2, y == y2)
-		--print(r, " == ", r2, r == r2)
-		--io.read()
+		print("w:", w)
 	until w == w2 and h == h2
 	if nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue then
 		local newTable = {}

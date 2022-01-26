@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 130"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 131"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9542,7 +9542,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end
 	--HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"check_online"})
 	--создание кнопок
-	local y = y_main + 15
+	local y = y_main - 2
 	local y_func = function()
 		y = y + 16
 		return y
@@ -9556,11 +9556,11 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end
 	
 	
-	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1, nick, x_main + 104, y_main + 15, 77, 15, "обновить", "button", true, gray, white, function()
+	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, gray, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
 	end)
-	table_form.kHonka_restart = creat_new_button(-1, nick, x_main + 104, y_main + 15, 77, 15, "рестарт", "button", true, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"}) end)
-	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(-1, nick, x_main + 104, y_main + 31, 77, 15, "выключить", "button", true, gray, white, function()
+	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "рестарт", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"}) end)
+	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выключить", "button", start_visible, gray, white, function()
 		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
 			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown"})
 			table_form.KHonka_nepekJIl04eHu9l.caption.setText("включить")
@@ -9568,8 +9568,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			HacTpouka_po6oTa_LLlaxTepa.send("1232")
 		end
 	end)
-
-	
+	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выход", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"}) end)
 		
 	--инвентарь робота
 	local HoMep_9l4euKu = 1

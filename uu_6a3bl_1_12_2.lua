@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 171"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 172"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9593,7 +9593,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		cMeLLleHue_no_x = x_main + 4
 		for j = 1, 4 do
 			table_form[HoMep_9l4euKu] = creat_new_button(i, nick, x_main + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
-				if not table_form[tostring(HoMep_uTema) .. " item"].getVisible() then
+				if table_form[tostring(HoMep_uTema) .. " item"].getVisible() then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран итем: " .. table_form[tostring(HoMep_uTema) .. " item"].getItemId())
 				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ячейка пуста")

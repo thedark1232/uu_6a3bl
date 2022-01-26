@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 152"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 153"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9627,12 +9627,8 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.HanpaBJIeHue_o63opa)
 				local w1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getWidth()
-				local TekyLLluu_npocent = math.floor(Ta6JIuca_cocTo9lHu9l.energy * 100 /  Ta6JIuca_cocTo9lHu9l.maxEnergy)
-				--print("Ta6JIuca_cocTo9lHu9l.energy", Ta6JIuca_cocTo9lHu9l.energy)
-				--print("Ta6JIuca_cocTo9lHu9l.maxEnergy", Ta6JIuca_cocTo9lHu9l.maxEnergy)
-				--print("TekyLLluu_npocent", TekyLLluu_npocent)
-				if TekyLLluu_npocent > 96 then TekyLLluu_npocent = 96 end
-				local w2 = TekyLLluu_npocent
+				local w2 = energy_B_npoceHTax
+				if w2 > 96 then w2 = 100 end
 				local h1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getHeight()
 				local h2 = h1
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
@@ -9646,7 +9642,28 @@ coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
 	
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(oLLlu6ka.onucaHue))
 end
-
+coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] ~= nil then
+			for i = 1, 16 do
+				if inventory.all_items[i][1] ~= "nil" then
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(false)
+				else
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(true)
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setItemId(inventory.all_items[i][1])
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setMeta(inventory.all_items[i][2])
+					if inventory.all_items[i][3] == -1 then
+						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel(inventory.all_items[i][4])
+						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(0)
+					else
+						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel("")
+						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(inventory.all_items[i][3])
+					end
+				end
+			end
+		end
+	end
+end
 function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ
 	local obj
 --создание формы
@@ -9966,6 +9983,7 @@ function po6oT_LLlaxTep_energy_animation(nick, animation)
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		os.sleep(0)
 	end
+	if anim.w = 96 then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.setText("100 %") end
 end
 --создание анимаций
 function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue)

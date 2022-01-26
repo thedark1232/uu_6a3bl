@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 142"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 145"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9526,19 +9526,10 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.setTekyLLlee_noJIoJeHue = function(noJIeJeHue) TekyLLlee_noJIoJeHue = noJIeJeHue end
 	
 	table_form.play_turn_animation = function(noJIoJeHue)
-		Bce_noToku[nick].po6oT_LLlaxTep_turn_animation = myThread.create(po6oT_LLlaxTep_work_noTok, nick, robot_LllaxTep_animations["turn_" .. table_form.getTekyLLlee_noJIoJeHue() .. noJIoJeHue])
+		Bce_noToku[nick].po6oT_LLlaxTep_turn_animation = myThread.create(po6oT_LLlaxTep_turn_animations, nick, robot_LllaxTep_animations["turn_" .. table_form.getTekyLLlee_noJIoJeHue() .. noJIoJeHue])
 		table_form.setTekyLLlee_noJIoJeHue(noJIoJeHue)
 	end
 	
-	local play_animation = function(animation)
-		for _, anim in ipairs(animation) do
-			table_form.robot_icon.setX(anim.x)
-			table_form.robot_icon.setY(anim.y)
-			table_form.robot_icon.setRotation(anim.r)
-			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-		end
-	end
-	--HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"check_online"})
 	--создание кнопок
 	local y = y_main - 1
 	local y_func = function()
@@ -9941,9 +9932,10 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 end
 function po6oT_LLlaxTep_turn_animations(nick, animation)
 	for _, anim in ipairs(animation) do
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setX(anim.x)
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setY(anim.y)
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setRotation(anim.r)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.robot_icon.setX(anim.x)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.robot_icon.setY(anim.y)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.robot_icon.setRotation(anim.r)
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		os.sleep(0)
 	end
 end

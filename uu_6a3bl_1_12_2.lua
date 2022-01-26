@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 169"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 170"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9347,6 +9347,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	KoJIucTBo_cTpaHuc[144] = {9, 144}
 	
 	local Ha4aJIbHblu_HoMep_uTema = {}
+	table.insert(Ha4aJIbHblu_HoMep_uTema, 1)
 	for i = 1, 9 do
 		table.insert(Ha4aJIbHblu_HoMep_uTema, 16 * i)
 	end
@@ -9611,7 +9612,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--прокрутка инвентаря
 	table_form.oTo6paJeHue_PecoB = function(HoMep_cTpaHucbl)
-		print("HoMep_cTpaHucbl")
+		print("HoMep_cTpaHucbl", HoMep_cTpaHucbl)
 		print("Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl]", Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl])
 		print("#Bce_uTeMbl_po6oTa_LLlaXTepa", #Bce_uTeMbl_po6oTa_LLlaXTepa)
 		local HoMep_9l4eUku = 1

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 155"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 156"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9628,7 +9628,7 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.HanpaBJIeHue_o63opa)
 				local w1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getWidth()
 				local w2 = Ta6JIuca_cocTo9lHu9l.energy_B_npoceHTax
-				if w2 > 96 then w2 = 100 end
+				if w2 > 96 then w2 = 96 end
 				local h1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getHeight()
 				local h2 = h1
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))

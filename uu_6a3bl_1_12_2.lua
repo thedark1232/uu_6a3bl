@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 139"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 140"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9465,6 +9465,8 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 180, 189, white)
 	table_form.main_box2.setClickable(false)
+	--подсказка состояния
+	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 10, y_main + 180, "состояние: онлайн", blue)
 		
 	--сдвиг формы + кнопка выхода
 	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 405, 10, "", "move_form", true, gray, white, function() end)
@@ -9546,11 +9548,15 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, gray, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
 	end)
-	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "рестарт", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"}) end)
+	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "рестарт", "button", start_visible, gray, white, function()
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
+		table_form.nogcka3ka_cocTo9lHu9l.setText("рестарт...")
+	end)
 	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выключить", "button", start_visible, gray, white, function()
 		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
 			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown"})
 			table_form.KHonka_nepekJIl04eHu9l.caption.setText("включить")
+			table_form.nogcka3ka_cocTo9lHu9l.setText("выключен")
 		else
 			HacTpouka_po6oTa_LLlaxTepa.send("1232")
 		end
@@ -9593,7 +9599,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.TpeyroJIbHuk_BHu3.setClickable(false)
 	table_form.box_HuJHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 67, 8, 10, blue)
 	table_form.box_HuJHero_TpeyroJIbHuka.setClickable(false)
-	
+		
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -9605,7 +9611,10 @@ coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function()
 	LLlaxTep_online = true
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
-			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить") end
+			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить")
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("онлайн")
+			end
 		end
 	end
 end

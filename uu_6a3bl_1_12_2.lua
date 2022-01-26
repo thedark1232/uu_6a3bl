@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 131"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 132"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9542,7 +9542,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end
 	--HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"check_online"})
 	--создание кнопок
-	local y = y_main - 2
+	local y = y_main - 1
 	local y_func = function()
 		y = y + 16
 		return y
@@ -9568,7 +9568,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			HacTpouka_po6oTa_LLlaxTepa.send("1232")
 		end
 	end)
-	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выход", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"}) end)
+	table_form.kHonka_Bblxog = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выход", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"}) end)
 		
 	--инвентарь робота
 	local HoMep_9l4euKu = 1

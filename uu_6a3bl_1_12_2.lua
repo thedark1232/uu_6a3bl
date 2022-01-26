@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 172"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 173"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9354,6 +9354,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		
 	local TekyLLla9l_cTpaHuca = 1
 	local MakcuMaJIbHa9l_cTpaHuca = KoJIucTBo_cTpaHuc[pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa][1]
+	local TekyLLluu_cJIoT = 0
 	--изменить в сдвиге окна значение, если будешь копировать форму
 	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep_main" 
 	--создание функции видимости окна
@@ -9566,7 +9567,21 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
 		return num
 	end
+	table_form.robot_drop = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "drop", "button", start_visible, red, white, function()
+		
+	end)
+	table_form.robot_use = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "use", "button", start_visible, red, white, function()
 	
+	end)
+	table_form.robot_use = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "place", "button", start_visible, red, white, function()
+	
+	end)
+	table_form.robot_equip = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "equip", "button", start_visible, red, white, function()
+	
+	end)
+	table_form.robot_swing = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "swing", "button", start_visible, red, white, function()
+	
+	end)
 	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, red, white, function()
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(
 	end)
@@ -9595,9 +9610,12 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			table_form[HoMep_9l4euKu] = creat_new_button(i, nick, x_main + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
 				if table_form[tostring(HoMep_uTema) .. " item"].getVisible() then
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран итем: " .. table_form[tostring(HoMep_uTema) .. " item"].getItemId())
+					
 				else
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ячейка пуста")
 				end
+				TekyLLluu_cJIoT = HoMep_uTema + Ha4aJIbHblu_HoMep_uTema[TekyLLla9l_cTpaHuca]
+				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий слот: " .. tostring(TekyLLluu_cJIoT))
 			end)
 			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
 			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
@@ -9656,7 +9674,6 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.TpeyroJIbHuk_BBepx.setClickable(false)
 	table_form.box_BepxHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 36, 8, 10, red)
 	table_form.box_BepxHero_TpeyroJIbHuka.setClickable(false)
-	
 	
 	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 14, 41, "", "button", true, gray, white, function() 
 		if TekyLLla9l_cTpaHuca < MakcuMaJIbHa9l_cTpaHuca then

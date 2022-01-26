@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 156"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 157"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1093,6 +1093,7 @@ function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9
 	local st, er = pcall(function()
 		local Ta6JIuca_uHcTpyKcuu = serialization.unserialize(coo6llleHue_oT_mogema)
 		coo6LLleHu9l_OT_po6oToB[Ta6JIuca_uHcTpyKcuu[1]](Ta6JIuca_uHcTpyKcuu)
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "обработка данных: " .. tostring(Ta6JIuca_uHcTpyKcuu[1]))
 	end)
 	if not st then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(er)) end
 end
@@ -9983,7 +9984,7 @@ function po6oT_LLlaxTep_energy_animation(nick, animation)
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		os.sleep(0)
 	end
-	if tonumber(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.getText()) == 96 then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.setText("100 %") end
+	if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.getText() == "96 %" then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.setText("100 %") end
 end
 --создание анимаций
 function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue)

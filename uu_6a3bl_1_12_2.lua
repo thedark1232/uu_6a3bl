@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 170"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 171"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9513,7 +9513,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 21, y_main + 150, "З", blue)
 	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 82, y_main + 150, "В", blue)
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 46, y_main + 146, "OpenComputers:robot", 0)
-	table_form.nogcka3ka_BepCuu_po6oTa =  MoHuTop_urpoka[nick].addText(x_main + 21, y_main + 150, "", blue)
+	table_form.nogcka3ka_BepCuu_po6oTa =  MoHuTop_urpoka[nick].addText(x_main + 8, y_main + 120, "", blue)
 	--table_form.robot_icon.setScale(2)
 	
 	--создание анимаций
@@ -9568,7 +9568,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end
 	
 	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, red, white, function()
-		
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(
 	end)
 	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "рестарт", "button", start_visible, gray, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
@@ -9593,9 +9593,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		cMeLLleHue_no_x = x_main + 4
 		for j = 1, 4 do
 			table_form[HoMep_9l4euKu] = creat_new_button(i, nick, x_main + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
-				--table_form[tostring(
+				if not table_form[tostring(HoMep_uTema) .. " item"].getVisible() then
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выбран итем: " .. table_form[tostring(HoMep_uTema) .. " item"].getItemId())
+				else
+					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ячейка пуста")
+				end
 			end)
-			
+			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
 			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
 			table_form[tostring(HoMep_9l4euKu) .. " item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "minecraft:diamond_pickaxe", 0)
 			table_form[tostring(HoMep_9l4euKu) .. " item"].setVisible(false)
@@ -9604,17 +9608,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 21	
 		end
 		cMeLLleHue_no_y = cMeLLleHue_no_y + 21
-		
-		
 	end
-	
-	
 	
 	--прокрутка инвентаря
 	table_form.oTo6paJeHue_PecoB = function(HoMep_cTpaHucbl)
-		print("HoMep_cTpaHucbl", HoMep_cTpaHucbl)
-		print("Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl]", Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl])
-		print("#Bce_uTeMbl_po6oTa_LLlaXTepa", #Bce_uTeMbl_po6oTa_LLlaXTepa)
+		--print("HoMep_cTpaHucbl", HoMep_cTpaHucbl)
+		--print("Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl]", Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl])
+		--print("#Bce_uTeMbl_po6oTa_LLlaXTepa", #Bce_uTeMbl_po6oTa_LLlaXTepa)
 		local HoMep_9l4eUku = 1
 		for i = Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl], Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl] + 15 do
 			if Bce_uTeMbl_po6oTa_LLlaXTepa[i][1] == "nil" then

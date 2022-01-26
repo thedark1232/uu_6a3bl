@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 166"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 167"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9619,7 +9619,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 				table_form[tostring(i) .. " item"].setItemId(Bce_uTeMbl_po6oTa_LLlaXTepa[i][1])
 				table_form[tostring(i) .. " item"].setMeta(Bce_uTeMbl_po6oTa_LLlaXTepa[i][2])
 				if inventory.all_items[i][3] == -1 then
-					table_form[tostring(i) .. " item"].setLabelBce_uTeMbl_po6oTa_LLlaXTepa[i][4])
+					table_form[tostring(i) .. " item"].setLabel(Bce_uTeMbl_po6oTa_LLlaXTepa[i][4])
 					table_form[tostring(i) .. " item"].setDamageBar(0)
 				else
 					table_form[tostring(i) .. " item"].setLabel("")

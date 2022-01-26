@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 159"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 160"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9579,6 +9579,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			end)
 			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
 			table_form[tostring(HoMep_9l4euKu) .. " item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "minecraft:diamond_pickaxe", 0)
+			table_form[tostring(HoMep_9l4euKu) .. " item"].setVisible(false)
 			HoMep_9l4euKu = HoMep_9l4euKu + 1
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 21	
 		end
@@ -9647,7 +9648,7 @@ coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
 			for i = 1, 16 do
-				if inventory.all_items[i][1] ~= "nil" then
+				if inventory.all_items[i][1] == "nil" then
 					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(false)
 				else
 					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(true)
@@ -9661,6 +9662,7 @@ coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(inventory.all_items[i][3])
 					end
 				end
+				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 			end
 		end
 	end

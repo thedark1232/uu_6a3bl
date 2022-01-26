@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 147"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 148"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9952,8 +9952,8 @@ function po6oT_LLlaxTep_turn_animations(nick, animation)
 end
 function po6oT_LLlaxTep_energy_animation(nick, animation)
 	for _, anim in ipairs(animation) do
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.setW(anim.w)
-		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.setH(anim.h)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.setWidth(anim.w)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.setHeight(anim.h)
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.setText(tostring(anim.w) .. " %")
 		if (anim.w) > 10 then
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.text_energy.setColor(blue)

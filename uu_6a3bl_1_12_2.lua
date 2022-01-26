@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 134"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 135"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -171,7 +171,9 @@ coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function() LLlaxTep_online = true end
 LLlaxTep_online = false
 coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 	for nick, _ in pairs(whiteListUsers) do
-		if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить") end
+		if Bce_ragJeTbl_urpoka[nick] ~= nil then
+			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить") end
+		end
 	end
 	for k, v in pairs(Ta6JIuca_cocTo9lHu9l) do
 		 Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. ": " .. g .. tostring(v))

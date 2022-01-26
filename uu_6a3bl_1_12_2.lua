@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 125"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 126"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -177,6 +177,11 @@ end
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка команды робота:")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(oLLlu6ka.onucaHue))
+end
+coo6LLleHu9l_OT_po6oToB.I_am_online = function()
+	if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
+		 Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("включить")
+	end
 end
 
 local default_text = {} --дефолтный текст для текстбокса
@@ -9539,10 +9544,34 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 		end
 	end
+	--HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"check_online"})
+	--создание кнопок
+	local y = y_main + 15
+	local y_func = function()
+		y = y + 16
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
 	
 	
-	table_form.noBopoT_W_N = creat_new_button(-1, nick, x_main + 150, y_main + 150, 100, 15, "поворот WN", "button", true, gray, white, function() play_animation(robot_turn_W_N) end)
-	table_form.noBopoT_N_W = creat_new_button(-1, nick, x_main + 150, y_main + 135, 100, 15, "поворот NW", "button", true, gray, white, function() play_animation(robot_turn_N_W) end)
+	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1, nick, x_main + 104, y_main + 15, 77, 15, "обновить", "button", true, gray, white, function()
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot")
+	end)
+	table_form.kHonka_restart = creat_new_button(-1, nick, x_main + 104, y_main + 15, 77, 15, "рестарт", "button", true, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot") end)
+	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(-1, nick, x_main + 104, y_main + 31, 77, 15, "выключить", "button", true, gray, white, function()
+		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
+			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown")
+		else
+			HacTpouka_po6oTa_LLlaxTepa.send("1232")
+		end
+	end)
+
 	
 		
 	--инвентарь робота

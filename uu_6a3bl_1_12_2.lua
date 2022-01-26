@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 148"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 149"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9481,7 +9481,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 98, 16, black)
 	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 96, 14, gray)
 	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 0, 14, green)
-	table_form.text_energy =  MoHuTop_urpoka[nick].addText(x_main + 35, y_main + 103, "0 %", blue)
+	table_form.text_energy =  MoHuTop_urpoka[nick].addText(x_main + 43, y_main + 105, "0 %", blue)
 		
 	--радар
 	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 98, 72, gray)

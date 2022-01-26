@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 167"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 168"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9611,22 +9611,24 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--прокрутка инвентаря
 	table_form.oTo6paJeHue_PecoB = function(noMep_cTpaHucbl)
+		local HoMep_9l4eUku = 1
 		for i = Ha4aJIbHblu_HoMep_uTema[noMep_cTpaHucbl], Ha4aJIbHblu_HoMep_uTema[noMep_cTpaHucbl] + 15 do
 			if Bce_uTeMbl_po6oTa_LLlaXTepa[i][1] == "nil" then
-				table_form[tostring(i) .. " item"].setVisible(false)
+				table_form[tostring(HoMep_9l4eUku) .. " item"].setVisible(false)
 			else
-				table_form[tostring(i) .. " item"].setVisible(true)
-				table_form[tostring(i) .. " item"].setItemId(Bce_uTeMbl_po6oTa_LLlaXTepa[i][1])
-				table_form[tostring(i) .. " item"].setMeta(Bce_uTeMbl_po6oTa_LLlaXTepa[i][2])
-				if inventory.all_items[i][3] == -1 then
-					table_form[tostring(i) .. " item"].setLabel(Bce_uTeMbl_po6oTa_LLlaXTepa[i][4])
-					table_form[tostring(i) .. " item"].setDamageBar(0)
+				table_form[tostring(HoMep_9l4eUku) .. " item"].setVisible(true)
+				table_form[tostring(HoMep_9l4eUku) .. " item"].setItemId(Bce_uTeMbl_po6oTa_LLlaXTepa[i][1])
+				table_form[tostring(HoMep_9l4eUku) .. " item"].setMeta(Bce_uTeMbl_po6oTa_LLlaXTepa[i][2])
+				if Bce_uTeMbl_po6oTa_LLlaXTepa[i][3] == -1 then
+					table_form[tostring(HoMep_9l4eUku) .. " item"].setLabel(Bce_uTeMbl_po6oTa_LLlaXTepa[i][4])
+					table_form[tostring(HoMep_9l4eUku) .. " item"].setDamageBar(0)
 				else
-					table_form[tostring(i) .. " item"].setLabel("")
-					table_form[tostring(i) .. " item"].setDamageBar(Bce_uTeMbl_po6oTa_LLlaXTepa[i][3])
+					table_form[tostring(HoMep_9l4eUku) .. " item"].setLabel("")
+					table_form[tostring(HoMep_9l4eUku) .. " item"].setDamageBar(Bce_uTeMbl_po6oTa_LLlaXTepa[i][3])
 				end
 			end
 			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+			HoMep_9l4eUku = HoMep_9l4eUku + 1
 		end
 	end
 	

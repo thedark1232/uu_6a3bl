@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 126"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 127"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9561,12 +9561,12 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	
 	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1, nick, x_main + 104, y_main + 15, 77, 15, "обновить", "button", true, gray, white, function()
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
 	end)
 	table_form.kHonka_restart = creat_new_button(-1, nick, x_main + 104, y_main + 15, 77, 15, "рестарт", "button", true, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot") end)
 	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(-1, nick, x_main + 104, y_main + 31, 77, 15, "выключить", "button", true, gray, white, function()
 		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
-			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown")
+			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown"})
 		else
 			HacTpouka_po6oTa_LLlaxTepa.send("1232")
 		end

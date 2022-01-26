@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 140"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 141"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,7 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+local robot_LllaxTep_animations = {}
 local po6oT_LLlaxTep_online = false
 local HacTpouka_po6oTa_LLlaxTepa = {}
 local Ta6JIuca_ceJIeu_TypeJIeu = {}
@@ -9287,13 +9288,13 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 	table_form.diamong_ore_icon = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond_ore", 0) --алмазная руда
 	table_form.diamong_ore_icon.setScale(5)
 	
-	table_form.diamond1 =  MoHuTop_urpoka[nick].addIcon(x_main + 109, y_main + 83, "minecraft:diamond", 0)
+	table_form.diamond1 = MoHuTop_urpoka[nick].addIcon(x_main + 109, y_main + 83, "minecraft:diamond", 0)
 	table_form.diamond1.setVisible(false)
 	table_form.diamond1.setScale(4)
-	table_form.diamond2 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond", 0)
+	table_form.diamond2 = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 83, "minecraft:diamond", 0)
 	table_form.diamond2.setVisible(false)
 	table_form.diamond2.setScale(4)
-	table_form.diamond3 =  MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 99, "minecraft:diamond", 0)
+	table_form.diamond3 = MoHuTop_urpoka[nick].addIcon(x_main + 122, y_main + 99, "minecraft:diamond", 0)
 	table_form.diamond3.setVisible(false)
 	table_form.diamond3.setScale(4)
 	
@@ -9318,9 +9319,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 	table_form.online_button.setClickable(false)
 	table_form.online_button.setVisible(false)
 	table_form.online_button.caption.setVisible(false)
-	
-	
-			
+
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)
@@ -9333,6 +9332,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			
 	--создание формы
 	local table_form = {}
+	local TekyLLlee_noJIoJeHue = "C"
 	
 	--изменить в сдвиге окна значение, если будешь копировать форму
 	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep_main" 
@@ -9466,7 +9466,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 180, 189, white)
 	table_form.main_box2.setClickable(false)
 	--подсказка состояния
-	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 10, y_main + 180, "состояние: онлайн", blue)
+	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 192, "состояние: онлайн", blue)
 		
 	--сдвиг формы + кнопка выхода
 	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 405, 10, "", "move_form", true, gray, white, function() end)
@@ -9496,31 +9496,40 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--создание анимаций
 	--С СЕВЕРА ...
-	local robot_turn_N_W = creat_animation(x_main + 46, y_main + 128, 0, x_main + 29, y_main + 146, 0)
-	local robot_turn_N_S = creat_animation(x_main + 46, y_main + 128, 0, x_main + 36, y_main + 164, 0)
-	local robot_turn_N_E = creat_animation(x_main + 46, y_main + 128, 0, x_main + 73, y_main + 146, 0)
+	
+	robot_LllaxTep_animations.turn_NW = creat_animation(x_main + 46, y_main + 128, 0, x_main + 29, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_NS = creat_animation(x_main + 46, y_main + 128, 0, x_main + 36, y_main + 164, 0)
+	robot_LllaxTep_animations.turn_NE = creat_animation(x_main + 46, y_main + 128, 0, x_main + 73, y_main + 146, 0)
 	
 	--С ЮГА ...
-	local robot_turn_S_W = creat_animation(x_main + 46, y_main + 164, 0, x_main + 29, y_main + 146, 0)
-	local robot_turn_S_N = creat_animation(x_main + 46, y_main + 164, 0, x_main + 46, y_main + 128, 0)
-	local robot_turn_S_E = creat_animation(x_main + 46, y_main + 164, 0, x_main + 73, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_SW = creat_animation(x_main + 46, y_main + 164, 0, x_main + 29, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_SN = creat_animation(x_main + 46, y_main + 164, 0, x_main + 46, y_main + 128, 0)
+	robot_LllaxTep_animations.turn_SE = creat_animation(x_main + 46, y_main + 164, 0, x_main + 73, y_main + 146, 0)
 	
 	--С ЗАПАДА ...
-	local robot_turn_W_N = creat_animation(x_main + 29, y_main + 146, 0, x_main + 46, y_main + 128, 0)
-	local robot_turn_W_E = creat_animation(x_main + 29, y_main + 146, 0, x_main + 73, y_main + 146, 0)
-	local robot_turn_W_S = creat_animation(x_main + 29, y_main + 146, 0, x_main + 46, y_main + 164, 0)
+	robot_LllaxTep_animations.turn_WN = creat_animation(x_main + 29, y_main + 146, 0, x_main + 46, y_main + 128, 0)
+	robot_LllaxTep_animations.turn_WE = creat_animation(x_main + 29, y_main + 146, 0, x_main + 73, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_WS = creat_animation(x_main + 29, y_main + 146, 0, x_main + 46, y_main + 164, 0)
 	
 	--С ВОСТОКА ...
-	local robot_turn_E_N = creat_animation(x_main + 73, y_main + 146, 0, x_main + 46, y_main + 128, 0)
-	local robot_turn_E_W = creat_animation(x_main + 73, y_main + 146, 0, x_main + 29, y_main + 146, 0)
-	local robot_turn_E_S = creat_animation(x_main + 73, y_main + 146, 0, x_main + 46, y_main + 164, 0)
+	robot_LllaxTep_animations.turn_EN = creat_animation(x_main + 73, y_main + 146, 0, x_main + 46, y_main + 128, 0)
+	robot_LllaxTep_animations.turn_EW = creat_animation(x_main + 73, y_main + 146, 0, x_main + 29, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_ES = creat_animation(x_main + 73, y_main + 146, 0, x_main + 46, y_main + 164, 0)
 	
 	--С ЦЕНТРА ...
-	local robot_turn_C_N = creat_animation(x_main + 46, y_main + 146, 0, x_main + 46, y_main + 128, 0)
-	local robot_turn_C_S = creat_animation(x_main + 46, y_main + 146, 0, x_main + 46, y_main + 164, 0)
-	local robot_turn_C_W = creat_animation(x_main + 46, y_main + 146, 0, x_main + 29, y_main + 146, 0)
-	local robot_turn_C_E = creat_animation(x_main + 46, y_main + 146, 0, x_main + 73, y_main + 146, 0)
-
+	robot_LllaxTep_animations.turn_CN = creat_animation(x_main + 46, y_main + 146, 0, x_main + 46, y_main + 128, 0)
+	robot_LllaxTep_animations.turn_CS = creat_animation(x_main + 46, y_main + 146, 0, x_main + 46, y_main + 164, 0)
+	robot_LllaxTep_animations.turn_CW = creat_animation(x_main + 46, y_main + 146, 0, x_main + 29, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_CE = creat_animation(x_main + 46, y_main + 146, 0, x_main + 73, y_main + 146, 0)
+	
+	table_form.getTekyLLlee_noJIoJeHue = function() return TekyLLlee_noJIoJeHue end
+	table_form.setTekyLLlee_noJIoJeHue = function(noJIeJeHue) TekyLLlee_noJIoJeHue = noJIeJeHue end
+	
+	table_form.play_turn_animation = function(noJIoJeHue)
+		Bce_noToku[nick].po6oT_LLlaxTep_turn_animation = myThread.create(po6oT_LLlaxTep_work_noTok, nick, robot_LllaxTep_animations["turn_" .. table_form.getTekyLLlee_noJIoJeHue() .. noJIoJeHue])
+		table_form.setTekyLLlee_noJIoJeHue(noJIoJeHue)
+	end
+	
 	local play_animation = function(animation)
 		for _, anim in ipairs(animation) do
 			table_form.robot_icon.setX(anim.x)
@@ -9544,19 +9553,18 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		return num
 	end
 	
-	
-	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, gray, white, function()
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
+	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, red, white, function()
+		
 	end)
 	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "рестарт", "button", start_visible, gray, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
-		table_form.nogcka3ka_cocTo9lHu9l.setText("рестарт...")
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: рестарт...")
 	end)
 	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выключить", "button", start_visible, gray, white, function()
 		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
 			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown"})
 			table_form.KHonka_nepekJIl04eHu9l.caption.setText("включить")
-			table_form.nogcka3ka_cocTo9lHu9l.setText("выключен")
+			table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: выключен")
 		else
 			HacTpouka_po6oTa_LLlaxTepa.send("1232")
 		end
@@ -9613,14 +9621,18 @@ coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function()
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
 			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить")
-				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("онлайн")
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: онлайн")
 			end
 		end
 	end
 end
 coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
-	for k, v in pairs(Ta6JIuca_cocTo9lHu9l) do
-		 Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. ": " .. g .. tostring(v))
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] ~= nil then
+			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.)
+			end
+		end
 	end
 end
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
@@ -9927,7 +9939,14 @@ function po6oT_LLlaxTep_work_noTok(nick, animation)
 		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 	end
 end
-
+function po6oT_LLlaxTep_turn_animations(nick, animation)
+	for _, anim in ipairs(animation) do
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setX(anim.x)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setY(anim.y)
+		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.pickaxe_icon.setRotation(anim.r)
+		os.sleep(0)
+	end
+end
 function creat_animation(x1, y1, r1, x2, y2, r2, nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue)
 	local animation = {}
 	local x, y, r = x1, y1, r1

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 133"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 134"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -308,7 +308,7 @@ local colors_background = {["setWhite"] = function() gpu.setBackground(0xFFFFFF)
 						   ["setYellow"] = function() gpu.setBackground(0xFFCC00) end,
 						   ["setBlue"] = function() gpu.setForeground(0x0033FF) end}						 
 local Ta6JIuca_npoBepku_online = {}
-local whiteListUsers = {
+whiteListUsers = {
 	["The_Dark1232"] = "ok"
 						}						
 local Ta6JIuca_mogeroB_gJI9l_o4koB = {

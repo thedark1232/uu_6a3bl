@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 124"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 125"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9567,14 +9567,14 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--прокрутка инвентаря
 	--кнопки сдвига инвентаря робота
-	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 15, 41, "", "button", true, gray, white, function() 
+	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 14, 41, "", "button", true, gray, white, function() 
 
 	end)
 	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 35}, {x_main + 102, y_main + 35}, {x_main + 96, y_main + 25}, blue, 1)
 	table_form.TpeyroJIbHuk_BBepx.setClickable(false)
 	table_form.box_BepxHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 36, 8, 10, blue)
 	table_form.box_BepxHero_TpeyroJIbHuka.setClickable(false)
-	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 15, 41, "", "button", true, gray, white, function() 
+	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 14, 41, "", "button", true, gray, white, function() 
 
 	end)
 	table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 78}, {x_main + 102, y_main + 78}, {x_main + 96, y_main + 88}, blue, 1)

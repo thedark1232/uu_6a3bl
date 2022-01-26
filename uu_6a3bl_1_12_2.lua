@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 165"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 166"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9346,6 +9346,11 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	KoJIucTBo_cTpaHuc[128] = {8, 128}
 	KoJIucTBo_cTpaHuc[144] = {9, 144}
 	
+	local Ha4aJIbHblu_HoMep_uTema = {}
+	for i = 1, 9 do
+		table.insert(Ha4aJIbHblu_HoMep_uTema, 16 * i)
+	end
+		
 	local TekyLLla9l_cTpaHuca = 1
 	local MakcuMaJIbHa9l_cTpaHuca = KoJIucTBo_cTpaHuc[pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa][1]
 	--изменить в сдвиге окна значение, если будешь копировать форму
@@ -9606,29 +9611,29 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--прокрутка инвентаря
 	table_form.oTo6paJeHue_PecoB = function(noMep_cTpaHucbl)
-		-- for i = 1, 16 do
-			-- if inventory.all_items[i][1] == "nil" then
-				-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(false)
-			-- else
-				-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(true)
-				-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setItemId(inventory.all_items[i][1])
-				-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setMeta(inventory.all_items[i][2])
-				-- if inventory.all_items[i][3] == -1 then
-					-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel(inventory.all_items[i][4])
-					-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(0)
-				-- else
-					-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel("")
-					-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(inventory.all_items[i][3])
-				-- end
-			-- end
-			-- Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-		-- end
+		for i = Ha4aJIbHblu_HoMep_uTema[noMep_cTpaHucbl], Ha4aJIbHblu_HoMep_uTema[noMep_cTpaHucbl] + 15 do
+			if Bce_uTeMbl_po6oTa_LLlaXTepa[i][1] == "nil" then
+				table_form[tostring(i) .. " item"].setVisible(false)
+			else
+				table_form[tostring(i) .. " item"].setVisible(true)
+				table_form[tostring(i) .. " item"].setItemId(Bce_uTeMbl_po6oTa_LLlaXTepa[i][1])
+				table_form[tostring(i) .. " item"].setMeta(Bce_uTeMbl_po6oTa_LLlaXTepa[i][2])
+				if inventory.all_items[i][3] == -1 then
+					table_form[tostring(i) .. " item"].setLabelBce_uTeMbl_po6oTa_LLlaXTepa[i][4])
+					table_form[tostring(i) .. " item"].setDamageBar(0)
+				else
+					table_form[tostring(i) .. " item"].setLabel("")
+					table_form[tostring(i) .. " item"].setDamageBar(Bce_uTeMbl_po6oTa_LLlaXTepa[i][3])
+				end
+			end
+			Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		end
 	end
+	
 	--кнопки сдвига инвентаря робота
 	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 14, 41, "", "button", true, gray, white, function() 
 		if TekyLLla9l_cTpaHuca > 1 then
 			TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca - 1
-			table_form.oTo6paJeHue_PecoB(TekyLLla9l_cTpaHuca)
 			if TekyLLla9l_cTpaHuca == 1 then
 				table_form.TpeyroJIbHuk_BBepx.setColor(red)
 				table_form.box_BepxHero_TpeyroJIbHuka.setColor(red)
@@ -9636,6 +9641,9 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 				table_form.TpeyroJIbHuk_BBepx.setColor(blue)
 				table_form.box_BepxHero_TpeyroJIbHuka.setColor(blue)
 			end
+			table_form.TpeyroJIbHuk_BHu3.setColor(blue)
+			table_form.box_HuJHero_TpeyroJIbHuka.setColor(blue)
+			table_form.oTo6paJeHue_PecoB(TekyLLla9l_cTpaHuca)
 		end
 	end)
 	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 35}, {x_main + 102, y_main + 35}, {x_main + 96, y_main + 25}, red, 1)
@@ -9647,7 +9655,6 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 14, 41, "", "button", true, gray, white, function() 
 		if TekyLLla9l_cTpaHuca < MakcuMaJIbHa9l_cTpaHuca then
 			TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca + 1
-			table_form.oTo6paJeHue_PecoB(TekyLLla9l_cTpaHuca)
 			if TekyLLla9l_cTpaHuca == MakcuMaJIbHa9l_cTpaHuca then
 				table_form.TpeyroJIbHuk_BHu3.setColor(red)
 				table_form.box_HuJHero_TpeyroJIbHuka.setColor(red)
@@ -9655,6 +9662,9 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 				table_form.TpeyroJIbHuk_BHu3.setColor(blue)
 				table_form.box_HuJHero_TpeyroJIbHuka.setColor(blue)
 			end
+			table_form.TpeyroJIbHuk_BBepx.setColor(blue)
+			table_form.box_BepxHero_TpeyroJIbHuka.setColor(blue)
+			table_form.oTo6paJeHue_PecoB(TekyLLla9l_cTpaHuca)
 		end
 	end)
 	table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 78}, {x_main + 102, y_main + 78}, {x_main + 96, y_main + 88}, blue, 1)
@@ -9708,7 +9718,23 @@ end
 coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
-			
+			for i = 1, 16 do
+				if inventory.all_items[i][1] == "nil" then
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(false)
+				else
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(true)
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setItemId(inventory.all_items[i][1])
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setMeta(inventory.all_items[i][2])
+					if inventory.all_items[i][3] == -1 then
+						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel(inventory.all_items[i][4])
+						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(0)
+					else
+						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel("")
+						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(inventory.all_items[i][3])
+					end
+				end
+				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+			end
 		end
 	end
 	Bce_uTeMbl_po6oTa_LLlaXTepa = inventory.all_items

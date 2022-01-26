@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 135"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 137"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -167,24 +167,7 @@ nopTbl.coo6LLleHu9l_LLlaxTepy = 1001
 
 coo6LLleHu9l_OT_po6oToB = {}
 setmetatable(coo6LLleHu9l_OT_po6oToB, {__index = function() return function() end end})
-coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function() LLlaxTep_online = true end
 LLlaxTep_online = false
-coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
-	for nick, _ in pairs(whiteListUsers) do
-		if Bce_ragJeTbl_urpoka[nick] ~= nil then
-			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить") end
-		end
-	end
-	for k, v in pairs(Ta6JIuca_cocTo9lHu9l) do
-		 Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. ": " .. g .. tostring(v))
-	end
-end
-coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка команды робота:")
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "название инструкции:" .. oLLlu6ka.Ha3BaHue_uHcTpykcuu)
-	
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(oLLlu6ka.onucaHue))
-end
 
 local default_text = {} --дефолтный текст для текстбокса
 default_text["ввод значения"] = true
@@ -245,7 +228,7 @@ onacHa9l_kHonka[58] = true
 onacHa9l_kHonka[219] = true
 
 local MoHuTop_urpoka = {}
-local Bce_ragJeTbl_urpoka = {}
+Bce_ragJeTbl_urpoka = {}
 
 local form = {}
 local forms = {}
@@ -9617,6 +9600,25 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	self.__index = self
 	
 	return table_form
+end
+coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function()
+	LLlaxTep_online = true
+end
+coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] ~= nil then
+			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить") end
+		end
+	end
+	for k, v in pairs(Ta6JIuca_cocTo9lHu9l) do
+		 Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. ": " .. g .. tostring(v))
+	end
+end
+coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка команды робота:")
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "название инструкции:" .. oLLlu6ka.Ha3BaHue_uHcTpykcuu)
+	
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(oLLlu6ka.onucaHue))
 end
 
 function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 164"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 165"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9671,12 +9671,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 end
 coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function(status_table)
 	LLlaxTep_online = true
+	pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = status_table[2]
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "размер инвентаря шахтера: " .. tostring(status_table[2]))
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
 			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить")
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: онлайн")
-				pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = status_table[2]
 			end
 		end
 	end

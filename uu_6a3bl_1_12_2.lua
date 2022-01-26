@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 151"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 152"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9628,14 +9628,14 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.HanpaBJIeHue_o63opa)
 				local w1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getWidth()
 				local TekyLLluu_npocent = math.floor(Ta6JIuca_cocTo9lHu9l.energy * 100 /  Ta6JIuca_cocTo9lHu9l.maxEnergy)
-				print("Ta6JIuca_cocTo9lHu9l.energy", Ta6JIuca_cocTo9lHu9l.energy)
-				print("Ta6JIuca_cocTo9lHu9l.maxEnergy", Ta6JIuca_cocTo9lHu9l.maxEnergy)
-				print("TekyLLluu_npocent", TekyLLluu_npocent)
+				--print("Ta6JIuca_cocTo9lHu9l.energy", Ta6JIuca_cocTo9lHu9l.energy)
+				--print("Ta6JIuca_cocTo9lHu9l.maxEnergy", Ta6JIuca_cocTo9lHu9l.maxEnergy)
+				--print("TekyLLluu_npocent", TekyLLluu_npocent)
 				if TekyLLluu_npocent > 96 then TekyLLluu_npocent = 96 end
 				local w2 = TekyLLluu_npocent
 				local h1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getHeight()
 				local h2 = h1
-				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, w2, h1, h2, false))
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
 			end
 		end
 	end
@@ -10024,7 +10024,7 @@ function creat_wh_animation(w1, h1, w2, h2, nocJIe_3aBepLLleHu9l_animation_BepHy
 		end
 
 		table.insert(animation, {["w"] = w, ["h"] = h})
-		print("w:", w)
+		--print("w:", w)
 	until w == w2 and h == h2
 	if nocJIe_3aBepLLleHu9l_animation_BepHyTb_npegMeT_B_Ha4aJIbHoe_noJIoJeHue then
 		local newTable = {}

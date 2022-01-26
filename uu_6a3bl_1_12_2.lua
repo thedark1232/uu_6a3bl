@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 129"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 130"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -170,6 +170,7 @@ setmetatable(coo6LLleHu9l_OT_po6oToB, {__index = function() return function() en
 coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function() LLlaxTep_online = true end
 LLlaxTep_online = false
 coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
+	if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("выключить") end
 	for k, v in pairs(Ta6JIuca_cocTo9lHu9l) do
 		 Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. tostring(k) .. ": " .. g .. tostring(v))
 	end
@@ -179,11 +180,6 @@ coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "название инструкции:" .. oLLlu6ka.Ha3BaHue_uHcTpykcuu)
 	
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(oLLlu6ka.onucaHue))
-end
-coo6LLleHu9l_OT_po6oToB.I_am_online = function()
-	if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
-		 Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.KHonka_nepekJIl04eHu9l.caption.setText("включить")
-	end
 end
 
 local default_text = {} --дефолтный текст для текстбокса
@@ -308,19 +304,15 @@ local colors_background = {["setWhite"] = function() gpu.setBackground(0xFFFFFF)
 						   ["setBlack"] = function() gpu.setBackground(0x000000) end,
 						   ["setPurple"] = function() gpu.setBackground(0x9900FF) end,
 						   ["setYellow"] = function() gpu.setBackground(0xFFCC00) end,
-						   ["setBlue"] = function() gpu.setForeground(0x0033FF) end}		
-					 
+						   ["setBlue"] = function() gpu.setForeground(0x0033FF) end}						 
 local Ta6JIuca_npoBepku_online = {}
-	
 local whiteListUsers = {
 	["The_Dark1232"] = "ok"
-						}
-						
+						}						
 local Ta6JIuca_mogeroB_gJI9l_o4koB = {
 						["EveryMe"] = "ok",
 						["Methamphetamine"] = "ok"
-						}
-						
+						}						
 local o3By4ka_HukoB_urpokoB = {["RavRiko"] = "RavRiko.dfpwm",
 							   ["Zemyk"] = "Zemyk.dfpwm",
 							   ["Fantom576"] = "Fantom576.dfpwm",
@@ -2175,7 +2167,9 @@ function HauTu_HoBblx_urpokoB()
 		end
 	end	
 end
-function trim(text) return text:gsub("^%s+", ""):gsub("%s+$", "") end
+function trim(text)
+	return text:gsub("^%s+", ""):gsub("%s+$", "")
+end
 --создание компонентов для форм
 function creat_new_button(num, nick, x, y, w, h, label, name, visible, color_background, color_foreground, click_function)
 	local table_button
@@ -9569,6 +9563,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(-1, nick, x_main + 104, y_main + 31, 77, 15, "выключить", "button", true, gray, white, function()
 		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
 			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown"})
+			table_form.KHonka_nepekJIl04eHu9l.caption.setText("включить")
 		else
 			HacTpouka_po6oTa_LLlaxTepa.send("1232")
 		end

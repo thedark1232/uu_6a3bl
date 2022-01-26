@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 160"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 163"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,8 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = 0 
+Bce_uTeMbl_po6oTa_LLlaXTepa = {}
 local robot_LllaxTep_animations = {}
 local po6oT_LLlaxTep_online = false
 local HacTpouka_po6oTa_LLlaxTepa = {}
@@ -9329,12 +9331,23 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 	return table_form
 end
 function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управления робота шахтера
-	if Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"] ~= nil then Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"].destroy() end
-			
+	if Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"] ~= nil then Bce_ragJeTbl_urpoka[nick]["po6oT_LLlaxTep_work"].destroy() end	
 	--создание формы
 	local table_form = {}
 	local TekyLLlee_noJIoJeHue = "C"
+	local KoJIucTBo_cTpaHuc = {}
+	KoJIucTBo_cTpaHuc[16] = {1, 16}
+	KoJIucTBo_cTpaHuc[32] = {2, 32}
+	KoJIucTBo_cTpaHuc[48] = {3, 48}
+	KoJIucTBo_cTpaHuc[64] = {4, 64}
+	KoJIucTBo_cTpaHuc[80] = {5, 80}
+	KoJIucTBo_cTpaHuc[96] = {6, 96}
+	KoJIucTBo_cTpaHuc[112] = {7, 112}
+	KoJIucTBo_cTpaHuc[128] = {8, 128}
+	KoJIucTBo_cTpaHuc[144] = {9, 144}
 	
+	local TekyLLla9l_cTpaHuca = 1
+	local MakcuMaJIbHa9l_cTpaHuca = KoJIucTBo_cTpaHuc[pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa][1]
 	--изменить в сдвиге окна значение, если будешь копировать форму
 	npo4ue_qpopMbl[nick] = "po6oT_LLlaxTep_main" 
 	--создание функции видимости окна
@@ -9494,11 +9507,11 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.W = MoHuTop_urpoka[nick].addText(x_main + 21, y_main + 150, "З", blue)
 	table_form.E = MoHuTop_urpoka[nick].addText(x_main + 82, y_main + 150, "В", blue)
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 46, y_main + 146, "OpenComputers:robot", 0)
+	table_form.nogcka3ka_BepCuu_po6oTa =  MoHuTop_urpoka[nick].addText(x_main + 21, y_main + 150, "", blue)
 	--table_form.robot_icon.setScale(2)
 	
 	--создание анимаций
 	--С СЕВЕРА ...
-	
 	robot_LllaxTep_animations.turn_NW = creat_animation(x_main + 46, y_main + 128, 0, x_main + 29, y_main + 146, 0)
 	robot_LllaxTep_animations.turn_NS = creat_animation(x_main + 46, y_main + 128, 0, x_main + 36, y_main + 164, 0)
 	robot_LllaxTep_animations.turn_NE = creat_animation(x_main + 46, y_main + 128, 0, x_main + 73, y_main + 146, 0)
@@ -9525,16 +9538,15 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	robot_LllaxTep_animations.turn_CE = creat_animation(x_main + 46, y_main + 146, 0, x_main + 73, y_main + 146, 0)
 	
 	table_form.getTekyLLlee_noJIoJeHue = function() return TekyLLlee_noJIoJeHue end
-	table_form.setTekyLLlee_noJIoJeHue = function(noJIeJeHue) TekyLLlee_noJIoJeHue = noJIeJeHue end
-	
+	table_form.setTekyLLlee_noJIoJeHue = function(noJIeJeHue) TekyLLlee_noJIoJeHue = noJIeJeHue end	
 	table_form.play_turn_animation = function(noJIoJeHue)
 		Bce_noToku[nick].po6oT_LLlaxTep_turn_animation = myThread.create(po6oT_LLlaxTep_turn_animations, nick, robot_LllaxTep_animations["turn_" .. table_form.getTekyLLlee_noJIoJeHue() .. noJIoJeHue])
 		table_form.setTekyLLlee_noJIoJeHue(noJIoJeHue)
 	end
-	
 	table_form.play_energy_animation = function(enery_animation_table)
 		Bce_noToku[nick].po6oT_energy_animation = myThread.create(po6oT_LLlaxTep_energy_animation, nick, enery_animation_table)
 	end
+	
 	--создание кнопок
 	local y = y_main - 1
 	local y_func = function()
@@ -9574,12 +9586,14 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	for i = 1, 4 do
 		cMeLLleHue_no_x = x_main + 4
 		for j = 1, 4 do
-			table_form[HoMep_9l4euKu] = creat_new_button(-1, nick, x_main + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
-			
+			table_form[HoMep_9l4euKu] = creat_new_button(i, nick, x_main + cMeLLleHue_no_x, cMeLLleHue_no_y, 20, 20, "", "icon", true, gray, white, function(HoMep_uTema)
+				--table_form[tostring(
 			end)
+			
 			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu
 			table_form[tostring(HoMep_9l4euKu) .. " item"] = MoHuTop_urpoka[nick].addIcon(cMeLLleHue_no_x + 3, cMeLLleHue_no_y + 1, "minecraft:diamond_pickaxe", 0)
 			table_form[tostring(HoMep_9l4euKu) .. " item"].setVisible(false)
+			table_form[tostring(HoMep_9l4euKu) .. " item"].setClickable(false)
 			HoMep_9l4euKu = HoMep_9l4euKu + 1
 			cMeLLleHue_no_x = cMeLLleHue_no_x + 21	
 		end
@@ -9588,17 +9602,60 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		
 	end
 	
+	
+	
 	--прокрутка инвентаря
+	table_form.oTo6paJeHue_PecoB = function(noMep_cTpaHucbl)
+		-- for i = 1, 16 do
+			-- if inventory.all_items[i][1] == "nil" then
+				-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(false)
+			-- else
+				-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(true)
+				-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setItemId(inventory.all_items[i][1])
+				-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setMeta(inventory.all_items[i][2])
+				-- if inventory.all_items[i][3] == -1 then
+					-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel(inventory.all_items[i][4])
+					-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(0)
+				-- else
+					-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel("")
+					-- Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(inventory.all_items[i][3])
+				-- end
+			-- end
+			-- Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		-- end
+	end
 	--кнопки сдвига инвентаря робота
 	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 14, 41, "", "button", true, gray, white, function() 
-
+		if TekyLLla9l_cTpaHuca > 1 then
+			TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca - 1
+			table_form.oTo6paJeHue_PecoB(TekyLLla9l_cTpaHuca)
+			if TekyLLla9l_cTpaHuca == 1 then
+				table_form.TpeyroJIbHuk_BBepx.setColor(red)
+				table_form.box_BepxHero_TpeyroJIbHuka.setColor(red)
+			else
+				table_form.TpeyroJIbHuk_BBepx.setColor(blue)
+				table_form.box_BepxHero_TpeyroJIbHuka.setColor(blue)
+			end
+		end
 	end)
-	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 35}, {x_main + 102, y_main + 35}, {x_main + 96, y_main + 25}, blue, 1)
+	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 35}, {x_main + 102, y_main + 35}, {x_main + 96, y_main + 25}, red, 1)
 	table_form.TpeyroJIbHuk_BBepx.setClickable(false)
-	table_form.box_BepxHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 36, 8, 10, blue)
+	table_form.box_BepxHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 36, 8, 10, red)
 	table_form.box_BepxHero_TpeyroJIbHuka.setClickable(false)
+	
+	
 	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 14, 41, "", "button", true, gray, white, function() 
-
+		if TekyLLla9l_cTpaHuca < MakcuMaJIbHa9l_cTpaHuca then
+			TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca + 1
+			table_form.oTo6paJeHue_PecoB(TekyLLla9l_cTpaHuca)
+			if TekyLLla9l_cTpaHuca == MakcuMaJIbHa9l_cTpaHuca then
+				table_form.TpeyroJIbHuk_BHu3.setColor(red)
+				table_form.box_HuJHero_TpeyroJIbHuka.setColor(red)
+			else
+				table_form.TpeyroJIbHuk_BHu3.setColor(blue)
+				table_form.box_HuJHero_TpeyroJIbHuka.setColor(blue)
+			end
+		end
 	end)
 	table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 78}, {x_main + 102, y_main + 78}, {x_main + 96, y_main + 88}, blue, 1)
 	table_form.TpeyroJIbHuk_BHu3.setClickable(false)
@@ -9634,6 +9691,8 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 				local h1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getHeight()
 				local h2 = h1
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
+				pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = Ta6JIuca_cocTo9lHu9l.inventorySize
 			end
 		end
 	end
@@ -9647,26 +9706,12 @@ end
 coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
-			for i = 1, 16 do
-				if inventory.all_items[i][1] == "nil" then
-					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(false)
-				else
-					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(true)
-					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setItemId(inventory.all_items[i][1])
-					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setMeta(inventory.all_items[i][2])
-					if inventory.all_items[i][3] == -1 then
-						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel(inventory.all_items[i][4])
-						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(0)
-					else
-						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setLabel("")
-						Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setDamageBar(inventory.all_items[i][3])
-					end
-				end
-				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-			end
+			
 		end
 	end
+	Bce_uTeMbl_po6oTa_LLlaXTepa = inventory.all_items
 end
+
 function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ
 	local obj
 --создание формы

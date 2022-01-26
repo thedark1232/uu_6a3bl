@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 141"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 142"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9630,7 +9630,7 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
 			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
-				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.)
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.HanpaBJIeHue_o63opa)
 			end
 		end
 	end

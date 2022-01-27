@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 180"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 181"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9353,6 +9353,8 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end
 		
 	local TekyLLla9l_cTpaHuca = 1
+	table_form.getTekyLLla9l_cTpaHuca = function() return TekyLLla9l_cTpaHuca end
+	
 	local MakcuMaJIbHa9l_cTpaHuca = KoJIucTBo_cTpaHuc[pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa][1]
 	local TekyLLluu_cJIoT = 0
 	--изменить в сдвиге окна значение, если будешь копировать форму
@@ -9768,6 +9770,15 @@ coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 		end
 	end
 	Bce_uTeMbl_po6oTa_LLlaXTepa = inventory.all_items
+end
+coo6LLleHu9l_OT_po6oToB.drop_item(uHcTpyKcuu)
+	local HoMep_cJIoTa = uHcTpyKcuu[2]
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			Bce_uTeMbl_po6oTa_LLlaXTepa[HoMep_cJIoTa][1] == "nil"
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
+		end
+	end
 end
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_Ha_chatBox = function(coo6LLleHue)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сообщение от робота" .. tostring(coo6LLleHue[2]))

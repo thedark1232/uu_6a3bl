@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 174"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 175"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9762,7 +9762,9 @@ coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 	end
 	Bce_uTeMbl_po6oTa_LLlaXTepa = inventory.all_items
 end
-
+coo6LLleHu9l_OT_po6oToB.coo6LLleHue_Ha_chatBox = function(coo6LLleHue)
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сообщение от робота" .. tostring(coo6LLleHue[2]))
+end
 function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ
 	local obj
 --создание формы

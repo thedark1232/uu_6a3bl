@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 186"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 187"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9786,7 +9786,10 @@ coo6LLleHu9l_OT_po6oToB.new_item = function(item_detail)
 	local HoMep_cJIoTa = item_detail[2]
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
-			Bce_uTeMbl_po6oTa_LLlaXTepa[item_detail.HomeP_cJIoTa] = {["name"] = item_detail.name, ["damage"] = item_detail.damage, ["noBpaJgeHu9l"] = item_detail.noBpaJgeHu9l, ["size"] = item_detail.size}
+			if item_detail.name == "nil" then
+				Bce_uTeMbl_po6oTa_LLlaXTepa[item_detail.HomeP_cJIoTa][1] = "nil"
+			else
+			Bce_uTeMbl_po6oTa_LLlaXTepa[item_detail.HomeP_cJIoTa] = {item_detail.name, item_detail.damage, item_detail.noBpaJgeHu9l, item_detail.size}
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
 		end
 	end

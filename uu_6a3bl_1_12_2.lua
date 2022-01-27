@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 177"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 178"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9653,7 +9653,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			HoMep_9l4eUku = HoMep_9l4eUku + 1
 		end
 	end
-	table_form.oTo6paJeHue_PecoB.setClickable(false)
+
 	--кнопки сдвига инвентаря робота
 	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 14, 41, "", "button", true, gray, white, function() 
 		if TekyLLla9l_cTpaHuca > 1 then

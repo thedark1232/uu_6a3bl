@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 182"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 183"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9771,7 +9771,7 @@ coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 	end
 	Bce_uTeMbl_po6oTa_LLlaXTepa = inventory.all_items
 end
-coo6LLleHu9l_OT_po6oToB.drop_item(uHcTpyKcuu)
+coo6LLleHu9l_OT_po6oToB.drop_item = function(uHcTpyKcuu)
 	local HoMep_cJIoTa = uHcTpyKcuu[2]
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then

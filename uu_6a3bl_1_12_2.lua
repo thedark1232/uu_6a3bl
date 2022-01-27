@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 181"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 182"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9775,7 +9775,7 @@ coo6LLleHu9l_OT_po6oToB.drop_item(uHcTpyKcuu)
 	local HoMep_cJIoTa = uHcTpyKcuu[2]
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
-			Bce_uTeMbl_po6oTa_LLlaXTepa[HoMep_cJIoTa][1] == "nil"
+			Bce_uTeMbl_po6oTa_LLlaXTepa[HoMep_cJIoTa][1] = "nil"
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
 		end
 	end

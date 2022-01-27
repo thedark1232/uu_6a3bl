@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 175"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 176"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9614,7 +9614,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 					Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ячейка пуста")
 				end
 				TekyLLluu_cJIoT = HoMep_uTema + Ha4aJIbHblu_HoMep_uTema[TekyLLla9l_cTpaHuca]
-				if TekyLLla9l_cTpaHuca > 1 then TekyLLluu_cJIoT = TekyLLluu_cJIoT + 1 end
+				if TekyLLla9l_cTpaHuca == 1 then TekyLLluu_cJIoT = TekyLLluu_cJIoT - 1 end
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "текущий слот: " .. tostring(TekyLLluu_cJIoT))
 			end)
 			table_form[HoMep_9l4euKu].button_num = HoMep_9l4euKu

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 176"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 177"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9634,7 +9634,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		--print("Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl]", Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl])
 		--print("#Bce_uTeMbl_po6oTa_LLlaXTepa", #Bce_uTeMbl_po6oTa_LLlaXTepa)
 		local HoMep_9l4eUku = 1
-		for i = Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl], Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl] + 15 do
+		for i = Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl] - 1, Ha4aJIbHblu_HoMep_uTema[HoMep_cTpaHucbl] + 14 do
 			if Bce_uTeMbl_po6oTa_LLlaXTepa[i][1] == "nil" then
 				table_form[tostring(HoMep_9l4eUku) .. " item"].setVisible(false)
 			else
@@ -9653,10 +9653,11 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			HoMep_9l4eUku = HoMep_9l4eUku + 1
 		end
 	end
-	
+	table_form.oTo6paJeHue_PecoB.setClickable(false)
 	--кнопки сдвига инвентаря робота
 	table_form.uHBeHTapb_BBepx = creat_new_button(-1, nick, x_main + 89, y_main + 15, 14, 41, "", "button", true, gray, white, function() 
 		if TekyLLla9l_cTpaHuca > 1 then
+			table_form.uHBeHTapb_BBepx.setClickable(false)
 			TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca - 1
 			if TekyLLla9l_cTpaHuca == 1 then
 				table_form.TpeyroJIbHuk_BBepx.setColor(red)
@@ -9668,8 +9669,10 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			table_form.TpeyroJIbHuk_BHu3.setColor(blue)
 			table_form.box_HuJHero_TpeyroJIbHuka.setColor(blue)
 			table_form.oTo6paJeHue_PecoB(TekyLLla9l_cTpaHuca)
+			table_form.uHBeHTapb_BBepx.setClickable(true)
 		end
 	end)
+	table_form.uHBeHTapb_BBepx.setClickable(false)
 	table_form.TpeyroJIbHuk_BBepx = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 35}, {x_main + 102, y_main + 35}, {x_main + 96, y_main + 25}, red, 1)
 	table_form.TpeyroJIbHuk_BBepx.setClickable(false)
 	table_form.box_BepxHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 36, 8, 10, red)
@@ -9677,6 +9680,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	table_form.uHBeHTapb_BHu3 = creat_new_button(-1, nick, x_main + 89, y_main + 57, 14, 41, "", "button", true, gray, white, function() 
 		if TekyLLla9l_cTpaHuca < MakcuMaJIbHa9l_cTpaHuca then
+			table_form.uHBeHTapb_BHu3.setClickable(false)
 			TekyLLla9l_cTpaHuca = TekyLLla9l_cTpaHuca + 1
 			if TekyLLla9l_cTpaHuca == MakcuMaJIbHa9l_cTpaHuca then
 				table_form.TpeyroJIbHuk_BHu3.setColor(red)
@@ -9688,6 +9692,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			table_form.TpeyroJIbHuk_BBepx.setColor(blue)
 			table_form.box_BepxHero_TpeyroJIbHuka.setColor(blue)
 			table_form.oTo6paJeHue_PecoB(TekyLLla9l_cTpaHuca)
+			table_form.uHBeHTapb_BHu3.setClickable(true)
 		end
 	end)
 	table_form.TpeyroJIbHuk_BHu3 = MoHuTop_urpoka[nick].addTriangle({x_main + 90, y_main + 78}, {x_main + 102, y_main + 78}, {x_main + 96, y_main + 88}, blue, 1)
@@ -9741,6 +9746,8 @@ end
 coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
+			Bce_ragJeTbl_urpoka[nick].uHBeHTapb_BBepx.setClickable(false)
+			Bce_ragJeTbl_urpoka[nick].uHBeHTapb_BHu3.setClickable(false)
 			for i = 1, 16 do
 				if inventory.all_items[i][1] == "nil" then
 					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(false)
@@ -9758,6 +9765,8 @@ coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 				end
 				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 			end
+			Bce_ragJeTbl_urpoka[nick].uHBeHTapb_BBepx.setClickable(true)
+			Bce_ragJeTbl_urpoka[nick].uHBeHTapb_BHu3.setClickable(true)
 		end
 	end
 	Bce_uTeMbl_po6oTa_LLlaXTepa = inventory.all_items

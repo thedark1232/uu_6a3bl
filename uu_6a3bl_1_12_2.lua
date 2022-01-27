@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 178"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 179"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9722,18 +9722,16 @@ coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function(status_table)
 end
 coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 	for nick, _ in pairs(whiteListUsers) do
-		if Bce_ragJeTbl_urpoka[nick] ~= nil then
-			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then
-				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.HanpaBJIeHue_o63opa)
-				local w1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getWidth()
-				local w2 = Ta6JIuca_cocTo9lHu9l.energy_B_npoceHTax
-				if w2 > 96 then w2 = 96 end
-				local h1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getHeight()
-				local h2 = h1
-				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
-				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
-				pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = Ta6JIuca_cocTo9lHu9l.inventorySize
-			end
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.HanpaBJIeHue_o63opa)
+			local w1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getWidth()
+			local w2 = Ta6JIuca_cocTo9lHu9l.energy_B_npoceHTax
+			if w2 > 96 then w2 = 96 end
+			local h1 = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.energy_bar.getHeight()
+			local h2 = h1
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
+			pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = Ta6JIuca_cocTo9lHu9l.inventorySize
 		end
 	end
 end
@@ -9745,9 +9743,9 @@ coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
 end
 coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 	for nick, _ in pairs(whiteListUsers) do
-		if Bce_ragJeTbl_urpoka[nick] ~= nil then
-			Bce_ragJeTbl_urpoka[nick].uHBeHTapb_BBepx.setClickable(false)
-			Bce_ragJeTbl_urpoka[nick].uHBeHTapb_BHu3.setClickable(false)
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.uHBeHTapb_BBepx.setClickable(false)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.uHBeHTapb_BHu3.setClickable(false)
 			for i = 1, 16 do
 				if inventory.all_items[i][1] == "nil" then
 					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main[tostring(i) .. " item"].setVisible(false)
@@ -9765,8 +9763,8 @@ coo6LLleHu9l_OT_po6oToB.robot_items = function(inventory)
 				end
 				Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 			end
-			Bce_ragJeTbl_urpoka[nick].uHBeHTapb_BBepx.setClickable(true)
-			Bce_ragJeTbl_urpoka[nick].uHBeHTapb_BHu3.setClickable(true)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.uHBeHTapb_BBepx.setClickable(true)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.uHBeHTapb_BHu3.setClickable(true)
 		end
 	end
 	Bce_uTeMbl_po6oTa_LLlaXTepa = inventory.all_items

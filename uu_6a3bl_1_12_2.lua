@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 195"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 196"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9806,7 +9806,7 @@ coo6LLleHu9l_OT_po6oToB.robot_place = function(detail)
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText(detail.coo6LLleHue)
 			if detail.result then
-				print("detail.HoMep_cJIoTa", detail.Homep_cJIoTa)HoMep
+				print("detail.HoMep_cJIoTa", detail.Homep_cJIoTa)
 				print("type(detail.HoMep_cJIoTa)", type(detail.Homep_cJIoTa))
 				print("Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.HoMep_cJIoTa)][4]", Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4])
 				print("type(Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.HoMep_cJIoTa)][4])", type(Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4]))

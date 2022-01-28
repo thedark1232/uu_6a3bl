@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 189"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 190"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9810,8 +9810,7 @@ coo6LLleHu9l_OT_po6oToB.robot_place = function(detail)
 				else
 					Bce_uTeMbl_po6oTa_LLlaXTepa[detail.HoMep_cJIoTa][4] = Bce_uTeMbl_po6oTa_LLlaXTepa[detail.HoMep_cJIoTa][4] - 1
 				end
-					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
-				end
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
 			end
 		end
 	end

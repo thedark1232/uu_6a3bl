@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 188"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 189"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9571,15 +9571,17 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end
 	table_form.robot_drop = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "drop", "button", start_visible, gray, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_drop", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка дропа из слота " .. tostring(TekyLLluu_cJIoT))
 	end)
 	table_form.robot_use = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "use", "button", start_visible, gray, white, function()
 	
 	end)
 	table_form.robot_place = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "place", "button", start_visible, gray, white, function()
-	
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_place", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
 	end)
 	table_form.robot_equip = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "equip", "button", start_visible, gray, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_equip", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка взять предмет из слота " .. tostring(TekyLLluu_cJIoT))
 	end)
 	table_form.robot_swing = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "swing", "button", start_visible, gray, white, function()
 	
@@ -9711,6 +9713,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	return table_form
 end
+
 coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function(status_table)
 	LLlaxTep_online = true
 	pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = status_table[2]
@@ -9779,19 +9782,37 @@ coo6LLleHu9l_OT_po6oToB.drop_item = function(uHcTpyKcuu)
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
 			Bce_uTeMbl_po6oTa_LLlaXTepa[HoMep_cJIoTa][1] = "nil"
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: предмет выброшен из слота: " .. tostring(HoMep_cJIoTa))
 		end
 	end
 end
-coo6LLleHu9l_OT_po6oToB.new_item = function(item_detail)
+coo6LLleHu9l_OT_po6oToB.robot_equip = function(item_detail)
 	local HoMep_cJIoTa = item_detail[2]
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText(item_detail.coo6LLleHue)
 			if item_detail.name == "nil" then
 				Bce_uTeMbl_po6oTa_LLlaXTepa[item_detail.HomeP_cJIoTa][1] = "nil"
 			else
 				Bce_uTeMbl_po6oTa_LLlaXTepa[item_detail.HomeP_cJIoTa] = {item_detail.name, item_detail.damage, item_detail.noBpaJgeHu9l, item_detail.size}
 			end
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
+		end
+	end
+end
+coo6LLleHu9l_OT_po6oToB.robot_place = function(detail)
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText(detail.coo6LLleHue)
+			if detail.result then
+				if Bce_uTeMbl_po6oTa_LLlaXTepa[detail.HoMep_cJIoTa][4] - 1 == 0 then
+					Bce_uTeMbl_po6oTa_LLlaXTepa[HoMep_cJIoTa][1] = "nil"
+				else
+					Bce_uTeMbl_po6oTa_LLlaXTepa[detail.HoMep_cJIoTa][4] = Bce_uTeMbl_po6oTa_LLlaXTepa[detail.HoMep_cJIoTa][4] - 1
+				end
+					Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
+				end
+			end
 		end
 	end
 end

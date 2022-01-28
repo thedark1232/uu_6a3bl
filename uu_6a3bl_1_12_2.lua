@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 193"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 194"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9801,6 +9801,7 @@ coo6LLleHu9l_OT_po6oToB.robot_equip = function(item_detail)
 	end
 end
 coo6LLleHu9l_OT_po6oToB.robot_place = function(detail)
+	for k, v in pairs(detail) do print(k,v) end
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText(detail.coo6LLleHue)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 197"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 198"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9585,7 +9585,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.robot_swing = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "swing", "button", start_visible, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка сломать блок")
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_swing"}
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_swing"})
 	end)
 	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, red, white, function()
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 196"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 197"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9504,7 +9504,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.energy_background = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 100, 98, 16, black)
 	table_form.energy_background2 = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 96, 14, gray)
 	table_form.energy_bar = MoHuTop_urpoka[nick].addBox(x_main + 6, y_main + 101, 0, 14, green)
-	table_form.text_energy =  MoHuTop_urpoka[nick].addText(x_main + 43, y_main + 105, "0 %", blue)
+	table_form.text_energy = MoHuTop_urpoka[nick].addText(x_main + 43, y_main + 105, "0 %", blue)
 		
 	--радар
 	table_form.radar_box = MoHuTop_urpoka[nick].addBox(x_main + 5, y_main + 118, 98, 72, gray)
@@ -9584,7 +9584,8 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка взять предмет из слота " .. tostring(TekyLLluu_cJIoT))
 	end)
 	table_form.robot_swing = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "swing", "button", start_visible, gray, white, function()
-	
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка сломать блок")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_swing"}
 	end)
 	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, red, white, function()
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(
@@ -9801,30 +9802,32 @@ coo6LLleHu9l_OT_po6oToB.robot_equip = function(item_detail)
 	end
 end
 coo6LLleHu9l_OT_po6oToB.robot_place = function(detail)
-	for k, v in pairs(detail) do print(k,v) end
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText(detail.coo6LLleHue)
-			if detail.result then
-				print("detail.HoMep_cJIoTa", detail.Homep_cJIoTa)
-				print("type(detail.HoMep_cJIoTa)", type(detail.Homep_cJIoTa))
-				print("Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.HoMep_cJIoTa)][4]", Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4])
-				print("type(Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.HoMep_cJIoTa)][4])", type(Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4]))
-				--print("", )
-				
+			if detail.result then			
 				if Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4] - 1 == 0 then
 					Bce_uTeMbl_po6oTa_LLlaXTepa[Homep_cJIoTa][1] = "nil"
 				else
-					Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4] = Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4] - 1
+					Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4] = string.format("%d", Bce_uTeMbl_po6oTa_LLlaXTepa[tonumber(detail.Homep_cJIoTa)][4] - 1)
 				end
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
 			end
 		end
 	end
 end
+coo6LLleHu9l_OT_po6oToB.robot_swing = function(detail)
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			--Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText(
+		end
+	end
+end
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_Ha_chatBox = function(coo6LLleHue)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сообщение от робота" .. tostring(coo6LLleHue[2]))
 end
+
+
 function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ
 	local obj
 --создание формы

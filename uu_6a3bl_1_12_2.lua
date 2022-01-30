@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 198"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 199"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9586,6 +9586,18 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.robot_swing = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "swing", "button", start_visible, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка сломать блок")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_swing"})
+	end)
+	table_form.robot_work = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "work", "button", start_visible, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: начало работы")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_work"})
+	end)
+	table_form.robot_return = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "return", "button", start_visible, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: возвращение на базу")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_return"})
+	end)
+	table_form.robot_save_position = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "save position", "button", start_visible, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: сохранение позиции")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"save_position"})
 	end)
 	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, red, white, function()
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(

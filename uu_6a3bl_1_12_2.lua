@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 199"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 200"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9431,7 +9431,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		npo4ue_qpopMbl[nick] = nil
 	end
 	
-	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 20 end
 	
 	--сдвиг окна
 	table_form.move_form = function(x_mov, y_mov)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 242"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 243"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10059,7 +10059,7 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 			local h2 = h1
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
-			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые коорды: x" .. Ta6JIuca_cocTo9lHu9l.coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.coords.z))
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые коорды: x" .. Ta6JIuca_cocTo9lHu9l.coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.coords.z)
 			LLlaxTep_start.x = tonumber(Ta6JIuca_cocTo9lHu9l.coords.x)
 			LLlaxTep_start.y = tonumber(Ta6JIuca_cocTo9lHu9l.coords.y)
 			LLlaxTep_start.z = tonumber(Ta6JIuca_cocTo9lHu9l.coords.z)

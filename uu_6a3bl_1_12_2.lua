@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 223"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 224"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9812,6 +9812,11 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	local x_m = x_main + 104
 	local y_m = y_main + 15
 	local KHonka_cocTo9lHu9l_HaJaTa = false
+	
+	--кнопка раскрывающегося списка
+	table_form.KHonka_ynpaBJIeHu9l = creat_new_button(-1, nick, x_m, y_m, 77, 15, "состояние", "button", start_visible, blue, white, function()
+		table_form.packpblTue_cnucka_ynpaBJIeHu9l()
+	end)
 	table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l = MoHuTop_urpoka[nick].addTriangle({x_m + 60, y_m + 1}, {x_m + 75, y_m + 1}, {x_m + 68, y_m + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setClickable(false)
 	table_form.box_cnucka_cocTo9lHu9l = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 77, 66, red)
@@ -9822,14 +9827,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.restart_button = creat_new_button(-1, nick, x_m + 1, y_m + 16, 75, 12, "restart", "button", start_visible, blue, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: рестарт...")
-		table_form.KHonka_ynpaBJIeHu9l()
+		table_form.packpblTue_cnucka_ynpaBJIeHu9l()
 	end)
 	table_form.restart_button.setVisible(false)
 	table_form.restart_button.caption.setVisible(false)
 	table_form.restart_button.setClickable(false)
 	
-	--кнопка раскрывающегося списка
-	table_form.KHonka_ynpaBJIeHu9l = creat_new_button(-1, nick, x_m, y_m, 77, 15, "состояние", "button", start_visible, blue, white, function()
+	table_form.packpblTue_cnucka_ynpaBJIeHu9l = function()
 		KHonka_cocTo9lHu9l_HaJaTa = not KHonka_cocTo9lHu9l_HaJaTa
 		if KHonka_cocTo9lHu9l_HaJaTa then
 			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP1{x_m + 68, y_m + 1}
@@ -9846,8 +9850,8 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.restart_button.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
 		table_form.restart_button.caption.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
 		table_form.restart_button.setClickable(KHonka_cocTo9lHu9l_HaJaTa)
-		
-	end)
+	end
+	
 	
 	--объединение таблиц
 	self = {}

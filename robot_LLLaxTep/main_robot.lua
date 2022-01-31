@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.11"
+local o6HoBJIeHue = "v.13"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -146,8 +146,20 @@ command.robot_work = function(uHcTpykcuu)
 end
 command.o6HoBuTb_main_robot = function()
 	o6HoBuTb_qpauJI("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/robot_LLLaxTep/main_robot.lua", "/home/t", false)
-	
 end
+command.o6HoBuTb_LLlaxTep = function()
+	o6HoBuTb_qpauJI("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/robot_LLLaxTep/LLlaxTep.lua", "/home/work", true)
+end
+command.o6HoBuTb_return = function()
+	o6HoBuTb_qpauJI("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/robot_LLLaxTep/robot_return.lua", "/home/return", true)
+end
+command.o6HoBuTb_move_library = function()
+	o6HoBuTb_qpauJI("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/robot_LLLaxTep/moveLibrary.lua", "/lib/moveLibrary", true)
+end
+command.o6HoBuTb_size_library = function()
+	o6HoBuTb_qpauJI("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/robot_LLLaxTep/sizeLibrary.lua", "/lib/sizeLibrary", true)
+end
+
 command.robot_return = function(uHcTpykcuu)
 	send{"coo6LLleHue_Ha_chatBox", "возвращаюсь на позицию"}
 	loadfile("return.lua")("2")
@@ -180,7 +192,7 @@ function o6HoBuTb_qpauJI(ccblJIka, nyTb, go6aBuTb_lua_B_koHce_nyTu)
 		if status then
 			filesystem.remove(nyTb)
 			filesystem.copy(nyTb .. "1232", nyTb .. gonoJIHeHue)
-			table_cocTo9lHu9l.cocTo9lHue = "основная программа обновлена"
+			table_cocTo9lHu9l.cocTo9lHue = "успешное обновление"
 			table_cocTo9lHu9l.Bepcu9l = o6HoBJIeHue
 		else
 			table_cocTo9lHu9l.cocTo9lHue = tostring(olllu6ka)

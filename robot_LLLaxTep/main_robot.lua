@@ -7,6 +7,7 @@ local event = require("event")
 local filesystem = require("filesystem")
 local send --отправка сообщений на алиску
 local serialization = require("serialization") --serialization.serialize unserialize
+local moveLibrary = require("moveLibrary")
 local command = {}
 local work = true
 local start_x, start_y, start_z
@@ -65,8 +66,8 @@ command.robot_status = function()
 	status_table.HanpaBJIeHue_o63opa = Ta6JIuca_HanpaBJIeHuu[component.navigation.getFacing()]
 	status_table.version = o6HoBJIeHue
 	status_table.inventorySize = robot.inventorySize()
-	--status_table.my_coord = {["x"] = 10, ["y"] = 20, ["z"] = 30}
-	--print("отправка сообщения")
+	status_table.coords = BepHyTb_cTapToBble_KoopguHaTbl()
+	
 	send(status_table)
 	local st, er = pcall(function() command.getAllItems() end)
 	if not st then print(er) end
@@ -159,7 +160,6 @@ end
 command.o6HoBuTb_size_library = function()
 	o6HoBuTb_qpauJI("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/robot_LLLaxTep/sizeLibrary.lua", "/lib/sizeLibrary", true)
 end
-
 command.robot_return = function(uHcTpykcuu)
 	send{"coo6LLleHue_Ha_chatBox", "возвращаюсь на позицию"}
 	loadfile("return.lua")("2")
@@ -213,6 +213,24 @@ function o6HoBuTb_qpauJI(ccblJIka, nyTb, go6aBuTb_lua_B_koHce_nyTu)
 		filesystem.remove(nyTb .. "1232")
 	end
 end
+function BepHyTb_cTapToBble_KoopguHaTbl()
+	local start_cords = {}
+	local file = io.open("MyCoords", "r")
+		local ln = {}
+		for line in file:lines() do
+			ln[#ln + 1] = line
+		end
+		start_cords.x = ln[1]
+		start_cords.y = ln[2]
+		start_cords.z = ln[3]
+		
+		if start_cords.x == nil then start_cords.x = "nil" end
+		if start_cords.y == nil then start_cords.y = "nil" end
+		if start_cords.z == nil then start_cords.z = "nil" end
+			
+		return start_cords
+end
+
 do
 	--загрузка событий
 	event.listen("modem_message", modem_message)

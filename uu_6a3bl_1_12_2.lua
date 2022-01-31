@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 227"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 228"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9837,7 +9837,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	local KHonka_koMaHg_HaJaTa = false
 	
 	--создание раскрывающегоя списка переключения состояния робота
-	table_form.KHonka_ynpaBJIeHu9l = creat_new_button(-1, nick, x_c, y_c, 77, 15, "команды", "button", true, blue, white, function()
+	table_form.KHonka_koMaHg = creat_new_button(-1, nick, x_c, y_c, 77, 15, "команды", "button", true, blue, white, function()
 		table_form.packpblTue_cnucka_KoMaHg()
 	end)
 	table_form.TpeyroJIbHuk_cnucka_koMaHg = MoHuTop_urpoka[nick].addTriangle({x_c + 60, y_c + 1}, {x_c + 75, y_c + 1}, {x_c + 68, y_c + 10}, red, 1)
@@ -9893,13 +9893,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.packpblTue_cnucka_KoMaHg = function()
 	KHonka_koMaHg_HaJaTa = not KHonka_koMaHg_HaJaTa
 		if KHonka_koMaHg_HaJaTa then
-			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP1{x_c + 68, y_c + 1}
-			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP3{x_c + 60, y_c + 10}
-			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP2{x_c + 75, y_c + 10}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP1{x_c + 68, y_c + 1}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP3{x_c + 60, y_c + 10}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP2{x_c + 75, y_c + 10}
 		else
-			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP1{x_c + 60, y_c + 1}
-			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP2{x_c + 75, y_c + 1}
-			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP3{x_c + 68, y_c + 10}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP1{x_c + 60, y_c + 1}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP2{x_c + 75, y_c + 1}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP3{x_c + 68, y_c + 10}
 		end
 		table_form.box_cnucka_KoMaHg.setClickable(KHonka_koMaHg_HaJaTa)
 		table_form.box_cnucka_KoMaHg.setVisible(KHonka_koMaHg_HaJaTa)

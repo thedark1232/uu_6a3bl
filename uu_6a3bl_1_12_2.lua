@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 234"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 235"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9927,7 +9927,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end
 	
 	--раскрывающийся список рабочего режима
-	local x_m = x_main + 337
+	local x_m = x_main + 338
 	local y_m = y_main + 15
 	local KHonka_pa6o4ero_peJuma_HaJaTa = false
 	

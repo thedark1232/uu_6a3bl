@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 211"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 212"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9757,33 +9757,22 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 68, y_upd + 1}
 			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 60, y_upd + 10}
 			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 75, y_upd + 10}
-			table_form.box_cnucka.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
-			table_form.box_cnucka.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-			
-			table_form.update_main.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-			table_form.update_main.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
-			
-			table_form.update_LLaxTep.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-			table_form.update_LLaxTep.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
-			
-			table_form.update_return.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-			table_form.update_return.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 		else
 			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 60, y_upd + 1}
 			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 75, y_upd + 1}
 			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 68, y_upd + 10}
-			table_form.box_cnucka.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
-			table_form.box_cnucka.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-			
-			table_form.update_main.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-			table_form.update_main.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
-			
-			table_form.update_LLaxTep.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-			table_form.update_LLaxTep.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
-			
-			table_form.update_return.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-			table_form.update_return.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 		end
+		table_form.box_cnucka.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.box_cnucka.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		
+		table_form.update_main.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.update_main.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
+		
+		table_form.update_LLaxTep.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.update_LLaxTep.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
+		
+		table_form.update_return.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.update_return.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 	end
 	
 

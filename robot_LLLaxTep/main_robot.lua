@@ -1,0 +1,188 @@
+local o6HoBJIeHue = "v.9"
+local robot = require("robot")
+local component = require("component")
+local computer = require("computer")
+local filesLibrary = require("filesLibrary")
+local event = require("event")
+local send --отправка сообщений на алиску
+local serialization = require("serialization") --serialization.serialize unserialize
+local command = {}
+local work = true
+local start_x, start_y, start_z
+
+local Ta6JIuca_HanpaBJIeHuu = {}
+Ta6JIuca_HanpaBJIeHuu[2] = "N"
+Ta6JIuca_HanpaBJIeHuu[3] = "S"
+Ta6JIuca_HanpaBJIeHuu[4] = "W"
+Ta6JIuca_HanpaBJIeHuu[5] = "E"
+
+nopTbl = {} --так же скопировать таблицу в робота шахтера
+nopTbl.coo6LLleHu9l_oT_LLlaxTepa = 1000
+nopTbl.coo6LLleHu9l_LLlaxTepy = 1001
+
+function HacTpouka_oTnpaBku_coo6LLleHuu_oTBeTa()
+	if component.isAvailable("modem") then
+		component.modem.open(nopTbl.coo6LLleHu9l_LLlaxTepy)
+		component.modem.setWakeMessage("1232")
+		send = function(message) component.modem.broadcast(nopTbl.coo6LLleHu9l_oT_LLlaxTepa, serialization.serialize(message)) end
+	end	
+	if component.isAvailable("tunnel") then
+		component.tunnel.setWakeMessage("1232")
+		send = function(message) component.tunnel.send(serialization.serialize(message)) end
+	end
+end
+
+command.check_online = function()
+	send{"LLlaxTep_online", robot.inventorySize()}
+end
+command.getAllItems = function()
+	local table_items = {}
+	table_items[1] = "robot_items"
+	table_items.all_items = {}
+	for i = 1, robot.inventorySize() do
+		local item = component.inventory_controller.getStackInInternalSlot(i)
+		if item ~= nil then
+			local noBpaJgeHu9l = -1
+			if item.maxCharge ~= nil then
+				noBpaJgeHu9l = math.abs(item.charge * 100 / item.maxCharge / 100 - 1)
+			elseif item.maxDamage > 0 then
+				noBpaJgeHu9l = item.damage * 100 / item.maxDamage / 100
+			end
+			table.insert(table_items.all_items, {item.name, item.damage, noBpaJgeHu9l, string.format("%d", item.size)})
+		else
+			table.insert(table_items.all_items, {"nil"})
+		end
+	end
+	send(table_items)
+end
+command.robot_status = function()
+	local status_table = {}
+	status_table[1] = "robot_status"
+	status_table.energy = computer.energy()
+	status_table.maxEnergy = computer.maxEnergy()
+	status_table.energy_B_npoceHTax = math.floor(status_table.energy * 100 / status_table.maxEnergy)
+	status_table.HanpaBJIeHue_o63opa = Ta6JIuca_HanpaBJIeHuu[component.navigation.getFacing()]
+	status_table.version = o6HoBJIeHue
+	status_table.inventorySize = robot.inventorySize()
+	--status_table.my_coord = {["x"] = 10, ["y"] = 20, ["z"] = 30}
+	--print("отправка сообщения")
+	send(status_table)
+	local st, er = pcall(function() command.getAllItems() end)
+	if not st then print(er) end
+end
+command.robot_reboot = function()
+	computer.shutdown(true)
+end
+command.robot_shutdown = function()
+	computer.shutdown()
+end
+command.robot_exit = function()
+	work = false
+end
+command.robot_drop = function(uHcTpykcuu)
+	robot.select(uHcTpykcuu.Homep_cJIoTa)
+	robot.drop()
+	send{"drop_item", uHcTpykcuu.Homep_cJIoTa}
+end
+command.robot_equip = function(uHcTpykcuu)
+	local new_item = {}
+	new_item[1] = "robot_equip"
+	new_item.HomeP_cJIoTa = uHcTpykcuu.Homep_cJIoTa
+	
+	robot.select(uHcTpykcuu.Homep_cJIoTa)
+	component.inventory_controller.equip()
+	local item = component.inventory_controller.getStackInInternalSlot(uHcTpykcuu.Homep_cJIoTa)
+	if item ~= nil then
+		local noBpaJgeHu9l = -1
+		if item.maxCharge ~= nil then
+			noBpaJgeHu9l = math.abs(item.charge * 100 / item.maxCharge / 100 - 1)
+		elseif item.maxDamage > 0 then
+			noBpaJgeHu9l = item.damage * 100 / item.maxDamage / 100
+		end
+		new_item.name = item.name
+		new_item.damage = item.damage
+		new_item.noBpaJgeHu9l = noBpaJgeHu9l
+		new_item.size = string.format("%d", item.size)
+	else
+		new_item.name = "nil"
+	end
+	new_item.coo6LLleHue = "состояние: перемещение завершено"
+	new_item.HomeP_cJIoTa = uHcTpykcuu.Homep_cJIoTa
+	send(new_item)
+end
+command.robot_place = function(uHcTpykcuu)
+	robot.select(uHcTpykcuu.Homep_cJIoTa)
+	local table_place = {}
+	table_place[1] = "robot_place"
+	table_place.Homep_cJIoTa = uHcTpykcuu.Homep_cJIoTa
+	
+	local item = component.inventory_controller.getStackInInternalSlot(uHcTpykcuu.Homep_cJIoTa)
+	if item == nil then
+		table_place.result = false
+		table_place.coo6LLleHue = "состояние: place false. Слот пуст"
+	else
+		robot.place()
+		if item.size == component.inventory_controller.getStackInInternalSlot(uHcTpykcuu.Homep_cJIoTa).size then
+			table_place.result = false
+			table_place.coo6LLleHue = "состояние: робот не смог поставить блок"
+		else
+			table_place.result = true
+			table_place.coo6LLleHue = "состояние: робот поставил блок"
+		end	
+	end
+	send(table_place)
+end
+command.robot_swing = function(uHcTpykcuu)
+	local table_swing = {}
+	table_swing[1] = "robot_swing"
+	robot.swing()
+end
+command.robot_work = function(uHcTpykcuu)
+	local dofunction = loadfile("work.lua")
+	local status, err = pcall(dofunction())
+	status()
+	send{"coo6LLleHue_Ha_chatBox", "файл выполнен"}
+end
+command.o6HoBuTb_main_robot = function()
+
+end
+command.robot_return = function(uHcTpykcuu)
+	send{"coo6LLleHue_Ha_chatBox", "возвращаюсь на позицию"}
+	loadfile("return.lua")("2")
+end
+command.save_position = function(uHcTpykcuu)
+	send{"coo6LLleHue_Ha_chatBox", "позиция сохранена"}
+	loadfile("return.lua")("1")
+end
+function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
+	local st, er = pcall(function()
+		local Ta6JIuca_uHcTpykcuu = serialization.unserialize(coo6llleHue_oT_mogema)
+		command[Ta6JIuca_uHcTpykcuu[1]](Ta6JIuca_uHcTpykcuu)
+	end)
+	if not st then send{"coo6LLleHue_OLLlu6ku", ["onucaHue"] = er, ["Ha3BaHue_uHcTpykcuu"] = tostring(Ta6JIuca_uHcTpykcuu[1])} end
+end
+function inventory_changed(event_type, cJIoT)
+	--send{"coo6LLleHue_Ha_chatBox", "робот: изменения в слоте " .. tostring(cJIoT)}
+end
+function deucTBu9l_nepeg_3aBepLLleHueM_pa6oTbl()
+	event.ignore("modem_message", modem_message)
+	event.ignore("inventory_changed", inventory_changed)	
+end
+
+do
+	--загрузка событий
+	event.listen("modem_message", modem_message)
+	event.listen("inventory_changed", inventory_changed)
+	
+	filesLibrary.creat_file("/home/.shrc", "t")
+	HacTpouka_oTnpaBku_coo6LLleHuu_oTBeTa()
+	
+	setmetatable(command, {__index = function() return function() end end})
+	command.check_online()
+	
+	while work do
+		os.sleep(0.1)
+	end
+	
+	deucTBu9l_nepeg_3aBepLLleHueM_pa6oTbl()
+end

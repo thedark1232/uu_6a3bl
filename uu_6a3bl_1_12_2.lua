@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 206"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 207"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9730,20 +9730,22 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.box_cnucka.setClickable(false)
 	table_form.box_cnucka.setVisible(false)
 	table_form.kHonka_o6HoBJIeHuu = function(HaJaTa)
+		KHonka_o6HoBJIeHuu_HaJaTa = not KHonka_o6HoBJIeHuu_HaJaTa
 		if HaJaTa then
-			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 60, y_upd + 1}
-			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 75, y_upd + 1}
-			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 68, y_upd + 10}
-			table_form.box_cnucka.setClickable(true)
-			table_form.box_cnucka.setVisible(true)
-		else
 			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 68, y_upd + 1}
 			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 60, y_upd + 10}
 			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 75, y_upd + 10}
+			table_form.box_cnucka.setClickable(true)
+			table_form.box_cnucka.setVisible(true)
+		else
+			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 60, y_upd + 1}
+			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 75, y_upd + 1}
+			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 68, y_upd + 10}
 			table_form.box_cnucka.setClickable(false)
 			table_form.box_cnucka.setVisible(false)
+			
 		end
-		KHonka_o6HoBJIeHuu_HaJaTa = not KHonka_o6HoBJIeHuu_HaJaTa
+		
 	end
 	
 

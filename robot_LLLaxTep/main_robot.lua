@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.19"
+local o6HoBJIeHue = "v.20"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -169,9 +169,35 @@ command.robot_return = function(uHcTpykcuu)
 	loadfile("return.lua")("2")
 end
 command.save_position = function(uHcTpykcuu)
+	local table_coords = {}
+	table_coords[1] = "new_start_coords"
+	table_coords = BepHyTb_cTapToBble_KoopguHaTbl()
 	send{"coo6LLleHue_Ha_chatBox", "позиция сохранена"}
 	loadfile("return.lua")("1")
+	
+	send(table_coords)
 end
+command.robot_forward()
+	if robot.forward() then
+		local t = return_my_position()
+		t[1] = "new_start_coords"
+		send(t)
+	end
+end
+command.robot_back()
+	if robot.back() then
+		local t = return_my_position()
+		t[1] = "new_start_coords"
+		send(t)
+	end
+end
+command.turnLeft()
+	robot.turnLeft()
+end
+commmand.turnRight()
+	robot.turnRight()
+end
+
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
 	local st, er = pcall(function()
 		local Ta6JIuca_uHcTpykcuu = serialization.unserialize(coo6llleHue_oT_mogema)
@@ -233,6 +259,15 @@ function BepHyTb_cTapToBble_KoopguHaTbl()
 		if start_cords.z == nil then start_cords.z = "nil" end
 			
 		return start_cords
+end
+function return_my_position()
+	local pos = {}
+	local x, y, z = navigation.getPosition()
+	pos.x = x
+	pos.y = y
+	pos.z = z
+	
+	return pos
 end
 
 do

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 228"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 229"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9658,6 +9658,102 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.box_HuJHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 67, 8, 10, blue)
 	table_form.box_HuJHero_TpeyroJIbHuka.setClickable(false)
 	
+	
+	--раскрывающийся список команд робота
+	local x_c = x_main + 104
+	local y_c = y_main + 31
+	local KHonka_koMaHg_HaJaTa = false
+	
+	--создание раскрывающегоя списка переключения состояния робота
+	table_form.KHonka_koMaHg = creat_new_button(-1, nick, x_c, y_c, 77, 15, "команды", "button", true, blue, white, function()
+		table_form.packpblTue_cnucka_KoMaHg()
+	end)
+	table_form.TpeyroJIbHuk_cnucka_koMaHg = MoHuTop_urpoka[nick].addTriangle({x_c + 60, y_c + 1}, {x_c + 75, y_c + 1}, {x_c + 68, y_c + 10}, red, 1)
+	table_form.TpeyroJIbHuk_cnucka_koMaHg.setClickable(false)
+	table_form.box_cnucka_KoMaHg = MoHuTop_urpoka[nick].addBox(x_c, y_c + 15, 77, 66, red)
+	table_form.box_cnucka_KoMaHg.setClickable(false)
+	table_form.box_cnucka_KoMaHg.setVisible(false)
+	
+	--добавление копки drop
+	table_form.drop_button = creat_new_button(-1, nick, x_c + 1, y_c + 16, 75, 12, "drop", "button", false, gray, white, function()
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_drop", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка дропа из слота " .. tostring(TekyLLluu_cJIoT))
+	end)
+	table_form.drop_button.setVisible(false)
+	table_form.drop_button.caption.setVisible(false)
+	table_form.drop_button.setClickable(false)
+	
+	--добавление копки use
+	table_form.use_button = creat_new_button(-1, nick, x_c + 1, y_c + 29, 75, 12, "use", "button", false, gray, white, function()
+		
+	end)
+	table_form.use_button.setVisible(false)
+	table_form.use_button.caption.setVisible(false)
+	table_form.use_button.setClickable(false)
+
+	--добавление копки place
+	table_form.place_button = creat_new_button(-1, nick, x_c + 1, y_c + 42, 75, 12, "place", "button", false, gray, white, function()
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_place", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
+	end)
+	table_form.place_button.setVisible(false)
+	table_form.place_button.caption.setVisible(false)
+	table_form.place_button.setClickable(false)
+	
+	--добавление копки equip
+	table_form.equip_button = creat_new_button(-1, nick, x_c + 1, y_c + 55, 75, 12, "equip", "button", false, gray, white, function()
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_equip", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка взять предмет из слота " .. tostring(TekyLLluu_cJIoT))
+	end)
+	table_form.equip_button.setVisible(false)
+	table_form.equip_button.caption.setVisible(false)
+	table_form.equip_button.setClickable(false)
+	
+	--добавление копки swing
+	table_form.swing_button = creat_new_button(-1, nick, x_c + 1, y_c + 68, 75, 12, "swing", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка сломать блок")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_swing"})
+	end)
+	table_form.swing_button.setVisible(false)
+	table_form.swing_button.caption.setVisible(false)
+	table_form.swing_button.setClickable(false)
+	
+	--функция раскрывающегося списка состояния
+	table_form.packpblTue_cnucka_KoMaHg = function()
+	KHonka_koMaHg_HaJaTa = not KHonka_koMaHg_HaJaTa
+		if KHonka_koMaHg_HaJaTa then
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP1{x_c + 68, y_c + 1}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP3{x_c + 60, y_c + 10}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP2{x_c + 75, y_c + 10}
+		else
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP1{x_c + 60, y_c + 1}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP2{x_c + 75, y_c + 1}
+			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP3{x_c + 68, y_c + 10}
+		end
+		table_form.box_cnucka_KoMaHg.setClickable(KHonka_koMaHg_HaJaTa)
+		table_form.box_cnucka_KoMaHg.setVisible(KHonka_koMaHg_HaJaTa)
+		
+		table_form.drop_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.drop_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.drop_button.setClickable(KHonka_koMaHg_HaJaTa)
+		
+		table_form.use_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.use_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.use_button.setClickable(KHonka_koMaHg_HaJaTa)
+		
+		table_form.place_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.place_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.place_button.setClickable(KHonka_koMaHg_HaJaTa)
+		
+		table_form.equip_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.equip_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.equip_button.setClickable(KHonka_koMaHg_HaJaTa)
+		
+		table_form.swing_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.swing_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.swing_button.setClickable(KHonka_koMaHg_HaJaTa)		
+	end
+	
+	
 	--раскрывающийся список обновления программы
 	local x_upd = x_main + 182
 	local y_upd = y_main + 15
@@ -9764,7 +9860,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l = MoHuTop_urpoka[nick].addTriangle({x_m + 60, y_m + 1}, {x_m + 75, y_m + 1}, {x_m + 68, y_m + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setClickable(false)
-	table_form.box_cnucka_cocTo9lHu9l = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 40, 66, red)
+	table_form.box_cnucka_cocTo9lHu9l = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 77, 40, red)
 	table_form.box_cnucka_cocTo9lHu9l.setClickable(false)
 	table_form.box_cnucka_cocTo9lHu9l.setVisible(false)
 	
@@ -9830,101 +9926,6 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_Bblxog.setClickable(KHonka_cocTo9lHu9l_HaJaTa)
 	end
 	
-	
-	--раскрывающийся список команд робота
-	local x_c = x_main + 104
-	local y_c = y_main + 31
-	local KHonka_koMaHg_HaJaTa = false
-	
-	--создание раскрывающегоя списка переключения состояния робота
-	table_form.KHonka_koMaHg = creat_new_button(-1, nick, x_c, y_c, 77, 15, "команды", "button", true, blue, white, function()
-		table_form.packpblTue_cnucka_KoMaHg()
-	end)
-	table_form.TpeyroJIbHuk_cnucka_koMaHg = MoHuTop_urpoka[nick].addTriangle({x_c + 60, y_c + 1}, {x_c + 75, y_c + 1}, {x_c + 68, y_c + 10}, red, 1)
-	table_form.TpeyroJIbHuk_cnucka_koMaHg.setClickable(false)
-	table_form.box_cnucka_KoMaHg = MoHuTop_urpoka[nick].addBox(x_c, y_c + 15, 40, 66, red)
-	table_form.box_cnucka_KoMaHg.setClickable(false)
-	table_form.box_cnucka_KoMaHg.setVisible(false)
-	
-	--добавление копки drop
-	table_form.drop_button = creat_new_button(-1, nick, x_c + 1, y_c + 16, 75, 12, "drop", "button", false, gray, white, function()
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_drop", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
-		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка дропа из слота " .. tostring(TekyLLluu_cJIoT))
-	end)
-	table_form.drop_button.setVisible(false)
-	table_form.drop_button.caption.setVisible(false)
-	table_form.drop_button.setClickable(false)
-	
-	--добавление копки use
-	table_form.use_button = creat_new_button(-1, nick, x_c + 1, y_c + 29, 75, 12, "use", "button", false, gray, white, function()
-		
-	end)
-	table_form.use_button.setVisible(false)
-	table_form.use_button.caption.setVisible(false)
-	table_form.use_button.setClickable(false)
-
-	--добавление копки place
-	table_form.place_button = creat_new_button(-1, nick, x_c + 1, y_c + 42, 75, 12, "place", "button", false, gray, white, function()
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_place", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
-	end)
-	table_form.place_button.setVisible(false)
-	table_form.place_button.caption.setVisible(false)
-	table_form.place_button.setClickable(false)
-	
-	--добавление копки equip
-	table_form.equip_button = creat_new_button(-1, nick, x_c + 1, y_c + 55, 75, 12, "equip", "button", false, gray, white, function()
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_equip", ["Homep_cJIoTa"] = TekyLLluu_cJIoT})
-		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка взять предмет из слота " .. tostring(TekyLLluu_cJIoT))
-	end)
-	table_form.equip_button.setVisible(false)
-	table_form.equip_button.caption.setVisible(false)
-	table_form.equip_button.setClickable(false)
-	
-	--добавление копки swing
-	table_form.swing_button = creat_new_button(-1, nick, x_c + 1, y_c + 68, 75, 12, "swing", "button", false, gray, white, function()
-		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка сломать блок")
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_swing"})
-	end)
-	table_form.swing_button.setVisible(false)
-	table_form.swing_button.caption.setVisible(false)
-	table_form.swing_button.setClickable(false)
-	
-	--функция раскрывающегося списка состояния
-	table_form.packpblTue_cnucka_KoMaHg = function()
-	KHonka_koMaHg_HaJaTa = not KHonka_koMaHg_HaJaTa
-		if KHonka_koMaHg_HaJaTa then
-			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP1{x_c + 68, y_c + 1}
-			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP3{x_c + 60, y_c + 10}
-			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP2{x_c + 75, y_c + 10}
-		else
-			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP1{x_c + 60, y_c + 1}
-			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP2{x_c + 75, y_c + 1}
-			table_form.TpeyroJIbHuk_cnucka_koMaHg.setP3{x_c + 68, y_c + 10}
-		end
-		table_form.box_cnucka_KoMaHg.setClickable(KHonka_koMaHg_HaJaTa)
-		table_form.box_cnucka_KoMaHg.setVisible(KHonka_koMaHg_HaJaTa)
-		
-		table_form.drop_button.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.drop_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.drop_button.setClickable(KHonka_koMaHg_HaJaTa)
-		
-		table_form.use_button.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.use_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.use_button.setClickable(KHonka_koMaHg_HaJaTa)
-		
-		table_form.place_button.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.place_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.place_button.setClickable(KHonka_koMaHg_HaJaTa)
-		
-		table_form.equip_button.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.equip_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.equip_button.setClickable(KHonka_koMaHg_HaJaTa)
-		
-		table_form.swing_button.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.swing_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
-		table_form.swing_button.setClickable(KHonka_koMaHg_HaJaTa)		
-	end
-
 
 	-- table_form.robot_work = creat_new_button(num_button(), nick, x_main + 204, y_func(), 77, 15, "work", "button", start_visible, gray, white, function()
 		-- table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: начало работы")

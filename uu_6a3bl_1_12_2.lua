@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 243"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 244"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -18,6 +18,7 @@ local nick_testera = ""
 local o6LLlee
 
 local LLlaxTep_start = {}
+local LLlaxTep_TekyLLlue ={}
 pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = 0 
 Bce_uTeMbl_po6oTa_LLlaXTepa = {}
 local robot_LllaxTep_animations = {}
@@ -9492,8 +9493,10 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 414, 189, white)
 	--table_form.main_box2.setClickable(false)
 	--подсказка состояния
-	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 192, "состояние: онлайн", blue)
-	table_form.start_coords = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 202, "", blue)
+	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 106, y_main + 63, "состояние: онлайн", white)
+	table_form.start_coords = MoHuTop_urpoka[nick].addText(x_main + 106, y_main + 33, "", white)
+	table_form.new_coords = MoHuTop_urpoka[nick].addText(x_main + 106, y_main + 48, "", white)
+	
 	
 	--подсказки по центру экрана
 	local nogcka3ku = {}
@@ -10059,10 +10062,14 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 			local h2 = h1
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
-			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые коорды: x" .. Ta6JIuca_cocTo9lHu9l.coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.coords.z)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. Ta6JIuca_cocTo9lHu9l.coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.coords.z)
 			LLlaxTep_start.x = tonumber(Ta6JIuca_cocTo9lHu9l.coords.x)
 			LLlaxTep_start.y = tonumber(Ta6JIuca_cocTo9lHu9l.coords.y)
 			LLlaxTep_start.z = tonumber(Ta6JIuca_cocTo9lHu9l.coords.z)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.new_coords.setText("Текущие корды: x" .. Ta6JIuca_cocTo9lHu9l.new_coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.new_coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.new_coords.z)
+			LLlaxTep_TekyLLlue.x = tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.x)
+			LLlaxTep_TekyLLlue.y = tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.y)
+			LLlaxTep_TekyLLlue.z = tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.z)
 			
 			pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = Ta6JIuca_cocTo9lHu9l.inventorySize
 		end

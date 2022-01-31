@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.10"
+local o6HoBJIeHue = "v.11"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -189,6 +189,7 @@ function o6HoBuTb_qpauJI(ccblJIka, nyTb, go6aBuTb_lua_B_koHce_nyTu)
 		table_cocTo9lHu9l.cocTo9lHue = "интернет карта не найдена"
 	end
 	send(table_cocTo9lHu9l)
+	computer.shutdown(true)
 end
 do
 	--загрузка событий

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 213"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 214"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9732,19 +9732,22 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.box_cnucka.setVisible(false)
 	--кнопка обновления основной программы
 	table_form.update_main = creat_new_button(-1, nick, x_upd + 1, y_upd + 16, 75, 12, "main_robot", "button", start_visible, blue, white, function()
-		
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"}
 	end)
 	table_form.update_main.setVisible(false)
 	table_form.update_main.setClickable(false)
 	--кнопка обновления программы шахтера
 	table_form.update_LLaxTep = creat_new_button(-1, nick, x_upd + 1, y_upd + 29, 75, 12, "LLlaxTep", "button", start_visible, blue, white, function()
-		
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"}
 	end)
 	table_form.update_LLaxTep.setVisible(false)
 	table_form.update_LLaxTep.setClickable(false)
 	--кнопка обновления программы возвращения на базу
 	table_form.update_return = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 75, 12, "return", "button", start_visible, blue, white, function()
-		
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"}
 	end)
 	table_form.update_return.setVisible(false)
 	table_form.update_return.setClickable(false)
@@ -9852,6 +9855,14 @@ coo6LLleHu9l_OT_po6oToB.drop_item = function(uHcTpyKcuu)
 			Bce_uTeMbl_po6oTa_LLlaXTepa[HoMep_cJIoTa][1] = "nil"
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.oTo6paJeHue_PecoB(Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.getTekyLLla9l_cTpaHuca())
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: предмет выброшен из слота: " .. tostring(HoMep_cJIoTa))
+		end
+	end
+end
+coo6LLleHu9l_OT_po6oToB.cocTo9lHue_o6HoBJIeHu9l = function(cocTo9lHue)
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: " .. cocTo9lHue.cocTo9lHue)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(cocTo9lHue.Bepcu9l)
 		end
 	end
 end

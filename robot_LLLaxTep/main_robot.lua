@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.23"
+local o6HoBJIeHue = "v.24"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -196,7 +196,12 @@ command.robot_back = function()
 	end
 end
 command.turnLeft = function()
-	robot.turnLeft()
+	if robot.turnLeft() then
+		local t = {}
+		t[1] = "robot_turn"
+		t.facing = navigation.getFacing()
+		send(t)
+	end
 end
 command.turnRight = function()
 	robot.turnRight()

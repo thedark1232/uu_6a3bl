@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.16"
+local o6HoBJIeHue = "v.17"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -68,6 +68,9 @@ command.robot_status = function()
 	status_table.version = o6HoBJIeHue
 	status_table.inventorySize = robot.inventorySize()
 	status_table.coords = BepHyTb_cTapToBble_KoopguHaTbl()
+	
+	local x, z, y = navigation.getPosition()
+	status_table.new_coords = {["x"] = x, ["y"] = y, ["z"] = z}
 	
 	send(status_table)
 	local st, er = pcall(function() command.getAllItems() end)

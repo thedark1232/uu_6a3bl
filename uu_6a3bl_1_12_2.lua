@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 216"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 217"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9740,17 +9740,32 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--кнопка обновления программы шахтера
 	table_form.update_LLaxTep = creat_new_button(-1, nick, x_upd + 1, y_upd + 29, 75, 12, "LLlaxTep", "button", start_visible, blue, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
-		--HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"})
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_LLlaxTep"})
 	end)
 	table_form.update_LLaxTep.setVisible(false)
 	table_form.update_LLaxTep.setClickable(false)
 	--кнопка обновления программы возвращения на базу
 	table_form.update_return = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 75, 12, "return", "button", start_visible, blue, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
-		--HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"})
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_return"})
 	end)
 	table_form.update_return.setVisible(false)
 	table_form.update_return.setClickable(false)
+	
+	table_form.o6HoBuTb_Move_library = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 75, 12, "move lib", "button", start_visible, blue, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_move_library"})
+	end)
+	table_form.o6HoBuTb_Move_library.setVisible(false)
+	table_form.o6HoBuTb_Move_library.setClickable(false)
+	
+	table_form.o6HoBuTb_size_library = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 75, 12, "size lib", "button", start_visible, blue, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_size_library"})
+	end)
+	table_form.o6HoBuTb_size_library.setVisible(false)
+	table_form.o6HoBuTb_size_library.setClickable(false)
+
 	
 	--кнопка раскрывающегося списка
 	table_form.kHonka_o6HoBJIeHuu = function()
@@ -9775,6 +9790,12 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		
 		table_form.update_return.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
 		table_form.update_return.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
+		
+		table_form.o6HoBuTb_Move_library.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.o6HoBuTb_Move_library.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
+		
+		table_form.o6HoBuTb_size_library.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.o6HoBuTb_size_library.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 	end
 	
 

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 208"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 209"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9727,7 +9727,18 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 60, y_upd + 1}, {x_upd + 75, y_upd + 1}, {x_upd + 68, y_upd + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka.setClickable(false)
-	table_form.box_cnucka = MoHuTop_urpoka[nick].addBox(x_upd, y_upd + 16, 77, 60, red)
+	
+	table_form.update_main = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "main_robot", "button", start_visible, blue, white, function()
+		
+	end)
+	table_form.update_LLaxTep = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "LLlaxTep", "button", start_visible, blue, white, function()
+		
+	end)
+	table_form.update_return = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "return", "button", start_visible, blue, white, function()
+		
+	end)
+	
+	table_form.box_cnucka = MoHuTop_urpoka[nick].addBox(x_upd, y_upd + 15, 77, 100, red)
 	table_form.box_cnucka.setClickable(false)
 	table_form.box_cnucka.setVisible(false)
 	table_form.kHonka_o6HoBJIeHuu = function()
@@ -9745,7 +9756,6 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			table_form.box_cnucka.setClickable(false)
 			table_form.box_cnucka.setVisible(false)
 		end
-		
 	end
 	
 

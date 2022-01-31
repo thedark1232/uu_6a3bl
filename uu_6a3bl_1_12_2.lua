@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 204"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 205"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9613,31 +9613,8 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 			HacTpouka_po6oTa_LLlaxTepa.send("1232")
 		end
 	end)
-	table_form.kHonka_Bblxog = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выход", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"}) end)
-		
-	--обновления программы
-	local x_upd = x_main + 182
-	local y_upd = y_main + 15
-	local KHonka_o6HoBJIeHuu_HaJaTa = false
+	table_form.kHonka_Bblxog = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выход", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"}) end)	
 	
-	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "обновить", "button", start_visible, blue, white, function()
-		table_form.kHonka_o6HoBJIeHuu(KHonka_o6HoBJIeHuu_HaJaTa)
-	end)
-	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 15, y_upd + 1}, {x_upd + 30, y_upd + 1}, {x_upd + 22, y_upd + 10}, red, 1)
-		
-		
-	table_form.kHonka_o6HoBJIeHuu = function(HaJaTa)
-		if HaJaTa then
-			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 15, y_upd + 1}
-			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 30, y_upd + 1}
-			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 22, y_upd + 10}
-		else
-			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 22, y_upd + 1}
-			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 15, y_upd + 10}
-			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 30, y_upd + 10}
-			
-		end
-	end
 	--инвентарь робота
 	local HoMep_9l4euKu = 1
 	local cMeLLleHue_no_x
@@ -9739,7 +9716,36 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.TpeyroJIbHuk_BHu3.setClickable(false)
 	table_form.box_HuJHero_TpeyroJIbHuka = MoHuTop_urpoka[nick].addBox(x_main + 92, y_main + 67, 8, 10, blue)
 	table_form.box_HuJHero_TpeyroJIbHuka.setClickable(false)
-		
+	
+	--обновления программы
+	local x_upd = x_main + 182
+	local y_upd = y_main + 15
+	local KHonka_o6HoBJIeHuu_HaJaTa = false
+	
+	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "обновить", "button", start_visible, blue, white, function()
+		table_form.kHonka_o6HoBJIeHuu(KHonka_o6HoBJIeHuu_HaJaTa)
+	end)
+	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 15, y_upd + 1}, {x_upd + 30, y_upd + 1}, {x_upd + 22, y_upd + 10}, red, 1)
+	table_form.box_cnucka = MoHuTop_urpoka[nick].addBox(x_upd, y_upd + 16, 77, 60, white)
+	table_form.box_cnucka.setClickable(false)
+	table_form.box_cnucka.setVisible(false)
+	table_form.kHonka_o6HoBJIeHuu = function(HaJaTa)
+		if HaJaTa then
+			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 115, y_upd + 1}
+			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 130, y_upd + 1}
+			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 122, y_upd + 10}
+			table_form.box_cnucka.setClickable(true)
+			table_form.box_cnucka.setVisible(true)
+		else
+			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 122, y_upd + 1}
+			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 115, y_upd + 10}
+			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 130, y_upd + 10}
+			table_form.box_cnucka.setClickable(false)
+			table_form.box_cnucka.setVisible(false)
+		end
+	end
+	
+
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)

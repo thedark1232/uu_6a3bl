@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.22"
+local o6HoBJIeHue = "v.23"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -167,6 +167,7 @@ end
 command.robot_return = function(uHcTpykcuu)
 	send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "возвращаюсь на базу"}
 	loadfile("return.lua")("2")
+	print("отправить соообщщение, что робот вернулся")
 	send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "робот вернулся на базу"}
 end
 command.save_position = function(uHcTpykcuu)

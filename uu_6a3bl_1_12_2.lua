@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 233"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 234"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9926,20 +9926,78 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_Bblxog.setClickable(KHonka_cocTo9lHu9l_HaJaTa)
 	end
 	
-
-	-- table_form.robot_work = creat_new_button(num_button(), nick, x_main + 204, y_func(), 77, 15, "work", "button", start_visible, gray, white, function()
-		-- table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: начало работы")
-		-- HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_work"})
-	-- end)
-	-- table_form.robot_return = creat_new_button(num_button(), nick, x_main + 204, y_func(), 77, 15, "return", "button", start_visible, gray, white, function()
-		-- table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: возвращение на базу")
-		-- HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_return"})
-	-- end)
-	-- table_form.robot_save_position = creat_new_button(num_button(), nick, x_main + 204, y_func(), 77, 15, "save position", "button", start_visible, gray, white, function()
-		-- table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: сохранение позиции")
-		-- HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"save_position"})
-	-- end)
+	--раскрывающийся список рабочего режима
+	local x_m = x_main + 337
+	local y_m = y_main + 15
+	local KHonka_pa6o4ero_peJuma_HaJaTa = false
+	
+	--создание раскрывающегоя списка рабочего режима
+	table_form.kHonka_pa6o4ero_peJuMa = creat_new_button(-1, nick, x_m, y_m, 77, 15, "шахта", "button", true, blue, white, function()
+		table_form.packpblTue_cnucka_pa6o4ero_peJuMa()
+	end)
+	table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma = MoHuTop_urpoka[nick].addTriangle({x_m + 60, y_m + 1}, {x_m + 75, y_m + 1}, {x_m + 68, y_m + 10}, red, 1)
+	table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setClickable(false)
+	table_form.box_pa6o4ero_peJuMa = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 77, 40, red)
+	table_form.box_pa6o4ero_peJuMa.setClickable(false)
+	table_form.box_pa6o4ero_peJuMa.setVisible(false)
+	
+	--добавление копки work
+	table_form.kHonka_work = creat_new_button(-1, nick, x_m + 1, y_m + 16, 75, 12, "work", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: начало работы")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_work"})
+		table_form.packpblTue_cnucka_pa6o4ero_peJuMa()
+	end)
+	table_form.kHonka_work.setVisible(false)
+	table_form.kHonka_work.caption.setVisible(false)
+	table_form.kHonka_work.setClickable(false)
+	
+	--добавление кнопки return
+	table_form.KHonka_return = creat_new_button(-1, nick, x_m + 1, y_m + 29, 75, 12, "return", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: возвращение на базу")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_return"})
+		table_form.packpblTue_cnucka_pa6o4ero_peJuMa()
+	end)
+	table_form.KHonka_return.setVisible(false)
+	table_form.KHonka_return.caption.setVisible(false)
+	table_form.KHonka_return.setClickable(false)
+	
+	--добавление кнопки выхода
+	table_form.kHonka_save_pos = creat_new_button(-1, nick, x_m + 1, y_m + 42, 75, 12, "save pos", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: сохранение позиции")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"save_position"})
+	end)
+	table_form.kHonka_save_pos.setVisible(false)
+	table_form.kHonka_save_pos.caption.setVisible(false)
+	table_form.kHonka_save_pos.setClickable(false)
+	
+	--функция раскрывающегося списка состояния
+	table_form.packpblTue_cnucka_pa6o4ero_peJuMa = function()
+		KHonka_pa6o4ero_peJuma_HaJaTa = not KHonka_pa6o4ero_peJuma_HaJaTa
+		if KHonka_pa6o4ero_peJuma_HaJaTa then
+			table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setP1{x_m + 68, y_m + 1}
+			table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setP3{x_m + 60, y_m + 10}
+			table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setP2{x_m + 75, y_m + 10}
+		else
+			table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setP1{x_m + 60, y_m + 1}
+			table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setP2{x_m + 75, y_m + 1}
+			table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setP3{x_m + 68, y_m + 10}
+		end
+		table_form.box_pa6o4ero_peJuMa.setClickable(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.box_pa6o4ero_peJuMa.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
 		
+		table_form.kHonka_work.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.kHonka_work.caption.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.kHonka_work.setClickable(KHonka_pa6o4ero_peJuma_HaJaTa)
+		
+		table_form.KHonka_return.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.KHonka_return.caption.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.KHonka_return.setClickable(KHonka_pa6o4ero_peJuma_HaJaTa)
+		
+		table_form.kHonka_save_pos.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.kHonka_save_pos.caption.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.kHonka_save_pos.setClickable(KHonka_pa6o4ero_peJuma_HaJaTa)
+	end
+			
 	--объединение таблиц
 	self = {}
 	setmetatable(table_form, self)

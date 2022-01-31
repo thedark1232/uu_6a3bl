@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.14"
+local o6HoBJIeHue = "v.16"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -183,29 +183,35 @@ function deucTBu9l_nepeg_3aBepLLleHueM_pa6oTbl()
 	event.ignore("inventory_changed", inventory_changed)	
 end
 function o6HoBuTb_qpauJI(ccblJIka, nyTb, go6aBuTb_lua_B_koHce_nyTu)
-	local table_cocTo9lHu9l = {}
-	local gonoJIHeHue = ""
-	if go6aBuTb_lua_B_koHce_nyTu then gonoJIHeHue = ".lua" end
-	table_cocTo9lHu9l[1] = "cocTo9lHue_o6HoBJIeHu9l"
-	if component.isAvailable("internet") then
-		local status, olllu6ka = loadfile("/bin/wget.lua")("-fq", ccblJIka, nyTb .. "1232")
-		if status then
-			local a = io.open(nyTb_k_uu_6a3bl .. "1232")
-			local b = a:read()
-			a:close()
-			table_cocTo9lHu9l.Bepcu9l = string.match(b, '%"(.+)%"')
-			if table_cocTo9lHu9l.Bepcu9l == nil then table_cocTo9lHu9l.Bepcu9l = o6HoBJIeHue end
-			filesystem.remove(nyTb)
-			filesystem.copy(nyTb .. "1232", nyTb .. gonoJIHeHue)
-			table_cocTo9lHu9l.cocTo9lHue = "успешное обновление"
+	local st, er = pcall(function()
+		local table_cocTo9lHu9l = {}
+		local gonoJIHeHue = ""
+		if go6aBuTb_lua_B_koHce_nyTu then gonoJIHeHue = ".lua" end
+		table_cocTo9lHu9l[1] = "cocTo9lHue_o6HoBJIeHu9l"
+		if component.isAvailable("internet") then
+			local status, olllu6ka = loadfile("/bin/wget.lua")("-fq", ccblJIka, nyTb .. "1232")
+			if status then
+				local a = io.open(nyTb .. "1232")
+				local b = a:read()
+				a:close()
+				table_cocTo9lHu9l.Bepcu9l = string.match(b, '%"(.+)%"')
+				if table_cocTo9lHu9l.Bepcu9l == nil then table_cocTo9lHu9l.Bepcu9l = o6HoBJIeHue end
+				filesystem.remove(nyTb)
+				filesystem.copy(nyTb .. "1232", nyTb .. gonoJIHeHue)
+				table_cocTo9lHu9l.cocTo9lHue = "успешное обновление"
+			else
+				table_cocTo9lHu9l.cocTo9lHue = tostring(olllu6ka)
+			end
 		else
-			table_cocTo9lHu9l.cocTo9lHue = tostring(olllu6ka)
+			table_cocTo9lHu9l.cocTo9lHue = "интернет карта не найдена"
 		end
-	else
-		table_cocTo9lHu9l.cocTo9lHue = "интернет карта не найдена"
+		send(table_cocTo9lHu9l)
+		computer.shutdown(true)
+	end)
+	if not st then
+		send{"coo6LLleHue_Ha_chatBox", tostring(er)}
+		filesystem.remove(nyTb .. "1232")
 	end
-	send(table_cocTo9lHu9l)
-	computer.shutdown(true)
 end
 do
 	--загрузка событий

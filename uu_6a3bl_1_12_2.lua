@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 239"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 240"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9280,12 +9280,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 	--иконки и подсказки робота шахтера
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 12, "ожидание соединения", blue)
 	table_form.nogcka3ka.setScale(3)
-	
-	table_form.nogcka3ka_no_ceHTpy_ekpaHa = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 50, "Проектор", red)
-	table_form.nogcka3ka_no_ceHTpy_ekpaHa.setScale(3)
-	table_form.nogcka3ka_no_ceHTpy_ekpaHa2 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 70, "не подключен!", red)
-	table_form.nogcka3ka_no_ceHTpy_ekpaHa2.setScale(3)
-	
+		
 	table_form.BpeM9l = MoHuTop_urpoka[nick].addText(151 + x_main, y_main + 42, "10 сек", blue)
 	table_form.BpeM9l.setScale(3)
 	table_form.robot_icon = MoHuTop_urpoka[nick].addIcon(x_main + 174, y_main + 68, "OpenComputers:robot", 0) --робот
@@ -9496,6 +9491,17 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--table_form.main_box2.setClickable(false)
 	--подсказка состояния
 	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 192, "состояние: онлайн", blue)
+	
+	
+	--подсказки по центру экрана
+	local nogcka3ku = {}
+	table.insert(nogcka3ku, {})
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 50, "Проектор", red)
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa.setScale(3)
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa2 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 70, "не", red)
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa2.setScale(3)
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa3 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 90, "не подключен!", red)
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa3.setScale(3)
 		
 	--сдвиг формы + кнопка выхода
 	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 422, 10, "", "move_form", true, gray, white, function() end)

@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.18"
+local o6HoBJIeHue = "v.19"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -225,12 +225,12 @@ function BepHyTb_cTapToBble_KoopguHaTbl()
 			ln[#ln + 1] = line
 		end
 		start_cords.x = ln[1]
-		start_cords.y = ln[2]
-		start_cords.z = ln[3]
+		start_cords.z = ln[2]
+		start_cords.y = ln[3]
 		
 		if start_cords.x == nil then start_cords.x = "nil" end
-		if start_cords.z == nil then start_cords.y = "nil" end
-		if start_cords.y == nil then start_cords.z = "nil" end
+		if start_cords.y == nil then start_cords.y = "nil" end
+		if start_cords.z == nil then start_cords.z = "nil" end
 			
 		return start_cords
 end

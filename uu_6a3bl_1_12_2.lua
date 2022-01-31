@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 245"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 246"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9702,7 +9702,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.TpeyroJIbHuk_cnucka_koMaHg = MoHuTop_urpoka[nick].addTriangle({x_c + 60, y_c + 1}, {x_c + 75, y_c + 1}, {x_c + 68, y_c + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka_koMaHg.setClickable(false)
-	table_form.box_cnucka_KoMaHg = MoHuTop_urpoka[nick].addBox(x_c, y_c + 15, 77, 66, red)
+	table_form.box_cnucka_KoMaHg = MoHuTop_urpoka[nick].addBox(x_c, y_c + 15, 77, 118, red)
 	table_form.box_cnucka_KoMaHg.setClickable(false)
 	table_form.box_cnucka_KoMaHg.setVisible(false)
 	
@@ -9750,7 +9750,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.swing_button.setClickable(false)
 	
 	--добавление копки forward
-	table_form.forward_button = creat_new_button(-1, nick, x_c + 1, y_c + 80, 75, 12, "forward", "button", false, gray, white, function()
+	table_form.forward_button = creat_new_button(-1, nick, x_c + 1, y_c + 81, 75, 12, "forward", "button", false, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка движения вперед")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_forward"})
 	end)
@@ -9759,7 +9759,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.forward_button.setClickable(false)
 	
 	--добавление копки back
-	table_form.back_button = creat_new_button(-1, nick, x_c + 1, y_c + 92, 75, 12, "back", "button", false, gray, white, function()
+	table_form.back_button = creat_new_button(-1, nick, x_c + 1, y_c + 94, 75, 12, "back", "button", false, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка движения назад")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_back"})
 	end)
@@ -9768,7 +9768,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.back_button.setClickable(false)
 	
 	--добавление копки turnLeft
-	table_form.turn_left_button = creat_new_button(-1, nick, x_c + 1, y_c + 104, 75, 12, "turnLeft", "button", false, gray, white, function()
+	table_form.turn_left_button = creat_new_button(-1, nick, x_c + 1, y_c + 107, 75, 12, "turnLeft", "button", false, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка поворота налево")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"turnLeft"})
 	end)
@@ -9777,7 +9777,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.turn_left_button.setClickable(false)
 	
 	--добавление копки turnRight
-	table_form.turn_right_button = creat_new_button(-1, nick, x_c + 1, y_c + 116, 75, 12, "turnRight", "button", false, gray, white, function()
+	table_form.turn_right_button = creat_new_button(-1, nick, x_c + 1, y_c + 120, 75, 12, "turnRight", "button", false, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка поворота направо")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"turnRight"})
 	end)

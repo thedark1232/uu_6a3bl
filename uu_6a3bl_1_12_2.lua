@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 209"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 210"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9728,13 +9728,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 60, y_upd + 1}, {x_upd + 75, y_upd + 1}, {x_upd + 68, y_upd + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka.setClickable(false)
 	
-	table_form.update_main = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "main_robot", "button", start_visible, blue, white, function()
+	table_form.update_main = creat_new_button(-1, nick, x_upd + 1, y_upd + 16, 75, 12, "main_robot", "button", start_visible, blue, white, function()
 		
 	end)
-	table_form.update_LLaxTep = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "LLlaxTep", "button", start_visible, blue, white, function()
+	table_form.update_LLaxTep = creat_new_button(-1, nick, x_upd + 1, y_upd + 29, 77, 12, "LLlaxTep", "button", start_visible, blue, white, function()
 		
 	end)
-	table_form.update_return = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "return", "button", start_visible, blue, white, function()
+	table_form.update_return = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 77, 12, "return", "button", start_visible, blue, white, function()
 		
 	end)
 	

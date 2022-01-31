@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 229"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 230"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9486,7 +9486,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--главный фрейм
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 259, 189, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 395, 189, white)
 	table_form.main_box2.setClickable(false)
 	--подсказка состояния
 	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 192, "состояние: онлайн", blue)
@@ -9661,7 +9661,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--раскрывающийся список команд робота
 	local x_c = x_main + 104
-	local y_c = y_main + 31
+	local y_c = y_main + 15
 	local KHonka_koMaHg_HaJaTa = false
 	
 	--создание раскрывающегоя списка переключения состояния робота
@@ -10303,6 +10303,7 @@ function nepuMeTp_noTok(nick)
 			Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
 		end
 	end
+	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
 	os.sleep(0.1)
 end
 function po6oT_LLlaxTep_work_noTok(nick, animation)	

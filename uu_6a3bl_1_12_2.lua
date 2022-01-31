@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 252"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 253"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10251,6 +10251,7 @@ coo6LLleHu9l_OT_po6oToB.robot_turn = function(uHcTpyKcuu)
 			local x = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.robot_icon.getX()
 			local y = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.robot_icon.getY()
 			Bce_noToku[nick].po6oT_LLlaxTep_turn_animation = myThread.create(po6oT_LLlaxTep_turn_animations, nick, creat_animation(x, y, 0, r_turn_animation[uHcTpyKcuu.facing].x, r_turn_animation[uHcTpyKcuu.facing].y, 0, false))
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: поворот завершен")
 		end
 	end
 end

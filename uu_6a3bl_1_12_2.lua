@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 217"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 218"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9751,14 +9751,14 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.update_return.setVisible(false)
 	table_form.update_return.setClickable(false)
-	
+	--кнопка обновления move library
 	table_form.o6HoBuTb_Move_library = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 75, 12, "move lib", "button", start_visible, blue, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_move_library"})
 	end)
 	table_form.o6HoBuTb_Move_library.setVisible(false)
 	table_form.o6HoBuTb_Move_library.setClickable(false)
-	
+	--кнопка обновления size library
 	table_form.o6HoBuTb_size_library = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 75, 12, "size lib", "button", start_visible, blue, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_size_library"})

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 235"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 236"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9316,7 +9316,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 		table_form.destroy()
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = nil
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main = forms:creat_po6oT_LLlaxTep_main_form(nick)
-		Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
+		--Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_status"})
 	end)
 	table_form.online_button.setClickable(false)
@@ -9484,19 +9484,19 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	y_main = 1
 	
 	--главный фрейм
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 427, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 395, 189, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 424, 189, white)
 	table_form.main_box2.setClickable(false)
 	--подсказка состояния
 	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 192, "состояние: онлайн", blue)
 		
 	--сдвиг формы + кнопка выхода
-	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 405, 10, "", "move_form", true, gray, white, function() end)
+	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 427, 10, "", "move_form", true, gray, white, function() end)
 	rawset(table_form.move_button, "form_name", "po6oT_LLlaxTep_main")
 	rawset(table_form.move_button, "enabled", false)
 	rawset(table_form.move_button, "getType", function() return "move_form" end)
-	table_form.return_button = creat_new_button(1, nick, x_main + 393, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
+	table_form.return_button = creat_new_button(1, nick, x_main + 425, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
 	

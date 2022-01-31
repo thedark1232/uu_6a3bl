@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 221"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 222"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9600,10 +9600,6 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"save_position"})
 	end)
 
-	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 204, y_func(), 77, 15, "рестарт", "button", start_visible, gray, white, function()
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
-		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: рестарт...")
-	end)
 	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(num_button(), nick, x_main + 204, y_func(), 77, 15, "выключить", "button", start_visible, gray, white, function()
 		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
 			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown"})
@@ -9737,6 +9733,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_o6HoBJIeHuu()
 	end)
 	table_form.update_main.setVisible(false)
+	table_form.update_main.caption.setVisible(false)
 	table_form.update_main.setClickable(false)
 	--кнопка обновления программы шахтера
 	table_form.update_LLaxTep = creat_new_button(-1, nick, x_upd + 1, y_upd + 29, 75, 12, "LLlaxTep", "button", start_visible, blue, white, function()
@@ -9745,6 +9742,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_o6HoBJIeHuu()
 	end)
 	table_form.update_LLaxTep.setVisible(false)
+	table_form.update_LLaxTep.caption.setVisible(false)
 	table_form.update_LLaxTep.setClickable(false)
 	--кнопка обновления программы возвращения на базу
 	table_form.update_return = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 75, 12, "return", "button", start_visible, blue, white, function()
@@ -9753,6 +9751,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_o6HoBJIeHuu()
 	end)
 	table_form.update_return.setVisible(false)
+	table_form.update_return.caption.setVisible(false)
 	table_form.update_return.setClickable(false)
 	--кнопка обновления move library
 	table_form.o6HoBuTb_Move_library = creat_new_button(-1, nick, x_upd + 1, y_upd + 55, 75, 12, "move lib", "button", start_visible, blue, white, function()
@@ -9761,6 +9760,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_o6HoBJIeHuu()
 	end)
 	table_form.o6HoBuTb_Move_library.setVisible(false)
+	table_form.o6HoBuTb_Move_library.caption.setVisible(false)
 	table_form.o6HoBuTb_Move_library.setClickable(false)
 	--кнопка обновления size library
 	table_form.o6HoBuTb_size_library = creat_new_button(-1, nick, x_upd + 1, y_upd + 68, 75, 12, "size lib", "button", start_visible, blue, white, function()
@@ -9768,6 +9768,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_size_library"})
 		table_form.kHonka_o6HoBJIeHuu()
 	end)
+	table_form.o6HoBuTb_size_library.setVisible(false)
 	table_form.o6HoBuTb_size_library.setVisible(false)
 	table_form.o6HoBuTb_size_library.setClickable(false)
 
@@ -9787,18 +9788,23 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.box_cnucka.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
 		
 		table_form.update_main.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.update_main.caption.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
 		table_form.update_main.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 		
 		table_form.update_LLaxTep.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.update_LLaxTep.caption.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
 		table_form.update_LLaxTep.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 		
 		table_form.update_return.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.update_return.caption.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
 		table_form.update_return.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 		
 		table_form.o6HoBuTb_Move_library.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.o6HoBuTb_Move_library.caption.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
 		table_form.o6HoBuTb_Move_library.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 		
 		table_form.o6HoBuTb_size_library.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.o6HoBuTb_Move_library.caption.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
 		table_form.o6HoBuTb_size_library.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 	end
 	
@@ -9807,6 +9813,20 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	local y_m = y_main + 15
 	local KHonka_cocTo9lHu9l_HaJaTa = false
 	table_form.KHonka_ynpaBJIeHu9l = creat_new_button(-1, nick, x_m, y_m, 77, 15, "состояние", "button", start_visible, blue, white, function()
+		KHonka_cocTo9lHu9l_HaJaTa = not KHonka_cocTo9lHu9l_HaJaTa
+		if KHonka_cocTo9lHu9l_HaJaTa then
+			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP1{x_m + 68, y_m + 1}
+			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP3{x_m + 60, y_m + 10}
+			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP2{x_m + 75, y_m + 10}
+		else
+			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP1{x_m + 60, y_m + 1}
+			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP2{x_m + 75, y_m + 1}
+			table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l.setP3{x_m + 68, y_m + 10}
+		end
+		
+		table_form.restart_button.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
+		table_form.restart_button.caption.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
+		table_form.restart_button.setClickable(KHonka_cocTo9lHu9l_HaJaTa)
 		
 	end)
 	table_form.TpeyroJIbHuk_cnucka_cocTo9lHu9l = MoHuTop_urpoka[nick].addTriangle({x_m + 60, y_m + 1}, {x_m + 75, y_m + 1}, {x_m + 68, y_m + 10}, red, 1)
@@ -9814,6 +9834,16 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.box_cnucka_cocTo9lHu9l = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 77, 66, red)
 	table_form.box_cnucka_cocTo9lHu9l.setClickable(false)
 	table_form.box_cnucka_cocTo9lHu9l.setVisible(false)
+	
+	table_form.restart_button = creat_new_button(-1, nick, x_m + 1, y_m + 16, 75, 12, "restart", "button", start_visible, blue, white, function()
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: рестарт...")
+		table_form.KHonka_ynpaBJIeHu9l()
+	end)
+	table_form.restart_button.setVisible(false)
+	table_form.restart_button.caption.setVisible(false)
+	table_form.restart_button.setClickable(false)
+	
 	
 	--объединение таблиц
 	self = {}

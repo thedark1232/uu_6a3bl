@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 202"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 203"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9486,7 +9486,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--главный фрейм
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 405, 205, blue)
 	--table_form.main_box.setClickable(false)
-	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 180, 189, white)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 13, 259, 189, white)
 	table_form.main_box2.setClickable(false)
 	--подсказка состояния
 	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 192, "состояние: онлайн", blue)
@@ -9621,10 +9621,23 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	local KHonka_o6HoBJIeHuu_HaJaTa = false
 	
 	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "обновить", "button", start_visible, blue, white, function()
-		--Ta6JIuca_koMnoHeHToB["chat_box"].say(
+		table_form.kHonka_o6HoBJIeHuu(KHonka_o6HoBJIeHuu_HaJaTa)
 	end)
-	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 15, y_upd + 1}, {x_upd + 20, y_upd + 1}, {x_upd + 18, y_upd + 5}, red, 1)
+	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 15, y_upd + 1}, {x_upd + 30, y_upd + 1}, {x_upd + 22, y_upd + 10}, red, 1)
 		
+		
+	local table_form.kHonka_o6HoBJIeHuu = function(HaJaTa)
+		if HaJaTa then
+			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 15, y_upd + 1}
+			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 30, y_upd + 1}
+			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 22, y_upd + 10}
+		else
+			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 22, y_upd + 1}
+			table_form.TpeyroJIbHuk_cnucka.setP3{x_upd + 15, y_upd + 10}
+			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 30, y_upd + 10}
+			
+		end
+	end
 	--инвентарь робота
 	local HoMep_9l4euKu = 1
 	local cMeLLleHue_no_x
@@ -9738,7 +9751,7 @@ end
 coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function(status_table)
 	LLlaxTep_online = true
 	pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = status_table[2]
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "размер инвентаря шахтера: " .. tostring(status_table[2]))
+	--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "размер инвентаря шахтера: " .. tostring(status_table[2]))
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] ~= nil then
 			if Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main ~= nil then

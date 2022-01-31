@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 203"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 204"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9626,7 +9626,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 15, y_upd + 1}, {x_upd + 30, y_upd + 1}, {x_upd + 22, y_upd + 10}, red, 1)
 		
 		
-	local table_form.kHonka_o6HoBJIeHuu = function(HaJaTa)
+	table_form.kHonka_o6HoBJIeHuu = function(HaJaTa)
 		if HaJaTa then
 			table_form.TpeyroJIbHuk_cnucka.setP1{x_upd + 15, y_upd + 1}
 			table_form.TpeyroJIbHuk_cnucka.setP2{x_upd + 30, y_upd + 1}

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 247"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 248"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10232,6 +10232,14 @@ end
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_Ha_chatBox = function(coo6LLleHue)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сообщение от робота: " .. tostring(coo6LLleHue[2]))
 end
+coo6LLleHu9l_OT_po6oToB.coo6LlleHue_B_TexTBoB_cocTo9lHu9l = function(coo6LLleHue)
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: " .. coo6LLleHue.text)
+		end
+	end
+end
+
 
 function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ
 	local obj

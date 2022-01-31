@@ -1,9 +1,10 @@
-local o6HoBJIeHue = "v.9"
+local o6HoBJIeHue = "v.10"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
 local filesLibrary = require("filesLibrary")
 local event = require("event")
+local filesystem = require("filesystem")
 local send --отправка сообщений на алиску
 local serialization = require("serialization") --serialization.serialize unserialize
 local command = {}
@@ -144,7 +145,8 @@ command.robot_work = function(uHcTpykcuu)
 	send{"coo6LLleHue_Ha_chatBox", "файл выполнен"}
 end
 command.o6HoBuTb_main_robot = function()
-
+	o6HoBuTb_qpauJI("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/robot_LLLaxTep/main_robot.lua", "/home/t", false)
+	
 end
 command.robot_return = function(uHcTpykcuu)
 	send{"coo6LLleHue_Ha_chatBox", "возвращаюсь на позицию"}
@@ -168,7 +170,26 @@ function deucTBu9l_nepeg_3aBepLLleHueM_pa6oTbl()
 	event.ignore("modem_message", modem_message)
 	event.ignore("inventory_changed", inventory_changed)	
 end
-
+function o6HoBuTb_qpauJI(ccblJIka, nyTb, go6aBuTb_lua_B_koHce_nyTu)
+	local table_cocTo9lHu9l = {}
+	local gonoJIHeHue = ""
+	if go6aBuTb_lua_B_koHce_nyTu then gonoJIHeHue = ".lua" end
+	table_cocTo9lHu9l[1] = "cocTo9lHue_o6HoBJIeHu9l"
+	if component.isAvailable("internet") then
+		local status, olllu6ka = loadfile("/bin/wget.lua")("-fq", ccblJIka, nyTb .. "1232")
+		if status then
+			filesystem.remove(nyTb)
+			filesystem.copy(nyTb .. "1232", nyTb .. gonoJIHeHue)
+			table_cocTo9lHu9l.cocTo9lHue = "основная программа обновлена"
+			table_cocTo9lHu9l.Bepcu9l = o6HoBJIeHue
+		else
+			table_cocTo9lHu9l.cocTo9lHue = tostring(olllu6ka)
+		end
+	else
+		table_cocTo9lHu9l.cocTo9lHue = "интернет карта не найдена"
+	end
+	send(table_cocTo9lHu9l)
+end
 do
 	--загрузка событий
 	event.listen("modem_message", modem_message)

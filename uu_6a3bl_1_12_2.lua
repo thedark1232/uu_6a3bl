@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 201"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 202"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9620,7 +9620,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	local y_upd = y_main + 15
 	local KHonka_o6HoBJIeHuu_HaJaTa = false
 	
-	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1 nick, x_upd, y_upd, 77, 15, "обновить", "button", start_visible, blue, white, function()
+	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1, nick, x_upd, y_upd, 77, 15, "обновить", "button", start_visible, blue, white, function()
 		--Ta6JIuca_koMnoHeHToB["chat_box"].say(
 	end)
 	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 15, y_upd + 1}, {x_upd + 20, y_upd + 1}, {x_upd + 18, y_upd + 5}, red, 1)

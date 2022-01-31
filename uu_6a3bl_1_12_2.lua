@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 200"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 201"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1095,7 +1095,7 @@ function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9
 	local st, er = pcall(function()
 		local Ta6JIuca_uHcTpyKcuu = serialization.unserialize(coo6llleHue_oT_mogema)
 		coo6LLleHu9l_OT_po6oToB[Ta6JIuca_uHcTpyKcuu[1]](Ta6JIuca_uHcTpyKcuu)
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "обработка данных: " .. tostring(Ta6JIuca_uHcTpyKcuu[1]))
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "обработка данных: " .. tostring(Ta6JIuca_uHcTpyKcuu[1]))
 	end)
 	if not st then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. tostring(er)) end
 end
@@ -9599,9 +9599,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: сохранение позиции")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"save_position"})
 	end)
-	table_form.kHonka_o6HoBuTb_uu = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "обновить", "button", start_visible, red, white, function()
-		--Ta6JIuca_koMnoHeHToB["chat_box"].say(
-	end)
+
 	table_form.kHonka_restart = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "рестарт", "button", start_visible, gray, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_reboot"})
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: рестарт...")
@@ -9616,6 +9614,16 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		end
 	end)
 	table_form.kHonka_Bblxog = creat_new_button(num_button(), nick, x_main + 104, y_func(), 77, 15, "выход", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"}) end)
+		
+	--обновления программы
+	local x_upd = x_main + 182
+	local y_upd = y_main + 15
+	local KHonka_o6HoBJIeHuu_HaJaTa = false
+	
+	table_form.kHonka_o6HoBuTb_uu = creat_new_button(-1 nick, x_upd, y_upd, 77, 15, "обновить", "button", start_visible, blue, white, function()
+		--Ta6JIuca_koMnoHeHToB["chat_box"].say(
+	end)
+	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 15, y_upd + 1}, {x_upd + 20, y_upd + 1}, {x_upd + 18, y_upd + 5}, red, 1)
 		
 	--инвентарь робота
 	local HoMep_9l4euKu = 1
@@ -9836,9 +9844,8 @@ coo6LLleHu9l_OT_po6oToB.robot_swing = function(detail)
 	end
 end
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_Ha_chatBox = function(coo6LLleHue)
-	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сообщение от робота" .. tostring(coo6LLleHue[2]))
+	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "сообщение от робота: " .. tostring(coo6LLleHue[2]))
 end
-
 
 function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ
 	local obj

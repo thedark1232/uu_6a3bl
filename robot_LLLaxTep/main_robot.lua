@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.24"
+local o6HoBJIeHue = "v.26"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -204,7 +204,12 @@ command.turnLeft = function()
 	end
 end
 command.turnRight = function()
-	robot.turnRight()
+	if robot.turnRight() then
+		local t = {}
+		t[1] = "robot_turn"
+		t.facing = navigation.getFacing()
+		send(t)
+	end
 end
 
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)

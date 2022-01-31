@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 226"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 227"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9794,7 +9794,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.KHonka_nepekJIl04eHu9l.setClickable(false)
 	
 	--добавление кнопки выхода
-	table_form.kHonka_Bblxog = creat_new_button(num_button(), nick, x_m + 1, y_m + 42, 75, 12, "выход", "button", false, gray, white, function()
+	table_form.kHonka_Bblxog = creat_new_button(-1, nick, x_m + 1, y_m + 42, 75, 12, "выход", "button", false, gray, white, function()
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"})
 		table_form.packpblTue_cnucka_ynpaBJIeHu9l()
 	end)

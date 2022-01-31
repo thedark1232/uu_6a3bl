@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 246"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 247"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10130,7 +10130,7 @@ end
 coo6LLleHu9l_OT_po6oToB.new_start_coords = function(coords)
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
-			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. coords.coords.x  .. " y" .. coords.coords.y .. " z" .. coords.coords.z)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. coords.x  .. " y" .. coords.y .. " z" .. coords.z)
 			LLlaxTep_start.x = tonumber(coords.coords.x)
 			LLlaxTep_start.y = tonumber(coords.coords.y)
 			LLlaxTep_start.z = tonumber(coords.coords.z)

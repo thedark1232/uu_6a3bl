@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 219"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 220"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9727,7 +9727,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.TpeyroJIbHuk_cnucka = MoHuTop_urpoka[nick].addTriangle({x_upd + 60, y_upd + 1}, {x_upd + 75, y_upd + 1}, {x_upd + 68, y_upd + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka.setClickable(false)
-	table_form.box_cnucka = MoHuTop_urpoka[nick].addBox(x_upd, y_upd + 15, 77, 100, red)
+	table_form.box_cnucka = MoHuTop_urpoka[nick].addBox(x_upd, y_upd + 15, 77, 66, red)
 	table_form.box_cnucka.setClickable(false)
 	table_form.box_cnucka.setVisible(false)
 	--кнопка обновления основной программы

@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.17"
+local o6HoBJIeHue = "v.18"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -69,7 +69,7 @@ command.robot_status = function()
 	status_table.inventorySize = robot.inventorySize()
 	status_table.coords = BepHyTb_cTapToBble_KoopguHaTbl()
 	
-	local x, z, y = navigation.getPosition()
+	local x, y, z = navigation.getPosition()
 	status_table.new_coords = {["x"] = x, ["y"] = y, ["z"] = z}
 	
 	send(status_table)
@@ -229,8 +229,8 @@ function BepHyTb_cTapToBble_KoopguHaTbl()
 		start_cords.z = ln[3]
 		
 		if start_cords.x == nil then start_cords.x = "nil" end
-		if start_cords.y == nil then start_cords.y = "nil" end
-		if start_cords.z == nil then start_cords.z = "nil" end
+		if start_cords.z == nil then start_cords.y = "nil" end
+		if start_cords.y == nil then start_cords.z = "nil" end
 			
 		return start_cords
 end

@@ -45,9 +45,6 @@ do
 	navigate = components_and_librarys.getComponent("navigation")
 	moveLibrary = components_and_librarys.getLibrary("moveLibrary")
 
-	print("программа запущена")
-	print("args[1]", args[1])
-	print("args[2]", args[2])
 	if args[1] == "1" then
 		creat_file()
 		os.exit()

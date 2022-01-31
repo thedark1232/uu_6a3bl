@@ -190,10 +190,13 @@ function o6HoBuTb_qpauJI(ccblJIka, nyTb, go6aBuTb_lua_B_koHce_nyTu)
 	if component.isAvailable("internet") then
 		local status, olllu6ka = loadfile("/bin/wget.lua")("-fq", ccblJIka, nyTb .. "1232")
 		if status then
+			local a = io.open(nyTb_k_uu_6a3bl .. "1232")
+			local b = a:read()
+			a:close()
+			table_cocTo9lHu9l.Bepcu9l = string.match(b, '%"(.+)%"')
 			filesystem.remove(nyTb)
 			filesystem.copy(nyTb .. "1232", nyTb .. gonoJIHeHue)
 			table_cocTo9lHu9l.cocTo9lHue = "успешное обновление"
-			table_cocTo9lHu9l.Bepcu9l = o6HoBJIeHue
 		else
 			table_cocTo9lHu9l.cocTo9lHue = tostring(olllu6ka)
 		end

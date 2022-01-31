@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 214"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 216"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9733,21 +9733,21 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--кнопка обновления основной программы
 	table_form.update_main = creat_new_button(-1, nick, x_upd + 1, y_upd + 16, 75, 12, "main_robot", "button", start_visible, blue, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"}
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"})
 	end)
 	table_form.update_main.setVisible(false)
 	table_form.update_main.setClickable(false)
 	--кнопка обновления программы шахтера
 	table_form.update_LLaxTep = creat_new_button(-1, nick, x_upd + 1, y_upd + 29, 75, 12, "LLlaxTep", "button", start_visible, blue, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"}
+		--HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"})
 	end)
 	table_form.update_LLaxTep.setVisible(false)
 	table_form.update_LLaxTep.setClickable(false)
 	--кнопка обновления программы возвращения на базу
 	table_form.update_return = creat_new_button(-1, nick, x_upd + 1, y_upd + 42, 75, 12, "return", "button", start_visible, blue, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: загрузка обновлений")
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"}
+		--HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"o6HoBuTb_main_robot"})
 	end)
 	table_form.update_return.setVisible(false)
 	table_form.update_return.setClickable(false)

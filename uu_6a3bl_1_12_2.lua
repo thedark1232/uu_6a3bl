@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 250"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 251"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -152,6 +152,11 @@ blue = 0x0000FF
 white = 0xFFFFFF
 black = 0x000000
 gray = 0x574848
+r_turn_animation = {}
+r_turn_animation[2] = {["x"] = 47, ["y"] = 129}
+r_turn_animation[3] = {["x"] = 47, ["y"] = 165}
+r_turn_animation[4] = {["x"] = 30, ["y"] = 147}
+r_turn_animation[5] = {["x"] = 66, ["y"] = 147}
 BpeM9l_nocJIegHego_BblBoBa_urpokoB_Ha_MoHuTop = 0
 BblBog_JIoroB_urpokoB_Ha_MoHuTop = false
 zagepJka_B_ceKyHgax_BblBoga = 3600 --3600 секунд = 1 час
@@ -10240,11 +10245,14 @@ coo6LLleHu9l_OT_po6oToB.coo6LlleHue_B_TexTBoB_cocTo9lHu9l = function(coo6LLleHue
 	end
 end
 coo6LLleHu9l_OT_po6oToB.robot_turn = function(uHcTpyKcuu)
-	local t = {}
-	--t[2] = 
-	--t[3] =
-	--t[4] =
-	--t[5] =
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			myThread.kill(Bce_noToku[nick].po6oT_LLlaxTep_turn_animation)
+			local x = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.robot_icon.getX()
+			local y = Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.robot_icon.getY()
+			Bce_noToku[nick].po6oT_LLlaxTep_turn_animation = myThread.create(po6oT_LLlaxTep_turn_animations, nick, creat_animation(x, y, 0, r_turn_animation[uHcTpyKcuu.facing].x, r_turn_animation[uHcTpyKcuu.facing].y, false))
+		end
+	end
 end
 
 

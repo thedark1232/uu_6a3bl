@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 249"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 250"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9555,28 +9555,28 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--С СЕВЕРА ...
 	robot_LllaxTep_animations.turn_NW = creat_animation(x_main + 46, y_main + 128, 0, x_main + 29, y_main + 146, 0)
 	robot_LllaxTep_animations.turn_NS = creat_animation(x_main + 46, y_main + 128, 0, x_main + 36, y_main + 164, 0)
-	robot_LllaxTep_animations.turn_NE = creat_animation(x_main + 46, y_main + 128, 0, x_main + 73, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_NE = creat_animation(x_main + 46, y_main + 128, 0, x_main + 65, y_main + 146, 0)
 	
 	--С ЮГА ...
 	robot_LllaxTep_animations.turn_SW = creat_animation(x_main + 46, y_main + 164, 0, x_main + 29, y_main + 146, 0)
 	robot_LllaxTep_animations.turn_SN = creat_animation(x_main + 46, y_main + 164, 0, x_main + 46, y_main + 128, 0)
-	robot_LllaxTep_animations.turn_SE = creat_animation(x_main + 46, y_main + 164, 0, x_main + 73, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_SE = creat_animation(x_main + 46, y_main + 164, 0, x_main + 65, y_main + 146, 0)
 	
 	--С ЗАПАДА ...
 	robot_LllaxTep_animations.turn_WN = creat_animation(x_main + 29, y_main + 146, 0, x_main + 46, y_main + 128, 0)
-	robot_LllaxTep_animations.turn_WE = creat_animation(x_main + 29, y_main + 146, 0, x_main + 73, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_WE = creat_animation(x_main + 29, y_main + 146, 0, x_main + 65, y_main + 146, 0)
 	robot_LllaxTep_animations.turn_WS = creat_animation(x_main + 29, y_main + 146, 0, x_main + 46, y_main + 164, 0)
 	
 	--С ВОСТОКА ...
-	robot_LllaxTep_animations.turn_EN = creat_animation(x_main + 73, y_main + 146, 0, x_main + 46, y_main + 128, 0)
-	robot_LllaxTep_animations.turn_EW = creat_animation(x_main + 73, y_main + 146, 0, x_main + 29, y_main + 146, 0)
-	robot_LllaxTep_animations.turn_ES = creat_animation(x_main + 73, y_main + 146, 0, x_main + 46, y_main + 164, 0)
+	robot_LllaxTep_animations.turn_EN = creat_animation(x_main + 65, y_main + 146, 0, x_main + 46, y_main + 128, 0)
+	robot_LllaxTep_animations.turn_EW = creat_animation(x_main + 65, y_main + 146, 0, x_main + 29, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_ES = creat_animation(x_main + 65, y_main + 146, 0, x_main + 46, y_main + 164, 0)
 	
 	--С ЦЕНТРА ...
 	robot_LllaxTep_animations.turn_CN = creat_animation(x_main + 46, y_main + 146, 0, x_main + 46, y_main + 128, 0)
 	robot_LllaxTep_animations.turn_CS = creat_animation(x_main + 46, y_main + 146, 0, x_main + 46, y_main + 164, 0)
 	robot_LllaxTep_animations.turn_CW = creat_animation(x_main + 46, y_main + 146, 0, x_main + 29, y_main + 146, 0)
-	robot_LllaxTep_animations.turn_CE = creat_animation(x_main + 46, y_main + 146, 0, x_main + 73, y_main + 146, 0)
+	robot_LllaxTep_animations.turn_CE = creat_animation(x_main + 46, y_main + 146, 0, x_main + 65, y_main + 146, 0)
 	
 	table_form.getTekyLLlee_noJIoJeHue = function() return TekyLLlee_noJIoJeHue end
 	table_form.setTekyLLlee_noJIoJeHue = function(noJIeJeHue) TekyLLlee_noJIoJeHue = noJIeJeHue end	
@@ -10238,6 +10238,13 @@ coo6LLleHu9l_OT_po6oToB.coo6LlleHue_B_TexTBoB_cocTo9lHu9l = function(coo6LLleHue
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: " .. coo6LLleHue.text)
 		end
 	end
+end
+coo6LLleHu9l_OT_po6oToB.robot_turn = function(uHcTpyKcuu)
+	local t = {}
+	--t[2] = 
+	--t[3] =
+	--t[4] =
+	--t[5] =
 end
 
 

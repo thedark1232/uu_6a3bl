@@ -177,7 +177,7 @@ command.save_position = function(uHcTpykcuu)
 	
 	send(table_coords)
 end
-command.robot_forward()
+command.robot_forward = function()
 	if robot.forward() then
 		local t = return_my_position()
 		t[1] = "new_start_coords"
@@ -185,7 +185,7 @@ command.robot_forward()
 		send(t)
 	end
 end
-command.robot_back()
+command.robot_back = function()
 	if robot.back() then
 		local t = return_my_position()
 		t[1] = "new_start_coords"
@@ -193,10 +193,10 @@ command.robot_back()
 		send(t)
 	end
 end
-command.turnLeft()
+command.turnLeft = function()
 	robot.turnLeft()
 end
-commmand.turnRight()
+command.turnRight = function()
 	robot.turnRight()
 end
 

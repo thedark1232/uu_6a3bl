@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 240"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 241"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9495,13 +9495,29 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--подсказки по центру экрана
 	local nogcka3ku = {}
-	table.insert(nogcka3ku, {})
-	table_form.nogcka3ka_no_ceHTpy_ekpaHa = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 50, "Проектор", red)
-	table_form.nogcka3ka_no_ceHTpy_ekpaHa.setScale(3)
-	table_form.nogcka3ka_no_ceHTpy_ekpaHa2 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 70, "не", red)
+	nogcka3ku.npoekTop_He_nogkJIl04eH = {["x1"] = x_main + 189, ["y1"] = y_main + 69, ["text1"] = "Проектор", ["visible1"] = true,
+										 ["x2"] = x_main + 243, ["y2"] = y_main + 89, ["text2"] = "не", ["visible2"] = true,
+										 ["x3"] = x_main + 179, ["y3"] = y_main + 109, ["text3"] = "подключен", ["visible3"] = true}
+										 
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa1 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 50, "", red)
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa1.setScale(3)
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa2 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 70, "", red)
 	table_form.nogcka3ka_no_ceHTpy_ekpaHa2.setScale(3)
-	table_form.nogcka3ka_no_ceHTpy_ekpaHa3 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 90, "не подключен!", red)
+	table_form.nogcka3ka_no_ceHTpy_ekpaHa3 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 90, "", red)
 	table_form.nogcka3ka_no_ceHTpy_ekpaHa3.setScale(3)
+	
+	table_form.nogcKa3ku_no_ceHTpy = function(Ta6JIuca_pa3MeTku)
+		local n = ""
+		for i = 1, 3 do
+			n = tostring(i)
+			table_form["nogcka3ka_no_ceHTpy_ekpaHa" .. n].setText(Ta6JIuca_pa3MeTku["text" .. n])
+			table_form["nogcka3ka_no_ceHTpy_ekpaHa" .. n].setX(Ta6JIuca_pa3MeTku["x" .. n])
+			table_form["nogcka3ka_no_ceHTpy_ekpaHa" .. n].setY(Ta6JIuca_pa3MeTku["y" .. n])			
+			table_form["nogcka3ka_no_ceHTpy_ekpaHa" .. n].setVisible(Ta6JIuca_pa3MeTku["visible" .. n])
+		end
+	end
+	
+	table_form.nogcKa3ku_no_ceHTpy(nogcka3ku.npoekTop_He_nogkJIl04eH)
 		
 	--сдвиг формы + кнопка выхода
 	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 422, 10, "", "move_form", true, gray, white, function() end)

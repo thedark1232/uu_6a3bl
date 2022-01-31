@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 224"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 225"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9600,15 +9600,6 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"save_position"})
 	end)
 
-	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(num_button(), nick, x_main + 204, y_func(), 77, 15, "выключить", "button", start_visible, gray, white, function()
-		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
-			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown"})
-			table_form.KHonka_nepekJIl04eHu9l.caption.setText("включить")
-			table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: выключен")
-		else
-			HacTpouka_po6oTa_LLlaxTepa.send("1232")
-		end
-	end)
 	table_form.kHonka_Bblxog = creat_new_button(num_button(), nick, x_main + 204, y_func(), 77, 15, "выход", "button", start_visible, gray, white, function() HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"}) end)	
 	
 	--инвентарь робота
@@ -9769,7 +9760,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_o6HoBJIeHuu()
 	end)
 	table_form.o6HoBuTb_size_library.setVisible(false)
-	table_form.o6HoBuTb_size_library.setVisible(false)
+	table_form.o6HoBuTb_size_library.caption.setVisible(false)
 	table_form.o6HoBuTb_size_library.setClickable(false)
 
 	--кнопка раскрывающегося списка
@@ -9804,7 +9795,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.o6HoBuTb_Move_library.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 		
 		table_form.o6HoBuTb_size_library.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
-		table_form.o6HoBuTb_Move_library.caption.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
+		table_form.o6HoBuTb_size_library.caption.setVisible(KHonka_o6HoBJIeHuu_HaJaTa)
 		table_form.o6HoBuTb_size_library.setClickable(KHonka_o6HoBJIeHuu_HaJaTa)
 	end
 	
@@ -9833,6 +9824,30 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.restart_button.caption.setVisible(false)
 	table_form.restart_button.setClickable(false)
 	
+	--кнопка выключения
+	table_form.KHonka_nepekJIl04eHu9l = creat_new_button(-1, nick, x_m + 1, y_m + 29, 75, 12, "выключить", "button", start_visible, blue, white, function()
+		if table_form.KHonka_nepekJIl04eHu9l.caption.getText() == "выключить" then
+			HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_shutdown"})
+			table_form.KHonka_nepekJIl04eHu9l.caption.setText("включить")
+			table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: выключен")
+		else
+			HacTpouka_po6oTa_LLlaxTepa.send("1232")
+		end
+		table_form.packpblTue_cnucka_ynpaBJIeHu9l()
+	end)
+	table_form.KHonka_nepekJIl04eHu9l.setVisible(false)
+	table_form.KHonka_nepekJIl04eHu9l.caption.setVisible(false)
+	table_form.KHonka_nepekJIl04eHu9l.setClickable(false)
+	
+	--кнопка выхода
+	table_form.kHonka_Bblxog = creat_new_button(num_button(), nick, x_m + 1, y_m + 42, 75, 12, "выход", "button", start_visible, blue, white, function()
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_exit"})
+		table_form.packpblTue_cnucka_ynpaBJIeHu9l()
+	end)
+	table_form.kHonka_Bblxog.setVisible(false)
+	table_form.kHonka_Bblxog.caption.setVisible(false)
+	table_form.kHonka_Bblxog.setClickable(false)
+	
 	table_form.packpblTue_cnucka_ynpaBJIeHu9l = function()
 		KHonka_cocTo9lHu9l_HaJaTa = not KHonka_cocTo9lHu9l_HaJaTa
 		if KHonka_cocTo9lHu9l_HaJaTa then
@@ -9850,6 +9865,14 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.restart_button.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
 		table_form.restart_button.caption.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
 		table_form.restart_button.setClickable(KHonka_cocTo9lHu9l_HaJaTa)
+		
+		table_form.KHonka_nepekJIl04eHu9l.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
+		table_form.KHonka_nepekJIl04eHu9l.caption.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
+		table_form.KHonka_nepekJIl04eHu9l.setClickable(KHonka_cocTo9lHu9l_HaJaTa)
+		
+		table_form.kHonka_Bblxog.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
+		table_form.kHonka_Bblxog.caption.setVisible(KHonka_cocTo9lHu9l_HaJaTa)
+		table_form.kHonka_Bblxog.setClickable(KHonka_cocTo9lHu9l_HaJaTa)
 	end
 	
 	

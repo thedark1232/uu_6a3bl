@@ -181,6 +181,7 @@ command.robot_forward()
 	if robot.forward() then
 		local t = return_my_position()
 		t[1] = "new_start_coords"
+		t.kyga_gBuraeMc9l = "движение вперед успешно"
 		send(t)
 	end
 end
@@ -188,6 +189,7 @@ command.robot_back()
 	if robot.back() then
 		local t = return_my_position()
 		t[1] = "new_start_coords"
+		t.kyga_gBuraeMc9l = "движение назад успешно"
 		send(t)
 	end
 end

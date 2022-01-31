@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 230"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 231"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10294,17 +10294,19 @@ function main_noTok(nick)
 	end
 end
 function nepuMeTp_noTok(nick)
-	for i = 1, 20 do
-		if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
-			--print(tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
-			Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
-		else
-			--print("никого")
-			Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
+	while true do
+		for i = 1, 20 do
+			if oTcopTupoBaHHa9l_Ta6JIuca[i] ~= nil then
+				--print(tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+				Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ": " .. oTcopTupoBaHHa9l_Ta6JIuca[i][2] .. oTcopTupoBaHHa9l_Ta6JIuca[i][1])
+			else
+				--print("никого")
+				Bce_ragJeTbl_urpoka[nick].nepuMeTp[i].caption.setText(c .. tostring(i) .. ":")
+			end
 		end
+		Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
+		os.sleep(0.1)
 	end
-	Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].sync()
-	os.sleep(0.1)
 end
 function po6oT_LLlaxTep_work_noTok(nick, animation)	
 	local cTapToBle_cekyHgbl

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 241"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 242"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,8 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+
+local LLlaxTep_start = {}
 pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = 0 
 Bce_uTeMbl_po6oTa_LLlaXTepa = {}
 local robot_LllaxTep_animations = {}
@@ -9491,7 +9493,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--table_form.main_box2.setClickable(false)
 	--подсказка состояния
 	table_form.nogcka3ka_cocTo9lHu9l = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 192, "состояние: онлайн", blue)
-	
+	table_form.start_coords = MoHuTop_urpoka[nick].addText(x_main + 6, y_main + 202, "", blue)
 	
 	--подсказки по центру экрана
 	local nogcka3ku = {}
@@ -9517,13 +9519,12 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		end
 	end
 	
-	table_form.nogcKa3ku_no_ceHTpy(nogcka3ku.npoekTop_He_nogkJIl04eH)
+	if not component.isAvailable("hologram") then
+		table_form.nogcKa3ku_no_ceHTpy(nogcka3ku.npoekTop_He_nogkJIl04eH)
+	end
 		
 	--сдвиг формы + кнопка выхода
-	table_form.move_button = creat_new_button(1, nick, x_main, y_main, 422, 10, "", "move_form", true, gray, white, function() end)
-	rawset(table_form.move_button, "form_name", "po6oT_LLlaxTep_main")
-	rawset(table_form.move_button, "enabled", false)
-	rawset(table_form.move_button, "getType", function() return "move_form" end)
+	table_form.BepxHuu_cePblu_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 422, 10, gray)
 	table_form.return_button = creat_new_button(1, nick, x_main + 412, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
 	table_form.return_button.caption.setX(table_form.return_button.getX() + 3)
 	table_form.return_button.caption.setY(table_form.return_button.getY() + 1)
@@ -9989,7 +9990,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.KHonka_return.caption.setVisible(false)
 	table_form.KHonka_return.setClickable(false)
 	
-	--добавление кнопки выхода
+	--добавление кнопки save position
 	table_form.kHonka_save_pos = creat_new_button(-1, nick, x_m + 1, y_m + 42, 75, 12, "save pos", "button", false, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: сохранение позиции")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"save_position"})
@@ -10058,6 +10059,11 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 			local h2 = h1
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые коорды: x" .. Ta6JIuca_cocTo9lHu9l.coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.coords.z))
+			LLlaxTep_start.x = tonumber(Ta6JIuca_cocTo9lHu9l.coords.x)
+			LLlaxTep_start.y = tonumber(Ta6JIuca_cocTo9lHu9l.coords.y)
+			LLlaxTep_start.z = tonumber(Ta6JIuca_cocTo9lHu9l.coords.z)
+			
 			pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = Ta6JIuca_cocTo9lHu9l.inventorySize
 		end
 	end

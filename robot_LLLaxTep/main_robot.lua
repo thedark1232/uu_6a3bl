@@ -11,6 +11,7 @@ local moveLibrary = require("moveLibrary")
 local command = {}
 local work = true
 local start_x, start_y, start_z
+local navigation
 
 local Ta6JIuca_HanpaBJIeHuu = {}
 Ta6JIuca_HanpaBJIeHuu[2] = "N"
@@ -241,6 +242,13 @@ do
 	
 	setmetatable(command, {__index = function() return function() end end})
 	command.check_online()
+	
+	if component.isAvailable("navigation") then
+		navigation = component.navigation
+	else
+		send{"coo6LLleHue_Ha_chatBox", "навигация не найдена"}
+		computer.shutdown()
+	end
 	
 	while work do
 		os.sleep(0.1)

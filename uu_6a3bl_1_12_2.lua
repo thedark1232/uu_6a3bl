@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 244"
+local Ha3BaHue_o6HoBJIeHu9l = "шахта 245"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9749,6 +9749,42 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.swing_button.caption.setVisible(false)
 	table_form.swing_button.setClickable(false)
 	
+	--добавление копки forward
+	table_form.forward_button = creat_new_button(-1, nick, x_c + 1, y_c + 80, 75, 12, "forward", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка движения вперед")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_forward"})
+	end)
+	table_form.forward_button.setVisible(false)
+	table_form.forward_button.caption.setVisible(false)
+	table_form.forward_button.setClickable(false)
+	
+	--добавление копки back
+	table_form.back_button = creat_new_button(-1, nick, x_c + 1, y_c + 92, 75, 12, "back", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка движения назад")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_back"})
+	end)
+	table_form.back_button.setVisible(false)
+	table_form.back_button.caption.setVisible(false)
+	table_form.back_button.setClickable(false)
+	
+	--добавление копки turnLeft
+	table_form.turn_left_button = creat_new_button(-1, nick, x_c + 1, y_c + 104, 75, 12, "turnLeft", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка поворота налево")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"turnLeft"})
+	end)
+	table_form.turn_left_button.setVisible(false)
+	table_form.turn_left_button.caption.setVisible(false)
+	table_form.turn_left_button.setClickable(false)
+	
+	--добавление копки turnRight
+	table_form.turn_right_button = creat_new_button(-1, nick, x_c + 1, y_c + 116, 75, 12, "turnRight", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка поворота направо")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"turnRight"})
+	end)
+	table_form.turn_right_button.setVisible(false)
+	table_form.turn_right_button.caption.setVisible(false)
+	table_form.turn_right_button.setClickable(false)
+	
 	--функция раскрывающегося списка состояния
 	table_form.packpblTue_cnucka_KoMaHg = function()
 	KHonka_koMaHg_HaJaTa = not KHonka_koMaHg_HaJaTa
@@ -9783,6 +9819,22 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.swing_button.setVisible(KHonka_koMaHg_HaJaTa)
 		table_form.swing_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
 		table_form.swing_button.setClickable(KHonka_koMaHg_HaJaTa)		
+		
+			table_form.forward_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.forward_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.forward_button.setClickable(KHonka_koMaHg_HaJaTa)
+	
+		table_form.back_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.back_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.back_button.setClickable(KHonka_koMaHg_HaJaTa)
+	
+		table_form.turn_left_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.turn_left_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.turn_left_button.setClickable(KHonka_koMaHg_HaJaTa)
+	
+		table_form.turn_right_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.turn_right_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.turn_right_button.setClickable(KHonka_koMaHg_HaJaTa)
 	end
 	
 	
@@ -10075,6 +10127,20 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 		end
 	end
 end
+coo6LLleHu9l_OT_po6oToB.new_start_coords = function(coords)
+	for nick, _ in pairs(whiteListUsers) do
+		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. coords.coords.x  .. " y" .. coords.coords.y .. " z" .. coords.coords.z)
+			LLlaxTep_start.x = tonumber(coords.coords.x)
+			LLlaxTep_start.y = tonumber(coords.coords.y)
+			LLlaxTep_start.z = tonumber(coords.coords.z)
+			if coords.kyga_gBuraeMc9l ~= nil then
+				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: " .. coords.kyga_gBuraeMc9l)
+			end
+		end
+	end
+end
+
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка команды робота:")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "название инструкции:" .. oLLlu6ka.Ha3BaHue_uHcTpykcuu)

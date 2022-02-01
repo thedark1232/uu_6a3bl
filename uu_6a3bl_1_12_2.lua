@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 8"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -132,7 +132,8 @@ ceHcopbl = {}
 zoHbl_JIoroB = {}
 zagepJka_oTBeTa_HaHuToB = 5
 cMellleHue_BblBoga_o4koB_no_y = 20
-noBopoT = 0 --смещение турели по горизонтали
+noJIoJuTeJIbHblu_noBopoT = 0 --положительное смещение турели по горизонтали
+oTpucaTeJIbHblu_noBopoT = 0 --отрицательное смещение турели по горизонтали
 HakJIoH = 0 --смещение турели по вертикали
 --ta6JIuca_coo6llleHuu_HaHuToB = {event.pull(zagepJka_oTBeTa_HaHuToB, "modem_message")}
 coo6llleHue_TuHHeJI9l = {}
@@ -969,9 +970,9 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 		if ropu3oHT_z < 0 then zepKaJIo = 180 end
 		local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
 		if deg >= 0 then 
-			deg = deg + noBopoT - 6
+			deg = deg + noJIoJuTeJIbHblu_noBopoT
 		else
-			deg = deg - noBopoT
+			deg = deg - oTpucaTeJIbHblu_noBopoT
 		end
 		local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 		if y_urpoka > v[3] then degv = math.abs(degv) else degv = degv * -1 end
@@ -1874,6 +1875,8 @@ function koMaHgbl_uu_6a3bl()
 	--турели ос
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "ттл (админ)") --коррекция турелей на 1 градус влево
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "ттп (админ)") --коррекция турелей на 1 градус вправо
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "ттол (админ)") --коррекция турелей на 1 градус вправо
+	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "ттоп (админ)") --коррекция турелей на 1 градус вправо
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "найти новые туррели (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "настроить туррели (админ)")
 	table.insert(Ta6JIuca_pa3geJIoB[ynpaBJIeHue_TyppeJIu], "удали настройки туррелей (админ)")
@@ -3628,12 +3631,16 @@ function forms:creat_TeJIenopTep_form(nick)
 	--кнопки тиммейтов
 	--table_form.tp_info = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "инфо мест", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп инфо"]() end)
 	--table_form.tp = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп на игрока", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп"]() end)
+	local TekyLLlee_HanpaBJIeHue = 0
 	
 	for i = 1, 20 do
 		if koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then
-			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп: " .. koopgbl_gJI9l_TpaHcnocePa[i][4], "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. i]() end)
+			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп: " .. koopgbl_gJI9l_TpaHcnocePa[i][4], "button", start_visible, black, white, function()
+				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. i]()
+				button_num
+			end)
 		else
-			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп: " .. i, "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. i]() end)
+			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, tostring(i), "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. i]() end)
 		end
 	end
 	
@@ -3644,19 +3651,22 @@ function forms:creat_TeJIenopTep_form(nick)
 	table_form.textBox_x = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 	table_form.textBox_y = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 	table_form.textBox_z = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 99, "текущее направление:", red)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 99, "текущее направление:", blue)
 	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 116, "не определено", red)
+	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 133, "", green)
 	
 	--кнопка подтверждения
-	table_form.HacTpouTb = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 133, 128, 15, "пересоздать", "button", true, black, white, function()
+	table_form.HacTpouTb = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 150, 128, 15, "пересоздать", "button", true, black, white, function()
 		local uM9l = table_form.textBox_uM9l.caption.getText()
 		local x_zha4 = table_form.textBox_x.caption.getText()
 		local y_zha4 = table_form.textBox_y.caption.getText()
 		local z_zha4 = table_form.textBox_z.caption.getText()
 		
 		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
-			myComponentsLibrary.co3gaTb_u_coxpaHuTb_uHqpy_koMnoHeHTa(agpec_gJI9l_HacTpouku, uM9l, x_zha4, y_zha4, z_zha4, nyTb_k_qpauJIy_config_geTecTopa)
-			table_form.nogcka3ka.setText(g .. "настройки заверешены!")
+			nepeonregeJIuTb_kopgbl_TeJIenopTy(1, uM9l, x_zha4, y_zha4, z_zha4)
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. i]()
+			table_form.nogcka3ka2.setText(uM9l)
+			table_form.nogcka3ka3.setText(g .. "переназначено!")
 		end
 	end)
 
@@ -4560,8 +4570,10 @@ function forms:creat_tyrret_form(nick)
 	
 	--админские кнопки
 	if nick == admin then
-		table_form.koppekcu9l_BJIeBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "поворот левее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттл"]() end)
-		table_form.koppekcu9l_BnpaBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "поворот правее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"]() end)
+		table_form.koppekcu9l_BJIeBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "положительный левее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттл"]() end)
+		table_form.koppekcu9l_BnpaBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "положительный правее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"]() end)
+		table_form.koppekcu9l_BJIeBo_oTpucaTeJIbHa9l = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "отрицательный левее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттол"]() end)
+		table_form.koppekcu9l_BnpaBo_oTpucaTeJIbHa9l = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "отрицательный правее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттоп"]() end)
 		table_form.HakJIoH_BBepx = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "наклон выше", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттв"]() end)
 		table_form.HakJIoH_BHu3 = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "наклон ниже", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттн"]() end)
 		table_form.HauTu_HoBble_TyppeJIu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "найти новые", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые туррели"]() end)
@@ -11078,16 +11090,28 @@ do
 		end
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттл"] = function() --коррекция турелей на 1 градус влево
-		noBopoT = noBopoT + 1
-		configuration[13] = noBopoT
+		noJIoJuTeJIbHblu_noBopoT = noJIoJuTeJIbHblu_noBopoT + 1
+		configuration[13] = noJIoJuTeJIbHblu_noBopoT
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "поворот туррелей: " .. g .. noBopoT .. c .. " градусов")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "положительный поворот туррелей: " .. g .. noJIoJuTeJIbHblu_noBopoT .. c .. " градусов")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"] = function() --коррекция турелей на 1 градус вправо
-		noBopoT = noBopoT - 1
-		configuration[13] = noBopoT
+		noJIoJuTeJIbHblu_noBopoT = noJIoJuTeJIbHblu_noBopoT - 1
+		configuration[13] = noJIoJuTeJIbHblu_noBopoT
 		setConfiguration()
-		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "поворот туррелей: " .. g .. noBopoT .. c .. " градусов")
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "положительный поворот туррелей: " .. g .. noJIoJuTeJIbHblu_noBopoT .. c .. " градусов")
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттол"] = function() --коррекция турелей на 1 градус влево
+		oTpucaTeJIbHblu_noBopoT = oTpucaTeJIbHblu_noBopoT + 1
+		configuration[52] = oTpucaTeJIbHblu_noBopoT
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "отрицательный поворот туррелей: " .. g .. oTpucaTeJIbHblu_noBopoT .. c .. " градусов")
+	end
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттоп"] = function() --коррекция турелей на 1 градус вправо
+		oTpucaTeJIbHblu_noBopoT = oTpucaTeJIbHblu_noBopoT - 1
+		configuration[52] = oTpucaTeJIbHblu_noBopoT
+		setConfiguration()
+		Ta6JIuca_koMnoHeHToB["chat_box"].say(g .. "отрицательный поворот туррелей: " .. g .. oTpucaTeJIbHblu_noBopoT .. c .. " градусов")
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттв"] = function() --коррекция турелей на 1 градус вверх
 		HakJIoH = HakJIoH + 1
@@ -14068,12 +14092,10 @@ do
 		zoHbl_JIoroB = configuration[12]
 	end
 	if configuration[13] == "nil" then
-		configuration[13] = noBopoT
+		configuration[13] = noJIoJuTeJIbHblu_noBopoT
 		setConfiguration()
-		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов") end
 	else
-		noBopoT = configuration[13]
-		if not Tuxuu_pecTapT then Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "коррекция туррелей: " .. g .. noBopoT .. c .. " градусов") end
+		noJIoJuTeJIbHblu_noBopoT = configuration[13]
 	end
 	if configuration[14] == "nil" then
 		configuration[14] = oTnpaBJl9lTb_JIor_c_geTekTopoB
@@ -14298,7 +14320,12 @@ do
 			end
 		end
 	end
-	
+	if configuration[52] == "nil" then
+		configuration[52] = oTpucaTeJIbHblu_noBopoT
+		setConfiguration()
+	else
+		oTpucaTeJIbHblu_noBopoT = configuration[52]
+	end
 	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end

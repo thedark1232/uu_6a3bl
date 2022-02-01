@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 1"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -969,9 +969,9 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 		if ropu3oHT_z < 0 then zepKaJIo = 180 end
 		local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
 		if deg >= 0 then 
-			deg = deg - noBopoT
-		else
 			deg = deg + noBopoT
+		else
+			deg = deg - noBopoT
 		end
 	--	print("поворот = " .. noBopoT .. " угол = " .. deg)
 		local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
@@ -2400,23 +2400,16 @@ function forms:creat_main_form(nick)
 		return num
 	end
 	
+	
 	table_form.nepuMeTp = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "периметр", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].nepuMeTp = forms:creat_nepuMeTp_form(nick); Bce_noToku[nick].nepuMeTp_noTok = myThread.create(nepuMeTp_noTok, nick) end)
 	table_form.alice_control = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
+	table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick) end)
 	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
-	table_form.modem = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "модем", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].modem = forms:creat_modem_form(nick) end)
-	table_form.robot_LllaxTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "робот шахтер", "button", start_visible, black, white, function()
-		if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then 
-			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep = forms:creat_po6oT_LLlaxTep_form(nick)
-		else
-			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = forms:creat_po6oT_LLlaxTep_work_form(nick)
-			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BkJI_animation()
-		end
-	end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тиммейты", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
 	table_form.MaTpuca = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "матрица", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
 	table_form.pegCToyH = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "редстоун", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].redStone = forms:creat_redStone_form(nick) end)
-	table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick) end)
+	table_form.modem = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "модем", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].modem = forms:creat_modem_form(nick) end)
 	table_form.BupTyaJIbHblu_4aT = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "чат тимы", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].virtual_4aT = forms:creat_virtual_4aT_form(nick) end)
 	table_form.geTekTopbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "детекторы", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].geTekTopbl = forms:creat_geTekTopbl_form(nick) end)
 	table_form.oguH_ceHcop = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "1 сенсор", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].one_sensor = forms:creat_one_sensor_form(nick) end)
@@ -2427,6 +2420,14 @@ function forms:creat_main_form(nick)
 	table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
 	table_form.HaHuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "наниты", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
 	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "зоны базы", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
+	table_form.robot_LllaxTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "робот шахтер", "button", start_visible, black, white, function()
+		if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then 
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep = forms:creat_po6oT_LLlaxTep_form(nick)
+		else
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = forms:creat_po6oT_LLlaxTep_work_form(nick)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BkJI_animation()
+		end
+	end)
 	table_form.npo4ee = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "прочее", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].npo4ee = forms:creat_npo4ee_form(nick) end)
 	
 	--создание каркаса скролла
@@ -3618,7 +3619,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	end
 	
 	--кнопки тиммейтов
-	table_form.tp_info = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "инфо мест", "button", start_visible, black, white, function() 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп инфо"]() end)
+	table_form.tp_info = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "инфо мест", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп инфо"]() end)
 	table_form.tp = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп на игрока", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп"]() end)
 	
 	for i = 1, 20 do

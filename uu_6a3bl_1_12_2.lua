@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 12"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -963,9 +963,25 @@ function typpeJIu_BblcTpeJI()
 end
 function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 	for k, v in pairs(ta6JIuca_TyppeJIeu) do
-		local ropu3oHT_x = v[2] - x_urpoka
-		local ropu3oHT_y = v[3] - y_urpoka
-		local ropu3oHT_z = v[4] - z_urpoka
+		local ropu3oHT_x
+		local ropu3oHT_y
+		local ropu3oHT_z
+		if x_urpoka >= 0 then
+			ropu3oHT_x = v[2] - x_urpoka
+		else
+			ropu3oHT_x = v[2] + x_urpoka
+		end
+		if y_urpoka >= 0 then
+			ropu3oHT_y = v[3] - y_urpoka
+		else
+			ropu3oHT_y = v[3] + y_urpoka
+		end
+		if z_urpoka >= 0 then
+			ropu3oHT_z = v[4] - z_urpoka
+		else
+			ropu3oHT_z = v[4] + z_urpoka
+		end
+		
 		local zepKaJIo = 0
 		if ropu3oHT_z < 0 then zepKaJIo = 180 end
 		local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
@@ -2410,7 +2426,7 @@ function forms:creat_main_form(nick)
 			Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick)
 			Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep)
 		end)
-		table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
+		table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  gray, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
 	end
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тиммейты", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
@@ -3608,7 +3624,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 	
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(149 + x_main, y_main + 29, 132, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(154 + x_main, y_main + 29, 132, 172, white)
 	table_form.main_box3.setClickable(false)
 			
 	--создание кнопок
@@ -3675,7 +3691,7 @@ function forms:creat_TeJIenopTep_form(nick)
 			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setX(table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.getX() + 1)
 			koopgbl_gJI9l_TpaHcnocePa[tonumber(TekyLLlee_HanpaBJIeHue)] = {x_zha4, y_zha4, z_zha4, uM9l}
 			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
-			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. i]()
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. tostring(TekyLLlee_HanpaBJIeHue)]()
 			table_form.nogcka3ka2.setText(uM9l)
 			table_form.nogcka3ka3.setText(g .. "переназначено!")
 		end

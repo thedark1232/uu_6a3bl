@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 5"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -969,9 +969,9 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 		if ropu3oHT_z < 0 then zepKaJIo = 180 end
 		local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
 		if deg >= 0 then 
-			deg = deg + noBopoT
+			deg = deg + noBopoT + 6
 		else
-			deg = deg - noBopoT + 6
+			deg = deg - noBopoT
 		end
 		local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 		if y_urpoka > v[3] then degv = math.abs(degv) else degv = degv * -1 end
@@ -3633,6 +3633,38 @@ function forms:creat_TeJIenopTep_form(nick)
 			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп: " .. i, "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. i]() end)
 		end
 	end
+	
+	local cgBur_no_x = x_main + 150
+	local cgBur_no_y = y_main + 16
+	
+	table_form.textBox_uM9l = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_x = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_y = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_z = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 99, "текущее направление:", red)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 116, "не определено", red)
+	
+	--кнопка подтверждения
+	table_form.HacTpouTb = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 133, 128, 15, "пересоздать", "button", true, black, white, function()
+		local uM9l = table_form.textBox_uM9l.caption.getText()
+		local x_zha4 = table_form.textBox_x.caption.getText()
+		local y_zha4 = table_form.textBox_y.caption.getText()
+		local z_zha4 = table_form.textBox_z.caption.getText()
+		local agpec_gJI9l_HacTpouku = agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1]
+		
+		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
+			myComponentsLibrary.co3gaTb_u_coxpaHuTb_uHqpy_koMnoHeHTa(agpec_gJI9l_HacTpouku, uM9l, x_zha4, y_zha4, z_zha4, nyTb_k_qpauJIy_config_geTecTopa)
+			table.remove(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku, 1)
+			if #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
+				table_form.nogcka3ka.setText(c .. "для детектора: " .. g .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3))
+			else
+				table_form.nogcka3ka.setText(g .. "настройки заверешены!")
+				table_form.HacTpouTb.click = function() end
+				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые детекторы"]()
+			end
+			if agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku ~= nil then table_form.nogcka3ka2.setText(c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku)) end
+		end
+	end)
 
 	--for i = 1, 20 do
 	--	table_form["tp_set " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп сет " .. i, "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. i]() end)

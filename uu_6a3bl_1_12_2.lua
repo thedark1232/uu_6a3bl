@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахта 253"
+local Ha3BaHue_o6HoBJIeHu9l = "турели 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4518,20 +4518,14 @@ function forms:creat_tyrret_form(nick)
 	
 	--отдельная кнопка выхода, от остальных кнопок
 	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
-	local TekyLLluu_uBeT
-	if nick == admin then
-		TekyLLluu_uBeT = gray
-	else
-		TekyLLluu_uBeT = black
-	end
 	
 	--кнопки тиммейтов
 	if nick == admin or configuration[8] == true then
-		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, TekyLLluu_uBeT, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"]() end)
-		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, TekyLLluu_uBeT, white, function() Bce_ragJeTbl_urpoka[nick].oroHb_no_urpoky = forms:creat_oroHb_no_urpoky_form(nick) end)
-		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, TekyLLluu_uBeT, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
-		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", "button", start_visible, TekyLLluu_uBeT, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
-		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, TekyLLluu_uBeT, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
+		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"]() end)
+		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].oroHb_no_urpoky = forms:creat_oroHb_no_urpoky_form(nick) end)
+		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
+		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
+		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
 	end
 	
 	--админские кнопки
@@ -10145,7 +10139,6 @@ coo6LLleHu9l_OT_po6oToB.new_start_coords = function(coords)
 		end
 	end
 end
-
 coo6LLleHu9l_OT_po6oToB.coo6LLleHue_OLLlu6ku = function(oLLlu6ka)
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка команды робота:")
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "название инструкции:" .. oLLlu6ka.Ha3BaHue_uHcTpykcuu)
@@ -13304,7 +13297,7 @@ do
 	end
 	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"] = function(nick_form) --туррели открывают огонь на поражение по конкретному игроку:)
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil and typpeJIu_gocTynHbl then
-			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
+			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu or nick_form then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "какой ник у нарушителя?")
 				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, nick_gJI9l_npuBeTcTBu9l, true)
 			--	print("функция получила сообщение " .. coo6llleHue)

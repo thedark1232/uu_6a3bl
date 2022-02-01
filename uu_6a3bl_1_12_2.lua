@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 2"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -971,9 +971,8 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 		if deg >= 0 then 
 			deg = deg + noBopoT
 		else
-			deg = deg - noBopoT
-		end
-	--	print("поворот = " .. noBopoT .. " угол = " .. deg)
+			deg = deg - noBopoT + 6
+
 		local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 		if y_urpoka > v[3] then degv = math.abs(degv) else degv = degv * -1 end
 		degv = degv + HakJIoH
@@ -3630,11 +3629,10 @@ function forms:creat_TeJIenopTep_form(nick)
 		end
 	end
 
-	for i = 1, 20 do
-		table_form["tp_set " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп сет " .. i, "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. i]() end)
-	end
+	--for i = 1, 20 do
+	--	table_form["tp_set " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп сет " .. i, "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. i]() end)
+	--end
 	
-		
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok
 	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)

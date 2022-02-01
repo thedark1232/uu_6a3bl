@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 10"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1151,7 +1151,7 @@ function npoBepka_HaxoJgeHu9l_B_3oHe(x, y, z)
 	end
 	return ""
 end
-function nepeonregeJIuTb_kopgbl_TeJIenopTy(num) --переопределяет привязанные координаты к телепорту
+function nepeonregeJIuTb_kopgbl_TeJIenopTy(num, ) --переопределяет привязанные координаты к телепорту
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. 'введи в чат координаты через запятую: х, у, z, название точки')
 	local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
 	if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -2410,8 +2410,8 @@ function forms:creat_main_form(nick)
 			Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick)
 			Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep)
 		end)
+		table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
 	end
-	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тиммейты", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
 	table_form.MaTpuca = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "матрица", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
@@ -3584,9 +3584,14 @@ function forms:creat_TeJIenopTep_form(nick)
 	table_form.destroy = function()
 		for k, v in pairs(table_form) do
 			if type(v) ~= "function" then 
-				if v.getType() == "button" or v.getType() == "return_button" then
+				if string.match(v.getType(), "button") ~= nil then
 					v.caption.delete()
 					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
 				end
 				v.delete()
 			end
@@ -3651,15 +3656,15 @@ function forms:creat_TeJIenopTep_form(nick)
 	local cgBur_no_y = y_main + 16
 	
 	table_form.tb_uM9l = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
-	table_form.tb_x = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-	table_form.tb_y = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
-	table_form.tb_z = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.tb_x = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_y = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_z = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 99, "текущее направление:", blue)
 	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 116, "не определено", red)
 	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 133, "", green)
 	
 	--кнопка подтверждения
-	table_form.HacTpouTb = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 150, 128, 15, "пересоздать", "button", true, black, white, function()
+	table_form.HacTpouTb = creat_new_button(-1, nick, 5 + cgBur_no_x, cgBur_no_y + 150, 128, 15, "пересоздать", "button", true, black, white, function()
 		local uM9l = table_form.tb_uM9l.caption.getText()
 		local x_zha4 = table_form.tb_x.caption.getText()
 		local y_zha4 = table_form.tb_y.caption.getText()
@@ -3668,7 +3673,8 @@ function forms:creat_TeJIenopTep_form(nick)
 		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
 			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setText(uM9l)
 			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setX(table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.getX() + 1)
-			nepeonregeJIuTb_kopgbl_TeJIenopTy(tonumber(TekyLLlee_HanpaBJIeHue), uM9l, x_zha4, y_zha4, z_zha4)
+			koopgbl_gJI9l_TpaHcnocePa[tonumber(TekyLLlee_HanpaBJIeHue)] = {x_zha4, y_zha4, z_zha4, uM9l}
+			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
 			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. i]()
 			table_form.nogcka3ka2.setText(uM9l)
 			table_form.nogcka3ka3.setText(g .. "переназначено!")
@@ -10296,7 +10302,6 @@ coo6LLleHu9l_OT_po6oToB.robot_turn = function(uHcTpyKcuu)
 	end
 end
 
-
 function forms:creat_gebug_form(nick, form)	--создание стрелок для рисования ГУИ
 	local obj
 --создание формы
@@ -14467,7 +14472,7 @@ do
 		if detectorbl_BKJI then
 			onoBeLLleHue_o_nocTopoHHux.setText("")
 			KoorguHaTbl_ceJIu_TeppeJIu = {}
-			for k,v in pairs(ta6JIuca_geTekTopoB) do
+			for k, v in pairs(ta6JIuca_geTekTopoB) do
 				local status_BblnoJIHeHu9l, Ta6JIuca_napameTpoB_urpokoB = pcall(component.invoke, k, "scanPlayers", 10000)
 				if status_BblnoJIHeHu9l then
 					pcall(function()

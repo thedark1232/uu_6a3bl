@@ -1,11 +1,11 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 7"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 8"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
 local event = require("event")
 local filesystem = require("filesystem")
 local unicode = require("unicode")
-local koMaHgbl = trueв
+local koMaHgbl = true
 local term = require("term")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
@@ -3595,10 +3595,13 @@ function forms:creat_TeJIenopTep_form(nick)
 	--главный фрейм
 	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
 	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 152, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 350, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
+	
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(149 + x_main, y_main + 29, 132, 172, white)
+	table_form.main_box3.setClickable(false)
 			
 	--создание кнопок
 	local y = y_main + 14
@@ -3637,7 +3640,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	local cgBur_no_x = x_main + 150
 	local cgBur_no_y = y_main + 16
 	
-	table_form.textBox_uM9l = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left)
+	table_form.textBox_uM9l = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.textBox_x = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 	table_form.textBox_y = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left)
 	table_form.textBox_z = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left)
@@ -3650,19 +3653,10 @@ function forms:creat_TeJIenopTep_form(nick)
 		local x_zha4 = table_form.textBox_x.caption.getText()
 		local y_zha4 = table_form.textBox_y.caption.getText()
 		local z_zha4 = table_form.textBox_z.caption.getText()
-		local agpec_gJI9l_HacTpouku = agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1]
 		
 		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
 			myComponentsLibrary.co3gaTb_u_coxpaHuTb_uHqpy_koMnoHeHTa(agpec_gJI9l_HacTpouku, uM9l, x_zha4, y_zha4, z_zha4, nyTb_k_qpauJIy_config_geTecTopa)
-			table.remove(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku, 1)
-			if #agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku > 0 then
-				table_form.nogcka3ka.setText(c .. "для детектора: " .. g .. string.sub(agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku[1], 1, 3))
-			else
-				table_form.nogcka3ka.setText(g .. "настройки заверешены!")
-				table_form.HacTpouTb.click = function() end
-				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые детекторы"]()
-			end
-			if agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku ~= nil then table_form.nogcka3ka2.setText(c .. "осталось настроить: " .. g .. tostring(#agreca_geTekTopoB_Tpe6yI0lllux_o6pa6oTku)) end
+			table_form.nogcka3ka.setText(g .. "настройки заверешены!")
 		end
 	end)
 

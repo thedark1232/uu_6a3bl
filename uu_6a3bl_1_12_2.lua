@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турели 2"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -969,9 +969,9 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 		if ropu3oHT_z < 0 then zepKaJIo = 180 end
 		local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
 		if deg >= 0 then 
-			deg = deg + noBopoT
-		else
 			deg = deg - noBopoT
+		else
+			deg = deg + noBopoT
 		end
 	--	print("поворот = " .. noBopoT .. " угол = " .. deg)
 		local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))

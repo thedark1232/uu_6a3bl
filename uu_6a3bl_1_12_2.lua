@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 11"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 12"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1151,7 +1151,7 @@ function npoBepka_HaxoJgeHu9l_B_3oHe(x, y, z)
 	end
 	return ""
 end
-function nepeonregeJIuTb_kopgbl_TeJIenopTy(num, ) --переопределяет привязанные координаты к телепорту
+function nepeonregeJIuTb_kopgbl_TeJIenopTy(num) --переопределяет привязанные координаты к телепорту
 	Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. 'введи в чат координаты через запятую: х, у, z, название точки')
 	local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(50, nick_gJI9l_npuBeTcTBu9l)
 	if not BBog_koppekTeH then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ошибка ввода данных!"); Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. " возврат из функции!"); return end
@@ -3584,7 +3584,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	table_form.destroy = function()
 		for k, v in pairs(table_form) do
 			if type(v) ~= "function" then 
-				if string.match(v.getType(), "button") ~= nil then
+				if string.match(v.getType(), "button") ~= nil or string.math(v.getType(), "icon") ~= nil then
 					v.caption.delete()
 					v.delete()
 				end

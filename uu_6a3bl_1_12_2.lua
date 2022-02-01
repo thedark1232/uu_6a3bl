@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турели 1"
+local Ha3BaHue_o6HoBJIeHu9l = "турели 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -4521,10 +4521,10 @@ function forms:creat_tyrret_form(nick)
 	
 	--кнопки тиммейтов
 	if nick == admin or configuration[8] == true then
-		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"]() end)
+		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"](true) end)
 		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].oroHb_no_urpoky = forms:creat_oroHb_no_urpoky_form(nick) end)
-		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"]() end)
-		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"]() end)
+		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"](true) end)
+		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"](true) end)
 		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
 	end
 	
@@ -13315,9 +13315,9 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"] = function() --туррели открывают огонь на поражение по конкретному игроку:)
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"] = function(form) --туррели открывают огонь на поражение по конкретному игроку:)
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil and typpeJIu_gocTynHbl then
-			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
+			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu or form then
 				if tape_drive ~= nil then tape_drive.BoCnpou3BecTu_qpauJI("BblnoJIH9lI0_KoMaHgy.dfpwm") end
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "выполняю команду")
 				typpeJIu_reJum_orH9l(true)
@@ -13331,9 +13331,9 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"] = function() --переводит туррели в спящий режим
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"] = function(form) --переводит туррели в спящий режим
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil then
-			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
+			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu or form then
 				typpeJIu_reJum_orH9l(false)
 				ceJIb_TyppeJIeu = nil
 				peJum_orH9l = false
@@ -13345,9 +13345,9 @@ do
 			Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "компонент недоступен")
 		end	
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"] = function()
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"] = function(form)
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil then	
-			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
+			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu or form then
 				typpeJIu_reJum_orH9l(true)
 				ceJIb_TyppeJIeu = nil
 				peJum_orH9l = true

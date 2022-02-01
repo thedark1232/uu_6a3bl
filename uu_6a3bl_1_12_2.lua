@@ -1,11 +1,11 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 6"
+local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 7"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
 local event = require("event")
 local filesystem = require("filesystem")
 local unicode = require("unicode")
-local koMaHgbl = true
+local koMaHgbl = trueв
 local term = require("term")
 local serialization = require("serialization") --serialization.serialize unserialize
 require("process").info().data.signal = function() end
@@ -969,7 +969,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 		if ropu3oHT_z < 0 then zepKaJIo = 180 end
 		local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
 		if deg >= 0 then 
-			deg = deg + noBopoT + 6
+			deg = deg + noBopoT - 6
 		else
 			deg = deg - noBopoT
 		end

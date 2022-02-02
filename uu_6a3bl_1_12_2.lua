@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порталы 1"
+local Ha3BaHue_o6HoBJIeHu9l = "порталы 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3619,7 +3619,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	--главный фрейм
 	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
 	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
-	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 350, 205, blue)
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 289, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
@@ -3655,19 +3655,29 @@ function forms:creat_TeJIenopTep_form(nick)
 	local TekyLLlee_HanpaBJIeHue = 0
 	
 	for i = 1, 20 do
-		if koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then
-			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, koopgbl_gJI9l_TpaHcnocePa[i][4], "icon", start_visible, red, white, function(num)
-				table_form.nogcka3ka2.setText(table_form["tp " .. tostring(num)].caption.getText())
-				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. tostring(num)]()
-				TekyLLlee_HanpaBJIeHue = num
-			end)
-		else
-			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "не назначено", "icon", start_visible, black, white, function(num)
-				table_form.nogcka3ka2.setText("направлениe " .. tostring(num) .. ": не определено")
-				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. tostring(num)]()
-				TekyLLlee_HanpaBJIeHue = num
-			end)
-		end
+		table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, koopgbl_gJI9l_TpaHcnocePa[i][4], "icon", start_visible, black, white, function(num)
+			if koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then
+				num = tonumber(num)
+				table_form.tb_uM9l.caption.setText()
+				table_form.tb_x.caption.setText(tostring())
+				table_form.tb_y.caption.setText(tostring())
+				table_form.tb_z.caption.setText(tostring())
+				table_form.nogcka3ka2.setText(koopgbl_gJI9l_TpaHcnocePa[num][4])
+				table_form.nogcka3ka2.setText("портал настроен! Делай тп!")
+				table_form.nogcka3ka2.setColor(green)
+				table_form.HacTpouTb.caption.setText("Перенастроить")
+			else
+				table_form.tb_uM9l.caption.setText("ввод названия")
+				table_form.tb_x.caption.setText("ввод х")
+				table_form.tb_y.caption.setText("ввод у")
+				table_form.tb_z.caption.setText("ввод z")
+				table_form.nogcka3ka2.setText("")
+				table_form.nogcka3ka2.setColor(red)
+				table_form.HacTpouTb.caption.setText("Создать точку")
+			end
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. tostring(num)]()
+			TekyLLlee_HanpaBJIeHue = num
+		end)
 	end
 	
 	local cgBur_no_x = x_main + 150
@@ -3678,8 +3688,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	table_form.tb_y = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
 	table_form.tb_z = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 99, "текущее направление:", blue)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 116, "не определено", red)
-	table_form.nogcka3ka3 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 133, "", green)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 133, "", green)
 	
 	--кнопка подтверждения
 	table_form.HacTpouTb = creat_new_button(-1, nick, 5 + cgBur_no_x, cgBur_no_y + 150, 128, 15, "пересоздать", "button", true, black, white, function()
@@ -3693,14 +3702,9 @@ function forms:creat_TeJIenopTep_form(nick)
 			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setX(table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.getX() + 1)
 			koopgbl_gJI9l_TpaHcnocePa[tonumber(TekyLLlee_HanpaBJIeHue)] = {x_zha4, y_zha4, z_zha4, uM9l}
 			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
-			table_form.nogcka3ka2.setText(uM9l)
-			table_form.nogcka3ka3.setText(g .. "переназначено!")
+			table_form.nogcka3ka2.setText(g .. "переназначено!")
 		end
 	end)
-
-	--for i = 1, 20 do
-	--	table_form["tp_set " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп сет " .. i, "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. i]() end)
-	--end
 	
 	--создание каркаса скролла
 	local MakcuMyM_BuguMblx_kHonok

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "коррекция турелек 14"
+local Ha3BaHue_o6HoBJIeHu9l = "порталы 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3600,7 +3600,7 @@ function forms:creat_TeJIenopTep_form(nick)
 	table_form.destroy = function()
 		for k, v in pairs(table_form) do
 			if type(v) ~= "function" then 
-				if string.match(v.getType(), "button") ~= nil or string.math(v.getType(), "icon") ~= nil then
+				if string.match(v.getType(), "button") ~= nil or string.match(v.getType(), "icon") ~= nil then
 					v.caption.delete()
 					v.delete()
 				end
@@ -3657,12 +3657,14 @@ function forms:creat_TeJIenopTep_form(nick)
 	for i = 1, 20 do
 		if koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then
 			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, koopgbl_gJI9l_TpaHcnocePa[i][4], "icon", start_visible, red, white, function(num)
-				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. i]()
+				table_form.nogcka3ka2.setText(table_form["tp " .. tostring(num)].caption.getText())
+				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. tostring(num)]()
 				TekyLLlee_HanpaBJIeHue = num
 			end)
 		else
 			table_form["tp " .. i] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "не назначено", "icon", start_visible, black, white, function(num)
-				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. i]()
+				table_form.nogcka3ka2.setText("направлениe " .. tostring(num) .. ": не определено")
+				Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. tostring(num)]()
 				TekyLLlee_HanpaBJIeHue = num
 			end)
 		end
@@ -3691,7 +3693,6 @@ function forms:creat_TeJIenopTep_form(nick)
 			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setX(table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.getX() + 1)
 			koopgbl_gJI9l_TpaHcnocePa[tonumber(TekyLLlee_HanpaBJIeHue)] = {x_zha4, y_zha4, z_zha4, uM9l}
 			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
-			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп сет " .. tostring(TekyLLlee_HanpaBJIeHue)]()
 			table_form.nogcka3ka2.setText(uM9l)
 			table_form.nogcka3ka3.setText(g .. "переназначено!")
 		end

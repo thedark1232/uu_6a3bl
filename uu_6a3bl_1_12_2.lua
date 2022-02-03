@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 14"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 15"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10278,7 +10278,7 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			elseif LLlaxTep_TekyLLlue.x == LLlaxTep_start.x then
 				z_vox = 0
 			else
-				z_vox = (math.abs(LLlaxTep_TekyLLlue.x)) - (math.abs(LLlaxTep_start.x))
+				z_vox = (math.abs(LLlaxTep_start.x)) - (math.abs(LLlaxTep_TekyLLlue.x))
 			end
 			
 			if LLlaxTep_TekyLLlue.y < LLlaxTep_start.y then
@@ -10293,7 +10293,7 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			elseif LLlaxTep_TekyLLlue.z == LLlaxTep_start.z then
 				x_vox = 0
 			else
-				x_vox = (math.abs(LLlaxTep_TekyLLlue.z)) - (math.abs(LLlaxTep_start.z))
+				x_vox =  (math.abs(LLlaxTep_start.z)) - (math.abs(LLlaxTep_TekyLLlue.z))
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox: " .. tostring(x_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))

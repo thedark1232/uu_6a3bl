@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.39"
+local o6HoBJIeHue = "v.40"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -171,7 +171,11 @@ command.robot_return = function(uHcTpykcuu)
 		send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "робот вернулся на базу"}
 		send{"coo6LLleHue_Ha_chatBox", "робот шахтер вернулся на базу"}
 	end)
-	if not st then send{"coo6LLleHue_Ha_chatBox", er} end
+	if not st then
+		for k, v in pairs(er) do
+			print(k,v)
+		end
+	end
 end
 command.save_position = function(uHcTpykcuu)
 	local table_coords = {}

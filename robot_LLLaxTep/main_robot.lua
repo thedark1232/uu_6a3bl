@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.28"
+local o6HoBJIeHue = "v.31"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -173,7 +173,7 @@ end
 command.save_position = function(uHcTpykcuu)
 	local table_coords = {}
 	table_coords[1] = "new_start_coords"
-	table_coords = BepHyTb_cTapToBble_KoopguHaTbl()
+	table_coords = return_my_position()
 
 	loadfile("return.lua")("1")
 	

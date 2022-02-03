@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 39"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 40"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1003,7 +1003,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 			print("type(y_urpoka)", type(y_urpoka))
 			print("v[3]", v[3])
-			print("type(v[3]", type(v[3])
+			print("type(v[3]", type(v[3]))
 			io.read()
 			if y_urpoka > v[3] then degv = math.abs(degv) else degv = degv * -1 end
 			degv = degv + HakJIoH

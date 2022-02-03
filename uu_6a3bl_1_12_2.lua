@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 31"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 32"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9579,9 +9579,9 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--подсказки по центру экрана
 	local nogcka3ku = {}
-	nogcka3ku.npoekTop_He_nogkJIl04eH = {["x1"] = x_main + 189, ["y1"] = y_main + 69, ["text1"] = "Проекторы", ["visible1"] = true,
+	nogcka3ku.npoekTop_He_nogkJIl04eH = {["x1"] = x_main + 179, ["y1"] = y_main + 69, ["text1"] = "Проекторы", ["visible1"] = true,
 										 ["x2"] = x_main + 243, ["y2"] = y_main + 89, ["text2"] = "не", ["visible2"] = true,
-										 ["x3"] = x_main + 179, ["y3"] = y_main + 109, ["text3"] = "найдены", ["visible3"] = true}
+										 ["x3"] = x_main + 189, ["y3"] = y_main + 109, ["text3"] = "найдены", ["visible3"] = true}
 										 
 	table_form.nogcka3ka_no_ceHTpy_ekpaHa1 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 50, "", red)
 	table_form.nogcka3ka_no_ceHTpy_ekpaHa1.setScale(3)
@@ -14511,7 +14511,8 @@ do
 			setConfiguration()
 		end
 	else
-		agpec_holo1 = configuration[53]
+		holo1 = configuration[53]
+		
 	end
 	if configuration[54] == "nil" then
 		if #sort_holo > 1 then
@@ -14520,7 +14521,7 @@ do
 			setConfiguration()
 		end
 	else
-		agpec_holo2 = configuration[54]
+		holo2 = configuration[54]
 	end
 	
 	holo = nil

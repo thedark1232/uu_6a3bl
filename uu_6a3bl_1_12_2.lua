@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турелька 2"
+local Ha3BaHue_o6HoBJIeHu9l = "турелька 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -988,20 +988,20 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			ropu3oHT_y = y - y_urpoka
 			ropu3oHT_z = z - z_urpoka
 			
-			print("ropu3oHT_x = x + x_urpoka", ropu3oHT_x, x, x_urpoka)
-			print("opu3oHT_y = y + y_urpoka", ropu3oHT_y, y, y_urpoka)
-			print("ropu3oHT_z = z + z_urpoka", ropu3oHT_z, z, z_urpoka)
-			print("ropu3oHT_z < 0", ropu3oHT_z < 0)
+			--print("ropu3oHT_x = x + x_urpoka", ropu3oHT_x, x, x_urpoka)
+			--print("opu3oHT_y = y + y_urpoka", ropu3oHT_y, y, y_urpoka)
+			--print("ropu3oHT_z = z + z_urpoka", ropu3oHT_z, z, z_urpoka)
+			--print("ropu3oHT_z < 0", ropu3oHT_z < 0)
 			
 			local zepKaJIo = 0
 			if ropu3oHT_z < 0 then zepKaJIo = 180 end
 			local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
-			print("deg >= 0", deg >= 0)
+			--print("deg >= 0", deg >= 0)
 			if deg >= 0 then 
 				deg = deg + noJIoJuTeJIbHblu_noBopoT
-				print("deg + noJIoJuTeJIbHblu_noBopoT", deg + noJIoJuTeJIbHblu_noBopoT)
+				--print("deg + noJIoJuTeJIbHblu_noBopoT", deg + noJIoJuTeJIbHblu_noBopoT)
 			else
-				print("deg - oTpucaTeJIbHblu_noBopoT", deg - oTpucaTeJIbHblu_noBopoT)
+				--print("deg - oTpucaTeJIbHblu_noBopoT", deg - oTpucaTeJIbHblu_noBopoT)
 				deg = deg - oTpucaTeJIbHblu_noBopoT
 			end
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
@@ -1015,7 +1015,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			--print("градусы горизонт: " .. deg .. " градусы вертикаль: ".. degv)
 			component.invoke(k, "moveTo", deg, degv)
 			component.invoke(k, "fire")
-			os.sleep(16)
+			--os.sleep(16)
 		end
 	end)
 	if not st then print(er) end
@@ -10338,13 +10338,6 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl(pucoBaTb_npeg
 			else
 				x_vox = (math.abs(LLlaxTep_start.z)) - (math.abs(LLlaxTep_TekyLLlue.z))
 			end
-			
-			if x_vox > 0 then
-				x_vox = x_vox * -1
-			elseif x_vox < 0 then
-				x_vox = math.abs(x_vox)
-			end
-			
 			
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox: " .. tostring(x_vox))
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))

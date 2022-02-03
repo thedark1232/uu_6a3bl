@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 9"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -24,6 +24,7 @@ holoColors.blue = 0x0703ff
 
 local LLlaxTep_start = {}
 local LLlaxTep_TekyLLlue ={}
+local holo_npegblgyLLlue = {}
 pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = 0 
 Bce_uTeMbl_po6oTa_LLlaXTepa = {}
 local robot_LllaxTep_animations = {}
@@ -9608,6 +9609,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		hologram.clear()
 		hologram.setPaletteColor(1, holoColors.green)
 		hologram.setPaletteColor(2, holoColors.red)
+		hologram.setPaletteColor(3, holoColors.blue)
 		hologram.set(24, 32, 24, 1)
 	end
 		
@@ -10270,11 +10272,11 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 		local st, er = pcall(function()
 			local x_vox, y_vox, z_vox
 			if LLlaxTep_TekyLLlue.x < LLlaxTep_start.x then
-				x_vox = LLlaxTep_TekyLLlue.x + (math.abs(LLlaxTep_start.x))
+				z_vox = LLlaxTep_TekyLLlue.x + (math.abs(LLlaxTep_start.x))
 			elseif LLlaxTep_TekyLLlue.x == LLlaxTep_start.x then
-				x_vox = 0
+				z_vox = 0
 			else
-				x_vox = (math.abs(LLlaxTep_TekyLLlue.x)) - (math.abs(LLlaxTep_start.x))
+				z_vox = (math.abs(LLlaxTep_TekyLLlue.x)) - (math.abs(LLlaxTep_start.x))
 			end
 			
 			if LLlaxTep_TekyLLlue.y < LLlaxTep_start.y then
@@ -10285,19 +10287,26 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 				y_vox = (math.abs(LLlaxTep_TekyLLlue.y)) - (math.abs(LLlaxTep_start.y))
 			end
 			if LLlaxTep_TekyLLlue.z < LLlaxTep_start.z then
-				z_vox = LLlaxTep_TekyLLlue.z + (math.abs(LLlaxTep_start.z))
+				x_vox = LLlaxTep_TekyLLlue.z + (math.abs(LLlaxTep_start.z))
 			elseif LLlaxTep_TekyLLlue.z == LLlaxTep_start.z then
-				z_vox = 0
+				x_vox = 0
 			else
-				z_vox = (math.abs(LLlaxTep_TekyLLlue.z)) - (math.abs(LLlaxTep_start.z))
+				x_vox = (math.abs(LLlaxTep_TekyLLlue.z)) - (math.abs(LLlaxTep_start.z))
 			end
-			component.hologram.set(24 + z_vox, 32 + y_vox, 24 + x_vox, 2)
+			component.hologram.set(24 + z_vox, 32 + y_vox, 24 + x_vox, 3)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox: " .. tostring(x_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox: " .. tostring(z_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox + 24: " .. tostring(x_vox + 24))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox + 32: " .. tostring(y_vox + 32))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox + 24: " .. tostring(z_vox + 24))
+			if holo_npegblgyLLlue.x == nil then
+				holo_npegblgyLLlue.x = 24 + x_vox
+				holo_npegblgyLLlue.y = 24 + y_vox
+				holo_npegblgyLLlue.z = 24 + z_vox
+			else
+				component.hologram.set(holo_npegblgyLLlue.x, holo_npegblgyLLlue.y, holo_npegblgyLLlue.z, 2)
+			end
 		end)
 		if not st then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. er) end
 	end

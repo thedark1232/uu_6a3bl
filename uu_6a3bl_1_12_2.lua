@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порталы 4"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10200,13 +10200,13 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. Ta6JIuca_cocTo9lHu9l.coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.coords.z)
-			LLlaxTep_start.x = tonumber(Ta6JIuca_cocTo9lHu9l.coords.x)
-			LLlaxTep_start.y = tonumber(Ta6JIuca_cocTo9lHu9l.coords.y)
-			LLlaxTep_start.z = tonumber(Ta6JIuca_cocTo9lHu9l.coords.z)
+			LLlaxTep_start.x = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.x))
+			LLlaxTep_start.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.y))
+			LLlaxTep_start.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.z))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.new_coords.setText("текущие корды: x" .. Ta6JIuca_cocTo9lHu9l.new_coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.new_coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.new_coords.z)
-			LLlaxTep_TekyLLlue.x = tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.x)
-			LLlaxTep_TekyLLlue.y = tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.y)
-			LLlaxTep_TekyLLlue.z = tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.z)
+			LLlaxTep_TekyLLlue.x = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.x))
+			LLlaxTep_TekyLLlue.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.y))
+			LLlaxTep_TekyLLlue.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.z))
 			
 			pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = Ta6JIuca_cocTo9lHu9l.inventorySize
 		end
@@ -10215,13 +10215,11 @@ end
 coo6LLleHu9l_OT_po6oToB.new_start_coords = function(coords)
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
+			LLlaxTep_start.x = math.floor(tonumber(coords.x))
+			LLlaxTep_start.y = math.floor(tonumber(coords.y))
+			LLlaxTep_start.z = math.floor(tonumber(coords.z))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. coords.x  .. " y" .. coords.y .. " z" .. coords.z)
-			LLlaxTep_start.x = tonumber(coords.x)
-			LLlaxTep_start.y = tonumber(coords.y)
-			LLlaxTep_start.z = tonumber(coords.z)
-			if coords.kyga_gBuraeMc9l ~= nil then
-				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: " .. coords.kyga_gBuraeMc9l)
-			end
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: стартовые корды изменены")
 		end
 	end
 end
@@ -10230,9 +10228,18 @@ coo6LLleHu9l_OT_po6oToB.new_coords = function(coords)
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.new_coords.setText("Текущие корды: x" .. coords.x  .. " y" .. coords.y .. " z" .. coords.z)
-			LLlaxTep_TekyLLlue.x = tonumber(coords.x)
-			LLlaxTep_TekyLLlue.y = tonumber(coords.y)
-			LLlaxTep_TekyLLlue.z = tonumber(coords.z)
+			LLlaxTep_TekyLLlue.x = math.floor(tonumber(coords.x))
+			LLlaxTep_TekyLLlue.y = math.floor(tonumber(coords.y))
+			LLlaxTep_TekyLLlue.z = math.floor(tonumber(coords.z))
+			
+			local x_vox, y_vox, z_vox
+			if component.isAvailable("hologram") then
+				if LLlaxTep_TekyLLlue.x < LLlaxTep_start.x then x_vox = LLlaxTep_TekyLLlue.x + (math.abs(LLlaxTep_start.x)) else x_vox = (math.abs(LLlaxTep_TekyLLlue.x)) + (math.abs(LLlaxTep_start.x)) end
+				if LLlaxTep_TekyLLlue.y < LLlaxTep_start.y then y_vox = LLlaxTep_TekyLLlue.y + (math.abs(LLlaxTep_start.y)) else y_vox = (math.abs(LLlaxTep_TekyLLlue.y)) + (math.abs(LLlaxTep_start.y)) end
+				if LLlaxTep_TekyLLlue.z < LLlaxTep_start.z then z_vox = LLlaxTep_TekyLLlue.z + (math.abs(LLlaxTep_start.z)) else z_vox = (math.abs(LLlaxTep_TekyLLlue.z)) + (math.abs(LLlaxTep_start.z)) end
+				component.hologram.set(x_vox, y_vox, z_vox, 2)
+			end
+			
 			if coords.kyga_gBuraeMc9l ~= nil then
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: " .. coords.kyga_gBuraeMc9l)
 			end

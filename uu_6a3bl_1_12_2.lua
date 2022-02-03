@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 21"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 22"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10173,7 +10173,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.kHonka_save_pos.setClickable(false)
 	
 	--добавление кнопки clear holo
-	table_form.kHOnka_clear_holo = creat_new_button(-1, nick, x_m + 1, y_m + 42, 75, 12, "clear holo", "button", false, gray, white, function()
+	table_form.kHOnka_clear_holo = creat_new_button(-1, nick, x_m + 1, y_m + 55, 75, 12, "clear holo", "button", false, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: очистка голопроектора")
 		table_form.hologram_clear()
 	end)
@@ -10311,12 +10311,13 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			elseif LLlaxTep_TekyLLlue.z == LLlaxTep_start.z then
 				x_vox = 0
 			else
-				x_vox =  (math.abs(LLlaxTep_start.z)) - (math.abs(LLlaxTep_TekyLLlue.z))
-				if x_vox > 0 then
-					x_vox = x_vox * -1
-				elseif x_vox < 0 then
-					x_vox = math.abs(x_vox)
-				end
+				x_vox = (math.abs(LLlaxTep_start.z)) - (math.abs(LLlaxTep_TekyLLlue.z))
+			end
+			
+			if x_vox > 0 then
+				x_vox = x_vox * -1
+			elseif x_vox < 0 then
+				x_vox = math.abs(x_vox)
 			end
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox: " .. tostring(x_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))

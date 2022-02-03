@@ -8,8 +8,23 @@ local component = require("component")
 local table_sides = require("sizeLibrary").build_pair_sizes()
 local computer = require("computer")
 local term = require("term")
+local serialization = require("serialization")
 
 local navigate = component.navigation
+
+nopTbl = {} --так же скопировать таблицу в робота шахтера
+nopTbl.coo6LLleHu9l_oT_LLlaxTepa = 1000
+nopTbl.coo6LLleHu9l_LLlaxTepy = 1001
+
+function HacTpouka_oTnpaBku_coo6LLleHuu_oTBeTa()
+	if component.isAvailable("modem") then
+		component.modem.open(nopTbl.coo6LLleHu9l_LLlaxTepy)
+		send = function(message) component.modem.broadcast(nopTbl.coo6LLleHu9l_oT_LLlaxTepa, serialization.serialize(message)) end
+	end	
+	if component.isAvailable("tunnel") then
+		send = function(message) component.tunnel.send(serialization.serialize(message)) end
+	end
+end
 
 --ввод цифры с проверками(минимальное значение, максимальное значение)
 function pcall_return_num(min_num, max_num)
@@ -41,6 +56,41 @@ function move_lib.check_navigate_component()
 	end
 	return false
 end
+
+function forward()
+	if robot.forward() then
+		local t = return_my_position()
+		t[1] = "new_coords"
+		t.kyga_gBuraeMc9l = "движение вперед"
+		send(t)
+	end
+end
+
+function up()
+	if robot.up() then
+		local t = return_my_position()
+		t[1] = "new_coords"
+		t.kyga_gBuraeMc9l = "движение вверх"
+		send(t)
+	end
+end
+
+function down()
+	if robot.down() then
+		local t = return_my_position()
+		t[1] = "new_coords"
+		t.kyga_gBuraeMc9l = "движение вниз"
+		send(t)
+	end
+end
+
+function send_turn()
+	local t = {}
+	t[1] = "robot_turn"
+	t.facing = navigation.getFacing()
+	send(t)
+end
+
 -----------------------------------------------------------------------------------------------------------------
 --двигает робота на позицию без выламывания блоков перед собой
 function move_lib.moveOut(new_position_x, new_position_y, new_position_z)
@@ -49,10 +99,12 @@ function move_lib.moveOut(new_position_x, new_position_y, new_position_z)
 	while robot_position_x ~= new_position_x do
    		if robot_position_x < new_position_x then
 			table_sides[5][navigate.getFacing()]()
+			send_turn()
 			robot.forward()
     		robot_position_x = navigate.getPosition()
    		elseif robot_position_x > new_position_x then
       		table_sides[4][navigate.getFacing()]()
+			send_turn()
             robot.forward()
 			robot_position_x = navigate.getPosition()
   		end
@@ -60,20 +112,22 @@ function move_lib.moveOut(new_position_x, new_position_y, new_position_z)
 	while robot_position_y ~= new_position_y do
    		if robot_position_y < new_position_y then
       	  	table_sides[3][navigate.getFacing()]()
+			send_turn()
 			robot.forward()
      		_,_,robot_position_y = navigate.getPosition()
    		elseif robot_position_y > new_position_y then
     		table_sides[2][navigate.getFacing()]()			
+			send_turn()
 			robot.forward()
 			_,_,robot_position_y = navigate.getPosition()
    		end
 	end
 	while robot_position_z ~= new_position_z do
 		if robot_position_z < new_position_z then
-			robot.up()
+			up()
 			_,robot_position_z,_ = navigate.getPosition()
 		elseif robot_position_z > new_position_z then
-			robot.down()
+			down()
 			_,robot_position_z,_ = navigate.getPosition()
 		end
 	end
@@ -86,12 +140,14 @@ function move_lib.swing_and_move(new_position_x, new_position_y, new_position_z)
    		if robot_position_x < new_position_x then
 			table_sides[5][navigate.getFacing()]()
 			robot.swing()
-			robot.forward()
+			forward()
+			end
     		robot_position_x = navigate.getPosition()
+			
    		elseif robot_position_x > new_position_x then
       		table_sides[4][navigate.getFacing()]()
 			robot.swing()
-            robot.forward()
+            forward()
 			robot_position_x = navigate.getPosition()
   		end
 	end
@@ -99,12 +155,12 @@ function move_lib.swing_and_move(new_position_x, new_position_y, new_position_z)
    		if robot_position_y < new_position_y then
       	  	table_sides[3][navigate.getFacing()]()
 			robot.swing()
-			robot.forward()
+			forward()
      		_,_,robot_position_y = navigate.getPosition()
    		elseif robot_position_y > new_position_y then
     		table_sides[2][navigate.getFacing()]()	
 			robot.swing()
-			robot.forward()
+			forward()
 			_,_,robot_position_y = navigate.getPosition()
    		end
 	end

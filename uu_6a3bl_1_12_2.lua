@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 33"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 34"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -968,45 +968,45 @@ function typpeJIu_BblcTpeJI()
 	end
 end
 function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
-	for k, v in pairs(ta6JIuca_TyppeJIeu) do
-		local ropu3oHT_x
-		local ropu3oHT_y
-		local ropu3oHT_z
-		if x_urpoka >= 0 then
-			ropu3oHT_x = v[2] - x_urpoka
-		else
-			ropu3oHT_x = v[2] + x_urpoka
-		end
-		if y_urpoka >= 0 then
-			ropu3oHT_y = v[3] - y_urpoka
-		else
-			ropu3oHT_y = v[3] + y_urpoka
-		end
-		if z_urpoka >= 0 then
-			ropu3oHT_z = v[4] - z_urpoka
-		else
-			ropu3oHT_z = v[4] + z_urpoka
-		end
-		
-		local zepKaJIo = 0
-		if ropu3oHT_z < 0 then zepKaJIo = 180 end
-		local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
-		if deg >= 0 then 
-			deg = deg + noJIoJuTeJIbHblu_noBopoT
-		else
-			deg = deg - oTpucaTeJIbHblu_noBopoT
-		end
-		local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
-		if y_urpoka > v[3] then degv = math.abs(degv) else degv = degv * -1 end
-		degv = degv + HakJIoH
-		--print("вертикаль = " .. degv)
-		--print("градусы горизонт: " .. deg .. " градусы вертикаль: ".. degv)
-		pcall(function() 
+	local st, er = pcall(function()
+		for k, v in pairs(ta6JIuca_TyppeJIeu) do
+			local ropu3oHT_x
+			local ropu3oHT_y
+			local ropu3oHT_z
+			if x_urpoka >= 0 then
+				ropu3oHT_x = v[2] - x_urpoka
+			else
+				ropu3oHT_x = v[2] + x_urpoka
+			end
+			if y_urpoka >= 0 then
+				ropu3oHT_y = v[3] - y_urpoka
+			else
+				ropu3oHT_y = v[3] + y_urpoka
+			end
+			if z_urpoka >= 0 then
+				ropu3oHT_z = v[4] - z_urpoka
+			else
+				ropu3oHT_z = v[4] + z_urpoka
+			end
+			
+			local zepKaJIo = 0
+			if ropu3oHT_z < 0 then zepKaJIo = 180 end
+			local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
+			if deg >= 0 then 
+				deg = deg + noJIoJuTeJIbHblu_noBopoT
+			else
+				deg = deg - oTpucaTeJIbHblu_noBopoT
+			end
+			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
+			if y_urpoka > v[3] then degv = math.abs(degv) else degv = degv * -1 end
+			degv = degv + HakJIoH
+			--print("вертикаль = " .. degv)
+			--print("градусы горизонт: " .. deg .. " градусы вертикаль: ".. degv)
 			component.invoke(k, "moveTo", deg, degv)
 			component.invoke(k, "fire")
-		end)
-	--	io.read()
+		end
 	end
+	if not st then print(er) end
 end
 function chat_message(event_name, _, nick, msg, msg2, modem_message)
 	nick_gJI9l_npuBeTcTBu9l = nick
@@ -13525,9 +13525,9 @@ do
 			end
 		end
 	end
-	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"] = function(nick_form) --туррели открывают огонь на поражение по конкретному игроку:)
+	Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тт"] = function() --туррели открывают огонь на поражение по конкретному игроку:)
 		if Ta6JIuca_oTcyTcTByl0lllux_koMnoHeHToB["os_energyturret"] == nil and typpeJIu_gocTynHbl then
-			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu or nick_form then
+			if nick_gJI9l_npuBeTcTBu9l == admin or TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu then
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(c .. "какой ник у нарушителя?")
 				local BBog_koppekTeH, coo6llleHue = oJugaHue_BBoga_koMaHgbl(10, nick_gJI9l_npuBeTcTBu9l, true)
 			--	print("функция получила сообщение " .. coo6llleHue)

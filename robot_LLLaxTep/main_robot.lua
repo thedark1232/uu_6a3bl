@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.27"
+local o6HoBJIeHue = "v.28"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -211,7 +211,20 @@ command.turnRight = function()
 		send(t)
 	end
 end
-
+command.robot_up = function()
+	if robot.up() then
+		t[1] = "new_coords"
+		t.kyga_gBuraeMc9l = "движение вверх успешно"
+		send(t)
+	end
+end
+command.robot_down = function()
+	if robot.up() then
+		t[1] = "new_coords"
+		t.kyga_gBuraeMc9l = "движение вниз успешно"
+		send(t)
+	end
+end
 function modem_message(message_type, address_noJIy4aTeJI9l, address_oTnpaBuTeJI9l, HoMep_nopTa_noJIy4uBlllero_coo6llleHue, distaHcu9l_noJIy4eHu9l, coo6llleHue_oT_mogema)
 	local st, er = pcall(function()
 		local Ta6JIuca_uHcTpykcuu = serialization.unserialize(coo6llleHue_oT_mogema)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 34"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 35"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1005,7 +1005,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			component.invoke(k, "moveTo", deg, degv)
 			component.invoke(k, "fire")
 		end
-	end
+	end)
 	if not st then print(er) end
 end
 function chat_message(event_name, _, nick, msg, msg2, modem_message)

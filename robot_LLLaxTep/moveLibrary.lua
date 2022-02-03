@@ -10,20 +10,19 @@ local computer = require("computer")
 local term = require("term")
 local serialization = require("serialization")
 
+local send
 local navigate = component.navigation
 
 nopTbl = {} --так же скопировать таблицу в робота шахтера
 nopTbl.coo6LLleHu9l_oT_LLlaxTepa = 1000
 nopTbl.coo6LLleHu9l_LLlaxTepy = 1001
 
-function HacTpouka_oTnpaBku_coo6LLleHuu_oTBeTa()
-	if component.isAvailable("modem") then
-		component.modem.open(nopTbl.coo6LLleHu9l_LLlaxTepy)
-		send = function(message) component.modem.broadcast(nopTbl.coo6LLleHu9l_oT_LLlaxTepa, serialization.serialize(message)) end
-	end	
-	if component.isAvailable("tunnel") then
-		send = function(message) component.tunnel.send(serialization.serialize(message)) end
-	end
+if component.isAvailable("modem") then
+	component.modem.open(nopTbl.coo6LLleHu9l_LLlaxTepy)
+	send = function(message) component.modem.broadcast(nopTbl.coo6LLleHu9l_oT_LLlaxTepa, serialization.serialize(message)) end
+end	
+if component.isAvailable("tunnel") then
+	send = function(message) component.tunnel.send(serialization.serialize(message)) end
 end
 
 --ввод цифры с проверками(минимальное значение, максимальное значение)

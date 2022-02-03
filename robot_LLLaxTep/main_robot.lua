@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.37"
+local o6HoBJIeHue = "v.39"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -170,8 +170,8 @@ command.robot_return = function(uHcTpykcuu)
 		loadfile("return.lua")("2")
 		send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "робот вернулся на базу"}
 		send{"coo6LLleHue_Ha_chatBox", "робот шахтер вернулся на базу"}
-	end
-	if not st then send{"coo6LLleHue_Ha_chatBox", "ошибка возвращения"} end
+	end)
+	if not st then send{"coo6LLleHue_Ha_chatBox", er} end
 end
 command.save_position = function(uHcTpykcuu)
 	local table_coords = {}

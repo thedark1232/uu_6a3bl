@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 23"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 24"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10300,11 +10300,11 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			end
 			
 			if LLlaxTep_TekyLLlue.y < LLlaxTep_start.y then
-				y_vox = LLlaxTep_TekyLLlue.y + (math.abs(LLlaxTep_start.y))
+				y_vox = LLlaxTep_start.y - LLlaxTep_TekyLLlue.y * -1
 			elseif LLlaxTep_TekyLLlue.y == LLlaxTep_start.y then
 				y_vox = 0
 			else
-				y_vox = (math.abs(LLlaxTep_TekyLLlue.y)) - (math.abs(LLlaxTep_start.y))
+				y_vox = LLlaxTep_TekyLLlue.y - LLlaxTep_start.y
 			end
 			if LLlaxTep_TekyLLlue.z < LLlaxTep_start.z then
 				x_vox = LLlaxTep_TekyLLlue.z + (math.abs(LLlaxTep_start.z))
@@ -10323,13 +10323,13 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox: " .. tostring(z_vox))
 			x_vox = x_vox + 24
-			y_vox = 32 - y_vox
+			y_vox = y_vox + 32
 			z_vox = z_vox + 24
 			
 			component.hologram.set(x_vox, y_vox, z_vox, 3)
 
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox + 24: " .. tostring(x_vox))
-			Ta6JIuca_koMnoHeHToB["chat_box"].say("32 - y_vox: " .. tostring(y_vox))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox + 32: " .. tostring(y_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox + 24: " .. tostring(z_vox))
 
 			holo_npegblgyLLlue.x = x_vox

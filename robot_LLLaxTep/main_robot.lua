@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.34"
+local o6HoBJIeHue = "v.35"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -219,7 +219,7 @@ command.robot_up = function()
 	end
 end
 command.robot_down = function()
-	if robot.up() then
+	if robot.down() then
 		t[1] = "new_coords"
 		t.kyga_gBuraeMc9l = "движение вниз успешно"
 		send(t)

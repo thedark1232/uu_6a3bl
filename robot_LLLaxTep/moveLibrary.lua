@@ -141,7 +141,6 @@ function move_lib.swing_and_move(new_position_x, new_position_y, new_position_z)
 			table_sides[5][navigate.getFacing()]()
 			robot.swing()
 			forward()
-			end
     		robot_position_x = navigate.getPosition()
 			
    		elseif robot_position_x > new_position_x then

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 4"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9787,7 +9787,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.TpeyroJIbHuk_cnucka_koMaHg = MoHuTop_urpoka[nick].addTriangle({x_c + 60, y_c + 1}, {x_c + 75, y_c + 1}, {x_c + 68, y_c + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka_koMaHg.setClickable(false)
-	table_form.box_cnucka_KoMaHg = MoHuTop_urpoka[nick].addBox(x_c, y_c + 15, 77, 118, red)
+	table_form.box_cnucka_KoMaHg = MoHuTop_urpoka[nick].addBox(x_c, y_c + 15, 104, 118, red)
 	table_form.box_cnucka_KoMaHg.setClickable(false)
 	table_form.box_cnucka_KoMaHg.setVisible(false)
 	
@@ -9870,6 +9870,25 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.turn_right_button.caption.setVisible(false)
 	table_form.turn_right_button.setClickable(false)
 	
+	--добавление копки robot_up
+	table_form.up_button = creat_new_button(-1, nick, x_c + 1, y_c + 133, 75, 12, "up", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка движения вверх")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_up"})
+	end)
+	table_form.up_button.setVisible(false)
+	table_form.up_button.caption.setVisible(false)
+	table_form.up_button.setClickable(false)
+	
+	--добавление копки robot_down
+	table_form.down_button = creat_new_button(-1, nick, x_c + 1, y_c + 133, 75, 12, "down", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка движения вниз")
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robor_down"})
+	end)
+	table_form.down_button.setVisible(false)
+	table_form.down_button.caption.setVisible(false)
+	table_form.down_button.setClickable(false)
+	
+	
 	--функция раскрывающегося списка состояния
 	table_form.packpblTue_cnucka_KoMaHg = function()
 	KHonka_koMaHg_HaJaTa = not KHonka_koMaHg_HaJaTa
@@ -9905,7 +9924,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.swing_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
 		table_form.swing_button.setClickable(KHonka_koMaHg_HaJaTa)		
 		
-			table_form.forward_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.forward_button.setVisible(KHonka_koMaHg_HaJaTa)
 		table_form.forward_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
 		table_form.forward_button.setClickable(KHonka_koMaHg_HaJaTa)
 	
@@ -9920,6 +9939,14 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.turn_right_button.setVisible(KHonka_koMaHg_HaJaTa)
 		table_form.turn_right_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
 		table_form.turn_right_button.setClickable(KHonka_koMaHg_HaJaTa)
+		
+		table_form.up_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.up_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.up_button.setClickable(KHonka_koMaHg_HaJaTa)
+	
+		table_form.down_button.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.down_button.caption.setVisible(KHonka_koMaHg_HaJaTa)
+		table_form.down_button.setClickable(KHonka_koMaHg_HaJaTa)
 	end
 	
 	
@@ -10189,6 +10216,13 @@ coo6LLleHu9l_OT_po6oToB.LLlaxTep_online = function(status_table)
 	end
 end
 coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
+	LLlaxTep_start.x = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.x))
+	LLlaxTep_start.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.y))
+	LLlaxTep_start.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.z))
+	LLlaxTep_TekyLLlue.x = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.x))
+	LLlaxTep_TekyLLlue.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.y))
+	LLlaxTep_TekyLLlue.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.z))
+	hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_turn_animation(Ta6JIuca_cocTo9lHu9l.HanpaBJIeHue_o63opa)
@@ -10199,27 +10233,18 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 			local h2 = h1
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
-			LLlaxTep_start.x = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.x))
-			LLlaxTep_start.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.y))
-			LLlaxTep_start.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.z))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. LLlaxTep_start.x  .. " y" .. LLlaxTep_start.y .. " z" .. LLlaxTep_start.z)
-		
-			LLlaxTep_TekyLLlue.x = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.x))
-			LLlaxTep_TekyLLlue.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.y))
-			LLlaxTep_TekyLLlue.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.z))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.new_coords.setText("текущие корды: x" .. LLlaxTep_TekyLLlue.x  .. " y" .. LLlaxTep_TekyLLlue.y .. " z" .. LLlaxTep_TekyLLlue.z)
-			hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
-			
 			pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = Ta6JIuca_cocTo9lHu9l.inventorySize
 		end
 	end
 end
 coo6LLleHu9l_OT_po6oToB.new_start_coords = function(coords)
+	LLlaxTep_start.x = math.floor(tonumber(coords.x))
+	LLlaxTep_start.y = math.floor(tonumber(coords.y))
+	LLlaxTep_start.z = math.floor(tonumber(coords.z))
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then
-			LLlaxTep_start.x = math.floor(tonumber(coords.x))
-			LLlaxTep_start.y = math.floor(tonumber(coords.y))
-			LLlaxTep_start.z = math.floor(tonumber(coords.z))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. LLlaxTep_start.x  .. " y" .. LLlaxTep_start.y .. " z" .. LLlaxTep_start.z)
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: стартовые корды изменены")
 		end
@@ -10227,14 +10252,13 @@ coo6LLleHu9l_OT_po6oToB.new_start_coords = function(coords)
 end
 
 coo6LLleHu9l_OT_po6oToB.new_coords = function(coords)
+	LLlaxTep_TekyLLlue.x = math.floor(tonumber(coords.x))
+	LLlaxTep_TekyLLlue.y = math.floor(tonumber(coords.y))
+	LLlaxTep_TekyLLlue.z = math.floor(tonumber(coords.z))
 	for nick, _ in pairs(whiteListUsers) do
 		if Bce_ragJeTbl_urpoka[nick] and Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main then		
-			LLlaxTep_TekyLLlue.x = math.floor(tonumber(coords.x))
-			LLlaxTep_TekyLLlue.y = math.floor(tonumber(coords.y))
-			LLlaxTep_TekyLLlue.z = math.floor(tonumber(coords.z))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.new_coords.setText("Текущие корды: x" .. LLlaxTep_TekyLLlue.x  .. " y" .. LLlaxTep_TekyLLlue.y .. " z" .. LLlaxTep_TekyLLlue.z)
 			hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
-			
 			if coords.kyga_gBuraeMc9l ~= nil then
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: " .. coords.kyga_gBuraeMc9l)
 			end

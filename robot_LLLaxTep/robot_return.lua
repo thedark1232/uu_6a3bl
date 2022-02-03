@@ -56,6 +56,7 @@ do
 			ln[#ln + 1] = tonumber(line)
 		end
 		moveLibrary.swing_and_move(ln[1], ln[2], ln[3])
+		file:close()
 		os.exit()
 	end
 	

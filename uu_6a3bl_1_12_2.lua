@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 13"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10151,7 +10151,6 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--добавление кнопки return
 	table_form.KHonka_return = creat_new_button(-1, nick, x_m + 1, y_m + 29, 75, 12, "return", "button", false, gray, white, function()
-		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: возвращение на базу")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_return"})
 		table_form.packpblTue_cnucka_pa6o4ero_peJuMa()
 	end)
@@ -10266,10 +10265,13 @@ coo6LLleHu9l_OT_po6oToB.new_coords = function(coords)
 		end
 	end
 end
-
 function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 	if component.isAvailable("hologram") then
 		local st, er = pcall(function()
+			if holo_npegblgyLLlue.x ~= nil then
+				component.hologram.set(holo_npegblgyLLlue.x, holo_npegblgyLLlue.y, holo_npegblgyLLlue.z, 2)
+			end
+		
 			local x_vox, y_vox, z_vox
 			if LLlaxTep_TekyLLlue.x < LLlaxTep_start.x then
 				z_vox = LLlaxTep_TekyLLlue.x + (math.abs(LLlaxTep_start.x))
@@ -10302,16 +10304,13 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			
 			component.hologram.set(x_vox, y_vox, z_vox, 3)
 
-			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox + 24: " .. tostring(x_vox + 24))
-			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox + 32: " .. tostring(y_vox + 32))
-			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox + 24: " .. tostring(z_vox + 24))
-			if holo_npegblgyLLlue.x == nil then
-				holo_npegblgyLLlue.x = x_vox
-				holo_npegblgyLLlue.y = y_vox
-				holo_npegblgyLLlue.z = z_vox
-			else
-				component.hologram.set(holo_npegblgyLLlue.x, holo_npegblgyLLlue.y, holo_npegblgyLLlue.z, 2)
-			end
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox + 24: " .. tostring(x_vox))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox + 32: " .. tostring(y_vox))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox + 24: " .. tostring(z_vox))
+
+			holo_npegblgyLLlue.x = x_vox
+			holo_npegblgyLLlue.y = y_vox
+			holo_npegblgyLLlue.z = z_vox
 		end)
 		if not st then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. er) end
 	end

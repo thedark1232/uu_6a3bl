@@ -59,7 +59,7 @@ end
 
 function return_my_position()
 	local pos = {}
-	local x, y, z = navigation.getPosition()
+	local x, y, z = navigate.getPosition()
 	pos.x = x
 	pos.y = y
 	pos.z = z
@@ -97,7 +97,7 @@ end
 function send_turn()
 	local t = {}
 	t[1] = "robot_turn"
-	t.facing = navigation.getFacing()
+	t.facing = navigate.getFacing()
 	send(t)
 end
 

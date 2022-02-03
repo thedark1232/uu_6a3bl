@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 25"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 26"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9398,7 +9398,7 @@ function forms:creat_po6oT_LLlaxTep_work_form(nick) --проверка соед�
 		table_form.destroy()
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work = nil
 		Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main = forms:creat_po6oT_LLlaxTep_main_form(nick)
-		Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
+		--Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main)
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_status"})
 	end)
 	table_form.online_button.setClickable(false)

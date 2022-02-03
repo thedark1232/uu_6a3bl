@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 5"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10250,7 +10250,6 @@ coo6LLleHu9l_OT_po6oToB.new_start_coords = function(coords)
 		end
 	end
 end
-
 coo6LLleHu9l_OT_po6oToB.new_coords = function(coords)
 	LLlaxTep_TekyLLlue.x = math.floor(tonumber(coords.x))
 	LLlaxTep_TekyLLlue.y = math.floor(tonumber(coords.y))
@@ -10275,7 +10274,7 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			elseif LLlaxTep_TekyLLlue.x == LLlaxTep_start.x then
 				x_vox = 0
 			else
-				x_vox = (math.abs(LLlaxTep_TekyLLlue.x)) + (math.abs(LLlaxTep_start.x))
+				x_vox = (math.abs(LLlaxTep_TekyLLlue.x)) - (math.abs(LLlaxTep_start.x))
 			end
 			
 			if LLlaxTep_TekyLLlue.y < LLlaxTep_start.y then
@@ -10283,14 +10282,14 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			elseif LLlaxTep_TekyLLlue.y == LLlaxTep_start.y then
 				y_vox = 0
 			else
-				y_vox = (math.abs(LLlaxTep_TekyLLlue.y)) + (math.abs(LLlaxTep_start.y))
+				y_vox = (math.abs(LLlaxTep_TekyLLlue.y)) - (math.abs(LLlaxTep_start.y))
 			end
 			if LLlaxTep_TekyLLlue.z < LLlaxTep_start.z then
 				z_vox = LLlaxTep_TekyLLlue.z + (math.abs(LLlaxTep_start.z))
 			elseif LLlaxTep_TekyLLlue.z == LLlaxTep_start.z then
 				z_vox = 0
 			else
-				z_vox = (math.abs(LLlaxTep_TekyLLlue.z)) + (math.abs(LLlaxTep_start.z))
+				z_vox = (math.abs(LLlaxTep_TekyLLlue.z)) - (math.abs(LLlaxTep_start.z))
 			end
 			component.hologram.set(24 + x_vox, 32 + y_vox, 24 + z_vox, 2)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox: " .. tostring(x_vox))

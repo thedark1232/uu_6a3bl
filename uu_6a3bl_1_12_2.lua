@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порталы 2"
+local Ha3BaHue_o6HoBJIeHu9l = "порталы 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -16,6 +16,11 @@ local one_ceHcop_y = 0
 local one_ceHcop_z = 0
 local nick_testera = ""
 local o6LLlee
+
+holoColors = {}
+holoColors.red = 0xf51111
+holoColors.green = 0x03ff0b
+holoColors.blue = 0x0703ff
 
 local LLlaxTep_start = {}
 local LLlaxTep_TekyLLlue ={}
@@ -9597,6 +9602,13 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	if not component.isAvailable("hologram") then
 		table_form.nogcKa3ku_no_ceHTpy(nogcka3ku.npoekTop_He_nogkJIl04eH)
+		hologram = nil
+	else
+		hologram = component.hologram
+		hologram.clear()
+		hologram.setPaletteColor(1, holoColors.green)
+		hologram.setPaletteColor(2, holoColors.red)
+		hologram.set(24, 32, 24, 1)
 	end
 		
 	--сдвиг формы + кнопка выхода
@@ -10187,7 +10199,7 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 			local h2 = h1
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.play_energy_animation(creat_wh_animation(0, h1, w2, h2, false))
 			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_BepCuu_po6oTa.setText(Ta6JIuca_cocTo9lHu9l.version)
-			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Стартовые корды: x" .. Ta6JIuca_cocTo9lHu9l.coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.coords.z)
+			Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.start_coords.setText("Текущие корды: x" .. Ta6JIuca_cocTo9lHu9l.coords.x  .. " y" .. Ta6JIuca_cocTo9lHu9l.coords.y .. " z" .. Ta6JIuca_cocTo9lHu9l.coords.z)
 			LLlaxTep_start.x = tonumber(Ta6JIuca_cocTo9lHu9l.coords.x)
 			LLlaxTep_start.y = tonumber(Ta6JIuca_cocTo9lHu9l.coords.y)
 			LLlaxTep_start.z = tonumber(Ta6JIuca_cocTo9lHu9l.coords.z)

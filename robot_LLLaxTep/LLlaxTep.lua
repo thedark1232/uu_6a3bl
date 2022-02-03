@@ -67,7 +67,6 @@ report = function(message) -- рапорт о состоянии
   elseif tunnel then -- если есть связанная карта
     component.tunnel.send(serialization.serialize(message)) -- послать сообщение через нее
   end
-  computer.beep() -- пикнуть
 end
 function stop_work()
 	error()

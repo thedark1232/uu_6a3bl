@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 32"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 33"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10240,6 +10240,8 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 	LLlaxTep_start.x = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.x))
 	LLlaxTep_start.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.y))
 	LLlaxTep_start.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.coords.z))
+	configuration[55] = LLlaxTep_start
+	setConfiguration()
 	LLlaxTep_TekyLLlue.x = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.x))
 	LLlaxTep_TekyLLlue.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.y))
 	LLlaxTep_TekyLLlue.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.z))
@@ -10349,7 +10351,9 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl(pucoBaTb_npeg
 			holo_npegblgyLLlue.y = y_vox
 			holo_npegblgyLLlue.z = z_vox
 		end)
-		if not st then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. er) end
+		if not st then
+			--Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. er)
+		end
 	end
 end
 
@@ -14522,6 +14526,12 @@ do
 		end
 	else
 		holo2 = configuration[54]
+	end
+	if configuration[55] == "nil" then
+		configuration[55] = LLlaxTep_start
+		setConfiguration()
+	else
+		LLlaxTep_start = configuration[55]
 	end
 	
 	holo = nil

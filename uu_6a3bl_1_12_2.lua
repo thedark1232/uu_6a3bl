@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 48"
+local Ha3BaHue_o6HoBJIeHu9l = "турелька 2"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1015,7 +1015,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			--print("градусы горизонт: " .. deg .. " градусы вертикаль: ".. degv)
 			component.invoke(k, "moveTo", deg, degv)
 			component.invoke(k, "fire")
-			os.sleep(50)
+			os.sleep(16)
 		end
 	end)
 	if not st then print(er) end

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 10"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 11"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10293,7 +10293,7 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			else
 				x_vox = (math.abs(LLlaxTep_TekyLLlue.z)) - (math.abs(LLlaxTep_start.z))
 			end
-			component.hologram.set(24 + z_vox, 32 + y_vox, 24 + x_vox, 3)
+			component.hologram.set(24 + x_vox, 32 + y_vox, 24 + z_vox, 3)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox: " .. tostring(x_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox: " .. tostring(z_vox))

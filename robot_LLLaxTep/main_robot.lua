@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.35"
+local o6HoBJIeHue = "v.36"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -165,10 +165,13 @@ command.o6HoBuTb_size_library = function()
 	o6HoBuTb_qpauJI("https://raw.githubusercontent.com/thedark1232/uu_6a3bl/main/robot_LLLaxTep/sizeLibrary.lua", "/lib/sizeLibrary", true)
 end
 command.robot_return = function(uHcTpykcuu)
-	send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "возвращаюсь на базу"}
-	loadfile("return.lua")("2")
-	send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "робот вернулся на базу"}
-	send{"coo6LLleHue_Ha_chatBox", "робот шахтер вернулся на базу"}
+	local st, er = pcall(function()
+		send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "возвращаюсь на базу"}
+		loadfile("return.lua")("2")
+		send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "робот вернулся на базу"}
+		send{"coo6LLleHue_Ha_chatBox", "робот шахтер вернулся на базу"}
+	end
+	if not st then send{"coo6LLleHue_Ha_chatBox", "ошибка возвращения"} end
 end
 command.save_position = function(uHcTpykcuu)
 	local table_coords = {}

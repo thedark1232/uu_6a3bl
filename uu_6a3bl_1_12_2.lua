@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 42"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 43"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -972,16 +972,18 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 	y_urpoka = tonumber(y_urpoka)
 	z_urpoka = tonumber(z_urpoka)
 	
-	local x, y, z
-	x = tonumber(v[2])
-	y = tonumber(v[3])
-	z = tonumber(v[4])
+
 	
 	local st, er = pcall(function()
 		for k, v in pairs(ta6JIuca_TyppeJIeu) do
 			local ropu3oHT_x
 			local ropu3oHT_y
 			local ropu3oHT_z
+			local x, y, z
+			x = tonumber(v[2])
+			y = tonumber(v[3])
+			z = tonumber(v[4])
+			
 			if x_urpoka >= 0 then
 				ropu3oHT_x = x - x_urpoka
 			else

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 41"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 42"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -972,25 +972,30 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 	y_urpoka = tonumber(y_urpoka)
 	z_urpoka = tonumber(z_urpoka)
 	
+	local x, y, z
+	x = tonumber(v[2])
+	y = tonumber(v[3])
+	z = tonumber(v[4])
+	
 	local st, er = pcall(function()
 		for k, v in pairs(ta6JIuca_TyppeJIeu) do
 			local ropu3oHT_x
 			local ropu3oHT_y
 			local ropu3oHT_z
 			if x_urpoka >= 0 then
-				ropu3oHT_x = v[2] - x_urpoka
+				ropu3oHT_x = x - x_urpoka
 			else
-				ropu3oHT_x = v[2] + x_urpoka
+				ropu3oHT_x = x + x_urpoka
 			end
 			if y_urpoka >= 0 then
-				ropu3oHT_y = v[3] - y_urpoka
+				ropu3oHT_y = y - y_urpoka
 			else
-				ropu3oHT_y = v[3] + y_urpoka
+				ropu3oHT_y = y + y_urpoka
 			end
 			if z_urpoka >= 0 then
-				ropu3oHT_z = v[4] - z_urpoka
+				ropu3oHT_z = z - z_urpoka
 			else
-				ropu3oHT_z = v[4] + z_urpoka
+				ropu3oHT_z = z + z_urpoka
 			end
 			
 			local zepKaJIo = 0
@@ -1002,11 +1007,11 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 				deg = deg - oTpucaTeJIbHblu_noBopoT
 			end
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
-			print("type(y_urpoka)", type(y_urpoka))
-			print("v[3]", v[3])
-			print("type(v[3]", type(v[3]))
-			io.read()
-			if y_urpoka > v[3] then degv = math.abs(degv) else degv = degv * -1 end
+			--print("type(y_urpoka)", type(y_urpoka))
+			--print("v[3]", v[3])
+			--print("type(v[3]", type(v[3]))
+			--io.read()
+			if y_urpoka > y then degv = math.abs(degv) else degv = degv * -1 end
 			degv = degv + HakJIoH
 			--print("вертикаль = " .. degv)
 			--print("градусы горизонт: " .. deg .. " градусы вертикаль: ".. degv)

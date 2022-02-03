@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.41"
+local o6HoBJIeHue = "v.42"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -168,8 +168,12 @@ command.robot_return = function(uHcTpykcuu)
 	send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "возвращаюсь на базу"}
 	local a = loadfile("return.lua")
 	local b, c = pcall(a, "2")
-	send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "робот вернулся на базу"}
-	send{"coo6LLleHue_Ha_chatBox", "робот шахтер вернулся на базу"}
+	if b then
+		send{"coo6LlleHue_B_TexTBoB_cocTo9lHu9l", ["text"] = "робот вернулся на базу"}
+		send{"coo6LLleHue_Ha_chatBox", "робот шахтер вернулся на базу"}
+	else
+		send{"coo6LLleHue_Ha_chatBox", tostring(c)}
+	end
 
 end
 command.save_position = function(uHcTpykcuu)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 27"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 29"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9579,9 +9579,9 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--подсказки по центру экрана
 	local nogcka3ku = {}
-	nogcka3ku.npoekTop_He_nogkJIl04eH = {["x1"] = x_main + 189, ["y1"] = y_main + 69, ["text1"] = "Проектор", ["visible1"] = true,
+	nogcka3ku.npoekTop_He_nogkJIl04eH = {["x1"] = x_main + 189, ["y1"] = y_main + 69, ["text1"] = "Проекторы", ["visible1"] = true,
 										 ["x2"] = x_main + 243, ["y2"] = y_main + 89, ["text2"] = "не", ["visible2"] = true,
-										 ["x3"] = x_main + 179, ["y3"] = y_main + 109, ["text3"] = "подключен", ["visible3"] = true}
+										 ["x3"] = x_main + 179, ["y3"] = y_main + 109, ["text3"] = "найдены", ["visible3"] = true}
 										 
 	table_form.nogcka3ka_no_ceHTpy_ekpaHa1 = MoHuTop_urpoka[nick].addText(29 + x_main, y_main + 50, "", red)
 	table_form.nogcka3ka_no_ceHTpy_ekpaHa1.setScale(3)
@@ -9602,17 +9602,21 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end
 	
 	table_form.hologram_clear = function()
-		if not component.isAvailable("hologram") then
+		if holo1 == nil or holo2 == nil then
 			table_form.nogcKa3ku_no_ceHTpy(nogcka3ku.npoekTop_He_nogkJIl04eH)
-			hologram = nil
-		else
-			hologram = component.hologram
-			hologram.clear()
-			hologram.setPaletteColor(1, holoColors.green)
-			hologram.setPaletteColor(2, holoColors.red)
-			hologram.setPaletteColor(3, holoColors.blue)
-			hologram.set(24, 32, 25, 1)
+			return
 		end
+		
+		component.invoke(holo1, "clear")
+		component.invoke(holo1, 1, holoColors.green)
+		component.invoke(holo1, 2, holoColors.red)
+		component.invoke(holo1, 3, holoColors.blue)
+		component.invoke(holo1, "set", 24, 32, 25, 1)
+
+		component.invoke(holo2, "clear")
+		component.invoke(holo2, 1, holoColors.green)
+		component.invoke(holo2, 2, holoColors.red)
+		component.invoke(holo2, 3, holoColors.blue)
 	end
 	
 	--сдвиг формы + кнопка выхода
@@ -10282,10 +10286,14 @@ coo6LLleHu9l_OT_po6oToB.new_coords = function(coords)
 	end
 end
 function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl(pucoBaTb_npegblgyLLLee_noJIoJeHue)
-	if component.isAvailable("hologram") then
+	if holo1 ~= nil and holo2 ~= nil then
 		local st, er = pcall(function()
 			if holo_npegblgyLLlue.x ~= nil and pucoBaTb_npegblgyLLLee_noJIoJeHue then
-				component.hologram.set(holo_npegblgyLLlue.x, holo_npegblgyLLlue.y, holo_npegblgyLLlue.z, 2)
+				if holo_npegblgyLLlue.y > 0 then
+					component.invoke(holo1, "set", holo_npegblgyLLlue.x, holo_npegblgyLLlue.y + 32,  holo_npegblgyLLlue.z, 2)
+				else
+					component.invoke(holo2, "set", holo_npegblgyLLlue.x, holo_npegblgyLLlue.y,  holo_npegblgyLLlue.z, 2)
+				end
 			end
 		
 			local x_vox, y_vox, z_vox
@@ -10328,12 +10336,15 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl(pucoBaTb_npeg
 			y_vox = y_vox + 32
 			z_vox = z_vox + 24
 			
-			component.hologram.set(x_vox, y_vox, z_vox, 3)
-
+			if y_vox > 0 then
+				component.invoke(holo1, "set", x_vox, y_vox, z_vox, 3)
+			else
+				component.invoke(holo2, "set", x_vox, y_vox + 32, z_vox, 3)
+			end
+									
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox + 24: " .. tostring(x_vox))
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox + 32: " .. tostring(y_vox))
 			--Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox + 24: " .. tostring(z_vox))
-
 			holo_npegblgyLLlue.x = x_vox
 			holo_npegblgyLLlue.y = y_vox
 			holo_npegblgyLLlue.z = z_vox
@@ -14487,6 +14498,33 @@ do
 	else
 		oTpucaTeJIbHblu_noBopoT = configuration[52]
 	end
+	holo = component.list("hologram")
+	sort_holo = {}
+	for k,v in pairs(holo) do
+		table.insert(sort_holo, k)
+	end
+	
+	if configuration[53] == "nil" then
+		if #sort_holo > 1 then
+			configuration[53] = sort_holo[1]
+			holo1 = sort_holo[1]
+			setConfiguration()
+		end
+	else
+		agpec_holo1 = configuration[53]
+	end
+	if configuration[54] == "nil" then
+		if #sort_holo > 1 then
+			configuration[54] = sort_holo[2]
+			holo2 = sort_holo[2]
+			setConfiguration()
+		end
+	else
+		agpec_holo2 = configuration[54]
+	end
+	
+	holo = nil
+	sort_holo = nil
 	
 	if one_ceHcop_BKJI then
 		if component.isAvailable("openperipheral_sensor") then oguH_ceHcop = component.openperipheral_sensor end

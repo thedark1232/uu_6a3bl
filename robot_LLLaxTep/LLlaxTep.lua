@@ -10,6 +10,7 @@ local X, Y, Z, D, border = 0, 0, 0, 0 -- переменные локальной
 local steps, turns = 0, 0 -- debug
 local WORLD = {x = {}, y = {}, z = {}} -- таблица меток
 local E_C, W_R = 0, 0 -- энергозатраты на один шаг и скорость износа
+local navigate = component.navigation
 
 nopTbl = {} --так же скопировать таблицу в робота шахтера
 nopTbl.coo6LLleHu9l_oT_LLlaxTepa = 1000
@@ -138,6 +139,17 @@ check = function(forcibly) -- проверка инструмента, бата�
     end
   end
 end
+
+function return_my_position()
+	local pos = {}
+	local x, y, z = navigate.getPosition()
+	pos.x = x
+	pos.y = y
+	pos.z = z
+	
+	return pos
+end
+
 step = function(side, ignore) -- функция движения на 1 блок
   local result, obstacle = robot.swing(side) 
   if not result and obstacle ~= 'air' and robot.detect(side) then -- если блок нельзя разрушить
@@ -148,6 +160,10 @@ step = function(side, ignore) -- функция движения на 1 блок
     while robot.swing(side) do end -- копать пока возможно
   end
   if robot.move(side) then -- если робот сдвинулся, обновить координаты
+	local t = return_my_position()
+	t[1] = "new_coords"
+	t.kyga_gBuraeMc9l = "движение"
+	report(t)
     steps = steps + 1 -- debug
     if side == 0 then
       Y = Y-1
@@ -172,6 +188,10 @@ end
 turn = function(side) -- поворот в сторону
   side = side or false
   if robot.turn(side) and D then -- если робот повернулся, обновить переменную  направления
+	local t = {}
+	t[1] = "robot_turn"
+	t.facing = navigate.getFacing()
+	report(t)
     turns = turns+1 -- debug
     if side then
       D = (D+1)%4

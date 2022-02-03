@@ -9615,9 +9615,6 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		end
 	end
 	
-	table_form.hologram_clear()
-	
-
 	--сдвиг формы + кнопка выхода
 	table_form.BepxHuu_cePblu_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 422, 10, gray)
 	table_form.return_button = creat_new_button(1, nick, x_main + 412, y_main, 11, 10, "X", "return_button", true, red, white, function() table_form.destroy() end)
@@ -10174,8 +10171,8 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	
 	--добавление кнопки clear holo
 	table_form.kHOnka_clear_holo = creat_new_button(-1, nick, x_m + 1, y_m + 55, 75, 12, "clear holo", "button", false, gray, white, function()
-		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: очистка голопроектора")
 		table_form.hologram_clear()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: голопроектор очищен")
 	end)
 	table_form.kHOnka_clear_holo.setVisible(false)
 	table_form.kHOnka_clear_holo.caption.setVisible(false)

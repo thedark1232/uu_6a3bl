@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 7"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9787,7 +9787,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.TpeyroJIbHuk_cnucka_koMaHg = MoHuTop_urpoka[nick].addTriangle({x_c + 60, y_c + 1}, {x_c + 75, y_c + 1}, {x_c + 68, y_c + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka_koMaHg.setClickable(false)
-	table_form.box_cnucka_KoMaHg = MoHuTop_urpoka[nick].addBox(x_c, y_c + 15, 104, 118, red)
+	table_form.box_cnucka_KoMaHg = MoHuTop_urpoka[nick].addBox(x_c, y_c + 15, 77, 144, red)
 	table_form.box_cnucka_KoMaHg.setClickable(false)
 	table_form.box_cnucka_KoMaHg.setVisible(false)
 	
@@ -9880,7 +9880,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.up_button.setClickable(false)
 	
 	--добавление копки robot_down
-	table_form.down_button = creat_new_button(-1, nick, x_c + 1, y_c + 133, 75, 12, "down", "button", false, gray, white, function()
+	table_form.down_button = creat_new_button(-1, nick, x_c + 1, y_c + 146, 75, 12, "down", "button", false, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка движения вниз")
 		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robor_down"})
 	end)
@@ -10291,7 +10291,7 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			else
 				z_vox = (math.abs(LLlaxTep_TekyLLlue.z)) - (math.abs(LLlaxTep_start.z))
 			end
-			component.hologram.set(24 + x_vox, 32 + y_vox, 24 + z_vox, 2)
+			component.hologram.set(24 + z_vox, 32 + y_vox, 24 + x_vox, 2)
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox: " .. tostring(x_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox: " .. tostring(z_vox))

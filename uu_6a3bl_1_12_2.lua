@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 22"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 23"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10140,7 +10140,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma = MoHuTop_urpoka[nick].addTriangle({x_m + 60, y_m + 1}, {x_m + 75, y_m + 1}, {x_m + 68, y_m + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setClickable(false)
-	table_form.box_pa6o4ero_peJuMa = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 77, 54, red)
+	table_form.box_pa6o4ero_peJuMa = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 77, 53, red)
 	table_form.box_pa6o4ero_peJuMa.setClickable(false)
 	table_form.box_pa6o4ero_peJuMa.setVisible(false)
 	
@@ -10323,13 +10323,13 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox: " .. tostring(z_vox))
 			x_vox = x_vox + 24
-			y_vox = y_vox + 32
+			y_vox = 32 - y_vox
 			z_vox = z_vox + 24
 			
 			component.hologram.set(x_vox, y_vox, z_vox, 3)
 
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox + 24: " .. tostring(x_vox))
-			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox + 32: " .. tostring(y_vox))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("32 - y_vox: " .. tostring(y_vox))
 			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox + 24: " .. tostring(z_vox))
 
 			holo_npegblgyLLlue.x = x_vox

@@ -57,6 +57,16 @@ function move_lib.check_navigate_component()
 	return false
 end
 
+function return_my_position()
+	local pos = {}
+	local x, y, z = navigation.getPosition()
+	pos.x = x
+	pos.y = y
+	pos.z = z
+	
+	return pos
+end
+
 function forward()
 	if robot.forward() then
 		local t = return_my_position()
@@ -99,12 +109,10 @@ function move_lib.moveOut(new_position_x, new_position_y, new_position_z)
 	while robot_position_x ~= new_position_x do
    		if robot_position_x < new_position_x then
 			table_sides[5][navigate.getFacing()]()
-			send_turn()
 			robot.forward()
     		robot_position_x = navigate.getPosition()
    		elseif robot_position_x > new_position_x then
       		table_sides[4][navigate.getFacing()]()
-			send_turn()
             robot.forward()
 			robot_position_x = navigate.getPosition()
   		end
@@ -112,22 +120,18 @@ function move_lib.moveOut(new_position_x, new_position_y, new_position_z)
 	while robot_position_y ~= new_position_y do
    		if robot_position_y < new_position_y then
       	  	table_sides[3][navigate.getFacing()]()
-			send_turn()
 			robot.forward()
      		_,_,robot_position_y = navigate.getPosition()
    		elseif robot_position_y > new_position_y then
     		table_sides[2][navigate.getFacing()]()			
-			send_turn()
 			robot.forward()
 			_,_,robot_position_y = navigate.getPosition()
    		end
 	end
 	while robot_position_z ~= new_position_z do
 		if robot_position_z < new_position_z then
-			up()
 			_,robot_position_z,_ = navigate.getPosition()
 		elseif robot_position_z > new_position_z then
-			down()
 			_,robot_position_z,_ = navigate.getPosition()
 		end
 	end
@@ -139,12 +143,13 @@ function move_lib.swing_and_move(new_position_x, new_position_y, new_position_z)
 	while robot_position_x ~= new_position_x do
    		if robot_position_x < new_position_x then
 			table_sides[5][navigate.getFacing()]()
+			send_turn()
 			robot.swing()
 			forward()
     		robot_position_x = navigate.getPosition()
-			
    		elseif robot_position_x > new_position_x then
       		table_sides[4][navigate.getFacing()]()
+			send_turn()
 			robot.swing()
             forward()
 			robot_position_x = navigate.getPosition()
@@ -153,11 +158,13 @@ function move_lib.swing_and_move(new_position_x, new_position_y, new_position_z)
 	while robot_position_y ~= new_position_y do
    		if robot_position_y < new_position_y then
       	  	table_sides[3][navigate.getFacing()]()
+			send_turn()
 			robot.swing()
 			forward()
      		_,_,robot_position_y = navigate.getPosition()
    		elseif robot_position_y > new_position_y then
     		table_sides[2][navigate.getFacing()]()	
+			send_turn()
 			robot.swing()
 			forward()
 			_,_,robot_position_y = navigate.getPosition()
@@ -166,11 +173,11 @@ function move_lib.swing_and_move(new_position_x, new_position_y, new_position_z)
 	while robot_position_z ~= new_position_z do
 		if robot_position_z < new_position_z then
 			robot.swingUp()
-			robot.up()
+			up()
 			_,robot_position_z,_ = navigate.getPosition()
 		elseif robot_position_z > new_position_z then
 			robot.swingDown()
-			robot.down()
+			down()
 			_,robot_position_z,_ = navigate.getPosition()
 		end
 	end

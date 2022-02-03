@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 1"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -10208,6 +10208,8 @@ coo6LLleHu9l_OT_po6oToB.robot_status = function(Ta6JIuca_cocTo9lHu9l)
 			LLlaxTep_TekyLLlue.y = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.y))
 			LLlaxTep_TekyLLlue.z = math.floor(tonumber(Ta6JIuca_cocTo9lHu9l.new_coords.z))
 			
+			hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
+			
 			pa3Mep_uHBeHTap9l_po6oTa_LLlaXTepa = Ta6JIuca_cocTo9lHu9l.inventorySize
 		end
 	end
@@ -10232,18 +10234,31 @@ coo6LLleHu9l_OT_po6oToB.new_coords = function(coords)
 			LLlaxTep_TekyLLlue.y = math.floor(tonumber(coords.y))
 			LLlaxTep_TekyLLlue.z = math.floor(tonumber(coords.z))
 			
-			local x_vox, y_vox, z_vox
-			if component.isAvailable("hologram") then
-				if LLlaxTep_TekyLLlue.x < LLlaxTep_start.x then x_vox = LLlaxTep_TekyLLlue.x + (math.abs(LLlaxTep_start.x)) else x_vox = (math.abs(LLlaxTep_TekyLLlue.x)) + (math.abs(LLlaxTep_start.x)) end
-				if LLlaxTep_TekyLLlue.y < LLlaxTep_start.y then y_vox = LLlaxTep_TekyLLlue.y + (math.abs(LLlaxTep_start.y)) else y_vox = (math.abs(LLlaxTep_TekyLLlue.y)) + (math.abs(LLlaxTep_start.y)) end
-				if LLlaxTep_TekyLLlue.z < LLlaxTep_start.z then z_vox = LLlaxTep_TekyLLlue.z + (math.abs(LLlaxTep_start.z)) else z_vox = (math.abs(LLlaxTep_TekyLLlue.z)) + (math.abs(LLlaxTep_start.z)) end
-				component.hologram.set(x_vox, y_vox, z_vox, 2)
-			end
+			hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 			
 			if coords.kyga_gBuraeMc9l ~= nil then
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_main.nogcka3ka_cocTo9lHu9l.setText("состояние: " .. coords.kyga_gBuraeMc9l)
 			end
 		end
+	end
+end
+
+function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
+	if component.isAvailable("hologram") then
+		local st, er = pcall(function()
+			local x_vox, y_vox, z_vox
+			if LLlaxTep_TekyLLlue.x < LLlaxTep_start.x then x_vox = LLlaxTep_TekyLLlue.x + (math.abs(LLlaxTep_start.x)) else x_vox = (math.abs(LLlaxTep_TekyLLlue.x)) + (math.abs(LLlaxTep_start.x)) end
+			if LLlaxTep_TekyLLlue.y < LLlaxTep_start.y then y_vox = LLlaxTep_TekyLLlue.y + (math.abs(LLlaxTep_start.y)) else y_vox = (math.abs(LLlaxTep_TekyLLlue.y)) + (math.abs(LLlaxTep_start.y)) end
+			if LLlaxTep_TekyLLlue.z < LLlaxTep_start.z then z_vox = LLlaxTep_TekyLLlue.z + (math.abs(LLlaxTep_start.z)) else z_vox = (math.abs(LLlaxTep_TekyLLlue.z)) + (math.abs(LLlaxTep_start.z)) end
+			component.hologram.set(24 + x_vox, 32 + y_vox, 24 + z_vox, 2)
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox: " .. tostring(x_vox))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox: " .. tostring(y_vox))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox: " .. tostring(z_vox))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("x_vox + 24: " .. tostring(x_vox + 24))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("y_vox + 32: " .. tostring(y_vox + 32))
+			Ta6JIuca_koMnoHeHToB["chat_box"].say("z_vox + 24: " .. tostring(z_vox + 24))
+		end)
+		if not st then Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. er) end
 	end
 end
 

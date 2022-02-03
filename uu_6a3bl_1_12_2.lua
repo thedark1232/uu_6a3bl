@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 44"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 45"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -988,12 +988,20 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			ropu3oHT_y = y + y_urpoka
 			ropu3oHT_z = z + z_urpoka
 			
+			print("ropu3oHT_x = x + x_urpoka", ropu3oHT_x, x, x_urpoka)
+			print("opu3oHT_y = y + y_urpoka", ropu3oHT_y, y, y_urpoka)
+			print("ropu3oHT_z = z + z_urpoka", ropu3oHT_z, z, z_urpoka)
+			print("ropu3oHT_z < 0", ropu3oHT_z < 0)
+			
 			local zepKaJIo = 0
 			if ropu3oHT_z < 0 then zepKaJIo = 180 end
 			local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
+			print("deg >= 0", deg >= 0)
 			if deg >= 0 then 
 				deg = deg + noJIoJuTeJIbHblu_noBopoT
+				print("deg + noJIoJuTeJIbHblu_noBopoT", deg + noJIoJuTeJIbHblu_noBopoT)
 			else
+				print("deg - oTpucaTeJIbHblu_noBopoT", deg - oTpucaTeJIbHblu_noBopoT)
 				deg = deg - oTpucaTeJIbHblu_noBopoT
 			end
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
@@ -1007,6 +1015,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			--print("градусы горизонт: " .. deg .. " градусы вертикаль: ".. degv)
 			component.invoke(k, "moveTo", deg, degv)
 			component.invoke(k, "fire")
+			os.slep(50)
 		end
 	end)
 	if not st then print(er) end

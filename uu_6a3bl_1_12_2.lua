@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 43"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 44"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -984,21 +984,9 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			y = tonumber(v[3])
 			z = tonumber(v[4])
 			
-			if x_urpoka >= 0 then
-				ropu3oHT_x = x - x_urpoka
-			else
-				ropu3oHT_x = x + x_urpoka
-			end
-			if y_urpoka >= 0 then
-				ropu3oHT_y = y - y_urpoka
-			else
-				ropu3oHT_y = y + y_urpoka
-			end
-			if z_urpoka >= 0 then
-				ropu3oHT_z = z - z_urpoka
-			else
-				ropu3oHT_z = z + z_urpoka
-			end
+			ropu3oHT_x = x + x_urpoka
+			ropu3oHT_y = y + y_urpoka
+			ropu3oHT_z = z + z_urpoka
 			
 			local zepKaJIo = 0
 			if ropu3oHT_z < 0 then zepKaJIo = 180 end

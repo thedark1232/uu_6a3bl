@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 35"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 36"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -968,6 +968,7 @@ function typpeJIu_BblcTpeJI()
 	end
 end
 function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
+	x_urpoka, y_urpoka, z_urpoka = tonumber(x_urpoka), tonumber(y_urpoka), tonumber(z_urpoka)
 	local st, er = pcall(function()
 		for k, v in pairs(ta6JIuca_TyppeJIeu) do
 			local ropu3oHT_x

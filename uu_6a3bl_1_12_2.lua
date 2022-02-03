@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 40"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 41"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -971,6 +971,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 	x_urpoka = tonumber(x_urpoka)
 	y_urpoka = tonumber(y_urpoka)
 	z_urpoka = tonumber(z_urpoka)
+	
 	local st, er = pcall(function()
 		for k, v in pairs(ta6JIuca_TyppeJIeu) do
 			local ropu3oHT_x
@@ -8993,6 +8994,9 @@ function forms:creat_HacTpouka_TypeJIeu_form(nick)
 			local agpec_gJI9l_HacTpouku = agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku[1]
 			
 			if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
+				x_zha4 = tonumber(x_zha4)
+				y_zha4 = tonumber(y_zha4)
+				z_zha4 = tonumber(z_zha4)
 				myComponentsLibrary.co3gaTb_u_coxpaHuTb_uHqpy_koMnoHeHTa(agpec_gJI9l_HacTpouku, uM9l, x_zha4, y_zha4, z_zha4, nyTb_k_qpauJIy_config_typpeJIeu)
 				table.remove(agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku, 1)
 				if #agreca_TyppeJIeu_Tpe6yl0lllux_o6pa6oTku > 0 then

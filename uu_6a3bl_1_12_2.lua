@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 15"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 17"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9610,7 +9610,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		hologram.setPaletteColor(1, holoColors.green)
 		hologram.setPaletteColor(2, holoColors.red)
 		hologram.setPaletteColor(3, holoColors.blue)
-		hologram.set(24, 32, 24, 1)
+		hologram.set(24, 32, 25, 1)
 	end
 		
 	--сдвиг формы + кнопка выхода
@@ -9884,7 +9884,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	--добавление копки robot_down
 	table_form.down_button = creat_new_button(-1, nick, x_c + 1, y_c + 146, 75, 12, "down", "button", false, gray, white, function()
 		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: попытка движения вниз")
-		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robor_down"})
+		HacTpouka_po6oTa_LLlaxTepa.send(serialization.serialize{"robot_down"})
 	end)
 	table_form.down_button.setVisible(false)
 	table_form.down_button.caption.setVisible(false)

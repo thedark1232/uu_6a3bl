@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.26"
+local o6HoBJIeHue = "v.27"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -174,7 +174,7 @@ command.save_position = function(uHcTpykcuu)
 	local table_coords = {}
 	table_coords[1] = "new_start_coords"
 	table_coords = BepHyTb_cTapToBble_KoopguHaTbl()
-	send{"coo6LLleHue_Ha_chatBox", "позиция сохранена"}
+
 	loadfile("return.lua")("1")
 	
 	send(table_coords)
@@ -182,7 +182,7 @@ end
 command.robot_forward = function()
 	if robot.forward() then
 		local t = return_my_position()
-		t[1] = "new_start_coords"
+		t[1] = "new_coords"
 		t.kyga_gBuraeMc9l = "движение вперед успешно"
 		send(t)
 	end
@@ -190,7 +190,7 @@ end
 command.robot_back = function()
 	if robot.back() then
 		local t = return_my_position()
-		t[1] = "new_start_coords"
+		t[1] = "new_coords"
 		t.kyga_gBuraeMc9l = "движение назад успешно"
 		send(t)
 	end

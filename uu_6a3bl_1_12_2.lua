@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "шахтер 17"
+local Ha3BaHue_o6HoBJIeHu9l = "шахтер 20"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -9601,17 +9601,23 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		end
 	end
 	
-	if not component.isAvailable("hologram") then
-		table_form.nogcKa3ku_no_ceHTpy(nogcka3ku.npoekTop_He_nogkJIl04eH)
-		hologram = nil
-	else
-		hologram = component.hologram
-		hologram.clear()
-		hologram.setPaletteColor(1, holoColors.green)
-		hologram.setPaletteColor(2, holoColors.red)
-		hologram.setPaletteColor(3, holoColors.blue)
-		hologram.set(24, 32, 25, 1)
+	table_form.hologram_clear = function()
+		if not component.isAvailable("hologram") then
+			table_form.nogcKa3ku_no_ceHTpy(nogcka3ku.npoekTop_He_nogkJIl04eH)
+			hologram = nil
+		else
+			hologram = component.hologram
+			hologram.clear()
+			hologram.setPaletteColor(1, holoColors.green)
+			hologram.setPaletteColor(2, holoColors.red)
+			hologram.setPaletteColor(3, holoColors.blue)
+			hologram.set(24, 32, 25, 1)
+		end
 	end
+	
+	table_form.hologram_clear()
+	
+	
 		
 	--сдвиг формы + кнопка выхода
 	table_form.BepxHuu_cePblu_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 422, 10, gray)
@@ -10124,7 +10130,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_Bblxog.setClickable(KHonka_cocTo9lHu9l_HaJaTa)
 	end
 	
-	--раскрывающийся список рабочего режима
+	--раскрывающийся список шахты
 	local x_m = x_main + 338
 	local y_m = y_main + 15
 	local KHonka_pa6o4ero_peJuma_HaJaTa = false
@@ -10135,7 +10141,7 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	end)
 	table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma = MoHuTop_urpoka[nick].addTriangle({x_m + 60, y_m + 1}, {x_m + 75, y_m + 1}, {x_m + 68, y_m + 10}, red, 1)
 	table_form.TpeyroJIbHuk_cnucka_pa6o4ero_peJuma.setClickable(false)
-	table_form.box_pa6o4ero_peJuMa = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 77, 40, red)
+	table_form.box_pa6o4ero_peJuMa = MoHuTop_urpoka[nick].addBox(x_m, y_m + 15, 77, 54, red)
 	table_form.box_pa6o4ero_peJuMa.setClickable(false)
 	table_form.box_pa6o4ero_peJuMa.setVisible(false)
 	
@@ -10167,6 +10173,14 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 	table_form.kHonka_save_pos.caption.setVisible(false)
 	table_form.kHonka_save_pos.setClickable(false)
 	
+	--добавление кнопки clear holo
+	table_form.kHOnka_clear_holo = creat_new_button(-1, nick, x_m + 1, y_m + 42, 75, 12, "clear holo", "button", false, gray, white, function()
+		table_form.nogcka3ka_cocTo9lHu9l.setText("состояние: очистка голопроектора")
+	end)
+	table_form.kHOnka_clear_holo.setVisible(false)
+	table_form.kHOnka_clear_holo.caption.setVisible(false)
+	table_form.kHOnka_clear_holo.setClickable(false)
+	
 	--функция раскрывающегося списка состояния
 	table_form.packpblTue_cnucka_pa6o4ero_peJuMa = function()
 		KHonka_pa6o4ero_peJuma_HaJaTa = not KHonka_pa6o4ero_peJuma_HaJaTa
@@ -10193,6 +10207,10 @@ function forms:creat_po6oT_LLlaxTep_main_form(nick)	--ГУИ управлени�
 		table_form.kHonka_save_pos.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
 		table_form.kHonka_save_pos.caption.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
 		table_form.kHonka_save_pos.setClickable(KHonka_pa6o4ero_peJuma_HaJaTa)
+		
+		table_form.kHOnka_clear_holo.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.kHOnka_clear_holo.caption.setVisible(KHonka_pa6o4ero_peJuma_HaJaTa)
+		table_form.kHOnka_clear_holo.setClickable(KHonka_pa6o4ero_peJuma_HaJaTa)
 	end
 			
 	--объединение таблиц
@@ -10279,6 +10297,11 @@ function hologram_HapucoBaTb_noJIoJeHue_po6oTa_oTHocuTeJIbHo_6a3bl()
 				z_vox = 0
 			else
 				z_vox = (math.abs(LLlaxTep_start.x)) - (math.abs(LLlaxTep_TekyLLlue.x))
+				if z_vox > 0 then
+					z_vox = z_vox * -1
+				elseif z_vox < 0 then
+					z_vox = math.abs(z_vox)
+				end
 			end
 			
 			if LLlaxTep_TekyLLlue.y < LLlaxTep_start.y then

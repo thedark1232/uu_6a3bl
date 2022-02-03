@@ -1,4 +1,4 @@
-local o6HoBJIeHue = "v.31"
+local o6HoBJIeHue = "v.32"
 local robot = require("robot")
 local component = require("component")
 local computer = require("computer")
@@ -253,7 +253,7 @@ function o6HoBuTb_qpauJI(ccblJIka, nyTb, go6aBuTb_lua_B_koHce_nyTu)
 				a:close()
 				table_cocTo9lHu9l.Bepcu9l = string.match(b, '%"(.+)%"')
 				if table_cocTo9lHu9l.Bepcu9l == nil then table_cocTo9lHu9l.Bepcu9l = o6HoBJIeHue end
-				filesystem.remove(nyTb)
+				filesystem.remove(nyTb .. gonoJIHeHue)
 				filesystem.copy(nyTb .. "1232", nyTb .. gonoJIHeHue)
 				table_cocTo9lHu9l.cocTo9lHue = "успешное обновление"
 			else

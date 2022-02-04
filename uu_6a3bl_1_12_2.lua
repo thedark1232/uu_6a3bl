@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турелька 7"
+local Ha3BaHue_o6HoBJIeHu9l = "турелька 9"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1007,8 +1007,10 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			end
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 
+			
+			if y_urpoka < y then degv = math.abs(degv) else degv = degv * -1 end
 			degv = degv + HakJIoH
-			if y_urpoka > y then degv = math.abs(degv) else degv = degv * -1 end
+			--if y_urpoka < y then 
 			
 --print("===================================================")
 			component.invoke(k, "moveTo", deg, degv)
@@ -4609,10 +4611,10 @@ function forms:creat_tyrret_form(nick)
 	
 	--кнопки тиммейтов
 	if nick == admin or configuration[8] == true then
-		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"](true) end)
-		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].oroHb_no_urpoky = forms:creat_oroHb_no_urpoky_form(nick) end)
-		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"](true) end)
 		table_form.TyppeJIu_on = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели выкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур офф"](true) end)
+		table_form.TyppeJIu_off = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "туррели вкл", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тур он"](true) end)
+		table_form.oroHb_no_urpoKy = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "огонь по игроку", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].oroHb_no_urpoky = forms:creat_oroHb_no_urpoky_form(nick) end)
+		table_form.aBTopeJuM = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "авто-защита базы", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " туррели авторежим"](true) end)
 		table_form.cTaTyc_3aLLluTbl_nepuMeTpa = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "статус защиты", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " статус защиты периметра"]() end)
 	end
 	

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турелька 9"
+local Ha3BaHue_o6HoBJIeHu9l = "турелька 10"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1008,8 +1008,15 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 
 			
-			if y_urpoka < y then degv = math.abs(degv) else degv = degv * -1 end
-			degv = degv + HakJIoH
+			if y_urpoka > y then
+				degv = math.abs(degv)
+				degv = degv + HakJIoH
+			else
+				degv = degv - HakJIoH
+				degv = degv * -1
+				
+			end
+			
 			--if y_urpoka < y then 
 			
 --print("===================================================")

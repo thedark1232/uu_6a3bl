@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турелька 4"
+local Ha3BaHue_o6HoBJIeHu9l = "турелька 5"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -139,7 +139,7 @@ zoHbl_JIoroB = {}
 zagepJka_oTBeTa_HaHuToB = 5
 cMellleHue_BblBoga_o4koB_no_y = 20
 noJIoJuTeJIbHblu_noBopoT = 0 --положительное смещение турели по горизонтали
-oTpucaTeJIbHblu_noBopoT = 0 --отрицательное смещение турели по горизонтали
+oTpucaTeJIbHblu_noBopoT = 180 --отрицательное смещение турели по горизонтали
 HakJIoH = 0 --смещение турели по вертикали
 --ta6JIuca_coo6llleHuu_HaHuToB = {event.pull(zagepJka_oTBeTa_HaHuToB, "modem_message")}
 coo6llleHue_TuHHeJI9l = {}
@@ -988,27 +988,28 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			ropu3oHT_y = y - y_urpoka
 			ropu3oHT_z = z - z_urpoka
 			
-			print("ropu3oHT_x = x + x_urpoka", ropu3oHT_x, x, x_urpoka)
-			print("opu3oHT_y = y + y_urpoka", ropu3oHT_y, y, y_urpoka)
-			print("ropu3oHT_z = z + z_urpoka", ropu3oHT_z, z, z_urpoka)
-			print("ropu3oHT_z < 0", ropu3oHT_z < 0)
-			
-			local zepKaJIo = 0
-			if ropu3oHT_z < 0 then zepKaJIo = 180 end
-			local deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + zepKaJIo
-			print("deg >= 0", deg >= 0)
+			--print("ropu3oHT_x = x + x_urpoka", ropu3oHT_x, x, x_urpoka)
+			--print("opu3oHT_y = y + y_urpoka", ropu3oHT_y, y, y_urpoka)
+			--print("ropu3oHT_z = z + z_urpoka", ropu3oHT_z, z, z_urpoka)
+			--print("ropu3oHT_z < 0", ropu3oHT_z < 0)
+			local deg
+
+			if ropu3oHT_z < 0 then 
+				deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + oTpucaTeJIbHblu_noBopoT
+			else
+				deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1
+			end
+			--print("deg >= 0", deg >= 0)
 			if deg >= 0 then 
 				deg = deg + noJIoJuTeJIbHblu_noBopoT
-				print("deg + noJIoJuTeJIbHblu_noBopoT", deg + noJIoJuTeJIbHblu_noBopoT)
 			else
-				print("deg - oTpucaTeJIbHblu_noBopoT", deg - oTpucaTeJIbHblu_noBopoT)
-				deg = deg - oTpucaTeJIbHblu_noBopoT
+				deg = deg
 			end
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 
 			if y_urpoka > y then degv = math.abs(degv) else degv = degv * -1 end
 			degv = degv + HakJIoH
-print("===================================================")
+--print("===================================================")
 			component.invoke(k, "moveTo", deg, degv)
 			component.invoke(k, "fire")
 			--os.sleep(16)
@@ -4618,8 +4619,18 @@ function forms:creat_tyrret_form(nick)
 	if nick == admin then
 		table_form.koppekcu9l_BJIeBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "положительный левее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттл"]() end)
 		table_form.koppekcu9l_BnpaBo = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "положительный правее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттп"]() end)
+		table_form.o6HyJIuTb_noJIoJuTeJIbHblu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "обнулить положительный", "button", start_visible, gray, white, function()
+			noJIoJuTeJIbHblu_noBopoT = 0
+			configuration[13] = noJIoJuTeJIbHblu_noBopoT
+			setConfiguration()
+		end)
 		table_form.koppekcu9l_BJIeBo_oTpucaTeJIbHa9l = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "отрицательный левее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттол"]() end)
 		table_form.koppekcu9l_BnpaBo_oTpucaTeJIbHa9l = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "отрицательный правее", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттоп"]() end)
+		table_form.o6HyJIuTb_oTpucaTeJIbHblu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "обнулить отрицательный", "button", start_visible, gray, white, function()
+			oTpucaTeJIbHblu_noBopoT = 0
+			configuration[52] = oTpucaTeJIbHblu_noBopoT
+		setConfiguration()
+		end)
 		table_form.HakJIoH_BBepx = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "наклон выше", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттв"]() end)
 		table_form.HakJIoH_BHu3 = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "наклон ниже", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ттн"]() end)
 		table_form.HauTu_HoBble_TyppeJIu = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "найти новые", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " найти новые туррели"]() end)

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порталы 1"
+local Ha3BaHue_o6HoBJIeHu9l = "порталы 3"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2449,12 +2449,13 @@ function forms:creat_main_form(nick)
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BkJI_animation()
 			end
 		end)
-		table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", start_visible,  gray, white, function()
-			Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick)
-			Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep)
-		end)
-		table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  gray, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
+		
 	end
+	table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", start_visible,  gray, white, function()
+		Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick)
+		Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep)
+	end)
+	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  gray, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
 	table_form.TuMMeuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тиммейты", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].TuMMeuTbl = forms:creat_TuMMeuTbl_form(nick) end)
 	table_form.MaTpuca = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "матрица", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].MaTpuca = forms:creat_MaTpuca_form(nick) end)
@@ -3680,13 +3681,21 @@ function forms:creat_TeJIenopTep_form(nick)
 		table_form["tp " .. tostring(i)] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, Ha3BaHue_kHonku, "icon", start_visible, black, white, function(num)
 			if koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then
 				num = tonumber(num)
-				table_form.tb_x.caption.setText(tostring())
-				table_form.tb_y.caption.setText(tostring())
-				table_form.tb_z.caption.setText(tostring())
+				table_form.tb_x.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][1]))
+				table_form.tb_y.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][2]))
+				table_form.tb_z.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][3]))
 				table_form.nogcka3ka2.setText(koopgbl_gJI9l_TpaHcnocePa[num][4])
-				table_form.nogcka3ka2.setText("портал настроен! Делай тп!")
-				table_form.nogcka3ka2.setColor(green)
 				table_form.HacTpouTb.caption.setText("Перенастроить")
+				if component.isAvailable("mo_transporter") then
+					Ta6JIuca_koMnoHeHToB["mo_transporter"].setX(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][1]))
+					Ta6JIuca_koMnoHeHToB["mo_transporter"].setY(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][2]))
+					Ta6JIuca_koMnoHeHToB["mo_transporter"].setZ(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][3]))
+					table_form.nogcka3ka2.setText("портал настроен! Делай тп!")
+					table_form.nogcka3ka2.setColor(green)
+				else
+					table_form.nogcka3ka2.setText("транспортер не найден!")
+					table_form.nogcka3ka2.setColor(red)
+				end
 			else
 				table_form.tb_uM9l.caption.setText("ввод названия")
 				table_form.tb_x.caption.setText("ввод х")

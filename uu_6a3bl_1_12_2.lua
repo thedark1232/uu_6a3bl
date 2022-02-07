@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турелька 13"
+local Ha3BaHue_o6HoBJIeHu9l = "турелька 14"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -1000,7 +1000,6 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 				deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + noJIoJuTeJIbHblu_noBopoT
 			end
 			yroJI_HakJIoHa.setText("угол наклона: " .. tostring(deg))
-			os.sleep(2)
 			
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
 			
@@ -13591,6 +13590,7 @@ do
 				ceJIb_TyppeJIeu = nil
 				peJum_orH9l = false
 				TyppeJIu_aBTo_peJuM = false
+				yroJI_HakJIoHa.delete()
 				yroJI_HakJIoHa = nil
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ваш уровень доступа к этой команде не достаточно высок!")

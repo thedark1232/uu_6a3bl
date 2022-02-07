@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турелька 12"
+local Ha3BaHue_o6HoBJIeHu9l = "турелька 13"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -999,7 +999,7 @@ function naBogka_u_oroHb(x_urpoka, y_urpoka, z_urpoka)
 			else
 				deg = math.deg(math.atan(ropu3oHT_x/ropu3oHT_z)) * -1 + noJIoJuTeJIbHblu_noBopoT
 			end
-			Ta6JIuca_koMnoHeHToB["chat_box"].say(tostring(deg))
+			yroJI_HakJIoHa.setText("угол наклона: " .. tostring(deg))
 			os.sleep(2)
 			
 			local degv = math.deg(math.atan(ropu3oHT_y / math.sqrt(ropu3oHT_x * ropu3oHT_x + ropu3oHT_z * ropu3oHT_z)))
@@ -8882,6 +8882,9 @@ function forms:creat_oroHb_no_urpoky_form(nick)
 			table_form[k] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, ceJIb, "button", start_visible, black, white, function()
 				ceJIb_TyppeJIeu = table_form[k].caption.getText()
 				typpeJIu_reJum_orH9l(true)
+				if yroJI_HakJIoHa == nil then
+					yroJI_HakJIoHa = Ta6JIuca_koMnoHeHToB["openperipheral_bridge"].addText(10, 10, "", red)
+				end
 				peJum_orH9l = true
 				table_form.destroy()
 				Bce_ragJeTbl_urpoka[nick]["tyrret"].destroy()
@@ -13588,6 +13591,7 @@ do
 				ceJIb_TyppeJIeu = nil
 				peJum_orH9l = false
 				TyppeJIu_aBTo_peJuM = false
+				yroJI_HakJIoHa = nil
 			else
 				Ta6JIuca_koMnoHeHToB["chat_box"].say(r .. "ваш уровень доступа к этой команде не достаточно высок!")
 			end

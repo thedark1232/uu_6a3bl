@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "турелька 17"
+local Ha3BaHue_o6HoBJIeHu9l = "порталы 1"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -3680,7 +3680,6 @@ function forms:creat_TeJIenopTep_form(nick)
 		table_form["tp " .. tostring(i)] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, Ha3BaHue_kHonku, "icon", start_visible, black, white, function(num)
 			if koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then
 				num = tonumber(num)
-				table_form.tb_uM9l.caption.setText()
 				table_form.tb_x.caption.setText(tostring())
 				table_form.tb_y.caption.setText(tostring())
 				table_form.tb_z.caption.setText(tostring())

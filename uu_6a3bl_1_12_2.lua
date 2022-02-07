@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "умный дом"
+local Ha3BaHue_o6HoBJIeHu9l = "умный дом 2"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3733,6 +3733,9 @@ function forms:creat_TeJIenopTep_form(nick)
 			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setX(table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.getX() + 1)
 			koopgbl_gJI9l_TpaHcnocePa[tonumber(TekyLLlee_HanpaBJIeHue)] = {x_zha4, y_zha4, z_zha4, uM9l}
 			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
+			Ta6JIuca_koMnoHeHToB["mo_transporter"].setX(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][1]))
+			Ta6JIuca_koMnoHeHToB["mo_transporter"].setY(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][2]))
+			Ta6JIuca_koMnoHeHToB["mo_transporter"].setZ(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][3]))
 			table_form.nogcka3ka2.setText(g .. "переназначено!")
 		end
 	end)

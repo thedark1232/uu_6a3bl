@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порталы 5"
+local Ha3BaHue_o6HoBJIeHu9l = "порталы 6"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -2440,7 +2440,7 @@ function forms:creat_main_form(nick)
 	table_form.nepuMeTp = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "периметр", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].nepuMeTp = forms:creat_nepuMeTp_form(nick); Bce_noToku[nick].nepuMeTp_noTok = myThread.create(nepuMeTp_noTok, nick) end)
 	table_form.alice_control = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "управление: " .. Ha3BaHue_6a3bl, "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].ynpaBJIeHue_alice = forms:creat_ynpaBJIeHue_alice_form(nick) end)
 	if nick == admin then
-		table_form.robot_LllaxTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "робот шахтер", "button", start_visible, black, white, function()
+		table_form.robot_LllaxTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "робот шахтер", "button", start_visible, gray, white, function()
 			if HacTpouka_po6oTa_LLlaxTepa.Tun_coeguHeHu9l == nil then 
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep = forms:creat_po6oT_LLlaxTep_form(nick)
 			else
@@ -2469,7 +2469,9 @@ function forms:creat_main_form(nick)
 	table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
 	table_form.HaHuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "наниты", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
 	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "зоны базы", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
-	table_form.npo4ee = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "прочее", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].npo4ee = forms:creat_npo4ee_form(nick) end)
+	if nick == admin then
+		table_form.npo4ee = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "прочее", "button", start_visible,  gray, white, function() Bce_ragJeTbl_urpoka[nick].npo4ee = forms:creat_npo4ee_form(nick) end)
+	end
 	
 	--создание каркаса скролла
 	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(x_main + 139, y_main + 29, 10, 10, gray)

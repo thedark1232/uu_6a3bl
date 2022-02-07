@@ -1,4 +1,5 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порталы 6"
+local Ha3BaHue_o6HoBJIeHu9l = "умный дом"
+local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -51,7 +52,7 @@ local Tekyllluu_TekcT = {}
 local co3gaHue_co6blTuu = true
 local urpoKu_gJI9l_oTo6paJeHu9l = {}
 local one_ceHcop_HoBble_urpoku = {}
-local admin = "The_Dark1232"
+
 local noTok_B_o4Kax = {}
 local Bce_noToku = {}
 local TecT_oTkJIuka = false
@@ -2465,8 +2466,8 @@ function forms:creat_main_form(nick)
 	table_form.ceHcopbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "сенсоры", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].sensors = forms:creat_sensors_form(nick) end)
 	table_form.TeHHeJIb = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "туннель", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tunnel = forms:creat_tunnel_form(nick) end)
 	table_form.tab_grive = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "тап драйв", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tape_drive = forms:creat_tape_drive_form(nick) end)
-	table_form.magaz = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "магаз дюрекса", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
-	table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
+	--table_form.magaz = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "магаз дюрекса", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].mara3_Durex = forms:creat_mara3_Durex_form(nick) end)
+	--table_form.casino = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "казино", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].casino = forms:creat_casino_form(nick) end)
 	table_form.HaHuTbl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "наниты", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].HaHuTbl = forms:creat_HaHuTbl_form(nick) end)
 	table_form.zoHbl_6a3bl = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "зоны базы", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].zone = forms:creat_zone_form(nick) end)
 	if nick == admin then
@@ -11014,7 +11015,7 @@ do
 	end
 	--присвоение названия базе
 	if configuration[11] == "nil" or configuration[11] == "" or configuration[11] == nil then --конфиг названия базы
-		Ha3BaHue_6a3bl = "база" .. math.floor(tostring(math.random(100,999)))
+		Ha3BaHue_6a3bl = "алиса"
 		Ha3BaHue_6a3bl = unicode.lower(Ha3BaHue_6a3bl)
 		configuration[11] = Ha3BaHue_6a3bl
 		setConfiguration()

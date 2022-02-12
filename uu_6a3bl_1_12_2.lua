@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 2"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 3"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -2449,7 +2449,10 @@ function forms:creat_main_form(nick)
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BkJI_animation()
 			end
 		end)
-		table_form.TeJIenopTep2 = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер2", "button", start_visible,  gray, white, function() end)
+		table_form.TeJIenopTep2 = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер2", "button", start_visible,  gray, white, function()
+			Bce_ragJeTbl_urpoka[nick].TeJIenopTep2 = forms:creat_TeJIenopTep2_form(nick)
+			Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep2)
+		end)
 	end
 	table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", start_visible,  black, white, function()
 		Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick)
@@ -3565,6 +3568,220 @@ function forms:creat_TeJIenopTep_form(nick)
 	local table_form = {}
 	
 	Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = "TeJIenopTep"
+	--создание функции видимости окна
+	table_form.setVisible = function(visible)
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if visible then					
+						if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+							v.setVisible(visible)
+							v.setClickable(visible)
+							v.caption.setVisible(visible)
+						else
+							v.setVisible(not visible)
+							v.setClickable(not visible)
+							v.caption.setVisible(not visible)
+						end
+					else
+						v.setVisible(visible)
+						v.caption.setVisible(visible)
+					end
+				else
+					v.setVisible(visible)
+				end
+			end
+		end
+	end
+
+	--функция видимости кнопок при скролле
+	table_form.buttons_visible = function(down)
+		local cgBur_no_Y = 17
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if v.getType() == "button" then
+					if down then
+						v.setY(v.getY() - cgBur_no_Y)
+						v.caption.setY(v.caption.getY() - cgBur_no_Y)
+					else
+						v.setY(v.getY() + cgBur_no_Y)
+						v.caption.setY(v.caption.getY() + cgBur_no_Y)
+					end				
+					if v.button_num >= table_form.scroll_button.value and v.button_num <= table_form.MakcuMyM_BuguMblx_kHonok() + table_form.scroll_button.value - 1 then
+						v.setVisible(true)
+						v.setClickable(true)
+						v.caption.setVisible(true)
+					else
+						v.setVisible(false)
+						v.setClickable(false)
+						v.caption.setVisible(false)
+					end
+				end
+			end
+		end
+	end
+	
+	--уничтожение формы
+	table_form.destroy = function()
+		for k, v in pairs(table_form) do
+			if type(v) ~= "function" then 
+				if string.match(v.getType(), "button") ~= nil or string.match(v.getType(), "icon") ~= nil then
+					v.caption.delete()
+					v.delete()
+				end
+				if v.getType() == "textBox" then
+					v.caption.delete()
+					v.background2.delete()
+					v.background3.delete()
+				end
+				v.delete()
+			end
+		end
+		Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = nil
+	end
+	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
+	
+	--главный фрейм
+	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 289, 205, blue)
+	--table_form.main_box.setClickable(false)
+	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
+	table_form.main_box2.setClickable(false)
+	
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(154 + x_main, y_main + 29, 132, 172, white)
+	table_form.main_box3.setClickable(false)
+			
+	--создание кнопок
+	local y = y_main + 14
+	local y_func = function()
+		y = y + 17
+		return y
+	end
+	local num = 0
+	local start_visible = true
+	local num_button = function()
+		num = num + 1
+		if num > table_form.MakcuMyM_BuguMblx_kHonok() then start_visible = false end
+		return num
+	end
+	
+	--отдельная кнопка выхода, от остальных кнопок
+	table_form.return_button = creat_new_button(1, nick, 5 + x_main, y - 2, 128, 15, "<- НАЗАД", "return_button", true, red, white, function() table_form.destroy() end)
+	
+	--админские кнопки
+	if nick == admin then
+		--table_form.c6poc_HacTpoek = creat_new_button(num_button(), nick, 5 + x_win, y_func(), 128, 15, "сброс настроек", "button", start_visible, gray, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " ред сброс настроек"]() end)
+	end
+	
+	--кнопки тиммейтов
+	--table_form.tp_info = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "инфо мест", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп инфо"]() end)
+	--table_form.tp = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп на игрока", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп"]() end)
+	local TekyLLlee_HanpaBJIeHue = 0
+	
+	for i = 1, 20 do
+		local Ha3BaHue_kHonku
+		if  koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then Ha3BaHue_kHonku = koopgbl_gJI9l_TpaHcnocePa[i][4] end
+		if Ha3BaHue_kHonku == nil then Ha3BaHue_kHonku = "не назначено" end
+		table_form["tp " .. tostring(i)] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, Ha3BaHue_kHonku, "icon", start_visible, black, white, function(num)
+			if koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then
+				num = tonumber(num)
+				table_form.tb_x.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][1]))
+				table_form.tb_y.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][2]))
+				table_form.tb_z.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][3]))
+				table_form.nogcka3ka2.setText(koopgbl_gJI9l_TpaHcnocePa[num][4])
+				table_form.HacTpouTb.caption.setText("Перенастроить")
+				if component.isAvailable("mo_transporter") then
+					Ta6JIuca_koMnoHeHToB["mo_transporter"].setX(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][1]))
+					Ta6JIuca_koMnoHeHToB["mo_transporter"].setY(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][2]))
+					Ta6JIuca_koMnoHeHToB["mo_transporter"].setZ(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][3]))
+					table_form.nogcka3ka2.setText("портал настроен! Делай тп!")
+					table_form.nogcka3ka2.setColor(green)
+				else
+					table_form.nogcka3ka2.setText("транспортер не найден!")
+					table_form.nogcka3ka2.setColor(red)
+				end
+			else
+				table_form.tb_uM9l.caption.setText("ввод названия")
+				table_form.tb_x.caption.setText("ввод х")
+				table_form.tb_y.caption.setText("ввод у")
+				table_form.tb_z.caption.setText("ввод z")
+				table_form.nogcka3ka2.setText("")
+				table_form.nogcka3ka2.setColor(red)
+				table_form.HacTpouTb.caption.setText("Создать точку")
+			end
+			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. tostring(num)]()
+			TekyLLlee_HanpaBJIeHue = num
+		end)
+	end
+	
+	local cgBur_no_x = x_main + 150
+	local cgBur_no_y = y_main + 16
+	
+	table_form.tb_uM9l = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
+	table_form.tb_x = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_y = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_z = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 99, "текущее направление:", blue)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 133, "", green)
+	
+	--кнопка подтверждения
+	table_form.HacTpouTb = creat_new_button(-1, nick, 5 + cgBur_no_x, cgBur_no_y + 150, 128, 15, "пересоздать", "button", true, black, white, function()
+		local uM9l = table_form.tb_uM9l.caption.getText()
+		local x_zha4 = table_form.tb_x.caption.getText()
+		local y_zha4 = table_form.tb_y.caption.getText()
+		local z_zha4 = table_form.tb_z.caption.getText()
+		
+		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
+			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setText(uM9l)
+			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setX(table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.getX() + 1)
+			koopgbl_gJI9l_TpaHcnocePa[tonumber(TekyLLlee_HanpaBJIeHue)] = {x_zha4, y_zha4, z_zha4, uM9l}
+			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
+			Ta6JIuca_koMnoHeHToB["mo_transporter"].setX(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][1]))
+			Ta6JIuca_koMnoHeHToB["mo_transporter"].setY(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][2]))
+			Ta6JIuca_koMnoHeHToB["mo_transporter"].setZ(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][3]))
+			table_form.nogcka3ka2.setText(g .. "переназначено!")
+		end
+	end)
+	
+	--создание каркаса скролла
+	local MakcuMyM_BuguMblx_kHonok
+	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)
+	table_form.scroll_badur_up.setClickable(false)
+	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_main, y_main + 39}, {144 + x_main, y_main + 191}, white)
+	table_form.scroll_line.setClickable(false)
+	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 191, 10, 10, gray)
+	table_form.scroll_badur_down.setClickable(false)
+	--определить количество кнопок для размера скролла
+	local Bcero_KHonok = num_button() - 1
+	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
+	--создание ползунка скролла
+	local start_no_y = y_main + 39
+	local y_min = start_no_y
+	local y_max = start_no_y + 152
+	local cgBur_ckpoJIJIa = 10
+	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
+	if y_pa3Mep < 10 then
+		y_pa3Mep = 10
+		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
+	end
+	
+	if ckpblTble_kHOnku > 0 then
+		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
+	end
+	
+	--объединение таблиц
+	self = {}
+	setmetatable(table_form, self)
+	self.__index = self
+	
+	return table_form
+end
+function forms:creat_TeJIenopTep2_form(nick)
+	--создание формы
+	local table_form = {}
+	
+	Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick] = "TeJIenopTep2"
 	--создание функции видимости окна
 	table_form.setVisible = function(visible)
 		for k, v in pairs(table_form) do

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "умный дом 2"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 1"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -2449,6 +2449,7 @@ function forms:creat_main_form(nick)
 				Bce_ragJeTbl_urpoka[nick].po6oT_LLlaxTep_work.BkJI_animation()
 			end
 		end)
+		table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер2", "button", start_visible,  gray, white, function() end)
 	end
 	table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", start_visible,  black, white, function()
 		Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick)

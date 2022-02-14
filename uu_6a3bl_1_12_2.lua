@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 22"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 23"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3935,8 +3935,10 @@ function forms:creat_TeJIenopTep2_form(nick)
 	
 	table_form.BuguMocTb_kHonok_HanpaBJIeHuu = function(kHonku_BugHbl)
 		for i = 1, 10 do
+			table_form["tp " .. tostring(i)].button_num = i
 			table_form["tp " .. tostring(i)].setVisible(kHonku_BugHbl)
 			table_form["tp " .. tostring(i)].setClickable(kHonku_BugHbl)
+			table_form["tp " .. tostring(i)].caption.setText(
 		end
 	end
 	
@@ -3944,10 +3946,19 @@ function forms:creat_TeJIenopTep2_form(nick)
 	local cgBur_no_y = y_main + 30
 	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 1, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 18, 128, 15, "искать", "button", true, black, white, function()
+		local Huk_gJI9l_cpaBHeHu9l = table_form.tb_nouck.caption.getText()
+		local but_num = 1
 		if table_form.tb_nouck.caption.getText() == "" then
 			table_form.BuguMocTb_kHonok_HanpaBJIeHuu(true)
 		else
 			table_form.BuguMocTb_kHonok_HanpaBJIeHuu(false)
+			for k, v in ipairs(koopgbl_gJI9l_TpaHcnocePa) do
+				if string.match(Huk_gJI9l_cpaBHeHu9l, v[4]) and but_num <= 10 then
+					table_form["tp " .. tostring(but_num)].button_num = kHOnka_clear_holo
+					table_form["tp " .. tostring(but_num)].caption.setText(v[4])
+					but_num = but_num + 1
+				end
+			end
 		end
 	end)
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 33, "текущее направление:", blue)
@@ -3971,7 +3982,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
 			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setText(uM9l)
 			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setX(table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.getX() + 1)
-			koopgbl_gJI9l_TpaHcnocePa[tonumber(TekyLLlee_HanpaBJIeHue)] = {x_zha4, y_zha4, z_zha4, uM9l}
+			table.insert(koopgbl_gJI9l_TpaHcnocePa, {x_zha4, y_zha4, z_zha4, uM9l})
 			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
 			Ta6JIuca_koMnoHeHToB["mo_transporter"].setX(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][1]))
 			Ta6JIuca_koMnoHeHToB["mo_transporter"].setY(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][2]))

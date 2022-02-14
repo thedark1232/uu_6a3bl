@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 24"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 25"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3953,7 +3953,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 		else
 			table_form.BuguMocTb_kHonok_HanpaBJIeHuu(false)
 			for k, v in ipairs(koopgbl_gJI9l_TpaHcnocePa) do
-				if string.match(Huk_gJI9l_cpaBHeHu9l, v[4]) and but_num <= 10 then
+				if string.match(Huk_gJI9l_cpaBHeHu9l, v[4]) ~= nil and but_num <= 10 then
 					table_form["tp " .. tostring(but_num)].button_num = kHOnka_clear_holo
 					table_form["tp " .. tostring(but_num)].caption.setText(v[4])
 					but_num = but_num + 1

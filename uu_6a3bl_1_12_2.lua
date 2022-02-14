@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 21"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 22"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3944,7 +3944,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 	local cgBur_no_y = y_main + 30
 	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 1, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 18, 128, 15, "искать", "button", true, black, white, function()
-		if table_form.tb_nouck.caption == "" then
+		if table_form.tb_nouck.caption.getText() == "" then
 			table_form.BuguMocTb_kHonok_HanpaBJIeHuu(true)
 		else
 			table_form.BuguMocTb_kHonok_HanpaBJIeHuu(false)

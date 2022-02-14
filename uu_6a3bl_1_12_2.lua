@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 5"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 7"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3863,8 +3863,11 @@ function forms:creat_TeJIenopTep2_form(nick)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 	
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(154 + x_main, y_main + 29, 132, 172, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 29, 132, 50, white)
 	table_form.main_box3.setClickable(false)
+	
+	table_form.main_box4 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 70, 132, 50, white)
+	table_form.main_box4.setClickable(false)
 			
 	--создание кнопок
 	local y = y_main + 14
@@ -3930,7 +3933,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 	end
 	
 	local cgBur_no_x = x_main + 150
-	local cgBur_no_y = y_main + 40
+	local cgBur_no_y = y_main + 29
 	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 16, 128, 15, "искать", "button", true, black, white, function()
 

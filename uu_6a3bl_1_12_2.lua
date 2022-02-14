@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 23"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 24"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3938,7 +3938,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 			table_form["tp " .. tostring(i)].button_num = i
 			table_form["tp " .. tostring(i)].setVisible(kHonku_BugHbl)
 			table_form["tp " .. tostring(i)].setClickable(kHonku_BugHbl)
-			table_form["tp " .. tostring(i)].caption.setText(
+			table_form["tp " .. tostring(i)].caption.setText(koopgbl_gJI9l_TpaHcnocePa[i][4])
 		end
 	end
 	

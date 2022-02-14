@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 19"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 21"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3899,7 +3899,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 	--table_form.tp = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп на игрока", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп"]() end)
 	local TekyLLlee_HanpaBJIeHue = 0
 	
-	for i = 1, 9 do
+	for i = 1, 10 do
 		local Ha3BaHue_kHonku
 		if  koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then Ha3BaHue_kHonku = koopgbl_gJI9l_TpaHcnocePa[i][4] end
 		if Ha3BaHue_kHonku == nil then Ha3BaHue_kHonku = "не назначено" end
@@ -3933,11 +3933,22 @@ function forms:creat_TeJIenopTep2_form(nick)
 		end)
 	end
 	
+	table_form.BuguMocTb_kHonok_HanpaBJIeHuu = function(kHonku_BugHbl)
+		for i = 1, 10 do
+			table_form["tp " .. tostring(i)].setVisible(kHonku_BugHbl)
+			table_form["tp " .. tostring(i)].setClickable(kHonku_BugHbl)
+		end
+	end
+	
 	local cgBur_no_x = x_main + 135
 	local cgBur_no_y = y_main + 30
 	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 1, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 18, 128, 15, "искать", "button", true, black, white, function()
-
+		if table_form.tb_nouck.caption == "" then
+			table_form.BuguMocTb_kHonok_HanpaBJIeHuu(true)
+		else
+			table_form.BuguMocTb_kHonok_HanpaBJIeHuu(false)
+		end
 	end)
 	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 33, "текущее направление:", blue)
 	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 44, "Не задано!", red)

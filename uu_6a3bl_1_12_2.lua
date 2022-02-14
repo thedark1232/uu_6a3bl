@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 10"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 12"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3941,16 +3941,21 @@ function forms:creat_TeJIenopTep2_form(nick)
 	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 18, 128, 15, "искать", "button", true, black, white, function()
 
 	end)
+	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 33, "текущее направление:", blue)
+	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 44, "Не задано!", red)
 	
-	table_form.tb_uM9l = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
-	table_form.tb_x = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
-	table_form.tb_y = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
-	table_form.tb_z = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
-	table_form.nogcka3ka = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 99, "текущее направление:", blue)
-	table_form.nogcka3ka2 = MoHuTop_urpoka[nick].addText(7 + cgBur_no_x, cgBur_no_y + 133, "", green)
+	
+	local cgBur_HuJHero_MeHl0_x = x_main + 135
+	local cgBur_HuJHero_MeHl0_y = y_main + 40
+	
+	table_form.tb_uM9l = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
+	table_form.tb_x = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_y = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 65, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_z = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 82, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+
 	
 	--кнопка подтверждения
-	table_form.HacTpouTb = creat_new_button(-1, nick, 5 + cgBur_no_x, cgBur_no_y + 150, 128, 15, "пересоздать", "button", true, black, white, function()
+	table_form.HacTpouTb = creat_new_button(-1, nick, 5 + cgBur_no_x, cgBur_HuJHero_MeHl0_y + 150, 128, 15, "создать направление", "button", true, black, white, function()
 		local uM9l = table_form.tb_uM9l.caption.getText()
 		local x_zha4 = table_form.tb_x.caption.getText()
 		local y_zha4 = table_form.tb_y.caption.getText()

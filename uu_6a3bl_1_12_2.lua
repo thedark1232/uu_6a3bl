@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 9"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 10"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3856,17 +3856,20 @@ function forms:creat_TeJIenopTep2_form(nick)
 	table_form.MakcuMyM_BuguMblx_kHonok = function() return 10 end
 	
 	--главный фрейм
-	local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
-	local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	--local x_main = cTapToBble_koopguHaTbl[nick].main_form.x
+	--local y_main = cTapToBble_koopguHaTbl[nick].main_form.y
+	
+	local x_main = 1
+	local y_main = 1
 	table_form.main_box = MoHuTop_urpoka[nick].addBox(x_main, y_main, 289, 205, blue)
 	--table_form.main_box.setClickable(false)
 	table_form.main_box2 = MoHuTop_urpoka[nick].addBox(3 + x_main, y_main + 29, 132, 172, white)
 	table_form.main_box2.setClickable(false)
 	
-	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 29, 132, 50, white)
+	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 29, 132, 36, white)
 	table_form.main_box3.setClickable(false)
 	
-	table_form.main_box4 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 82, 132, 50, white)
+	table_form.main_box4 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 66, 132, 133, white)
 	table_form.main_box4.setClickable(false)
 			
 	--создание кнопок
@@ -3932,9 +3935,9 @@ function forms:creat_TeJIenopTep2_form(nick)
 		end)
 	end
 	
-	local cgBur_no_x = x_main + 137
+	local cgBur_no_x = x_main + 135
 	local cgBur_no_y = y_main + 30
-	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
+	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 1, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 18, 128, 15, "искать", "button", true, black, white, function()
 
 	end)

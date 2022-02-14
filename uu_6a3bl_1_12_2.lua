@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 17"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 19"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3909,14 +3909,12 @@ function forms:creat_TeJIenopTep2_form(nick)
 				table_form.tb_x.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][1]))
 				table_form.tb_y.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][2]))
 				table_form.tb_z.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][3]))
-				table_form.nogcka3ka2.setText(koopgbl_gJI9l_TpaHcnocePa[num][4])
-				table_form.HacTpouTb.caption.setText("Перенастроить")
 				if component.isAvailable("mo_transporter") then
 					Ta6JIuca_koMnoHeHToB["mo_transporter"].setX(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][1]))
 					Ta6JIuca_koMnoHeHToB["mo_transporter"].setY(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][2]))
 					Ta6JIuca_koMnoHeHToB["mo_transporter"].setZ(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][3]))
-					table_form.nogcka3ka2.setText("портал настроен! Делай тп!")
-					table_form.nogcka3ka2.setColor(green)
+					table_form.nogcka3ka2.setText(koopgbl_gJI9l_TpaHcnocePa[num][4])
+					table_form.nogcka3ka2.setColor(blue)
 				else
 					table_form.nogcka3ka2.setText("транспортер не найден!")
 					table_form.nogcka3ka2.setColor(red)
@@ -3970,7 +3968,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 			table_form.nogcka3ka2.setText(g .. "переназначено!")
 		end
 	end)
-	table_form.nogcka3ka_HanpaBJIeHue_co3gaHo = MoHuTop_urpoka[nick].addText(17 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 92, "Успешное создание!", blue)
+	table_form.nogcka3ka_HanpaBJIeHue_co3gaHo = MoHuTop_urpoka[nick].addText(17 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 97, "Успешное создание!", blue)
 	
 	
 	

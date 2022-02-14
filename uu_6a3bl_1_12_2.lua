@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 3"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 5"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3893,7 +3893,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 	--table_form.tp = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп на игрока", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп"]() end)
 	local TekyLLlee_HanpaBJIeHue = 0
 	
-	for i = 1, 20 do
+	for i = 1, 10 do
 		local Ha3BaHue_kHonku
 		if  koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then Ha3BaHue_kHonku = koopgbl_gJI9l_TpaHcnocePa[i][4] end
 		if Ha3BaHue_kHonku == nil then Ha3BaHue_kHonku = "не назначено" end
@@ -3930,7 +3930,11 @@ function forms:creat_TeJIenopTep2_form(nick)
 	end
 	
 	local cgBur_no_x = x_main + 150
-	local cgBur_no_y = y_main + 16
+	local cgBur_no_y = y_main + 40
+	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
+	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 16, 128, 15, "искать", "button", true, black, white, function()
+
+	end)
 	
 	table_form.tb_uM9l = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 31, 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.tb_x = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 48, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
@@ -3958,31 +3962,6 @@ function forms:creat_TeJIenopTep2_form(nick)
 		end
 	end)
 	
-	--создание каркаса скролла
-	local MakcuMyM_BuguMblx_kHonok
-	table_form.scroll_badur_up = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 29, 10, 10, gray)
-	table_form.scroll_badur_up.setClickable(false)
-	table_form.scroll_line = MoHuTop_urpoka[nick].addLine({144 + x_main, y_main + 39}, {144 + x_main, y_main + 191}, white)
-	table_form.scroll_line.setClickable(false)
-	table_form.scroll_badur_down = MoHuTop_urpoka[nick].addBox(139 + x_main, y_main + 191, 10, 10, gray)
-	table_form.scroll_badur_down.setClickable(false)
-	--определить количество кнопок для размера скролла
-	local Bcero_KHonok = num_button() - 1
-	local ckpblTble_kHOnku = Bcero_KHonok - table_form.MakcuMyM_BuguMblx_kHonok()
-	--создание ползунка скролла
-	local start_no_y = y_main + 39
-	local y_min = start_no_y
-	local y_max = start_no_y + 152
-	local cgBur_ckpoJIJIa = 10
-	local y_pa3Mep = y_max - start_no_y - (cgBur_ckpoJIJIa * ckpblTble_kHOnku)
-	if y_pa3Mep < 10 then
-		y_pa3Mep = 10
-		cgBur_ckpoJIJIa = math.floor((y_max - start_no_y - cgBur_ckpoJIJIa) / ckpblTble_kHOnku)
-	end
-	
-	if ckpblTble_kHOnku > 0 then
-		table_form.scroll_button = creat_new_vertical_scroll(nick, 139 + x_main, start_no_y, 10, y_pa3Mep, y_min, y_max, cgBur_ckpoJIJIa, white, Ha3BaHue_qpopMbl_gJI9l_ygaJIeHu9l[nick])
-	end
 	
 	--объединение таблиц
 	self = {}

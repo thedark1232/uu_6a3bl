@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 15"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 16"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3869,7 +3869,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 	table_form.main_box3 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 29, 132, 56, white)
 	table_form.main_box3.setClickable(false)
 	
-	table_form.main_box4 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 88, 132, 90, white)
+	table_form.main_box4 = MoHuTop_urpoka[nick].addBox(138 + x_main, y_main + 88, 132, 113, white)
 	table_form.main_box4.setClickable(false)
 			
 	--создание кнопок
@@ -3899,7 +3899,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 	--table_form.tp = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп на игрока", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп"]() end)
 	local TekyLLlee_HanpaBJIeHue = 0
 	
-	for i = 1, 10 do
+	for i = 1, 9 do
 		local Ha3BaHue_kHonku
 		if  koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then Ha3BaHue_kHonku = koopgbl_gJI9l_TpaHcnocePa[i][4] end
 		if Ha3BaHue_kHonku == nil then Ha3BaHue_kHonku = "не назначено" end
@@ -3949,11 +3949,11 @@ function forms:creat_TeJIenopTep2_form(nick)
 	local cgBur_HuJHero_MeHl0_y = y_main + 91
 	
 	table_form.tb_uM9l = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y , 128, 15, "ввод названия", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
-	table_form.tb_x = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 15, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
-	table_form.tb_y = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 30, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
-	table_form.tb_z = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 45, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_x = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 16, 128, 15, "ввод х", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_y = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 32, 128, 15, "ввод у", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
+	table_form.tb_z = creat_new_textBox(nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 47, 128, 15, "ввод z", "textBox", true, black, gray, white, red, horizontalAlignment.left, 10)
 	--кнопка подтверждения
-	table_form.HacTpouTb = creat_new_button(-1, nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 62, 128, 15, "создать направление", "button", true, black, white, function()
+	table_form.HacTpouTb = creat_new_button(-1, nick, 5 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 65, 128, 15, "создать направление", "button", true, black, white, function()
 		local uM9l = table_form.tb_uM9l.caption.getText()
 		local x_zha4 = table_form.tb_x.caption.getText()
 		local y_zha4 = table_form.tb_y.caption.getText()
@@ -3970,6 +3970,8 @@ function forms:creat_TeJIenopTep2_form(nick)
 			table_form.nogcka3ka2.setText(g .. "переназначено!")
 		end
 	end)
+	table_form.nogcka3ka_HanpaBJIeHue_co3gaHo = MoHuTop_urpoka[nick].addText(7 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 82, "Успешное создание!", blue)
+	
 	
 	
 	--объединение таблиц

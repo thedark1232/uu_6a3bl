@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 26"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 28"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -2451,12 +2451,16 @@ function forms:creat_main_form(nick)
 		end)
 		table_form.TeJIenopTep2 = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер2", "button", start_visible,  gray, white, function()
 			Bce_ragJeTbl_urpoka[nick].TeJIenopTep2 = forms:creat_TeJIenopTep2_form(nick)
-			Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep2)
+			--Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep2)
+		end)
+		table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", start_visible,  black, white, function()
+			Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick)
+			--Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep)
 		end)
 	end
-	table_form.TeJIenopTep = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер", "button", start_visible,  black, white, function()
-		Bce_ragJeTbl_urpoka[nick].TeJIenopTep = forms:creat_TeJIenopTep_form(nick)
-		--Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep)
+	table_form.TeJIenopTep2 = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "телепортер2", "button", start_visible,  gray, white, function()
+		Bce_ragJeTbl_urpoka[nick].TeJIenopTep2 = forms:creat_TeJIenopTep2_form(nick)
+		--Bce_ragJeTbl_urpoka[nick].gebug = forms:creat_gebug_form(admin, Bce_ragJeTbl_urpoka[admin].TeJIenopTep2)
 	end)
 	table_form.TypeJIu = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "турели", "button", start_visible,  black, white, function() Bce_ragJeTbl_urpoka[nick].tyrret = forms:creat_tyrret_form(nick) end)
 	table_form.JIoru_urpokoB = creat_new_button(num_button(), nick, x_main + 5, y_func(), 128, 15, "логи игроков", "button", start_visible, black, white, function() Bce_ragJeTbl_urpoka[nick].player_logs = forms:creat_player_logs_form(nick) end)
@@ -3953,7 +3957,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 		else
 			table_form.BuguMocTb_kHonok_HanpaBJIeHuu(false)
 			for k, v in ipairs(koopgbl_gJI9l_TpaHcnocePa) do
-				if string.match(Huk_gJI9l_cpaBHeHu9l, v[4]) ~= nil and but_num <= 10 then
+				if string.match(v[4], Huk_gJI9l_cpaBHeHu9l) ~= nil and but_num <= 10 then
 					table_form["tp " .. tostring(but_num)].button_num = kHOnka_clear_holo
 					table_form["tp " .. tostring(but_num)].caption.setText(v[4])
 					table_form["tp " .. tostring(but_num)].setVisible(true)

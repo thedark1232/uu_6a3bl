@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 30"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 31"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3686,6 +3686,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 		if  koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then Ha3BaHue_kHonku = koopgbl_gJI9l_TpaHcnocePa[i][4] end
 		if Ha3BaHue_kHonku == nil then Ha3BaHue_kHonku = "не назначено" end
 		table_form["tp " .. tostring(i)] = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, Ha3BaHue_kHonku, "icon", start_visible, black, white, function(num)
+			table_form.nogcka3ka_HanpaBJIeHue_co3gaHo.setText("")
 			if koopgbl_gJI9l_TpaHcnocePa[i] ~= nil then
 				num = tonumber(num)
 				table_form.tb_x.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][1]))
@@ -3728,6 +3729,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 	local cgBur_no_y = y_main + 30
 	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 1, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 18, 128, 15, "искать", "button", true, black, white, function()
+		table_form.nogcka3ka_HanpaBJIeHue_co3gaHo.setText("")
 		local Huk_gJI9l_cpaBHeHu9l = table_form.tb_nouck.caption.getText()
 		local but_num = 1
 		if table_form.tb_nouck.caption.getText() == "" then
@@ -3764,17 +3766,12 @@ function forms:creat_TeJIenopTep2_form(nick)
 		local z_zha4 = table_form.tb_z.caption.getText()
 		
 		if npoBepka_Ha_Text(uM9l) and npoBepka_Ha_cuqppy(x_zha4, false, false, true) and npoBepka_Ha_cuqppy(y_zha4, false, false, true) and npoBepka_Ha_cuqppy(z_zha4, false, false, true) then
-			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setText(uM9l)
-			table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.setX(table_form["tp " .. tostring(TekyLLlee_HanpaBJIeHue)].caption.getX() + 1)
 			table.insert(koopgbl_gJI9l_TpaHcnocePa, {x_zha4, y_zha4, z_zha4, uM9l})
 			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
-			Ta6JIuca_koMnoHeHToB["mo_transporter"].setX(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][1]))
-			Ta6JIuca_koMnoHeHToB["mo_transporter"].setY(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][2]))
-			Ta6JIuca_koMnoHeHToB["mo_transporter"].setZ(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[TekyLLlee_HanpaBJIeHue][3]))
-			table_form.nogcka3ka2.setText(g .. "переназначено!")
+			table_form.nogcka3ka_HanpaBJIeHue_co3gaHo.setText("Направление создано")
 		end
 	end)
-	table_form.nogcka3ka_HanpaBJIeHue_co3gaHo = MoHuTop_urpoka[nick].addText(17 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 97, "Успешное создание!", blue)
+	table_form.nogcka3ka_HanpaBJIeHue_co3gaHo = MoHuTop_urpoka[nick].addText(17 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 97, "", blue)
 	
 	
 	

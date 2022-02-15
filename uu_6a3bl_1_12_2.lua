@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 31"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 32"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3679,7 +3679,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 	--кнопки тиммейтов
 	--table_form.tp_info = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "инфо мест", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп инфо"]() end)
 	--table_form.tp = creat_new_button(num_button(), nick, 5 + x_main, y_func(), 128, 15, "тп на игрока", "button", start_visible, black, white, function() Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп"]() end)
-	local TekyLLlee_HanpaBJIeHue = 0
+
 	
 	for i = 1, 10 do
 		local Ha3BaHue_kHonku
@@ -3711,8 +3711,6 @@ function forms:creat_TeJIenopTep2_form(nick)
 				table_form.nogcka3ka2.setColor(red)
 				table_form.HacTpouTb.caption.setText("Создать точку")
 			end
-			Ta6JIuca_admin_koMaHg[Ha3BaHue_6a3bl .. " тп " .. tostring(num)]()
-			TekyLLlee_HanpaBJIeHue = num
 		end)
 	end
 	

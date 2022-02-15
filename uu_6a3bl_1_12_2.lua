@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 32"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 33"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -116,7 +116,7 @@ local configRedStone = {}
 local ceHcopbl_BKJI = false
 local detectorbl_BKJI = false
 local typpeJIu_gocTynHbl = false
-local bez_chat_box = false
+local bez_chat_box = true
 local cekyHdbl_coxpaHeHu9l = 1
 local chat = {}
 local TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu = false

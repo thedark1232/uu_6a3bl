@@ -1,5 +1,5 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 33"
-local admin = "world5000"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 34"
+local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -116,7 +116,7 @@ local configRedStone = {}
 local ceHcopbl_BKJI = false
 local detectorbl_BKJI = false
 local typpeJIu_gocTynHbl = false
-local bez_chat_box = true
+local bez_chat_box = false
 local cekyHdbl_coxpaHeHu9l = 1
 local chat = {}
 local TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu = false
@@ -3725,6 +3725,8 @@ function forms:creat_TeJIenopTep2_form(nick)
 	
 	local cgBur_no_x = x_main + 135
 	local cgBur_no_y = y_main + 30
+	
+	table_form.textBox_koJIu4ecTBo_HanpaBJIeHuu = MoHuTop_urpoka[nick].addText(5 + cgBur_no_x, cgBur_no_y - 15, "Всего направлений: " .. tostring(#koopgbl_gJI9l_TpaHcnocePa), white)
 	table_form.tb_nouck = creat_new_textBox(nick, 5 + cgBur_no_x, cgBur_no_y + 1, 128, 15, "поиск", "textBox", true, black, gray, white, red, horizontalAlignment.left, 17)
 	table_form.button_nouck = creat_new_button(1, nick, 5 + cgBur_no_x, cgBur_no_y + 18, 128, 15, "искать", "button", true, black, white, function()
 		table_form.nogcka3ka_HanpaBJIeHue_co3gaHo.setText("")

@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 34"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 35"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3769,6 +3769,7 @@ function forms:creat_TeJIenopTep2_form(nick)
 			table.insert(koopgbl_gJI9l_TpaHcnocePa, {x_zha4, y_zha4, z_zha4, uM9l})
 			filesLibrary.creat_file(nyTb_k_qpauJIy_coorg_gJI9l_TpaHcnocepa, serialization.serialize(koopgbl_gJI9l_TpaHcnocePa))
 			table_form.nogcka3ka_HanpaBJIeHue_co3gaHo.setText("Направление создано")
+			table_form.textBox_koJIu4ecTBo_HanpaBJIeHuu.setText("Всего направлений: " .. tostring(#koopgbl_gJI9l_TpaHcnocePa)
 		end
 	end)
 	table_form.nogcka3ka_HanpaBJIeHue_co3gaHo = MoHuTop_urpoka[nick].addText(17 + cgBur_HuJHero_MeHl0_x, cgBur_HuJHero_MeHl0_y + 97, "", blue)

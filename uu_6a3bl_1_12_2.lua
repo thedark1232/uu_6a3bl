@@ -1,4 +1,4 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 35"
+local Ha3BaHue_o6HoBJIeHu9l = "порт 36"
 local admin = "The_Dark1232"
 component = require("component")
 local computer = require("computer")
@@ -3693,9 +3693,11 @@ function forms:creat_TeJIenopTep2_form(nick)
 				table_form.tb_y.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][2]))
 				table_form.tb_z.caption.setText(tostring(koopgbl_gJI9l_TpaHcnocePa[num][3]))
 				if component.isAvailable("mo_transporter") then
-					Ta6JIuca_koMnoHeHToB["mo_transporter"].setX(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][1]))
-					Ta6JIuca_koMnoHeHToB["mo_transporter"].setY(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][2]))
-					Ta6JIuca_koMnoHeHToB["mo_transporter"].setZ(0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][3]))
+					for address, _ in component.list("mo_transporter") do
+						component.invoke(address, "setX", 0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][1]))
+						component.invoke(address, "setY", 0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][2]))
+						component.invoke(address, "setZ", 0, tonumber(koopgbl_gJI9l_TpaHcnocePa[num][3]))
+					end
 					table_form.nogcka3ka2.setText(koopgbl_gJI9l_TpaHcnocePa[num][4])
 					table_form.nogcka3ka2.setColor(blue)
 				else

@@ -1,5 +1,5 @@
 local Ha3BaHue_o6HoBJIeHu9l = "порт 38"
-local admin = "world5000"
+local admin = "Fiellyns"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
@@ -116,7 +116,7 @@ local configRedStone = {}
 local ceHcopbl_BKJI = false
 local detectorbl_BKJI = false
 local typpeJIu_gocTynHbl = false
-local bez_chat_box = true
+local bez_chat_box = false
 local cekyHdbl_coxpaHeHu9l = 1
 local chat = {}
 local TuMMeuTbl_MoryT_ucnoJIb3oBaTb_TyppeJIu = false

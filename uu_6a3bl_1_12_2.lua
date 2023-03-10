@@ -1,5 +1,5 @@
-local Ha3BaHue_o6HoBJIeHu9l = "порт 38"
-local admin = "Fiellyns"
+local Ha3BaHue_o6HoBJIeHu9l = "lolka"
+local admin = "world5000"
 component = require("component")
 local computer = require("computer")
 local term = require("term")
